@@ -1,0 +1,1892 @@
+[
+  {
+    "category": "頭盔",
+    "zh": "畢格因的軟帽",
+    "en": "Biggin's Bonnet"
+  },
+  {
+    "category": "頭盔",
+    "zh": "塔因頭盔",
+    "en": "Tarnhelm"
+  },
+  {
+    "category": "頭盔",
+    "zh": "光榮罩盔",
+    "en": "Coif of Glory"
+  },
+  {
+    "category": "頭盔",
+    "zh": "黃昏深處",
+    "en": "Duskdeep"
+  },
+  {
+    "category": "頭盔",
+    "zh": "怒號長牙",
+    "en": "Howltusk"
+  },
+  {
+    "category": "頭盔",
+    "zh": "恐懼之臉",
+    "en": "The Face of Horror"
+  },
+  {
+    "category": "頭盔",
+    "zh": "不死皇冠",
+    "en": "Undead Crown"
+  },
+  {
+    "category": "頭盔",
+    "zh": "蠕蟲頭骨",
+    "en": "Wormskull"
+  },
+  {
+    "category": "頭盔",
+    "zh": "農夫王冠",
+    "en": "Peasant Crown"
+  },
+  {
+    "category": "頭盔",
+    "zh": "石禦",
+    "en": "Rockstopper"
+  },
+  {
+    "category": "頭盔",
+    "zh": "盜竊顱盔",
+    "en": "Stealskull"
+  },
+  {
+    "category": "頭盔",
+    "zh": "暗視之盔",
+    "en": "Darksight Helm"
+  },
+  {
+    "category": "頭盔",
+    "zh": "女武神之翼",
+    "en": "Valkyrie Wing"
+  },
+  {
+    "category": "頭盔",
+    "zh": "黑荊角面具",
+    "en": "Blackhorn's Face"
+  },
+  {
+    "category": "頭盔",
+    "zh": "盜賊皇冠",
+    "en": "Crown of Thieves"
+  },
+  {
+    "category": "頭盔",
+    "zh": "吸血鬼的凝視",
+    "en": "Vampire Gaze"
+  },
+  {
+    "category": "頭盔",
+    "zh": "諧角之冠",
+    "en": "Harlequin Crest"
+  },
+  {
+    "category": "頭盔",
+    "zh": "鋼影",
+    "en": "Steel Shade"
+  },
+  {
+    "category": "頭盔",
+    "zh": "鋼鐵面紗",
+    "en": "Veil of Steel"
+  },
+  {
+    "category": "頭盔",
+    "zh": "夜翼面紗",
+    "en": "Nightwing's Veil"
+  },
+  {
+    "category": "頭盔",
+    "zh": "安達莉爾的面貌",
+    "en": "Andariel's Visage"
+  },
+  {
+    "category": "頭盔",
+    "zh": "歲月之冠",
+    "en": "Crown of Ages"
+  },
+  {
+    "category": "頭盔",
+    "zh": "巨大顱骨",
+    "en": "Giant Skull"
+  },
+  {
+    "category": "頭盔",
+    "zh": "奇拉的守護",
+    "en": "Kira's Guardian"
+  },
+  {
+    "category": "頭盔",
+    "zh": "獅鷲之眼",
+    "en": "Griffon's Eye"
+  },
+  {
+    "category": "頭盔",
+    "zh": "亞瑞特的面容",
+    "en": "Arreat's Face"
+  },
+  {
+    "category": "頭盔",
+    "zh": "狼嚎",
+    "en": "Wolfhowl"
+  },
+  {
+    "category": "頭盔",
+    "zh": "惡魔角尖",
+    "en": "Demonhorn's Edge"
+  },
+  {
+    "category": "頭盔",
+    "zh": "海拉柏德的國度",
+    "en": "Halaberd's Reign"
+  },
+  {
+    "category": "頭盔",
+    "zh": "加爾的鬃毛",
+    "en": "Jalal's Mane"
+  },
+  {
+    "category": "頭盔",
+    "zh": "地獄犬之咬",
+    "en": "Cerebus' Bite"
+  },
+  {
+    "category": "頭盔",
+    "zh": "掠鴉之王",
+    "en": "Ravenlore"
+  },
+  {
+    "category": "頭盔",
+    "zh": "魂靈守衛者",
+    "en": "Spirit Keeper"
+  },
+  {
+    "category": "護甲",
+    "zh": "灰暮之形",
+    "en": "Greyform"
+  },
+  {
+    "category": "護甲",
+    "zh": "閃蝠之軀",
+    "en": "Blinkbat's Form"
+  },
+  {
+    "category": "護甲",
+    "zh": "百夫長",
+    "en": "The Centurion"
+  },
+  {
+    "category": "護甲",
+    "zh": "抽動掙扎",
+    "en": "Twitchthroe"
+  },
+  {
+    "category": "護甲",
+    "zh": "暗光",
+    "en": "Darkglow"
+  },
+  {
+    "category": "護甲",
+    "zh": "鷹甲",
+    "en": "Hawkmail"
+  },
+  {
+    "category": "護甲",
+    "zh": "毒之守禦",
+    "en": "Venom Ward"
+  },
+  {
+    "category": "護甲",
+    "zh": "電光之甲",
+    "en": "Sparking Mail"
+  },
+  {
+    "category": "護甲",
+    "zh": "冰晶",
+    "en": "Iceblink"
+  },
+  {
+    "category": "護甲",
+    "zh": "天堂裝束",
+    "en": "Heavenly Garb"
+  },
+  {
+    "category": "護甲",
+    "zh": "石羊毛",
+    "en": "Rockfleece"
+  },
+  {
+    "category": "護甲",
+    "zh": "骨肉",
+    "en": "Boneflesh"
+  },
+  {
+    "category": "護甲",
+    "zh": "震骨",
+    "en": "Rattlecage"
+  },
+  {
+    "category": "護甲",
+    "zh": "黃金之膚",
+    "en": "Goldskin"
+  },
+  {
+    "category": "護甲",
+    "zh": "勝利者的絲綢",
+    "en": "Silks of the Victor"
+  },
+  {
+    "category": "護甲",
+    "zh": "靈魂帷幕",
+    "en": "The Spirit Shroud"
+  },
+  {
+    "category": "護甲",
+    "zh": "蛇魔法師之皮",
+    "en": "Skin of the Vipermagi"
+  },
+  {
+    "category": "護甲",
+    "zh": "剝皮者之皮",
+    "en": "Skin of the Flayed One"
+  },
+  {
+    "category": "護甲",
+    "zh": "鋼鐵獸皮",
+    "en": "Iron Pelt"
+  },
+  {
+    "category": "護甲",
+    "zh": "鴉啼",
+    "en": "Crow Caw"
+  },
+  {
+    "category": "護甲",
+    "zh": "靈魂熔爐",
+    "en": "Spirit Forge"
+  },
+  {
+    "category": "護甲",
+    "zh": "都瑞爾之殼",
+    "en": "Duriel's Shell"
+  },
+  {
+    "category": "護甲",
+    "zh": "箭止",
+    "en": "Shaftstop"
+  },
+  {
+    "category": "護甲",
+    "zh": "斯寇德的憤怒",
+    "en": "Skullder's Ire"
+  },
+  {
+    "category": "護甲",
+    "zh": "教宗的智慧",
+    "en": "Que-Hegan's Wisdom"
+  },
+  {
+    "category": "護甲",
+    "zh": "排齒",
+    "en": "Toothrow"
+  },
+  {
+    "category": "護甲",
+    "zh": "守護天使",
+    "en": "Guardian Angel"
+  },
+  {
+    "category": "護甲",
+    "zh": "亞特瑪的哭喊",
+    "en": "Atma's Wail"
+  },
+  {
+    "category": "護甲",
+    "zh": "黑色黑帝斯",
+    "en": "Black Hades"
+  },
+  {
+    "category": "護甲",
+    "zh": "屍慟",
+    "en": "Corpsemourn"
+  },
+  {
+    "category": "護甲",
+    "zh": "奧瑪斯之袍",
+    "en": "Ormus' Robes"
+  },
+  {
+    "category": "護甲",
+    "zh": "鬥士之禍",
+    "en": "The Gladiator's Bane"
+  },
+  {
+    "category": "護甲",
+    "zh": "阿凱尼的榮耀",
+    "en": "Arkaine's Valor"
+  },
+  {
+    "category": "護甲",
+    "zh": "利維坦",
+    "en": "Leviathan"
+  },
+  {
+    "category": "護甲",
+    "zh": "鋼鐵甲殼",
+    "en": "Steel Carapace"
+  },
+  {
+    "category": "護甲",
+    "zh": "聖堂騎士之力",
+    "en": "Templar's Might"
+  },
+  {
+    "category": "護甲",
+    "zh": "泰瑞爾之力",
+    "en": "Tyrael's Might"
+  },
+  {
+    "category": "盾牌",
+    "zh": "新月小盾",
+    "en": "Pelta Lunata"
+  },
+  {
+    "category": "盾牌",
+    "zh": "陰影圓盤",
+    "en": "Umbral Disk"
+  },
+  {
+    "category": "盾牌",
+    "zh": "風暴同盟",
+    "en": "Stormguild"
+  },
+  {
+    "category": "盾牌",
+    "zh": "鋼鐵衝擊",
+    "en": "Steelclash"
+  },
+  {
+    "category": "盾牌",
+    "zh": "劍棘之盾",
+    "en": "Swordback Hold"
+  },
+  {
+    "category": "盾牌",
+    "zh": "布雷維特要塞",
+    "en": "Bverrit Keep"
+  },
+  {
+    "category": "盾牌",
+    "zh": "無眼者之牆",
+    "en": "Wall of the Eyeless"
+  },
+  {
+    "category": "盾牌",
+    "zh": "庇護結界",
+    "en": "The Ward"
+  },
+  {
+    "category": "盾牌",
+    "zh": "維斯爾坦特",
+    "en": "Visceratuant"
+  },
+  {
+    "category": "盾牌",
+    "zh": "摩瑟的祝福之圓",
+    "en": "Moser's Blessed Circle"
+  },
+  {
+    "category": "盾牌",
+    "zh": "風暴追逐者",
+    "en": "Stormchaser"
+  },
+  {
+    "category": "盾牌",
+    "zh": "魔龍的非難",
+    "en": "Tiamat's Rebuke"
+  },
+  {
+    "category": "盾牌",
+    "zh": "長槍守衛",
+    "en": "Lance Guard"
+  },
+  {
+    "category": "盾牌",
+    "zh": "基爾克的聖堂",
+    "en": "Gerke's Sanctuary"
+  },
+  {
+    "category": "盾牌",
+    "zh": "警戒之牆",
+    "en": "Lidless Wall"
+  },
+  {
+    "category": "盾牌",
+    "zh": "羅達門特的領域",
+    "en": "Radament's Sphere"
+  },
+  {
+    "category": "盾牌",
+    "zh": "黑橡樹盾",
+    "en": "Blackoak Shield"
+  },
+  {
+    "category": "盾牌",
+    "zh": "暴風之盾",
+    "en": "Stormshield"
+  },
+  {
+    "category": "盾牌",
+    "zh": "尖刺荊棘",
+    "en": "Spike Thorn"
+  },
+  {
+    "category": "盾牌",
+    "zh": "梅杜莎的凝視",
+    "en": "Medusa's Gaze"
+  },
+  {
+    "category": "盾牌",
+    "zh": "獵頭者的榮耀",
+    "en": "Head Hunter's Glory"
+  },
+  {
+    "category": "盾牌",
+    "zh": "魂系結界",
+    "en": "Spirit Ward"
+  },
+  {
+    "category": "盾牌",
+    "zh": "撒卡蘭姆使者",
+    "en": "Herald of Zakarum"
+  },
+  {
+    "category": "盾牌",
+    "zh": "黑魂",
+    "en": "Alma Negra"
+  },
+  {
+    "category": "盾牌",
+    "zh": "龍鱗",
+    "en": "Dragonscale"
+  },
+  {
+    "category": "盾牌",
+    "zh": "魔胎",
+    "en": "Homunculus"
+  },
+  {
+    "category": "盾牌",
+    "zh": "魔力肇生",
+    "en": "Darkforce Spawn"
+  },
+  {
+    "category": "盾牌",
+    "zh": "骨焰",
+    "en": "Boneflame"
+  },
+  {
+    "category": "腰帶",
+    "zh": "雷尼摩",
+    "en": "Lenymo"
+  },
+  {
+    "category": "腰帶",
+    "zh": "蛇索",
+    "en": "Snakecord"
+  },
+  {
+    "category": "腰帶",
+    "zh": "夜煙",
+    "en": "Nightsmoke"
+  },
+  {
+    "category": "腰帶",
+    "zh": "黃金裹腰",
+    "en": "Goldwrap"
+  },
+  {
+    "category": "腰帶",
+    "zh": "刀鋒扣帶",
+    "en": "Bladebuckle"
+  },
+  {
+    "category": "腰帶",
+    "zh": "長串之耳",
+    "en": "String of Ears"
+  },
+  {
+    "category": "腰帶",
+    "zh": "剃刀之尾",
+    "en": "Razortail"
+  },
+  {
+    "category": "腰帶",
+    "zh": "陰影陷阱",
+    "en": "Gloom's Trap"
+  },
+  {
+    "category": "腰帶",
+    "zh": "冰雪交織",
+    "en": "Snowclash"
+  },
+  {
+    "category": "腰帶",
+    "zh": "雷神之力",
+    "en": "Thundergod's Vigor"
+  },
+  {
+    "category": "腰帶",
+    "zh": "蜘蛛之網",
+    "en": "Arachnid Mesh"
+  },
+  {
+    "category": "腰帶",
+    "zh": "吸血鬼王之圈",
+    "en": "Nosferatu's Coil"
+  },
+  {
+    "category": "腰帶",
+    "zh": "伐頓戈的強韌腰索",
+    "en": "Verdungo's Hearty Cord"
+  },
+  {
+    "category": "鞋子",
+    "zh": "熱靴刺",
+    "en": "Hotspur"
+  },
+  {
+    "category": "鞋子",
+    "zh": "血腳",
+    "en": "Gorefoot"
+  },
+  {
+    "category": "鞋子",
+    "zh": "凱松的足靴",
+    "en": "Treads of Cthon"
+  },
+  {
+    "category": "鞋子",
+    "zh": "哥布林腳趾",
+    "en": "Goblin Toe"
+  },
+  {
+    "category": "鞋子",
+    "zh": "裂臀",
+    "en": "Tearhaunch"
+  },
+  {
+    "category": "鞋子",
+    "zh": "地獄闊步",
+    "en": "Infernostride"
+  },
+  {
+    "category": "鞋子",
+    "zh": "水上飄",
+    "en": "Waterwalk"
+  },
+  {
+    "category": "鞋子",
+    "zh": "紗織",
+    "en": "Silkweave"
+  },
+  {
+    "category": "鞋子",
+    "zh": "戰爭旅者",
+    "en": "War Traveler"
+  },
+  {
+    "category": "鞋子",
+    "zh": "蝕肉騎士",
+    "en": "Gore Rider"
+  },
+  {
+    "category": "鞋子",
+    "zh": "沙暴之旅",
+    "en": "Sandstorm Trek"
+  },
+  {
+    "category": "鞋子",
+    "zh": "骨髓行走",
+    "en": "Marrowwalk"
+  },
+  {
+    "category": "鞋子",
+    "zh": "影舞者",
+    "en": "Shadow Dancer"
+  },
+  {
+    "category": "手套",
+    "zh": "柏克之手",
+    "en": "The Hand of Broc"
+  },
+  {
+    "category": "手套",
+    "zh": "血拳",
+    "en": "Bloodfist"
+  },
+  {
+    "category": "手套",
+    "zh": "運氣守護",
+    "en": "Chance Guards"
+  },
+  {
+    "category": "手套",
+    "zh": "法師之拳",
+    "en": "Magefist"
+  },
+  {
+    "category": "手套",
+    "zh": "霜燃",
+    "en": "Frostburn"
+  },
+  {
+    "category": "手套",
+    "zh": "劇毒之握",
+    "en": "Venom Grip"
+  },
+  {
+    "category": "手套",
+    "zh": "墓穴手掌",
+    "en": "Gravepalm"
+  },
+  {
+    "category": "手套",
+    "zh": "食屍鬼之皮",
+    "en": "Ghoulhide"
+  },
+  {
+    "category": "手套",
+    "zh": "熔岩之痛",
+    "en": "Lava Gout"
+  },
+  {
+    "category": "手套",
+    "zh": "地獄之口",
+    "en": "Hellmouth"
+  },
+  {
+    "category": "手套",
+    "zh": "德古拉之握",
+    "en": "Dracul's Grasp"
+  },
+  {
+    "category": "手套",
+    "zh": "吸魂者",
+    "en": "Soul Drainer"
+  },
+  {
+    "category": "手套",
+    "zh": "碎鋼",
+    "en": "Steelrend"
+  },
+  {
+    "category": "戒指",
+    "zh": "拿各的戒指",
+    "en": "Nagelring"
+  },
+  {
+    "category": "戒指",
+    "zh": "瑪那德的治療",
+    "en": "Manald Heal"
+  },
+  {
+    "category": "戒指",
+    "zh": "喬丹之石",
+    "en": "The Stone of Jordan"
+  },
+  {
+    "category": "戒指",
+    "zh": "矮人之星",
+    "en": "Dwarf Star"
+  },
+  {
+    "category": "戒指",
+    "zh": "烏鴉之霜",
+    "en": "Raven Frost"
+  },
+  {
+    "category": "戒指",
+    "zh": "布爾凱索的婚戒",
+    "en": "Bul-Kathos' Wedding Band"
+  },
+  {
+    "category": "戒指",
+    "zh": "腐肉之風",
+    "en": "Carrion Wind"
+  },
+  {
+    "category": "戒指",
+    "zh": "自然祥和",
+    "en": "Nature's Peace"
+  },
+  {
+    "category": "戒指",
+    "zh": "鬼火投射者",
+    "en": "Wisp Projector"
+  },
+  {
+    "category": "護身符",
+    "zh": "諾科藍遺物",
+    "en": "Nokozan Relic"
+  },
+  {
+    "category": "護身符",
+    "zh": "艾利曲之眼",
+    "en": "The Eye of Etlich"
+  },
+  {
+    "category": "護身符",
+    "zh": "瑪哈姆橡木古董",
+    "en": "The Mahim-Oak Curio"
+  },
+  {
+    "category": "護身符",
+    "zh": "薩拉森的機會",
+    "en": "Saracen's Chance"
+  },
+  {
+    "category": "護身符",
+    "zh": "貓眼",
+    "en": "The Cat's Eye"
+  },
+  {
+    "category": "護身符",
+    "zh": "新月",
+    "en": "Crescent Moon"
+  },
+  {
+    "category": "護身符",
+    "zh": "亞特瑪的聖甲蟲",
+    "en": "Atma's Scarab"
+  },
+  {
+    "category": "護身符",
+    "zh": "旭日東升",
+    "en": "The Rising Sun"
+  },
+  {
+    "category": "護身符",
+    "zh": "大君之怒",
+    "en": "Highlord's Wrath"
+  },
+  {
+    "category": "護身符",
+    "zh": "馬拉的萬花筒",
+    "en": "Mara's Kaleidoscope"
+  },
+  {
+    "category": "護身符",
+    "zh": "熾天使之韻",
+    "en": "Seraph's Hymn"
+  },
+  {
+    "category": "護身符",
+    "zh": "金屬網格",
+    "en": "Metalgrid"
+  },
+  {
+    "category": "咒符",
+    "zh": "滅絕",
+    "en": "Annihilus"
+  },
+  {
+    "category": "咒符",
+    "zh": "基德的財運",
+    "en": "Gheed's Fortune"
+  },
+  {
+    "category": "咒符",
+    "zh": "地獄火炬",
+    "en": "Hellfire Torch"
+  },
+  {
+    "category": "咒符",
+    "zh": "冰寒裂縫",
+    "en": "Cold Rupture"
+  },
+  {
+    "category": "咒符",
+    "zh": "火焰裂隙",
+    "en": "Flame Rift"
+  },
+  {
+    "category": "咒符",
+    "zh": "天堂裂擊",
+    "en": "Crack of the Heavens"
+  },
+  {
+    "category": "咒符",
+    "zh": "腐敗裂痕",
+    "en": "Rotting Fissure"
+  },
+  {
+    "category": "咒符",
+    "zh": "分筋裂骨",
+    "en": "Bone Break"
+  },
+  {
+    "category": "咒符",
+    "zh": "漆黑裂口",
+    "en": "Black Cleft"
+  },
+  {
+    "category": "珠寶",
+    "zh": "彩虹刻面",
+    "en": "Rainbow Facet"
+  },
+  {
+    "category": "刀劍",
+    "zh": "瑞克塞斯的利刃",
+    "en": "Rixot's Keen"
+  },
+  {
+    "category": "刀劍",
+    "zh": "血紅新月",
+    "en": "Blood Crescent"
+  },
+  {
+    "category": "刀劍",
+    "zh": "克里維茲的肉叉",
+    "en": "Skewer of Krintiz"
+  },
+  {
+    "category": "刀劍",
+    "zh": "閃耀鐮刀",
+    "en": "Gleamscythe"
+  },
+  {
+    "category": "刀劍",
+    "zh": "格里斯瓦德之刃",
+    "en": "Griswold's Edge"
+  },
+  {
+    "category": "刀劍",
+    "zh": "地獄瘟疫",
+    "en": "Hellplague"
+  },
+  {
+    "category": "刀劍",
+    "zh": "庫爾溫的尖刃",
+    "en": "Culwen's Point"
+  },
+  {
+    "category": "刀劍",
+    "zh": "放血者",
+    "en": "Bloodletter"
+  },
+  {
+    "category": "刀劍",
+    "zh": "冰鋼之眼",
+    "en": "Coldsteel Eye"
+  },
+  {
+    "category": "刀劍",
+    "zh": "妖火",
+    "en": "Hexfire"
+  },
+  {
+    "category": "刀劍",
+    "zh": "阿里巴巴之刃",
+    "en": "Blade of Ali Baba"
+  },
+  {
+    "category": "刀劍",
+    "zh": "金瑟的裂隙",
+    "en": "Ginther's Rift"
+  },
+  {
+    "category": "刀劍",
+    "zh": "擊頭者",
+    "en": "Headstriker"
+  },
+  {
+    "category": "刀劍",
+    "zh": "疫病帶原者",
+    "en": "Plague Bearer"
+  },
+  {
+    "category": "刀劍",
+    "zh": "亞特蘭提恩",
+    "en": "The Atlantean"
+  },
+  {
+    "category": "刀劍",
+    "zh": "巨靈殺手",
+    "en": "Djinn Slayer"
+  },
+  {
+    "category": "刀劍",
+    "zh": "血月",
+    "en": "Bloodmoon"
+  },
+  {
+    "category": "刀劍",
+    "zh": "光之軍刀",
+    "en": "Lightsabre"
+  },
+  {
+    "category": "刀劍",
+    "zh": "碧藍怒火",
+    "en": "Azurewrath"
+  },
+  {
+    "category": "刀劍",
+    "zh": "霜風",
+    "en": "Frostwind"
+  },
+  {
+    "category": "刀劍",
+    "zh": "暗影之牙",
+    "en": "Shadowfang"
+  },
+  {
+    "category": "刀劍",
+    "zh": "剝魂",
+    "en": "Soulflay"
+  },
+  {
+    "category": "刀劍",
+    "zh": "金麥爾的鑽錐",
+    "en": "Kinemil's Awl"
+  },
+  {
+    "category": "刀劍",
+    "zh": "黑舌",
+    "en": "Blacktongue"
+  },
+  {
+    "category": "刀劍",
+    "zh": "齒鋸",
+    "en": "Ripsaw"
+  },
+  {
+    "category": "刀劍",
+    "zh": "尊父",
+    "en": "The Patriarch"
+  },
+  {
+    "category": "刀劍",
+    "zh": "恐懼之嘔",
+    "en": "Crainte Vomir"
+  },
+  {
+    "category": "刀劍",
+    "zh": "冰之王",
+    "en": "Bing Sz Wang"
+  },
+  {
+    "category": "刀劍",
+    "zh": "兇邪軀殼",
+    "en": "The Vile Husk"
+  },
+  {
+    "category": "刀劍",
+    "zh": "雲裂",
+    "en": "Cloudcrack"
+  },
+  {
+    "category": "刀劍",
+    "zh": "死落之火",
+    "en": "Todesfaelle Flamme"
+  },
+  {
+    "category": "刀劍",
+    "zh": "劍衛",
+    "en": "Swordguard"
+  },
+  {
+    "category": "刀劍",
+    "zh": "火嚎",
+    "en": "Flamebellow"
+  },
+  {
+    "category": "刀劍",
+    "zh": "末日使者",
+    "en": "Doombringer"
+  },
+  {
+    "category": "刀劍",
+    "zh": "高祖",
+    "en": "The Grandfather"
+  },
+  {
+    "category": "匕首",
+    "zh": "海鷗",
+    "en": "Gull"
+  },
+  {
+    "category": "匕首",
+    "zh": "迪格勒",
+    "en": "The Diggler"
+  },
+  {
+    "category": "匕首",
+    "zh": "玉匕",
+    "en": "The Jade Tan Do"
+  },
+  {
+    "category": "匕首",
+    "zh": "虹彩裂片",
+    "en": "Spectral Shard"
+  },
+  {
+    "category": "匕首",
+    "zh": "裂脊者",
+    "en": "Spineripper"
+  },
+  {
+    "category": "匕首",
+    "zh": "刨心者",
+    "en": "Heart Carver"
+  },
+  {
+    "category": "匕首",
+    "zh": "黑沼之鋒",
+    "en": "Blackbog's Sharp"
+  },
+  {
+    "category": "匕首",
+    "zh": "暴風尖刺",
+    "en": "Stormspike"
+  },
+  {
+    "category": "匕首",
+    "zh": "巫師之刺",
+    "en": "Wizardspike"
+  },
+  {
+    "category": "匕首",
+    "zh": "裂肉者",
+    "en": "Fleshripper"
+  },
+  {
+    "category": "匕首",
+    "zh": "鬼火",
+    "en": "Ghostflame"
+  },
+  {
+    "category": "斧",
+    "zh": "噬咬者",
+    "en": "The Gnasher"
+  },
+  {
+    "category": "斧",
+    "zh": "死亡之鏟",
+    "en": "Deathspade"
+  },
+  {
+    "category": "斧",
+    "zh": "肩胛骨",
+    "en": "Bladebone"
+  },
+  {
+    "category": "斧",
+    "zh": "劈顱斧",
+    "en": "Skull Splitter"
+  },
+  {
+    "category": "斧",
+    "zh": "耙痕",
+    "en": "Rakescar"
+  },
+  {
+    "category": "斧",
+    "zh": "費屈瑪之斧",
+    "en": "Axe of Fechmar"
+  },
+  {
+    "category": "斧",
+    "zh": "血鍬",
+    "en": "Goreshovel"
+  },
+  {
+    "category": "斧",
+    "zh": "酋長",
+    "en": "The Chieftain"
+  },
+  {
+    "category": "斧",
+    "zh": "劈腦",
+    "en": "Brainhew"
+  },
+  {
+    "category": "斧",
+    "zh": "巨無霸",
+    "en": "Humongous"
+  },
+  {
+    "category": "斧",
+    "zh": "冷殺",
+    "en": "Coldkill"
+  },
+  {
+    "category": "斧",
+    "zh": "屠夫的徒弟",
+    "en": "Butcher's Pupil"
+  },
+  {
+    "category": "斧",
+    "zh": "島擊",
+    "en": "Islestrike"
+  },
+  {
+    "category": "斧",
+    "zh": "龐貝之怒",
+    "en": "Pompeii's Wrath"
+  },
+  {
+    "category": "斧",
+    "zh": "那伽守護者",
+    "en": "Guardian Naga"
+  },
+  {
+    "category": "斧",
+    "zh": "戰爵之證",
+    "en": "Warlord's Trust"
+  },
+  {
+    "category": "斧",
+    "zh": "鋼鐵魔咒",
+    "en": "Spellsteel"
+  },
+  {
+    "category": "斧",
+    "zh": "暴風騎士",
+    "en": "Stormrider"
+  },
+  {
+    "category": "斧",
+    "zh": "斬骨者之斧",
+    "en": "Boneslayer Blade"
+  },
+  {
+    "category": "斧",
+    "zh": "牛頭怪",
+    "en": "The Minotaur"
+  },
+  {
+    "category": "斧",
+    "zh": "剃刀銳斧",
+    "en": "Razor's Edge"
+  },
+  {
+    "category": "斧",
+    "zh": "符文大師",
+    "en": "Rune Master"
+  },
+  {
+    "category": "斧",
+    "zh": "鶴嘴",
+    "en": "Cranebeak"
+  },
+  {
+    "category": "斧",
+    "zh": "死亡劈斧",
+    "en": "Death Cleaver"
+  },
+  {
+    "category": "斧",
+    "zh": "無形之刃",
+    "en": "Ethereal Edge"
+  },
+  {
+    "category": "斧",
+    "zh": "地獄殺戮者",
+    "en": "Hellslayer"
+  },
+  {
+    "category": "斧",
+    "zh": "梅希斯密特之劫掠者",
+    "en": "Messerschmidt's Reaver"
+  },
+  {
+    "category": "斧",
+    "zh": "劊子手的裁決",
+    "en": "Executioner's Justice"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "迪馬克的砍刀",
+    "en": "Dimoak's Hew"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "鐵刺棒",
+    "en": "Steelgoad"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "靈魂收割者",
+    "en": "Soul Harvest"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "戰鬥枝椏",
+    "en": "The Battlebranch"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "悲哀護杖",
+    "en": "Woestave"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "猙獰奪魂者",
+    "en": "The Grim Reaper"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "刮肉者",
+    "en": "The Meat Scraper"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "黑蛭長刀",
+    "en": "Blackleach Blade"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "雅典娜之怒",
+    "en": "Athena's Wrath"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "墓石長戟",
+    "en": "Pierre Tombale Couant"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "血肉吞食者",
+    "en": "Husoldal Evo"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "懼焰亡靈",
+    "en": "Grim's Burning Dead"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "破骨",
+    "en": "Bonehew"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "死神喪鐘",
+    "en": "The Reaper's Toll"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "盜墓者",
+    "en": "Tomb Reaver"
+  },
+  {
+    "category": "長柄武器",
+    "zh": "暴風尖塔",
+    "en": "Stormspire"
+  },
+  {
+    "category": "長矛",
+    "zh": "龍槍",
+    "en": "The Dragon Chang"
+  },
+  {
+    "category": "長矛",
+    "zh": "剃刀叉",
+    "en": "Razortine"
+  },
+  {
+    "category": "長矛",
+    "zh": "血賊",
+    "en": "Bloodthief"
+  },
+  {
+    "category": "長矛",
+    "zh": "雅該長矛",
+    "en": "Lance of Yaggai"
+  },
+  {
+    "category": "長矛",
+    "zh": "坦納血杖",
+    "en": "The Tannr Gorerod"
+  },
+  {
+    "category": "長矛",
+    "zh": "刺穿者",
+    "en": "The Impaler"
+  },
+  {
+    "category": "長矛",
+    "zh": "水魔陷阱",
+    "en": "Kelpie Snare"
+  },
+  {
+    "category": "長矛",
+    "zh": "噬魂叉",
+    "en": "Soulfeast Tine"
+  },
+  {
+    "category": "長矛",
+    "zh": "骨寸斷",
+    "en": "Hone Sundan"
+  },
+  {
+    "category": "長矛",
+    "zh": "榮耀尖塔",
+    "en": "Spire of Honor"
+  },
+  {
+    "category": "長矛",
+    "zh": "愛理歐克之針",
+    "en": "Arioc's Needle"
+  },
+  {
+    "category": "長矛",
+    "zh": "蛇魔叉",
+    "en": "Viperfork"
+  },
+  {
+    "category": "長矛",
+    "zh": "鋼鐵之柱",
+    "en": "Steel Pillar"
+  },
+  {
+    "category": "長矛",
+    "zh": "萊坎德的側翼",
+    "en": "Lycander's Flank"
+  },
+  {
+    "category": "長矛",
+    "zh": "石鴉",
+    "en": "Stoneraven"
+  },
+  {
+    "category": "短棒",
+    "zh": "魔橡樹",
+    "en": "Felloak"
+  },
+  {
+    "category": "短棒",
+    "zh": "特粗鐵釘",
+    "en": "Stoutnail"
+  },
+  {
+    "category": "短棒",
+    "zh": "闇族碎滅者",
+    "en": "Dark Clan Crusher"
+  },
+  {
+    "category": "短棒",
+    "zh": "血肉撕裂者",
+    "en": "Fleshrender"
+  },
+  {
+    "category": "短棒",
+    "zh": "北地肉鎚",
+    "en": "Nord's Tenderizer"
+  },
+  {
+    "category": "短棒",
+    "zh": "惡魔肢體",
+    "en": "Demon Limb"
+  },
+  {
+    "category": "釘鎚",
+    "zh": "碎擊釘錘",
+    "en": "Crushflange"
+  },
+  {
+    "category": "釘鎚",
+    "zh": "血升",
+    "en": "Bloodrise"
+  },
+  {
+    "category": "釘鎚",
+    "zh": "將軍的連枷",
+    "en": "The General's Tan Do Li Ga"
+  },
+  {
+    "category": "釘鎚",
+    "zh": "尖嘯冰霜",
+    "en": "Sureshrill Frost"
+  },
+  {
+    "category": "釘鎚",
+    "zh": "月落",
+    "en": "Moonfall"
+  },
+  {
+    "category": "釘鎚",
+    "zh": "貝西爾的漩渦",
+    "en": "Baezil's Vortex"
+  },
+  {
+    "category": "釘鎚",
+    "zh": "巴拉那之星",
+    "en": "Baranar's Star"
+  },
+  {
+    "category": "釘鎚",
+    "zh": "地平線的龍捲風",
+    "en": "Horizon's Tornado"
+  },
+  {
+    "category": "釘鎚",
+    "zh": "暴風之鞭",
+    "en": "Stormlash"
+  },
+  {
+    "category": "重槌",
+    "zh": "鐵石",
+    "en": "Ironstone"
+  },
+  {
+    "category": "重槌",
+    "zh": "碎骨",
+    "en": "Bonesnap"
+  },
+  {
+    "category": "重槌",
+    "zh": "打鋼鎚",
+    "en": "Steeldriver"
+  },
+  {
+    "category": "重槌",
+    "zh": "震地者",
+    "en": "Earthshaker"
+  },
+  {
+    "category": "重槌",
+    "zh": "血樹殘株",
+    "en": "Bloodtree Stump"
+  },
+  {
+    "category": "重槌",
+    "zh": "痛苦之槌",
+    "en": "The Gavel of Pain"
+  },
+  {
+    "category": "重槌",
+    "zh": "碎石者",
+    "en": "Stone Crusher"
+  },
+  {
+    "category": "重槌",
+    "zh": "史恰佛之鎚",
+    "en": "Schaefer's Hammer"
+  },
+  {
+    "category": "重槌",
+    "zh": "風之鎚",
+    "en": "Windhammer"
+  },
+  {
+    "category": "重槌",
+    "zh": "撼地者",
+    "en": "Earth Shifter"
+  },
+  {
+    "category": "重槌",
+    "zh": "碎腦鎚",
+    "en": "The Cranium Basher"
+  },
+  {
+    "category": "權杖",
+    "zh": "喪鐘敲擊者",
+    "en": "Knell Striker"
+  },
+  {
+    "category": "權杖",
+    "zh": "鏽蝕把手",
+    "en": "Rusthandle"
+  },
+  {
+    "category": "權杖",
+    "zh": "暴風眼",
+    "en": "Stormeye"
+  },
+  {
+    "category": "權杖",
+    "zh": "撒卡蘭姆之手",
+    "en": "Zakarum's Hand"
+  },
+  {
+    "category": "權杖",
+    "zh": "惡臭散佈者",
+    "en": "The Fetid Sprinkler"
+  },
+  {
+    "category": "權杖",
+    "zh": "聖光之手",
+    "en": "Hand of Blessed Light"
+  },
+  {
+    "category": "權杖",
+    "zh": "天堂之光",
+    "en": "Heaven's Light"
+  },
+  {
+    "category": "權杖",
+    "zh": "懺悔者",
+    "en": "The Redeemer"
+  },
+  {
+    "category": "權杖",
+    "zh": "愛斯特龍的鐵衛",
+    "en": "Astreon's Iron Ward"
+  },
+  {
+    "category": "法杖",
+    "zh": "禍根之灰",
+    "en": "Bane Ash"
+  },
+  {
+    "category": "法杖",
+    "zh": "海蛇之王",
+    "en": "Serpent Lord"
+  },
+  {
+    "category": "法杖",
+    "zh": "拉撒雷茲之杖",
+    "en": "Spire of Lazarus"
+  },
+  {
+    "category": "法杖",
+    "zh": "火精靈",
+    "en": "The Salamander"
+  },
+  {
+    "category": "法杖",
+    "zh": "鐵長棒",
+    "en": "The Iron Jang Bong"
+  },
+  {
+    "category": "法杖",
+    "zh": "剃刀杖",
+    "en": "Razorswitch"
+  },
+  {
+    "category": "法杖",
+    "zh": "肋骨粉碎者",
+    "en": "Ribcracker"
+  },
+  {
+    "category": "法杖",
+    "zh": "炫彩之怒",
+    "en": "Chromatic Ire"
+  },
+  {
+    "category": "法杖",
+    "zh": "扭曲之矛",
+    "en": "Warpspear"
+  },
+  {
+    "category": "法杖",
+    "zh": "骷髏收集者",
+    "en": "Skull Collector"
+  },
+  {
+    "category": "法杖",
+    "zh": "溫達的智慧",
+    "en": "Ondal's Wisdom"
+  },
+  {
+    "category": "法杖",
+    "zh": "曼宋的教誨",
+    "en": "Mang Song's Lesson"
+  },
+  {
+    "category": "法珠",
+    "zh": "核瞳",
+    "en": "The Oculus"
+  },
+  {
+    "category": "法珠",
+    "zh": "艾斯屈塔的憤怒",
+    "en": "Eschuta's Temper"
+  },
+  {
+    "category": "法珠",
+    "zh": "死亡深度",
+    "en": "Death's Fathom"
+  },
+  {
+    "category": "魔杖",
+    "zh": "伊洛的火炬",
+    "en": "Torch of Iro"
+  },
+  {
+    "category": "魔杖",
+    "zh": "漩渦",
+    "en": "Maelstrom"
+  },
+  {
+    "category": "魔杖",
+    "zh": "墓穴之脊",
+    "en": "Gravenspine"
+  },
+  {
+    "category": "魔杖",
+    "zh": "梅花嘆",
+    "en": "Ume's Lament"
+  },
+  {
+    "category": "魔杖",
+    "zh": "自殘枝椏",
+    "en": "Suicide Branch"
+  },
+  {
+    "category": "魔杖",
+    "zh": "凱林碎片",
+    "en": "Carin Shard"
+  },
+  {
+    "category": "魔杖",
+    "zh": "李奧瑞克王的手骨",
+    "en": "Arm of King Leoric"
+  },
+  {
+    "category": "魔杖",
+    "zh": "黑手之鑰",
+    "en": "Blackhand Key"
+  },
+  {
+    "category": "魔杖",
+    "zh": "骸骨陰影",
+    "en": "Boneshade"
+  },
+  {
+    "category": "魔杖",
+    "zh": "死亡之網",
+    "en": "Death's Web"
+  },
+  {
+    "category": "拳刃",
+    "zh": "霸圖克的割喉爪",
+    "en": "Bartuc's Cut-Throat"
+  },
+  {
+    "category": "拳刃",
+    "zh": "影殺者",
+    "en": "Shadow Killer"
+  },
+  {
+    "category": "拳刃",
+    "zh": "碧玉爪",
+    "en": "Jade Talon"
+  },
+  {
+    "category": "拳刃",
+    "zh": "火蜥蜴之爪",
+    "en": "Firelizard's Talons"
+  },
+  {
+    "category": "弓",
+    "zh": "奪人目",
+    "en": "Pluckeye"
+  },
+  {
+    "category": "弓",
+    "zh": "凋萎之弦",
+    "en": "Witherstring"
+  },
+  {
+    "category": "弓",
+    "zh": "掠鴉之爪",
+    "en": "Raven Claw"
+  },
+  {
+    "category": "弓",
+    "zh": "俠盜之弓",
+    "en": "Rogue's Bow"
+  },
+  {
+    "category": "弓",
+    "zh": "暴風之擊",
+    "en": "Stormstrike"
+  },
+  {
+    "category": "弓",
+    "zh": "凋謝弓弦",
+    "en": "Wizendraw"
+  },
+  {
+    "category": "弓",
+    "zh": "地獄轟鳴",
+    "en": "Hellclap"
+  },
+  {
+    "category": "弓",
+    "zh": "爆裂咆哮",
+    "en": "Blastbark"
+  },
+  {
+    "category": "弓",
+    "zh": "天擊",
+    "en": "Skystrike"
+  },
+  {
+    "category": "弓",
+    "zh": "撕裂之鉤",
+    "en": "Riphook"
+  },
+  {
+    "category": "弓",
+    "zh": "社角久子",
+    "en": "Kuko Shakaku"
+  },
+  {
+    "category": "弓",
+    "zh": "無盡冰雹",
+    "en": "Endlesshail"
+  },
+  {
+    "category": "弓",
+    "zh": "狂巫之弦",
+    "en": "Witchwild String"
+  },
+  {
+    "category": "弓",
+    "zh": "懸崖殺手",
+    "en": "Cliffkiller"
+  },
+  {
+    "category": "弓",
+    "zh": "巫師之怒",
+    "en": "Magewrath"
+  },
+  {
+    "category": "弓",
+    "zh": "金擊之拱",
+    "en": "Goldstrike Arch"
+  },
+  {
+    "category": "弓",
+    "zh": "鷹角弓",
+    "en": "Eaglehorn"
+  },
+  {
+    "category": "弓",
+    "zh": "絕命",
+    "en": "Widowmaker"
+  },
+  {
+    "category": "弓",
+    "zh": "風之力",
+    "en": "Windforce"
+  },
+  {
+    "category": "弓",
+    "zh": "萊坎德的準頭",
+    "en": "Lycander's Aim"
+  },
+  {
+    "category": "弓",
+    "zh": "血鴉之擊",
+    "en": "Blood Raven's Charge"
+  },
+  {
+    "category": "弩",
+    "zh": "鉛烏鴉",
+    "en": "Leadcrow"
+  },
+  {
+    "category": "弩",
+    "zh": "膿毒之刺",
+    "en": "Ichorsting"
+  },
+  {
+    "category": "弩",
+    "zh": "地獄擲弩",
+    "en": "Hellcast"
+  },
+  {
+    "category": "弩",
+    "zh": "毀滅投索",
+    "en": "Doomslinger"
+  },
+  {
+    "category": "弩",
+    "zh": "蘭古布利薩",
+    "en": "Langer Briser"
+  },
+  {
+    "category": "弩",
+    "zh": "吐膿毒弩",
+    "en": "Pus Spitter"
+  },
+  {
+    "category": "弩",
+    "zh": "暴雪砲弩",
+    "en": "Buriza-Do Kyanon"
+  },
+  {
+    "category": "弩",
+    "zh": "惡魔機弩",
+    "en": "Demon Machine"
+  },
+  {
+    "category": "弩",
+    "zh": "地獄刑具",
+    "en": "Hellrack"
+  },
+  {
+    "category": "弩",
+    "zh": "內臟吸管",
+    "en": "Gut Siphon"
+  },
+  {
+    "category": "標槍",
+    "zh": "惡魔之拱",
+    "en": "Demon's Arch"
+  },
+  {
+    "category": "標槍",
+    "zh": "死靈夜翔",
+    "en": "Wraith Flight"
+  },
+  {
+    "category": "標槍",
+    "zh": "石像鬼之噬",
+    "en": "Gargoyle's Bite"
+  },
+  {
+    "category": "標槍",
+    "zh": "泰坦的復仇",
+    "en": "Titan's Revenge"
+  },
+  {
+    "category": "標槍",
+    "zh": "雷霆之擊",
+    "en": "Thunderstroke"
+  },
+  {
+    "category": "投擲武器",
+    "zh": "死亡尖鑽",
+    "en": "Deathbit"
+  },
+  {
+    "category": "投擲武器",
+    "zh": "頭皮剝斧",
+    "en": "The Scalper"
+  },
+  {
+    "category": "投擲武器",
+    "zh": "戰爭之鳥",
+    "en": "Warshrike"
+  },
+  {
+    "category": "投擲武器",
+    "zh": "吉默削斧",
+    "en": "Gimmershred"
+  },
+  {
+    "category": "投擲武器",
+    "zh": "撕裂者",
+    "en": "Lacerator"
+  }
+]

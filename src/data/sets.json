@@ -1,0 +1,670 @@
+{
+  "Arcanna's Tricks": {
+    "chinese_name": "阿卡娜的诡计",
+    "items": [
+      {
+        "name": "Arcanna's Sign",
+        "name_zh": "阿卡娜的符号"
+      },
+      {
+        "name": "Arcanna's Deathwand",
+        "name_zh": "阿卡娜的死亡之杖"
+      },
+      {
+        "name": "Arcanna's Head",
+        "name_zh": "阿卡娜的头"
+      },
+      {
+        "name": "Arcanna's Flesh",
+        "name_zh": "阿卡娜的血肉"
+      }
+    ]
+  },
+  "Arctic Gear": {
+    "chinese_name": "北极装置",
+    "items": [
+      {
+        "name": "Arctic Furs",
+        "name_zh": "北极皮毛"
+      },
+      {
+        "name": "Arctic Binding",
+        "name_zh": "北极捆缚"
+      },
+      {
+        "name": "Arctic Mitts",
+        "name_zh": "北极手套"
+      },
+      {
+        "name": "Arctic Horn",
+        "name_zh": "北极号角"
+      }
+    ]
+  },
+  "Berserker's Arsenal": {
+    "chinese_name": "狂战士的军火库",
+    "items": [
+      {
+        "name": "Berserker's Headgear",
+        "name_zh": "狂战士的头戴"
+      },
+      {
+        "name": "Berserker's Hauberk",
+        "name_zh": "狂战士的锁子甲"
+      },
+      {
+        "name": "Berserker's Hatchet",
+        "name_zh": "狂战士的手斧"
+      }
+    ]
+  },
+  "Cathan's Traps": {
+    "chinese_name": "卡珊的陷阱",
+    "items": [
+      {
+        "name": "Cathan's Rule",
+        "name_zh": "卡珊之尺"
+      },
+      {
+        "name": "Cathan's Mesh",
+        "name_zh": "卡珊之网"
+      },
+      {
+        "name": "Cathan's Visage",
+        "name_zh": "卡珊的面容"
+      },
+      {
+        "name": "Cathan's Sigil",
+        "name_zh": "卡珊的魔咒"
+      },
+      {
+        "name": "Cathan's Seal",
+        "name_zh": "卡珊的封印"
+      }
+    ]
+  },
+  "Civerb's Vestments": {
+    "chinese_name": "希弗伯的法衣",
+    "items": [
+      {
+        "name": "Civerb's Ward",
+        "name_zh": "希弗伯的防护"
+      },
+      {
+        "name": "Civerb's Icon",
+        "name_zh": "希弗伯的图案"
+      },
+      {
+        "name": "Civerb's Cudgel",
+        "name_zh": "希弗伯的短棍"
+      }
+    ]
+  },
+  "Cleglaw's Brace": {
+    "chinese_name": "克雷得劳的支柱",
+    "items": [
+      {
+        "name": "Cleglaw's Tooth",
+        "name_zh": "克雷得劳之牙"
+      },
+      {
+        "name": "Cleglaw's Claw",
+        "name_zh": "克雷得劳之爪"
+      },
+      {
+        "name": "Cleglaw's Pincers",
+        "name_zh": "克雷得劳之钳"
+      }
+    ]
+  },
+  "Angelic Raiment": {
+    "chinese_name": "天上的衣服",
+    "items": [
+      {
+        "name": "Angelic Sickle",
+        "name_zh": "天使的镰刀"
+      },
+      {
+        "name": "Angelic Mantle",
+        "name_zh": "天使的斗篷"
+      },
+      {
+        "name": "Angelic Halo",
+        "name_zh": "天使的光晕"
+      },
+      {
+        "name": "Angelic Wings",
+        "name_zh": "天使之翼"
+      }
+    ]
+  },
+  "Hsarus' Defense": {
+    "chinese_name": "哈斯拉柏的防御",
+    "items": [
+      {
+        "name": "Hsarus' Iron Heel",
+        "name_zh": "哈斯拉柏的铁后跟"
+      },
+      {
+        "name": "Hsarus' Iron Fist",
+        "name_zh": "哈斯拉柏的铁拳"
+      },
+      {
+        "name": "Hsarus' Iron Stay",
+        "name_zh": "哈斯拉柏的铁胸衣"
+      }
+    ]
+  },
+  "Infernal Tools": {
+    "chinese_name": "地狱工具",
+    "items": [
+      {
+        "name": "Infernal Cranium",
+        "name_zh": "地狱头骨"
+      },
+      {
+        "name": "Infernal Torch",
+        "name_zh": "地狱火炬"
+      },
+      {
+        "name": "Infernal Sign",
+        "name_zh": "地狱符号"
+      }
+    ]
+  },
+  "Iratha's Finery": {
+    "chinese_name": "依雷撒的精洗炉",
+    "items": [
+      {
+        "name": "Iratha's Collar",
+        "name_zh": "依雷撒的项链"
+      },
+      {
+        "name": "Iratha's Cuff",
+        "name_zh": "依雷撒的护腕"
+      },
+      {
+        "name": "Iratha's Coil",
+        "name_zh": "依雷撒的头盔"
+      },
+      {
+        "name": "Iratha's Cord",
+        "name_zh": "依雷撒的腰带"
+      }
+    ]
+  },
+  "Isenhart's Armory": {
+    "chinese_name": "依森哈德的武器室",
+    "items": [
+      {
+        "name": "Isenhart's Lightbrand",
+        "name_zh": "依森哈德的剑"
+      },
+      {
+        "name": "Isenhart's Case",
+        "name_zh": "依森哈德的胸甲"
+      },
+      {
+        "name": "Isenhart's Horns",
+        "name_zh": "依森哈德的头盔"
+      },
+      {
+        "name": "Isenhart's Parry",
+        "name_zh": "依森哈德的盾牌"
+      }
+    ]
+  },
+  "Milabrega's Regalia": {
+    "chinese_name": "米拉伯佳的雪茄",
+    "items": [
+      {
+        "name": "Milabrega's Rod",
+        "name_zh": "米拉伯佳的权杖"
+      },
+      {
+        "name": "Milabrega's Robe",
+        "name_zh": "米拉伯佳的铠甲"
+      },
+      {
+        "name": "Milabrega's Diadem",
+        "name_zh": "米拉伯佳的头盔"
+      },
+      {
+        "name": "Milabrega's Orb",
+        "name_zh": "米拉伯佳的盾牌"
+      }
+    ]
+  },
+  "Sigon's Complete Steel": {
+    "chinese_name": "西刚的全套刀剑",
+    "items": [
+      {
+        "name": "Sigon's Visor",
+        "name_zh": "西刚的头盔"
+      },
+      {
+        "name": "Sigon's Shelter",
+        "name_zh": "西刚的铠甲"
+      },
+      {
+        "name": "Sigon's Sabot",
+        "name_zh": "西刚的靴子"
+      },
+      {
+        "name": "Sigon's Gage",
+        "name_zh": "西刚的手套"
+      },
+      {
+        "name": "Sigon's Wrap",
+        "name_zh": "西刚的腰带"
+      },
+      {
+        "name": "Sigon's Guard",
+        "name_zh": "西刚的盾牌"
+      }
+    ]
+  },
+  "Tancred's Battlegear": {
+    "chinese_name": "坦克雷的战斗工具",
+    "items": [
+      {
+        "name": "Tancred's Skull",
+        "name_zh": "坦克雷的头盔"
+      },
+      {
+        "name": "Tancred's Spine",
+        "name_zh": "坦克雷的铠甲"
+      },
+      {
+        "name": "Tancred's Crowbill",
+        "name_zh": "坦克雷的武器"
+      },
+      {
+        "name": "Tancred's Weird",
+        "name_zh": "坦克雷的腰带"
+      },
+      {
+        "name": "Tancred's Amulet",
+        "name_zh": "坦克雷的护符"
+      }
+    ]
+  },
+  "Death's Disguise": {
+    "chinese_name": "死亡的伪装",
+    "items": [
+      {
+        "name": "Death's Hand",
+        "name_zh": "死亡之手"
+      },
+      {
+        "name": "Death's Touch",
+        "name_zh": "死亡之触"
+      },
+      {
+        "name": "Death's Guard",
+        "name_zh": "死亡之护"
+      }
+    ]
+  },
+  "Vidala's Rig": {
+    "chinese_name": "维达拉的配备",
+    "items": [
+      {
+        "name": "Vidala's Barb",
+        "name_zh": "维达拉的弓"
+      },
+      {
+        "name": "Vidala's Fetlock",
+        "name_zh": "维达拉的靴子"
+      },
+      {
+        "name": "Vidala's Snare",
+        "name_zh": "维达拉的护身符"
+      },
+      {
+        "name": "Vidala's Ambush",
+        "name_zh": "维达拉的外套"
+      }
+    ]
+  },
+  "Heaven's Brethren": {
+    "chinese_name": "天堂的信徒",
+    "items": [
+      {
+        "name": "Taebaek's Glory",
+        "name_zh": "天堂的太白"
+      },
+      {
+        "name": "Haemosu's Adamant",
+        "name_zh": "天堂的锁子甲"
+      },
+      {
+        "name": "Dangoon's Teaching",
+        "name_zh": "天堂的腰带"
+      },
+      {
+        "name": "Ondal's Almighty",
+        "name_zh": "天堂的手套"
+      }
+    ]
+  },
+  "The Disciple": {
+    "chinese_name": "门徒",
+    "items": [
+      {
+        "name": "Telling of Beads",
+        "name_zh": "门徒的护符"
+      },
+      {
+        "name": "Laying of Hands",
+        "name_zh": "门徒的手套"
+      },
+      {
+        "name": "Rite of Passage",
+        "name_zh": "门徒的靴子"
+      },
+      {
+        "name": "Dark Adherent",
+        "name_zh": "门徒的铠甲"
+      },
+      {
+        "name": "Credendum",
+        "name_zh": "门徒的腰带"
+      }
+    ]
+  },
+  "Hwanin's Majesty": {
+    "chinese_name": "华宁的威严",
+    "items": [
+      {
+        "name": "Hwanin's Splendor",
+        "name_zh": "华宁的光辉"
+      },
+      {
+        "name": "Hwanin's Refuge",
+        "name_zh": "华宁的庇护"
+      },
+      {
+        "name": "Hwanin's Blessing",
+        "name_zh": "华宁的祝福"
+      },
+      {
+        "name": "Hwanin's Justice",
+        "name_zh": "华宁的正义"
+      }
+    ]
+  },
+  "Cow King's Leathers": {
+    "chinese_name": "牛魔王之皮",
+    "items": [
+      {
+        "name": "Cow King's Horns",
+        "name_zh": "牛王的角"
+      },
+      {
+        "name": "Cow King's Hide",
+        "name_zh": "牛王的皮"
+      },
+      {
+        "name": "Cow King's Hooves",
+        "name_zh": "牛王的蹄"
+      }
+    ]
+  },
+  "Naj's Ancient Vestige": {
+    "chinese_name": "娜吉的古代遗迹",
+    "items": [
+      {
+        "name": "Naj's Circlet",
+        "name_zh": "娜吉的小环"
+      },
+      {
+        "name": "Naj's Light Plate",
+        "name_zh": "娜吉的轻铠甲"
+      },
+      {
+        "name": "Naj's Staff",
+        "name_zh": "娜吉的解密棒"
+      }
+    ]
+  },
+  "Sander's Folly": {
+    "chinese_name": "山德的愚行",
+    "items": [
+      {
+        "name": "Sander's Paragon",
+        "name_zh": "山德的模范"
+      },
+      {
+        "name": "Sander's Taboo",
+        "name_zh": "山德的禁忌"
+      },
+      {
+        "name": "Sander's Riprap",
+        "name_zh": "山德的碎石"
+      },
+      {
+        "name": "Sander's Superstition",
+        "name_zh": "山德的迷信"
+      }
+    ]
+  },
+  "Sazabi's Grand Tribute": {
+    "chinese_name": "沙撒璧的雄伟贡品",
+    "items": [
+      {
+        "name": "Sazabi's Ghost Liberator",
+        "name_zh": "沙撒璧的鬼魂释放者"
+      },
+      {
+        "name": "Sazabi's Mental Sheath",
+        "name_zh": "沙撒璧的精神之鞘"
+      },
+      {
+        "name": "Sazabi's Cobalt Redeemer",
+        "name_zh": "沙撒璧歉悔之钴"
+      }
+    ]
+  },
+  "Orphan's Call": {
+    "chinese_name": "孤儿的呼唤",
+    "items": [
+      {
+        "name": "Wilhelm's Pride",
+        "name_zh": "威廉的自尊"
+      },
+      {
+        "name": "Whitstan's Guard",
+        "name_zh": "惠特斯坦的武装"
+      },
+      {
+        "name": "Magnus' Skin",
+        "name_zh": "马格纳斯之皮"
+      },
+      {
+        "name": "Guillaume's Face",
+        "name_zh": "永吉之脸"
+      }
+    ]
+  },
+  "Aldur's Watchtower": {
+    "chinese_name": "艾尔多的守卫",
+    "items": [
+      {
+        "name": "Aldur's Rhythm",
+        "name_zh": "艾尔多的律动"
+      },
+      {
+        "name": "Aldur's Advance",
+        "name_zh": "艾尔多的成长"
+      },
+      {
+        "name": "Aldur's Deception",
+        "name_zh": "艾尔多的欺骗"
+      },
+      {
+        "name": "Aldur's Stony Gaze",
+        "name_zh": "艾尔多的冷酷凝视"
+      }
+    ]
+  },
+  "Bul-Kathos' Children": {
+    "chinese_name": "布尔凯索的孩子",
+    "items": [
+      {
+        "name": "Bul-Kathos' Tribal Guardian",
+        "name_zh": "布尔凯索的神圣代价"
+      },
+      {
+        "name": "Bul-Kathos' Sacred Charge",
+        "name_zh": "布尔凯索的部落守护"
+      }
+    ]
+  },
+  "Griswold's Legacy": {
+    "chinese_name": "格瑞斯华尔德的遗产",
+    "items": [
+      {
+        "name": "Griswold's Valor",
+        "name_zh": "格瑞斯华尔德的勇气"
+      },
+      {
+        "name": "Griswold's Heart",
+        "name_zh": "格瑞斯华尔德的荣耀"
+      },
+      {
+        "name": "Griswold's Redemption",
+        "name_zh": "格瑞斯华尔德的救赎"
+      },
+      {
+        "name": "Griswold's Honor",
+        "name_zh": "格瑞斯华尔德的荣光"
+      }
+    ]
+  },
+  "M'avina's Battle Hymn": {
+    "chinese_name": "马维娜之战斗诗歌",
+    "items": [
+      {
+        "name": "M'avina's Icy Clutch",
+        "name_zh": "马维娜的冰握"
+      },
+      {
+        "name": "M'avina's Embrace",
+        "name_zh": "马维娜的拥抱"
+      },
+      {
+        "name": "M'avina's True Sight",
+        "name_zh": "马维娜的真实之眼"
+      },
+      {
+        "name": "M'avina's Caster",
+        "name_zh": "马维娜的施展"
+      },
+      {
+        "name": "M'avina's Tenet",
+        "name_zh": "马维娜的教义"
+      }
+    ]
+  },
+  "Natalya's Odium": {
+    "chinese_name": "娜塔亚的非难",
+    "items": [
+      {
+        "name": "Natalya's Totem",
+        "name_zh": "娜塔亚的图腾"
+      },
+      {
+        "name": "Natalya's Shadow",
+        "name_zh": "娜塔亚的影子"
+      },
+      {
+        "name": "Natalya's Soul",
+        "name_zh": "娜塔亚的灵魂"
+      },
+      {
+        "name": "Natalya's Mark",
+        "name_zh": "娜塔亚的标记"
+      }
+    ]
+  },
+  "Tal Rasha's Wrappings": {
+    "chinese_name": "塔拉夏的外袍",
+    "items": [
+      {
+        "name": "Tal Rasha's Horadric Crest",
+        "name_zh": "塔拉夏的警觉之眼"
+      },
+      {
+        "name": "Tal Rasha's Adjudication",
+        "name_zh": "塔拉夏的裁决"
+      },
+      {
+        "name": "Tal Rasha's Guardianship",
+        "name_zh": "塔拉夏的精纱袍"
+      },
+      {
+        "name": "Tal Rasha's Lidless Eye",
+        "name_zh": "塔拉夏的审判之杖"
+      },
+      {
+        "name": "Tal Rasha's Fine-Spun Cloth",
+        "name_zh": "塔拉夏的美德腰带"
+      }
+    ]
+  },
+  "Trang-Oul's Avatar": {
+    "chinese_name": "塔格奥的化身",
+    "items": [
+      {
+        "name": "Trang-Oul's Guise",
+        "name_zh": "塔格奥的头骨"
+      },
+      {
+        "name": "Trang-Oul's Scales",
+        "name_zh": "塔格奥的鳞甲"
+      },
+      {
+        "name": "Trang-Oul's Wing",
+        "name_zh": "塔格奥之翼"
+      },
+      {
+        "name": "Trang-Oul's Claws",
+        "name_zh": "塔格奥之爪"
+      },
+      {
+        "name": "Trang-Oul's Girth",
+        "name_zh": "塔格奥之腰"
+      }
+    ]
+  },
+  "Immortal King": {
+    "chinese_name": "不朽之王",
+    "items": [
+      {
+        "name": "Immortal King's Will",
+        "name_zh": "不朽之王的意志"
+      },
+      {
+        "name": "Immortal King's Soul Cage",
+        "name_zh": "不朽之王的灵魂牢笼"
+      },
+      {
+        "name": "Immortal King's Stone Crusher",
+        "name_zh": "不朽之王的碎魂者"
+      },
+      {
+        "name": "Immortal King's Pillar",
+        "name_zh": "不朽之王之柱"
+      },
+      {
+        "name": "Immortal King's Detail",
+        "name_zh": "不朽之王的琐事"
+      },
+      {
+        "name": "Immortal King's Forge",
+        "name_zh": "不朽之王的熔炉"
+      }
+    ]
+  }
+}
