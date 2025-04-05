@@ -137,7 +137,7 @@ export default function App() {
     <div 
       className="max-w-4xl mx-auto p-4 text-gray-800"    
     >
-      <h1 className="text-3xl font-bold mb-4 font-gothic text-yellow-500 tracking-widest">暗黑破坏神 II 装备追踪器</h1>
+      <h1 className="text-3xl font-bold mb-4 font-gothic text-yellow-500 tracking-widest">🔥暗黑破坏神 II 装备追踪器🔥</h1>
 
       {/* 导出/导入 + 分类按钮 */}
       <div className="flex flex-wrap gap-4 mb-6">
