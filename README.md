@@ -1,12 +1,45 @@
-# React + Vite
+# 🧙 Diablo II Set Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A lightweight, shareable Diablo II: Resurrected set collection tracker — powered by static JSON + React + Tailwind CSS.
 
-Currently, two official plugins are available:
+### 🌐 Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [https://d2r.lqjnotnb.buzz](https://d2r.lqjnotnb.buzz)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧰 Features
+
+- Track your Diablo II Set/Unique item collection
+- Fully static & fast — no backend needed
+- Automatically loads local JSON (or your own custom save)
+- Built with performance and simplicity in mind
+
+---
+
+## ⚙️ Tech Stack
+
+- **Frontend**: React + Tailwind CSS
+- **Deployment**: Netlify + Cloudflare
+- **Data Source**: Custom JSON files (scraped from multiple Diablo II websites)
+- **Local Folder**: `Diablo2`
+
+---
+
+## 🐍 Data Gathering
+
+Set & item data was collected using several Python scraping scripts targeting different D2R community websites.  
+Because item info across sites is inconsistent and sometimes messy, a lot of normalization logic was written to generate a clean, structured dataset.
+
+> Want to use your own custom item tracker?  
+> Just replace the default JSON file (`/public/data.json`) with your own version.
+
+---
+
+## 🚀 Local Development
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Diablo2.git
+cd Diablo2
+npm install
+npm run dev
