@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import setsData from "./data/sets.json";
 import uniquesData from "./data/uniques.json";
 import runewordsData from "./data/runewords.json";
+import runesData from "./data/runes.json";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState("sets");
+  const [expandMissing, setExpandMissing] = useState({});
 
   const [checkedItems, setCheckedItems] = useState(() => {
     const saved = localStorage.getItem("checkedItems");
@@ -26,12 +28,18 @@ export default function App() {
     return saved ? JSON.parse(saved) : {};
   });
 
+  const [runeCounts, setRuneCounts] = useState(() => {
+    const saved = localStorage.getItem("runeCounts");
+    return saved ? JSON.parse(saved) : {};
+  });
+
   useEffect(() => {
     localStorage.setItem("checkedItems", JSON.stringify(checkedItems));
     localStorage.setItem("muleMap", JSON.stringify(muleMap));
     localStorage.setItem("notes", JSON.stringify(notes));
     localStorage.setItem("runewordCounts", JSON.stringify(runewordCounts));
-  }, [checkedItems, muleMap, notes, runewordCounts]);
+    localStorage.setItem("runeCounts", JSON.stringify(runeCounts));
+  }, [checkedItems, muleMap, notes, runewordCounts, runeCounts]);
 
   const handleCheck = (key) => {
     setCheckedItems((prev) => ({
@@ -56,12 +64,33 @@ export default function App() {
     });
   };
 
+  const toggleMissingSection = (section) => {
+    setExpandMissing((prev) => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
+  const handleRuneCountChange = (rune, delta) => {
+    setRuneCounts((prev) => {
+      const current = prev[rune] || 0;
+      const newValue = Math.max(0, current + delta);
+      return { ...prev, [rune]: newValue };
+    });
+  };
+
   const exportData = () => {
+    const confirmed = window.confirm(
+      "确认导出存档？\n\n文件将默认保存到下载文件夹。\n文件名：diablo2-tracker-save.json"
+    );
+    if (!confirmed) return;
+
     const data = {
       checkedItems,
       muleMap,
       notes,
-      runewordCounts
+      runewordCounts,
+      runeCounts
     };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
     const link = document.createElement("a");
@@ -75,11 +104,17 @@ export default function App() {
     if (!file) return;
     const reader = new FileReader();
     reader.onload = (event) => {
-      const data = JSON.parse(event.target.result);
-      setCheckedItems(data.checkedItems || {});
-      setMuleMap(data.muleMap || {});
-      setNotes(data.notes || {});
-      setRunewordCounts(data.runewordCounts || {});
+      try {
+        const data = JSON.parse(event.target.result);
+        setCheckedItems(data.checkedItems || {});
+        setMuleMap(data.muleMap || {});
+        setNotes(data.notes || {});
+        setRunewordCounts(data.runewordCounts || {});
+        setRuneCounts(data.runeCounts || {});
+      } catch (error) {
+        alert("导入失败：文件格式不正确！");
+        console.error("Failed to parse import data:", error);
+      }
     };
     reader.readAsText(file);
   };
@@ -92,6 +127,7 @@ export default function App() {
     setMuleMap({});
     setNotes({});
     setRunewordCounts({});
+    setRuneCounts({});
     localStorage.clear();
 };
 
@@ -118,7 +154,7 @@ export default function App() {
   );
   
   // 套装统计：完整拥有的套装数量
-  const ownedSetsCount = Object.entries(setsData).filter(([setName, set]) =>
+  const ownedSetsCount = Object.entries(setsData).filter(([, set]) =>
     set.items.every((item) => checkedItems[item.name])
   ).length;
 
@@ -187,6 +223,14 @@ export default function App() {
             onClick={() => setActiveTab("runewords")}
           >
             符文之语
+          </button>
+          <button
+            className={`px-3 py-1 rounded ${
+              activeTab === "runes" ? "bg-purple-600 text-white" : "bg-gray-200"
+            }`}
+            onClick={() => setActiveTab("runes")}
+          >
+            符文
           </button>
         </div>
       </div>
@@ -274,94 +318,203 @@ export default function App() {
       )}
 
       {/* 符文之语视图 */}
-       {activeTab === "runewords" && (
-  <div className="space-y-6">
-    <div className="text-lg font-semibold text-red-500 dark:text-red-500">
-      符文之语：{
-        Object.entries(runewordsData).filter(([en]) => runewordCounts[en] > 0).length
-      } / {Object.keys(runewordsData).length}
-    </div>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {Object.entries(runewordsData).map(([en, { 中文名 }]) => (
-        <div
-          key={en}
-          className="rounded-xl border border-gray-200 p-4 shadow bg-white flex flex-col justify-between hover:shadow-md transition"
-        >
-          <div className="flex items-center justify-between mb-2">
-            <label className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                checked={!!runewordCounts[en]}
-                onChange={() =>
-                  handleRunewordCountChange(en, runewordCounts[en] ? -runewordCounts[en] : 1)
-                }
-              />
-              <span className="font-semibold">{中文名}</span>
-            </label>
-            <span className="text-sm text-gray-500">{en}</span>
+      {activeTab === "runewords" && (
+        <div className="space-y-6">
+          <div className="text-lg font-semibold text-red-500 dark:text-red-500">
+            符文之语：{
+              Object.entries(runewordsData).filter(([en]) => runewordCounts[en] > 0).length
+            } / {Object.keys(runewordsData).length}
           </div>
-          <div className="flex items-center justify-end gap-2">
-            <button
-              className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-lg leading-none"
-              onClick={() => handleRunewordCountChange(en, -1)}
-            >
-              −
-            </button>
-            <span className="w-6 text-center font-mono">{runewordCounts[en] || 0}</span>
-            <button
-              className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-lg leading-none"
-              onClick={() => handleRunewordCountChange(en, 1)}
-            >
-              ＋
-            </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {Object.entries(runewordsData).map(([en, { 中文名 }]) => (
+              <div
+                key={en}
+                className="rounded-xl border border-gray-200 p-4 shadow bg-white flex flex-col justify-between hover:shadow-md transition"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <label className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      checked={!!runewordCounts[en]}
+                      onChange={() =>
+                        handleRunewordCountChange(en, runewordCounts[en] ? -runewordCounts[en] : 1)
+                      }
+                    />
+                    <span className="font-semibold">{中文名}</span>
+                  </label>
+                  <span className="text-sm text-gray-500">{en}</span>
+                </div>
+                <div className="flex items-center justify-end gap-2">
+                  <button
+                    className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-lg leading-none"
+                    onClick={() => handleRunewordCountChange(en, -1)}
+                  >
+                    −
+                  </button>
+                  <span className="w-6 text-center font-mono">{runewordCounts[en] || 0}</span>
+                  <button
+                    className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-lg leading-none"
+                    onClick={() => handleRunewordCountChange(en, 1)}
+                  >
+                    ＋
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-)}
+      )}
+
+      {/* 符文视图 */}
+      {activeTab === "runes" && (
+        <div className="space-y-6">
+          <div className="text-lg font-semibold text-purple-500 dark:text-purple-500">
+            符文收集：{
+              Object.entries(runesData).filter(([rune]) => runeCounts[rune] > 0).length
+            } / {Object.keys(runesData).length}
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {Object.entries(runesData).map(([rune, { chinese_name }]) => (
+              <div
+                key={rune}
+                className="rounded-xl border border-gray-200 p-4 shadow bg-white flex flex-col justify-between hover:shadow-md transition"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <label className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      checked={!!runeCounts[rune]}
+                      onChange={() =>
+                        handleRuneCountChange(rune, runeCounts[rune] ? -runeCounts[rune] : 1)
+                      }
+                    />
+                    <span className="font-semibold">{chinese_name}</span>
+                  </label>
+                  <span className="text-sm text-gray-500">{rune}</span>
+                </div>
+                <div className="flex items-center justify-end gap-2">
+                  <button
+                    className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-lg leading-none"
+                    onClick={() => handleRuneCountChange(rune, -1)}
+                  >
+                    −
+                  </button>
+                  <span className="w-6 text-center font-mono">{runeCounts[rune] || 0}</span>
+                  <button
+                    className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-lg leading-none"
+                    onClick={() => handleRuneCountChange(rune, 1)}
+                  >
+                    ＋
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* 缺失列表 */}
       {activeTab === "sets" && missingSetItems.length > 0 && (
-        <div className="mt-10 p-4 bg-yellow-100 border border-yellow-300 rounded">
-          <h2 className="text-lg font-semibold mb-2">缺失部件：</h2>
-          <ul className="list-disc list-inside text-sm">
-            {missingSetItems.map((item, idx) => (
-              <li key={idx}>
-                {item.setName} - {item.itemNameZh} ({item.itemName})
-              </li>
-            ))}
-          </ul>
+        <div className="mt-10 border border-yellow-300 rounded bg-yellow-100">
+          <button
+            className="w-full p-4 flex items-center justify-between hover:bg-yellow-200 transition text-left font-semibold"
+            onClick={() => toggleMissingSection("sets")}
+          >
+            <span>缺失部件：{missingSetItems.length} 个</span>
+            <span className="text-xl">{expandMissing["sets"] ? "▼" : "▶"}</span>
+          </button>
+          {expandMissing["sets"] && (
+            <div className="p-4 border-t border-yellow-300">
+              <ul className="list-disc list-inside text-sm space-y-1">
+                {missingSetItems.map((item, idx) => (
+                  <li key={idx}>
+                    {item.setName} - {item.itemNameZh} ({item.itemName})
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       )}
 
       {activeTab === "uniques" && missingUniques.length > 0 && (
-        <div className="mt-10 p-4 bg-yellow-100 border border-yellow-300 rounded">
-          <h2 className="text-lg font-semibold mb-2">未拥有的暗金：</h2>
-          <ul className="list-disc list-inside text-sm">
-            {missingUniques.map((item, idx) => (
-              <li key={idx}>
-                {item.zh} ({item.en})
-              </li>
-            ))}
-          </ul>
+        <div className="mt-10 border border-yellow-300 rounded bg-yellow-100">
+          <button
+            className="w-full p-4 flex items-center justify-between hover:bg-yellow-200 transition text-left font-semibold"
+            onClick={() => toggleMissingSection("uniques")}
+          >
+            <span>未拥有的暗金：{missingUniques.length} 个</span>
+            <span className="text-xl">{expandMissing["uniques"] ? "▼" : "▶"}</span>
+          </button>
+          {expandMissing["uniques"] && (
+            <div className="p-4 border-t border-yellow-300">
+              <ul className="list-disc list-inside text-sm space-y-1">
+                {missingUniques.map((item, idx) => (
+                  <li key={idx}>
+                    {item.zh} ({item.en})
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       )}
 
-      {activeTab === "runewords" && (
-        <div className="mt-10 p-4 bg-yellow-100 border border-yellow-300 rounded">
-          <h2 className="text-lg font-semibold mb-2">未拥有的符文之语：</h2>
-          <ul className="list-disc list-inside text-sm">
-            {Object.entries(runewordsData)
-              .filter(([en]) => !(runewordCounts[en] > 0))
-              .map(([en, { 中文名 }], idx) => (
-                <li key={idx}>
-                  {中文名} ({en})
-                </li>
-              ))}
-          </ul>
-        </div>
-      )}
+      {activeTab === "runewords" && (() => {
+        const missingRunewords = Object.entries(runewordsData).filter(([en]) => !(runewordCounts[en] > 0));
+        return (
+          missingRunewords.length > 0 && (
+            <div className="mt-10 border border-yellow-300 rounded bg-yellow-100">
+              <button
+                className="w-full p-4 flex items-center justify-between hover:bg-yellow-200 transition text-left font-semibold"
+                onClick={() => toggleMissingSection("runewords")}
+              >
+                <span>未拥有的符文之语：{missingRunewords.length} 个</span>
+                <span className="text-xl">{expandMissing["runewords"] ? "▼" : "▶"}</span>
+              </button>
+              {expandMissing["runewords"] && (
+                <div className="p-4 border-t border-yellow-300">
+                  <ul className="list-disc list-inside text-sm space-y-1">
+                    {missingRunewords.map(([en, { 中文名 }], idx) => (
+                      <li key={idx}>
+                        {中文名} ({en})
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )
+        );
+      })()}
+
+      {activeTab === "runes" && (() => {
+        const missingRunes = Object.entries(runesData).filter(([rune]) => !(runeCounts[rune] > 0));
+        return (
+          missingRunes.length > 0 && (
+            <div className="mt-10 border border-yellow-300 rounded bg-yellow-100">
+              <button
+                className="w-full p-4 flex items-center justify-between hover:bg-yellow-200 transition text-left font-semibold"
+                onClick={() => toggleMissingSection("runes")}
+              >
+                <span>未拥有的符文：{missingRunes.length} 个</span>
+                <span className="text-xl">{expandMissing["runes"] ? "▼" : "▶"}</span>
+              </button>
+              {expandMissing["runes"] && (
+                <div className="p-4 border-t border-yellow-300">
+                  <ul className="list-disc list-inside text-sm space-y-1">
+                    {missingRunes.map(([rune, { chinese_name }], idx) => (
+                      <li key={idx}>
+                        {chinese_name} ({rune})
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )
+        );
+      })()}
     </div>
   );
 }

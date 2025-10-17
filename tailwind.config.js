@@ -1,4 +1,5 @@
 // tailwind.config.js
+/* global module */
 module.exports = {
   darkMode: 'class', // ✅ M 要大写！
   content: [

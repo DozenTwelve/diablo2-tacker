@@ -1,0 +1,126 @@
+{
+  "El": {
+    "chinese_name": "埃尔",
+    "tier": 1
+  },
+  "Eld": {
+    "chinese_name": "埃德",
+    "tier": 1
+  },
+  "Tir": {
+    "chinese_name": "缇尔",
+    "tier": 2
+  },
+  "Nef": {
+    "chinese_name": "内夫",
+    "tier": 2
+  },
+  "Eth": {
+    "chinese_name": "以太",
+    "tier": 3
+  },
+  "Ith": {
+    "chinese_name": "伊斯",
+    "tier": 3
+  },
+  "Tal": {
+    "chinese_name": "塔尔",
+    "tier": 4
+  },
+  "Ral": {
+    "chinese_name": "拉尔",
+    "tier": 4
+  },
+  "Ort": {
+    "chinese_name": "奥特",
+    "tier": 5
+  },
+  "Thul": {
+    "chinese_name": "祖尔",
+    "tier": 5
+  },
+  "Amn": {
+    "chinese_name": "艾姆恩",
+    "tier": 6
+  },
+  "Sol": {
+    "chinese_name": "索尔",
+    "tier": 6
+  },
+  "Shael": {
+    "chinese_name": "谢尔",
+    "tier": 7
+  },
+  "Dol": {
+    "chinese_name": "多尔",
+    "tier": 7
+  },
+  "Hel": {
+    "chinese_name": "赫尔",
+    "tier": 8
+  },
+  "Io": {
+    "chinese_name": "艾欧",
+    "tier": 8
+  },
+  "Lum": {
+    "chinese_name": "卢姆",
+    "tier": 9
+  },
+  "Ko": {
+    "chinese_name": "科",
+    "tier": 9
+  },
+  "Vex": {
+    "chinese_name": "沃克斯",
+    "tier": 10
+  },
+  "Gul": {
+    "chinese_name": "古尔",
+    "tier": 10
+  },
+  "Mal": {
+    "chinese_name": "玛尔",
+    "tier": 11
+  },
+  "Amon": {
+    "chinese_name": "阿蒙",
+    "tier": 11
+  },
+  "Pul": {
+    "chinese_name": "普尔",
+    "tier": 12
+  },
+  "Um": {
+    "chinese_name": "乌姆",
+    "tier": 12
+  },
+  "Ohm": {
+    "chinese_name": "欧姆",
+    "tier": 13
+  },
+  "Lo": {
+    "chinese_name": "洛",
+    "tier": 13
+  },
+  "Sur": {
+    "chinese_name": "苏尔",
+    "tier": 14
+  },
+  "Ber": {
+    "chinese_name": "贝尔",
+    "tier": 14
+  },
+  "Jah": {
+    "chinese_name": "雅",
+    "tier": 15
+  },
+  "Cham": {
+    "chinese_name": "查姆",
+    "tier": 15
+  },
+  "Zod": {
+    "chinese_name": "佐德",
+    "tier": 16
+  }
+}
