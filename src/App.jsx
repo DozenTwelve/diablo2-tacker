@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import setsData from "./data/sets.json";
 import uniquesData from "./data/uniques.json";
 import runewordsData from "./data/runewords.json";
@@ -102,9 +102,8 @@ export default function App() {
         setRuneCounts(data.runeCounts || {});
         setLastImportedConfig(data);
         localStorage.setItem("lastImportedConfig", JSON.stringify(data));
-      } catch (error) {
+      } catch {
         alert("导入失败：文件格式不正确！");
-        console.error("Failed to parse import data:", error);
       }
     };
     reader.readAsText(file);
@@ -191,43 +190,47 @@ export default function App() {
     }));
   };
 
-  const missingSetItems = Object.entries(setsData).flatMap(([setName, set]) =>
-    set.items
-      .filter((item) => !checkedItems[item.name])
-      .map((item) => ({
-        setName,
-        itemName: item.name,
-        itemNameZh: item.name_zh
-      }))
-  );
+  // Memoize expensive calculations
+  const { missingSetItems, ownedSetsCount, totalSetsCount } = useMemo(() => {
+    const items = Object.entries(setsData).flatMap(([setName, set]) =>
+      set.items
+        .filter((item) => !checkedItems[item.name])
+        .map((item) => ({
+          setName,
+          itemName: item.name,
+          itemNameZh: item.name_zh
+        }))
+    );
+    const owned = Object.entries(setsData).filter(([, set]) =>
+      set.items.every((item) => checkedItems[item.name])
+    ).length;
+    return {
+      missingSetItems: items,
+      ownedSetsCount: owned,
+      totalSetsCount: Object.keys(setsData).length
+    };
+  }, [checkedItems]);
 
-  const groupedUniques = uniquesData.reduce((acc, item) => {
-    if (!acc[item.category]) {
-      acc[item.category] = [];
-    }
-    acc[item.category].push(item);
-    return acc;
-  }, {});
+  const { groupedUniques, missingUniques, ownedUniquesCount, totalUniquesCount } = useMemo(() => {
+    const grouped = uniquesData.reduce((acc, item) => {
+      if (!acc[item.category]) {
+        acc[item.category] = [];
+      }
+      acc[item.category].push(item);
+      return acc;
+    }, {});
+    const missing = uniquesData.filter((item) => !checkedItems[`unique-${item.zh}`]);
+    const owned = uniquesData.filter((item) => checkedItems[`unique-${item.zh}`]).length;
+    return {
+      groupedUniques: grouped,
+      missingUniques: missing,
+      ownedUniquesCount: owned,
+      totalUniquesCount: uniquesData.length
+    };
+  }, [checkedItems]);
 
-  const missingUniques = uniquesData.filter(
-    (item) => !checkedItems[`unique-${item.zh}`]
-  );
-  
-  // 套装统计：完整拥有的套装数量
-  const ownedSetsCount = Object.entries(setsData).filter(([, set]) =>
-    set.items.every((item) => checkedItems[item.name])
-  ).length;
-
-  // 套装总数
-  const totalSetsCount = Object.keys(setsData).length;
-
-  // 暗金统计：拥有的暗金数量
-  const ownedUniquesCount = uniquesData.filter(
-    (item) => checkedItems[`unique-${item.zh}`]
-  ).length;
-
-  // 暗金总数
-  const totalUniquesCount = uniquesData.length;
+  // Memoize Mule options to avoid recreating on every render
+  const MULE_OPTIONS = useMemo(() => [...Array(10)].map((_, i) => i + 1), []);
 
   return (
     <div className="gothic-container">
@@ -333,9 +336,9 @@ export default function App() {
                   onChange={(e) => handleMuleChange(setName, e.target.value)}
                 >
                   <option value="">选择骤子</option>
-                  {[...Array(10)].map((_, i) => (
-                    <option key={i + 1} value={`Mule${i + 1}`}>
-                      Mule{i + 1}
+                  {MULE_OPTIONS.map((i) => (
+                    <option key={i} value={`Mule${i}`}>
+                      Mule{i}
                     </option>
                   ))}
                 </select>
