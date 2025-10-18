@@ -170,64 +170,56 @@ export default function App() {
   const totalUniquesCount = uniquesData.length;
 
   return (
-    <div 
-      className="max-w-4xl mx-auto p-4 text-gray-800"    
-    >
-      <h1 className="text-3xl font-bold mb-4 font-gothic text-yellow-500 tracking-widest">✝️🔥 暗黑破坏神 II 装备追踪器 🔥👿</h1>
+    <div className="gothic-container">
+      <div className="gothic-header">
+        <h1>暗黑破坏神 II 装备追踪器</h1>
+        <p className="gothic-text-muted">Diablo II Equipment Tracker</p>
+      </div>
 
-      {/* 导出/导入 + 分类按钮 */}
+      {/* Control Buttons */}
       <div className="flex flex-wrap gap-4 mb-6">
         <button
-          className="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded"
+          className="gothic-btn"
           onClick={exportData}
         >
           导出存档
         </button>
-        <label className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded cursor-pointer">
+        <label className="gothic-btn gothic-btn-secondary" style={{ cursor: 'pointer', margin: 0 }}>
           导入存档
           <input
             type="file"
             accept="application/json"
             onChange={importData}
-            className="hidden"
+            className="gothic-hidden"
           />
         </label>
-      {/* 清空按钮 */}
         <button
-          className="bg-gray-800 hover:bg-red-700 text-white px-4 py-2 rounded"
+          className="gothic-btn gothic-btn-secondary"
           onClick={clearAllData}
         >
-        清空所有记录
+          清空所有记录
         </button>
         <div className="flex gap-2 ml-auto">
           <button
-            className={`px-3 py-1 rounded ${
-              activeTab === "sets" ? "bg-green-600 text-white" : "bg-gray-200"
-            }`}
+            className={`gothic-tab-btn ${activeTab === "sets" ? "active" : ""}`}
             onClick={() => setActiveTab("sets")}
           >
             套装
           </button>
           <button
-            className={`px-3 py-1 rounded ${
-              activeTab === "uniques" ? "bg-yellow-600 text-white" : "bg-gray-200"
-            }`}
+            className={`gothic-tab-btn ${activeTab === "uniques" ? "active" : ""}`}
             onClick={() => setActiveTab("uniques")}
           >
             暗金
           </button>
           <button
-            className={`px-3 py-1 rounded ${
-              activeTab === "runewords" ? "bg-red-600 text-white" : "bg-gray-200"
-            }`}
+            className={`gothic-tab-btn ${activeTab === "runewords" ? "active" : ""}`}
             onClick={() => setActiveTab("runewords")}
           >
             符文之语
           </button>
           <button
-            className={`px-3 py-1 rounded ${
-              activeTab === "runes" ? "bg-purple-600 text-white" : "bg-gray-200"
-            }`}
+            className={`gothic-tab-btn ${activeTab === "runes" ? "active" : ""}`}
             onClick={() => setActiveTab("runes")}
           >
             符文
@@ -235,24 +227,25 @@ export default function App() {
         </div>
       </div>
 
-      {/* 套装视图 */}
+      {/* Sets View */}
       {activeTab === "sets" && (
         <div className="space-y-6">
-          <div className="text-lg font-semibold text-green-500 dark:text-green-500">
+          <div className="gothic-stat">
             套装收集：{ownedSetsCount} / {totalSetsCount}
           </div>
           {Object.entries(setsData).map(([setName, set]) => (
-            <div key={setName} className="border rounded-lg shadow p-4 bg-white">
-              <div className="flex justify-between items-center mb-2">
-                <div className="font-semibold text-lg">
-                  {set.chinese_name} <span className="text-gray-500">({setName})</span>
+            <div key={setName} className="gothic-card">
+              <div className="flex justify-between items-center mb-4">
+                <div>
+                  <h3 className="gothic-text-gold">{set.chinese_name}</h3>
+                  <p className="gothic-text-muted text-sm">({setName})</p>
                 </div>
                 <select
-                  className="border p-1 text-sm rounded"
+                  className="gothic-select"
                   value={muleMap[setName] || ""}
                   onChange={(e) => handleMuleChange(setName, e.target.value)}
                 >
-                  <option value="">选择骡子</option>
+                  <option value="">选择骤子</option>
                   {[...Array(10)].map((_, i) => (
                     <option key={i + 1} value={`Mule${i + 1}`}>
                       Mule{i + 1}
@@ -260,23 +253,23 @@ export default function App() {
                   ))}
                 </select>
               </div>
-              <div className="grid grid-cols-2 gap-2 mb-2">
+              <div className="grid grid-cols-2 gap-3 mb-4">
                 {set.items.map((item) => (
-                  <label key={item.name} className="flex items-center space-x-2">
+                  <label key={item.name} className="gothic-checkbox">
                     <input
                       type="checkbox"
                       checked={!!checkedItems[item.name]}
                       onChange={() => handleCheck(item.name)}
                     />
-                    <span>
-                      {item.name_zh} ({item.name})
+                    <span className="gothic-text-primary">
+                      {item.name_zh}
                     </span>
                   </label>
                 ))}
               </div>
               <textarea
                 rows={2}
-                className="w-full border rounded p-2 text-sm"
+                className="gothic-textarea"
                 placeholder="备注..."
                 value={notes[setName] || ""}
                 onChange={(e) => handleNoteChange(setName, e.target.value)}
@@ -286,28 +279,30 @@ export default function App() {
         </div>
       )}
 
-      {/* 暗金视图 */}
+      {/* Uniques View */}
       {activeTab === "uniques" && (
         <div className="space-y-6">
-          <div className="text-lg font-semibold text-yellow-500 dark:text-yellow-500">
+          <div className="gothic-stat gothic-stat-accent">
             暗金收集：{ownedUniquesCount} / {totalUniquesCount}
           </div>
           {Object.entries(groupedUniques).map(([category, items]) => {
             const ownedCount = items.filter((item) => checkedItems[`unique-${item.zh}`]).length;
             return (
-              <div key={category} className="border rounded-lg shadow p-4 bg-white">
-                <h2 className="text-lg font-semibold mb-2 text-gray-700">
-                  {category}（{ownedCount} / {items.length}）
-                </h2>
-                <div className="grid grid-cols-2 gap-2">
+              <div key={category} className="gothic-card">
+                <h3 className="gothic-text-gold mb-4">
+                  {category}
+                  <span className="gothic-text-muted" style={{ marginLeft: '1rem' }}>(
+                    {ownedCount} / {items.length})</span>
+                </h3>
+                <div className="grid grid-cols-2 gap-3">
                   {items.map((item) => (
-                    <label key={item.zh} className="flex items-center space-x-2">
+                    <label key={item.zh} className="gothic-checkbox">
                       <input
                         type="checkbox"
                         checked={!!checkedItems[`unique-${item.zh}`]}
                         onChange={() => handleCheck(`unique-${item.zh}`)}
                       />
-                      <span>{item.zh} ({item.en})</span>
+                      <span className="gothic-text-primary">{item.zh}</span>
                     </label>
                   ))}
                 </div>
@@ -317,22 +312,19 @@ export default function App() {
         </div>
       )}
 
-      {/* 符文之语视图 */}
+      {/* Runewords View */}
       {activeTab === "runewords" && (
         <div className="space-y-6">
-          <div className="text-lg font-semibold text-red-500 dark:text-red-500">
+          <div className="gothic-stat">
             符文之语：{
               Object.entries(runewordsData).filter(([en]) => runewordCounts[en] > 0).length
             } / {Object.keys(runewordsData).length}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="gothic-grid gothic-grid-3">
             {Object.entries(runewordsData).map(([en, { 中文名 }]) => (
-              <div
-                key={en}
-                className="rounded-xl border border-gray-200 p-4 shadow bg-white flex flex-col justify-between hover:shadow-md transition"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <label className="flex items-center space-x-2">
+              <div key={en} className="gothic-item-card">
+                <div className="gothic-item-header">
+                  <label className="gothic-checkbox" style={{ margin: 0 }}>
                     <input
                       type="checkbox"
                       checked={!!runewordCounts[en]}
@@ -340,20 +332,20 @@ export default function App() {
                         handleRunewordCountChange(en, runewordCounts[en] ? -runewordCounts[en] : 1)
                       }
                     />
-                    <span className="font-semibold">{中文名}</span>
+                    <span className="gothic-item-name">{中文名}</span>
                   </label>
-                  <span className="text-sm text-gray-500">{en}</span>
                 </div>
-                <div className="flex items-center justify-end gap-2">
+                <p className="gothic-item-code" style={{ marginBottom: '1rem' }}>{en}</p>
+                <div className="gothic-item-counter">
                   <button
-                    className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-lg leading-none"
+                    className="gothic-counter-btn"
                     onClick={() => handleRunewordCountChange(en, -1)}
                   >
-                    −
+                    －
                   </button>
-                  <span className="w-6 text-center font-mono">{runewordCounts[en] || 0}</span>
+                  <span className="gothic-counter-value">{runewordCounts[en] || 0}</span>
                   <button
-                    className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-lg leading-none"
+                    className="gothic-counter-btn"
                     onClick={() => handleRunewordCountChange(en, 1)}
                   >
                     ＋
@@ -365,22 +357,19 @@ export default function App() {
         </div>
       )}
 
-      {/* 符文视图 */}
+      {/* Runes View */}
       {activeTab === "runes" && (
         <div className="space-y-6">
-          <div className="text-lg font-semibold text-purple-500 dark:text-purple-500">
+          <div className="gothic-stat gothic-stat-accent">
             符文收集：{
               Object.entries(runesData).filter(([rune]) => runeCounts[rune] > 0).length
             } / {Object.keys(runesData).length}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="gothic-grid gothic-grid-4">
             {Object.entries(runesData).map(([rune, { chinese_name }]) => (
-              <div
-                key={rune}
-                className="rounded-xl border border-gray-200 p-4 shadow bg-white flex flex-col justify-between hover:shadow-md transition"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <label className="flex items-center space-x-2">
+              <div key={rune} className="gothic-item-card">
+                <div className="gothic-item-header">
+                  <label className="gothic-checkbox" style={{ margin: 0 }}>
                     <input
                       type="checkbox"
                       checked={!!runeCounts[rune]}
@@ -388,20 +377,20 @@ export default function App() {
                         handleRuneCountChange(rune, runeCounts[rune] ? -runeCounts[rune] : 1)
                       }
                     />
-                    <span className="font-semibold">{chinese_name}</span>
+                    <span className="gothic-item-name">{chinese_name}</span>
                   </label>
-                  <span className="text-sm text-gray-500">{rune}</span>
                 </div>
-                <div className="flex items-center justify-end gap-2">
+                <p className="gothic-item-code" style={{ marginBottom: '1rem' }}>{rune}</p>
+                <div className="gothic-item-counter">
                   <button
-                    className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-lg leading-none"
+                    className="gothic-counter-btn"
                     onClick={() => handleRuneCountChange(rune, -1)}
                   >
-                    −
+                    －
                   </button>
-                  <span className="w-6 text-center font-mono">{runeCounts[rune] || 0}</span>
+                  <span className="gothic-counter-value">{runeCounts[rune] || 0}</span>
                   <button
-                    className="w-7 h-7 rounded-full bg-gray-200 hover:bg-gray-300 text-lg leading-none"
+                    className="gothic-counter-btn"
                     onClick={() => handleRuneCountChange(rune, 1)}
                   >
                     ＋
@@ -413,105 +402,109 @@ export default function App() {
         </div>
       )}
 
-      {/* 缺失列表 */}
+      {/* Missing Items Sections */}
       {activeTab === "sets" && missingSetItems.length > 0 && (
-        <div className="mt-10 border border-yellow-300 rounded bg-yellow-100">
+        <div className="gothic-divider" />
+      )}
+      {activeTab === "sets" && missingSetItems.length > 0 && (
+        <div>
           <button
-            className="w-full p-4 flex items-center justify-between hover:bg-yellow-200 transition text-left font-semibold"
+            className="gothic-collapse-btn"
             onClick={() => toggleMissingSection("sets")}
           >
             <span>缺失部件：{missingSetItems.length} 个</span>
-            <span className="text-xl">{expandMissing["sets"] ? "▼" : "▶"}</span>
+            <span className="text-lg">{expandMissing["sets"] ? "▼" : "▶"}</span>
           </button>
-          {expandMissing["sets"] && (
-            <div className="p-4 border-t border-yellow-300">
-              <ul className="list-disc list-inside text-sm space-y-1">
-                {missingSetItems.map((item, idx) => (
-                  <li key={idx}>
-                    {item.setName} - {item.itemNameZh} ({item.itemName})
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <div className={`gothic-collapse-content ${expandMissing["sets"] ? "open" : ""}`}>
+            <ul>
+              {missingSetItems.map((item, idx) => (
+                <li key={idx}>
+                  <strong>{item.setName}</strong> → {item.itemNameZh}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
 
       {activeTab === "uniques" && missingUniques.length > 0 && (
-        <div className="mt-10 border border-yellow-300 rounded bg-yellow-100">
+        <div className="gothic-divider" />
+      )}
+      {activeTab === "uniques" && missingUniques.length > 0 && (
+        <div>
           <button
-            className="w-full p-4 flex items-center justify-between hover:bg-yellow-200 transition text-left font-semibold"
+            className="gothic-collapse-btn"
             onClick={() => toggleMissingSection("uniques")}
           >
             <span>未拥有的暗金：{missingUniques.length} 个</span>
-            <span className="text-xl">{expandMissing["uniques"] ? "▼" : "▶"}</span>
+            <span className="text-lg">{expandMissing["uniques"] ? "▼" : "▶"}</span>
           </button>
-          {expandMissing["uniques"] && (
-            <div className="p-4 border-t border-yellow-300">
-              <ul className="list-disc list-inside text-sm space-y-1">
-                {missingUniques.map((item, idx) => (
-                  <li key={idx}>
-                    {item.zh} ({item.en})
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <div className={`gothic-collapse-content ${expandMissing["uniques"] ? "open" : ""}`}>
+            <ul>
+              {missingUniques.map((item, idx) => (
+                <li key={idx}>
+                  {item.zh}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
 
       {activeTab === "runewords" && (() => {
-        const missingRunewords = Object.entries(runewordsData).filter(([en]) => !(runewordCounts[en] > 0));
+        const missingRunewords = Object.entries(runewordsData).filter(([runewordKey]) => !(runewordCounts[runewordKey] > 0));
         return (
-          missingRunewords.length > 0 && (
-            <div className="mt-10 border border-yellow-300 rounded bg-yellow-100">
-              <button
-                className="w-full p-4 flex items-center justify-between hover:bg-yellow-200 transition text-left font-semibold"
-                onClick={() => toggleMissingSection("runewords")}
-              >
-                <span>未拥有的符文之语：{missingRunewords.length} 个</span>
-                <span className="text-xl">{expandMissing["runewords"] ? "▼" : "▶"}</span>
-              </button>
-              {expandMissing["runewords"] && (
-                <div className="p-4 border-t border-yellow-300">
-                  <ul className="list-disc list-inside text-sm space-y-1">
-                    {missingRunewords.map(([en, { 中文名 }], idx) => (
+          missingRunewords && missingRunewords.length > 0 && (
+            <>
+              <div className="gothic-divider" />
+              <div>
+                <button
+                  className="gothic-collapse-btn"
+                  onClick={() => toggleMissingSection("runewords")}
+                >
+                  <span>未拥有的符文之语：{missingRunewords.length} 个</span>
+                  <span className="text-lg">{expandMissing["runewords"] ? "▼" : "▶"}</span>
+                </button>
+                <div className={`gothic-collapse-content ${expandMissing["runewords"] ? "open" : ""}`}>
+                  <ul>
+                    {missingRunewords.map(([, { 中文名 }], idx) => (
                       <li key={idx}>
-                        {中文名} ({en})
+                        {中文名}
                       </li>
                     ))}
                   </ul>
                 </div>
-              )}
-            </div>
+              </div>
+            </>
           )
         );
       })()}
 
       {activeTab === "runes" && (() => {
-        const missingRunes = Object.entries(runesData).filter(([rune]) => !(runeCounts[rune] > 0));
+        const missingRunes = Object.entries(runesData).filter(([runeKey]) => !(runeCounts[runeKey] > 0));
         return (
-          missingRunes.length > 0 && (
-            <div className="mt-10 border border-yellow-300 rounded bg-yellow-100">
-              <button
-                className="w-full p-4 flex items-center justify-between hover:bg-yellow-200 transition text-left font-semibold"
-                onClick={() => toggleMissingSection("runes")}
-              >
-                <span>未拥有的符文：{missingRunes.length} 个</span>
-                <span className="text-xl">{expandMissing["runes"] ? "▼" : "▶"}</span>
-              </button>
-              {expandMissing["runes"] && (
-                <div className="p-4 border-t border-yellow-300">
-                  <ul className="list-disc list-inside text-sm space-y-1">
-                    {missingRunes.map(([rune, { chinese_name }], idx) => (
+          missingRunes && missingRunes.length > 0 && (
+            <>
+              <div className="gothic-divider" />
+              <div>
+                <button
+                  className="gothic-collapse-btn"
+                  onClick={() => toggleMissingSection("runes")}
+                >
+                  <span>未拥有的符文：{missingRunes.length} 个</span>
+                  <span className="text-lg">{expandMissing["runes"] ? "▼" : "▶"}</span>
+                </button>
+                <div className={`gothic-collapse-content ${expandMissing["runes"] ? "open" : ""}`}>
+                  <ul>
+                    {missingRunes.map(([, { chinese_name }], idx) => (
                       <li key={idx}>
-                        {chinese_name} ({rune})
+                        {chinese_name}
                       </li>
                     ))}
                   </ul>
                 </div>
-              )}
-            </div>
+              </div>
+            </>
           )
         );
       })()}
