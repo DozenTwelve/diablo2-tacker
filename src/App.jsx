@@ -325,17 +325,18 @@ export default function App() {
           </div>
           {Object.entries(setsData).map(([setName, set]) => (
             <div key={setName} className="gothic-card">
-              <div className="flex justify-between items-center mb-4">
-                <div>
+              <div className="flex justify-between items-start mb-4 gap-4">
+                <div className="flex-1">
                   <h3 className="gothic-text-gold">{set.chinese_name}</h3>
                   <p className="gothic-text-muted text-sm">({setName})</p>
                 </div>
                 <select
-                  className="gothic-select"
+                  className="gothic-select gothic-select-compact"
                   value={muleMap[setName] || ""}
                   onChange={(e) => handleMuleChange(setName, e.target.value)}
+                  style={{ whiteSpace: 'nowrap' }}
                 >
-                  <option value="">选择骤子</option>
+                  <option value="">选择</option>
                   {MULE_OPTIONS.map((i) => (
                     <option key={i} value={`Mule${i}`}>
                       Mule{i}
@@ -393,7 +394,7 @@ export default function App() {
                   <span className="gothic-text-muted" style={{ marginLeft: '1rem' }}>(
                     {ownedCount} / {items.length})</span>
                 </h3>
-                <div className="grid grid-cols-2 gap-3">
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
                   {items.map((item) => (
                     <label key={item.zh} className="gothic-checkbox">
                       <input
