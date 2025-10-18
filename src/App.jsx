@@ -33,6 +33,11 @@ export default function App() {
     return saved ? JSON.parse(saved) : {};
   });
 
+  const [lastImportedConfig, setLastImportedConfig] = useState(() => {
+    const saved = localStorage.getItem("lastImportedConfig");
+    return saved ? JSON.parse(saved) : null;
+  });
+
   useEffect(() => {
     localStorage.setItem("checkedItems", JSON.stringify(checkedItems));
     localStorage.setItem("muleMap", JSON.stringify(muleMap));
@@ -56,27 +61,11 @@ export default function App() {
     setNotes({ ...notes, [setName]: note });
   };
 
-  const handleRunewordCountChange = (key, delta) => {
-    setRunewordCounts((prev) => {
-      const current = prev[key] || 0;
-      const newValue = Math.max(0, current + delta);
-      return { ...prev, [key]: newValue };
-    });
-  };
-
   const toggleMissingSection = (section) => {
     setExpandMissing((prev) => ({
       ...prev,
       [section]: !prev[section]
     }));
-  };
-
-  const handleRuneCountChange = (rune, delta) => {
-    setRuneCounts((prev) => {
-      const current = prev[rune] || 0;
-      const newValue = Math.max(0, current + delta);
-      return { ...prev, [rune]: newValue };
-    });
   };
 
   const exportData = () => {
@@ -111,12 +100,29 @@ export default function App() {
         setNotes(data.notes || {});
         setRunewordCounts(data.runewordCounts || {});
         setRuneCounts(data.runeCounts || {});
+        setLastImportedConfig(data);
+        localStorage.setItem("lastImportedConfig", JSON.stringify(data));
       } catch (error) {
         alert("导入失败：文件格式不正确！");
         console.error("Failed to parse import data:", error);
       }
     };
     reader.readAsText(file);
+  };
+
+  const reloadConfiguration = () => {
+    if (!lastImportedConfig) {
+      alert("没有已保存的配置可以恢复！");
+      return;
+    }
+    const confirmed = window.confirm("确认要恢复上次导入的配置吗？");
+    if (!confirmed) return;
+    
+    setCheckedItems(lastImportedConfig.checkedItems || {});
+    setMuleMap(lastImportedConfig.muleMap || {});
+    setNotes(lastImportedConfig.notes || {});
+    setRunewordCounts(lastImportedConfig.runewordCounts || {});
+    setRuneCounts(lastImportedConfig.runeCounts || {});
   };
 
   const clearAllData = () => {
@@ -129,7 +135,61 @@ export default function App() {
     setRunewordCounts({});
     setRuneCounts({});
     localStorage.clear();
-};
+  };
+
+  const invertSelection = () => {
+    const confirmed = window.confirm("确认要反转当前页面的选择吗？");
+    if (!confirmed) return;
+
+    if (activeTab === "sets") {
+      // For sets tab: invert all item checkboxes
+      const newChecked = { ...checkedItems };
+      Object.entries(setsData).forEach(([, set]) => {
+        set.items.forEach((item) => {
+          newChecked[item.name] = !newChecked[item.name];
+        });
+      });
+      setCheckedItems(newChecked);
+    } else if (activeTab === "uniques") {
+      // For uniques tab: invert all unique item checkboxes
+      const newChecked = { ...checkedItems };
+      uniquesData.forEach((item) => {
+        const key = `unique-${item.zh}`;
+        newChecked[key] = !newChecked[key];
+      });
+      setCheckedItems(newChecked);
+    } else if (activeTab === "runewords") {
+      // For runewords: invert quantities (0 ↔ 1)
+      const newCounts = { ...runewordCounts };
+      Object.keys(runewordsData).forEach((en) => {
+        const current = newCounts[en] || 0;
+        newCounts[en] = current > 0 ? 0 : 1;
+      });
+      setRunewordCounts(newCounts);
+    } else if (activeTab === "runes") {
+      // For runes: invert quantities (0 ↔ 1)
+      const newCounts = { ...runeCounts };
+      Object.keys(runesData).forEach((rune) => {
+        const current = newCounts[rune] || 0;
+        newCounts[rune] = current > 0 ? 0 : 1;
+      });
+      setRuneCounts(newCounts);
+    }
+  };
+
+  const handleRunewordCountChange = (key, newValue) => {
+    setRunewordCounts((prev) => ({
+      ...prev,
+      [key]: Math.max(0, newValue)
+    }));
+  };
+
+  const handleRuneCountChange = (rune, newValue) => {
+    setRuneCounts((prev) => ({
+      ...prev,
+      [rune]: Math.max(0, newValue)
+    }));
+  };
 
   const missingSetItems = Object.entries(setsData).flatMap(([setName, set]) =>
     set.items
@@ -176,15 +236,15 @@ export default function App() {
         <p className="gothic-text-muted">Diablo II Equipment Tracker</p>
       </div>
 
-      {/* Control Buttons */}
-      <div className="flex flex-wrap gap-4 mb-6">
+      {/* Control Buttons - Row 1 */}
+      <div className="flex flex-wrap gap-4 mb-2 items-center">
         <button
-          className="gothic-btn"
+          className="gothic-btn gothic-btn-secondary gothic-btn-small"
           onClick={exportData}
         >
           导出存档
         </button>
-        <label className="gothic-btn gothic-btn-secondary" style={{ cursor: 'pointer', margin: 0 }}>
+        <label className="gothic-btn gothic-btn-secondary gothic-btn-small" style={{ cursor: 'pointer', margin: 0 }}>
           导入存档
           <input
             type="file"
@@ -194,7 +254,7 @@ export default function App() {
           />
         </label>
         <button
-          className="gothic-btn gothic-btn-secondary"
+          className="gothic-btn gothic-btn-secondary gothic-btn-small"
           onClick={clearAllData}
         >
           清空所有记录
@@ -227,11 +287,38 @@ export default function App() {
         </div>
       </div>
 
+      {/* Control Buttons - Row 2 */}
+      <div className="flex gap-4 mb-6">
+        <button
+          className="gothic-btn gothic-btn-secondary gothic-btn-small"
+          onClick={invertSelection}
+          title="反转当前页面的选择"
+        >
+          反转选择
+        </button>
+        <button
+          className="gothic-btn gothic-btn-secondary gothic-btn-small"
+          onClick={reloadConfiguration}
+          title="恢复上次导入的配置"
+        >
+          恢复配置
+        </button>
+      </div>
+
       {/* Sets View */}
       {activeTab === "sets" && (
         <div className="space-y-6">
           <div className="gothic-stat">
             套装收集：{ownedSetsCount} / {totalSetsCount}
+          </div>
+          <div className="gothic-progress-container">
+            <div
+              className="gothic-progress-bar"
+              style={{ width: `${totalSetsCount > 0 ? (ownedSetsCount / totalSetsCount) * 100 : 0}%` }}
+            />
+            <div className="gothic-progress-label">
+              {totalSetsCount > 0 ? Math.round((ownedSetsCount / totalSetsCount) * 100) : 0}%
+            </div>
           </div>
           {Object.entries(setsData).map(([setName, set]) => (
             <div key={setName} className="gothic-card">
@@ -282,8 +369,17 @@ export default function App() {
       {/* Uniques View */}
       {activeTab === "uniques" && (
         <div className="space-y-6">
-          <div className="gothic-stat gothic-stat-accent">
+          <div className="gothic-stat">
             暗金收集：{ownedUniquesCount} / {totalUniquesCount}
+          </div>
+          <div className="gothic-progress-container">
+            <div
+              className="gothic-progress-bar"
+              style={{ width: `${totalUniquesCount > 0 ? (ownedUniquesCount / totalUniquesCount) * 100 : 0}%` }}
+            />
+            <div className="gothic-progress-label">
+              {totalUniquesCount > 0 ? Math.round((ownedUniquesCount / totalUniquesCount) * 100) : 0}%
+            </div>
           </div>
           {Object.entries(groupedUniques).map(([category, items]) => {
             const ownedCount = items.filter((item) => checkedItems[`unique-${item.zh}`]).length;
@@ -320,6 +416,15 @@ export default function App() {
               Object.entries(runewordsData).filter(([en]) => runewordCounts[en] > 0).length
             } / {Object.keys(runewordsData).length}
           </div>
+          <div className="gothic-progress-container">
+            <div
+              className="gothic-progress-bar"
+              style={{ width: `${Object.keys(runewordsData).length > 0 ? (Object.entries(runewordsData).filter(([en]) => runewordCounts[en] > 0).length / Object.keys(runewordsData).length) * 100 : 0}%` }}
+            />
+            <div className="gothic-progress-label">
+              {Object.keys(runewordsData).length > 0 ? Math.round((Object.entries(runewordsData).filter(([en]) => runewordCounts[en] > 0).length / Object.keys(runewordsData).length) * 100) : 0}%
+            </div>
+          </div>
           <div className="gothic-grid gothic-grid-3">
             {Object.entries(runewordsData).map(([en, { 中文名 }]) => (
               <div key={en} className="gothic-item-card">
@@ -329,7 +434,7 @@ export default function App() {
                       type="checkbox"
                       checked={!!runewordCounts[en]}
                       onChange={() =>
-                        handleRunewordCountChange(en, runewordCounts[en] ? -runewordCounts[en] : 1)
+                        handleRunewordCountChange(en, runewordCounts[en] ? 0 : 1)
                       }
                     />
                     <span className="gothic-item-name">{中文名}</span>
@@ -339,14 +444,31 @@ export default function App() {
                 <div className="gothic-item-counter">
                   <button
                     className="gothic-counter-btn"
-                    onClick={() => handleRunewordCountChange(en, -1)}
+                    onClick={() => handleRunewordCountChange(en, Math.max(0, (runewordCounts[en] || 0) - 1))
+                    }
                   >
                     －
                   </button>
-                  <span className="gothic-counter-value">{runewordCounts[en] || 0}</span>
+                  <input
+                    type="number"
+                    min="0"
+                    value={runewordCounts[en] || 0}
+                    onChange={(e) => handleRunewordCountChange(en, parseInt(e.target.value) || 0)}
+                    style={{
+                      width: '2.5rem',
+                      textAlign: 'center',
+                      fontFamily: 'monospace',
+                      fontWeight: '600',
+                      color: 'var(--color-gold)',
+                      background: 'rgba(60, 60, 60, 0.8)',
+                      border: '1px solid var(--color-border-metal)',
+                      borderRadius: '4px',
+                      padding: '0.25rem'
+                    }}
+                  />
                   <button
                     className="gothic-counter-btn"
-                    onClick={() => handleRunewordCountChange(en, 1)}
+                    onClick={() => handleRunewordCountChange(en, (runewordCounts[en] || 0) + 1)}
                   >
                     ＋
                   </button>
@@ -360,10 +482,19 @@ export default function App() {
       {/* Runes View */}
       {activeTab === "runes" && (
         <div className="space-y-6">
-          <div className="gothic-stat gothic-stat-accent">
+          <div className="gothic-stat">
             符文收集：{
               Object.entries(runesData).filter(([rune]) => runeCounts[rune] > 0).length
             } / {Object.keys(runesData).length}
+          </div>
+          <div className="gothic-progress-container">
+            <div
+              className="gothic-progress-bar"
+              style={{ width: `${Object.keys(runesData).length > 0 ? (Object.entries(runesData).filter(([rune]) => runeCounts[rune] > 0).length / Object.keys(runesData).length) * 100 : 0}%` }}
+            />
+            <div className="gothic-progress-label">
+              {Object.keys(runesData).length > 0 ? Math.round((Object.entries(runesData).filter(([rune]) => runeCounts[rune] > 0).length / Object.keys(runesData).length) * 100) : 0}%
+            </div>
           </div>
           <div className="gothic-grid gothic-grid-4">
             {Object.entries(runesData).map(([rune, { chinese_name }]) => (
@@ -374,7 +505,7 @@ export default function App() {
                       type="checkbox"
                       checked={!!runeCounts[rune]}
                       onChange={() =>
-                        handleRuneCountChange(rune, runeCounts[rune] ? -runeCounts[rune] : 1)
+                        handleRuneCountChange(rune, runeCounts[rune] ? 0 : 1)
                       }
                     />
                     <span className="gothic-item-name">{chinese_name}</span>
@@ -384,14 +515,30 @@ export default function App() {
                 <div className="gothic-item-counter">
                   <button
                     className="gothic-counter-btn"
-                    onClick={() => handleRuneCountChange(rune, -1)}
+                    onClick={() => handleRuneCountChange(rune, Math.max(0, (runeCounts[rune] || 0) - 1))}
                   >
                     －
                   </button>
-                  <span className="gothic-counter-value">{runeCounts[rune] || 0}</span>
+                  <input
+                    type="number"
+                    min="0"
+                    value={runeCounts[rune] || 0}
+                    onChange={(e) => handleRuneCountChange(rune, parseInt(e.target.value) || 0)}
+                    style={{
+                      width: '2.5rem',
+                      textAlign: 'center',
+                      fontFamily: 'monospace',
+                      fontWeight: '600',
+                      color: 'var(--color-gold)',
+                      background: 'rgba(60, 60, 60, 0.8)',
+                      border: '1px solid var(--color-border-metal)',
+                      borderRadius: '4px',
+                      padding: '0.25rem'
+                    }}
+                  />
                   <button
                     className="gothic-counter-btn"
-                    onClick={() => handleRuneCountChange(rune, 1)}
+                    onClick={() => handleRuneCountChange(rune, (runeCounts[rune] || 0) + 1)}
                   >
                     ＋
                   </button>
