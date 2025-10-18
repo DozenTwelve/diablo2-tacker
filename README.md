@@ -4,8 +4,7 @@
 
 ### 🌐 Live Site
 
-- [https://d2r.lqjnotnb.buzz](https://d2r.lqjnotnb.buzz)
-
+- (https://d2r.gardenstatevampire.space/)[https://d2r.gardenstatevampire.space/]
 ---
 
 ## 🧰 Features
