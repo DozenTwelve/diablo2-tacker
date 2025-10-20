@@ -327,10 +327,10 @@ export default function App() {
             className="gothic-btn gothic-btn-secondary gothic-btn-small"
             onClick={exportData}
           >
-            {isChinese ? "导出存档" : "Export Save"}
+            {isChinese ? "导出 JSON" : "Export JSON"}
           </button>
           <label className="gothic-btn gothic-btn-secondary gothic-btn-small" style={{ cursor: 'pointer', margin: 0 }}>
-            {isChinese ? "导入存档" : "Import Save"}
+            {isChinese ? "导入 JSON" : "Import JSON"}
             <input
               type="file"
               accept="application/json"
