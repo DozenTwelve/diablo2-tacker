@@ -4,14 +4,15 @@
 
 ### 🌐 Live Site
 
-- [https://d2r.gardenstatevampire.space/](https://d2r.gardenstatevampire.space/)
+- https://d2r.gardenstatevampire.space/
 ---
 
 ## 🧰 Features
 
-- Track your Diablo II Set/Unique item collection
+- Track every Diablo II set, unique, runeword, and rune in one place
+- Bilingual interface with a persistent CN ↔ EN toggle
 - Fully static & fast — no backend needed
-- Automatically loads local JSON (or your own custom save)
+- LocalStorage saves progress plus import/export of tracker state
 - Built with performance and simplicity in mind
 
 ---
@@ -25,20 +26,30 @@
 
 ---
 
-## 🐍 Data Gathering
+## 🐍 Data Files
 
-Set & item data was collected using several Python scraping scripts targeting different D2R community websites.  
-Because item info across sites is inconsistent and sometimes messy, a lot of normalization logic was written to generate a clean, structured dataset.
+- `src/data/sets.json` — Chinese set names grouped by full set; English metadata in `src/data/sets_en.json`
+- `src/data/uniques.json` — Chinese unique items grouped by slot; English references in `src/data/uniqueitems_en.json`
+- `src/data/runewords.json` — Chinese runeword labels; English names in `src/data/runes_en.json`
+- `src/data/runes.json` — Rune labels, with English-only display plus Chinese subtext when the CN locale is active
 
-> Want to use your own custom item tracker?  
-> Just replace the default JSON file (`/public/data.json`) with your own version.
+Each tab reads both the localized and English datasets so the UI can switch languages instantly.  
+Progress, mule assignments, notes, and counters persist in `localStorage`; exports use `diablo2-tracker-save.json`.
 
 ---
 
 ## 🚀 Local Development
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Diablo2.git
-cd Diablo2
+git clone https://github.com/YOUR_USERNAME/diablo2-set-tracker.git
+cd diablo2-set-tracker
 npm install
 npm run dev
+```
+
+### Build & Lint
+
+```bash
+npm run lint
+npm run build
+```
