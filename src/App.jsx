@@ -320,30 +320,53 @@ export default function App() {
         </p>
       </div>
 
-      {/* Control Buttons - Row 1 */}
-      <div className="flex flex-wrap gap-4 mb-2 items-center">
-        <button
-          className="gothic-btn gothic-btn-secondary gothic-btn-small"
-          onClick={exportData}
-        >
-          {isChinese ? "导出存档" : "Export Save"}
-        </button>
-        <label className="gothic-btn gothic-btn-secondary gothic-btn-small" style={{ cursor: 'pointer', margin: 0 }}>
-          {isChinese ? "导入存档" : "Import Save"}
-          <input
-            type="file"
-            accept="application/json"
-            onChange={importData}
-            className="gothic-hidden"
-          />
-        </label>
-        <button
-          className="gothic-btn gothic-btn-secondary gothic-btn-small"
-          onClick={clearAllData}
-        >
-          {isChinese ? "清空所有记录" : "Clear All Records"}
-        </button>
-        <div className="flex gap-2 ml-auto">
+      {/* Control Buttons */}
+      <div className="flex flex-col gap-4 mb-6 md:flex-row md:items-center md:gap-6">
+        <div className="control-button-group md:flex-1">
+          <button
+            className="gothic-btn gothic-btn-secondary gothic-btn-small"
+            onClick={exportData}
+          >
+            {isChinese ? "导出存档" : "Export Save"}
+          </button>
+          <label className="gothic-btn gothic-btn-secondary gothic-btn-small" style={{ cursor: 'pointer', margin: 0 }}>
+            {isChinese ? "导入存档" : "Import Save"}
+            <input
+              type="file"
+              accept="application/json"
+              onChange={importData}
+              className="gothic-hidden"
+            />
+          </label>
+          <button
+            className="gothic-btn gothic-btn-secondary gothic-btn-small"
+            onClick={clearAllData}
+          >
+            {isChinese ? "清空所有记录" : "Clear All Records"}
+          </button>
+          <button
+            className="gothic-btn gothic-btn-secondary gothic-btn-small"
+            onClick={invertSelection}
+            title={isChinese ? "反转当前页面的选择" : "Invert selection on this tab"}
+          >
+            {isChinese ? "反转选择" : "Invert Selection"}
+          </button>
+          <button
+            className="gothic-btn gothic-btn-secondary gothic-btn-small"
+            onClick={reloadConfiguration}
+            title={isChinese ? "恢复上次导入的配置" : "Restore the last imported configuration"}
+          >
+            {isChinese ? "恢复配置" : "Restore Configuration"}
+          </button>
+          <button
+            className="gothic-btn gothic-btn-secondary gothic-btn-small"
+            onClick={toggleLanguage}
+            title={isChinese ? "切换界面语言" : "Toggle interface language"}
+          >
+            {isChinese ? "EN" : "CN"}
+          </button>
+        </div>
+        <div className="tab-button-row flex gap-2 flex-wrap md:ml-auto md:justify-end">
           <button
             className={`gothic-tab-btn ${activeTab === "sets" ? "active" : ""}`}
             onClick={() => setActiveTab("sets")}
@@ -369,31 +392,6 @@ export default function App() {
             {isChinese ? "符文" : "Runes"}
           </button>
         </div>
-      </div>
-
-      {/* Control Buttons - Row 2 */}
-      <div className="flex gap-4 mb-6">
-        <button
-          className="gothic-btn gothic-btn-secondary gothic-btn-small"
-          onClick={invertSelection}
-          title={isChinese ? "反转当前页面的选择" : "Invert selection on this tab"}
-        >
-          {isChinese ? "反转选择" : "Invert Selection"}
-        </button>
-        <button
-          className="gothic-btn gothic-btn-secondary gothic-btn-small"
-          onClick={reloadConfiguration}
-          title={isChinese ? "恢复上次导入的配置" : "Restore the last imported configuration"}
-        >
-          {isChinese ? "恢复配置" : "Restore Configuration"}
-        </button>
-        <button
-          className="gothic-btn gothic-btn-secondary gothic-btn-small"
-          onClick={toggleLanguage}
-          title={isChinese ? "切换界面语言" : "Toggle interface language"}
-        >
-          {isChinese ? "EN" : "CN"}
-        </button>
       </div>
 
       {/* Sets View */}

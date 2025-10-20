@@ -45,8 +45,20 @@
 body {
   font-family: 'Noto Serif SC', 'Georgia', serif;
   background-color: var(--color-bg-primary);
+  background-image: url("/bg/texture.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
   color: var(--color-text-primary);
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: center;
+  }
 }
 
 h1,
@@ -294,6 +306,62 @@ h3 {
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.03em;
+}
+
+.control-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.control-button-group > * {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 767px) {
+  .control-button-group > * {
+    flex: 1 1 33.333%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .control-button-group {
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .control-button-group > * {
+    flex: 0 0 auto;
+  }
+}
+
+.tab-button-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-button-row > * {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .tab-button-row {
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+  }
+
+  .tab-button-row > * {
+    flex: 1 1 auto;
+  }
+
+  .gothic-tab-btn {
+    width: 100%;
+    padding: 0.35rem 0.4rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
 }
 
 /* ============================================================================
