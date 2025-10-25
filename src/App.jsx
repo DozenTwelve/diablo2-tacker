@@ -1,11 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
-import setsData from "./data/sets.json";
-import setsDataEn from "./data/sets_en.json";
-import uniquesData from "./data/uniques.json";
-import uniqueItemsEnData from "./data/uniqueitems_en.json";
-import runewordsData from "./data/runewords.json";
-import runewordsDataEn from "./data/runes_en.json";
-import runesData from "./data/runes.json";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const UNIQUE_CATEGORY_TRANSLATIONS = {
   頭盔: "Helms",
@@ -37,9 +30,28 @@ const UNIQUE_CATEGORY_TRANSLATIONS = {
   投擲武器: "Throwing Weapons"
 };
 
+const DATA_LOADERS = {
+  setsData: () => import("./data/sets.json"),
+  setsDataEn: () => import("./data/sets_en.json"),
+  uniquesData: () => import("./data/uniques.json"),
+  uniqueItemsEnData: () => import("./data/uniqueitems_en.json"),
+  runewordsData: () => import("./data/runewords.json"),
+  runewordsDataEn: () => import("./data/runes_en.json"),
+  runesData: () => import("./data/runes.json")
+};
+
+const TAB_DATA_KEYS = {
+  sets: ["setsData", "setsDataEn"],
+  uniques: ["uniquesData", "uniqueItemsEnData"],
+  runewords: ["runewordsData", "runewordsDataEn"],
+  runes: ["runesData"]
+};
+
 export default function App() {
   const [activeTab, setActiveTab] = useState("sets");
   const [expandMissing, setExpandMissing] = useState({});
+  const [dataCache, setDataCache] = useState({});
+  const loadingKeysRef = useRef(new Set());
 
   const [checkedItems, setCheckedItems] = useState(() => {
     const saved = localStorage.getItem("checkedItems");
@@ -75,6 +87,47 @@ export default function App() {
     const saved = localStorage.getItem("language");
     return saved === "cn" ? "cn" : "en";
   });
+
+  const loadData = useCallback((keys = []) => {
+    keys.forEach((key) => {
+      if (dataCache[key] || loadingKeysRef.current.has(key)) {
+        return;
+      }
+      const loader = DATA_LOADERS[key];
+      if (!loader) {
+        return;
+      }
+      loadingKeysRef.current.add(key);
+      loader()
+        .then((module) => {
+          const loadedData = module?.default ?? module;
+          setDataCache((prev) => {
+            if (prev[key]) {
+              return prev;
+            }
+            return { ...prev, [key]: loadedData };
+          });
+        })
+        .catch((error) => {
+          console.error(`Failed to load ${key}`, error);
+        })
+        .finally(() => {
+          loadingKeysRef.current.delete(key);
+        });
+    });
+  }, [dataCache]);
+
+  useEffect(() => {
+    loadData(TAB_DATA_KEYS[activeTab] || []);
+  }, [activeTab, loadData]);
+
+  const setsData = dataCache.setsData || null;
+  const setsDataEn = dataCache.setsDataEn || null;
+  const uniquesData = dataCache.uniquesData || null;
+  const uniqueItemsEnData = dataCache.uniqueItemsEnData || null;
+  const runewordsData = dataCache.runewordsData || null;
+  const runewordsDataEn = dataCache.runewordsDataEn || null;
+  const runesData = dataCache.runesData || null;
 
   useEffect(() => {
     localStorage.setItem("checkedItems", JSON.stringify(checkedItems));
@@ -194,6 +247,7 @@ export default function App() {
 
     if (activeTab === "sets") {
       // For sets tab: invert all item checkboxes
+      if (!setsData) return;
       const newChecked = { ...checkedItems };
       Object.entries(setsData).forEach(([, set]) => {
         set.items.forEach((item) => {
@@ -203,6 +257,7 @@ export default function App() {
       setCheckedItems(newChecked);
     } else if (activeTab === "uniques") {
       // For uniques tab: invert all unique item checkboxes
+      if (!uniquesData) return;
       const newChecked = { ...checkedItems };
       uniquesData.forEach((item) => {
         const key = `unique-${item.zh}`;
@@ -211,6 +266,7 @@ export default function App() {
       setCheckedItems(newChecked);
     } else if (activeTab === "runewords") {
       // For runewords: invert quantities (0 ↔ 1)
+      if (!runewordsData) return;
       const newCounts = { ...runewordCounts };
       Object.keys(runewordsData).forEach((en) => {
         const current = newCounts[en] || 0;
@@ -219,6 +275,7 @@ export default function App() {
       setRunewordCounts(newCounts);
     } else if (activeTab === "runes") {
       // For runes: invert quantities (0 ↔ 1)
+      if (!runesData) return;
       const newCounts = { ...runeCounts };
       Object.keys(runesData).forEach((rune) => {
         const current = newCounts[rune] || 0;
@@ -248,6 +305,13 @@ export default function App() {
 
   // Memoize expensive calculations
   const { missingSetItems, ownedSetsCount, totalSetsCount } = useMemo(() => {
+    if (!setsData) {
+      return {
+        missingSetItems: [],
+        ownedSetsCount: 0,
+        totalSetsCount: 0
+      };
+    }
     const items = Object.entries(setsData).flatMap(([setName, set]) =>
       set.items
         .filter((item) => !checkedItems[item.name])
@@ -266,9 +330,17 @@ export default function App() {
       ownedSetsCount: owned,
       totalSetsCount: Object.keys(setsData).length
     };
-  }, [checkedItems]);
+  }, [checkedItems, setsData]);
 
   const { groupedUniques, missingUniques, ownedUniquesCount, totalUniquesCount } = useMemo(() => {
+    if (!uniquesData) {
+      return {
+        groupedUniques: {},
+        missingUniques: [],
+        ownedUniquesCount: 0,
+        totalUniquesCount: 0
+      };
+    }
     const grouped = uniquesData.reduce((acc, item) => {
       if (!acc[item.category]) {
         acc[item.category] = [];
@@ -284,32 +356,41 @@ export default function App() {
       ownedUniquesCount: owned,
       totalUniquesCount: uniquesData.length
     };
-  }, [checkedItems]);
+  }, [checkedItems, uniquesData]);
 
   // Memoize Mule options to avoid recreating on every render
   const MULE_OPTIONS = useMemo(() => [...Array(10)].map((_, i) => i + 1), []);
 
   const isChinese = language === "cn";
   const setEnglishNameMap = useMemo(() => {
+    if (!setsDataEn) {
+      return {};
+    }
     return Object.entries(setsDataEn).reduce((acc, [setKey, value]) => {
       acc[setKey] = value?.name || setKey;
       return acc;
     }, {});
-  }, []);
+  }, [setsDataEn]);
   const uniqueEnglishNameMap = useMemo(() => {
+    if (!uniqueItemsEnData) {
+      return {};
+    }
     return Object.values(uniqueItemsEnData).reduce((acc, item) => {
       if (item?.index) {
         acc[item.index] = item.index;
       }
       return acc;
     }, {});
-  }, []);
+  }, [uniqueItemsEnData]);
   const runewordEnglishNameMap = useMemo(() => {
+    if (!runewordsDataEn) {
+      return {};
+    }
     return Object.entries(runewordsDataEn).reduce((acc, [key, value]) => {
       acc[key] = value?.["*Rune Name"] || key;
       return acc;
     }, {});
-  }, []);
+  }, [runewordsDataEn]);
 
   return (
     <div className="gothic-container">
@@ -396,122 +477,141 @@ export default function App() {
 
       {/* Sets View */}
       {activeTab === "sets" && (
-        <div className="space-y-6">
-          <div className="gothic-stat">
-            {isChinese
-              ? `套装收集：${ownedSetsCount} / ${totalSetsCount}`
-              : `Sets collected: ${ownedSetsCount} / ${totalSetsCount}`}
-          </div>
-          <div className="gothic-progress-container">
-            <div
-              className="gothic-progress-bar"
-              style={{ width: `${totalSetsCount > 0 ? (ownedSetsCount / totalSetsCount) * 100 : 0}%` }}
-            />
-            <div className="gothic-progress-label">
-              {totalSetsCount > 0 ? Math.round((ownedSetsCount / totalSetsCount) * 100) : 0}%
+        setsData ? (
+          <div className="space-y-6">
+            <div className="gothic-stat">
+              {isChinese
+                ? `套装收集：${ownedSetsCount} / ${totalSetsCount}`
+                : `Sets collected: ${ownedSetsCount} / ${totalSetsCount}`}
             </div>
-          </div>
-          {Object.entries(setsData).map(([setName, set]) => (
-            <div key={setName} className="gothic-card">
-              <div className="flex justify-between items-start mb-4 gap-4">
-                <div className="flex-1">
-                  <h3 className="gothic-text-gold">
-                    {isChinese ? set.chinese_name : setEnglishNameMap[setName] || setName}
-                  </h3>
-                  {isChinese && (
-                    <p className="gothic-text-muted text-sm">({setName})</p>
-                  )}
-                </div>
-                <select
-                  className="gothic-select gothic-select-compact"
-                  value={muleMap[setName] || ""}
-                  onChange={(e) => handleMuleChange(setName, e.target.value)}
-                  style={{ whiteSpace: 'nowrap' }}
-                >
-                  <option value="">{isChinese ? "选择" : "Select"}</option>
-                  {MULE_OPTIONS.map((i) => (
-                    <option key={i} value={`Mule${i}`}>
-                      Mule{i}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                {set.items.map((item) => (
-                  <label key={item.name} className="gothic-checkbox">
-                    <input
-                      type="checkbox"
-                      checked={!!checkedItems[item.name]}
-                      onChange={() => handleCheck(item.name)}
-                    />
-                    <span className="gothic-text-primary">
-                      {isChinese ? item.name_zh : item.name}
-                    </span>
-                  </label>
-                ))}
-              </div>
-              <textarea
-                rows={2}
-                className="gothic-textarea"
-                placeholder={isChinese ? "备注..." : "Notes..."}
-                value={notes[setName] || ""}
-                onChange={(e) => handleNoteChange(setName, e.target.value)}
+            <div className="gothic-progress-container">
+              <div
+                className="gothic-progress-bar"
+                style={{ width: `${totalSetsCount > 0 ? (ownedSetsCount / totalSetsCount) * 100 : 0}%` }}
               />
+              <div className="gothic-progress-label">
+                {totalSetsCount > 0 ? Math.round((ownedSetsCount / totalSetsCount) * 100) : 0}%
+              </div>
             </div>
-          ))}
-        </div>
-      )}
-
-      {/* Uniques View */}
-      {activeTab === "uniques" && (
-        <div className="space-y-6">
-          <div className="gothic-stat">
-            {isChinese
-              ? `暗金收集：${ownedUniquesCount} / ${totalUniquesCount}`
-              : `Uniques collected: ${ownedUniquesCount} / ${totalUniquesCount}`}
-          </div>
-          <div className="gothic-progress-container">
-            <div
-              className="gothic-progress-bar"
-              style={{ width: `${totalUniquesCount > 0 ? (ownedUniquesCount / totalUniquesCount) * 100 : 0}%` }}
-            />
-            <div className="gothic-progress-label">
-              {totalUniquesCount > 0 ? Math.round((ownedUniquesCount / totalUniquesCount) * 100) : 0}%
-            </div>
-          </div>
-          {Object.entries(groupedUniques).map(([category, items]) => {
-            const ownedCount = items.filter((item) => checkedItems[`unique-${item.zh}`]).length;
-            return (
-              <div key={category} className="gothic-card">
-                <h3 className="gothic-text-gold mb-4">
-                  {isChinese ? category : UNIQUE_CATEGORY_TRANSLATIONS[category] || category}
-                  <span className="gothic-text-muted" style={{ marginLeft: '1rem' }}>(
-                    {ownedCount} / {items.length})</span>
-                </h3>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
-                  {items.map((item) => (
-                    <label key={item.zh} className="gothic-checkbox">
+            {Object.entries(setsData).map(([setName, set]) => (
+              <div key={setName} className="gothic-card">
+                <div className="flex justify-between items-start mb-4 gap-4">
+                  <div className="flex-1">
+                    <h3 className="gothic-text-gold">
+                      {isChinese ? set.chinese_name : setEnglishNameMap[setName] || setName}
+                    </h3>
+                    {isChinese && (
+                      <p className="gothic-text-muted text-sm">({setName})</p>
+                    )}
+                  </div>
+                  <select
+                    className="gothic-select gothic-select-compact"
+                    value={muleMap[setName] || ""}
+                    onChange={(e) => handleMuleChange(setName, e.target.value)}
+                    style={{ whiteSpace: 'nowrap' }}
+                  >
+                    <option value="">{isChinese ? "选择" : "Select"}</option>
+                    {MULE_OPTIONS.map((i) => (
+                      <option key={i} value={`Mule${i}`}>
+                        Mule{i}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  {set.items.map((item) => (
+                    <label key={item.name} className="gothic-checkbox">
                       <input
                         type="checkbox"
-                        checked={!!checkedItems[`unique-${item.zh}`]}
-                        onChange={() => handleCheck(`unique-${item.zh}`)}
+                        checked={!!checkedItems[item.name]}
+                        onChange={() => handleCheck(item.name)}
                       />
                       <span className="gothic-text-primary">
-                        {isChinese
-                          ? item.zh
-                          : uniqueEnglishNameMap[item.en] || item.en}
+                        {isChinese ? item.name_zh : item.name}
                       </span>
                     </label>
                   ))}
                 </div>
+                <textarea
+                  rows={2}
+                  className="gothic-textarea"
+                  placeholder={isChinese ? "备注..." : "Notes..."}
+                  value={notes[setName] || ""}
+                  onChange={(e) => handleNoteChange(setName, e.target.value)}
+                />
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="gothic-card">
+            {isChinese ? "正在加载套装数据..." : "Loading set data..."}
+          </div>
+        )
+      )}
+
+      {/* Uniques View */}
+      {activeTab === "uniques" && (
+        uniquesData ? (
+          <div className="space-y-6">
+            <div className="gothic-stat">
+              {isChinese
+                ? `暗金收集：${ownedUniquesCount} / ${totalUniquesCount}`
+                : `Uniques collected: ${ownedUniquesCount} / ${totalUniquesCount}`}
+            </div>
+            <div className="gothic-progress-container">
+              <div
+                className="gothic-progress-bar"
+                style={{ width: `${totalUniquesCount > 0 ? (ownedUniquesCount / totalUniquesCount) * 100 : 0}%` }}
+              />
+              <div className="gothic-progress-label">
+                {totalUniquesCount > 0 ? Math.round((ownedUniquesCount / totalUniquesCount) * 100) : 0}%
+              </div>
+            </div>
+            {Object.entries(groupedUniques).map(([category, items]) => {
+              const ownedCount = items.filter((item) => checkedItems[`unique-${item.zh}`]).length;
+              return (
+                <div key={category} className="gothic-card">
+                  <h3 className="gothic-text-gold mb-4">
+                    {isChinese ? category : UNIQUE_CATEGORY_TRANSLATIONS[category] || category}
+                    <span className="gothic-text-muted" style={{ marginLeft: '1rem' }}>(
+                      {ownedCount} / {items.length})</span>
+                  </h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' }}>
+                    {items.map((item) => (
+                      <label key={item.zh} className="gothic-checkbox">
+                        <input
+                          type="checkbox"
+                          checked={!!checkedItems[`unique-${item.zh}`]}
+                          onChange={() => handleCheck(`unique-${item.zh}`)}
+                        />
+                        <span className="gothic-text-primary">
+                          {isChinese
+                            ? item.zh
+                            : uniqueEnglishNameMap[item.en] || item.en}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="gothic-card">
+            {isChinese ? "正在加载暗金数据..." : "Loading unique item data..."}
+          </div>
+        )
       )}
 
       {/* Runewords View */}
       {activeTab === "runewords" && (() => {
+        if (!runewordsData) {
+          return (
+            <div className="gothic-card">
+              {isChinese ? "正在加载符文之语数据..." : "Loading runeword data..."}
+            </div>
+          );
+        }
         const totalRunewords = Object.keys(runewordsData).length;
         const ownedRunewords = Object.entries(runewordsData).filter(([en]) => runewordCounts[en] > 0).length;
         const progressPercent = totalRunewords > 0 ? (ownedRunewords / totalRunewords) * 100 : 0;
@@ -590,6 +690,13 @@ export default function App() {
 
       {/* Runes View */}
       {activeTab === "runes" && (() => {
+        if (!runesData) {
+          return (
+            <div className="gothic-card">
+              {isChinese ? "正在加载符文数据..." : "Loading rune data..."}
+            </div>
+          );
+        }
         const totalRunes = Object.keys(runesData).length;
         const ownedRunes = Object.entries(runesData).filter(([rune]) => runeCounts[rune] > 0).length;
         const progressPercent = totalRunes > 0 ? (ownedRunes / totalRunes) * 100 : 0;
@@ -736,6 +843,9 @@ export default function App() {
       )}
 
       {activeTab === "runewords" && (() => {
+        if (!runewordsData) {
+          return null;
+        }
         const missingRunewords = Object.entries(runewordsData).filter(([runewordKey]) => !(runewordCounts[runewordKey] > 0));
         return (
           missingRunewords && missingRunewords.length > 0 && (
@@ -771,6 +881,9 @@ export default function App() {
       })()}
 
       {activeTab === "runes" && (() => {
+        if (!runesData) {
+          return null;
+        }
         const missingRunes = Object.entries(runesData).filter(([runeKey]) => !(runeCounts[runeKey] > 0));
         return (
           missingRunes && missingRunes.length > 0 && (
