@@ -29,13 +29,14 @@ export default function OrganizeView({ onWritten, lang }) {
   const [wasm, setWasm] = useState(null);
   const [mode, setMode] = useState(null);
   const [state, setState] = useState({}); // { plan, error, busy, backup }
+  const [reads, setReads] = useState(0); // bumped to read the files again
 
   useEffect(() => {
     Promise.all([deckSaveFiles(), loadParser()]).then(async ([list, parser]) => {
       setFiles(await Promise.all(list.map(async (f) => ({ name: f.name, bytes: new Uint8Array(await f.arrayBuffer()) }))));
       setWasm(parser);
     });
-  }, [state.backup]);
+  }, [reads]);
 
   // Characters (with their mode) and shared stash pages per mode, from the files as they are now
   const saves = useMemo(() => {
@@ -45,7 +46,9 @@ export default function OrganizeView({ onWritten, lang }) {
         const json = JSON.parse(wasm.parseD2s(bytes));
         return { name: name.slice(0, -4), mode: modeOfCharacter(json), level: json.character.level };
       }
-      const pages = JSON.parse(wasm.parseD2i(bytes)).flatMap((tab, i) => (tab.tab_type === "Normal" ? [{ page: i + 1, items: tab.items.length }] : []));
+      const pages = JSON.parse(wasm.parseD2i(bytes)).flatMap((tab, i) =>
+        tab.tab_type === "Normal" ? [{ page: i + 1, items: tab.items.length }] : [],
+      );
       return { name: name.slice(0, -4), mode: modeOfStash(name), pages };
     });
   }, [files, wasm]);
@@ -69,6 +72,20 @@ export default function OrganizeView({ onWritten, lang }) {
   const write = async () => {
     setState({ ...state, busy: true });
     try {
+      // The game may have saved since the page read the files (played in between): writing would undo that
+      const now = await deckSaveFiles();
+      const same = await Promise.all(
+        now.map(async (f) => {
+          const old = files.find((o) => o.name === f.name)?.bytes;
+          const bytes = new Uint8Array(await f.arrayBuffer());
+          return old?.length === bytes.length && old.every((x, i) => x === bytes[i]);
+        }),
+      );
+      if (now.length !== files.length || same.includes(false)) {
+        setReads(reads + 1);
+        setState({ error: t("savesChanged", lang) });
+        return;
+      }
       // Organized again from the files as read, so what is written is exactly what was checked
       const { files: out } = organizeFiles(files, wasm, options);
       const response = await fetch("/api/write", {
@@ -81,6 +98,7 @@ export default function OrganizeView({ onWritten, lang }) {
       else if (!response.ok) setState({ error: t("writeFailed", lang, result.error) });
       else {
         setState({ backup: result.backup });
+        setReads(reads + 1);
         onWritten();
       }
     } catch (e) {

@@ -102,6 +102,12 @@ const UI = {
   ],
   gameRunning: ["游戏正在运行，请先完全退出 D2R 再整理。", "遊戲正在執行，請先完全退出 D2R 再整理。", "D2R is running. Quit the game completely, then organize.", "D2R이 실행 중입니다. 게임을 완전히 종료한 뒤 정리하세요."],
   notWritten: [(e) => `没有写入任何文件：${e}`, (e) => `沒有寫入任何檔案：${e}`, (e) => `Nothing was written: ${e}`, (e) => `아무것도 쓰지 않았습니다: ${e}`],
+  savesChanged: [
+    "存档在页面打开后变了（刚玩过游戏？），没有写入。已重新读取，请再预览一次。",
+    "存檔在頁面打開後變了（剛玩過遊戲？），沒有寫入。已重新讀取，請再預覽一次。",
+    "The saves changed since this page read them (played since?), so nothing was written. They are read again; preview once more.",
+    "이 페이지가 읽은 뒤 저장 파일이 바뀌어(게임을 했나요?) 아무것도 쓰지 않았습니다. 다시 읽었으니 다시 미리 보기 하세요.",
+  ],
   writeFailed: [(e) => `写入失败：${e}`, (e) => `寫入失敗：${e}`, (e) => `Writing failed: ${e}`, (e) => `쓰기 실패: ${e}`],
   reloadSaves: ["重新读取存档", "重新讀取存檔", "Read saves again", "저장 파일 다시 읽기"],
   savesShort: [(n) => `${n} 个存档`, (n) => `${n} 個存檔`, (n) => `${n} saves`, (n) => `저장 파일 ${n}개`],
