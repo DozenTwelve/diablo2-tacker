@@ -1,6 +1,7 @@
 import { useState } from "react";
 import items from "../data/items.json";
-import { baseNameOf, imageOf, labelOf } from "../lib/gameData";
+import { baseNameOf, catalog, imageOf, labelOf } from "../lib/gameData";
+import { propLines } from "../lib/props";
 import { locationLines, statLines } from "../lib/inventory";
 import { t } from "../lib/i18n";
 
@@ -19,13 +20,15 @@ const GREY = "#8a8a8a";
 const CELL = 44; // max cell size in px; the grid shrinks to fit narrow screens
 
 // Item box in game style: name, base (for named items), ethereal/sockets, stats.
-// For a ghost: where else it is owned (main characters...), or "missing". tip.extra: more lines, in gold
+// For a ghost: its catalog properties as ranges, then where else it is owned (main characters...) or "missing".
+// tip.extra: more lines, in gold
 export function Tooltip({ tip, lang }) {
   const { item, ghost, rect, extra = [] } = tip;
   const above = rect.top > innerHeight / 2;
   const left = Math.min(Math.max(rect.left + rect.width / 2, 160), innerWidth - 160);
   const named = /^[usw]:/.test(item.key) && item.code; // a missing runeword has no base
   const elsewhere = item.elsewhere ?? [];
+  const ranges = ghost ? propLines(catalog.get(item.key)?.names.props ?? [], lang) : [];
   return (
     <div
       className="fixed z-50 pointer-events-none text-center text-sm leading-snug px-3 py-2"
@@ -40,6 +43,11 @@ export function Tooltip({ tip, lang }) {
     >
       <div style={{ color: ghost ? GREY : colorOf(item) }}>{labelOf(item.key, lang)}</div>
       {named && <div style={{ color: ghost ? GREY : colorOf(item) }}>{baseNameOf(item.code, lang)}</div>}
+      {ranges.map((line, i) => (
+        <div key={i} style={{ color: STAT_COLOR }}>
+          {line}
+        </div>
+      ))}
       {ghost && !elsewhere.length && <div style={{ color: GREY }}>{t("missing", lang)}</div>}
       {ghost && elsewhere.length > 0 && (
         <>

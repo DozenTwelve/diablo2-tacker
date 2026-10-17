@@ -56,6 +56,18 @@ const category = (code) => {
 
 const names = (key) => ({ en: str(key, "enUS"), zh: str(key, "zhCN"), zh_tw: str(key, "zhTW") });
 
+// Item properties as [property code, param, min, max], the param as a skill id when it names a skill.
+// src/lib/props.js turns them into stats with the property definitions (stats.json "properties").
+const skillIds = new Map(table("skills").map((r) => [r.skill.toLowerCase(), Number(r["*Id"])]));
+const paramOf = (par) => (!par ? 0 : skillIds.get(par.toLowerCase()) ?? (Number.isNaN(Number(par)) ? par : Number(par)));
+const propsOf = (r, columns) =>
+  columns
+    .filter(([prop]) => r[prop])
+    .map(([prop, par, min, max]) => [r[prop].toLowerCase(), paramOf(r[par]), Number(r[min]) || 0, Number(r[max]) || 0]);
+const numbered = (n, f) => Array.from({ length: n }, (_, i) => f(i + 1));
+const ITEM_PROPS = numbered(12, (i) => [`prop${i}`, `par${i}`, `min${i}`, `max${i}`]);
+const RUNEWORD_PROPS = numbered(7, (i) => [`T1Code${i}`, `T1Param${i}`, `T1Min${i}`, `T1Max${i}`]);
+
 // Inventory icon assets (public/items/<asset>.webp, see scripts/gen-images.mjs): by base code, and by unique
 // and set item index in snake case ("Fechmar's Axe" -> fechmars_axe). The few named otherwise use their base's icon
 const hdItems = (name) =>
@@ -90,7 +102,10 @@ for (const r of table("uniqueitems")) {
     prev.legacy &&= legacy;
   } else {
     const [, cn, tw] = category(r.code);
-    uniques.set(r.index, { ids: [id], code: r.code, img: imgOf(uniqueImg, r.index, r.code), ...names(r.index), category: cn, category_tw: tw, legacy });
+    uniques.set(r.index, {
+      ids: [id], code: r.code, img: imgOf(uniqueImg, r.index, r.code), ...names(r.index), category: cn, category_tw: tw, legacy,
+      props: propsOf(r, ITEM_PROPS),
+    });
   }
 }
 
@@ -98,14 +113,16 @@ const sets = new Map();
 for (const r of table("setitems")) {
   if (!r["*ID"] || r.disableChronicle === "1") continue;
   if (!sets.has(r.set)) sets.set(r.set, { ...names(r.set), items: [] });
-  sets.get(r.set).items.push({ id: Number(r["*ID"]), code: r.item, img: imgOf(setImg, r.index, r.item), ...names(r.index) });
+  sets.get(r.set).items.push({
+    id: Number(r["*ID"]), code: r.item, img: imgOf(setImg, r.index, r.item), ...names(r.index), props: propsOf(r, ITEM_PROPS),
+  });
 }
 
 // id is the runes.txt row; a save's runeword_id maps to it as (runeword_id & 0xfff) - 27
 const runewords = [];
 table("runes").forEach((r, id) => {
   const recipe = [1, 2, 3, 4, 5, 6].map((i) => r[`Rune${i}`]).filter(Boolean);
-  if (r.complete === "1") runewords.push({ id, ...names(r.Name), runes: recipe });
+  if (r.complete === "1") runewords.push({ id, ...names(r.Name), runes: recipe, props: propsOf(r, RUNEWORD_PROPS) });
 });
 
 const runes = [];
@@ -184,5 +201,11 @@ write("sets", [...sets.values()]);
 write("runewords", runewords);
 write("runes", runes);
 write("items", items);
-write("stats", { stats, classes, skills, strings: statStrings });
+// Property code -> what it sets: [[func, stat id, val]] (properties.txt; func semantics in src/lib/props.js)
+const statIds = new Map(table("itemstatcost").map((r) => [r.Stat, Number(r["*ID"])]));
+const properties = {};
+for (const r of table("properties")) {
+  if (r.code) properties[r.code.toLowerCase()] = numbered(7, (i) => r[`func${i}`] && [Number(r[`func${i}`]), statIds.get(r[`stat${i}`]) ?? null, Number(r[`val${i}`]) || 0]).filter(Boolean);
+}
+write("stats", { stats, classes, skills, strings: statStrings, properties });
 console.log(`uniques ${uniques.size}, sets ${sets.size}, runewords ${runewords.length}, runes ${runes.length}, items ${Object.keys(items).length}, stats ${Object.keys(stats).length}, skills ${Object.keys(skills).length}`);
