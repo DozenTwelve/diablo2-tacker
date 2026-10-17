@@ -2,6 +2,8 @@ import { useState } from "react";
 import { parseSaveFiles } from "../lib/parseSaves";
 import { t } from "../lib/i18n";
 
+const DECK_FIND = `find ~/.local/share/Steam/steamapps/compatdata -type d -path "*/Saved Games/Diablo II Resurrected"`;
+
 // The file inputs stay focusable (sr-only, not display:none) so saves can be picked from the keyboard
 export default function SaveLoader({ saveData, onLoad, notStored, lang }) {
   const [busy, setBusy] = useState(false);
@@ -52,6 +54,15 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang }) {
         </p>
       ))}
       <p className="text-xs gothic-text-muted">{t("privacy", lang)}</p>
+      <details className="text-xs gothic-text-muted space-y-2">
+        <summary style={{ cursor: "pointer" }}>{t("whereSaves", lang)}</summary>
+        <p>
+          Windows: <code className="select-all">%USERPROFILE%\Saved Games\Diablo II Resurrected</code>
+        </p>
+        <p>{t("savesDeck", lang)}</p>
+        <code className="block select-all break-all">{DECK_FIND}</code>
+        <p>{t("savesOffline", lang)}</p>
+      </details>
     </div>
   );
 }

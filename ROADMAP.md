@@ -10,14 +10,10 @@ Planned work, roughly in order. Nothing here is started yet.
   item in localStorage (1,052 items: 215 kB), far from its ~5 MB limit, and the app already keeps working when storage is
   full, so IndexedDB can wait until someone hits it.
 
-## 2. Getting saves in and out
+## 2. Getting saves in and out (done)
 
-Guides for finding saves and putting changed ones back, later also as an agent skill in this repo:
-
-- **PC**: `C:\Users\<you>\Saved Games\Diablo II Resurrected\`.
-- **Steam Deck**: D2R runs through Battle.net added as a non-Steam game, so the Proton prefix has a different id on every Deck: `~/.local/share/Steam/steamapps/compatdata/<id>/pfx/drive_c/users/steamuser/Saved Games/Diablo II Resurrected/`. Cover copying from desktop mode to another device and back.
-
-Consoles are out of scope.
+[docs/saves.md](docs/saves.md): finding the save folder on Windows and Steam Deck, copying it off a Deck, and putting
+changed saves back. The app shows the same paths under "Where are my saves?". Consoles are out of scope.
 
 ## 3. Organizing other players' stashes
 

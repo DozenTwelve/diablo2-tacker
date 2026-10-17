@@ -4,7 +4,8 @@ Load your D2R save folder and see everything you own: which character or stash p
 how many copies, and which uniques, sets, runewords and runes you are still missing.
 Supports Reign of the Warlock saves. Names in Traditional and Simplified Chinese plus English.
 
-Saves are parsed in the browser (WebAssembly) and never uploaded.
+Saves are parsed in the browser (WebAssembly) and never uploaded. Where to find them, on Windows and Steam Deck,
+and how to put changed saves back: [docs/saves.md](docs/saves.md).
 
 ### Live Site
 
