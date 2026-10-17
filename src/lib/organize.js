@@ -37,7 +37,7 @@ function place(mule, w, h) {
 }
 
 // Fill mules PREFIX-A, PREFIX-B... in order; a unit (one item, or a whole set) never spans two mules.
-// Units are [{ ref, code }]; returns [{ name, slots: [{ ref, page, x, y }] }].
+// Units are [{ ref, code }]; returns [{ name, slots: [{ ref, code, page, x, y }] }].
 function pack(prefix, units) {
   const mules = [];
   let grid;
@@ -56,13 +56,13 @@ function pack(prefix, units) {
       spots = unit.map((u) => place(grid, items[u.code].w, items[u.code].h));
       if (spots.includes(null)) throw new Error(`${unit[0].ref} does not fit in an empty mule`);
     }
-    unit.forEach((u, i) => mules.at(-1).slots.push({ ref: u.ref, ...spots[i] }));
+    unit.forEach((u, i) => mules.at(-1).slots.push({ ref: u.ref, code: u.code, ...spots[i] }));
   }
   return mules;
 }
 
-// Fixed slots for every collectible unique and set item: key -> { mule, page, x, y }
-function museumLayout() {
+// Fixed slots for every collectible unique and set item: key -> { mule, code, page, x, y }
+export function museumLayout() {
   const groups = { UW: [], UA: [], UJ: [] };
   const prefixOf = { weapons: "UW", armor: "UA", misc: "UJ" };
   for (const u of uniques) if (!u.legacy) groups[prefixOf[items[u.code].table]].push(u);

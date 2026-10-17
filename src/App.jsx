@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { uniques, sets, runewords, runes, uniqueKey, setItemKey, runewordKey, runeKey } from "./lib/gameData";
 import { groupByKey } from "./lib/inventory";
 import { LANGS, nameOf, t } from "./lib/i18n";
@@ -7,6 +7,7 @@ import SaveLoader from "./components/SaveLoader";
 import SearchView from "./components/SearchView";
 import CollectionView from "./components/CollectionView";
 import CharacterView from "./components/CharacterView";
+import { Link, usePath } from "./lib/router";
 
 const TABS = ["search", "characters", "uniques", "sets", "runewords", "runes"];
 
@@ -29,7 +30,8 @@ function collectionGroups(tab, lang) {
 export default function App() {
   const [lang, setLang] = useStoredState("lang", "zh_tw");
   const [saveData, setSaveData] = useStoredState("saveData", null);
-  const [tab, setTab] = useState("search");
+  const [first = "search", name] = usePath();
+  const tab = TABS.includes(first) ? first : "search";
   const owned = useMemo(() => groupByKey(saveData?.items ?? []), [saveData]);
 
   return (
@@ -40,10 +42,10 @@ export default function App() {
       </div>
 
       <div className="flex flex-wrap gap-2 mb-6 items-center">
-        {TABS.map((name) => (
-          <button key={name} className={`gothic-tab-btn ${tab === name ? "active" : ""}`} onClick={() => setTab(name)}>
-            {t(name, lang)}
-          </button>
+        {TABS.map((tabName) => (
+          <Link key={tabName} to={`/${tabName}`} className={`gothic-tab-btn no-underline ${tab === tabName ? "active" : ""}`}>
+            {t(tabName, lang)}
+          </Link>
         ))}
         <div className="flex gap-2 ml-auto">
           {Object.entries(LANGS).map(([code, label]) => (
@@ -59,7 +61,7 @@ export default function App() {
         {tab === "search" ? (
           <SearchView owned={owned} lang={lang} />
         ) : tab === "characters" ? (
-          saveData && <CharacterView saveData={saveData} lang={lang} />
+          saveData && <CharacterView saveData={saveData} name={name} lang={lang} />
         ) : (
           <CollectionView key={tab} label={t(tab, lang)} groups={collectionGroups(tab, lang)} owned={owned} lang={lang} />
         )}

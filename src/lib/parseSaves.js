@@ -1,5 +1,6 @@
 // Parse D2R save files in the browser with the d2s WASM wrapper (wasm/).
-// Output: owners (characters and shared stashes) and a flat list of owned items: { key, code, quality, ethereal, sockets, stats, owner, place, count },
+// Output: owners (characters and shared stashes) and a flat list of owned items:
+// { key, code, quality, ethereal, sockets, stats, owner, place, x, y, count } (x/y: grid position in stash/inventory/cube),
 // stats as [statId, layer, value] (see src/lib/stats.js).
 import { codeOfNumber, keyOf } from "./gameData";
 
@@ -43,6 +44,8 @@ function collect(item, owner, place, out) {
     stats: statsOf(item),
     owner,
     place,
+    x: item.position.inv_x,
+    y: item.position.inv_y,
     count,
   });
   // Runes inside a runeword are part of it, not loose runes
