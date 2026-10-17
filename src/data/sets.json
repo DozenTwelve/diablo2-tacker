@@ -3,6 +3,7 @@
     "en": "Civerb's Vestments",
     "zh": "希弗伯的法衣",
     "zh_tw": "克維雷布的法衣",
+    "ko": "시버브의 예복",
     "bonus": [
       [
         2,
@@ -56,6 +57,7 @@
         "en": "Civerb's Ward",
         "zh": "希弗伯的防护",
         "zh_tw": "克維雷布的防護",
+        "ko": "시버브의 수호물",
         "props": [
           [
             "ac",
@@ -102,6 +104,7 @@
         "en": "Civerb's Icon",
         "zh": "希弗伯的圣像",
         "zh_tw": "克維雷布的聖像",
+        "ko": "시버브의 우상",
         "props": [
           [
             "regen-mana",
@@ -148,6 +151,7 @@
         "en": "Civerb's Cudgel",
         "zh": "希弗伯的短棍",
         "zh_tw": "克維雷布的短棍",
+        "ko": "시버브의 곤봉",
         "props": [
           [
             "att",
@@ -182,6 +186,7 @@
     "en": "Hsarus' Defense",
     "zh": "萨鲁斯的防御",
     "zh_tw": "海沙魯的鐵禦",
+    "ko": "흐사루스의 방어",
     "bonus": [
       [
         2,
@@ -223,6 +228,7 @@
         "en": "Hsarus' Iron Heel",
         "zh": "萨鲁斯的铁踵",
         "zh_tw": "海沙魯的鐵跟",
+        "ko": "흐사루스의 무쇠 발꿈치",
         "props": [
           [
             "res-fire",
@@ -258,6 +264,7 @@
         "en": "Hsarus' Iron Fist",
         "zh": "萨鲁斯的铁拳",
         "zh_tw": "海沙魯的鐵拳",
+        "ko": "흐사루스의 무쇠 주먹",
         "props": [
           [
             "red-dmg",
@@ -293,6 +300,7 @@
         "en": "Hsarus' Iron Stay",
         "zh": "萨鲁斯的铁固腰",
         "zh_tw": "海沙魯的鐵扣",
+        "ko": "흐사루스의 무쇠 고정대",
         "props": [
           [
             "res-cold",
@@ -327,6 +335,7 @@
     "en": "Cleglaw's Brace",
     "zh": "克雷格劳的支柱",
     "zh_tw": "克雷德勞的防備",
+    "ko": "클리글로의 버팀목",
     "bonus": [
       [
         2,
@@ -374,6 +383,7 @@
         "en": "Cleglaw's Tooth",
         "zh": "克雷格劳之牙",
         "zh_tw": "克雷德勞之牙",
+        "ko": "클리글로의 이빨",
         "props": [
           [
             "att%",
@@ -409,6 +419,7 @@
         "en": "Cleglaw's Claw",
         "zh": "克雷格劳之爪",
         "zh_tw": "克雷德勞之爪",
+        "ko": "클리글로의 발톱",
         "props": [
           [
             "ac",
@@ -444,6 +455,7 @@
         "en": "Cleglaw's Pincers",
         "zh": "克雷格劳之钳",
         "zh_tw": "克雷德勞之鉗",
+        "ko": "클리글로의 집게",
         "props": [
           [
             "knock",
@@ -478,6 +490,7 @@
     "en": "Iratha's Finery",
     "zh": "艾蕾萨的华服",
     "zh_tw": "依雷撒的華服",
+    "ko": "이라타의 장식",
     "bonus": [
       [
         2,
@@ -554,6 +567,7 @@
         "en": "Iratha's Collar",
         "zh": "艾蕾萨的护颈圈",
         "zh_tw": "依雷撒的項圈",
+        "ko": "이라타의 목깃",
         "props": [
           [
             "res-pois",
@@ -589,6 +603,7 @@
         "en": "Iratha's Cuff",
         "zh": "艾蕾萨的袖手套",
         "zh_tw": "依雷撒的袖銬",
+        "ko": "이라타의 소매 장식",
         "props": [
           [
             "res-cold",
@@ -624,6 +639,7 @@
         "en": "Iratha's Coil",
         "zh": "艾蕾萨的铁围盔",
         "zh_tw": "依雷撒的盤頂",
+        "ko": "이라타의 고리",
         "props": [
           [
             "res-fire",
@@ -659,6 +675,7 @@
         "en": "Iratha's Cord",
         "zh": "艾蕾萨的束带",
         "zh_tw": "依雷撒的腰繩",
+        "ko": "이라타의 노끈",
         "props": [
           [
             "ac",
@@ -693,6 +710,7 @@
     "en": "Isenhart's Armory",
     "zh": "依森哈特的武器库",
     "zh_tw": "依森哈特的軍械",
+    "ko": "아이젠하트의 무기고",
     "bonus": [
       [
         2,
@@ -757,6 +775,7 @@
         "en": "Isenhart's Lightbrand",
         "zh": "依森哈特的光之烙印",
         "zh_tw": "依森哈特的光之烙鐵",
+        "ko": "아이젠하트의 빛 낙인",
         "props": [
           [
             "dmg-min",
@@ -792,6 +811,7 @@
         "en": "Isenhart's Parry",
         "zh": "依森哈特的格挡",
         "zh_tw": "依森哈特的招架",
+        "ko": "아이젠하트의 회피",
         "props": [
           [
             "ac",
@@ -827,6 +847,7 @@
         "en": "Isenhart's Case",
         "zh": "依森哈特的胸胄",
         "zh_tw": "依森哈特的外殼",
+        "ko": "아이젠하트의 통",
         "props": [
           [
             "ac",
@@ -862,6 +883,7 @@
         "en": "Isenhart's Horns",
         "zh": "依森哈特的号角",
         "zh_tw": "依森哈特的角盔",
+        "ko": "아이젠하트의 뿔",
         "props": [
           [
             "dex",
@@ -896,6 +918,7 @@
     "en": "Vidala's Rig",
     "zh": "维达拉的配装",
     "zh_tw": "維達拉的配備",
+    "ko": "비달라의 장치",
     "bonus": [
       [
         2,
@@ -960,6 +983,7 @@
         "en": "Vidala's Barb",
         "zh": "维达拉的倒刺",
         "zh_tw": "維達拉的倒刺",
+        "ko": "비달라의 미늘",
         "props": [
           [
             "ltng-min",
@@ -995,6 +1019,7 @@
         "en": "Vidala's Fetlock",
         "zh": "维达拉的扣带靴",
         "zh_tw": "維達拉的足距",
+        "ko": "비달라의 구절",
         "props": [
           [
             "stam",
@@ -1030,6 +1055,7 @@
         "en": "Vidala's Ambush",
         "zh": "维达拉的突袭",
         "zh_tw": "維達拉的突襲",
+        "ko": "비달라의 매복",
         "props": [
           [
             "ac",
@@ -1076,6 +1102,7 @@
         "en": "Vidala's Snare",
         "zh": "维达拉的陷阱",
         "zh_tw": "維達拉的圈套",
+        "ko": "비달라의 덫",
         "props": [
           [
             "hp",
@@ -1110,6 +1137,7 @@
     "en": "Milabrega's Regalia",
     "zh": "米拉伯佳的王权",
     "zh_tw": "米拉伯佳戰裝",
+    "ko": "밀라브레가의 상징",
     "bonus": [
       [
         2,
@@ -1180,6 +1208,7 @@
         "en": "Milabrega's Orb",
         "zh": "米拉伯佳的宝球",
         "zh_tw": "米拉伯佳之球",
+        "ko": "밀라브레가의 보주",
         "props": [
           [
             "mag%",
@@ -1226,6 +1255,7 @@
         "en": "Milabrega's Rod",
         "zh": "米拉伯佳的权杖",
         "zh_tw": "米拉伯佳節杖",
+        "ko": "밀라브레가의 막대",
         "props": [
           [
             "pal",
@@ -1255,6 +1285,7 @@
         "en": "Milabrega's Diadem",
         "zh": "米拉伯佳的权冠",
         "zh_tw": "米拉伯佳權冠",
+        "ko": "밀라브레가의 머리관",
         "props": [
           [
             "hp",
@@ -1290,6 +1321,7 @@
         "en": "Milabrega's Robe",
         "zh": "米拉伯佳的袍甲",
         "zh_tw": "米拉伯佳外袍",
+        "ko": "밀라브레가의 장포",
         "props": [
           [
             "thorns",
@@ -1324,6 +1356,7 @@
     "en": "Cathan's Traps",
     "zh": "卡珊的计谋",
     "zh_tw": "卡珊的衣著",
+    "ko": "카탄의 덫",
     "bonus": [
       [
         2,
@@ -1394,6 +1427,7 @@
         "en": "Cathan's Rule",
         "zh": "卡珊的统治",
         "zh_tw": "卡珊的尺杖",
+        "ko": "카탄의 지배",
         "props": [
           [
             "fireskill",
@@ -1440,6 +1474,7 @@
         "en": "Cathan's Mesh",
         "zh": "卡珊的札甲",
         "zh_tw": "卡珊的網衣",
+        "ko": "카탄의 그물망",
         "props": [
           [
             "ac",
@@ -1486,6 +1521,7 @@
         "en": "Cathan's Visage",
         "zh": "卡珊的面甲",
         "zh_tw": "卡珊的容貌",
+        "ko": "카탄의 얼굴",
         "props": [
           [
             "mana",
@@ -1521,6 +1557,7 @@
         "en": "Cathan's Sigil",
         "zh": "卡珊的符徽",
         "zh_tw": "卡珊的魔咒",
+        "ko": "카탄의 인장",
         "props": [
           [
             "balance1",
@@ -1567,6 +1604,7 @@
         "en": "Cathan's Seal",
         "zh": "卡珊的印章",
         "zh_tw": "卡珊的封印",
+        "ko": "카탄의 문장",
         "props": [
           [
             "lifesteal",
@@ -1601,6 +1639,7 @@
     "en": "Tancred's Battlegear",
     "zh": "坦克雷的圣战装",
     "zh_tw": "坦克雷的戰裝",
+    "ko": "탄크레드의 전투 장비",
     "bonus": [
       [
         2,
@@ -1659,6 +1698,7 @@
         "en": "Tancred's Crowbill",
         "zh": "坦克雷的鸦嘴锄",
         "zh_tw": "坦克雷的鴉嘴鎬",
+        "ko": "탄크레드의 크로우빌",
         "props": [
           [
             "att",
@@ -1705,6 +1745,7 @@
         "en": "Tancred's Spine",
         "zh": "坦克雷的支柱",
         "zh_tw": "坦克雷的脊柱",
+        "ko": "탄크레드의 가시",
         "props": [
           [
             "hp",
@@ -1740,6 +1781,7 @@
         "en": "Tancred's Hobnails",
         "zh": "坦克雷的钉头鞋",
         "zh_tw": "坦克雷的釘靴",
+        "ko": "탄크레드의 구두징",
         "props": [
           [
             "regen-stam",
@@ -1786,6 +1828,7 @@
         "en": "Tancred's Weird",
         "zh": "坦克雷的怪诞",
         "zh_tw": "坦克雷的怪誕",
+        "ko": "탄크레드의 기묘",
         "props": [
           [
             "red-dmg",
@@ -1832,6 +1875,7 @@
         "en": "Tancred's Skull",
         "zh": "坦克雷的头骨",
         "zh_tw": "坦克雷的顱骨",
+        "ko": "탄크레드의 두개골",
         "props": [
           [
             "dmg%",
@@ -1866,6 +1910,7 @@
     "en": "Sigon's Complete Steel",
     "zh": "西刚的全身甲胄",
     "zh_tw": "西剛的全套鋼甲",
+    "ko": "시곤의 온전한 강철",
     "bonus": [
       [
         2,
@@ -1930,6 +1975,7 @@
         "en": "Sigon's Gage",
         "zh": "西刚的挑战",
         "zh_tw": "西剛的挑戰",
+        "ko": "시곤의 전투 장갑",
         "props": [
           [
             "str",
@@ -1965,6 +2011,7 @@
         "en": "Sigon's Visor",
         "zh": "西刚的面甲",
         "zh_tw": "西剛的護面",
+        "ko": "시곤의 챙",
         "props": [
           [
             "mana",
@@ -2000,6 +2047,7 @@
         "en": "Sigon's Shelter",
         "zh": "西刚的遮蔽",
         "zh_tw": "西剛的庇護",
+        "ko": "시곤의 안식처",
         "props": [
           [
             "ac%",
@@ -2035,6 +2083,7 @@
         "en": "Sigon's Sabot",
         "zh": "西刚的木底鞋",
         "zh_tw": "西剛的硬靴",
+        "ko": "시곤의 나막신",
         "props": [
           [
             "move2",
@@ -2081,6 +2130,7 @@
         "en": "Sigon's Wrap",
         "zh": "西刚的腰带",
         "zh_tw": "西剛的裹腰",
+        "ko": "시곤의 싸개",
         "props": [
           [
             "res-fire",
@@ -2116,6 +2166,7 @@
         "en": "Sigon's Guard",
         "zh": "西刚的守护",
         "zh_tw": "西剛的守護",
+        "ko": "시곤의 보호구",
         "props": [
           [
             "allskills",
@@ -2138,6 +2189,7 @@
     "en": "Infernal Tools",
     "zh": "地狱工具",
     "zh_tw": "煉獄器具",
+    "ko": "지옥불 도구",
     "bonus": [
       [
         2,
@@ -2208,6 +2260,7 @@
         "en": "Infernal Cranium",
         "zh": "地狱颅骨",
         "zh_tw": "煉獄頭骨",
+        "ko": "지옥불 두개골",
         "props": [
           [
             "res-all",
@@ -2243,6 +2296,7 @@
         "en": "Infernal Torch",
         "zh": "地狱火炬",
         "zh_tw": "煉獄火炬",
+        "ko": "지옥불 횃불",
         "props": [
           [
             "dmg-min",
@@ -2278,6 +2332,7 @@
         "en": "Infernal Sign",
         "zh": "地狱印记",
         "zh_tw": "煉獄符印",
+        "ko": "지옥불 징조",
         "props": [
           [
             "ac",
@@ -2323,6 +2378,7 @@
     "en": "Berserker's Arsenal",
     "zh": "狂战士的兵械",
     "zh_tw": "狂戰士的武裝",
+    "ko": "광전사의 무기고",
     "bonus": [
       [
         2,
@@ -2376,6 +2432,7 @@
         "en": "Berserker's Headgear",
         "zh": "狂战士的头盔",
         "zh_tw": "狂戰士頭盔",
+        "ko": "광전사의 머리 방어구",
         "props": [
           [
             "ac",
@@ -2411,6 +2468,7 @@
         "en": "Berserker's Hauberk",
         "zh": "狂战士的半身甲",
         "zh_tw": "狂戰士鎖子甲",
+        "ko": "광전사의 흉갑",
         "props": [
           [
             "red-mag",
@@ -2446,6 +2504,7 @@
         "en": "Berserker's Hatchet",
         "zh": "狂战士的手斧",
         "zh_tw": "狂戰士手斧",
+        "ko": "광전사의 해칫",
         "props": [
           [
             "att%",
@@ -2480,6 +2539,7 @@
     "en": "Death's Disguise",
     "zh": "死神的伪装",
     "zh_tw": "死亡的偽裝",
+    "ko": "죽음의 위장",
     "bonus": [
       [
         2,
@@ -2521,6 +2581,7 @@
         "en": "Death's Hand",
         "zh": "死神之手",
         "zh_tw": "死亡之手",
+        "ko": "죽음의 손",
         "props": [
           [
             "res-pois",
@@ -2556,6 +2617,7 @@
         "en": "Death's Guard",
         "zh": "死神之卫",
         "zh_tw": "死亡之護",
+        "ko": "죽음의 경비",
         "props": [
           [
             "ac",
@@ -2591,6 +2653,7 @@
         "en": "Death's Touch",
         "zh": "死神之触",
         "zh_tw": "死亡之觸",
+        "ko": "죽음의 손길",
         "props": [
           [
             "dmg%",
@@ -2625,6 +2688,7 @@
     "en": "Angelic Raiment",
     "zh": "天使的装束",
     "zh_tw": "天使的衣裝",
+    "ko": "천사의 의복",
     "bonus": [
       [
         2,
@@ -2689,6 +2753,7 @@
         "en": "Angelic Sickle",
         "zh": "天使的镰刀",
         "zh_tw": "天使的鐮刀",
+        "ko": "천사의 낫",
         "props": [
           [
             "att",
@@ -2741,6 +2806,7 @@
         "en": "Angelic Mantle",
         "zh": "天使的披风",
         "zh_tw": "天使的披風",
+        "ko": "천사의 어깨걸이",
         "props": [
           [
             "red-dmg",
@@ -2793,6 +2859,7 @@
         "en": "Angelic Halo",
         "zh": "天使的光环",
         "zh_tw": "天使的光暈",
+        "ko": "천사의 후광",
         "props": [
           [
             "regen",
@@ -2839,6 +2906,7 @@
         "en": "Angelic Wings",
         "zh": "天使的飞翼",
         "zh_tw": "天使的翅膀",
+        "ko": "천사의 날개",
         "props": [
           [
             "light",
@@ -2884,6 +2952,7 @@
     "en": "Arctic Gear",
     "zh": "北极装备",
     "zh_tw": "北極裝備",
+    "ko": "극지 장비",
     "bonus": [
       [
         2,
@@ -2936,6 +3005,7 @@
         "en": "Arctic Horn",
         "zh": "北极号角",
         "zh_tw": "北極號角",
+        "ko": "극지 뿔",
         "props": [
           [
             "att%",
@@ -2982,6 +3052,7 @@
         "en": "Arctic Furs",
         "zh": "北极毛皮",
         "zh_tw": "北極毛皮",
+        "ko": "극지 모피",
         "props": [
           [
             "ac%",
@@ -3028,6 +3099,7 @@
         "en": "Arctic Binding",
         "zh": "北极束带",
         "zh_tw": "北極捆索",
+        "ko": "극지 허리띠",
         "props": [
           [
             "res-cold",
@@ -3074,6 +3146,7 @@
         "en": "Arctic Mitts",
         "zh": "北极手套",
         "zh_tw": "北極手套",
+        "ko": "극지 장갑",
         "props": [
           [
             "hp",
@@ -3119,6 +3192,7 @@
     "en": "Arcanna's Tricks",
     "zh": "阿卡娜的诡计",
     "zh_tw": "阿卡娜的詭計",
+    "ko": "아르카나의 속임수",
     "bonus": [
       [
         2,
@@ -3183,6 +3257,7 @@
         "en": "Arcanna's Sign",
         "zh": "阿卡娜的符号",
         "zh_tw": "阿卡娜的符印",
+        "ko": "아르카나의 징조",
         "props": [
           [
             "mana",
@@ -3229,6 +3304,7 @@
         "en": "Arcanna's Deathwand",
         "zh": "阿卡娜的死亡之杖",
         "zh_tw": "阿卡娜的死亡之杖",
+        "ko": "아르카나의 죽음마법봉",
         "props": [
           [
             "sor",
@@ -3275,6 +3351,7 @@
         "en": "Arcanna's Head",
         "zh": "阿卡娜的头",
         "zh_tw": "阿卡娜的頭",
+        "ko": "아르카나의 머리",
         "props": [
           [
             "regen",
@@ -3321,6 +3398,7 @@
         "en": "Arcanna's Flesh",
         "zh": "阿卡娜的外壳",
         "zh_tw": "阿卡娜的血肉",
+        "ko": "아르카나의 살점",
         "props": [
           [
             "light",
@@ -3366,6 +3444,7 @@
     "en": "Natalya's Odium",
     "zh": "娜塔亚的杀意",
     "zh_tw": "娜塔亞的非難",
+    "ko": "나탈랴의 혐오",
     "bonus": [
       [
         2,
@@ -3453,6 +3532,7 @@
         "en": "Natalya's Totem",
         "zh": "娜塔亚的徽记",
         "zh_tw": "娜塔亞的圖騰",
+        "ko": "나탈랴의 토템",
         "props": [
           [
             "ac",
@@ -3494,6 +3574,7 @@
         "en": "Natalya's Mark",
         "zh": "娜塔亚的标记",
         "zh_tw": "娜塔亞的印記",
+        "ko": "나탈랴의 표식",
         "props": [
           [
             "swing3",
@@ -3547,6 +3628,7 @@
         "en": "Natalya's Shadow",
         "zh": "娜塔亚的阴影",
         "zh_tw": "娜塔亞的影子",
+        "ko": "나탈랴의 그림자",
         "props": [
           [
             "ac",
@@ -3594,6 +3676,7 @@
         "en": "Natalya's Soul",
         "zh": "娜塔亚的灵魂",
         "zh_tw": "娜塔亞的靈魂",
+        "ko": "나탈랴의 영혼",
         "props": [
           [
             "ac",
@@ -3640,6 +3723,7 @@
     "en": "Aldur's Watchtower",
     "zh": "艾尔多的警戒塔",
     "zh_tw": "艾爾多的守衛",
+    "ko": "알두르의 감시탑",
     "bonus": [
       [
         2,
@@ -3727,6 +3811,7 @@
         "en": "Aldur's Stony Gaze",
         "zh": "艾尔多的冷酷凝视",
         "zh_tw": "艾爾多的冷酷凝視",
+        "ko": "알두르의 냉랭한 눈길",
         "props": [
           [
             "ac",
@@ -3808,6 +3893,7 @@
         "en": "Aldur's Deception",
         "zh": "艾尔多的欺骗",
         "zh_tw": "艾爾多的欺暪",
+        "ko": "알두르의 기만",
         "props": [
           [
             "ac",
@@ -3895,6 +3981,7 @@
         "en": "Aldur's Rhythm",
         "zh": "艾尔多的律动",
         "zh_tw": "艾爾多的律動",
+        "ko": "알두르의 운율",
         "props": [
           [
             "dmg-norm",
@@ -3982,6 +4069,7 @@
         "en": "Aldur's Advance",
         "zh": "艾尔多的成长",
         "zh_tw": "艾爾多的進擊",
+        "ko": "알두르의 진보",
         "props": [
           [
             "indestruct",
@@ -4068,6 +4156,7 @@
     "en": "Immortal King",
     "zh": "不朽之王",
     "zh_tw": "不朽之王",
+    "ko": "불멸왕",
     "bonus": [
       [
         2,
@@ -4154,6 +4243,7 @@
         "en": "Immortal King's Will",
         "zh": "不朽之王的意志",
         "zh_tw": "不朽之王的意志",
+        "ko": "불멸왕의 의지",
         "props": [
           [
             "ac",
@@ -4201,6 +4291,7 @@
         "en": "Immortal King's Soul Cage",
         "zh": "不朽之王的灵魂之笼",
         "zh_tw": "不朽之王的靈魂牢籠",
+        "ko": "불멸왕의 영혼집",
         "props": [
           [
             "ac",
@@ -4292,6 +4383,7 @@
         "en": "Immortal King's Detail",
         "zh": "不朽之王的功业",
         "zh_tw": "不朽之王的扈從",
+        "ko": "불멸왕의 장식띠",
         "props": [
           [
             "ac",
@@ -4383,6 +4475,7 @@
         "en": "Immortal King's Forge",
         "zh": "不朽之王的锤炼",
         "zh_tw": "不朽之王的熔爐",
+        "ko": "불멸왕의 용광로",
         "props": [
           [
             "ac",
@@ -4474,6 +4567,7 @@
         "en": "Immortal King's Pillar",
         "zh": "不朽之王的基石",
         "zh_tw": "不朽之王之柱",
+        "ko": "불멸왕의 기둥",
         "props": [
           [
             "ac",
@@ -4554,6 +4648,7 @@
         "en": "Immortal King's Stone Crusher",
         "zh": "不朽之王的碎石锤",
         "zh_tw": "不朽之王的碎魂者",
+        "ko": "불멸왕의 파석추",
         "props": [
           [
             "indestruct",
@@ -4662,6 +4757,7 @@
     "en": "Tal Rasha's Wrappings",
     "zh": "塔·拉夏的裹身布",
     "zh_tw": "塔拉夏的外袍",
+    "ko": "탈 라샤의 수의",
     "bonus": [
       [
         2,
@@ -4743,6 +4839,7 @@
         "en": "Tal Rasha's Fine-Spun Cloth",
         "zh": "塔·拉夏的精织带",
         "zh_tw": "塔拉夏的精織腰布",
+        "ko": "탈 라샤의 고운 띠",
         "props": [
           [
             "ease",
@@ -4807,6 +4904,7 @@
         "en": "Tal Rasha's Adjudication",
         "zh": "塔·拉夏的裁决",
         "zh_tw": "塔拉夏的判決",
+        "ko": "탈 라샤의 선고",
         "props": [
           [
             "res-ltng",
@@ -4860,6 +4958,7 @@
         "en": "Tal Rasha's Lidless Eye",
         "zh": "塔·拉夏的无睑之眼",
         "zh_tw": "塔拉夏的警惕之眼",
+        "ko": "탈 라샤의 잠들지 않는 눈",
         "props": [
           [
             "hp",
@@ -4958,6 +5057,7 @@
         "en": "Tal Rasha's Guardianship",
         "zh": "塔·拉夏的守护",
         "zh_tw": "塔拉夏的守護",
+        "ko": "탈 라샤의 보호",
         "props": [
           [
             "ease",
@@ -5023,6 +5123,7 @@
         "en": "Tal Rasha's Horadric Crest",
         "zh": "塔·拉夏的赫拉迪姆之冠",
         "zh_tw": "塔拉夏的赫拉迪姆之冠",
+        "ko": "탈 라샤의 호라드림 관모",
         "props": [
           [
             "mana",
@@ -5069,6 +5170,7 @@
     "en": "Griswold's Legacy",
     "zh": "格里斯沃尔德的遗产",
     "zh_tw": "格里斯瓦德的傳奇",
+    "ko": "그리스월드의 유산",
     "bonus": [
       [
         2,
@@ -5139,6 +5241,7 @@
         "en": "Griswold's Valor",
         "zh": "格里斯沃尔德的勇气",
         "zh_tw": "格里斯瓦德的勇氣",
+        "ko": "그리스월드의 용맹",
         "props": [
           [
             "ac%",
@@ -5198,6 +5301,7 @@
         "en": "Griswold's Heart",
         "zh": "格里斯沃尔德的赤诚",
         "zh_tw": "格里斯瓦德之心",
+        "ko": "그리스월드의 심장",
         "props": [
           [
             "ac",
@@ -5239,6 +5343,7 @@
         "en": "Griswold's Redemption",
         "zh": "格里斯沃尔德的救赎",
         "zh_tw": "格里斯瓦德的救贖",
+        "ko": "그리스월드의 구원",
         "props": [
           [
             "dmg%",
@@ -5314,6 +5419,7 @@
         "en": "Griswold's Honor",
         "zh": "格里斯沃尔德的荣耀",
         "zh_tw": "格里斯瓦德的榮耀",
+        "ko": "그리스월드의 명예",
         "props": [
           [
             "ac",
@@ -5354,6 +5460,7 @@
     "en": "Trang-Oul's Avatar",
     "zh": "塔格奥的化身",
     "zh_tw": "塔格奧的化身",
+    "ko": "트래그울의 화신",
     "bonus": [
       [
         2,
@@ -5465,6 +5572,7 @@
         "en": "Trang-Oul's Guise",
         "zh": "塔格奥的伪装",
         "zh_tw": "塔格奧之容",
+        "ko": "트래그울의 허울",
         "props": [
           [
             "ac",
@@ -5506,6 +5614,7 @@
         "en": "Trang-Oul's Scales",
         "zh": "塔格奥的鳞片",
         "zh_tw": "塔格奧之鱗",
+        "ko": "트래그울의 비늘",
         "props": [
           [
             "ease",
@@ -5576,6 +5685,7 @@
         "en": "Trang-Oul's Wing",
         "zh": "塔格奥的飞翼",
         "zh_tw": "塔格奧之翼",
+        "ko": "트래그울의 날개",
         "props": [
           [
             "ac",
@@ -5652,6 +5762,7 @@
         "en": "Trang-Oul's Claws",
         "zh": "塔格奥的利爪",
         "zh_tw": "塔格奧之爪",
+        "ko": "트래그울의 발톱",
         "props": [
           [
             "ac",
@@ -5699,6 +5810,7 @@
         "en": "Trang-Oul's Girth",
         "zh": "塔格奥的肚带",
         "zh_tw": "塔格奧之腹",
+        "ko": "트래그울의 끈",
         "props": [
           [
             "ac",
@@ -5763,6 +5875,7 @@
     "en": "M'avina's Battle Hymn",
     "zh": "艾维娜的战斗诗歌",
     "zh_tw": "馬維娜之戰鬥詩歌",
+    "ko": "마비나의 전투 찬가",
     "bonus": [
       [
         2,
@@ -5833,6 +5946,7 @@
         "en": "M'avina's True Sight",
         "zh": "艾维娜的真视",
         "zh_tw": "馬維娜的真實之眼",
+        "ko": "마비나의 진실의 눈",
         "props": [
           [
             "ac",
@@ -5902,6 +6016,7 @@
         "en": "M'avina's Embrace",
         "zh": "艾维娜的拥抱",
         "zh_tw": "馬維娜的擁抱",
+        "ko": "마비나의 포옹",
         "props": [
           [
             "gethit-skill",
@@ -5961,6 +6076,7 @@
         "en": "M'avina's Icy Clutch",
         "zh": "艾维娜的冰握",
         "zh_tw": "馬維娜的冰握",
+        "ko": "마비나의 얼음 같은 손길",
         "props": [
           [
             "ac",
@@ -6031,6 +6147,7 @@
         "en": "M'avina's Tenet",
         "zh": "艾维娜的教义",
         "zh_tw": "馬維娜的教義",
+        "ko": "마비나의 신조",
         "props": [
           [
             "ac",
@@ -6078,6 +6195,7 @@
         "en": "M'avina's Caster",
         "zh": "艾维娜的施展",
         "zh_tw": "馬維娜的強弓",
+        "ko": "마비나의 활",
         "props": [
           [
             "dmg%",
@@ -6146,6 +6264,7 @@
     "en": "The Disciple",
     "zh": "门徒",
     "zh_tw": "門徒",
+    "ko": "사도",
     "bonus": [
       [
         2,
@@ -6220,6 +6339,7 @@
         "en": "Telling of Beads",
         "zh": "赐福念珠",
         "zh_tw": "誦唸珠",
+        "ko": "구슬 묵주",
         "props": [
           [
             "res-pois",
@@ -6255,6 +6375,7 @@
         "en": "Laying of Hands",
         "zh": "按手礼套",
         "zh_tw": "按手禮",
+        "ko": "안수",
         "props": [
           [
             "ac",
@@ -6296,6 +6417,7 @@
         "en": "Rite of Passage",
         "zh": "皈依之道",
         "zh_tw": "入門式",
+        "ko": "통과의례",
         "props": [
           [
             "ac",
@@ -6331,6 +6453,7 @@
         "en": "Dark Adherent",
         "zh": "隐秘教徒",
         "zh_tw": "隱門徒",
+        "ko": "어둠의 추종자",
         "props": [
           [
             "ac",
@@ -6366,6 +6489,7 @@
         "en": "Credendum",
         "zh": "信念腰带",
         "zh_tw": "守信條",
+        "ko": "신조",
         "props": [
           [
             "ac",
@@ -6400,6 +6524,7 @@
     "en": "Heaven's Brethren",
     "zh": "天堂同袍",
     "zh_tw": "天堂的同胞",
+    "ko": "천상의 동포",
     "bonus": [
       [
         2,
@@ -6470,6 +6595,7 @@
         "en": "Dangoon's Teaching",
         "zh": "覃君的教导",
         "zh_tw": "檀君的教導",
+        "ko": "단군의 가르침",
         "props": [
           [
             "dmg/lvl",
@@ -6505,6 +6631,7 @@
         "en": "Taebaek's Glory",
         "zh": "泰白的荣耀",
         "zh_tw": "太白山的榮光",
+        "ko": "태백의 영예",
         "props": [
           [
             "ac",
@@ -6558,6 +6685,7 @@
         "en": "Haemosu's Adamant",
         "zh": "解慕苏的坚定",
         "zh_tw": "解慕漱的堅決",
+        "ko": "해모수의 견고",
         "props": [
           [
             "ac",
@@ -6599,6 +6727,7 @@
         "en": "Ondal's Almighty",
         "zh": "温达的全灵",
         "zh_tw": "溫達的全靈",
+        "ko": "온달의 사랑",
         "props": [
           [
             "ac",
@@ -6645,6 +6774,7 @@
     "en": "Orphan's Call",
     "zh": "孤儿的号令",
     "zh_tw": "孤兒的呼喚",
+    "ko": "고아의 부름",
     "bonus": [
       [
         2,
@@ -6726,6 +6856,7 @@
         "en": "Guillaume's Face",
         "zh": "威廉的威容",
         "zh_tw": "吉永之臉",
+        "ko": "기욤의 얼굴",
         "props": [
           [
             "ac%",
@@ -6767,6 +6898,7 @@
         "en": "Wilhelm's Pride",
         "zh": "威廉的骄傲",
         "zh_tw": "威廉的自尊",
+        "ko": "빌헬름의 자부심",
         "props": [
           [
             "ac%",
@@ -6802,6 +6934,7 @@
         "en": "Magnus' Skin",
         "zh": "雄主的皮手套",
         "zh_tw": "馬格納斯之皮",
+        "ko": "마그누스의 가죽",
         "props": [
           [
             "ac%",
@@ -6843,6 +6976,7 @@
         "en": "Whitstan's Guard",
         "zh": "威斯顿之御",
         "zh_tw": "惠斯坦的守護",
+        "ko": "위트스탄의 보호구",
         "props": [
           [
             "ac%",
@@ -6883,6 +7017,7 @@
     "en": "Hwanin's Majesty",
     "zh": "桓因的威严",
     "zh_tw": "桓因的威嚴",
+    "ko": "환인의 위엄",
     "bonus": [
       [
         2,
@@ -6941,6 +7076,7 @@
         "en": "Hwanin's Splendor",
         "zh": "桓因的壮美",
         "zh_tw": "桓因的光輝",
+        "ko": "환인의 광채",
         "props": [
           [
             "regen",
@@ -6976,6 +7112,7 @@
         "en": "Hwanin's Refuge",
         "zh": "桓因的庇佑",
         "zh_tw": "桓因的庇佑",
+        "ko": "환인의 피난처",
         "props": [
           [
             "ac",
@@ -7011,6 +7148,7 @@
         "en": "Hwanin's Blessing",
         "zh": "桓因的祝福",
         "zh_tw": "桓因的祝福",
+        "ko": "환인의 축복",
         "props": [
           [
             "dmg-ltng",
@@ -7046,6 +7184,7 @@
         "en": "Hwanin's Justice",
         "zh": "桓因的圣裁",
         "zh_tw": "桓因的制裁",
+        "ko": "환인의 정의",
         "props": [
           [
             "att",
@@ -7092,6 +7231,7 @@
     "en": "Sazabi's Grand Tribute",
     "zh": "圣·沙略的伟大颂词",
     "zh_tw": "沙薩比的崇高禮讚",
+    "ko": "사자비의 대공물",
     "bonus": [
       [
         2,
@@ -7151,6 +7291,7 @@
         "en": "Sazabi's Cobalt Redeemer",
         "zh": "圣·沙略的济世之剑",
         "zh_tw": "沙薩比的救贖鈷劍",
+        "ko": "사자비의 코발트 구원자",
         "props": [
           [
             "dmg%",
@@ -7204,6 +7345,7 @@
         "en": "Sazabi's Ghost Liberator",
         "zh": "圣·沙略的魂灵解救者",
         "zh_tw": "沙薩比的解靈框體",
+        "ko": "사자비의 유령 해방자",
         "props": [
           [
             "ac",
@@ -7245,6 +7387,7 @@
         "en": "Sazabi's Mental Sheath",
         "zh": "圣·沙略的心灵庇护",
         "zh_tw": "沙薩比的精神護罩",
+        "ko": "사자비의 정신 보호구",
         "props": [
           [
             "ac",
@@ -7279,6 +7422,7 @@
     "en": "Bul-Kathos' Children",
     "zh": "布尔凯索的子嗣",
     "zh_tw": "布爾凱索的子嗣",
+    "ko": "불카토스의 자손",
     "bonus": [],
     "full": [
       [
@@ -7338,6 +7482,7 @@
         "en": "Bul-Kathos' Sacred Charge",
         "zh": "布尔凯索的神圣职责",
         "zh_tw": "布爾凱索的神聖職責",
+        "ko": "불카토스의 신성한 임무",
         "props": [
           [
             "crush",
@@ -7373,6 +7518,7 @@
         "en": "Bul-Kathos' Tribal Guardian",
         "zh": "布尔凯索的部族守护",
         "zh_tw": "布爾凱索的部族守護",
+        "ko": "불카토스의 부족 수호자",
         "props": [
           [
             "res-fire",
@@ -7413,6 +7559,7 @@
     "en": "Cow King's Leathers",
     "zh": "牛魔王之革",
     "zh_tw": "牛王皮甲",
+    "ko": "젖소 왕의 보호구",
     "bonus": [
       [
         2,
@@ -7490,6 +7637,7 @@
         "en": "Cow King's Horns",
         "zh": "牛魔王之角",
         "zh_tw": "牛王之角",
+        "ko": "젖소 왕의 뿔",
         "props": [
           [
             "ac",
@@ -7525,6 +7673,7 @@
         "en": "Cow King's Hide",
         "zh": "牛魔王之皮",
         "zh_tw": "牛王之皮",
+        "ko": "젖소 왕의 날가죽",
         "props": [
           [
             "res-all",
@@ -7560,6 +7709,7 @@
         "en": "Cow King's Hooves",
         "zh": "牛魔王之蹄",
         "zh_tw": "牛王之蹄",
+        "ko": "젖소 왕의 발굽",
         "props": [
           [
             "ac",
@@ -7600,6 +7750,7 @@
     "en": "Naj's Ancient Vestige",
     "zh": "诺吉的古代遗物",
     "zh_tw": "娜吉的上古遺物",
+    "ko": "나즈의 고대 흔적",
     "bonus": [
       [
         2,
@@ -7677,6 +7828,7 @@
         "en": "Naj's Puzzler",
         "zh": "诺吉的解密棒",
         "zh_tw": "娜吉的解謎杖",
+        "ko": "나즈의 수수께끼",
         "props": [
           [
             "enr",
@@ -7730,6 +7882,7 @@
         "en": "Naj's Light Plate",
         "zh": "诺吉的轻铠甲",
         "zh_tw": "娜吉的輕鎧",
+        "ko": "나즈의 경판갑",
         "props": [
           [
             "ease",
@@ -7777,6 +7930,7 @@
         "en": "Naj's Circlet",
         "zh": "诺吉的头环",
         "zh_tw": "娜吉的頭環",
+        "ko": "나즈의 띠관",
         "props": [
           [
             "ac",
@@ -7817,6 +7971,7 @@
     "en": "Sander's Folly",
     "zh": "山德的愚行",
     "zh_tw": "山德的愚行",
+    "ko": "샌더의 어리석음",
     "bonus": [
       [
         2,
@@ -7875,6 +8030,7 @@
         "en": "Sander's Paragon",
         "zh": "山德的崇拜",
         "zh_tw": "山德的模範",
+        "ko": "샌더의 귀감",
         "props": [
           [
             "mag%",
@@ -7904,6 +8060,7 @@
         "en": "Sander's Riprap",
         "zh": "山德的石碓",
         "zh_tw": "山德的碎石",
+        "ko": "샌더의 사석",
         "props": [
           [
             "move3",
@@ -7939,6 +8096,7 @@
         "en": "Sander's Taboo",
         "zh": "山德的禁忌",
         "zh_tw": "山德的禁忌",
+        "ko": "샌더의 금기",
         "props": [
           [
             "ac",
@@ -7974,6 +8132,7 @@
         "en": "Sander's Superstition",
         "zh": "山德的迷信",
         "zh_tw": "山德的迷信",
+        "ko": "샌더의 미신",
         "props": [
           [
             "dmg%",
@@ -8014,6 +8173,7 @@
     "en": "Bane's Garments",
     "zh": "祸殃法衣",
     "zh_tw": "貝恩的衣裝",
+    "ko": "재앙의 복장",
     "bonus": [
       [
         2,
@@ -8061,6 +8221,7 @@
         "en": "Bane's Oathmaker",
         "zh": "祸殃立誓者",
         "zh_tw": "貝恩的立誓者",
+        "ko": "재앙의 맹약자",
         "props": [
           [
             "move1",
@@ -8107,6 +8268,7 @@
         "en": "Bane's Wraithskin",
         "zh": "祸殃怨魂之肤",
         "zh_tw": "貝恩的靈膚",
+        "ko": "재앙의 망령껍질",
         "props": [
           [
             "ac",
@@ -8153,6 +8315,7 @@
         "en": "Bane's Authority",
         "zh": "祸殃权柄",
         "zh_tw": "貝恩的權威",
+        "ko": "재앙의 권위",
         "props": [
           [
             "cast1",
@@ -8187,6 +8350,7 @@
     "en": "Horazon's Splendor",
     "zh": "霍拉松的辉煌",
     "zh_tw": "赫拉森的輝煌",
+    "ko": "호라존의 광채",
     "bonus": [
       [
         2,
@@ -8268,6 +8432,7 @@
         "en": "Horazon's Countenance",
         "zh": "霍拉松的面容",
         "zh_tw": "赫拉森的面容",
+        "ko": "호라존의 표정",
         "props": [
           [
             "att%/lvl",
@@ -8326,6 +8491,7 @@
         "en": "Horazon's Dominion",
         "zh": "霍拉松的统治",
         "zh_tw": "赫拉森的統治",
+        "ko": "호라존의 지배",
         "props": [
           [
             "skilltab",
@@ -8407,6 +8573,7 @@
         "en": "Horazon's Hold",
         "zh": "霍拉松的握持",
         "zh_tw": "赫拉森的掌控",
+        "ko": "호라존의 장악",
         "props": [
           [
             "crush",
@@ -8482,6 +8649,7 @@
         "en": "Horazon's Legacy",
         "zh": "霍拉松的传承",
         "zh_tw": "赫拉森的傳承",
+        "ko": "호라존의 유산",
         "props": [
           [
             "move1",
@@ -8541,6 +8709,7 @@
         "en": "Horazon's Secrets",
         "zh": "霍拉松的秘密",
         "zh_tw": "赫拉森的秘密",
+        "ko": "호라존의 비밀",
         "props": [
           [
             "skilltab",

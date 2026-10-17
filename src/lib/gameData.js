@@ -63,7 +63,7 @@ export function labelOf(key, lang) {
 export function searchTextOf(key) {
   const entry = catalog.get(key);
   const names = entry ? entry.names : items[key.split(":")[1]];
-  return names ? `${names.en} ${names.zh} ${names.zh_tw}`.toLowerCase() : key;
+  return names ? `${names.en} ${names.zh} ${names.zh_tw} ${names.ko}`.toLowerCase() : key;
 }
 
 export const baseNameOf = (code, lang) => nameOf(items[code], lang);

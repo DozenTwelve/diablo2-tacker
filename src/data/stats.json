@@ -2582,2277 +2582,2732 @@
     "ModStr1a": [
       "%+d to Strength",
       "%+d 力量",
-      "%+d 力量"
+      "%+d 力量",
+      "힘 %+d"
     ],
     "Moditem2allattrib": [
       "%+d to all Attributes",
       "%+d 所有属性",
-      "%+d 所有屬性"
+      "%+d 所有屬性",
+      "모든 능력치 %+d"
     ],
     "ModStr1d": [
       "%+d to Energy",
       "%+d 能量",
-      "%+d 能量"
+      "%+d 能量",
+      "마력 %+d"
     ],
     "ModStr1b": [
       "%+d to Dexterity",
       "%+d 敏捷",
-      "%+d 敏捷"
+      "%+d 敏捷",
+      "민첩 %+d"
     ],
     "ModStr1c": [
       "%+d to Vitality",
       "%+d 活力",
-      "%+d 體能"
+      "%+d 體能",
+      "활력 %+d"
     ],
     "ModStr1u": [
       "%+d to Life",
       "%+d 生命",
-      "%+d 生命"
+      "%+d 生命",
+      "생명력 %+d"
     ],
     "ModStr1e": [
       "%+d to Mana",
       "%+d 法力",
-      "%+d 法力"
+      "%+d 法力",
+      "마나 %+d"
     ],
     "ModStr5d": [
       "%+d Maximum Stamina",
       "%+d 最大耐力",
-      "%+d 精力上限"
+      "%+d 精力上限",
+      "최대 지구력 %+d"
     ],
     "Modstr2v": [
       "%+d%% Enhanced Defense",
       "%+d%% 强化防御",
-      "%+d%% 防禦強化"
+      "%+d%% 防禦強化",
+      "방어력 %+d%% 증가"
     ],
     "ModStr2j": [
       "%+d%% Enhanced Maximum Damage",
       "%+d%% 强化最大伤害",
-      "%+d%% 最大傷害強化"
+      "%+d%% 最大傷害強化",
+      "최대 피해 %+d%% 증가"
     ],
     "ModStr2k": [
       "%+d%% Enhanced Minimum Damage",
       "%+d%% 强化最小伤害",
-      "%+d%% 最小傷害強化"
+      "%+d%% 最小傷害強化",
+      "최소 피해 %+d%% 증가"
     ],
     "ModStr1h": [
       "%+d to Attack Rating",
       "%+d 命中值",
-      "%+d 準確率"
+      "%+d 準確率",
+      "명중률 %+d"
     ],
     "ModStr3g": [
       "%d%% Increased Chance of Blocking",
       "%d%% 格挡几率提高",
-      "格擋機率提高 %d%%"
+      "格擋機率提高 %d%%",
+      "막기 확률 %d%% 증가"
     ],
     "ModStr1g": [
       "%+d to Minimum Damage",
       "%+d 最小伤害",
-      "%+d 最小傷害"
+      "%+d 最小傷害",
+      "최소 피해 %+d"
     ],
     "ModStr1f": [
       "%+d to Maximum Damage",
       "%+d 最大伤害",
-      "%+d 最大傷害"
+      "%+d 最大傷害",
+      "최대 피해 %+d"
     ],
     "strModEnhancedDamage": [
       "%+d%% Enhanced Damage",
       "%+d%% 强化伤害",
-      "%+d%% 傷害強化"
+      "%+d%% 傷害強化",
+      "피해 %+d%% 증가"
     ],
     "ModStr4g": [
       "Regenerate Mana %d%%",
       "%d%% 法力回复",
-      "法力恢復 %d%%"
+      "法力恢復 %d%%",
+      "마나 재생 %d%%"
     ],
     "ModStr3v": [
       "Heal Stamina Plus %d%%",
       "治愈耐力外加 %d%%",
-      "精力恢復 +%d%%"
+      "精力恢復 +%d%%",
+      "지구력 회복 속도 %d%% 증가"
     ],
     "ModStr1i": [
       "%+d Defense",
       "%+d 防御",
-      "%+d 防禦"
+      "%+d 防禦",
+      "방어력 %+d"
     ],
     "ModStr6a": [
       "%+d Defense vs. Missile",
       "%+d 远程防御",
-      "%+d 對遠程防禦"
+      "%+d 對遠程防禦",
+      "원거리 공격 방어력 %+d"
     ],
     "ModStr6b": [
       "%+d Defense vs. Melee",
       "%+d 近战防御",
-      "%+d 對近戰防禦"
+      "%+d 對近戰防禦",
+      "근접 공격 방어력 %+d"
     ],
     "ModStr2u": [
       "Damage Reduced by %d",
       "伤害降低 %d",
-      "傷害降低 %d"
+      "傷害降低 %d",
+      "피해 %d 감소"
     ],
     "ModStr2t": [
       "Magic Damage Reduced by %d",
       "魔法伤害降低 %d",
-      "魔法傷害降低 %d"
+      "魔法傷害降低 %d",
+      "마법 피해 %d 감소"
     ],
     "ModStr2uPercent": [
       "Physical Damage Received Reduced by %d%%",
       "受到的物理伤害降低 %d%%",
-      "受到的物理傷害降低 %d%%"
+      "受到的物理傷害降低 %d%%",
+      "받는 물리 피해 %d%% 감소"
     ],
     "ModStr2uPercentNegative": [
       "Physical Damage Received Increased by %d%%",
       "受到的物理伤害提高 %d%%",
-      "受到的物理傷害提高 %d%%"
+      "受到的物理傷害提高 %d%%",
+      "받는 물리 피해 %d%% 증가"
     ],
     "ModStr1m": [
       "Magic Resist %+d%%",
       "魔法抗性 %+d%%",
-      "魔法抗性 %+d%%"
+      "魔法抗性 %+d%%",
+      "마법 저항 %+d%%"
     ],
     "ModStr5x": [
       "%+d%% to Maximum Magic Resist",
       "%+d%% 魔法抗性上限",
-      "魔法抗性上限 %+d%%"
+      "魔法抗性上限 %+d%%",
+      "최대 마법 저항 %+d%%"
     ],
     "ModStr1j": [
       "Fire Resist %+d%%",
       "火焰抗性 %+d%%",
-      "火焰抗性 %+d%%"
+      "火焰抗性 %+d%%",
+      "화염 저항 %+d%%"
     ],
     "strModAllResistances": [
       "All Resistances %+d",
       "%+d 所有抗性",
-      "所有抗性 %+d"
+      "所有抗性 %+d",
+      "모든 저항 %+d"
     ],
     "ModStr5u": [
       "%+d%% to Maximum Fire Resist",
       "%+d%% 火焰抗性上限",
-      "火焰抗性上限 %+d%%"
+      "火焰抗性上限 %+d%%",
+      "최대 화염 저항 %+d%%"
     ],
     "ModStr1l": [
       "Lightning Resist %+d%%",
       "闪电抗性 %+d%%",
-      "電擊抗性 %+d%%"
+      "電擊抗性 %+d%%",
+      "번개 저항 %+d%%"
     ],
     "ModStr5w": [
       "%+d%% to Maximum Lightning Resist",
       "%+d%% 闪电抗性上限",
-      "電擊抗性上限 %+d%%"
+      "電擊抗性上限 %+d%%",
+      "최대 번개 저항 %+d%%"
     ],
     "ModStr1k": [
       "Cold Resist %+d%%",
       "冰霜抗性 %+d%%",
-      "冰寒抗性 %+d%%"
+      "冰寒抗性 %+d%%",
+      "냉기 저항 %+d%%"
     ],
     "ModStr5v": [
       "%+d%% to Maximum Cold Resist",
       "%+d%% 冰霜抗性上限",
-      "冰寒抗性上限 %+d%%"
+      "冰寒抗性上限 %+d%%",
+      "최대 냉기 저항 %+d%%"
     ],
     "ModStr1n": [
       "Poison Resist %+d%%",
       "毒素抗性 %+d%%",
-      "毒素抗性 %+d%%"
+      "毒素抗性 %+d%%",
+      "독 저항 %+d%%"
     ],
     "ModStr5y": [
       "%+d%% to Maximum Poison Resist",
       "%+d%% 毒素抗性上限",
-      "毒素抗性上限 %+d%%"
+      "毒素抗性上限 %+d%%",
+      "최대 독 저항 %+d%%"
     ],
     "ModStr1p": [
       "%+d to Minimum Fire Damage",
       "%+d 最小火焰伤害",
-      "%+d 火焰傷害最小值"
+      "%+d 火焰傷害最小值",
+      "최소 화염 피해 %+d"
     ],
     "ModStr1o": [
       "%+d to Maximum Fire Damage",
       "%+d 最大火焰伤害",
-      "%+d 火焰傷害最大值"
+      "%+d 火焰傷害最大值",
+      "최대 화염 피해 %+d"
     ],
     "ModStr1r": [
       "%+d to Minimum Lightning Damage",
       "%+d 最小闪电伤害",
-      "%+d 電擊傷害最小值"
+      "%+d 電擊傷害最小值",
+      "최소 번개 피해 %+d"
     ],
     "ModStr1q": [
       "%+d to Maximum Lightning Damage",
       "%+d 最大闪电伤害",
-      "%+d 電擊傷害最大值"
+      "%+d 電擊傷害最大值",
+      "최대 번개 피해 %+d"
     ],
     "strModMagicDamage": [
       "%+d magic damage",
       "%+d 魔法伤害",
-      "%+d 魔法傷害"
+      "%+d 魔法傷害",
+      "마법 피해 %+d"
     ],
     "ModStr1t": [
       "%+d to Minimum Cold Damage",
       "%+d 最小冰霜伤害",
-      "%+d 冰寒傷害最小值"
+      "%+d 冰寒傷害最小值",
+      "최소 냉기 피해 %+d"
     ],
     "ModStr1s": [
       "%+d to Maximum Cold Damage",
       "%+d 最大冰霜伤害",
-      "%+d 冰寒傷害最大值"
+      "%+d 冰寒傷害最大值",
+      "최대 냉기 피해 %+d"
     ],
     "ModStr4i": [
       "%+d to Minimum Poison Damage",
       "%+d 最小毒素伤害",
-      "%+d 毒素傷害最小值"
+      "%+d 毒素傷害最小值",
+      "최소 독 피해 %+d"
     ],
     "ModStr4h": [
       "%+d to Maximum Poison Damage",
       "%+d 最大毒素伤害",
-      "%+d 毒素傷害最大值"
+      "%+d 毒素傷害最大值",
+      "최대 독 피해 %+d"
     ],
     "ModStr2z": [
       "%d%% Life stolen per hit",
       "%d%% 击中时偷取生命",
-      "擊中竊取 %d%% 生命"
+      "擊中竊取 %d%% 生命",
+      "적중당 생명력 %d%% 훔침"
     ],
     "ModStr2y": [
       "%d%% Mana stolen per hit",
       "%d%% 击中时偷取法力",
-      "擊中竊取 %d%% 法力"
+      "擊中竊取 %d%% 法力",
+      "적중당 마나 %d%% 훔침"
     ],
     "ModStr2l": [
       "Replenish Life %+d",
       "补充生命 %+d",
-      "生命回復 %+d"
+      "生命回復 %+d",
+      "생명력 회복 %+d"
     ],
     "ModStr2w": [
       "Drain Life %d",
       "抽取生命 %d",
-      "吸取生命 %d"
+      "吸取生命 %d",
+      "생명력 흡수 %d"
     ],
     "ModStr2i": [
       "Increase Maximum Durability %d%%",
       "+%d%% 最大耐久度",
-      "耐久度上限提高 %d%%"
+      "耐久度上限提高 %d%%",
+      "최대 내구도 %d%% 증가"
     ],
     "ModStr2g": [
       "Increase Maximum Life %d%%",
       "+%d%% 生命最大值",
-      "生命上限提高 %d%%"
+      "生命上限提高 %d%%",
+      "최대 생명력 %d%% 증가"
     ],
     "ModStr2h": [
       "Increase Maximum Mana %d%%",
       "+%d%% 法力最大值",
-      "法力上限提高 %d%%"
+      "法力上限提高 %d%%",
+      "최대 마나 %d%% 증가"
     ],
     "ModStr1v": [
       "Attacker Takes Damage of %d",
       "攻击者受到 %d 点伤害",
-      "攻擊者反傷：%d"
+      "攻擊者反傷：%d",
+      "공격자가 피해를 %d 받음"
     ],
     "ModStr1w": [
       "%d%% Extra Gold from Monsters",
       "%d%% 怪物额外掉落金币",
-      "怪物金幣掉落量提高 %d%%"
+      "怪物金幣掉落量提高 %d%%",
+      "괴물에게서 얻는 금화 %d%% 증가"
     ],
     "ModStr1x": [
       "%d%% Better Chance of Getting Magic Items",
       "%d%% 额外几率获得魔法物品",
-      "尋獲魔法物品機率提高 %d%%"
+      "尋獲魔法物品機率提高 %d%%",
+      "마법 아이템 발견 확률 %d%% 증가"
     ],
     "ModStr1y": [
       "Knockback",
       "击退",
-      "擊退"
+      "擊退",
+      "밀쳐내기"
     ],
     "ModStr3a": [
       "%+d to Amazon Skill Levels",
       "%+d 亚马逊技能等级",
-      "%+d 亞馬遜技能等級"
+      "%+d 亞馬遜技能等級",
+      "아마존 기술 레벨 %+d"
     ],
     "Moditem2ExpG": [
       "%+d%% to Experience Gained",
       "%+d%% 获得的经验",
-      "獲得的經驗值 %+d%%"
+      "獲得的經驗值 %+d%%",
+      "경험치 획득량 %+d%%"
     ],
     "ModitemHPaK": [
       "%+d Life after each Kill",
       "%+d 每次消灭恢复的生命",
-      "%+d 擊殺生命恢復"
+      "%+d 擊殺生命恢復",
+      "적 처치 시 생명력 %+d"
     ],
     "ModitemRedVendP": [
       "Reduces all Vendor Prices %d%%",
       "所有商人的收费减少 %d%%",
-      "所有商人的價格降低 %d%%"
+      "所有商人的價格降低 %d%%",
+      "상점 물품 가격 %d%% 하락"
     ],
     "ModStr3f": [
       "%+d to Light Radius",
       "%+d 照亮范围",
-      "照亮範圍 %+d"
+      "照亮範圍 %+d",
+      "시야 %+d"
     ],
     "ModStr3h": [
       "Requirements %+d%%",
       "需求 %+d%%",
-      "需求 %+d%%"
+      "需求 %+d%%",
+      "착용 조건 %+d%%"
     ],
     "ModStr4m": [
       "%+d%% Increased Attack Speed",
       "%+d%% 提高攻击速度",
-      "攻擊速度 %+d%%"
+      "攻擊速度 %+d%%",
+      "공격 속도 %+d%%"
     ],
     "ModStr4s": [
       "%+d%% Faster Run/Walk",
       "%+d%% 更快速跑步/步行",
-      "%+d%% 跑步 / 行走速度"
+      "%+d%% 跑步 / 行走速度",
+      "달리기/걷기 속도 %+d%%"
     ],
     "ItemModifierNonClassSkill": [
       "%+d to %s",
       "%+d 至%s",
-      "%+d 至%s"
+      "%+d 至%s",
+      "%+d %s"
     ],
     "ModStr4p": [
       "%+d%% Faster Hit Recovery",
       "%+d%% 更快速打击回复",
-      "%+d%% 打擊恢復"
+      "%+d%% 打擊恢復",
+      "타격 회복 속도 %+d%%"
     ],
     "ModStr4y": [
       "%+d%% Faster Block Rate",
       "%+d%% 更快速格挡",
-      "%+d%% 格擋速度"
+      "%+d%% 格擋速度",
+      "막기 속도 %+d%%"
     ],
     "ModStr4v": [
       "%+d%% Faster Cast Rate",
       "%+d%% 更快速施法",
-      "%+d%% 施法速度"
+      "%+d%% 施法速度",
+      "시전 속도 %+d%%"
     ],
     "ItemModifierClassSkill": [
       "%+d to %s %s",
       "%+d 至%s %s",
-      "%+d 至%s %s"
+      "%+d 至%s %s",
+      "%+d %s %s"
     ],
     "ModitemSMRIP": [
       "Slain Monsters Rest in Peace",
       "消灭的怪物就此安息",
-      "殺死的怪物就此安息"
+      "殺死的怪物就此安息",
+      "처치한 괴물이 안식에 듦"
     ],
     "ModStr3r": [
       "Poison Length Reduced by %d%%",
       "中毒时间缩短 %d%%",
-      "中毒的時效縮短 %d%%"
+      "中毒的時效縮短 %d%%",
+      "독 지속시간 %d%% 감소"
     ],
     "ModStr5b": [
       "Damage %+d",
       "伤害 %+d",
-      "傷害 %+d"
+      "傷害 %+d",
+      "피해 %+d"
     ],
     "ModStr3u": [
       "Hit Causes Monster to Flee %+d%%",
       "%+d%% 几率命中使怪物逃跑",
-      "%+d%% 機率擊中使怪物逃跑"
+      "%+d%% 機率擊中使怪物逃跑",
+      "적중 시 괴물 도주 %+d%%"
     ],
     "ModStr6d": [
       "Hit Blinds Target",
       "命中可致盲目标",
-      "擊中使目標目盲"
+      "擊中使目標目盲",
+      "적중 시 대상 실명"
     ],
     "ModStr3w": [
       "%+d%% Damage Taken Goes To Mana",
       "%+d%% 受到的伤害转换为法力",
-      "%+d%% 受到的傷害轉為法力"
+      "%+d%% 受到的傷害轉為法力",
+      "받는 피해의 %+d%%만큼 마나 회복"
     ],
     "ModStr3y": [
       "Ignore Target's Defense",
       "忽略目标的防御",
-      "無視目標防禦"
+      "無視目標防禦",
+      "대상의 방어력 무시"
     ],
     "ModStr5o": [
       "-%d%% Target Defense",
       "-%d%% 目标防御",
-      "-%d%% 目標防禦"
+      "-%d%% 目標防禦",
+      "대상의 방어력 -%d%%"
     ],
     "ModStr4a": [
       "Prevent Monster Heal",
       "防止怪物治愈",
-      "防止怪物自療"
+      "防止怪物自療",
+      "괴물 회복 저지"
     ],
     "ModStr4b": [
       "Half Freeze Duration",
       "冻结时间减半",
-      "被凍結的時效減半"
+      "被凍結的時效減半",
+      "빙결 지속시간 절반으로 감소"
     ],
     "ModStr4c": [
       "%d%% Bonus to Attack Rating",
       "%d%% 加成命中值",
-      "%d%% 準確率加成"
+      "%d%% 準確率加成",
+      "명중률 보너스 %d%%"
     ],
     "ModStr4d": [
       "%d to Monster Defense Per Hit",
       "%d 每一击降低的怪物防御",
-      "擊中使怪物防禦 %d"
+      "擊中使怪物防禦 %d",
+      "적중당 괴물 방어력 %d 감소"
     ],
     "ModStr4e": [
       "%+d%% Damage to Demons",
       "%+d%% 对恶魔的伤害",
-      "%+d%% 對惡魔的傷害"
+      "%+d%% 對惡魔的傷害",
+      "악마에게 주는 피해 %+d%%"
     ],
     "ModStr4f": [
       "%+d%% Damage to Undead",
       "%+d%% 对亡灵的伤害",
-      "%+d%% 對不死怪物的傷害"
+      "%+d%% 對不死怪物的傷害",
+      "언데드에게 주는 피해 %+d%%"
     ],
     "ModStr4j": [
       "%+d to Attack Rating against Demons",
       "%+d 对恶魔的命中值",
-      "%+d 對惡魔的準確率"
+      "%+d 對惡魔的準確率",
+      "악마에 대한 명중률 %+d"
     ],
     "ModStr4k": [
       "%+d to Attack Rating against Undead",
       "%+d 对亡灵的命中值",
-      "%+d 對不死怪物的準確率"
+      "%+d 對不死怪物的準確率",
+      "언데드에 대한 명중률 %+d"
     ],
     "ModStr5a": [
       "Throwable",
       "可投掷",
-      "可投擲"
+      "可投擲",
+      "투척 가능"
     ],
     "ModStr3i": [
       "%+d to Fire Skills",
       "%+d 火焰技能",
-      "%+d 火焰技能"
+      "%+d 火焰技能",
+      "화염 기술 %+d"
     ],
     "ModStr3k": [
       "%+d to All Skills",
       "%+d 所有技能",
-      "%+d 所有技能"
+      "%+d 所有技能",
+      "모든 기술 %+d"
     ],
     "ModStr3j": [
       "Attacker Takes Lightning Damage of %d",
       "攻击者受到 %d 点闪电伤害",
-      "攻擊者受到 %d 點電擊傷害"
+      "攻擊者受到 %d 點電擊傷害",
+      "공격자가 번개 피해를 %d 받음"
     ],
     "ModStr3l": [
       "Freezes target",
       "冻结目标",
-      "凍結目標"
+      "凍結目標",
+      "대상 빙결"
     ],
     "ModStr3m": [
       "%+d%% Chance of Open Wounds",
       "%+d%% 几率造成开创性伤口",
-      "%+d%% 機率造成開放傷口"
+      "%+d%% 機率造成開放傷口",
+      "상처 악화 확률 %+d%%"
     ],
     "ModStr5c": [
       "%+d%% Chance of Crushing Blow",
       "%+d%% 几率粉碎打击",
-      "%+d%% 機率造成粉碎打擊"
+      "%+d%% 機率造成粉碎打擊",
+      "강타 확률 %+d%%"
     ],
     "ModStr5e": [
       "%+d Kick Damage",
       "%+d 脚踢伤害",
-      "%+d 踢擊傷害"
+      "%+d 踢擊傷害",
+      "발차기 피해 %+d"
     ],
     "ModStr5f": [
       "%+d to Mana after each Kill",
       "%+d 每次消灭恢复的法力",
-      "%+d 擊殺法力恢復"
+      "%+d 擊殺法力恢復",
+      "적 처치 시 마나 %+d"
     ],
     "ModStr6c": [
       "%+d Life after each Demon Kill",
       "%+d 每次消灭恶魔恢复的生命",
-      "%+d 擊殺惡魔生命恢復"
+      "%+d 擊殺惡魔生命恢復",
+      "악마 처치 시 생명력 %+d"
     ],
     "ModStr5q": [
       "%+d%% Deadly Strike",
       "%+d%% 致死打击",
-      "%+d%% 致命打擊"
+      "%+d%% 致命打擊",
+      "치명적 공격 %+d%%"
     ],
     "ModStr5g": [
       "Fire Absorb %+d%%",
       "火焰伤害吸收 %+d%%",
-      "火焰吸收 %+d%%"
+      "火焰吸收 %+d%%",
+      "화염 흡수 %+d%%"
     ],
     "ModStr5h": [
       "%+d Fire Absorb",
       "%+d 火焰伤害吸收",
-      "%+d 火焰吸收"
+      "%+d 火焰吸收",
+      "화염 흡수 %+d"
     ],
     "ModStr5i": [
       "Lightning Absorb %+d%%",
       "闪电伤害吸收 %+d%%",
-      "電擊吸收 %+d%%"
+      "電擊吸收 %+d%%",
+      "번개 흡수 %+d%%"
     ],
     "ModStr5j": [
       "%+d Lightning Absorb",
       "%+d 闪电伤害吸收",
-      "%+d 電擊吸收"
+      "%+d 電擊吸收",
+      "번개 흡수 %+d"
     ],
     "ModStr5k": [
       "Magic Absorb %+d%%",
       "魔法伤害吸收 %+d%%",
-      "魔法吸收 %+d%%"
+      "魔法吸收 %+d%%",
+      "마법 흡수 %+d%%"
     ],
     "ModStr5l": [
       "%+d Magic Absorb",
       "%+d 魔法伤害吸收",
-      "%+d 魔法吸收"
+      "%+d 魔法吸收",
+      "마법 흡수 %+d"
     ],
     "ModStr5m": [
       "Cold Absorb %+d%%",
       "冰霜伤害吸收 %+d%%",
-      "冰寒吸收 %+d%%"
+      "冰寒吸收 %+d%%",
+      "냉기 흡수 %+d%%"
     ],
     "ModStr5n": [
       "%+d Cold Absorb",
       "%+d 冰霜伤害吸收",
-      "%+d 冰寒吸收"
+      "%+d 冰寒吸收",
+      "냉기 흡수 %+d"
     ],
     "ModStr5r": [
       "Slows Target by %d%%",
       "使目标减速 %d%%",
-      "使目標減慢 %d%%"
+      "使目標減慢 %d%%",
+      "대상 감속 %d%%"
     ],
     "ModitemAura": [
       "Level %d %s Aura When Equipped",
       "装备时获得%d级%s光环",
-      "裝備時賦予等級 %d %s靈氣"
+      "裝備時賦予等級 %d %s靈氣",
+      "장착 시 %d 레벨 %s 오라 효과 적용"
     ],
     "ModStre9s": [
       "Indestructible",
       "不可摧毁",
-      "永不毀損"
+      "永不毀損",
+      "파괴 불가"
     ],
     "ModStr5z": [
       "Cannot Be Frozen",
       "无法被冻结",
-      "無法凍結"
+      "無法凍結",
+      "빙결되지 않음"
     ],
     "ModStr6e": [
       "%d%% Slower Stamina Drain",
       "%d%% 降低耐力消耗",
-      "精力消耗減緩 %d%%"
+      "精力消耗減緩 %d%%",
+      "지구력 고갈 속도 %d%% 감소"
     ],
     "Moditemreanimas": [
       "%0%% Reanimate as: %1",
       "%0%% 复活：%1",
-      "%0%% 機率將目標復生為：%1"
+      "%0%% 機率將目標復生為：%1",
+      "처치 시 %0%% 확률로 %1 소생"
     ],
     "ModStr6g": [
       "%+d%% Piercing Attack",
       "%+d%% 穿刺攻击",
-      "%+d%% 穿透攻擊"
+      "%+d%% 穿透攻擊",
+      "관통 공격 %+d%%"
     ],
     "ModStr6h": [
       "Fires Magic Arrows",
       "射出魔法箭",
-      "射出魔法箭矢"
+      "射出魔法箭矢",
+      "마법 화살 발사"
     ],
     "ModStr6i": [
       "Fires Explosive Arrows or Bolts",
       "射出爆炸箭或弩矢",
-      "射出爆炸的弓矢或弩箭"
+      "射出爆炸的弓矢或弩箭",
+      "폭발하는 화살 발사"
     ],
     "ModitemAttratvsM": [
       "%d%% to Attack Rating versus",
       "%d%% 提高命中值, 对",
-      "%d%% 準確率，針對"
+      "%d%% 準確率，針對",
+      "명중률 %d%% 증가 / 대상 한정:"
     ],
     "Moditemdamvsm": [
       "%d%% to Damage versus",
       "%d%% 提高伤害, 对",
-      "%d%% 傷害，針對"
+      "%d%% 傷害，針對",
+      "피해 %d%% 증가 / 대상 한정:"
     ],
     "ModItemMonColdSunder": [
       "Monster Cold Immunity is Sundered",
       "已破除怪物冰霜免疫",
-      "破除怪物的冰寒免疫"
+      "破除怪物的冰寒免疫",
+      "괴물의 냉기 면역이 파괴됨"
     ],
     "StrSklTabItem1": [
       "%+d to Javelin and Spear Skills",
       "%+d 标枪和长矛技能",
-      "%+d 標槍與長矛技能"
+      "%+d 標槍與長矛技能",
+      "투창과 창 기술 %+d"
     ],
     "ModItemMonFireSunder": [
       "Monster Fire Immunity is Sundered",
       "已破除怪物火焰免疫",
-      "破除怪物的火焰免疫"
+      "破除怪物的火焰免疫",
+      "괴물의 화염 면역이 파괴됨"
     ],
     "ModItemMonLightSunder": [
       "Monster Lightning Immunity is Sundered",
       "已破除怪物闪电免疫",
-      "破除怪物的閃電免疫"
+      "破除怪物的閃電免疫",
+      "괴물의 번개 면역이 파괴됨"
     ],
     "ModItemMonPoisonSunder": [
       "Monster Poison Immunity is Sundered",
       "已破除怪物毒素免疫",
-      "破除怪物的毒素免疫"
+      "破除怪物的毒素免疫",
+      "괴물의 독 면역이 파괴됨"
     ],
     "ModItemMonPhysicalSunder": [
       "Monster Physical Immunity is Sundered",
       "已破除怪物物理免疫",
-      "破除怪物的物理免疫"
+      "破除怪物的物理免疫",
+      "괴물의 물리 면역이 파괴됨"
     ],
     "ModItemMonMagicSunder": [
       "Monster Magic Immunity is Sundered",
       "已破除怪物魔法免疫",
-      "破除怪物的魔法免疫"
+      "破除怪物的魔法免疫",
+      "괴물의 마법 면역이 파괴됨"
     ],
     "ItemExpansiveChancX": [
       "%d%% Chance to cast level %d %s on attack",
       "%d%% 几率在攻击时施放%d级%s",
-      "攻擊時有 %d%% 機率施展等級 %d %s"
+      "攻擊時有 %d%% 機率施展等級 %d %s",
+      "공격 시 %d%% 확률로 %d 레벨 %s 시전"
     ],
     "ModitemskonKill": [
       "%d%% Chance to cast level %d %s when you Kill an Enemy",
       "%d%% 几率在消灭一名敌人时施放%d级%s",
-      "當你殺敵時有 %d%% 機率施展等級 %d %s"
+      "當你殺敵時有 %d%% 機率施展等級 %d %s",
+      "적 처치 시 %d%% 확률로 %d 레벨 %s 시전"
     ],
     "Moditemskondeath": [
       "%d%% Chance to cast level %d %s when you Die",
       "%d%% 几率在死亡时施放%d级%s",
-      "當你死亡時有 %d%% 機率施展等級 %d %s"
+      "當你死亡時有 %d%% 機率施展等級 %d %s",
+      "사망 시 %d%% 확률로 %d 레벨 %s 시전"
     ],
     "ItemExpansiveChanc1": [
       "%d%% Chance to cast level %d %s on striking",
       "%d%% 几率在击中时施放%d级%s",
-      "擊中時有 %d%% 機率施展等級 %d %s"
+      "擊中時有 %d%% 機率施展等級 %d %s",
+      "타격 시 %d%% 확률로 %d 레벨 %s 시전"
     ],
     "ModitemskonLevel": [
       "%d%% Chance to cast level %d %s when you Level-Up",
       "%d%% 几率在升级时施放%d级%s",
-      "當你升級時有 %d%% 機率施展等級 %d %s"
+      "當你升級時有 %d%% 機率施展等級 %d %s",
+      "레벨 상승 시 %d%% 확률로 %d 레벨 %s 시전"
     ],
     "ModStr6k": [
       "%+d%% chance for finishing moves to not consume charges",
       "%+d%% 几率终结技不消耗充能层数",
-      "%+d%% 機率使終結技不消耗集氣的力量"
+      "%+d%% 機率使終結技不消耗集氣的力量",
+      "필살기가 충전을 소모하지 않을 확률 %+d%%"
     ],
     "ItemExpansiveChanc2": [
       "%d%% Chance to cast level %d %s when struck",
       "%d%% 几率在被击中时施放%d级%s",
-      "被擊中時有 %d%% 機率施展等級 %d %s"
+      "被擊中時有 %d%% 機率施展等級 %d %s",
+      "피격 시 %d%% 확률로 %d 레벨 %s 시전"
     ],
     "ModStre10d": [
       "Level %d %s (%d/%d Charges)",
       "%d级%s (%d/%d 次充能)",
-      "等級 %d %s（%d/%d 次）"
+      "等級 %d %s（%d/%d 次）",
+      "%d 레벨 %s (충전 %d/%d회)"
     ],
     "ModStr6j": [
       "%+d%% Chance to not consume Quantity",
       "%+d%% 几率不消耗数量",
-      "%+d%% 機率不消耗數量"
+      "%+d%% 機率不消耗數量",
+      "%+d%% 확률로 수량을 소모하지 않음"
     ],
     "increaseswithplaylevelX": [
       "(Based on Character Level)",
       "(基于角色等级)",
-      "（依角色等級而定）"
+      "（依角色等級而定）",
+      "(캐릭터 레벨에 비례)"
     ],
     "ModStre9p": [
       "%+d Absorbs Cold Damage",
       "%+d 吸收冰霜伤害",
-      "%+d 冰寒傷害吸收"
+      "%+d 冰寒傷害吸收",
+      "냉기 피해 흡수 %+d"
     ],
     "ModStre9o": [
       "%+d Absorbs Fire Damage",
       "%+d 吸收火焰伤害",
-      "%+d 火焰傷害吸收"
+      "%+d 火焰傷害吸收",
+      "화염 피해 흡수 %+d"
     ],
     "ModStre9q": [
       "%+d Absorbs Lightning Damage",
       "%+d 吸收闪电伤害",
-      "%+d 電擊傷害吸收"
+      "%+d 電擊傷害吸收",
+      "번개 피해 흡수 %+d"
     ],
     "ModStre9t": [
       "Repairs %d durability per second",
       "每秒修复 %d 点耐久度",
-      "每秒修復 %d 耐久度"
+      "每秒修復 %d 耐久度",
+      "내구도 %d 회복 (매초)"
     ],
     "ModStre9v": [
       "Replenishes quantity",
       "补充数量",
-      "回復數量"
+      "回復數量",
+      "수량 자동 회복"
     ],
     "ModStre9i": [
       "Increased Stack Size",
       "增加堆叠数量",
-      "堆疊數量提高"
+      "堆疊數量提高",
+      "중첩 수량 증가"
     ],
     "Moditemenrescoldsk": [
       "-%d%% to Enemy Cold Resistance",
       "-%d%% 敌人的冰霜抗性",
-      "敵人冰寒抗性 -%d%%"
+      "敵人冰寒抗性 -%d%%",
+      "적의 냉기 저항 -%d%%"
     ],
     "Moditemenresfiresk": [
       "-%d%% to Enemy Fire Resistance",
       "-%d%% 敌人的火焰抗性",
-      "敵人火焰抗性 -%d%%"
+      "敵人火焰抗性 -%d%%",
+      "적의 화염 저항 -%d%%"
     ],
     "Moditemenresltngsk": [
       "-%d%% to Enemy Lightning Resistance",
       "-%d%% 敌人的闪电抗性",
-      "敵人電擊抗性 -%d%%"
+      "敵人電擊抗性 -%d%%",
+      "적의 번개 저항 -%d%%"
     ],
     "Moditemenrespoissk": [
       "-%d%% to Enemy Poison Resistance",
       "-%d%% 敌人的毒素抗性",
-      "敵人毒素抗性 -%d%%"
+      "敵人毒素抗性 -%d%%",
+      "적의 독 저항 -%d%%"
     ],
     "ModitemdamFiresk": [
       "%+d%% to Fire Skill Damage",
       "%+d%% 火焰技能伤害",
-      "%+d%% 火焰技能傷害"
+      "%+d%% 火焰技能傷害",
+      "화염 기술 피해 %+d%%"
     ],
     "ModitemdamLtngsk": [
       "%+d%% to Lightning Skill Damage",
       "%+d%% 闪电技能伤害",
-      "%+d%% 閃電技能傷害"
+      "%+d%% 閃電技能傷害",
+      "번개 기술 피해 %+d%%"
     ],
     "ModitemdamColdsk": [
       "%+d%% to Cold Skill Damage",
       "%+d%% 冰霜技能伤害",
-      "%+d%% 冰寒技能傷害"
+      "%+d%% 冰寒技能傷害",
+      "냉기 기술 피해 %+d%%"
     ],
     "ModitemdamPoissk": [
       "%+d%% to Poison Skill Damage",
       "%+d%% 毒素技能伤害",
-      "%+d%% 毒素技能傷害"
+      "%+d%% 毒素技能傷害",
+      "독 기술 피해 %+d%%"
     ],
     "ModStrMagMastery": [
       "%+d%% to Magic Skill Damage",
       "%+d%% 魔法技能伤害",
-      "%+d%% 魔法技能傷害"
+      "%+d%% 魔法技能傷害",
+      "마법 기술 피해 %+d%%"
     ],
     "ModStrMagPierce": [
       "-%d%% to Enemy Magic Resistance",
       "-%d%% 敌人的魔法抗性",
-      "敵人魔法抗性 -%d%%"
+      "敵人魔法抗性 -%d%%",
+      "적 마법 저항 -%d%%"
     ],
     "MaxMagDmgPerLvl": [
       "%+d to Maximum Magic Damage",
       "+%d 最大魔法伤害",
-      "%+d 魔法傷害最大值"
+      "%+d 魔法傷害最大值",
+      "최대 마법 피해 %+d"
     ],
     "ModStrDamPierce": [
       "-%d%% to Enemy Physical Damage Resistance",
       "-%d%% 敌人的物理伤害抗性",
-      "敵人物理傷害抗性 -%d%%"
+      "敵人物理傷害抗性 -%d%%",
+      "적 물리 피해 저항 -%d%%"
     ],
     "StrSklTabItem3": [
       "%+d to Bow and Crossbow Skills",
       "%+d 弓和弩技能",
-      "%+d 弓與弩技能"
+      "%+d 弓與弩技能",
+      "활과 쇠뇌 기술 %+d"
     ],
     "StrSklTabItem2": [
       "%+d to Passive and Magic Skills",
       "%+d 被动和魔法技能",
-      "%+d 被動與魔法技能"
+      "%+d 被動與魔法技能",
+      "지속 효과와 마법 기술 %+d"
     ],
     "AmaOnly": [
       "(Amazon Only)",
       "(仅限亚马逊)",
-      "（只限亞馬遜）"
+      "（只限亞馬遜）",
+      "(아마존 전용)"
     ],
     "ModStr3d": [
       "%+d to Sorceress Skill Levels",
       "%+d 巫师技能等级",
-      "%+d 魔法使技能等級"
+      "%+d 魔法使技能等級",
+      "원소술사 기술 레벨 %+d"
     ],
     "StrSklTabItem15": [
       "%+d to Fire Skills",
       "%+d 火系法术",
-      "%+d 火焰技能"
+      "%+d 火焰技能",
+      "화염 기술 %+d"
     ],
     "StrSklTabItem14": [
       "%+d to Lightning Skills",
       "%+d 雷系法术",
-      "%+d 閃電技能"
+      "%+d 閃電技能",
+      "번개 기술 %+d"
     ],
     "StrSklTabItem13": [
       "%+d to Cold Skills",
       "%+d 冰系法术",
-      "%+d 冰寒技能"
+      "%+d 冰寒技能",
+      "냉기 기술 %+d"
     ],
     "SorOnly": [
       "(Sorceress Only)",
       "(仅限巫师)",
-      "（只限魔法使）"
+      "（只限魔法使）",
+      "(원소술사 전용)"
     ],
     "ModStr3c": [
       "%+d to Necromancer Skill Levels",
       "%+d 死灵法师技能等级",
-      "%+d 死靈法師技能等級"
+      "%+d 死靈法師技能等級",
+      "강령술사 기술 레벨 %+d"
     ],
     "StrSklTabItem8": [
       "%+d to Curses",
       "%+d 诅咒术",
-      "%+d 詛咒"
+      "%+d 詛咒",
+      "저주 %+d"
     ],
     "StrSklTabItem7": [
       "%+d to Poison and Bone Skills",
       "%+d 毒素和白骨术",
-      "%+d 毒素與骸骨技能"
+      "%+d 毒素與骸骨技能",
+      "독과 뼈 기술 %+d"
     ],
     "StrSklTabItem9": [
       "+%d to Summoning Skills",
       "+%d 召唤术",
-      "+%d 召喚技能"
+      "+%d 召喚技能",
+      "소환 기술 +%d"
     ],
     "NecOnly": [
       "(Necromancer Only)",
       "(仅限死灵法师)",
-      "（只限死靈法師）"
+      "（只限死靈法師）",
+      "(강령술사 전용)"
     ],
     "ModStr3b": [
       "%+d to Paladin Skill Levels",
       "%+d 圣骑士技能等级",
-      "%+d 聖騎士技能等級"
+      "%+d 聖騎士技能等級",
+      "성기사 기술 레벨 %+d"
     ],
     "StrSklTabItem6": [
       "%+d to Combat Skills",
       "%+d 战斗技能",
-      "%+d 戰鬥技能"
+      "%+d 戰鬥技能",
+      "전투 기술 %+d"
     ],
     "StrSklTabItem5": [
       "%+d to Offensive Auras",
       "%+d 攻击光环",
-      "%+d 攻擊靈氣"
+      "%+d 攻擊靈氣",
+      "공격 오라 %+d"
     ],
     "StrSklTabItem4": [
       "%+d to Defensive Auras",
       "%+d 防御光环",
-      "%+d 防禦靈氣"
+      "%+d 防禦靈氣",
+      "방어 오라 %+d"
     ],
     "PalOnly": [
       "(Paladin Only)",
       "(仅限圣骑士)",
-      "（只限聖騎士）"
+      "（只限聖騎士）",
+      "(성기사 전용)"
     ],
     "ModStr3e": [
       "%+d to Barbarian Skill Levels",
       "%+d 野蛮人技能等级",
-      "%+d 野蠻人技能等級"
+      "%+d 野蠻人技能等級",
+      "야만용사 기술 레벨 %+d"
     ],
     "StrSklTabItem11": [
       "%+d to Combat Skills",
       "%+d 战斗技能",
-      "%+d 戰鬥技能"
+      "%+d 戰鬥技能",
+      "전투 기술 %+d"
     ],
     "StrSklTabItem12": [
       "%+d to Masteries",
       "%+d 精通类技能",
-      "%+d 戰鬥專精"
+      "%+d 戰鬥專精",
+      "숙련 %+d"
     ],
     "StrSklTabItem10": [
       "%+d to Warcries",
       "%+d 呐喊技能",
-      "%+d 戰吼"
+      "%+d 戰吼",
+      "함성 %+d"
     ],
     "BarOnly": [
       "(Barbarian Only)",
       "(仅限野蛮人)",
-      "（只限野蠻人）"
+      "（只限野蠻人）",
+      "(야만용사 전용)"
     ],
     "ModStre8a": [
       "%+d to Druid Skill Levels",
       "%+d 德鲁伊技能等级",
-      "%+d 德魯伊技能等級"
+      "%+d 德魯伊技能等級",
+      "드루이드 기술 레벨 %+d"
     ],
     "StrSklTabItem16": [
       "%+d to Summoning Skills",
       "%+d 召唤技能",
-      "%+d 召喚技能"
+      "%+d 召喚技能",
+      "소환 기술 %+d"
     ],
     "StrSklTabItem17": [
       "%+d to Shape Shifting Skills",
       "%+d 变形技能",
-      "%+d 變形技能"
+      "%+d 變形技能",
+      "변신 기술 %+d"
     ],
     "StrSklTabItem18": [
       "%+d to Elemental Skills",
       "%+d 元素技能",
-      "%+d 元素技能"
+      "%+d 元素技能",
+      "원소 기술 %+d"
     ],
     "DruOnly": [
       "(Druid Only)",
       "(仅限德鲁伊)",
-      "（只限德魯伊）"
+      "（只限德魯伊）",
+      "(드루이드 전용)"
     ],
     "ModStre8b": [
       "%+d to Assassin Skill Levels",
       "%+d 猎法者技能等级",
-      "%+d 刺客技能等級"
+      "%+d 刺客技能等級",
+      "암살자 기술 레벨 %+d"
     ],
     "StrSklTabItem19": [
       "%+d to Traps",
       "%+d 陷阱",
-      "%+d 陷阱"
+      "%+d 陷阱",
+      "덫 %+d"
     ],
     "StrSklTabItem20": [
       "%+d to Shadow Disciplines",
       "%+d 影身训练",
-      "%+d 暗影修行"
+      "%+d 暗影修行",
+      "그림자 단련 %+d"
     ],
     "StrSklTabItem21": [
       "%+d to Martial Arts",
       "%+d 武学技艺",
-      "%+d 武學技藝"
+      "%+d 武學技藝",
+      "무술 %+d"
     ],
     "AssOnly": [
       "(Assassin Only)",
       "(仅限猎法者)",
-      "（只限刺客）"
+      "（只限刺客）",
+      "(암살자 전용)"
     ],
     "ModStrge9": [
       "+%d to Warlock Skills",
       "+%d 术士技能",
-      "+%d 術士技能"
+      "+%d 術士技能",
+      "악마술사 기술 +%d"
     ],
     "StrSklTabItem24": [
       "+%d to Demon Skills",
       "+%d 恶魔技能",
-      "+%d 惡魔技能"
+      "+%d 惡魔技能",
+      "악마 기술 +%d"
     ],
     "StrSklTabItem22": [
       "+%d to Eldritch Skills",
       "+%d 邪术技能",
-      "+%d 邪異技能"
+      "+%d 邪異技能",
+      "기괴 기술 +%d"
     ],
     "StrSklTabItem23": [
       "+%d to Chaos Skills",
       "+%d 混沌技能",
-      "+%d 混沌技能"
+      "+%d 混沌技能",
+      "혼돈 기술 +%d"
     ],
     "WarOnly": [
       "(Warlock Only)",
       "（仅限术士）",
-      "（只限術士）"
+      "（只限術士）",
+      "(악마술사 전용)"
     ],
     "skillname0": [
       "Attack",
       "攻击",
-      "攻擊"
+      "攻擊",
+      "공격"
     ],
     "skillname1": [
       "Kick",
       "脚踢",
-      "踢擊"
+      "踢擊",
+      "발차기"
     ],
     "skillname2": [
       "Throw",
       "投掷",
-      "投擲"
+      "投擲",
+      "투척"
     ],
     "skillname3": [
       "Unsummon",
       "取消召唤",
-      "取消召喚"
+      "取消召喚",
+      "소환 해제"
     ],
     "skillname4": [
       "Left Hand Throw",
       "左手投掷",
-      "左手投擲"
+      "左手投擲",
+      "왼손 투척"
     ],
     "skillname5": [
       "Left Hand Swing",
       "左手挥舞",
-      "左手攻擊"
+      "左手攻擊",
+      "왼손 휘두르기"
     ],
     "skillname6": [
       "Magic Arrow",
       "魔法箭",
-      "魔法箭"
+      "魔法箭",
+      "마법 화살"
     ],
     "skillname7": [
       "Fire Arrow",
       "火焰箭",
-      "火焰箭"
+      "火焰箭",
+      "불꽃 화살"
     ],
     "skillname8": [
       "Inner Sight",
       "心眼",
-      "心靈視野"
+      "心靈視野",
+      "내면의 시야"
     ],
     "skillname9": [
       "Critical Strike",
       "致命攻击",
-      "致命攻勢"
+      "致命攻勢",
+      "치명타"
     ],
     "skillname10": [
       "Jab",
       "戳刺",
-      "戳刺"
+      "戳刺",
+      "찌르기"
     ],
     "skillname11": [
       "Cold Arrow",
       "冰霜箭",
-      "冷霜箭"
+      "冷霜箭",
+      "냉기 화살"
     ],
     "skillname12": [
       "Multiple Shot",
       "多重箭",
-      "多重箭"
+      "多重箭",
+      "다발 사격"
     ],
     "skillname13": [
       "Dodge",
       "闪避",
-      "閃躲"
+      "閃躲",
+      "흘리기"
     ],
     "skillname14": [
       "Power Strike",
       "电荷攻击",
-      "充能強擊"
+      "充能強擊",
+      "전기의 일격"
     ],
     "skillname15": [
       "Poison Javelin",
       "剧毒标枪",
-      "劇毒標槍"
+      "劇毒標槍",
+      "맹독 투창"
     ],
     "skillname16": [
       "Exploding Arrow",
       "爆裂箭",
-      "爆裂箭"
+      "爆裂箭",
+      "폭발 화살"
     ],
     "skillname17": [
       "Slow Missiles",
       "飞矢减速",
-      "緩箭術"
+      "緩箭術",
+      "투사체 감속"
     ],
     "skillname18": [
       "Avoid",
       "躲避",
-      "閃身"
+      "閃身",
+      "회피"
     ],
     "skillname19": [
       "Impale",
       "刺爆",
-      "穿刺"
+      "穿刺",
+      "꿰뚫기"
     ],
     "skillname20": [
       "Lightning Bolt",
       "闪电球",
-      "閃電槍"
+      "閃電槍",
+      "번갯불"
     ],
     "skillname21": [
       "Ice Arrow",
       "急冻箭",
-      "寒冰箭"
+      "寒冰箭",
+      "얼음 화살"
     ],
     "skillname22": [
       "Guided Arrow",
       "导引箭",
-      "導引箭"
+      "導引箭",
+      "유도 화살"
     ],
     "skillname23": [
       "Penetrate",
       "刺穿",
-      "精準攻勢"
+      "精準攻勢",
+      "간파"
     ],
     "skillname24": [
       "Charged Strike",
       "充能一击",
-      "聚能強擊"
+      "聚能強擊",
+      "전류의 일격"
     ],
     "skillname25": [
       "Plague Javelin",
       "瘟疫标枪",
-      "瘟疫標槍"
+      "瘟疫標槍",
+      "역병 투창"
     ],
     "skillname26": [
       "Strafe",
       "连珠箭",
-      "掃射"
+      "掃射",
+      "속사"
     ],
     "skillname27": [
       "Immolation Arrow",
       "献祭箭",
-      "熾炎箭"
+      "熾炎箭",
+      "점화 화살"
     ],
     "skillname28": [
       "Decoy",
       "诱饵",
-      "替身"
+      "替身",
+      "미끼"
     ],
     "skillname29": [
       "Evade",
       "回避",
-      "閃避"
+      "閃避",
+      "피하기"
     ],
     "skillname30": [
       "Fend",
       "猛刺",
-      "疾刺"
+      "疾刺",
+      "난격"
     ],
     "skillname31": [
       "Freezing Arrow",
       "冻结箭",
-      "冰凍箭"
+      "冰凍箭",
+      "빙결 화살"
     ],
     "skillname32": [
       "Valkyrie",
       "女武神",
-      "女武神"
+      "女武神",
+      "발키리"
     ],
     "skillname33": [
       "Pierce",
       "贯穿",
-      "貫穿攻勢"
+      "貫穿攻勢",
+      "관통"
     ],
     "skillname34": [
       "Lightning Strike",
       "闪电攻击",
-      "閃電強擊"
+      "閃電強擊",
+      "번개의 일격"
     ],
     "skillname35": [
       "Lightning Fury",
       "雷霆之怒",
-      "閃電烈怒"
+      "閃電烈怒",
+      "번개의 격노"
     ],
     "skillname36": [
       "Fire Bolt",
       "火焰弹",
-      "火焰彈"
+      "火焰彈",
+      "화염탄"
     ],
     "skillname37": [
       "Warmth",
       "暖身术",
-      "暖流"
+      "暖流",
+      "온기"
     ],
     "skillname38": [
       "Charged Bolt",
       "电荷弹",
-      "電能彈"
+      "電能彈",
+      "번개 줄기"
     ],
     "skillname39": [
       "Ice Bolt",
       "冰霜弹",
-      "寒冰彈"
+      "寒冰彈",
+      "얼음살"
     ],
     "skillname40": [
       "Frozen Armor",
       "冰封甲",
-      "冰封甲"
+      "冰封甲",
+      "얼어붙은 갑옷"
     ],
     "skillname41": [
       "Inferno",
       "地狱火",
-      "煉獄之火"
+      "煉獄之火",
+      "지옥불"
     ],
     "skillname42": [
       "Static Field",
       "静电场",
-      "靜電力場"
+      "靜電力場",
+      "전자기장"
     ],
     "skillname43": [
       "Telekinesis",
       "心灵传动",
-      "心靈傳動"
+      "心靈傳動",
+      "염력"
     ],
     "skillname44": [
       "Frost Nova",
       "冰霜新星",
-      "冰霜新星"
+      "冰霜新星",
+      "서릿발"
     ],
     "skillname45": [
       "Ice Blast",
       "冰球爆",
-      "寒冰球"
+      "寒冰球",
+      "얼음 작렬"
     ],
     "skillname46": [
       "Blaze",
       "足跟火",
-      "熾烈之徑"
+      "熾烈之徑",
+      "불길"
     ],
     "skillname47": [
       "Fire Ball",
       "火球术",
-      "火球術"
+      "火球術",
+      "화염구"
     ],
     "skillname48": [
       "Nova",
       "闪电新星",
-      "閃電新星"
+      "閃電新星",
+      "번개 파장"
     ],
     "skillname49": [
       "Lightning",
       "闪电术",
-      "閃電箭"
+      "閃電箭",
+      "번개"
     ],
     "skillname50": [
       "Shiver Armor",
       "碎冰甲",
-      "碎冰甲"
+      "碎冰甲",
+      "오한 갑옷"
     ],
     "skillname51": [
       "Fire Wall",
       "火焰墙",
-      "火牆術"
+      "火牆術",
+      "화염벽"
     ],
     "skillname52": [
       "Enchant",
       "附魔火焰",
-      "附魔"
+      "附魔",
+      "마법부여"
     ],
     "skillname53": [
       "Chain Lightning",
       "连锁闪电",
-      "連鎖閃電"
+      "連鎖閃電",
+      "연쇄 번개"
     ],
     "skillname54": [
       "Teleport",
       "传送术",
-      "傳送術"
+      "傳送術",
+      "순간이동"
     ],
     "skillname55": [
       "Glacial Spike",
       "冰尖柱",
-      "冰川之槍"
+      "冰川之槍",
+      "빙하 가시"
     ],
     "skillname56": [
       "Meteor",
       "陨石术",
-      "隕石術"
+      "隕石術",
+      "운석 낙하"
     ],
     "skillname57": [
       "Thunder Storm",
       "雷暴术",
-      "雷電風暴"
+      "雷電風暴",
+      "뇌우"
     ],
     "skillname58": [
       "Energy Shield",
       "能量盾",
-      "能量護盾"
+      "能量護盾",
+      "마력 보호막"
     ],
     "skillname59": [
       "Blizzard",
       "暴风雪",
-      "暴風雪"
+      "暴風雪",
+      "눈보라"
     ],
     "skillname60": [
       "Chilling Armor",
       "冰棱甲",
-      "寒冰甲"
+      "寒冰甲",
+      "냉기 갑옷"
     ],
     "skillsname61": [
       "Fire Mastery",
       "火系精通",
-      "火焰專精"
+      "火焰專精",
+      "화염 숙련"
     ],
     "skillname62": [
       "Hydra",
       "多头蛇",
-      "多頭蛇"
+      "多頭蛇",
+      "히드라"
     ],
     "skillname63": [
       "Lightning Mastery",
       "雷系精通",
-      "閃電專精"
+      "閃電專精",
+      "번개 숙련"
     ],
     "skillname64": [
       "Frozen Orb",
       "冰封球",
-      "冰封球"
+      "冰封球",
+      "얼음 보주"
     ],
     "skillname65": [
       "Cold Mastery",
       "冰系精通",
-      "冰寒專精"
+      "冰寒專精",
+      "냉기 숙련"
     ],
     "skillname66": [
       "Amplify Damage",
       "伤害加深",
-      "傷害加深"
+      "傷害加深",
+      "피해 증폭"
     ],
     "skillname67": [
       "Teeth",
       "骨牙",
-      "剔骨之牙"
+      "剔骨之牙",
+      "이빨"
     ],
     "skillname68": [
       "Bone Armor",
       "骨甲",
-      "骸骨護甲"
+      "骸骨護甲",
+      "뼈 갑옷"
     ],
     "skillname69": [
       "Skeleton Mastery",
       "骷髅精通",
-      "骷髏專精"
+      "骷髏專精",
+      "해골 숙련"
     ],
     "skillname70": [
       "Raise Skeleton",
       "复生骷髅",
-      "復生骷髏"
+      "復生骷髏",
+      "해골 되살리기"
     ],
     "skillname71": [
       "Dim Vision",
       "微暗灵视",
-      "昏暗視野"
+      "昏暗視野",
+      "시야 흐리기"
     ],
     "skillname72": [
       "Weaken",
       "削弱",
-      "削弱"
+      "削弱",
+      "약화"
     ],
     "skillname73": [
       "Poison Dagger",
       "毒匕",
-      "淬毒匕首"
+      "淬毒匕首",
+      "맹독 단도"
     ],
     "skillname74": [
       "Corpse Explosion",
       "邪爆",
-      "屍爆"
+      "屍爆",
+      "시체 폭발"
     ],
     "skillname75": [
       "Clay Golem",
       "黏土傀儡",
-      "黏土魔像"
+      "黏土魔像",
+      "점토 골렘"
     ],
     "skillname76": [
       "Iron Maiden",
       "铁处女",
-      "攻擊反噬"
+      "攻擊反噬",
+      "가시 박힌 철관"
     ],
     "skillname77": [
       "Terror",
       "恐惧",
-      "恐懼"
+      "恐懼",
+      "공포"
     ],
     "skillname78": [
       "Bone Wall",
       "骨墙",
-      "骨牆"
+      "骨牆",
+      "뼈의 벽"
     ],
     "skillname79": [
       "Golem Mastery",
       "傀儡精通",
-      "魔像專精"
+      "魔像專精",
+      "골렘 숙련"
     ],
     "skillname80": [
       "Raise Skeletal Mage",
       "复生骷髅法师",
-      "復生骷髏法師"
+      "復生骷髏法師",
+      "해골 마법학자 되살리기"
     ],
     "skillname81": [
       "Confuse",
       "迷乱",
-      "混亂"
+      "混亂",
+      "혼란"
     ],
     "skillname82": [
       "Life Tap",
       "生命吸取",
-      "偷取生命"
+      "偷取生命",
+      "생명력 추출"
     ],
     "skillname83": [
       "Poison Explosion",
       "毒爆",
-      "毒爆"
+      "毒爆",
+      "맹독 폭발"
     ],
     "skillname84": [
       "Bone Spear",
       "骨矛",
-      "骨矛"
+      "骨矛",
+      "뼈 창"
     ],
     "skillname85": [
       "Blood Golem",
       "精华傀儡",
-      "鮮血魔像"
+      "鮮血魔像",
+      "피 골렘"
     ],
     "skillname86": [
       "Attract",
       "吸引",
-      "致命吸引"
+      "致命吸引",
+      "유혹"
     ],
     "skillname87": [
       "Decrepify",
       "衰老",
-      "衰老"
+      "衰老",
+      "노화"
     ],
     "skillname88": [
       "Bone Prison",
       "骨牢",
-      "骨牢"
+      "骨牢",
+      "뼈 감옥"
     ],
     "skillname89": [
       "Summon Resist",
       "召唤抗性",
-      "召喚物抗性"
+      "召喚物抗性",
+      "소환수 저항"
     ],
     "skillname90": [
       "Iron Golem",
       "钢铁傀儡",
-      "鋼鐵魔像"
+      "鋼鐵魔像",
+      "강철 골렘"
     ],
     "skillname91": [
       "Lower Resist",
       "降低抗性",
-      "降低抗性"
+      "降低抗性",
+      "저항 감소"
     ],
     "skillname92": [
       "Poison Nova",
       "剧毒新星",
-      "劇毒新星"
+      "劇毒新星",
+      "맹독 확산"
     ],
     "skillname93": [
       "Bone Spirit",
       "骨灵",
-      "骸骨之魂"
+      "骸骨之魂",
+      "뼈 영혼"
     ],
     "skillname94": [
       "Fire Golem",
       "火焰傀儡",
-      "火焰魔像"
+      "火焰魔像",
+      "화염 골렘"
     ],
     "skillname95": [
       "Revive",
       "重生",
-      "重生"
+      "重生",
+      "부활"
     ],
     "skillname96": [
       "Sacrifice",
       "牺牲",
-      "犧牲打擊"
+      "犧牲打擊",
+      "희생"
     ],
     "skillname97": [
       "Smite",
       "盾击",
-      "盾牌重擊"
+      "盾牌重擊",
+      "강타"
     ],
     "skillname98": [
       "Might",
       "力量",
-      "力量"
+      "力量",
+      "위세"
     ],
     "skillname99": [
       "Prayer",
       "祈祷",
-      "祈禱"
+      "祈禱",
+      "기도"
     ],
     "skillname100": [
       "Resist Fire",
       "抗火",
-      "抗火"
+      "抗火",
+      "화염 저항"
     ],
     "skillname101": [
       "Holy Bolt",
       "圣光弹",
-      "聖光彈"
+      "聖光彈",
+      "신성한 빛줄기"
     ],
     "skillname102": [
       "Holy Fire",
       "神圣之火",
-      "神聖火焰"
+      "神聖火焰",
+      "신성한 불꽃"
     ],
     "skillname103": [
       "Thorns",
       "荆棘",
-      "荊棘"
+      "荊棘",
+      "가시"
     ],
     "skillname104": [
       "Defiance",
       "反抗",
-      "反抗"
+      "反抗",
+      "인내"
     ],
     "skillname105": [
       "Resist Cold",
       "抗冰",
-      "抗寒"
+      "抗寒",
+      "냉기 저항"
     ],
     "skillname106": [
       "Zeal",
       "热忱",
-      "熱忱打擊"
+      "熱忱打擊",
+      "열의"
     ],
     "skillname107": [
       "Charge",
       "冲锋",
-      "衝鋒打擊"
+      "衝鋒打擊",
+      "돌진"
     ],
     "skillname108": [
       "Blessed Aim",
       "祝福瞄准",
-      "精準祝福"
+      "精準祝福",
+      "축복받은 조준"
     ],
     "skillname109": [
       "Cleansing",
       "净化",
-      "淨化"
+      "淨化",
+      "정화"
     ],
     "skillname110": [
       "Resist Lightning",
       "抗雷",
-      "抗電"
+      "抗電",
+      "번개 저항"
     ],
     "skillname111": [
       "Vengeance",
       "复仇",
-      "復仇打擊"
+      "復仇打擊",
+      "복수"
     ],
     "skillname112": [
       "Blessed Hammer",
       "祝福之锤",
-      "祝福之鎚"
+      "祝福之鎚",
+      "축복받은 망치"
     ],
     "skillname113": [
       "Concentration",
       "专注",
-      "專注"
+      "專注",
+      "집중"
     ],
     "skillname114": [
       "Holy Freeze",
       "神圣之冰",
-      "神聖冰凍"
+      "神聖冰凍",
+      "신성한 빙결"
     ],
     "skillname115": [
       "Vigor",
       "精力",
-      "活力"
+      "活力",
+      "원기"
     ],
     "skillname116": [
       "Conversion",
       "圣光转化",
-      "招降打擊"
+      "招降打擊",
+      "전향"
     ],
     "skillname117": [
       "Holy Shield",
       "圣盾术",
-      "神聖之盾"
+      "神聖之盾",
+      "신성한 방패"
     ],
     "skillname118": [
       "Holy Shock",
       "神圣之雷",
-      "神聖電擊"
+      "神聖電擊",
+      "신성한 충격"
     ],
     "skillname119": [
       "Sanctuary",
       "庇护之光",
-      "庇護"
+      "庇護",
+      "성역"
     ],
     "skillname120": [
       "Meditation",
       "冥思",
-      "冥想"
+      "冥想",
+      "명상"
     ],
     "skillname121": [
       "Fist of the Heavens",
       "天堂之拳",
-      "天堂之拳"
+      "天堂之拳",
+      "천상의 주먹"
     ],
     "skillname122": [
       "Fanaticism",
       "狂热",
-      "狂熱"
+      "狂熱",
+      "광신"
     ],
     "skillname123": [
       "Conviction",
       "定罪",
-      "信念"
+      "信念",
+      "선고"
     ],
     "skillname124": [
       "Redemption",
       "救赎",
-      "救贖"
+      "救贖",
+      "속죄"
     ],
     "skillname125": [
       "Salvation",
       "拯救",
-      "聖護"
+      "聖護",
+      "구원"
     ],
     "skillname126": [
       "Bash",
       "猛击",
-      "猛擊"
+      "猛擊",
+      "강격"
     ],
     "skillname127": [
       "Blade Mastery",
       "刀剑精通",
-      "利刃專精"
+      "利刃專精",
+      "칼 숙련"
     ],
     "skillname128": [
       "Axe Mastery",
       "斧类精通",
-      "斧術專精"
+      "斧術專精",
+      "도끼 숙련"
     ],
     "skillname129": [
       "Mace Mastery",
       "锤类精通",
-      "釘鎚專精"
+      "釘鎚專精",
+      "철퇴 숙련"
     ],
     "skillname130": [
       "Howl",
       "狂嗥",
-      "狂嗥"
+      "狂嗥",
+      "포효"
     ],
     "skillname131": [
       "Find Potion",
       "寻药",
-      "尋找藥水"
+      "尋找藥水",
+      "물약 발견"
     ],
     "skillname132": [
       "Leap",
       "跳斩",
-      "跳躍"
+      "跳躍",
+      "도약"
     ],
     "skillname133": [
       "Double Swing",
       "双手挥击",
-      "雙手揮擊"
+      "雙手揮擊",
+      "이중 타격"
     ],
     "skillname134": [
       "Polearm Mastery",
       "长柄精通",
-      "長武專精"
+      "長武專精",
+      "미늘창 숙련"
     ],
     "skillname135": [
       "Throwing Mastery",
       "投掷精通",
-      "投擲專精"
+      "投擲專精",
+      "투척 숙련"
     ],
     "skillname136": [
       "Spear Mastery",
       "长矛精通",
-      "長矛專精"
+      "長矛專精",
+      "창 숙련"
     ],
     "skillname137": [
       "Taunt",
       "嘲讽",
-      "嘲諷"
+      "嘲諷",
+      "도발"
     ],
     "skillname138": [
       "Shout",
       "大吼",
-      "大吼"
+      "大吼",
+      "외침"
     ],
     "skillname139": [
       "Stun",
       "击昏",
-      "擊昏"
+      "擊昏",
+      "기절"
     ],
     "skillname140": [
       "Double Throw",
       "双手投掷",
-      "雙手投擲"
+      "雙手投擲",
+      "이중 투척"
     ],
     "skillname141": [
       "Increased Stamina",
       "增强耐力",
-      "提高精力"
+      "提高精力",
+      "지구력 증가"
     ],
     "skillname142": [
       "Find Item",
       "寻物",
-      "尋找物品"
+      "尋找物品",
+      "아이템 발견"
     ],
     "skillname143": [
       "Leap Attack",
       "腾空斩",
-      "躍擊"
+      "躍擊",
+      "도약 공격"
     ],
     "skillname144": [
       "Concentrate",
       "专注",
-      "專注打擊"
+      "專注打擊",
+      "집중 공격"
     ],
     "skillname145": [
       "Iron Skin",
       "钢铁之肤",
-      "鋼鐵之膚"
+      "鋼鐵之膚",
+      "철갑 피부"
     ],
     "skillname146": [
       "Battle Cry",
       "战嗥",
-      "戰鬥怒吼"
+      "戰鬥怒吼",
+      "전투의 함성"
     ],
     "skillname147": [
       "Frenzy",
       "狂乱",
-      "狂亂連擊"
+      "狂亂連擊",
+      "광분"
     ],
     "skillname148": [
       "Increased Speed",
       "增强速度",
-      "提高速度"
+      "提高速度",
+      "속도 증가"
     ],
     "skillname149": [
       "Battle Orders",
       "战斗号令",
-      "戰鬥命令"
+      "戰鬥命令",
+      "전투 지시"
     ],
     "skillname150": [
       "Grim Ward",
       "骇物阻吓",
-      "恐怖圖騰"
+      "恐怖圖騰",
+      "섬뜩한 호신부"
     ],
     "skillname151": [
       "Whirlwind",
       "旋风斩",
-      "旋風斬"
+      "旋風斬",
+      "소용돌이"
     ],
     "skillname152": [
       "Berserk",
       "狂战士",
-      "狂暴之擊"
+      "狂暴之擊",
+      "광폭화"
     ],
     "skillname153": [
       "Natural Resistance",
       "自然抗性",
-      "自然抵抗"
+      "自然抵抗",
+      "타고난 저항"
     ],
     "skillname154": [
       "War Cry",
       "怒嗥",
-      "戰爭狂嘯"
+      "戰爭狂嘯",
+      "전장의 함성"
     ],
     "skillname155": [
       "Battle Command",
       "战斗指挥",
-      "戰鬥指揮"
+      "戰鬥指揮",
+      "전투 명령"
     ],
     "Skillname226": [
       "Firestorm",
       "火焰风暴",
-      "火焰風暴"
+      "火焰風暴",
+      "화염폭풍"
     ],
     "skillname217": [
       "Scroll of Identify",
       "鉴定卷轴",
-      "鑑定卷軸"
+      "鑑定卷軸",
+      "감별의 두루마리"
     ],
     "skillname218": [
       "Tome of Identify",
       "鉴定之书",
-      "鑑定之書"
+      "鑑定之書",
+      "감별의 고서"
     ],
     "skillname219": [
       "Scroll of Town Portal",
       "城镇传送卷轴",
-      "城鎮傳送卷軸"
+      "城鎮傳送卷軸",
+      "마을 차원문의 두루마리"
     ],
     "skillname220": [
       "Tome of Town Portal",
       "城镇传送之书",
-      "城鎮傳送之書"
+      "城鎮傳送之書",
+      "마을 차원문의 고서"
     ],
     "Skillname222": [
       "Raven",
       "渡鸦",
-      "掠鴉"
+      "掠鴉",
+      "큰까마귀"
     ],
     "Skillname223": [
       "Poison Creeper",
       "毒花藤",
-      "劇毒藤蔓"
+      "劇毒藤蔓",
+      "맹독 덩굴"
     ],
     "Skillname224": [
       "Werewolf",
       "狼人变化",
-      "狼人變化"
+      "狼人變化",
+      "늑대인간"
     ],
     "Skillname225": [
       "Lycanthropy",
       "变形术",
-      "變形術"
+      "變形術",
+      "변신술"
     ],
     "Skillname227": [
       "Oak Sage",
       "橡木智灵",
-      "橡木智者"
+      "橡木智者",
+      "참나무 현자"
     ],
     "Skillname228": [
       "Summon Spirit Wolf",
       "召唤灵狼",
-      "召喚幽靈狼"
+      "召喚幽靈狼",
+      "영혼 늑대 소환"
     ],
     "Skillname229": [
       "Werebear",
       "熊人变化",
-      "熊人變化"
+      "熊人變化",
+      "곰인간"
     ],
     "Skillname230": [
       "Molten Boulder",
       "熔岩巨石",
-      "熔火巨石"
+      "熔火巨石",
+      "타오르는 바위"
     ],
     "Skillname231": [
       "Arctic Blast",
       "极地冰暴",
-      "極地寒風"
+      "極地寒風",
+      "극지 돌풍"
     ],
     "Skillname232": [
       "Carrion Vine",
       "食腐藤",
-      "食屍藤蔓"
+      "食屍藤蔓",
+      "청소부 덩굴"
     ],
     "Skillname233": [
       "Feral Rage",
       "野性狂暴",
-      "野性狂暴"
+      "野性狂暴",
+      "흉포한 격노"
     ],
     "Skillname234": [
       "Maul",
       "猛槌",
-      "槌擊"
+      "槌擊",
+      "후려치기"
     ],
     "Skillname235": [
       "Fissure",
       "熔岩裂地",
-      "裂地之火"
+      "裂地之火",
+      "균열"
     ],
     "Skillname236": [
       "Cyclone Armor",
       "气旋护甲",
-      "氣旋護甲"
+      "氣旋護甲",
+      "회오리 갑옷"
     ],
     "Skillname237": [
       "Heart of Wolverine",
       "狼獾之心",
-      "狼獾之心"
+      "狼獾之心",
+      "울버린의 심장"
     ],
     "Skillname238": [
       "Summon Dire Wolf",
       "召唤狂狼",
-      "召喚恐狼"
+      "召喚恐狼",
+      "광포한 늑대 소환"
     ],
     "Skillname239": [
       "Rabies",
       "狂犬",
-      "狂犬撕咬"
+      "狂犬撕咬",
+      "광견병"
     ],
     "Skillname240": [
       "Fire Claws",
       "焰爪",
-      "烈焰爪擊"
+      "烈焰爪擊",
+      "화염 발톱"
     ],
     "Skillname241": [
       "Twister",
       "小旋风",
-      "旋風術"
+      "旋風術",
+      "돌개바람"
     ],
     "Skillname242": [
       "Solar Creeper",
       "太阳藤",
-      "太陽藤蔓"
+      "太陽藤蔓",
+      "태양의 덩굴"
     ],
     "Skillname243": [
       "Hunger",
       "饥饿",
-      "飢餓噬咬"
+      "飢餓噬咬",
+      "굶주림"
     ],
     "Skillname244": [
       "Shock Wave",
       "震波",
-      "震波衝擊"
+      "震波衝擊",
+      "충격파"
     ],
     "Skillname245": [
       "Volcano",
       "火山爆",
-      "火山噴發"
+      "火山噴發",
+      "화산"
     ],
     "Skillname246": [
       "Tornado",
       "龙卷风",
-      "龍捲風"
+      "龍捲風",
+      "회오리바람"
     ],
     "Skillname247": [
       "Spirit of Barbs",
       "棘灵",
-      "荊棘之靈"
+      "荊棘之靈",
+      "가시의 영혼"
     ],
     "Skillname248": [
       "Summon Grizzly",
       "召唤灰熊",
-      "召喚灰熊"
+      "召喚灰熊",
+      "회색곰 소환"
     ],
     "Skillname249": [
       "Fury",
       "狼怒",
-      "狂怒連擊"
+      "狂怒連擊",
+      "분노"
     ],
     "Skillname250": [
       "Armageddon",
       "毁天灭地",
-      "毀天滅地"
+      "毀天滅地",
+      "아마겟돈"
     ],
     "Skillname251": [
       "Hurricane",
       "飓风",
-      "颶風術"
+      "颶風術",
+      "허리케인"
     ],
     "Skillname252": [
       "Fire Blast",
       "投火弹",
-      "火焰轟擊"
+      "火焰轟擊",
+      "화염 작렬"
     ],
     "Skillname253": [
       "Claw Mastery",
       "利爪精通",
-      "利爪專精"
+      "利爪專精",
+      "손톱 숙련"
     ],
     "Skillname254": [
       "Psychic Hammer",
       "心灵重锤",
-      "心靈之鎚"
+      "心靈之鎚",
+      "정신의 망치"
     ],
     "Skillname255": [
       "Tiger Strike",
       "猛虎攻击",
-      "猛虎擊"
+      "猛虎擊",
+      "호랑이 일격"
     ],
     "Skillname256": [
       "Dragon Talon",
       "龙爪",
-      "龍爪踢"
+      "龍爪踢",
+      "용의 발톱"
     ],
     "Skillname257": [
       "Shock Web",
       "雷电网",
-      "雷電網"
+      "雷電網",
+      "감전 그물"
     ],
     "Skillname258": [
       "Blade Sentinel",
       "刀刃守卫",
-      "戒衛旋刃"
+      "戒衛旋刃",
+      "파수꾼의 칼날"
     ],
     "Skillname259": [
       "Burst of Speed",
       "速度爆发",
-      "速度爆發"
+      "速度爆發",
+      "폭발적인 속도"
     ],
     "Skillname260": [
       "Fists of Fire",
       "烈焰拳",
-      "烈火拳"
+      "烈火拳",
+      "화염의 주먹"
     ],
     "Skillname261": [
       "Dragon Claw",
       "双龙爪",
-      "雙龍爪"
+      "雙龍爪",
+      "용의 손톱"
     ],
     "Skillname262": [
       "Charged Bolt Sentry",
       "电能守卫",
-      "電能衛哨"
+      "電能衛哨",
+      "번개 줄기 파수기"
     ],
     "Skillname263": [
       "Wake of Fire",
       "伏地火",
-      "焰痕衛哨"
+      "焰痕衛哨",
+      "불의 파동"
     ],
     "Skillname264": [
       "Weapon Block",
       "武器格挡",
-      "武器格擋"
+      "武器格擋",
+      "무기 막기"
     ],
     "Skillname265": [
       "Cloak of Shadows",
       "暗影斗篷",
-      "魔影斗蓬"
+      "魔影斗蓬",
+      "그림자 망토"
     ],
     "Skillname266": [
       "Cobra Strike",
       "眼镜蛇攻击",
-      "靈蛇擊"
+      "靈蛇擊",
+      "코브라 일격"
     ],
     "Skillname267": [
       "Blade Fury",
       "利刃之怒",
-      "狂怒旋刃"
+      "狂怒旋刃",
+      "분노의 칼날"
     ],
     "Skillname268": [
       "Fade",
       "消隐",
-      "影散"
+      "影散",
+      "흐리기"
     ],
     "Skillname269": [
       "Shadow Warrior",
       "影身战士",
-      "暗影戰士"
+      "暗影戰士",
+      "그림자 전사"
     ],
     "Skillname270": [
       "Claws of Thunder",
       "雷电爪",
-      "雷電爪"
+      "雷電爪",
+      "천둥의 손톱"
     ],
     "Skillname271": [
       "Dragon Tail",
       "神龙摆尾",
-      "龍擺尾"
+      "龍擺尾",
+      "용의 꼬리"
     ],
     "Skillname272": [
       "Lightning Sentry",
       "雷光守卫",
-      "雷光衛哨"
+      "雷光衛哨",
+      "번개 파수기"
     ],
     "Skillname273": [
       "Wake of Inferno",
       "狱火尾焰",
-      "獄火衛哨"
+      "獄火衛哨",
+      "지옥불의 파동"
     ],
     "Skillname274": [
       "Mind Blast",
       "心灵爆震",
-      "心靈震爆"
+      "心靈震爆",
+      "정신 폭발"
     ],
     "Skillname275": [
       "Blades of Ice",
       "寒冰刃",
-      "寒冰刃"
+      "寒冰刃",
+      "얼음 칼날"
     ],
     "Skillname276": [
       "Dragon Flight",
       "飞龙在天",
-      "翔龍腳"
+      "翔龍腳",
+      "용의 비상"
     ],
     "Skillname277": [
       "Death Sentry",
       "死亡守卫",
-      "死亡衛哨"
+      "死亡衛哨",
+      "죽음 파수기"
     ],
     "Skillname278": [
       "Blade Shield",
       "刀刃之盾",
-      "利刃之盾"
+      "利刃之盾",
+      "칼날 방패"
     ],
     "Skillname279": [
       "Venom",
       "涂毒",
-      "淬毒"
+      "淬毒",
+      "맹독"
     ],
     "Skillname280": [
       "Shadow Master",
       "影身大师",
-      "暗影宗師"
+      "暗影宗師",
+      "그림자 달인"
     ],
     "Skillname281": [
       "Phoenix Strike",
       "凤凰攻击",
-      "鳳凰擊"
+      "鳳凰擊",
+      "불사조 일격"
     ],
     "Runeword22": [
       "Delirium",
       "迷狂",
-      "精神錯亂"
+      "精神錯亂",
+      "착란"
     ],
     "SkillnameMetamorphosisBear": [
       "Mark of the Bear",
       "巨熊印记",
-      "熊之印記"
+      "熊之印記",
+      "곰의 징표"
     ],
     "SkillnameMetamorphosisWolf": [
       "Mark of the Wolf",
       "恶狼印记",
-      "狼之印記"
+      "狼之印記",
+      "늑대의 징표"
     ],
     "SummonGoatmanName": [
       "Summon Goatman",
       "召唤羊头人",
-      "召喚羊頭人"
+      "召喚羊頭人",
+      "염소인간 소환"
     ],
     "DemonicMasteryName": [
       "Demonic Mastery",
       "恶魔精通",
-      "惡魔專精"
+      "惡魔專精",
+      "악마 숙련"
     ],
     "DeathMarkName": [
       "Death Mark",
       "死亡印记",
-      "死亡印記"
+      "死亡印記",
+      "죽음의 징표"
     ],
     "SummonTaintedName": [
       "Summon Tainted",
       "召唤污染魔",
-      "召喚魔汙怪"
+      "召喚魔汙怪",
+      "오염된 자 소환"
     ],
     "SummonDefilerName": [
       "Summon Defiler",
       "召唤污秽者",
-      "召喚褻瀆者"
+      "召喚褻瀆者",
+      "파멸자 소환"
     ],
     "BloodOathName": [
       "Blood Oath",
       "血誓",
-      "血誓"
+      "血誓",
+      "피의 맹세"
     ],
     "EngorgeName": [
       "Engorge",
       "暴食",
-      "吞食"
+      "吞食",
+      "포식"
     ],
     "BloodBoilName": [
       "Blood Boil",
       "红液沸腾",
-      "沸血術"
+      "沸血術",
+      "끓는 피"
     ],
     "ConsumeName": [
       "Consume",
       "吞噬",
-      "吞噬"
+      "吞噬",
+      "소모"
     ],
     "BindDemonName": [
       "Bind Demon",
       "束缚恶魔",
-      "束縛惡魔"
+      "束縛惡魔",
+      "악마 속박"
     ],
     "LevitateName": [
       "Levitation Mastery",
       "悬浮精通",
-      "懸浮精通"
+      "懸浮精通",
+      "공중 부양 숙련"
     ],
     "EldritchBlastName": [
       "Eldritch Blast",
       "邪术冲击",
-      "邪異轟擊"
+      "邪異轟擊",
+      "기괴한 작렬"
     ],
     "BaneHexName": [
       "Hex: Bane",
       "咒术: 灾祸",
-      "邪咒：災禍"
+      "邪咒：災禍",
+      "주술: 재앙"
     ],
     "SiphonHexName": [
       "Hex: Siphon",
       "咒术: 吸取",
-      "邪咒：虹吸"
+      "邪咒：虹吸",
+      "주술: 흡수"
     ],
     "PsychicWardName": [
       "Psychic Ward",
       "会心守御",
-      "靈能護盾"
+      "靈能護盾",
+      "정신 결계"
     ],
     "EchoingStrikeName": [
       "Echoing Strike",
       "回响打击",
-      "迴響打擊"
+      "迴響打擊",
+      "메아리치는 타격"
     ],
     "PurgeHexName": [
       "Hex: Purge",
       "咒术: 净化",
-      "邪咒：消滅"
+      "邪咒：消滅",
+      "주술: 처단"
     ],
     "BladeWarpName": [
       "Blade Warp",
       "飞刃传形",
-      "飛刃躍傳"
+      "飛刃躍傳",
+      "칼날 이동"
     ],
     "CleaveName": [
       "Cleave",
       "劈斩",
-      "斬劈"
+      "斬劈",
+      "가르기"
     ],
     "MirroredBladesName": [
       "Mirrored Blades",
       "镜影锋刃",
-      "鏡像之刃"
+      "鏡像之刃",
+      "거울상 칼날"
     ],
     "LethargySigilName": [
       "Sigil: Lethargy",
       "符徽: 迟缓",
-      "咒印：昏沉"
+      "咒印：昏沉",
+      "인장: 무기력"
     ],
     "RingOfFireName": [
       "Ring of Fire",
       "火焰之环",
-      "火焰之環"
+      "火焰之環",
+      "화염 고리"
     ],
     "MiasmaBoltName": [
       "Miasma Bolt",
       "瘴气弹",
-      "瘴氣彈"
+      "瘴氣彈",
+      "독기 볼트"
     ],
     "RancorSigilName": [
       "Sigil: Rancor",
       "符徽: 怨恨",
-      "咒印：冤仇"
+      "咒印：冤仇",
+      "인장: 울분"
     ],
     "EnhancedEntropyName": [
       "Enhanced Entropy",
       "强化之熵",
-      "增強混亂"
+      "增強混亂",
+      "향상된 엔트로피"
     ],
     "FlameWaveName": [
       "Flame Wave",
       "烈焰波",
-      "烈焰湧浪"
+      "烈焰湧浪",
+      "화염 파도"
     ],
     "MiasmaChainName": [
       "Miasma Chain",
       "瘴气锁链",
-      "瘴氣鎖鏈"
+      "瘴氣鎖鏈",
+      "독기 사슬"
     ],
     "DeathSigilName": [
       "Sigil: Death",
       "符徽: 死亡",
-      "咒印：死亡"
+      "咒印：死亡",
+      "인장: 죽음"
     ],
     "ApocalypseName": [
       "Apocalypse",
       "末日",
-      "天啟末日"
+      "天啟末日",
+      "종말"
     ],
     "AbyssName": [
       "Abyss",
       "深渊",
-      "深淵裂口"
+      "深淵裂口",
+      "심연"
     ],
     "skillan219": [
       "Town Portal",
       "城镇传送门",
-      "城鎮傳送"
+      "城鎮傳送",
+      "마을 차원문"
     ],
     "strModMinDamage": [
       "%+d damage",
       "%+d 伤害",
-      "%+d 傷害"
+      "%+d 傷害",
+      "피해 %+d"
     ],
     "strModMinDamageRange": [
       "Adds %d-%d damage",
       "+ %d-%d 伤害",
-      "附加 %d - %d 傷害"
+      "附加 %d - %d 傷害",
+      "피해 %d - %d 추가"
     ],
     "strModFireDamage": [
       "%+d fire damage",
       "%+d 火焰伤害",
-      "%+d 火焰傷害"
+      "%+d 火焰傷害",
+      "화염 피해 %+d"
     ],
     "strModFireDamageRange": [
       "Adds %d-%d fire damage",
       "+ %d-%d 火焰伤害",
-      "附加 %d - %d 火焰傷害"
+      "附加 %d - %d 火焰傷害",
+      "화염 피해 %d - %d 추가"
     ],
     "strModColdDamage": [
       "%+d cold damage",
       "%+d 冰霜伤害",
-      "%+d 冰寒傷害"
+      "%+d 冰寒傷害",
+      "냉기 피해 %+d"
     ],
     "strModColdDamageRange": [
       "Adds %d-%d cold damage",
       "+ %d-%d 冰霜伤害",
-      "附加 %d - %d 冰寒傷害"
+      "附加 %d - %d 冰寒傷害",
+      "냉기 피해 %d - %d 추가"
     ],
     "strModLightningDamage": [
       "%+d lightning damage",
       "%+d 闪电伤害",
-      "%+d 電擊傷害"
+      "%+d 電擊傷害",
+      "번개 피해 %+d"
     ],
     "strModLightningDamageRange": [
       "Adds %d-%d lightning damage",
       "+ %d-%d 闪电伤害",
-      "附加 %d - %d 電擊傷害"
+      "附加 %d - %d 電擊傷害",
+      "번개 피해 %d - %d 추가"
     ],
     "strModMagicDamageRange": [
       "Adds %d-%d magic damage",
       "+ %d-%d 魔法伤害",
-      "附加 %d - %d 魔法傷害"
+      "附加 %d - %d 魔法傷害",
+      "마법 피해 %d - %d 추가"
     ],
     "strModPoisonDamage": [
       "%+d poison damage over %d seconds",
       "%+d 毒素伤害，持续%d秒",
-      "%+d 毒素傷害，時效 %d 秒"
+      "%+d 毒素傷害，時效 %d 秒",
+      "독 피해 %+d (%d초에 걸쳐)"
     ],
     "strModPoisonDamageRange": [
       "Adds %d-%d poison damage over %d seconds",
       "+ %d-%d 毒素伤害，持续%d秒",
-      "附加 %d - %d 毒素傷害，時效 %d 秒"
+      "附加 %d - %d 毒素傷害，時效 %d 秒",
+      "독 피해 %d - %d 추가 (%d초에 걸쳐)"
     ],
     "ChronicleItemModifierClassSkillRandom": [
       "%+d to a random %s Skill %s",
       "%+d 随机%s技能%s",
-      "%+d 隨機%s技能%s"
+      "%+d 隨機%s技能%s",
+      "%+d 무작위 %s 기술 %s "
     ],
     "ChronicleRandomClassSkillLevel": [
       "%+d to a Random Class' Skill Levels",
       "+%d 随机职业技能等级",
-      "%+d 隨機職業的技能等級"
+      "%+d 隨機職業的技能等級",
+      "무작위 직업의 기술 레벨 %+d"
     ]
   },
   "properties": {

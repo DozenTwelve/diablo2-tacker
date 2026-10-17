@@ -3,7 +3,7 @@
 import data from "../data/stats.json";
 
 const { stats, classes, skills, strings } = data;
-const LANG_INDEX = { en: 0, zh: 1, zh_tw: 2 };
+const LANG_INDEX = { en: 0, zh: 1, zh_tw: 2, ko: 3 }; // string columns, see scripts/gen-data.mjs
 export const str = (key, lang) => strings[key]?.[LANG_INDEX[lang]] ?? "";
 
 // The printf subset D2R strings use: %d %+d %s %%. Pre-formatted string args are inserted as is.

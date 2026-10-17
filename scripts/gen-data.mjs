@@ -33,15 +33,16 @@ const equiv = new Map(table("itemtypes").map((r) => [r.Code, [r.Equiv1, r.Equiv2
 
 // Checked in order, so more specific types come first (grimoires are shields, javelins are thrown)
 const CATEGORIES = [
-  ["grim", "魔法书", "魔法書", "Grimoires"], ["jave", "标枪", "標槍", "Javelins"], ["thro", "投掷武器", "投擲武器", "Throwing"],
-  ["helm", "头盔", "頭盔", "Helms"], ["tors", "护甲", "護甲", "Armor"], ["shld", "盾牌", "盾牌", "Shields"],
-  ["glov", "手套", "手套", "Gloves"], ["boot", "鞋子", "鞋子", "Boots"], ["belt", "腰带", "腰帶", "Belts"],
-  ["ring", "戒指", "戒指", "Rings"], ["amul", "护身符", "護身符", "Amulets"], ["char", "神符", "咒符", "Charms"],
-  ["jewl", "珠宝", "珠寶", "Jewels"], ["h2h", "拳刃", "拳刃", "Claws"], ["orb", "法珠", "法珠", "Orbs"], ["axe", "斧", "斧", "Axes"],
-  ["swor", "刀剑", "刀劍", "Swords"], ["xbow", "弩", "弩", "Crossbows"], ["bow", "弓", "弓", "Bows"],
-  ["pole", "长柄武器", "長柄武器", "Polearms"], ["spea", "长矛", "長矛", "Spears"], ["staf", "法杖", "法杖", "Staves"],
-  ["knif", "匕首", "匕首", "Daggers"], ["hamm", "重锤", "重鎚", "Hammers"], ["wand", "魔杖", "魔杖", "Wands"],
-  ["scep", "权杖", "權杖", "Scepters"], ["mace", "钉锤", "釘鎚", "Maces"], ["club", "短棒", "短棒", "Clubs"],
+  ["grim", "魔法书", "魔法書", "Grimoires", "마법서"], ["jave", "标枪", "標槍", "Javelins", "투창"],
+  ["thro", "投掷武器", "投擲武器", "Throwing", "투척 무기"], ["helm", "头盔", "頭盔", "Helms", "투구"],
+  ["tors", "护甲", "護甲", "Armor", "갑옷"], ["shld", "盾牌", "盾牌", "Shields", "방패"], ["glov", "手套", "手套", "Gloves", "장갑"],
+  ["boot", "鞋子", "鞋子", "Boots", "장화"], ["belt", "腰带", "腰帶", "Belts", "허리띠"], ["ring", "戒指", "戒指", "Rings", "반지"],
+  ["amul", "护身符", "護身符", "Amulets", "목걸이"], ["char", "神符", "咒符", "Charms", "부적"], ["jewl", "珠宝", "珠寶", "Jewels", "주얼"],
+  ["h2h", "拳刃", "拳刃", "Claws", "클로"], ["orb", "法珠", "法珠", "Orbs", "오브"], ["axe", "斧", "斧", "Axes", "도끼"],
+  ["swor", "刀剑", "刀劍", "Swords", "검"], ["xbow", "弩", "弩", "Crossbows", "석궁"], ["bow", "弓", "弓", "Bows", "활"],
+  ["pole", "长柄武器", "長柄武器", "Polearms", "장병기"], ["spea", "长矛", "長矛", "Spears", "창"], ["staf", "法杖", "法杖", "Staves", "지팡이"],
+  ["knif", "匕首", "匕首", "Daggers", "단검"], ["hamm", "重锤", "重鎚", "Hammers", "망치"], ["wand", "魔杖", "魔杖", "Wands", "마법봉"],
+  ["scep", "权杖", "權杖", "Scepters", "홀"], ["mace", "钉锤", "釘鎚", "Maces", "철퇴"], ["club", "短棒", "短棒", "Clubs", "곤봉"],
 ];
 const ancestors = (type) => {
   const seen = new Set();
@@ -56,7 +57,9 @@ const category = (code) => {
   return hit;
 };
 
-const names = (key) => ({ en: str(key, "enUS"), zh: str(key, "zhCN"), zh_tw: str(key, "zhTW") });
+// Languages kept, by the game's string column: Simplified and Traditional Chinese, English, Korean
+const LANGS = { en: "enUS", zh: "zhCN", zh_tw: "zhTW", ko: "koKR" };
+const names = (key) => Object.fromEntries(Object.entries(LANGS).map(([lang, column]) => [lang, str(key, column)]));
 
 // Item properties as [property code, param, min, max], the param as a skill id when it names a skill.
 // src/lib/props.js turns them into stats with the property definitions (stats.json "properties").
@@ -103,9 +106,9 @@ for (const r of table("uniqueitems")) {
     prev.ids.push(id);
     prev.legacy &&= legacy;
   } else {
-    const [, zh, zh_tw, en] = category(r.code);
+    const [, zh, zh_tw, en, ko] = category(r.code);
     uniques.set(r.index, {
-      ids: [id], code: r.code, img: imgOf(uniqueImg, r.index, r.code), ...names(r.index), category: { en, zh, zh_tw }, legacy,
+      ids: [id], code: r.code, img: imgOf(uniqueImg, r.index, r.code), ...names(r.index), category: { en, zh, zh_tw, ko }, legacy,
       props: propsOf(r, ITEM_PROPS),
     });
   }
@@ -145,7 +148,9 @@ const runes = [];
 for (let i = 1; i <= 33; i++) {
   const code = `r${String(i).padStart(2, "0")}`;
   const n = names(code);
-  runes.push({ code, en: n.en.replace(/ Rune$/, ""), zh: n.zh.replace(/符文$/, ""), zh_tw: n.zh_tw.replace(/^符文：|符文$/g, "") });
+  runes.push({
+    code, en: n.en.replace(/ Rune$/, ""), zh: n.zh.replace(/符文$/, ""), zh_tw: n.zh_tw.replace(/^符文：|符文$/g, ""), ko: n.ko.replace(/ 룬$/, ""),
+  });
 }
 
 // Every base item code -> name, for bases, gems, charms, rares and anything else found in saves.
@@ -171,7 +176,7 @@ for (const f of ["skills", "ui"]) {
 }
 const statStrings = {};
 const useString = (key) => {
-  if (key && strings.has(key)) statStrings[key] = [str(key, "enUS"), str(key, "zhCN"), str(key, "zhTW")];
+  if (key && strings.has(key)) statStrings[key] = Object.values(LANGS).map((column) => str(key, column));
   return key || undefined;
 };
 const stats = {};
