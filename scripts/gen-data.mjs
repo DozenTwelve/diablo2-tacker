@@ -116,7 +116,7 @@ for (let i = 1; i <= 33; i++) {
 }
 
 // Every base item code -> name, for bases, gems, charms, rares and anything else found in saves.
-// Also its table, item type and inventory size (w x h cells), in table order, for laying out mules
+// Also its table, item type, inventory size (w x h cells) and icon, in table order, for laying out mules and stashes
 const items = {};
 for (const t of ["armor", "weapons", "misc"]) {
   for (const r of table(t)) {
@@ -125,6 +125,7 @@ for (const t of ["armor", "weapons", "misc"]) {
       items[r.code] = {
         ...names(key), table: t, type: r.type, w: Number(r.invwidth) || 1, h: Number(r.invheight) || 1,
         img: baseImg[r.code], variants: variantsOf(baseImg[r.code]),
+        stack: r.AdvancedStashStackable === "1" || undefined, // goes in the stackable tab
       };
   }
 }

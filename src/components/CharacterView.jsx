@@ -1,10 +1,11 @@
 import { labelOf } from "../lib/gameData";
-import { itemsByPlace, ownerLabel, ownersOf, placeLabel, totalCount } from "../lib/inventory";
+import { groupByKey, itemsByPlace, ownerLabel, ownersOf, placeLabel, totalCount } from "../lib/inventory";
 import { museumLayout } from "../lib/organize";
 import { t } from "../lib/i18n";
 import { Link } from "../lib/router";
 import StashGrid, { colorOf } from "./StashGrid";
 import Paperdoll from "./Paperdoll";
+import StackTab from "./StackTab";
 
 // Places drawn as grids, with their size in cells; the rest (equipped, belt...) are lists
 const gridSize = (place) =>
@@ -70,7 +71,8 @@ function CharacterPage({ saveData, name, lang }) {
   // Museum mules show their empty stash/inventory even when nothing is in it yet
   for (const place of Object.keys(ghosts)) if (!places.some((p) => p.place === place)) places.push({ place, lines: [] });
   const grids = places.filter((p) => gridSize(p.place));
-  const lists = places.filter((p) => !gridSize(p.place) && !(p.place in DOLLS));
+  const lists = places.filter((p) => !gridSize(p.place) && !(p.place in DOLLS) && p.place !== "advanced");
+  const stacked = records.filter((r) => r.place === "advanced");
   const dolls = Object.keys(DOLLS).filter((place) => records.some((r) => r.place === place));
   const noPositions = records.some((r) => (gridSize(r.place) && r.x == null) || (r.place in DOLLS && !r.slot));
 
@@ -112,6 +114,15 @@ function CharacterPage({ saveData, name, lang }) {
           );
         })}
       </div>
+      {stacked.length > 0 && (
+        <div className="gothic-card">
+          <h3 className="gothic-text-gold mb-3">
+            {placeLabel("advanced", lang)}
+            <span className="gothic-text-muted ml-4">({totalCount(stacked)})</span>
+          </h3>
+          <StackTab byKey={groupByKey(stacked)} lang={lang} />
+        </div>
+      )}
       {lists.map(({ place, lines }) => (
         <div key={place} className="gothic-card">
           <h3 className="gothic-text-gold mb-3">

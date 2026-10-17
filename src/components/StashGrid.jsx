@@ -19,9 +19,9 @@ const GREY = "#8a8a8a";
 const CELL = 44; // max cell size in px; the grid shrinks to fit narrow screens
 
 // Item box in game style: name, base (for named items), ethereal/sockets, stats.
-// For a ghost: where else it is owned (main characters...), or "missing"
+// For a ghost: where else it is owned (main characters...), or "missing". tip.extra: more lines, in gold
 export function Tooltip({ tip, lang }) {
-  const { item, ghost, rect } = tip;
+  const { item, ghost, rect, extra = [] } = tip;
   const above = rect.top > innerHeight / 2;
   const left = Math.min(Math.max(rect.left + rect.width / 2, 160), innerWidth - 160);
   const named = /^[usw]:/.test(item.key);
@@ -51,6 +51,11 @@ export function Tooltip({ tip, lang }) {
           ))}
         </>
       )}
+      {extra.map((line) => (
+        <div key={line} className="gothic-text-gold">
+          {line}
+        </div>
+      ))}
       {!ghost && (
         <>
           {item.ethereal && <div style={{ color: GREY }}>{t("ethereal", lang)}</div>}

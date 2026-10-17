@@ -7,6 +7,8 @@ import SaveLoader from "./components/SaveLoader";
 import SearchView from "./components/SearchView";
 import CollectionView from "./components/CollectionView";
 import CharacterView from "./components/CharacterView";
+import StackTab, { SECTIONS } from "./components/StackTab";
+import ProgressBar from "./components/ProgressBar";
 import { Link, usePath } from "./lib/router";
 
 const TABS = ["search", "characters", "uniques", "sets", "runewords", "runes"];
@@ -23,8 +25,7 @@ function collectionGroups(tab, lang) {
     return [...byCategory].map(([title, keys]) => ({ title, keys }));
   }
   if (tab === "sets") return sets.map((s) => ({ title: nameOf(s, lang), keys: s.items.map(setItemKey) }));
-  if (tab === "runewords") return [{ title: t("runewords", lang), keys: runewords.map(runewordKey) }];
-  return [{ title: t("runes", lang), keys: runes.map(runeKey) }];
+  return [{ title: t("runewords", lang), keys: runewords.map(runewordKey) }];
 }
 
 export default function App() {
@@ -60,6 +61,14 @@ export default function App() {
         <SaveLoader saveData={saveData} onLoad={setSaveData} lang={lang} />
         {tab === "search" ? (
           <SearchView owned={owned} lang={lang} />
+        ) : tab === "runes" ? (
+          // Runes as in the stackable tab, counted over every character and stash
+          <div className="space-y-6">
+            <ProgressBar label={t("runes", lang)} owned={runes.filter((r) => owned.has(runeKey(r))).length} total={runes.length} />
+            <div className="gothic-card">
+              <StackTab byKey={owned} sections={SECTIONS.filter(([name]) => name === "runes")} showWhere lang={lang} />
+            </div>
+          </div>
         ) : tab === "characters" ? (
           saveData && <CharacterView saveData={saveData} name={name} lang={lang} />
         ) : (

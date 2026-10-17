@@ -5267,7 +5267,8 @@
     "type": "rpot",
     "w": 1,
     "h": 1,
-    "img": "potion/rejuv_potion"
+    "img": "potion/rejuv_potion",
+    "stack": true
   },
   "rvl": {
     "en": "Full Rejuvenation Potion",
@@ -5277,7 +5278,8 @@
     "type": "rpot",
     "w": 1,
     "h": 1,
-    "img": "potion/full_rejuv_potion"
+    "img": "potion/full_rejuv_potion",
+    "stack": true
   },
   "wms": {
     "en": "Thawing Potion",
@@ -5670,7 +5672,8 @@
     "type": "gema",
     "w": 1,
     "h": 1,
-    "img": "gem/chipped_amethyst"
+    "img": "gem/chipped_amethyst",
+    "stack": true
   },
   "gfv": {
     "en": "Flawed Amethyst",
@@ -5680,7 +5683,8 @@
     "type": "gema",
     "w": 1,
     "h": 1,
-    "img": "gem/flawed_amethyst"
+    "img": "gem/flawed_amethyst",
+    "stack": true
   },
   "gsv": {
     "en": "Amethyst",
@@ -5690,7 +5694,8 @@
     "type": "gema",
     "w": 1,
     "h": 1,
-    "img": "gem/amethyst"
+    "img": "gem/amethyst",
+    "stack": true
   },
   "gzv": {
     "en": "Flawless Amethyst",
@@ -5700,7 +5705,8 @@
     "type": "gema",
     "w": 1,
     "h": 1,
-    "img": "gem/flawless_amethyst"
+    "img": "gem/flawless_amethyst",
+    "stack": true
   },
   "gpv": {
     "en": "Perfect Amethyst",
@@ -5710,7 +5716,8 @@
     "type": "gema",
     "w": 1,
     "h": 1,
-    "img": "gem/perfect_amethyst"
+    "img": "gem/perfect_amethyst",
+    "stack": true
   },
   "gcy": {
     "en": "Chipped Topaz",
@@ -5720,7 +5727,8 @@
     "type": "gemt",
     "w": 1,
     "h": 1,
-    "img": "gem/chipped_topaz"
+    "img": "gem/chipped_topaz",
+    "stack": true
   },
   "gfy": {
     "en": "Flawed Topaz",
@@ -5730,7 +5738,8 @@
     "type": "gemt",
     "w": 1,
     "h": 1,
-    "img": "gem/flawed_topaz"
+    "img": "gem/flawed_topaz",
+    "stack": true
   },
   "gsy": {
     "en": "Topaz",
@@ -5740,7 +5749,8 @@
     "type": "gemt",
     "w": 1,
     "h": 1,
-    "img": "gem/topaz"
+    "img": "gem/topaz",
+    "stack": true
   },
   "gly": {
     "en": "Flawless Topaz",
@@ -5750,7 +5760,8 @@
     "type": "gemt",
     "w": 1,
     "h": 1,
-    "img": "gem/flawless_topaz"
+    "img": "gem/flawless_topaz",
+    "stack": true
   },
   "gpy": {
     "en": "Perfect Topaz",
@@ -5760,7 +5771,8 @@
     "type": "gemt",
     "w": 1,
     "h": 1,
-    "img": "gem/perfect_topaz"
+    "img": "gem/perfect_topaz",
+    "stack": true
   },
   "gcb": {
     "en": "Chipped Sapphire",
@@ -5770,7 +5782,8 @@
     "type": "gems",
     "w": 1,
     "h": 1,
-    "img": "gem/chipped_saphire"
+    "img": "gem/chipped_saphire",
+    "stack": true
   },
   "gfb": {
     "en": "Flawed Sapphire",
@@ -5780,7 +5793,8 @@
     "type": "gems",
     "w": 1,
     "h": 1,
-    "img": "gem/flawed_saphire"
+    "img": "gem/flawed_saphire",
+    "stack": true
   },
   "gsb": {
     "en": "Sapphire",
@@ -5790,7 +5804,8 @@
     "type": "gems",
     "w": 1,
     "h": 1,
-    "img": "gem/saphire"
+    "img": "gem/saphire",
+    "stack": true
   },
   "glb": {
     "en": "Flawless Sapphire",
@@ -5800,7 +5815,8 @@
     "type": "gems",
     "w": 1,
     "h": 1,
-    "img": "gem/flawless_saphire"
+    "img": "gem/flawless_saphire",
+    "stack": true
   },
   "gpb": {
     "en": "Perfect Sapphire",
@@ -5810,7 +5826,8 @@
     "type": "gems",
     "w": 1,
     "h": 1,
-    "img": "gem/perfect_saphire"
+    "img": "gem/perfect_saphire",
+    "stack": true
   },
   "gcg": {
     "en": "Chipped Emerald",
@@ -5820,7 +5837,8 @@
     "type": "geme",
     "w": 1,
     "h": 1,
-    "img": "gem/chipped_emerald"
+    "img": "gem/chipped_emerald",
+    "stack": true
   },
   "gfg": {
     "en": "Flawed Emerald",
@@ -5830,7 +5848,8 @@
     "type": "geme",
     "w": 1,
     "h": 1,
-    "img": "gem/flawed_emerald"
+    "img": "gem/flawed_emerald",
+    "stack": true
   },
   "gsg": {
     "en": "Emerald",
@@ -5840,7 +5859,8 @@
     "type": "geme",
     "w": 1,
     "h": 1,
-    "img": "gem/emerald"
+    "img": "gem/emerald",
+    "stack": true
   },
   "glg": {
     "en": "Flawless Emerald",
@@ -5850,7 +5870,8 @@
     "type": "geme",
     "w": 1,
     "h": 1,
-    "img": "gem/flawless_emerald"
+    "img": "gem/flawless_emerald",
+    "stack": true
   },
   "gpg": {
     "en": "Perfect Emerald",
@@ -5860,7 +5881,8 @@
     "type": "geme",
     "w": 1,
     "h": 1,
-    "img": "gem/perfect_emerald"
+    "img": "gem/perfect_emerald",
+    "stack": true
   },
   "gcr": {
     "en": "Chipped Ruby",
@@ -5870,7 +5892,8 @@
     "type": "gemr",
     "w": 1,
     "h": 1,
-    "img": "gem/chipped_ruby"
+    "img": "gem/chipped_ruby",
+    "stack": true
   },
   "gfr": {
     "en": "Flawed Ruby",
@@ -5880,7 +5903,8 @@
     "type": "gemr",
     "w": 1,
     "h": 1,
-    "img": "gem/flawed_ruby"
+    "img": "gem/flawed_ruby",
+    "stack": true
   },
   "gsr": {
     "en": "Ruby",
@@ -5890,7 +5914,8 @@
     "type": "gemr",
     "w": 1,
     "h": 1,
-    "img": "gem/ruby"
+    "img": "gem/ruby",
+    "stack": true
   },
   "glr": {
     "en": "Flawless Ruby",
@@ -5900,7 +5925,8 @@
     "type": "gemr",
     "w": 1,
     "h": 1,
-    "img": "gem/flawless_ruby"
+    "img": "gem/flawless_ruby",
+    "stack": true
   },
   "gpr": {
     "en": "Perfect Ruby",
@@ -5910,7 +5936,8 @@
     "type": "gemr",
     "w": 1,
     "h": 1,
-    "img": "gem/perfect_ruby"
+    "img": "gem/perfect_ruby",
+    "stack": true
   },
   "gcw": {
     "en": "Chipped Diamond",
@@ -5920,7 +5947,8 @@
     "type": "gemd",
     "w": 1,
     "h": 1,
-    "img": "gem/chipped_diamond"
+    "img": "gem/chipped_diamond",
+    "stack": true
   },
   "gfw": {
     "en": "Flawed Diamond",
@@ -5930,7 +5958,8 @@
     "type": "gemd",
     "w": 1,
     "h": 1,
-    "img": "gem/flawed_diamond"
+    "img": "gem/flawed_diamond",
+    "stack": true
   },
   "gsw": {
     "en": "Diamond",
@@ -5940,7 +5969,8 @@
     "type": "gemd",
     "w": 1,
     "h": 1,
-    "img": "gem/diamond"
+    "img": "gem/diamond",
+    "stack": true
   },
   "glw": {
     "en": "Flawless Diamond",
@@ -5950,7 +5980,8 @@
     "type": "gemd",
     "w": 1,
     "h": 1,
-    "img": "gem/flawless_diamond"
+    "img": "gem/flawless_diamond",
+    "stack": true
   },
   "gpw": {
     "en": "Perfect Diamond",
@@ -5961,7 +5992,8 @@
     "w": 1,
     "h": 1,
     "img": "gem/perfect_diamond",
-    "variants": 6
+    "variants": 6,
+    "stack": true
   },
   "hp1": {
     "en": "Minor Healing Potion",
@@ -6071,7 +6103,8 @@
     "type": "gemz",
     "w": 1,
     "h": 1,
-    "img": "gem/chipped_skull"
+    "img": "gem/chipped_skull",
+    "stack": true
   },
   "skf": {
     "en": "Flawed Skull",
@@ -6081,7 +6114,8 @@
     "type": "gemz",
     "w": 1,
     "h": 1,
-    "img": "gem/flawed_skull"
+    "img": "gem/flawed_skull",
+    "stack": true
   },
   "sku": {
     "en": "Skull",
@@ -6091,7 +6125,8 @@
     "type": "gemz",
     "w": 1,
     "h": 1,
-    "img": "gem/skull"
+    "img": "gem/skull",
+    "stack": true
   },
   "skl": {
     "en": "Flawless Skull",
@@ -6101,7 +6136,8 @@
     "type": "gemz",
     "w": 1,
     "h": 1,
-    "img": "gem/flawless_skull"
+    "img": "gem/flawless_skull",
+    "stack": true
   },
   "skz": {
     "en": "Perfect Skull",
@@ -6111,7 +6147,8 @@
     "type": "gemz",
     "w": 1,
     "h": 1,
-    "img": "gem/perfect_skull"
+    "img": "gem/perfect_skull",
+    "stack": true
   },
   "hrb": {
     "en": "Herb",
@@ -6164,7 +6201,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/el_rune"
+    "img": "rune/el_rune",
+    "stack": true
   },
   "r02": {
     "en": "Eld Rune",
@@ -6174,7 +6212,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/eld_rune"
+    "img": "rune/eld_rune",
+    "stack": true
   },
   "r03": {
     "en": "Tir Rune",
@@ -6184,7 +6223,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/tir_rune"
+    "img": "rune/tir_rune",
+    "stack": true
   },
   "r04": {
     "en": "Nef Rune",
@@ -6194,7 +6234,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/nef_rune"
+    "img": "rune/nef_rune",
+    "stack": true
   },
   "r05": {
     "en": "Eth Rune",
@@ -6204,7 +6245,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/eth_rune"
+    "img": "rune/eth_rune",
+    "stack": true
   },
   "r06": {
     "en": "Ith Rune",
@@ -6214,7 +6256,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/ith_rune"
+    "img": "rune/ith_rune",
+    "stack": true
   },
   "r07": {
     "en": "Tal Rune",
@@ -6224,7 +6267,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/tal_rune"
+    "img": "rune/tal_rune",
+    "stack": true
   },
   "r08": {
     "en": "Ral Rune",
@@ -6234,7 +6278,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/ral_rune"
+    "img": "rune/ral_rune",
+    "stack": true
   },
   "r09": {
     "en": "Ort Rune",
@@ -6244,7 +6289,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/ort_rune"
+    "img": "rune/ort_rune",
+    "stack": true
   },
   "r10": {
     "en": "Thul Rune",
@@ -6254,7 +6300,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/thul_rune"
+    "img": "rune/thul_rune",
+    "stack": true
   },
   "r11": {
     "en": "Amn Rune",
@@ -6264,7 +6311,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/amn_rune"
+    "img": "rune/amn_rune",
+    "stack": true
   },
   "r12": {
     "en": "Sol Rune",
@@ -6274,7 +6322,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/sol_rune"
+    "img": "rune/sol_rune",
+    "stack": true
   },
   "r13": {
     "en": "Shael Rune",
@@ -6284,7 +6333,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/shael_rune"
+    "img": "rune/shael_rune",
+    "stack": true
   },
   "r14": {
     "en": "Dol Rune",
@@ -6294,7 +6344,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/dol_rune"
+    "img": "rune/dol_rune",
+    "stack": true
   },
   "r15": {
     "en": "Hel Rune",
@@ -6304,7 +6355,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/hel_rune"
+    "img": "rune/hel_rune",
+    "stack": true
   },
   "r16": {
     "en": "Io Rune",
@@ -6314,7 +6366,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/io_rune"
+    "img": "rune/io_rune",
+    "stack": true
   },
   "r17": {
     "en": "Lum Rune",
@@ -6324,7 +6377,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/lum_rune"
+    "img": "rune/lum_rune",
+    "stack": true
   },
   "r18": {
     "en": "Ko Rune",
@@ -6334,7 +6388,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/ko_rune"
+    "img": "rune/ko_rune",
+    "stack": true
   },
   "r19": {
     "en": "Fal Rune",
@@ -6344,7 +6399,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/fal_rune"
+    "img": "rune/fal_rune",
+    "stack": true
   },
   "r20": {
     "en": "Lem Rune",
@@ -6354,7 +6410,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/lem_rune"
+    "img": "rune/lem_rune",
+    "stack": true
   },
   "r21": {
     "en": "Pul Rune",
@@ -6364,7 +6421,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/pul_rune"
+    "img": "rune/pul_rune",
+    "stack": true
   },
   "r22": {
     "en": "Um Rune",
@@ -6374,7 +6432,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/um_rune"
+    "img": "rune/um_rune",
+    "stack": true
   },
   "r23": {
     "en": "Mal Rune",
@@ -6384,7 +6443,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/mal_rune"
+    "img": "rune/mal_rune",
+    "stack": true
   },
   "r24": {
     "en": "Ist Rune",
@@ -6394,7 +6454,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/ist_rune"
+    "img": "rune/ist_rune",
+    "stack": true
   },
   "r25": {
     "en": "Gul Rune",
@@ -6404,7 +6465,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/gul_rune"
+    "img": "rune/gul_rune",
+    "stack": true
   },
   "r26": {
     "en": "Vex Rune",
@@ -6414,7 +6476,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/vex_rune"
+    "img": "rune/vex_rune",
+    "stack": true
   },
   "r27": {
     "en": "Ohm Rune",
@@ -6424,7 +6487,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/ohm_rune"
+    "img": "rune/ohm_rune",
+    "stack": true
   },
   "r28": {
     "en": "Lo Rune",
@@ -6434,7 +6498,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/lo_rune"
+    "img": "rune/lo_rune",
+    "stack": true
   },
   "r29": {
     "en": "Sur Rune",
@@ -6444,7 +6509,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/sur_rune"
+    "img": "rune/sur_rune",
+    "stack": true
   },
   "r30": {
     "en": "Ber Rune",
@@ -6454,7 +6520,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/ber_rune"
+    "img": "rune/ber_rune",
+    "stack": true
   },
   "r31": {
     "en": "Jah Rune",
@@ -6464,7 +6531,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/jah_rune"
+    "img": "rune/jah_rune",
+    "stack": true
   },
   "r32": {
     "en": "Cham Rune",
@@ -6474,7 +6542,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/cham_rune"
+    "img": "rune/cham_rune",
+    "stack": true
   },
   "r33": {
     "en": "Zod Rune",
@@ -6484,7 +6553,8 @@
     "type": "rune",
     "w": 1,
     "h": 1,
-    "img": "rune/zod_rune"
+    "img": "rune/zod_rune",
+    "stack": true
   },
   "jew": {
     "en": "Jewel",
@@ -6535,7 +6605,8 @@
     "type": "ques",
     "w": 1,
     "h": 2,
-    "img": "key/mephisto_key"
+    "img": "key/mephisto_key",
+    "stack": true
   },
   "pk2": {
     "en": "Key of Hate",
@@ -6545,7 +6616,8 @@
     "type": "ques",
     "w": 1,
     "h": 2,
-    "img": "key/mephisto_key"
+    "img": "key/mephisto_key",
+    "stack": true
   },
   "pk3": {
     "en": "Key of Destruction",
@@ -6555,7 +6627,8 @@
     "type": "ques",
     "w": 1,
     "h": 2,
-    "img": "key/mephisto_key"
+    "img": "key/mephisto_key",
+    "stack": true
   },
   "dhn": {
     "en": "Diablo's Horn",
@@ -6565,7 +6638,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "body_part/fang"
+    "img": "body_part/fang",
+    "stack": true
   },
   "bey": {
     "en": "Baal's Eye",
@@ -6575,7 +6649,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "body_part/eye"
+    "img": "body_part/eye",
+    "stack": true
   },
   "mbr": {
     "en": "Mephisto's Brain",
@@ -6585,7 +6660,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "body_part/brain"
+    "img": "body_part/brain",
+    "stack": true
   },
   "toa": {
     "en": "Token of Absolution",
@@ -6595,7 +6671,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "quest/token_of_absolution"
+    "img": "quest/token_of_absolution",
+    "stack": true
   },
   "tes": {
     "en": "Twisted Essence of Suffering",
@@ -6605,7 +6682,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "quest/twisted_essence_of_suffering"
+    "img": "quest/twisted_essence_of_suffering",
+    "stack": true
   },
   "ceh": {
     "en": "Charged Essence of Hatred",
@@ -6615,7 +6693,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "quest/charged_essense_of_hatred"
+    "img": "quest/charged_essense_of_hatred",
+    "stack": true
   },
   "bet": {
     "en": "Burning Essence of Terror",
@@ -6625,7 +6704,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "quest/burning_essence_of_terror"
+    "img": "quest/burning_essence_of_terror",
+    "stack": true
   },
   "fed": {
     "en": "Festering Essence of Destruction",
@@ -6635,7 +6715,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "quest/festering_essence_of_destruction"
+    "img": "quest/festering_essence_of_destruction",
+    "stack": true
   },
   "std": {
     "en": "Standard of Heroes",
@@ -6655,7 +6736,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "shard/mote_of_anguish"
+    "img": "shard/mote_of_anguish",
+    "stack": true
   },
   "xa2": {
     "en": "Eastern Worldstone Shard",
@@ -6665,7 +6747,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "shard/mote_of_pain"
+    "img": "shard/mote_of_pain",
+    "stack": true
   },
   "xa3": {
     "en": "Southern Worldstone Shard",
@@ -6675,7 +6758,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "shard/mote_of_hatred"
+    "img": "shard/mote_of_hatred",
+    "stack": true
   },
   "xa4": {
     "en": "Deep Worldstone Shard",
@@ -6685,7 +6769,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "shard/mote_of_terror"
+    "img": "shard/mote_of_terror",
+    "stack": true
   },
   "xa5": {
     "en": "Northern Worldstone Shard",
@@ -6695,7 +6780,8 @@
     "type": "ques",
     "w": 1,
     "h": 1,
-    "img": "shard/mote_of_destruction"
+    "img": "shard/mote_of_destruction",
+    "stack": true
   },
   "ua1": {
     "en": "Talic's Anguish",
@@ -6705,7 +6791,8 @@
     "type": "ques",
     "w": 1,
     "h": 2,
-    "img": "shard/talics_anguish"
+    "img": "shard/talics_anguish",
+    "stack": true
   },
   "ua2": {
     "en": "Korlic's Pain",
@@ -6715,7 +6802,8 @@
     "type": "ques",
     "w": 1,
     "h": 2,
-    "img": "shard/korlics_pain"
+    "img": "shard/korlics_pain",
+    "stack": true
   },
   "ua3": {
     "en": "Madawc's Ire",
@@ -6725,7 +6813,8 @@
     "type": "ques",
     "w": 1,
     "h": 2,
-    "img": "shard/madawcs_ire"
+    "img": "shard/madawcs_ire",
+    "stack": true
   },
   "ua4": {
     "en": "Bul-Kathos' Nightmare",
@@ -6735,7 +6824,8 @@
     "type": "ques",
     "w": 1,
     "h": 2,
-    "img": "shard/bulkathos_nightmare"
+    "img": "shard/bulkathos_nightmare",
+    "stack": true
   },
   "ua5": {
     "en": "Worusk's End",
@@ -6745,7 +6835,8 @@
     "type": "ques",
     "w": 1,
     "h": 2,
-    "img": "shard/worusks_end"
+    "img": "shard/worusks_end",
+    "stack": true
   },
   "um1": {
     "en": "Defender's Fire",
