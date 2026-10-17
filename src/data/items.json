@@ -2,3411 +2,6139 @@
   "cap": {
     "en": "Cap",
     "zh": "软帽",
-    "zh_tw": "便帽"
+    "zh_tw": "便帽",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "skp": {
     "en": "Skull Cap",
     "zh": "骷髅帽",
-    "zh_tw": "顱帽"
+    "zh_tw": "顱帽",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "hlm": {
     "en": "Helm",
     "zh": "头盔",
-    "zh_tw": "頭盔"
+    "zh_tw": "頭盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "fhl": {
     "en": "Full Helm",
     "zh": "全护盔",
-    "zh_tw": "全罩盔"
+    "zh_tw": "全罩盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "ghm": {
     "en": "Great Helm",
     "zh": "重盔",
-    "zh_tw": "重盔"
+    "zh_tw": "重盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "crn": {
     "en": "Crown",
     "zh": "王冠",
-    "zh_tw": "王冠"
+    "zh_tw": "王冠",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "msk": {
     "en": "Mask",
     "zh": "覆面甲",
-    "zh_tw": "面具"
+    "zh_tw": "面具",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "qui": {
     "en": "Quilted Armor",
     "zh": "内衬甲",
-    "zh_tw": "棉布甲"
+    "zh_tw": "棉布甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "lea": {
     "en": "Leather Armor",
     "zh": "皮甲",
-    "zh_tw": "皮革甲"
+    "zh_tw": "皮革甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "hla": {
     "en": "Hard Leather Armor",
     "zh": "硬皮甲",
-    "zh_tw": "硬皮甲"
+    "zh_tw": "硬皮甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "stu": {
     "en": "Studded Leather",
     "zh": "钉皮甲",
-    "zh_tw": "鑲釘皮甲"
+    "zh_tw": "鑲釘皮甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "rng": {
     "en": "Ring Mail",
     "zh": "环甲",
-    "zh_tw": "環甲"
+    "zh_tw": "環甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "scl": {
     "en": "Scale Mail",
     "zh": "鱼鳞甲",
-    "zh_tw": "鱗甲"
+    "zh_tw": "鱗甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "chn": {
     "en": "Chain Mail",
     "zh": "锁链甲",
-    "zh_tw": "鎖鍊甲"
+    "zh_tw": "鎖鍊甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "brs": {
     "en": "Breast Plate",
     "zh": "胸片甲",
-    "zh_tw": "胸鎧"
+    "zh_tw": "胸鎧",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "spl": {
     "en": "Splint Mail",
     "zh": "板条甲",
-    "zh_tw": "板甲"
+    "zh_tw": "板甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "plt": {
     "en": "Plate Mail",
     "zh": "板链甲",
-    "zh_tw": "鎧甲"
+    "zh_tw": "鎧甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "fld": {
     "en": "Field Plate",
     "zh": "全身板甲",
-    "zh_tw": "野戰鎧甲"
+    "zh_tw": "野戰鎧甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "gth": {
     "en": "Gothic Plate",
     "zh": "哥特甲",
-    "zh_tw": "哥德鎧甲"
+    "zh_tw": "哥德鎧甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "ful": {
     "en": "Full Plate Mail",
     "zh": "全身板链甲",
-    "zh_tw": "全身鎧甲"
+    "zh_tw": "全身鎧甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "aar": {
     "en": "Ancient Armor",
     "zh": "古代甲",
-    "zh_tw": "上古鎧甲"
+    "zh_tw": "上古鎧甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "ltp": {
     "en": "Light Plate",
     "zh": "轻板甲",
-    "zh_tw": "輕型鎧甲"
+    "zh_tw": "輕型鎧甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "buc": {
     "en": "Buckler",
     "zh": "小圆盾",
-    "zh_tw": "小圓盾"
+    "zh_tw": "小圓盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 2
   },
   "sml": {
     "en": "Small Shield",
     "zh": "小盾",
-    "zh_tw": "小型盾"
+    "zh_tw": "小型盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 2
   },
   "lrg": {
     "en": "Large Shield",
     "zh": "大盾",
-    "zh_tw": "大型盾"
+    "zh_tw": "大型盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "kit": {
     "en": "Kite Shield",
     "zh": "鸢盾",
-    "zh_tw": "鳶盾"
+    "zh_tw": "鳶盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "tow": {
     "en": "Tower Shield",
     "zh": "塔盾",
-    "zh_tw": "塔盾"
+    "zh_tw": "塔盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "gts": {
     "en": "Gothic Shield",
     "zh": "哥特盾",
-    "zh_tw": "哥德盾"
+    "zh_tw": "哥德盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 4
   },
   "lgl": {
     "en": "Leather Gloves",
     "zh": "皮手套",
-    "zh_tw": "皮革手套"
+    "zh_tw": "皮革手套",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "vgl": {
     "en": "Heavy Gloves",
     "zh": "重手套",
-    "zh_tw": "厚皮手套"
+    "zh_tw": "厚皮手套",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "mgl": {
     "en": "Chain Gloves",
     "zh": "链甲手套",
-    "zh_tw": "鍊甲手套"
+    "zh_tw": "鍊甲手套",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "tgl": {
     "en": "Light Gauntlets",
     "zh": "轻护手",
-    "zh_tw": "輕型護手"
+    "zh_tw": "輕型護手",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "hgl": {
     "en": "Gauntlets",
     "zh": "护手",
-    "zh_tw": "鋼鐵護手"
+    "zh_tw": "鋼鐵護手",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "lbt": {
     "en": "Boots",
     "zh": "短靴",
-    "zh_tw": "皮靴"
+    "zh_tw": "皮靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "vbt": {
     "en": "Heavy Boots",
     "zh": "重靴",
-    "zh_tw": "重靴"
+    "zh_tw": "重靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "mbt": {
     "en": "Chain Boots",
     "zh": "锁链靴",
-    "zh_tw": "鎖鍊靴"
+    "zh_tw": "鎖鍊靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "tbt": {
     "en": "Light Plated Boots",
     "zh": "轻板甲靴",
-    "zh_tw": "輕鎧靴"
+    "zh_tw": "輕鎧靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "hbt": {
     "en": "Greaves",
     "zh": "护胫靴",
-    "zh_tw": "護脛"
+    "zh_tw": "護脛",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "lbl": {
     "en": "Sash",
     "zh": "腰带",
-    "zh_tw": "束帶"
+    "zh_tw": "束帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "vbl": {
     "en": "Light Belt",
     "zh": "轻腰带",
-    "zh_tw": "輕腰帶"
+    "zh_tw": "輕腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "mbl": {
     "en": "Belt",
     "zh": "腰带",
-    "zh_tw": "腰帶"
+    "zh_tw": "腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "tbl": {
     "en": "Heavy Belt",
     "zh": "重腰带",
-    "zh_tw": "厚腰帶"
+    "zh_tw": "厚腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "hbl": {
     "en": "Plated Belt",
     "zh": "板甲腰带",
-    "zh_tw": "鎧甲腰帶"
+    "zh_tw": "鎧甲腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "bhm": {
     "en": "Bone Helm",
     "zh": "骨盔",
-    "zh_tw": "骸骨頭盔"
+    "zh_tw": "骸骨頭盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "bsh": {
     "en": "Bone Shield",
     "zh": "骨盾",
-    "zh_tw": "骨盾"
+    "zh_tw": "骨盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "spk": {
     "en": "Spiked Shield",
     "zh": "尖刺盾",
-    "zh_tw": "尖刺盾"
+    "zh_tw": "尖刺盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "xap": {
     "en": "War Hat",
     "zh": "战争帽",
-    "zh_tw": "戰帽"
+    "zh_tw": "戰帽",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "xkp": {
     "en": "Sallet",
     "zh": "轻盔",
-    "zh_tw": "便盔"
+    "zh_tw": "便盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "xlm": {
     "en": "Casque",
     "zh": "护鼻盔",
-    "zh_tw": "兜盔"
+    "zh_tw": "兜盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "xhl": {
     "en": "Basinet",
     "zh": "喙面盔",
-    "zh_tw": "輕盔"
+    "zh_tw": "輕盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "xhm": {
     "en": "Winged Helm",
     "zh": "翼盔",
-    "zh_tw": "翼盔"
+    "zh_tw": "翼盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "xrn": {
     "en": "Grand Crown",
     "zh": "宝冠盔",
-    "zh_tw": "莊嚴王冠"
+    "zh_tw": "莊嚴王冠",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "xsk": {
     "en": "Death Mask",
     "zh": "死者面甲",
-    "zh_tw": "死亡面具"
+    "zh_tw": "死亡面具",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "xui": {
     "en": "Ghost Armor",
     "zh": "幽灵甲",
-    "zh_tw": "鬼魂戰衣"
+    "zh_tw": "鬼魂戰衣",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xea": {
     "en": "Serpentskin Armor",
     "zh": "蛇皮甲",
-    "zh_tw": "海蛇皮甲"
+    "zh_tw": "海蛇皮甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xla": {
     "en": "Demonhide Armor",
     "zh": "恶魔皮甲",
-    "zh_tw": "魔皮護甲"
+    "zh_tw": "魔皮護甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xtu": {
     "en": "Trellised Armor",
     "zh": "镶片铠甲",
-    "zh_tw": "格網護甲"
+    "zh_tw": "格網護甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xng": {
     "en": "Linked Mail",
     "zh": "锁环甲",
-    "zh_tw": "鍊扣戰甲"
+    "zh_tw": "鍊扣戰甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xcl": {
     "en": "Tigulated Mail",
     "zh": "固片锁甲",
-    "zh_tw": "鎖鱗戰甲"
+    "zh_tw": "鎖鱗戰甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xhn": {
     "en": "Mesh Armor",
     "zh": "札甲",
-    "zh_tw": "鐵網戰甲"
+    "zh_tw": "鐵網戰甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xrs": {
     "en": "Cuirass",
     "zh": "重装胸甲",
-    "zh_tw": "護胸甲"
+    "zh_tw": "護胸甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xpl": {
     "en": "Russet Armor",
     "zh": "褐锈甲",
-    "zh_tw": "赤褐戰甲"
+    "zh_tw": "赤褐戰甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xlt": {
     "en": "Templar Coat",
     "zh": "圣殿骑士铠",
-    "zh_tw": "聖堂騎士戰甲"
+    "zh_tw": "聖堂騎士戰甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xld": {
     "en": "Sharktooth Armor",
     "zh": "鲨齿战甲",
-    "zh_tw": "鯊齒戰甲"
+    "zh_tw": "鯊齒戰甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xth": {
     "en": "Embossed Plate",
     "zh": "浮雕纹甲",
-    "zh_tw": "雕紋戰甲"
+    "zh_tw": "雕紋戰甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xul": {
     "en": "Chaos Armor",
     "zh": "混沌护甲",
-    "zh_tw": "混沌戰甲"
+    "zh_tw": "混沌戰甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xar": {
     "en": "Ornate Plate",
     "zh": "花纹战甲",
-    "zh_tw": "華麗戰甲"
+    "zh_tw": "華麗戰甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xtp": {
     "en": "Mage Plate",
     "zh": "法师铠",
-    "zh_tw": "法師鎧甲"
+    "zh_tw": "法師鎧甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "xuc": {
     "en": "Defender",
     "zh": "防卫盾",
-    "zh_tw": "防禦盾"
+    "zh_tw": "防禦盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 2
   },
   "xml": {
     "en": "Round Shield",
     "zh": "圆盾",
-    "zh_tw": "圓型盾"
+    "zh_tw": "圓型盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 2
   },
   "xrg": {
     "en": "Scutum",
     "zh": "椭圆盾",
-    "zh_tw": "大圓盾"
+    "zh_tw": "大圓盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "xit": {
     "en": "Dragon Shield",
     "zh": "龙盾",
-    "zh_tw": "龍盾"
+    "zh_tw": "龍盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "xow": {
     "en": "Pavise",
     "zh": "巨盾",
-    "zh_tw": "大盾"
+    "zh_tw": "大盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "xts": {
     "en": "Ancient Shield",
     "zh": "古代盾",
-    "zh_tw": "上古盾"
+    "zh_tw": "上古盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 4
   },
   "xlg": {
     "en": "Demonhide Gloves",
     "zh": "恶魔皮手套",
-    "zh_tw": "魔皮手套"
+    "zh_tw": "魔皮手套",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "xvg": {
     "en": "Sharkskin Gloves",
     "zh": "鲨鱼皮手套",
-    "zh_tw": "鯊皮手套"
+    "zh_tw": "鯊皮手套",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "xmg": {
     "en": "Heavy Bracers",
     "zh": "铁皮手套",
-    "zh_tw": "重型護腕"
+    "zh_tw": "重型護腕",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "xtg": {
     "en": "Battle Gauntlets",
     "zh": "战斗护手",
-    "zh_tw": "戰鬥護手"
+    "zh_tw": "戰鬥護手",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "xhg": {
     "en": "War Gauntlets",
     "zh": "战争护手",
-    "zh_tw": "征戰護手"
+    "zh_tw": "征戰護手",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "xlb": {
     "en": "Demonhide Boots",
     "zh": "恶魔皮靴",
-    "zh_tw": "魔皮長靴"
+    "zh_tw": "魔皮長靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "xvb": {
     "en": "Sharkskin Boots",
     "zh": "鲨鱼皮靴",
-    "zh_tw": "鯊皮靴"
+    "zh_tw": "鯊皮靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "xmb": {
     "en": "Mesh Boots",
     "zh": "网纹靴",
-    "zh_tw": "鐵網靴"
+    "zh_tw": "鐵網靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "xtb": {
     "en": "Battle Boots",
     "zh": "战靴",
-    "zh_tw": "戰鬥靴"
+    "zh_tw": "戰鬥靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "xhb": {
     "en": "War Boots",
     "zh": "战争靴",
-    "zh_tw": "征戰靴"
+    "zh_tw": "征戰靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "zlb": {
     "en": "Demonhide Sash",
     "zh": "恶魔皮带",
-    "zh_tw": "魔皮束帶"
+    "zh_tw": "魔皮束帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "zvb": {
     "en": "Sharkskin Belt",
     "zh": "鲨鱼皮带",
-    "zh_tw": "鯊皮腰帶"
+    "zh_tw": "鯊皮腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "zmb": {
     "en": "Mesh Belt",
     "zh": "网纹腰带",
-    "zh_tw": "鐵網腰帶"
+    "zh_tw": "鐵網腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "ztb": {
     "en": "Battle Belt",
     "zh": "战斗腰带",
-    "zh_tw": "戰鬥腰帶"
+    "zh_tw": "戰鬥腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "zhb": {
     "en": "War Belt",
     "zh": "战争腰带",
-    "zh_tw": "征戰腰帶"
+    "zh_tw": "征戰腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "xh9": {
     "en": "Grim Helm",
     "zh": "恐怖头盔",
-    "zh_tw": "陰森頭盔"
+    "zh_tw": "陰森頭盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "xsh": {
     "en": "Grim Shield",
     "zh": "恐怖大盾",
-    "zh_tw": "陰森盾牌"
+    "zh_tw": "陰森盾牌",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "xpk": {
     "en": "Barbed Shield",
     "zh": "尖刃盾",
-    "zh_tw": "倒刺盾"
+    "zh_tw": "倒刺盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "dr1": {
     "en": "Wolf Head",
     "zh": "狼头",
-    "zh_tw": "狼頭獸帽"
+    "zh_tw": "狼頭獸帽",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "dr2": {
     "en": "Hawk Helm",
     "zh": "鹰盔",
-    "zh_tw": "飛鷹頭盔"
+    "zh_tw": "飛鷹頭盔",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "dr3": {
     "en": "Antlers",
     "zh": "鹿角盔",
-    "zh_tw": "巨角獸帽"
+    "zh_tw": "巨角獸帽",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "dr4": {
     "en": "Falcon Mask",
     "zh": "鹰隼面甲",
-    "zh_tw": "獵鷹面具"
+    "zh_tw": "獵鷹面具",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "dr5": {
     "en": "Spirit Mask",
     "zh": "狼灵面具",
-    "zh_tw": "靈狼面具"
+    "zh_tw": "靈狼面具",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "ba1": {
     "en": "Jawbone Cap",
     "zh": "颚骨帽",
-    "zh_tw": "顎骨帽"
+    "zh_tw": "顎骨帽",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "ba2": {
     "en": "Fanged Helm",
     "zh": "牙骨盔",
-    "zh_tw": "尖牙頭盔"
+    "zh_tw": "尖牙頭盔",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "ba3": {
     "en": "Horned Helm",
     "zh": "长角盔",
-    "zh_tw": "尖角頭盔"
+    "zh_tw": "尖角頭盔",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "ba4": {
     "en": "Assault Helmet",
     "zh": "强攻盔",
-    "zh_tw": "突擊頭盔"
+    "zh_tw": "突擊頭盔",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "ba5": {
     "en": "Avenger Guard",
     "zh": "复仇者头盔",
-    "zh_tw": "復仇者護盔"
+    "zh_tw": "復仇者護盔",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "pa1": {
     "en": "Targe",
     "zh": "小盾",
-    "zh_tw": "小盾"
+    "zh_tw": "小盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 2
   },
   "pa2": {
     "en": "Rondache",
     "zh": "轻圆盾",
-    "zh_tw": "輕圓盾"
+    "zh_tw": "輕圓盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 2
   },
   "pa3": {
     "en": "Heraldic Shield",
     "zh": "纹章盾",
-    "zh_tw": "紋章盾"
+    "zh_tw": "紋章盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 4
   },
   "pa4": {
     "en": "Aerin Shield",
     "zh": "艾琳盾",
-    "zh_tw": "艾文之盾"
+    "zh_tw": "艾文之盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 4
   },
   "pa5": {
     "en": "Crown Shield",
     "zh": "王冠盾",
-    "zh_tw": "冠冕之盾"
+    "zh_tw": "冠冕之盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 2
   },
   "ne1": {
     "en": "Preserved Head",
     "zh": "保存完好的头骨",
-    "zh_tw": "防腐頭顱"
+    "zh_tw": "防腐頭顱",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "ne2": {
     "en": "Zombie Head",
     "zh": "邪身头骨",
-    "zh_tw": "殭屍頭顱"
+    "zh_tw": "殭屍頭顱",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "ne3": {
     "en": "Unraveller Head",
     "zh": "剖壳者头骨",
-    "zh_tw": "解繃者頭顱"
+    "zh_tw": "解繃者頭顱",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "ne4": {
     "en": "Gargoyle Head",
     "zh": "石像鬼头骨",
-    "zh_tw": "石像鬼頭顱"
+    "zh_tw": "石像鬼頭顱",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "ne5": {
     "en": "Demon Head",
     "zh": "恶魔头骨",
-    "zh_tw": "惡魔頭顱"
+    "zh_tw": "惡魔頭顱",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "ci0": {
     "en": "Circlet",
     "zh": "头环",
-    "zh_tw": "頭環"
+    "zh_tw": "頭環",
+    "table": "armor",
+    "type": "circ",
+    "w": 2,
+    "h": 2
   },
   "ci1": {
     "en": "Coronet",
     "zh": "头冠",
-    "zh_tw": "寶冠"
+    "zh_tw": "寶冠",
+    "table": "armor",
+    "type": "circ",
+    "w": 2,
+    "h": 2
   },
   "ci2": {
     "en": "Tiara",
     "zh": "冠冕",
-    "zh_tw": "頭冠"
+    "zh_tw": "頭冠",
+    "table": "armor",
+    "type": "circ",
+    "w": 2,
+    "h": 2
   },
   "ci3": {
     "en": "Diadem",
     "zh": "权冠",
-    "zh_tw": "權冠"
+    "zh_tw": "權冠",
+    "table": "armor",
+    "type": "circ",
+    "w": 2,
+    "h": 2
   },
   "uap": {
     "en": "Shako",
     "zh": "军帽",
-    "zh_tw": "軍帽"
+    "zh_tw": "軍帽",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "ukp": {
     "en": "Hydraskull",
     "zh": "多头蛇颅",
-    "zh_tw": "多頭蛇顱盔"
+    "zh_tw": "多頭蛇顱盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "ulm": {
     "en": "Armet",
     "zh": "武装盔",
-    "zh_tw": "覆頰盔"
+    "zh_tw": "覆頰盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "uhl": {
     "en": "Giant Conch",
     "zh": "巨贝盔",
-    "zh_tw": "巨螺盔"
+    "zh_tw": "巨螺盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "uhm": {
     "en": "Spired Helm",
     "zh": "塔盔",
-    "zh_tw": "巨角頭盔"
+    "zh_tw": "巨角頭盔",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "urn": {
     "en": "Corona",
     "zh": "宝冠",
-    "zh_tw": "日冕之冠"
+    "zh_tw": "日冕之冠",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "usk": {
     "en": "Demonhead",
     "zh": "恶魔面甲",
-    "zh_tw": "惡魔頭骨"
+    "zh_tw": "惡魔頭骨",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "uui": {
     "en": "Dusk Shroud",
     "zh": "灰幕寿衣",
-    "zh_tw": "灰暮罩衣"
+    "zh_tw": "灰暮罩衣",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "uea": {
     "en": "Wyrmhide",
     "zh": "龙皮甲",
-    "zh_tw": "龍皮甲"
+    "zh_tw": "龍皮甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "ula": {
     "en": "Scarab Husk",
     "zh": "圣甲虫壳",
-    "zh_tw": "聖甲蟲殼皮甲"
+    "zh_tw": "聖甲蟲殼皮甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "utu": {
     "en": "Wire Fleece",
     "zh": "羊绒皮甲",
-    "zh_tw": "鋼線毛皮甲"
+    "zh_tw": "鋼線毛皮甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "ung": {
     "en": "Diamond Mail",
     "zh": "钻石甲",
-    "zh_tw": "鑽石鎖甲"
+    "zh_tw": "鑽石鎖甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "ucl": {
     "en": "Loricated Mail",
     "zh": "覆铁甲",
-    "zh_tw": "綴鱗戰甲"
+    "zh_tw": "綴鱗戰甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "uhn": {
     "en": "Boneweave",
     "zh": "骨织甲",
-    "zh_tw": "骸骨網甲"
+    "zh_tw": "骸骨網甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "urs": {
     "en": "Great Hauberk",
     "zh": "大半身甲",
-    "zh_tw": "鱗鎧胸甲"
+    "zh_tw": "鱗鎧胸甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "upl": {
     "en": "Balrog Skin",
     "zh": "炎魔皮",
-    "zh_tw": "炎魔皮板甲"
+    "zh_tw": "炎魔皮板甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "ult": {
     "en": "Hellforge Plate",
     "zh": "地狱铸甲",
-    "zh_tw": "地獄鍛甲"
+    "zh_tw": "地獄鍛甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "uld": {
     "en": "Kraken Shell",
     "zh": "深海巨妖之壳",
-    "zh_tw": "海怪之殼"
+    "zh_tw": "海怪之殼",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "uth": {
     "en": "Lacquered Plate",
     "zh": "漆甲",
-    "zh_tw": "漆護鎧甲"
+    "zh_tw": "漆護鎧甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "uul": {
     "en": "Shadow Plate",
     "zh": "暗影板甲",
-    "zh_tw": "暗影鎧甲"
+    "zh_tw": "暗影鎧甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "uar": {
     "en": "Sacred Armor",
     "zh": "神圣铠甲",
-    "zh_tw": "神聖戰甲"
+    "zh_tw": "神聖戰甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "utp": {
     "en": "Archon Plate",
     "zh": "统治者板甲",
-    "zh_tw": "統御者鎧甲"
+    "zh_tw": "統御者鎧甲",
+    "table": "armor",
+    "type": "tors",
+    "w": 2,
+    "h": 3
   },
   "uuc": {
     "en": "Heater",
     "zh": "斗盾",
-    "zh_tw": "斗盾"
+    "zh_tw": "斗盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 2
   },
   "uml": {
     "en": "Luna",
     "zh": "月神盾",
-    "zh_tw": "圓月盾"
+    "zh_tw": "圓月盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 2
   },
   "urg": {
     "en": "Hyperion",
     "zh": "亥伯龙盾",
-    "zh_tw": "亥伯龍盾"
+    "zh_tw": "亥伯龍盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "uit": {
     "en": "Monarch",
     "zh": "统治者大盾",
-    "zh_tw": "君主盾"
+    "zh_tw": "君主盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "uow": {
     "en": "Aegis",
     "zh": "圣盾",
-    "zh_tw": "禦塔盾"
+    "zh_tw": "禦塔盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "uts": {
     "en": "Ward",
     "zh": "守护之盾",
-    "zh_tw": "庇護盾"
+    "zh_tw": "庇護盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 4
   },
   "ulg": {
     "en": "Bramble Mitts",
     "zh": "防刺手套",
-    "zh_tw": "荊棘手套"
+    "zh_tw": "荊棘手套",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "uvg": {
     "en": "Vampirebone Gloves",
     "zh": "吸能鬼骨手套",
-    "zh_tw": "吸血鬼骸骨手套"
+    "zh_tw": "吸血鬼骸骨手套",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "umg": {
     "en": "Vambraces",
     "zh": "护臂手甲",
-    "zh_tw": "護臂"
+    "zh_tw": "護臂",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "utg": {
     "en": "Crusader Gauntlets",
     "zh": "圣教军护手",
-    "zh_tw": "聖教軍護手"
+    "zh_tw": "聖教軍護手",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "uhg": {
     "en": "Ogre Gauntlets",
     "zh": "食肉魔护手",
-    "zh_tw": "巨魔護手"
+    "zh_tw": "巨魔護手",
+    "table": "armor",
+    "type": "glov",
+    "w": 2,
+    "h": 2
   },
   "ulb": {
     "en": "Wyrmhide Boots",
     "zh": "飞龙皮靴",
-    "zh_tw": "龍皮靴"
+    "zh_tw": "龍皮靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "uvb": {
     "en": "Scarabshell Boots",
     "zh": "圣甲虫壳靴",
-    "zh_tw": "聖甲蟲殼皮靴"
+    "zh_tw": "聖甲蟲殼皮靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "umb": {
     "en": "Boneweave Boots",
     "zh": "白骨链靴",
-    "zh_tw": "骸骨網靴"
+    "zh_tw": "骸骨網靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "utb": {
     "en": "Mirrored Boots",
     "zh": "镜化靴",
-    "zh_tw": "幻鏡戰靴"
+    "zh_tw": "幻鏡戰靴",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "uhb": {
     "en": "Myrmidon Greaves",
     "zh": "侍从护胫",
-    "zh_tw": "勇士護脛"
+    "zh_tw": "勇士護脛",
+    "table": "armor",
+    "type": "boot",
+    "w": 2,
+    "h": 2
   },
   "ulc": {
     "en": "Spiderweb Sash",
     "zh": "蛛网饰带",
-    "zh_tw": "蛛網束帶"
+    "zh_tw": "蛛網束帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "uvc": {
     "en": "Vampirefang Belt",
     "zh": "吸能鬼牙腰带",
-    "zh_tw": "吸血鬼牙腰帶"
+    "zh_tw": "吸血鬼牙腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "umc": {
     "en": "Mithril Coil",
     "zh": "秘银腰带",
-    "zh_tw": "秘銀腰帶"
+    "zh_tw": "秘銀腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "utc": {
     "en": "Troll Belt",
     "zh": "巨魔腰带",
-    "zh_tw": "食人妖腰帶"
+    "zh_tw": "食人妖腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "uhc": {
     "en": "Colossus Girdle",
     "zh": "巨型护腰",
-    "zh_tw": "巨神腰帶"
+    "zh_tw": "巨神腰帶",
+    "table": "armor",
+    "type": "belt",
+    "w": 2,
+    "h": 1
   },
   "uh9": {
     "en": "Bone Visage",
     "zh": "白骨面甲",
-    "zh_tw": "骸骨面罩"
+    "zh_tw": "骸骨面罩",
+    "table": "armor",
+    "type": "helm",
+    "w": 2,
+    "h": 2
   },
   "ush": {
     "en": "Troll Nest",
     "zh": "巨魔巢",
-    "zh_tw": "食人妖骨盾"
+    "zh_tw": "食人妖骨盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "upk": {
     "en": "Blade Barrier",
     "zh": "剑刃屏障",
-    "zh_tw": "刀刃刺盾"
+    "zh_tw": "刀刃刺盾",
+    "table": "armor",
+    "type": "shie",
+    "w": 2,
+    "h": 3
   },
   "dr6": {
     "en": "Alpha Helm",
     "zh": "头狼盔",
-    "zh_tw": "猛狼頭盔"
+    "zh_tw": "猛狼頭盔",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "dr7": {
     "en": "Griffon Headdress",
     "zh": "狮鹫头饰",
-    "zh_tw": "獅鷲獸頭飾"
+    "zh_tw": "獅鷲獸頭飾",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "dr8": {
     "en": "Hunter's Guise",
     "zh": "猎人伪装",
-    "zh_tw": "獵人面罩"
+    "zh_tw": "獵人面罩",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "dr9": {
     "en": "Sacred Feathers",
     "zh": "圣羽盔",
-    "zh_tw": "聖羽頭飾"
+    "zh_tw": "聖羽頭飾",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "dra": {
     "en": "Totemic Mask",
     "zh": "图腾面具",
-    "zh_tw": "圖騰面具"
+    "zh_tw": "圖騰面具",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "ba6": {
     "en": "Jawbone Visor",
     "zh": "颚骨面甲",
-    "zh_tw": "顎骨面甲"
+    "zh_tw": "顎骨面甲",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "ba7": {
     "en": "Lion Helm",
     "zh": "狮盔",
-    "zh_tw": "獅牙頭盔"
+    "zh_tw": "獅牙頭盔",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "ba8": {
     "en": "Rage Mask",
     "zh": "盛怒面甲",
-    "zh_tw": "狂怒面具"
+    "zh_tw": "狂怒面具",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "ba9": {
     "en": "Savage Helmet",
     "zh": "野蛮头盔",
-    "zh_tw": "凶蠻頭盔"
+    "zh_tw": "凶蠻頭盔",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "baa": {
     "en": "Slayer Guard",
     "zh": "重煞者头盔",
-    "zh_tw": "殺手護盔"
+    "zh_tw": "殺手護盔",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "pa6": {
     "en": "Akaran Targe",
     "zh": "阿卡兰小盾",
-    "zh_tw": "阿卡拉圓盾"
+    "zh_tw": "阿卡拉圓盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 2
   },
   "pa7": {
     "en": "Akaran Rondache",
     "zh": "阿卡兰轻圆盾",
-    "zh_tw": "阿卡拉輕圓盾"
+    "zh_tw": "阿卡拉輕圓盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 2
   },
   "pa8": {
     "en": "Protector Shield",
     "zh": "保卫者之盾",
-    "zh_tw": "守護之盾"
+    "zh_tw": "守護之盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 4
   },
   "pa9": {
     "en": "Gilded Shield",
     "zh": "镀金盾",
-    "zh_tw": "金紋盾"
+    "zh_tw": "金紋盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 4
   },
   "paa": {
     "en": "Royal Shield",
     "zh": "皇家盾",
-    "zh_tw": "皇家盾"
+    "zh_tw": "皇家盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 2
   },
   "ne6": {
     "en": "Mummified Trophy",
     "zh": "木乃伊法器",
-    "zh_tw": "木乃伊首級"
+    "zh_tw": "木乃伊首級",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "ne7": {
     "en": "Fetish Trophy",
     "zh": "鬼娃法器",
-    "zh_tw": "鬼娃首級"
+    "zh_tw": "鬼娃首級",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "ne8": {
     "en": "Sexton Trophy",
     "zh": "司事法器",
-    "zh_tw": "司事首級"
+    "zh_tw": "司事首級",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "ne9": {
     "en": "Cantor Trophy",
     "zh": "领唱者法器",
-    "zh_tw": "領唱者首級"
+    "zh_tw": "領唱者首級",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "nea": {
     "en": "Hierophant Trophy",
     "zh": "圣师法器",
-    "zh_tw": "祭司首級"
+    "zh_tw": "祭司首級",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "drb": {
     "en": "Blood Spirit",
     "zh": "精华之灵",
-    "zh_tw": "血系靈獸帽"
+    "zh_tw": "血系靈獸帽",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "drc": {
     "en": "Sun Spirit",
     "zh": "太阳之灵",
-    "zh_tw": "日陽靈獸帽"
+    "zh_tw": "日陽靈獸帽",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "drd": {
     "en": "Earth Spirit",
     "zh": "大地之灵",
-    "zh_tw": "地土靈獸帽"
+    "zh_tw": "地土靈獸帽",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "dre": {
     "en": "Sky Spirit",
     "zh": "天空之灵",
-    "zh_tw": "天翔靈獸帽"
+    "zh_tw": "天翔靈獸帽",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "drf": {
     "en": "Dream Spirit",
     "zh": "梦境之灵",
-    "zh_tw": "幽夢靈獸帽"
+    "zh_tw": "幽夢靈獸帽",
+    "table": "armor",
+    "type": "pelt",
+    "w": 2,
+    "h": 2
   },
   "bab": {
     "en": "Carnage Helm",
     "zh": "克害盔",
-    "zh_tw": "屠殺頭盔"
+    "zh_tw": "屠殺頭盔",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "bac": {
     "en": "Fury Visor",
     "zh": "怒火面甲",
-    "zh_tw": "暴怒面甲"
+    "zh_tw": "暴怒面甲",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "bad": {
     "en": "Destroyer Helm",
     "zh": "毁灭者头盔",
-    "zh_tw": "毀滅者頭盔"
+    "zh_tw": "毀滅者頭盔",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "bae": {
     "en": "Conqueror Crown",
     "zh": "征服者王冠",
-    "zh_tw": "征服者盔冠"
+    "zh_tw": "征服者盔冠",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "baf": {
     "en": "Guardian Crown",
     "zh": "守护者王冠",
-    "zh_tw": "守護者盔冠"
+    "zh_tw": "守護者盔冠",
+    "table": "armor",
+    "type": "phlm",
+    "w": 2,
+    "h": 2
   },
   "pab": {
     "en": "Sacred Targe",
     "zh": "神圣小盾",
-    "zh_tw": "神聖小盾"
+    "zh_tw": "神聖小盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 2
   },
   "pac": {
     "en": "Sacred Rondache",
     "zh": "神圣轻圆盾",
-    "zh_tw": "神聖輕圓盾"
+    "zh_tw": "神聖輕圓盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 2
   },
   "pad": {
     "en": "Kurast Shield",
     "zh": "库拉斯特盾",
-    "zh_tw": "庫拉斯特盾"
+    "zh_tw": "庫拉斯特盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 4
   },
   "pae": {
     "en": "Zakarum Shield",
     "zh": "萨卡兰姆盾",
-    "zh_tw": "撒卡蘭姆盾"
+    "zh_tw": "撒卡蘭姆盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 4
   },
   "paf": {
     "en": "Vortex Shield",
     "zh": "漩涡盾",
-    "zh_tw": "渦旋盾"
+    "zh_tw": "渦旋盾",
+    "table": "armor",
+    "type": "ashd",
+    "w": 2,
+    "h": 2
   },
   "neb": {
     "en": "Minion Skull",
     "zh": "爪牙颅骨",
-    "zh_tw": "僕從顱骨"
+    "zh_tw": "僕從顱骨",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "neg": {
     "en": "Hellspawn Skull",
     "zh": "地狱魔颅骨",
-    "zh_tw": "地獄爪牙顱骨"
+    "zh_tw": "地獄爪牙顱骨",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "ned": {
     "en": "Overseer Skull",
     "zh": "督军颅骨",
-    "zh_tw": "督軍顱骨"
+    "zh_tw": "督軍顱骨",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "nee": {
     "en": "Succubus Skull",
     "zh": "魅魔颅骨",
-    "zh_tw": "魅魔顱骨"
+    "zh_tw": "魅魔顱骨",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "nef": {
     "en": "Bloodlord Skull",
     "zh": "精华领主颅骨",
-    "zh_tw": "鮮血之王顱骨"
+    "zh_tw": "鮮血之王顱骨",
+    "table": "armor",
+    "type": "head",
+    "w": 2,
+    "h": 2
   },
   "wa1": {
     "en": "Old Book",
     "zh": "古书",
-    "zh_tw": "舊書"
+    "zh_tw": "舊書",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wa2": {
     "en": "Tome",
     "zh": "典籍",
-    "zh_tw": "秘典"
+    "zh_tw": "秘典",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wa3": {
     "en": "Codex",
     "zh": "法典",
-    "zh_tw": "寶典"
+    "zh_tw": "寶典",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wa4": {
     "en": "Compendium",
     "zh": "纲要",
-    "zh_tw": "綱要"
+    "zh_tw": "綱要",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wa5": {
     "en": "Grimoire",
     "zh": "魔典",
-    "zh_tw": "魔典"
+    "zh_tw": "魔典",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wa6": {
     "en": "Burnt Text",
     "zh": "焦黑文本",
-    "zh_tw": "焦灼書冊"
+    "zh_tw": "焦灼書冊",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wa7": {
     "en": "Dark Tome",
     "zh": "黑暗典籍",
-    "zh_tw": "黑暗秘典"
+    "zh_tw": "黑暗秘典",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wa8": {
     "en": "Dark Codex",
     "zh": "黑暗法典",
-    "zh_tw": "黑暗寶典"
+    "zh_tw": "黑暗寶典",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wa9": {
     "en": "Possessed Compendium",
     "zh": "魔附纲要",
-    "zh_tw": "著魔綱要"
+    "zh_tw": "著魔綱要",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "waa": {
     "en": "Possessed Grimoire",
     "zh": "魔附魔典",
-    "zh_tw": "著魔魔典"
+    "zh_tw": "著魔魔典",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wab": {
     "en": "Forgotten Volume",
     "zh": "遗世卷册",
-    "zh_tw": "被遺忘的書冊"
+    "zh_tw": "被遺忘的書冊",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wac": {
     "en": "Occult Tome",
     "zh": "神秘典籍",
-    "zh_tw": "神秘秘典"
+    "zh_tw": "神秘秘典",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wad": {
     "en": "Occult Codex",
     "zh": "神秘法典",
-    "zh_tw": "神秘寶典"
+    "zh_tw": "神秘寶典",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "wae": {
     "en": "Blasphemous Compendium",
     "zh": "亵渎纲要",
-    "zh_tw": "褻瀆綱要"
+    "zh_tw": "褻瀆綱要",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "waf": {
     "en": "Blasphemous Grimoire",
     "zh": "亵渎魔典",
-    "zh_tw": "褻瀆魔典"
+    "zh_tw": "褻瀆魔典",
+    "table": "armor",
+    "type": "grim",
+    "w": 2,
+    "h": 2
   },
   "hax": {
     "en": "Hand Axe",
     "zh": "手斧",
-    "zh_tw": "手斧"
+    "zh_tw": "手斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 1,
+    "h": 3
   },
   "axe": {
     "en": "Axe",
     "zh": "斧",
-    "zh_tw": "斧"
+    "zh_tw": "斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "2ax": {
     "en": "Double Axe",
     "zh": "双刃斧",
-    "zh_tw": "雙刃斧"
+    "zh_tw": "雙刃斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "mpi": {
     "en": "Military Pick",
     "zh": "军镐",
-    "zh_tw": "軍用鎬"
+    "zh_tw": "軍用鎬",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "wax": {
     "en": "War Axe",
     "zh": "战斧",
-    "zh_tw": "征戰斧"
+    "zh_tw": "征戰斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "lax": {
     "en": "Large Axe",
     "zh": "大斧",
-    "zh_tw": "重斧"
+    "zh_tw": "重斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "bax": {
     "en": "Broad Axe",
     "zh": "宽刃斧",
-    "zh_tw": "闊斧"
+    "zh_tw": "闊斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "btx": {
     "en": "Battle Axe",
     "zh": "战斗斧",
-    "zh_tw": "戰斧"
+    "zh_tw": "戰斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "gax": {
     "en": "Great Axe",
     "zh": "重斧",
-    "zh_tw": "巨斧"
+    "zh_tw": "巨斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 4
   },
   "gix": {
     "en": "Giant Axe",
     "zh": "巨斧",
-    "zh_tw": "巨人斧"
+    "zh_tw": "巨人斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "wnd": {
     "en": "Wand",
     "zh": "魔杖",
-    "zh_tw": "魔杖"
+    "zh_tw": "魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "ywn": {
     "en": "Yew Wand",
     "zh": "紫杉魔杖",
-    "zh_tw": "紫杉魔杖"
+    "zh_tw": "紫杉魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "bwn": {
     "en": "Bone Wand",
     "zh": "白骨魔杖",
-    "zh_tw": "骸骨魔杖"
+    "zh_tw": "骸骨魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "gwn": {
     "en": "Grim Wand",
     "zh": "恐怖魔杖",
-    "zh_tw": "陰森魔杖"
+    "zh_tw": "陰森魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "clb": {
     "en": "Club",
     "zh": "木棒",
-    "zh_tw": "短棒"
+    "zh_tw": "短棒",
+    "table": "weapons",
+    "type": "club",
+    "w": 1,
+    "h": 3
   },
   "scp": {
     "en": "Scepter",
     "zh": "权杖",
-    "zh_tw": "權杖"
+    "zh_tw": "權杖",
+    "table": "weapons",
+    "type": "scep",
+    "w": 1,
+    "h": 3
   },
   "gsc": {
     "en": "Grand Scepter",
     "zh": "大权杖",
-    "zh_tw": "莊嚴權杖"
+    "zh_tw": "莊嚴權杖",
+    "table": "weapons",
+    "type": "scep",
+    "w": 1,
+    "h": 3
   },
   "wsp": {
     "en": "War Scepter",
     "zh": "战争权杖",
-    "zh_tw": "征戰權杖"
+    "zh_tw": "征戰權杖",
+    "table": "weapons",
+    "type": "scep",
+    "w": 2,
+    "h": 3
   },
   "spc": {
     "en": "Spiked Club",
     "zh": "狼牙棒",
-    "zh_tw": "狼牙棒"
+    "zh_tw": "狼牙棒",
+    "table": "weapons",
+    "type": "club",
+    "w": 1,
+    "h": 3
   },
   "mac": {
     "en": "Mace",
     "zh": "钉锤",
-    "zh_tw": "釘鎚"
+    "zh_tw": "釘鎚",
+    "table": "weapons",
+    "type": "mace",
+    "w": 1,
+    "h": 3
   },
   "mst": {
     "en": "Morning Star",
     "zh": "流星锤",
-    "zh_tw": "釘頭鎚"
+    "zh_tw": "釘頭鎚",
+    "table": "weapons",
+    "type": "mace",
+    "w": 1,
+    "h": 3
   },
   "fla": {
     "en": "Flail",
     "zh": "连枷",
-    "zh_tw": "連枷"
+    "zh_tw": "連枷",
+    "table": "weapons",
+    "type": "mace",
+    "w": 2,
+    "h": 3
   },
   "whm": {
     "en": "War Hammer",
     "zh": "战锤",
-    "zh_tw": "戰鎚"
+    "zh_tw": "戰鎚",
+    "table": "weapons",
+    "type": "hamm",
+    "w": 2,
+    "h": 3
   },
   "mau": {
     "en": "Maul",
     "zh": "大锤",
-    "zh_tw": "重鎚"
+    "zh_tw": "重鎚",
+    "table": "weapons",
+    "type": "hamm",
+    "w": 2,
+    "h": 4
   },
   "gma": {
     "en": "Great Maul",
     "zh": "重锤",
-    "zh_tw": "巨型重鎚"
+    "zh_tw": "巨型重鎚",
+    "table": "weapons",
+    "type": "hamm",
+    "w": 2,
+    "h": 3
   },
   "ssd": {
     "en": "Short Sword",
     "zh": "短剑",
-    "zh_tw": "短劍"
+    "zh_tw": "短劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "scm": {
     "en": "Scimitar",
     "zh": "弯刀",
-    "zh_tw": "彎刀"
+    "zh_tw": "彎刀",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "sbr": {
     "en": "Sabre",
     "zh": "军刀",
-    "zh_tw": "軍刀"
+    "zh_tw": "軍刀",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "flc": {
     "en": "Falchion",
     "zh": "弯刃剑",
-    "zh_tw": "彎刃大刀"
+    "zh_tw": "彎刃大刀",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "crs": {
     "en": "Crystal Sword",
     "zh": "水晶剑",
-    "zh_tw": "水晶劍"
+    "zh_tw": "水晶劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 3
   },
   "bsd": {
     "en": "Broad Sword",
     "zh": "阔剑",
-    "zh_tw": "闊劍"
+    "zh_tw": "闊劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 3
   },
   "lsd": {
     "en": "Long Sword",
     "zh": "长剑",
-    "zh_tw": "長劍"
+    "zh_tw": "長劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 3
   },
   "wsd": {
     "en": "War Sword",
     "zh": "战争剑",
-    "zh_tw": "征戰劍"
+    "zh_tw": "征戰劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "2hs": {
     "en": "Two-Handed Sword",
     "zh": "双手剑",
-    "zh_tw": "雙手劍"
+    "zh_tw": "雙手劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "clm": {
     "en": "Claymore",
     "zh": "双手大剑",
-    "zh_tw": "闊刃大劍"
+    "zh_tw": "闊刃大劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "gis": {
     "en": "Giant Sword",
     "zh": "巨剑",
-    "zh_tw": "大劍"
+    "zh_tw": "大劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "bsw": {
     "en": "Bastard Sword",
     "zh": "手半剑",
-    "zh_tw": "重劍"
+    "zh_tw": "重劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "flb": {
     "en": "Flamberge",
     "zh": "焰刃剑",
-    "zh_tw": "焰形劍"
+    "zh_tw": "焰形劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 4
   },
   "gsd": {
     "en": "Great Sword",
     "zh": "重剑",
-    "zh_tw": "巨劍"
+    "zh_tw": "巨劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 4
   },
   "dgr": {
     "en": "Dagger",
     "zh": "匕首",
-    "zh_tw": "匕首"
+    "zh_tw": "匕首",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 2
   },
   "dir": {
     "en": "Dirk",
     "zh": "长匕首",
-    "zh_tw": "長匕首"
+    "zh_tw": "長匕首",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 2
   },
   "kri": {
     "en": "Kris",
     "zh": "波刃剑",
-    "zh_tw": "波刃匕首"
+    "zh_tw": "波刃匕首",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 3
   },
   "bld": {
     "en": "Blade",
     "zh": "短刃",
-    "zh_tw": "利刃匕首"
+    "zh_tw": "利刃匕首",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 3
   },
   "tkf": {
     "en": "Throwing Knife",
     "zh": "投掷小刀",
-    "zh_tw": "飛刀"
+    "zh_tw": "飛刀",
+    "table": "weapons",
+    "type": "tkni",
+    "w": 1,
+    "h": 2
   },
   "tax": {
     "en": "Throwing Axe",
     "zh": "投掷斧",
-    "zh_tw": "飛斧"
+    "zh_tw": "飛斧",
+    "table": "weapons",
+    "type": "taxe",
+    "w": 1,
+    "h": 2
   },
   "bkf": {
     "en": "Balanced Knife",
     "zh": "平衡飞刀",
-    "zh_tw": "平衡飛刀"
+    "zh_tw": "平衡飛刀",
+    "table": "weapons",
+    "type": "tkni",
+    "w": 1,
+    "h": 2
   },
   "bal": {
     "en": "Balanced Axe",
     "zh": "平衡飞斧",
-    "zh_tw": "平衡飛斧"
+    "zh_tw": "平衡飛斧",
+    "table": "weapons",
+    "type": "taxe",
+    "w": 2,
+    "h": 3
   },
   "jav": {
     "en": "Javelin",
     "zh": "标枪",
-    "zh_tw": "標槍"
+    "zh_tw": "標槍",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 3
   },
   "pil": {
     "en": "Pilum",
     "zh": "长标枪",
-    "zh_tw": "長標槍"
+    "zh_tw": "長標槍",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 3
   },
   "ssp": {
     "en": "Short Spear",
     "zh": "短矛",
-    "zh_tw": "短矛"
+    "zh_tw": "短矛",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 3
   },
   "glv": {
     "en": "Glaive",
     "zh": "梭镖",
-    "zh_tw": "長刃槍"
+    "zh_tw": "長刃槍",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 4
   },
   "tsp": {
     "en": "Throwing Spear",
     "zh": "投枪",
-    "zh_tw": "飛矛"
+    "zh_tw": "飛矛",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 4
   },
   "spr": {
     "en": "Spear",
     "zh": "矛",
-    "zh_tw": "長矛"
+    "zh_tw": "長矛",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "tri": {
     "en": "Trident",
     "zh": "三叉戟",
-    "zh_tw": "三叉戟"
+    "zh_tw": "三叉戟",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "brn": {
     "en": "Brandistock",
     "zh": "羽剑杖",
-    "zh_tw": "三叉槍"
+    "zh_tw": "三叉槍",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "spt": {
     "en": "Spetum",
     "zh": "镋钯",
-    "zh_tw": "勾刃槍"
+    "zh_tw": "勾刃槍",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "pik": {
     "en": "Pike",
     "zh": "尖枪",
-    "zh_tw": "步戰矛"
+    "zh_tw": "步戰矛",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "bar": {
     "en": "Bardiche",
     "zh": "大砍刀",
-    "zh_tw": "月牙砍刀"
+    "zh_tw": "月牙砍刀",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "vou": {
     "en": "Voulge",
     "zh": "斧戟",
-    "zh_tw": "槍斧"
+    "zh_tw": "槍斧",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "scy": {
     "en": "Scythe",
     "zh": "巨镰",
-    "zh_tw": "鐮刀"
+    "zh_tw": "鐮刀",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "pax": {
     "en": "Poleaxe",
     "zh": "长柄斧",
-    "zh_tw": "長柄斧"
+    "zh_tw": "長柄斧",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "hal": {
     "en": "Halberd",
     "zh": "斧枪",
-    "zh_tw": "長戟"
+    "zh_tw": "長戟",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "wsc": {
     "en": "War Scythe",
     "zh": "战争镰刀",
-    "zh_tw": "征戰鐮刀"
+    "zh_tw": "征戰鐮刀",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "sst": {
     "en": "Short Staff",
     "zh": "短杖",
-    "zh_tw": "短杖"
+    "zh_tw": "短杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 3
   },
   "lst": {
     "en": "Long Staff",
     "zh": "长杖",
-    "zh_tw": "長杖"
+    "zh_tw": "長杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 4
   },
   "cst": {
     "en": "Gnarled Staff",
     "zh": "多节杖",
-    "zh_tw": "木節法杖"
+    "zh_tw": "木節法杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 4
   },
   "bst": {
     "en": "Battle Staff",
     "zh": "战斗杖",
-    "zh_tw": "戰鬥法杖"
+    "zh_tw": "戰鬥法杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 4
   },
   "wst": {
     "en": "War Staff",
     "zh": "战杖",
-    "zh_tw": "征戰法杖"
+    "zh_tw": "征戰法杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 2,
+    "h": 4
   },
   "sbw": {
     "en": "Short Bow",
     "zh": "短弓",
-    "zh_tw": "短弓"
+    "zh_tw": "短弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "hbw": {
     "en": "Hunter's Bow",
     "zh": "猎弓",
-    "zh_tw": "獵弓"
+    "zh_tw": "獵弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "lbw": {
     "en": "Long Bow",
     "zh": "长弓",
-    "zh_tw": "長弓"
+    "zh_tw": "長弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 4
   },
   "cbw": {
     "en": "Composite Bow",
     "zh": "复合弓",
-    "zh_tw": "複合弓"
+    "zh_tw": "複合弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "sbb": {
     "en": "Short Battle Bow",
     "zh": "短战弓",
-    "zh_tw": "戰鬥短弓"
+    "zh_tw": "戰鬥短弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "lbb": {
     "en": "Long Battle Bow",
     "zh": "长战弓",
-    "zh_tw": "戰鬥長弓"
+    "zh_tw": "戰鬥長弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 4
   },
   "swb": {
     "en": "Short War Bow",
     "zh": "短战争弓",
-    "zh_tw": "征戰短弓"
+    "zh_tw": "征戰短弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "lwb": {
     "en": "Long War Bow",
     "zh": "长战争弓",
-    "zh_tw": "征戰長弓"
+    "zh_tw": "征戰長弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 4
   },
   "lxb": {
     "en": "Light Crossbow",
     "zh": "轻弩",
-    "zh_tw": "輕弩"
+    "zh_tw": "輕弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 3
   },
   "mxb": {
     "en": "Crossbow",
     "zh": "弩",
-    "zh_tw": "弩"
+    "zh_tw": "弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 3
   },
   "hxb": {
     "en": "Heavy Crossbow",
     "zh": "重弩",
-    "zh_tw": "重弩"
+    "zh_tw": "重弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 4
   },
   "rxb": {
     "en": "Repeating Crossbow",
     "zh": "连击弩",
-    "zh_tw": "連弩"
+    "zh_tw": "連弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 3
   },
   "gps": {
     "en": "Rancid Gas Potion",
     "zh": "恶臭毒气药水",
-    "zh_tw": "腐臭毒氣藥水"
+    "zh_tw": "腐臭毒氣藥水",
+    "table": "weapons",
+    "type": "tpot",
+    "w": 1,
+    "h": 1
   },
   "ops": {
     "en": "Oil Potion",
     "zh": "火油药水",
-    "zh_tw": "火油藥水"
+    "zh_tw": "火油藥水",
+    "table": "weapons",
+    "type": "tpot",
+    "w": 1,
+    "h": 1
   },
   "gpm": {
     "en": "Choking Gas Potion",
     "zh": "窒息毒气药水",
-    "zh_tw": "窒息毒氣藥水"
+    "zh_tw": "窒息毒氣藥水",
+    "table": "weapons",
+    "type": "tpot",
+    "w": 1,
+    "h": 1
   },
   "opm": {
     "en": "Exploding Potion",
     "zh": "爆炸药水",
-    "zh_tw": "爆炸藥水"
+    "zh_tw": "爆炸藥水",
+    "table": "weapons",
+    "type": "tpot",
+    "w": 1,
+    "h": 1
   },
   "gpl": {
     "en": "Strangling Gas Potion",
     "zh": "呛息毒气药水",
-    "zh_tw": "刺鼻毒氣藥水"
+    "zh_tw": "刺鼻毒氣藥水",
+    "table": "weapons",
+    "type": "tpot",
+    "w": 1,
+    "h": 1
   },
   "opl": {
     "en": "Fulminating Potion",
     "zh": "爆燃药水",
-    "zh_tw": "烈性藥水"
+    "zh_tw": "烈性藥水",
+    "table": "weapons",
+    "type": "tpot",
+    "w": 1,
+    "h": 1
   },
   "d33": {
     "en": "Decoy Gidbinn",
     "zh": "赝品吉德宾",
-    "zh_tw": "吉德賓誘餌"
+    "zh_tw": "吉德賓誘餌",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 2
   },
   "g33": {
     "en": "The Gidbinn",
     "zh": "吉德宾",
-    "zh_tw": "吉德賓"
+    "zh_tw": "吉德賓",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 2
   },
   "leg": {
     "en": "Wirt's Leg",
     "zh": "怀特的腿",
-    "zh_tw": "維特的腿"
+    "zh_tw": "維特的腿",
+    "table": "weapons",
+    "type": "club",
+    "w": 1,
+    "h": 3
   },
   "hdm": {
     "en": "Horadric Malus",
     "zh": "赫拉迪姆之锤",
-    "zh_tw": "赫拉迪姆之鎚"
+    "zh_tw": "赫拉迪姆之鎚",
+    "table": "weapons",
+    "type": "hamm",
+    "w": 1,
+    "h": 2
   },
   "hfh": {
     "en": "Hell Forge Hammer",
     "zh": "地狱熔炉之锤",
-    "zh_tw": "地獄熔爐之鎚"
+    "zh_tw": "地獄熔爐之鎚",
+    "table": "weapons",
+    "type": "hamm",
+    "w": 2,
+    "h": 3
   },
   "hst": {
     "en": "Horadric Staff",
     "zh": "赫拉迪姆法杖",
-    "zh_tw": "赫拉迪姆之杖"
+    "zh_tw": "赫拉迪姆之杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 4
   },
   "msf": {
     "en": "Shaft of the Horadric Staff",
     "zh": "赫拉迪姆法杖的杖身",
-    "zh_tw": "赫拉迪姆之杖的杖身"
+    "zh_tw": "赫拉迪姆之杖的杖身",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 3
   },
   "9ha": {
     "en": "Hatchet",
     "zh": "小斧",
-    "zh_tw": "短斧"
+    "zh_tw": "短斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 1,
+    "h": 3
   },
   "9ax": {
     "en": "Cleaver",
     "zh": "剁肉斧",
-    "zh_tw": "斬斧"
+    "zh_tw": "斬斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "92a": {
     "en": "Twin Axe",
     "zh": "双锋斧",
-    "zh_tw": "雙面斧"
+    "zh_tw": "雙面斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "9mp": {
     "en": "Crowbill",
     "zh": "鸦嘴锄",
-    "zh_tw": "鴉嘴鎬"
+    "zh_tw": "鴉嘴鎬",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "9wa": {
     "en": "Naga",
     "zh": "蛇妖斧",
-    "zh_tw": "那伽斧"
+    "zh_tw": "那伽斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "9la": {
     "en": "Military Axe",
     "zh": "军斧",
-    "zh_tw": "軍斧"
+    "zh_tw": "軍斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "9ba": {
     "en": "Bearded Axe",
     "zh": "钩斧",
-    "zh_tw": "鉤斧"
+    "zh_tw": "鉤斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "9bt": {
     "en": "Tabar",
     "zh": "塔巴战斧",
-    "zh_tw": "長戰斧"
+    "zh_tw": "長戰斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "9ga": {
     "en": "Gothic Axe",
     "zh": "哥特斧",
-    "zh_tw": "哥德斧"
+    "zh_tw": "哥德斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 4
   },
   "9gi": {
     "en": "Ancient Axe",
     "zh": "古代斧",
-    "zh_tw": "上古斧"
+    "zh_tw": "上古斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "9wn": {
     "en": "Burnt Wand",
     "zh": "烧制魔杖",
-    "zh_tw": "焦木魔杖"
+    "zh_tw": "焦木魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "9yw": {
     "en": "Petrified Wand",
     "zh": "石化魔杖",
-    "zh_tw": "石木魔杖"
+    "zh_tw": "石木魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "9bw": {
     "en": "Tomb Wand",
     "zh": "随葬魔杖",
-    "zh_tw": "古墓魔杖"
+    "zh_tw": "古墓魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "9gw": {
     "en": "Grave Wand",
     "zh": "陪葬魔杖",
-    "zh_tw": "墓地魔杖"
+    "zh_tw": "墓地魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "9cl": {
     "en": "Cudgel",
     "zh": "大棒",
-    "zh_tw": "鬥棍"
+    "zh_tw": "鬥棍",
+    "table": "weapons",
+    "type": "club",
+    "w": 1,
+    "h": 3
   },
   "9sc": {
     "en": "Rune Scepter",
     "zh": "符文权杖",
-    "zh_tw": "符文權杖"
+    "zh_tw": "符文權杖",
+    "table": "weapons",
+    "type": "scep",
+    "w": 1,
+    "h": 3
   },
   "9qs": {
     "en": "Holy Water Sprinkler",
     "zh": "圣水礼杖",
-    "zh_tw": "聖水禮杖"
+    "zh_tw": "聖水禮杖",
+    "table": "weapons",
+    "type": "scep",
+    "w": 1,
+    "h": 3
   },
   "9ws": {
     "en": "Divine Scepter",
     "zh": "神圣权杖",
-    "zh_tw": "聖恩權杖"
+    "zh_tw": "聖恩權杖",
+    "table": "weapons",
+    "type": "scep",
+    "w": 2,
+    "h": 3
   },
   "9sp": {
     "en": "Barbed Club",
     "zh": "尖刺棒",
-    "zh_tw": "倒刺棍棒"
+    "zh_tw": "倒刺棍棒",
+    "table": "weapons",
+    "type": "club",
+    "w": 1,
+    "h": 3
   },
   "9ma": {
     "en": "Flanged Mace",
     "zh": "凸缘钉锤",
-    "zh_tw": "凸緣釘鎚"
+    "zh_tw": "凸緣釘鎚",
+    "table": "weapons",
+    "type": "mace",
+    "w": 1,
+    "h": 3
   },
   "9mt": {
     "en": "Jagged Star",
     "zh": "锯齿星锤",
-    "zh_tw": "鋸齒釘頭鎚"
+    "zh_tw": "鋸齒釘頭鎚",
+    "table": "weapons",
+    "type": "mace",
+    "w": 1,
+    "h": 3
   },
   "9fl": {
     "en": "Knout",
     "zh": "链子锤",
-    "zh_tw": "刑罪連枷"
+    "zh_tw": "刑罪連枷",
+    "table": "weapons",
+    "type": "mace",
+    "w": 2,
+    "h": 3
   },
   "9wh": {
     "en": "Battle Hammer",
     "zh": "战斗锤",
-    "zh_tw": "戰鬥鐵鎚"
+    "zh_tw": "戰鬥鐵鎚",
+    "table": "weapons",
+    "type": "hamm",
+    "w": 2,
+    "h": 3
   },
   "9m9": {
     "en": "War Club",
     "zh": "战棒",
-    "zh_tw": "征戰重鎚"
+    "zh_tw": "征戰重鎚",
+    "table": "weapons",
+    "type": "hamm",
+    "w": 2,
+    "h": 4
   },
   "9gm": {
     "en": "Martel de Fer",
     "zh": "尖头锤",
-    "zh_tw": "長柄戰鎚"
+    "zh_tw": "長柄戰鎚",
+    "table": "weapons",
+    "type": "hamm",
+    "w": 2,
+    "h": 3
   },
   "9ss": {
     "en": "Gladius",
     "zh": "角斗短剑",
-    "zh_tw": "羅馬短劍"
+    "zh_tw": "羅馬短劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "9sm": {
     "en": "Cutlass",
     "zh": "短弯刀",
-    "zh_tw": "水手刀"
+    "zh_tw": "水手刀",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "9sb": {
     "en": "Shamshir",
     "zh": "沙漠弯刀",
-    "zh_tw": "波斯彎刀"
+    "zh_tw": "波斯彎刀",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "9fc": {
     "en": "Tulwar",
     "zh": "塔瓦弯刀",
-    "zh_tw": "印度彎刀"
+    "zh_tw": "印度彎刀",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "9cr": {
     "en": "Dimensional Blade",
     "zh": "次元之刃",
-    "zh_tw": "次元刃"
+    "zh_tw": "次元刃",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 3
   },
   "9bs": {
     "en": "Battle Sword",
     "zh": "战斗剑",
-    "zh_tw": "戰鬥長劍"
+    "zh_tw": "戰鬥長劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 3
   },
   "9ls": {
     "en": "Rune Sword",
     "zh": "符文剑",
-    "zh_tw": "符文劍"
+    "zh_tw": "符文劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 3
   },
   "9wd": {
     "en": "Ancient Sword",
     "zh": "古代剑",
-    "zh_tw": "上古劍"
+    "zh_tw": "上古劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "92h": {
     "en": "Espandon",
     "zh": "西铁大剑",
-    "zh_tw": "雙手重劍"
+    "zh_tw": "雙手重劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "9cm": {
     "en": "Dacian Falx",
     "zh": "达契亚镰剑",
-    "zh_tw": "達西安長刀"
+    "zh_tw": "達西安長刀",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "9gs": {
     "en": "Tusk Sword",
     "zh": "獠牙剑",
-    "zh_tw": "長牙劍"
+    "zh_tw": "長牙劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "9b9": {
     "en": "Gothic Sword",
     "zh": "哥特剑",
-    "zh_tw": "哥德劍"
+    "zh_tw": "哥德劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "9fb": {
     "en": "Zweihander",
     "zh": "双手重剑",
-    "zh_tw": "日耳曼大劍"
+    "zh_tw": "日耳曼大劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 4
   },
   "9gd": {
     "en": "Executioner Sword",
     "zh": "行刑剑",
-    "zh_tw": "處刑劍"
+    "zh_tw": "處刑劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 4
   },
   "9dg": {
     "en": "Poignard",
     "zh": "锐匕",
-    "zh_tw": "刺擊短劍"
+    "zh_tw": "刺擊短劍",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 2
   },
   "9di": {
     "en": "Rondel",
     "zh": "袖匕",
-    "zh_tw": "圓柄匕首"
+    "zh_tw": "圓柄匕首",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 2
   },
   "9kr": {
     "en": "Cinquedeas",
     "zh": "五指短剑",
-    "zh_tw": "闊身短劍"
+    "zh_tw": "闊身短劍",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 3
   },
   "9bl": {
     "en": "Stiletto",
     "zh": "小剑",
-    "zh_tw": "窄刃匕首"
+    "zh_tw": "窄刃匕首",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 3
   },
   "9tk": {
     "en": "Battle Dart",
     "zh": "战斗镖",
-    "zh_tw": "戰鬥飛鏢"
+    "zh_tw": "戰鬥飛鏢",
+    "table": "weapons",
+    "type": "tkni",
+    "w": 1,
+    "h": 2
   },
   "9ta": {
     "en": "Francisca",
     "zh": "法兰飞斧",
-    "zh_tw": "法蘭西飛斧"
+    "zh_tw": "法蘭西飛斧",
+    "table": "weapons",
+    "type": "taxe",
+    "w": 1,
+    "h": 2
   },
   "9bk": {
     "en": "War Dart",
     "zh": "战镖",
-    "zh_tw": "征戰飛鏢"
+    "zh_tw": "征戰飛鏢",
+    "table": "weapons",
+    "type": "tkni",
+    "w": 1,
+    "h": 2
   },
   "9b8": {
     "en": "Hurlbat",
     "zh": "飞蝠斧",
-    "zh_tw": "投斧"
+    "zh_tw": "投斧",
+    "table": "weapons",
+    "type": "taxe",
+    "w": 2,
+    "h": 3
   },
   "9ja": {
     "en": "War Javelin",
     "zh": "战争标枪",
-    "zh_tw": "征戰標槍"
+    "zh_tw": "征戰標槍",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 3
   },
   "9pi": {
     "en": "Great Pilum",
     "zh": "重标枪",
-    "zh_tw": "重型標槍"
+    "zh_tw": "重型標槍",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 3
   },
   "9s9": {
     "en": "Simbilan",
     "zh": "重梭镖",
-    "zh_tw": "銳矛標槍"
+    "zh_tw": "銳矛標槍",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 3
   },
   "9gl": {
     "en": "Spiculum",
     "zh": "斧刃戟枪",
-    "zh_tw": "尖刃槍"
+    "zh_tw": "尖刃槍",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 4
   },
   "9ts": {
     "en": "Harpoon",
     "zh": "鱼叉",
-    "zh_tw": "魚叉"
+    "zh_tw": "魚叉",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 4
   },
   "9sr": {
     "en": "War Spear",
     "zh": "战矛",
-    "zh_tw": "征戰長矛"
+    "zh_tw": "征戰長矛",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "9tr": {
     "en": "Fuscina",
     "zh": "叉戟枪",
-    "zh_tw": "矛叉"
+    "zh_tw": "矛叉",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "9br": {
     "en": "War Fork",
     "zh": "战叉",
-    "zh_tw": "征戰軍叉"
+    "zh_tw": "征戰軍叉",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "9st": {
     "en": "Yari",
     "zh": "长枪",
-    "zh_tw": "三尖槍"
+    "zh_tw": "三尖槍",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "9p9": {
     "en": "Lance",
     "zh": "骑枪",
-    "zh_tw": "長槍"
+    "zh_tw": "長槍",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "9b7": {
     "en": "Lochaber Axe",
     "zh": "罗佳伯长斧",
-    "zh_tw": "鉤斧"
+    "zh_tw": "鉤斧",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "9vo": {
     "en": "Bill",
     "zh": "钩镰枪",
-    "zh_tw": "長柄鍥"
+    "zh_tw": "長柄鍥",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "9s8": {
     "en": "Battle Scythe",
     "zh": "战斗镰刀",
-    "zh_tw": "戰鬥鐮刀"
+    "zh_tw": "戰鬥鐮刀",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "9pa": {
     "en": "Partizan",
     "zh": "双刃矛戟",
-    "zh_tw": "闊頭槍"
+    "zh_tw": "闊頭槍",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "9h9": {
     "en": "Bec-de-Corbin",
     "zh": "鸦喙锤戟",
-    "zh_tw": "渡鴉喙"
+    "zh_tw": "渡鴉喙",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "9wc": {
     "en": "Grim Scythe",
     "zh": "恐怖镰刀",
-    "zh_tw": "陰森鐮刀"
+    "zh_tw": "陰森鐮刀",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "8ss": {
     "en": "Jo Staff",
     "zh": "杖棍",
-    "zh_tw": "棍杖"
+    "zh_tw": "棍杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 3
   },
   "8ls": {
     "en": "Quarterstaff",
     "zh": "铁头棒",
-    "zh_tw": "長棍"
+    "zh_tw": "長棍",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 4
   },
   "8cs": {
     "en": "Cedar Staff",
     "zh": "雪松杖",
-    "zh_tw": "杉木法杖"
+    "zh_tw": "杉木法杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 4
   },
   "8bs": {
     "en": "Gothic Staff",
     "zh": "哥特杖",
-    "zh_tw": "哥德法杖"
+    "zh_tw": "哥德法杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 4
   },
   "8ws": {
     "en": "Rune Staff",
     "zh": "符文杖",
-    "zh_tw": "符文法杖"
+    "zh_tw": "符文法杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 2,
+    "h": 4
   },
   "8sb": {
     "en": "Edge Bow",
     "zh": "刃弓",
-    "zh_tw": "銳弓"
+    "zh_tw": "銳弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "8hb": {
     "en": "Razor Bow",
     "zh": "刀锋弓",
-    "zh_tw": "剃刀弓"
+    "zh_tw": "剃刀弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "8lb": {
     "en": "Cedar Bow",
     "zh": "雪松弓",
-    "zh_tw": "杉木弓"
+    "zh_tw": "杉木弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 4
   },
   "8cb": {
     "en": "Double Bow",
     "zh": "双臂弓",
-    "zh_tw": "雙曲弓"
+    "zh_tw": "雙曲弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "8s8": {
     "en": "Short Siege Bow",
     "zh": "小型攻城弓",
-    "zh_tw": "攻城短弓"
+    "zh_tw": "攻城短弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "8l8": {
     "en": "Large Siege Bow",
     "zh": "大型攻城弓",
-    "zh_tw": "攻城長弓"
+    "zh_tw": "攻城長弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 4
   },
   "8sw": {
     "en": "Rune Bow",
     "zh": "符文弓",
-    "zh_tw": "符文弓"
+    "zh_tw": "符文弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "8lw": {
     "en": "Gothic Bow",
     "zh": "哥特弓",
-    "zh_tw": "哥德弓"
+    "zh_tw": "哥德弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 4
   },
   "8lx": {
     "en": "Arbalest",
     "zh": "巨弩",
-    "zh_tw": "鋼弩"
+    "zh_tw": "鋼弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 3
   },
   "8mx": {
     "en": "Siege Crossbow",
     "zh": "攻城弩",
-    "zh_tw": "攻城弩"
+    "zh_tw": "攻城弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 3
   },
   "8hx": {
     "en": "Ballista",
     "zh": "弩炮",
-    "zh_tw": "砲弩"
+    "zh_tw": "砲弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 4
   },
   "8rx": {
     "en": "Chu-Ko-Nu",
     "zh": "巧工弩",
-    "zh_tw": "諸葛弩"
+    "zh_tw": "諸葛弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 3
   },
   "qf1": {
     "en": "Khalim's Flail",
     "zh": "卡林姆的连枷",
-    "zh_tw": "克林姆的連枷"
+    "zh_tw": "克林姆的連枷",
+    "table": "weapons",
+    "type": "mace",
+    "w": 2,
+    "h": 3
   },
   "qf2": {
     "en": "Khalim's Will",
     "zh": "卡林姆的意志",
-    "zh_tw": "克林姆的遺願"
+    "zh_tw": "克林姆的遺願",
+    "table": "weapons",
+    "type": "mace",
+    "w": 2,
+    "h": 3
   },
   "ktr": {
     "en": "Katar",
     "zh": "拳剑",
-    "zh_tw": "拳刃"
+    "zh_tw": "拳刃",
+    "table": "weapons",
+    "type": "h2h",
+    "w": 1,
+    "h": 3
   },
   "wrb": {
     "en": "Wrist Blade",
     "zh": "腕刃",
-    "zh_tw": "腕刃"
+    "zh_tw": "腕刃",
+    "table": "weapons",
+    "type": "h2h",
+    "w": 1,
+    "h": 3
   },
   "axf": {
     "en": "Hatchet Hands",
     "zh": "斧刃拳套",
-    "zh_tw": "斧手"
+    "zh_tw": "斧手",
+    "table": "weapons",
+    "type": "h2h",
+    "w": 1,
+    "h": 3
   },
   "ces": {
     "en": "Cestus",
     "zh": "缠刃拳套",
-    "zh_tw": "刃拳"
+    "zh_tw": "刃拳",
+    "table": "weapons",
+    "type": "h2h",
+    "w": 1,
+    "h": 3
   },
   "clw": {
     "en": "Claws",
     "zh": "手爪刀",
-    "zh_tw": "爪"
+    "zh_tw": "爪",
+    "table": "weapons",
+    "type": "h2h",
+    "w": 1,
+    "h": 3
   },
   "btl": {
     "en": "Blade Talons",
     "zh": "刃爪",
-    "zh_tw": "刃爪"
+    "zh_tw": "刃爪",
+    "table": "weapons",
+    "type": "h2h",
+    "w": 1,
+    "h": 3
   },
   "skr": {
     "en": "Scissors Katar",
     "zh": "剪咬拳剑",
-    "zh_tw": "剪刃"
+    "zh_tw": "剪刃",
+    "table": "weapons",
+    "type": "h2h",
+    "w": 1,
+    "h": 3
   },
   "9ar": {
     "en": "Quhab",
     "zh": "拳刃",
-    "zh_tw": "格鬥刃"
+    "zh_tw": "格鬥刃",
+    "table": "weapons",
+    "type": "h2h",
+    "w": 1,
+    "h": 3
   },
   "9wb": {
     "en": "Wrist Spike",
     "zh": "腕刺",
-    "zh_tw": "腕刺"
+    "zh_tw": "腕刺",
+    "table": "weapons",
+    "type": "h2h",
+    "w": 1,
+    "h": 3
   },
   "9xf": {
     "en": "Fascia",
     "zh": "刀刃拳套",
-    "zh_tw": "格鬥爪"
+    "zh_tw": "格鬥爪",
+    "table": "weapons",
+    "type": "h2h",
+    "w": 1,
+    "h": 3
   },
   "9cs": {
     "en": "Hand Scythe",
     "zh": "手镰",
-    "zh_tw": "手鐮"
+    "zh_tw": "手鐮",
+    "table": "weapons",
+    "type": "h2h2",
+    "w": 1,
+    "h": 3
   },
   "9lw": {
     "en": "Greater Claws",
     "zh": "大型手爪刀",
-    "zh_tw": "巨爪"
+    "zh_tw": "巨爪",
+    "table": "weapons",
+    "type": "h2h2",
+    "w": 1,
+    "h": 3
   },
   "9tw": {
     "en": "Greater Talons",
     "zh": "大型刃爪",
-    "zh_tw": "巨鷹爪"
+    "zh_tw": "巨鷹爪",
+    "table": "weapons",
+    "type": "h2h2",
+    "w": 1,
+    "h": 3
   },
   "9qr": {
     "en": "Scissors Quhab",
     "zh": "剪咬拳刃",
-    "zh_tw": "格鬥剪刃"
+    "zh_tw": "格鬥剪刃",
+    "table": "weapons",
+    "type": "h2h2",
+    "w": 1,
+    "h": 3
   },
   "7ar": {
     "en": "Suwayyah",
     "zh": "手推剑",
-    "zh_tw": "穿擊拳刃"
+    "zh_tw": "穿擊拳刃",
+    "table": "weapons",
+    "type": "h2h2",
+    "w": 1,
+    "h": 3
   },
   "7wb": {
     "en": "Wrist Sword",
     "zh": "腕剑",
-    "zh_tw": "腕劍"
+    "zh_tw": "腕劍",
+    "table": "weapons",
+    "type": "h2h2",
+    "w": 1,
+    "h": 3
   },
   "7xf": {
     "en": "War Fist",
     "zh": "战争拳套",
-    "zh_tw": "征戰拳套"
+    "zh_tw": "征戰拳套",
+    "table": "weapons",
+    "type": "h2h2",
+    "w": 1,
+    "h": 3
   },
   "7cs": {
     "en": "Battle Cestus",
     "zh": "战斗缠刃拳套",
-    "zh_tw": "戰鬥刃拳"
+    "zh_tw": "戰鬥刃拳",
+    "table": "weapons",
+    "type": "h2h2",
+    "w": 1,
+    "h": 3
   },
   "7lw": {
     "en": "Feral Claws",
     "zh": "狂野钩爪",
-    "zh_tw": "蠻獸爪"
+    "zh_tw": "蠻獸爪",
+    "table": "weapons",
+    "type": "h2h2",
+    "w": 1,
+    "h": 3
   },
   "7tw": {
     "en": "Runic Talons",
     "zh": "符文刃爪",
-    "zh_tw": "符紋爪"
+    "zh_tw": "符紋爪",
+    "table": "weapons",
+    "type": "h2h2",
+    "w": 1,
+    "h": 3
   },
   "7qr": {
     "en": "Scissors Suwayyah",
     "zh": "剪咬手推剑",
-    "zh_tw": "穿擊剪刃"
+    "zh_tw": "穿擊剪刃",
+    "table": "weapons",
+    "type": "h2h2",
+    "w": 1,
+    "h": 3
   },
   "7ha": {
     "en": "Tomahawk",
     "zh": "土著战斧",
-    "zh_tw": "輕斧"
+    "zh_tw": "輕斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 1,
+    "h": 3
   },
   "7ax": {
     "en": "Small Crescent",
     "zh": "新月斧",
-    "zh_tw": "彎月斧"
+    "zh_tw": "彎月斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "72a": {
     "en": "Ettin Axe",
     "zh": "双头斧",
-    "zh_tw": "雙頭斧"
+    "zh_tw": "雙頭斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "7mp": {
     "en": "War Spike",
     "zh": "战争尖斧",
-    "zh_tw": "征戰鎬"
+    "zh_tw": "征戰鎬",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "7wa": {
     "en": "Berserker Axe",
     "zh": "狂战斧",
-    "zh_tw": "狂戰斧"
+    "zh_tw": "狂戰斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "7la": {
     "en": "Feral Axe",
     "zh": "狂野利斧",
-    "zh_tw": "蠻野斧"
+    "zh_tw": "蠻野斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "7ba": {
     "en": "Silver-edged Axe",
     "zh": "镀银斧",
-    "zh_tw": "銀刃斧"
+    "zh_tw": "銀刃斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "7bt": {
     "en": "Decapitator",
     "zh": "斩首斧",
-    "zh_tw": "斬首斧"
+    "zh_tw": "斬首斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "7ga": {
     "en": "Champion Axe",
     "zh": "冠军斧",
-    "zh_tw": "豪傑斧"
+    "zh_tw": "豪傑斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 4
   },
   "7gi": {
     "en": "Glorious Axe",
     "zh": "荣耀之斧",
-    "zh_tw": "榮光斧"
+    "zh_tw": "榮光斧",
+    "table": "weapons",
+    "type": "axe",
+    "w": 2,
+    "h": 3
   },
   "7wn": {
     "en": "Polished Wand",
     "zh": "洗练魔杖",
-    "zh_tw": "拋光魔杖"
+    "zh_tw": "拋光魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "7yw": {
     "en": "Ghost Wand",
     "zh": "幽灵魔杖",
-    "zh_tw": "鬼魂魔杖"
+    "zh_tw": "鬼魂魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "7bw": {
     "en": "Lich Wand",
     "zh": "邪妖魔杖",
-    "zh_tw": "巫妖魔杖"
+    "zh_tw": "巫妖魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "7gw": {
     "en": "Unearthed Wand",
     "zh": "出土魔杖",
-    "zh_tw": "埋骨魔杖"
+    "zh_tw": "埋骨魔杖",
+    "table": "weapons",
+    "type": "wand",
+    "w": 1,
+    "h": 2
   },
   "7cl": {
     "en": "Truncheon",
     "zh": "戒律棒",
-    "zh_tw": "打擊棍"
+    "zh_tw": "打擊棍",
+    "table": "weapons",
+    "type": "club",
+    "w": 1,
+    "h": 3
   },
   "7sc": {
     "en": "Mighty Scepter",
     "zh": "强威权杖",
-    "zh_tw": "強威權杖"
+    "zh_tw": "強威權杖",
+    "table": "weapons",
+    "type": "scep",
+    "w": 1,
+    "h": 3
   },
   "7qs": {
     "en": "Seraph Rod",
     "zh": "炽天使杖",
-    "zh_tw": "熾天使節杖"
+    "zh_tw": "熾天使節杖",
+    "table": "weapons",
+    "type": "scep",
+    "w": 1,
+    "h": 3
   },
   "7ws": {
     "en": "Caduceus",
     "zh": "使者杖",
-    "zh_tw": "神使權杖"
+    "zh_tw": "神使權杖",
+    "table": "weapons",
+    "type": "scep",
+    "w": 2,
+    "h": 3
   },
   "7sp": {
     "en": "Tyrant Club",
     "zh": "暴君棒",
-    "zh_tw": "暴君棍棒"
+    "zh_tw": "暴君棍棒",
+    "table": "weapons",
+    "type": "club",
+    "w": 1,
+    "h": 3
   },
   "7ma": {
     "en": "Reinforced Mace",
     "zh": "加固锤",
-    "zh_tw": "強化釘鎚"
+    "zh_tw": "強化釘鎚",
+    "table": "weapons",
+    "type": "mace",
+    "w": 1,
+    "h": 3
   },
   "7mt": {
     "en": "Devil Star",
     "zh": "恶魔流星",
-    "zh_tw": "妖鬼釘頭鎚"
+    "zh_tw": "妖鬼釘頭鎚",
+    "table": "weapons",
+    "type": "mace",
+    "w": 1,
+    "h": 3
   },
   "7fl": {
     "en": "Scourge",
     "zh": "鞭锤",
-    "zh_tw": "罪罰連枷"
+    "zh_tw": "罪罰連枷",
+    "table": "weapons",
+    "type": "mace",
+    "w": 2,
+    "h": 3
   },
   "7wh": {
     "en": "Legendary Mallet",
     "zh": "传奇重锤",
-    "zh_tw": "傳說戰鎚"
+    "zh_tw": "傳說戰鎚",
+    "table": "weapons",
+    "type": "hamm",
+    "w": 2,
+    "h": 3
   },
   "7m7": {
     "en": "Ogre Maul",
     "zh": "食肉魔锤",
-    "zh_tw": "巨魔重鎚"
+    "zh_tw": "巨魔重鎚",
+    "table": "weapons",
+    "type": "hamm",
+    "w": 2,
+    "h": 4
   },
   "7gm": {
     "en": "Thunder Maul",
     "zh": "雷锤",
-    "zh_tw": "雷霆重鎚"
+    "zh_tw": "雷霆重鎚",
+    "table": "weapons",
+    "type": "hamm",
+    "w": 2,
+    "h": 3
   },
   "7ss": {
     "en": "Falcata",
     "zh": "猎鹰剑",
-    "zh_tw": "法卡塔劍"
+    "zh_tw": "法卡塔劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "7sm": {
     "en": "Ataghan",
     "zh": "叶根刀",
-    "zh_tw": "土耳其彎刀"
+    "zh_tw": "土耳其彎刀",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "7sb": {
     "en": "Elegant Blade",
     "zh": "精致剑",
-    "zh_tw": "典雅彎刀"
+    "zh_tw": "典雅彎刀",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "7fc": {
     "en": "Hydra Edge",
     "zh": "九头蛇刃",
-    "zh_tw": "多頭蛇刃"
+    "zh_tw": "多頭蛇刃",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "7cr": {
     "en": "Phase Blade",
     "zh": "相位之刃",
-    "zh_tw": "幻化之刃"
+    "zh_tw": "幻化之刃",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 3
   },
   "7bs": {
     "en": "Conquest Sword",
     "zh": "征服剑",
-    "zh_tw": "征服之劍"
+    "zh_tw": "征服之劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 3
   },
   "7ls": {
     "en": "Cryptic Sword",
     "zh": "秘文剑",
-    "zh_tw": "絕秘劍"
+    "zh_tw": "絕秘劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 3
   },
   "7wd": {
     "en": "Mythical Sword",
     "zh": "神话剑",
-    "zh_tw": "秘儀劍"
+    "zh_tw": "秘儀劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 3
   },
   "72h": {
     "en": "Legend Sword",
     "zh": "传说剑",
-    "zh_tw": "傳說劍"
+    "zh_tw": "傳說劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "7cm": {
     "en": "Highland Blade",
     "zh": "高地剑",
-    "zh_tw": "高地劍"
+    "zh_tw": "高地劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "7gs": {
     "en": "Balrog Blade",
     "zh": "炎魔剑",
-    "zh_tw": "炎魔之刃"
+    "zh_tw": "炎魔之刃",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "7b7": {
     "en": "Champion Sword",
     "zh": "冠军剑",
-    "zh_tw": "豪傑大劍"
+    "zh_tw": "豪傑大劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 1,
+    "h": 4
   },
   "7fb": {
     "en": "Colossus Sword",
     "zh": "巨神剑",
-    "zh_tw": "巨神劍"
+    "zh_tw": "巨神劍",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 4
   },
   "7gd": {
     "en": "Colossus Blade",
     "zh": "巨神刃",
-    "zh_tw": "巨神刃"
+    "zh_tw": "巨神刃",
+    "table": "weapons",
+    "type": "swor",
+    "w": 2,
+    "h": 4
   },
   "7dg": {
     "en": "Bone Knife",
     "zh": "骨刀",
-    "zh_tw": "骸骨小刀"
+    "zh_tw": "骸骨小刀",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 2
   },
   "7di": {
     "en": "Mithril Point",
     "zh": "秘银刺",
-    "zh_tw": "秘銀尖刀"
+    "zh_tw": "秘銀尖刀",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 2
   },
   "7kr": {
     "en": "Fanged Knife",
     "zh": "牙刃刀",
-    "zh_tw": "尖齒小刀"
+    "zh_tw": "尖齒小刀",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 3
   },
   "7bl": {
     "en": "Legend Spike",
     "zh": "传说匕刺",
-    "zh_tw": "傳說尖刀"
+    "zh_tw": "傳說尖刀",
+    "table": "weapons",
+    "type": "knif",
+    "w": 1,
+    "h": 3
   },
   "7tk": {
     "en": "Flying Knife",
     "zh": "飞刀",
-    "zh_tw": "高速飛刀"
+    "zh_tw": "高速飛刀",
+    "table": "weapons",
+    "type": "tkni",
+    "w": 1,
+    "h": 2
   },
   "7ta": {
     "en": "Flying Axe",
     "zh": "飞斧",
-    "zh_tw": "高速飛斧"
+    "zh_tw": "高速飛斧",
+    "table": "weapons",
+    "type": "taxe",
+    "w": 1,
+    "h": 2
   },
   "7bk": {
     "en": "Winged Knife",
     "zh": "翼刀",
-    "zh_tw": "刃翼飛刀"
+    "zh_tw": "刃翼飛刀",
+    "table": "weapons",
+    "type": "tkni",
+    "w": 1,
+    "h": 2
   },
   "7b8": {
     "en": "Winged Axe",
     "zh": "翼斧",
-    "zh_tw": "刃翼飛斧"
+    "zh_tw": "刃翼飛斧",
+    "table": "weapons",
+    "type": "taxe",
+    "w": 2,
+    "h": 3
   },
   "7ja": {
     "en": "Hyperion Javelin",
     "zh": "亥伯龙标枪",
-    "zh_tw": "亥伯龍標槍"
+    "zh_tw": "亥伯龍標槍",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 3
   },
   "7pi": {
     "en": "Stygian Pilum",
     "zh": "地狱长标枪",
-    "zh_tw": "冥河標槍"
+    "zh_tw": "冥河標槍",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 3
   },
   "7s7": {
     "en": "Balrog Spear",
     "zh": "炎魔矛",
-    "zh_tw": "炎魔長矛"
+    "zh_tw": "炎魔長矛",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 3
   },
   "7gl": {
     "en": "Ghost Glaive",
     "zh": "幽灵梭戟",
-    "zh_tw": "鬼魂刃槍"
+    "zh_tw": "鬼魂刃槍",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 4
   },
   "7ts": {
     "en": "Winged Harpoon",
     "zh": "双股叉",
-    "zh_tw": "飛翼魚叉"
+    "zh_tw": "飛翼魚叉",
+    "table": "weapons",
+    "type": "jave",
+    "w": 1,
+    "h": 4
   },
   "7sr": {
     "en": "Hyperion Spear",
     "zh": "亥伯龙矛",
-    "zh_tw": "亥伯龍矛"
+    "zh_tw": "亥伯龍矛",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "7tr": {
     "en": "Stygian Pike",
     "zh": "地狱长枪",
-    "zh_tw": "冥河戰矛"
+    "zh_tw": "冥河戰矛",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "7br": {
     "en": "Mancatcher",
     "zh": "捕人叉",
-    "zh_tw": "捕人叉"
+    "zh_tw": "捕人叉",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "7st": {
     "en": "Ghost Spear",
     "zh": "幽灵矛",
-    "zh_tw": "鬼魂長矛"
+    "zh_tw": "鬼魂長矛",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "7p7": {
     "en": "War Pike",
     "zh": "战争长枪",
-    "zh_tw": "征戰長槍"
+    "zh_tw": "征戰長槍",
+    "table": "weapons",
+    "type": "spea",
+    "w": 2,
+    "h": 4
   },
   "7o7": {
     "en": "Ogre Axe",
     "zh": "食肉魔斧",
-    "zh_tw": "巨魔斧"
+    "zh_tw": "巨魔斧",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "7vo": {
     "en": "Colossus Voulge",
     "zh": "巨神戟",
-    "zh_tw": "巨神長柄斧"
+    "zh_tw": "巨神長柄斧",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "7s8": {
     "en": "Thresher",
     "zh": "砍斧",
-    "zh_tw": "斬鐮"
+    "zh_tw": "斬鐮",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "7pa": {
     "en": "Cryptic Axe",
     "zh": "秘文斧",
-    "zh_tw": "絕秘斧"
+    "zh_tw": "絕秘斧",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "7h7": {
     "en": "Great Poleaxe",
     "zh": "重长柄斧",
-    "zh_tw": "巨型長柄斧"
+    "zh_tw": "巨型長柄斧",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "7wc": {
     "en": "Giant Thresher",
     "zh": "巨型砍斧",
-    "zh_tw": "巨型斬鐮"
+    "zh_tw": "巨型斬鐮",
+    "table": "weapons",
+    "type": "pole",
+    "w": 2,
+    "h": 4
   },
   "6ss": {
     "en": "Walking Stick",
     "zh": "手杖",
-    "zh_tw": "手杖"
+    "zh_tw": "手杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 3
   },
   "6ls": {
     "en": "Stalagmite",
     "zh": "石笋杖",
-    "zh_tw": "鐘乳石杖"
+    "zh_tw": "鐘乳石杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 4
   },
   "6cs": {
     "en": "Elder Staff",
     "zh": "接骨木杖",
-    "zh_tw": "長者法杖"
+    "zh_tw": "長者法杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 4
   },
   "6bs": {
     "en": "Shillelagh",
     "zh": "橡木棍",
-    "zh_tw": "節瘤木杖"
+    "zh_tw": "節瘤木杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 1,
+    "h": 4
   },
   "6ws": {
     "en": "Archon Staff",
     "zh": "统治者之杖",
-    "zh_tw": "統御者法杖"
+    "zh_tw": "統御者法杖",
+    "table": "weapons",
+    "type": "staf",
+    "w": 2,
+    "h": 4
   },
   "6sb": {
     "en": "Spider Bow",
     "zh": "蜘蛛弓",
-    "zh_tw": "蜘蛛弓"
+    "zh_tw": "蜘蛛弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "6hb": {
     "en": "Blade Bow",
     "zh": "利刃弓",
-    "zh_tw": "刀鋒弓"
+    "zh_tw": "刀鋒弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "6lb": {
     "en": "Shadow Bow",
     "zh": "暗影弓",
-    "zh_tw": "暗影弓"
+    "zh_tw": "暗影弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 4
   },
   "6cb": {
     "en": "Great Bow",
     "zh": "重弓",
-    "zh_tw": "巨弓"
+    "zh_tw": "巨弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "6s7": {
     "en": "Diamond Bow",
     "zh": "钻石弓",
-    "zh_tw": "鑽石弓"
+    "zh_tw": "鑽石弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "6l7": {
     "en": "Crusader Bow",
     "zh": "十字军弓",
-    "zh_tw": "聖教軍長弓"
+    "zh_tw": "聖教軍長弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 4
   },
   "6sw": {
     "en": "Ward Bow",
     "zh": "防护弓",
-    "zh_tw": "庇護弓"
+    "zh_tw": "庇護弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 3
   },
   "6lw": {
     "en": "Hydra Bow",
     "zh": "九头蛇弓",
-    "zh_tw": "多頭蛇弓"
+    "zh_tw": "多頭蛇弓",
+    "table": "weapons",
+    "type": "bow",
+    "w": 2,
+    "h": 4
   },
   "6lx": {
     "en": "Pellet Bow",
     "zh": "弹丸弓",
-    "zh_tw": "彈丸弩"
+    "zh_tw": "彈丸弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 3
   },
   "6mx": {
     "en": "Gorgon Crossbow",
     "zh": "蛇发女妖弩",
-    "zh_tw": "蛇魔弩"
+    "zh_tw": "蛇魔弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 3
   },
   "6hx": {
     "en": "Colossus Crossbow",
     "zh": "巨神弩",
-    "zh_tw": "巨神弩"
+    "zh_tw": "巨神弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 4
   },
   "6rx": {
     "en": "Demon Crossbow",
     "zh": "恶魔弩",
-    "zh_tw": "惡魔弩"
+    "zh_tw": "惡魔弩",
+    "table": "weapons",
+    "type": "xbow",
+    "w": 2,
+    "h": 3
   },
   "ob1": {
     "en": "Eagle Orb",
     "zh": "鹰眼法珠",
-    "zh_tw": "鷹之法珠"
+    "zh_tw": "鷹之法珠",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "ob2": {
     "en": "Sacred Globe",
     "zh": "圣洁之球",
-    "zh_tw": "神聖天球"
+    "zh_tw": "神聖天球",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "ob3": {
     "en": "Smoked Sphere",
     "zh": "烟熏法球",
-    "zh_tw": "攏煙之球"
+    "zh_tw": "攏煙之球",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "ob4": {
     "en": "Clasped Orb",
     "zh": "握扣法珠",
-    "zh_tw": "握扣法珠"
+    "zh_tw": "握扣法珠",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "ob5": {
     "en": "Jared's Stone",
     "zh": "杰瑞德之石",
-    "zh_tw": "傑瑞德之石"
+    "zh_tw": "傑瑞德之石",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 3
   },
   "am1": {
     "en": "Stag Bow",
     "zh": "猎鹿弓",
-    "zh_tw": "獵鹿弓"
+    "zh_tw": "獵鹿弓",
+    "table": "weapons",
+    "type": "abow",
+    "w": 2,
+    "h": 4
   },
   "am2": {
     "en": "Reflex Bow",
     "zh": "双曲弓",
-    "zh_tw": "反射弓"
+    "zh_tw": "反射弓",
+    "table": "weapons",
+    "type": "abow",
+    "w": 2,
+    "h": 4
   },
   "am3": {
     "en": "Maiden Spear",
     "zh": "处子长矛",
-    "zh_tw": "女戰長矛"
+    "zh_tw": "女戰長矛",
+    "table": "weapons",
+    "type": "aspe",
+    "w": 2,
+    "h": 4
   },
   "am4": {
     "en": "Maiden Pike",
     "zh": "处子长枪",
-    "zh_tw": "女戰長槍"
+    "zh_tw": "女戰長槍",
+    "table": "weapons",
+    "type": "aspe",
+    "w": 2,
+    "h": 4
   },
   "am5": {
     "en": "Maiden Javelin",
     "zh": "处子标枪",
-    "zh_tw": "女戰標槍"
+    "zh_tw": "女戰標槍",
+    "table": "weapons",
+    "type": "ajav",
+    "w": 1,
+    "h": 3
   },
   "ob6": {
     "en": "Glowing Orb",
     "zh": "闪光宝珠",
-    "zh_tw": "靈光法珠"
+    "zh_tw": "靈光法珠",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "ob7": {
     "en": "Crystalline Globe",
     "zh": "水晶之球",
-    "zh_tw": "水晶天球"
+    "zh_tw": "水晶天球",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "ob8": {
     "en": "Cloudy Sphere",
     "zh": "云雾法球",
-    "zh_tw": "雲霧之球"
+    "zh_tw": "雲霧之球",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "ob9": {
     "en": "Sparkling Ball",
     "zh": "闪光之球",
-    "zh_tw": "閃耀之球"
+    "zh_tw": "閃耀之球",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "oba": {
     "en": "Swirling Crystal",
     "zh": "漩涡水晶",
-    "zh_tw": "渦流水晶"
+    "zh_tw": "渦流水晶",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 3
   },
   "am6": {
     "en": "Ashwood Bow",
     "zh": "白蜡木弓",
-    "zh_tw": "梣木弓"
+    "zh_tw": "梣木弓",
+    "table": "weapons",
+    "type": "abow",
+    "w": 2,
+    "h": 4
   },
   "am7": {
     "en": "Ceremonial Bow",
     "zh": "仪式弓",
-    "zh_tw": "儀禮弓"
+    "zh_tw": "儀禮弓",
+    "table": "weapons",
+    "type": "abow",
+    "w": 2,
+    "h": 4
   },
   "am8": {
     "en": "Ceremonial Spear",
     "zh": "仪式矛",
-    "zh_tw": "儀禮長矛"
+    "zh_tw": "儀禮長矛",
+    "table": "weapons",
+    "type": "aspe",
+    "w": 2,
+    "h": 4
   },
   "am9": {
     "en": "Ceremonial Pike",
     "zh": "仪式长枪",
-    "zh_tw": "儀禮長槍"
+    "zh_tw": "儀禮長槍",
+    "table": "weapons",
+    "type": "aspe",
+    "w": 2,
+    "h": 4
   },
   "ama": {
     "en": "Ceremonial Javelin",
     "zh": "仪式标枪",
-    "zh_tw": "儀禮標槍"
+    "zh_tw": "儀禮標槍",
+    "table": "weapons",
+    "type": "ajav",
+    "w": 1,
+    "h": 3
   },
   "obb": {
     "en": "Heavenly Stone",
     "zh": "天界石",
-    "zh_tw": "天堂之石"
+    "zh_tw": "天堂之石",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "obc": {
     "en": "Eldritch Orb",
     "zh": "怪异法珠",
-    "zh_tw": "異能法珠"
+    "zh_tw": "異能法珠",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "obd": {
     "en": "Demon Heart",
     "zh": "恶魔之心",
-    "zh_tw": "惡魔心石"
+    "zh_tw": "惡魔心石",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "obe": {
     "en": "Vortex Orb",
     "zh": "旋云宝珠",
-    "zh_tw": "漩渦法珠"
+    "zh_tw": "漩渦法珠",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 2
   },
   "obf": {
     "en": "Dimensional Shard",
     "zh": "次元碎片",
-    "zh_tw": "次元法珠"
+    "zh_tw": "次元法珠",
+    "table": "weapons",
+    "type": "orb",
+    "w": 1,
+    "h": 3
   },
   "amb": {
     "en": "Matriarchal Bow",
     "zh": "女族长弓",
-    "zh_tw": "女傑之弓"
+    "zh_tw": "女傑之弓",
+    "table": "weapons",
+    "type": "abow",
+    "w": 2,
+    "h": 4
   },
   "amc": {
     "en": "Grand Matron Bow",
     "zh": "仕女长之弓",
-    "zh_tw": "主母之弓"
+    "zh_tw": "主母之弓",
+    "table": "weapons",
+    "type": "abow",
+    "w": 2,
+    "h": 4
   },
   "amd": {
     "en": "Matriarchal Spear",
     "zh": "女族长矛",
-    "zh_tw": "女傑長矛"
+    "zh_tw": "女傑長矛",
+    "table": "weapons",
+    "type": "aspe",
+    "w": 2,
+    "h": 4
   },
   "ame": {
     "en": "Matriarchal Pike",
     "zh": "女族长尖枪",
-    "zh_tw": "女傑長槍"
+    "zh_tw": "女傑長槍",
+    "table": "weapons",
+    "type": "aspe",
+    "w": 2,
+    "h": 4
   },
   "amf": {
     "en": "Matriarchal Javelin",
     "zh": "女族长标枪",
-    "zh_tw": "女傑標槍"
+    "zh_tw": "女傑標槍",
+    "table": "weapons",
+    "type": "ajav",
+    "w": 1,
+    "h": 3
   },
   "elx": {
     "en": "Elixir",
     "zh": "药剂",
-    "zh_tw": "靈藥"
+    "zh_tw": "靈藥",
+    "table": "misc",
+    "type": "elix",
+    "w": 1,
+    "h": 1
   },
   "vps": {
     "en": "Stamina Potion",
     "zh": "耐力药水",
-    "zh_tw": "精力藥水"
+    "zh_tw": "精力藥水",
+    "table": "misc",
+    "type": "spot",
+    "w": 1,
+    "h": 1
   },
   "yps": {
     "en": "Antidote Potion",
     "zh": "解毒药水",
-    "zh_tw": "解毒藥水"
+    "zh_tw": "解毒藥水",
+    "table": "misc",
+    "type": "apot",
+    "w": 1,
+    "h": 1
   },
   "rvs": {
     "en": "Rejuvenation Potion",
     "zh": "复苏药水",
-    "zh_tw": "活力藥水"
+    "zh_tw": "活力藥水",
+    "table": "misc",
+    "type": "rpot",
+    "w": 1,
+    "h": 1
   },
   "rvl": {
     "en": "Full Rejuvenation Potion",
     "zh": "完全复苏药水",
-    "zh_tw": "全效活力藥水"
+    "zh_tw": "全效活力藥水",
+    "table": "misc",
+    "type": "rpot",
+    "w": 1,
+    "h": 1
   },
   "wms": {
     "en": "Thawing Potion",
     "zh": "解冻药水",
-    "zh_tw": "融冰藥水"
+    "zh_tw": "融冰藥水",
+    "table": "misc",
+    "type": "wpot",
+    "w": 1,
+    "h": 1
   },
   "tbk": {
     "en": "Tome of Town Portal",
     "zh": "城镇传送之书",
-    "zh_tw": "城鎮傳送之書"
+    "zh_tw": "城鎮傳送之書",
+    "table": "misc",
+    "type": "book",
+    "w": 1,
+    "h": 2
   },
   "ibk": {
     "en": "Tome of Identify",
     "zh": "鉴定之书",
-    "zh_tw": "鑑定之書"
+    "zh_tw": "鑑定之書",
+    "table": "misc",
+    "type": "book",
+    "w": 1,
+    "h": 2
   },
   "amu": {
     "en": "Amulet",
     "zh": "护符",
-    "zh_tw": "護身符"
+    "zh_tw": "護身符",
+    "table": "misc",
+    "type": "amul",
+    "w": 1,
+    "h": 1
   },
   "vip": {
     "en": "Top of the Horadric Staff",
     "zh": "赫拉迪姆法杖的杖头",
-    "zh_tw": "赫拉迪姆之杖的杖頂"
+    "zh_tw": "赫拉迪姆之杖的杖頂",
+    "table": "misc",
+    "type": "amul",
+    "w": 1,
+    "h": 1
   },
   "rin": {
     "en": "Ring",
     "zh": "戒指",
-    "zh_tw": "戒指"
+    "zh_tw": "戒指",
+    "table": "misc",
+    "type": "ring",
+    "w": 1,
+    "h": 1
   },
   "gld": {
     "en": "Gold",
     "zh": "金币",
-    "zh_tw": "金幣"
+    "zh_tw": "金幣",
+    "table": "misc",
+    "type": "gold",
+    "w": 1,
+    "h": 1
   },
   "bks": {
     "en": "Scroll of Inifuss",
     "zh": "艾尼弗斯卷轴",
-    "zh_tw": "艾尼弗斯卷軸"
+    "zh_tw": "艾尼弗斯卷軸",
+    "table": "misc",
+    "type": "ques",
+    "w": 2,
+    "h": 2
   },
   "bkd": {
     "en": "Key to the Cairn Stones",
     "zh": "石阵密文",
-    "zh_tw": "石陣之鑰"
+    "zh_tw": "石陣之鑰",
+    "table": "misc",
+    "type": "ques",
+    "w": 2,
+    "h": 2
   },
   "aqv": {
     "en": "Arrows",
     "zh": "箭矢",
-    "zh_tw": "弓矢"
+    "zh_tw": "弓矢",
+    "table": "misc",
+    "type": "bowq",
+    "w": 1,
+    "h": 3
   },
   "tch": {
     "en": "Torch",
     "zh": "火把",
-    "zh_tw": "火炬"
+    "zh_tw": "火炬",
+    "table": "misc",
+    "type": "torc",
+    "w": 1,
+    "h": 2
   },
   "cqv": {
     "en": "Bolts",
     "zh": "弩矢",
-    "zh_tw": "弩箭"
+    "zh_tw": "弩箭",
+    "table": "misc",
+    "type": "xboq",
+    "w": 1,
+    "h": 3
   },
   "tsc": {
     "en": "Scroll of Town Portal",
     "zh": "城镇传送卷轴",
-    "zh_tw": "城鎮傳送卷軸"
+    "zh_tw": "城鎮傳送卷軸",
+    "table": "misc",
+    "type": "scro",
+    "w": 1,
+    "h": 1
   },
   "isc": {
     "en": "Scroll of Identify",
     "zh": "鉴定卷轴",
-    "zh_tw": "鑑定卷軸"
+    "zh_tw": "鑑定卷軸",
+    "table": "misc",
+    "type": "scro",
+    "w": 1,
+    "h": 1
   },
   "hrt": {
     "en": "Heart",
     "zh": "生命核心",
-    "zh_tw": "心臟"
+    "zh_tw": "心臟",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "brz": {
     "en": "Brain",
     "zh": "智慧",
-    "zh_tw": "腦"
+    "zh_tw": "腦",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "jaw": {
     "en": "Jawbone",
     "zh": "颚骨",
-    "zh_tw": "顎骨"
+    "zh_tw": "顎骨",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "eyz": {
     "en": "Eye",
     "zh": "晶体",
-    "zh_tw": "眼球"
+    "zh_tw": "眼球",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "hrn": {
     "en": "Horn",
     "zh": "尖角",
-    "zh_tw": "尖角"
+    "zh_tw": "尖角",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "tal": {
     "en": "Tail",
     "zh": "尾巴",
-    "zh_tw": "尾巴"
+    "zh_tw": "尾巴",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "flg": {
     "en": "Flag",
     "zh": "旗帜",
-    "zh_tw": "旗幟"
+    "zh_tw": "旗幟",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "fng": {
     "en": "Fang",
     "zh": "尖牙",
-    "zh_tw": "尖牙"
+    "zh_tw": "尖牙",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "qll": {
     "en": "Quill",
     "zh": "短匕",
-    "zh_tw": "刺針"
+    "zh_tw": "刺針",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "sol": {
     "en": "Soul",
     "zh": "灵魂",
-    "zh_tw": "靈魂"
+    "zh_tw": "靈魂",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "scz": {
     "en": "Scalp",
     "zh": "头皮",
-    "zh_tw": "頭皮"
+    "zh_tw": "頭皮",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "spe": {
     "en": "Spleen",
     "zh": "脾脏",
-    "zh_tw": "脾臟"
+    "zh_tw": "脾臟",
+    "table": "misc",
+    "type": "body",
+    "w": 1,
+    "h": 1
   },
   "key": {
     "en": "Key",
     "zh": "钥匙",
-    "zh_tw": "鑰匙"
+    "zh_tw": "鑰匙",
+    "table": "misc",
+    "type": "key",
+    "w": 1,
+    "h": 1
   },
   "luv": {
     "en": "The Black Tower Key",
     "zh": "黑塔钥匙",
-    "zh_tw": "黑塔之鑰"
+    "zh_tw": "黑塔之鑰",
+    "table": "misc",
+    "type": "key",
+    "w": 1,
+    "h": 2
   },
   "j34": {
     "en": "A Jade Figurine",
     "zh": "玉石雕像",
-    "zh_tw": "翠玉塑像"
+    "zh_tw": "翠玉塑像",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 2
   },
   "g34": {
     "en": "The Golden Bird",
     "zh": "黄金鸟",
-    "zh_tw": "黃金鳥"
+    "zh_tw": "黃金鳥",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 2
   },
   "bbb": {
     "en": "Lam Esen's Tome",
     "zh": "兰姆·艾森之书",
-    "zh_tw": "藍伊森之書"
+    "zh_tw": "藍伊森之書",
+    "table": "misc",
+    "type": "ques",
+    "w": 2,
+    "h": 2
   },
   "box": {
     "en": "Horadric Cube",
     "zh": "赫拉迪姆魔盒",
-    "zh_tw": "赫拉迪姆方塊"
+    "zh_tw": "赫拉迪姆方塊",
+    "table": "misc",
+    "type": "ques",
+    "w": 2,
+    "h": 2
   },
   "tr1": {
     "en": "Horadric Scroll",
     "zh": "赫拉迪姆卷轴",
-    "zh_tw": "赫拉迪姆卷軸"
+    "zh_tw": "赫拉迪姆卷軸",
+    "table": "misc",
+    "type": "ques",
+    "w": 2,
+    "h": 2
   },
   "mss": {
     "en": "Mephisto's Soulstone",
     "zh": "墨菲斯托的灵魂石",
-    "zh_tw": "墨菲斯托的靈魂石"
+    "zh_tw": "墨菲斯托的靈魂石",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "qey": {
     "en": "Khalim's Eye",
     "zh": "卡林姆的晶体",
-    "zh_tw": "克林姆的眼球"
+    "zh_tw": "克林姆的眼球",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "qhr": {
     "en": "Khalim's Heart",
     "zh": "卡林姆的生命核心",
-    "zh_tw": "克林姆的心臟"
+    "zh_tw": "克林姆的心臟",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "qbr": {
     "en": "Khalim's Brain",
     "zh": "卡林姆的智慧",
-    "zh_tw": "克林姆的大腦"
+    "zh_tw": "克林姆的大腦",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "ear": {
     "en": "Ear",
     "zh": "耳朵",
-    "zh_tw": "耳朵"
+    "zh_tw": "耳朵",
+    "table": "misc",
+    "type": "play",
+    "w": 1,
+    "h": 1
   },
   "gcv": {
     "en": "Chipped Amethyst",
     "zh": "碎裂的紫宝石",
-    "zh_tw": "碎裂紫寶石"
+    "zh_tw": "碎裂紫寶石",
+    "table": "misc",
+    "type": "gema",
+    "w": 1,
+    "h": 1
   },
   "gfv": {
     "en": "Flawed Amethyst",
     "zh": "有瑕疵的紫宝石",
-    "zh_tw": "瑕疵紫寶石"
+    "zh_tw": "瑕疵紫寶石",
+    "table": "misc",
+    "type": "gema",
+    "w": 1,
+    "h": 1
   },
   "gsv": {
     "en": "Amethyst",
     "zh": "紫宝石",
-    "zh_tw": "紫寶石"
+    "zh_tw": "紫寶石",
+    "table": "misc",
+    "type": "gema",
+    "w": 1,
+    "h": 1
   },
   "gzv": {
     "en": "Flawless Amethyst",
     "zh": "无瑕的紫宝石",
-    "zh_tw": "無瑕紫寶石"
+    "zh_tw": "無瑕紫寶石",
+    "table": "misc",
+    "type": "gema",
+    "w": 1,
+    "h": 1
   },
   "gpv": {
     "en": "Perfect Amethyst",
     "zh": "完美的紫宝石",
-    "zh_tw": "完美紫寶石"
+    "zh_tw": "完美紫寶石",
+    "table": "misc",
+    "type": "gema",
+    "w": 1,
+    "h": 1
   },
   "gcy": {
     "en": "Chipped Topaz",
     "zh": "碎裂的黄宝石",
-    "zh_tw": "碎裂黃寶石"
+    "zh_tw": "碎裂黃寶石",
+    "table": "misc",
+    "type": "gemt",
+    "w": 1,
+    "h": 1
   },
   "gfy": {
     "en": "Flawed Topaz",
     "zh": "有瑕疵的黄宝石",
-    "zh_tw": "瑕疵黃寶石"
+    "zh_tw": "瑕疵黃寶石",
+    "table": "misc",
+    "type": "gemt",
+    "w": 1,
+    "h": 1
   },
   "gsy": {
     "en": "Topaz",
     "zh": "黄宝石",
-    "zh_tw": "黃寶石"
+    "zh_tw": "黃寶石",
+    "table": "misc",
+    "type": "gemt",
+    "w": 1,
+    "h": 1
   },
   "gly": {
     "en": "Flawless Topaz",
     "zh": "无瑕的黄宝石",
-    "zh_tw": "無瑕黃寶石"
+    "zh_tw": "無瑕黃寶石",
+    "table": "misc",
+    "type": "gemt",
+    "w": 1,
+    "h": 1
   },
   "gpy": {
     "en": "Perfect Topaz",
     "zh": "完美的黄宝石",
-    "zh_tw": "完美黃寶石"
+    "zh_tw": "完美黃寶石",
+    "table": "misc",
+    "type": "gemt",
+    "w": 1,
+    "h": 1
   },
   "gcb": {
     "en": "Chipped Sapphire",
     "zh": "碎裂的蓝宝石",
-    "zh_tw": "碎裂藍寶石"
+    "zh_tw": "碎裂藍寶石",
+    "table": "misc",
+    "type": "gems",
+    "w": 1,
+    "h": 1
   },
   "gfb": {
     "en": "Flawed Sapphire",
     "zh": "有瑕疵的蓝宝石",
-    "zh_tw": "瑕疵藍寶石"
+    "zh_tw": "瑕疵藍寶石",
+    "table": "misc",
+    "type": "gems",
+    "w": 1,
+    "h": 1
   },
   "gsb": {
     "en": "Sapphire",
     "zh": "蓝宝石",
-    "zh_tw": "藍寶石"
+    "zh_tw": "藍寶石",
+    "table": "misc",
+    "type": "gems",
+    "w": 1,
+    "h": 1
   },
   "glb": {
     "en": "Flawless Sapphire",
     "zh": "无瑕的蓝宝石",
-    "zh_tw": "無瑕藍寶石"
+    "zh_tw": "無瑕藍寶石",
+    "table": "misc",
+    "type": "gems",
+    "w": 1,
+    "h": 1
   },
   "gpb": {
     "en": "Perfect Sapphire",
     "zh": "完美的蓝宝石",
-    "zh_tw": "完美藍寶石"
+    "zh_tw": "完美藍寶石",
+    "table": "misc",
+    "type": "gems",
+    "w": 1,
+    "h": 1
   },
   "gcg": {
     "en": "Chipped Emerald",
     "zh": "碎裂的绿宝石",
-    "zh_tw": "碎裂綠寶石"
+    "zh_tw": "碎裂綠寶石",
+    "table": "misc",
+    "type": "geme",
+    "w": 1,
+    "h": 1
   },
   "gfg": {
     "en": "Flawed Emerald",
     "zh": "有瑕疵的绿宝石",
-    "zh_tw": "瑕疵綠寶石"
+    "zh_tw": "瑕疵綠寶石",
+    "table": "misc",
+    "type": "geme",
+    "w": 1,
+    "h": 1
   },
   "gsg": {
     "en": "Emerald",
     "zh": "绿宝石",
-    "zh_tw": "綠寶石"
+    "zh_tw": "綠寶石",
+    "table": "misc",
+    "type": "geme",
+    "w": 1,
+    "h": 1
   },
   "glg": {
     "en": "Flawless Emerald",
     "zh": "无瑕的绿宝石",
-    "zh_tw": "無瑕綠寶石"
+    "zh_tw": "無瑕綠寶石",
+    "table": "misc",
+    "type": "geme",
+    "w": 1,
+    "h": 1
   },
   "gpg": {
     "en": "Perfect Emerald",
     "zh": "完美的绿宝石",
-    "zh_tw": "完美綠寶石"
+    "zh_tw": "完美綠寶石",
+    "table": "misc",
+    "type": "geme",
+    "w": 1,
+    "h": 1
   },
   "gcr": {
     "en": "Chipped Ruby",
     "zh": "碎裂的红宝石",
-    "zh_tw": "碎裂紅寶石"
+    "zh_tw": "碎裂紅寶石",
+    "table": "misc",
+    "type": "gemr",
+    "w": 1,
+    "h": 1
   },
   "gfr": {
     "en": "Flawed Ruby",
     "zh": "有瑕疵的红宝石",
-    "zh_tw": "瑕疵紅寶石"
+    "zh_tw": "瑕疵紅寶石",
+    "table": "misc",
+    "type": "gemr",
+    "w": 1,
+    "h": 1
   },
   "gsr": {
     "en": "Ruby",
     "zh": "红宝石",
-    "zh_tw": "紅寶石"
+    "zh_tw": "紅寶石",
+    "table": "misc",
+    "type": "gemr",
+    "w": 1,
+    "h": 1
   },
   "glr": {
     "en": "Flawless Ruby",
     "zh": "无瑕的红宝石",
-    "zh_tw": "無瑕紅寶石"
+    "zh_tw": "無瑕紅寶石",
+    "table": "misc",
+    "type": "gemr",
+    "w": 1,
+    "h": 1
   },
   "gpr": {
     "en": "Perfect Ruby",
     "zh": "完美的红宝石",
-    "zh_tw": "完美紅寶石"
+    "zh_tw": "完美紅寶石",
+    "table": "misc",
+    "type": "gemr",
+    "w": 1,
+    "h": 1
   },
   "gcw": {
     "en": "Chipped Diamond",
     "zh": "碎裂的钻石",
-    "zh_tw": "碎裂鑽石"
+    "zh_tw": "碎裂鑽石",
+    "table": "misc",
+    "type": "gemd",
+    "w": 1,
+    "h": 1
   },
   "gfw": {
     "en": "Flawed Diamond",
     "zh": "有瑕疵的钻石",
-    "zh_tw": "瑕疵鑽石"
+    "zh_tw": "瑕疵鑽石",
+    "table": "misc",
+    "type": "gemd",
+    "w": 1,
+    "h": 1
   },
   "gsw": {
     "en": "Diamond",
     "zh": "钻石",
-    "zh_tw": "鑽石"
+    "zh_tw": "鑽石",
+    "table": "misc",
+    "type": "gemd",
+    "w": 1,
+    "h": 1
   },
   "glw": {
     "en": "Flawless Diamond",
     "zh": "无瑕的钻石",
-    "zh_tw": "無瑕鑽石"
+    "zh_tw": "無瑕鑽石",
+    "table": "misc",
+    "type": "gemd",
+    "w": 1,
+    "h": 1
   },
   "gpw": {
     "en": "Perfect Diamond",
     "zh": "完美的钻石",
-    "zh_tw": "完美鑽石"
+    "zh_tw": "完美鑽石",
+    "table": "misc",
+    "type": "gemd",
+    "w": 1,
+    "h": 1
   },
   "hp1": {
     "en": "Minor Healing Potion",
     "zh": "初级治疗药水",
-    "zh_tw": "弱效生命藥水"
+    "zh_tw": "弱效生命藥水",
+    "table": "misc",
+    "type": "hpot",
+    "w": 1,
+    "h": 1
   },
   "hp2": {
     "en": "Light Healing Potion",
     "zh": "次级治疗药水",
-    "zh_tw": "輕效生命藥水"
+    "zh_tw": "輕效生命藥水",
+    "table": "misc",
+    "type": "hpot",
+    "w": 1,
+    "h": 1
   },
   "hp3": {
     "en": "Healing Potion",
     "zh": "治疗药水",
-    "zh_tw": "生命藥水"
+    "zh_tw": "生命藥水",
+    "table": "misc",
+    "type": "hpot",
+    "w": 1,
+    "h": 1
   },
   "hp4": {
     "en": "Greater Healing Potion",
     "zh": "高级治疗药水",
-    "zh_tw": "強效生命藥水"
+    "zh_tw": "強效生命藥水",
+    "table": "misc",
+    "type": "hpot",
+    "w": 1,
+    "h": 1
   },
   "hp5": {
     "en": "Super Healing Potion",
     "zh": "超级治疗药水",
-    "zh_tw": "特效生命藥水"
+    "zh_tw": "特效生命藥水",
+    "table": "misc",
+    "type": "hpot",
+    "w": 1,
+    "h": 1
   },
   "mp1": {
     "en": "Minor Mana Potion",
     "zh": "初级法力药水",
-    "zh_tw": "弱效法力藥水"
+    "zh_tw": "弱效法力藥水",
+    "table": "misc",
+    "type": "mpot",
+    "w": 1,
+    "h": 1
   },
   "mp2": {
     "en": "Light Mana Potion",
     "zh": "次级法力药水",
-    "zh_tw": "輕效法力藥水"
+    "zh_tw": "輕效法力藥水",
+    "table": "misc",
+    "type": "mpot",
+    "w": 1,
+    "h": 1
   },
   "mp3": {
     "en": "Mana Potion",
     "zh": "法力药水",
-    "zh_tw": "法力藥水"
+    "zh_tw": "法力藥水",
+    "table": "misc",
+    "type": "mpot",
+    "w": 1,
+    "h": 1
   },
   "mp4": {
     "en": "Greater Mana Potion",
     "zh": "高级法力药水",
-    "zh_tw": "強效法力藥水"
+    "zh_tw": "強效法力藥水",
+    "table": "misc",
+    "type": "mpot",
+    "w": 1,
+    "h": 1
   },
   "mp5": {
     "en": "Super Mana Potion",
     "zh": "超级法力药水",
-    "zh_tw": "特效法力藥水"
+    "zh_tw": "特效法力藥水",
+    "table": "misc",
+    "type": "mpot",
+    "w": 1,
+    "h": 1
   },
   "skc": {
     "en": "Chipped Skull",
     "zh": "碎裂的头骨宝石",
-    "zh_tw": "碎裂骷髏石"
+    "zh_tw": "碎裂骷髏石",
+    "table": "misc",
+    "type": "gemz",
+    "w": 1,
+    "h": 1
   },
   "skf": {
     "en": "Flawed Skull",
     "zh": "有瑕疵的头骨宝石",
-    "zh_tw": "瑕疵骷髏石"
+    "zh_tw": "瑕疵骷髏石",
+    "table": "misc",
+    "type": "gemz",
+    "w": 1,
+    "h": 1
   },
   "sku": {
     "en": "Skull",
     "zh": "头骨宝石",
-    "zh_tw": "骷髏石"
+    "zh_tw": "骷髏石",
+    "table": "misc",
+    "type": "gemz",
+    "w": 1,
+    "h": 1
   },
   "skl": {
     "en": "Flawless Skull",
     "zh": "无瑕疵的头骨宝石",
-    "zh_tw": "無瑕骷髏石"
+    "zh_tw": "無瑕骷髏石",
+    "table": "misc",
+    "type": "gemz",
+    "w": 1,
+    "h": 1
   },
   "skz": {
     "en": "Perfect Skull",
     "zh": "完美的头骨宝石",
-    "zh_tw": "完美骷髏石"
+    "zh_tw": "完美骷髏石",
+    "table": "misc",
+    "type": "gemz",
+    "w": 1,
+    "h": 1
   },
   "hrb": {
     "en": "Herb",
     "zh": "草药",
-    "zh_tw": "藥草"
+    "zh_tw": "藥草",
+    "table": "misc",
+    "type": "herb",
+    "w": 1,
+    "h": 1
   },
   "cm1": {
     "en": "Small Charm",
     "zh": "小型神符",
-    "zh_tw": "小型咒符"
+    "zh_tw": "小型咒符",
+    "table": "misc",
+    "type": "scha",
+    "w": 1,
+    "h": 1
   },
   "cm2": {
     "en": "Large Charm",
     "zh": "大型神符",
-    "zh_tw": "大型咒符"
+    "zh_tw": "大型咒符",
+    "table": "misc",
+    "type": "mcha",
+    "w": 1,
+    "h": 2
   },
   "cm3": {
     "en": "Grand Charm",
     "zh": "巨型神符",
-    "zh_tw": "特大咒符"
+    "zh_tw": "特大咒符",
+    "table": "misc",
+    "type": "lcha",
+    "w": 1,
+    "h": 3
   },
   "r01": {
     "en": "El Rune",
     "zh": "艾尔符文",
-    "zh_tw": "符文：艾爾"
+    "zh_tw": "符文：艾爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r02": {
     "en": "Eld Rune",
     "zh": "艾德符文",
-    "zh_tw": "符文：艾德"
+    "zh_tw": "符文：艾德",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r03": {
     "en": "Tir Rune",
     "zh": "提尔符文",
-    "zh_tw": "符文：特爾"
+    "zh_tw": "符文：特爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r04": {
     "en": "Nef Rune",
     "zh": "奈夫符文",
-    "zh_tw": "符文：那夫"
+    "zh_tw": "符文：那夫",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r05": {
     "en": "Eth Rune",
     "zh": "艾斯符文",
-    "zh_tw": "符文：愛斯"
+    "zh_tw": "符文：愛斯",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r06": {
     "en": "Ith Rune",
     "zh": "伊司符文",
-    "zh_tw": "符文：伊司"
+    "zh_tw": "符文：伊司",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r07": {
     "en": "Tal Rune",
     "zh": "塔尔符文",
-    "zh_tw": "符文：塔爾"
+    "zh_tw": "符文：塔爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r08": {
     "en": "Ral Rune",
     "zh": "拉尔符文",
-    "zh_tw": "符文：拉爾"
+    "zh_tw": "符文：拉爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r09": {
     "en": "Ort Rune",
     "zh": "欧特符文",
-    "zh_tw": "符文：歐特"
+    "zh_tw": "符文：歐特",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r10": {
     "en": "Thul Rune",
     "zh": "图尔符文",
-    "zh_tw": "符文：書爾"
+    "zh_tw": "符文：書爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r11": {
     "en": "Amn Rune",
     "zh": "安姆符文",
-    "zh_tw": "符文：安姆"
+    "zh_tw": "符文：安姆",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r12": {
     "en": "Sol Rune",
     "zh": "索尔符文",
-    "zh_tw": "符文：索爾"
+    "zh_tw": "符文：索爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r13": {
     "en": "Shael Rune",
     "zh": "沙伊符文",
-    "zh_tw": "符文：夏"
+    "zh_tw": "符文：夏",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r14": {
     "en": "Dol Rune",
     "zh": "多尔符文",
-    "zh_tw": "符文：多爾"
+    "zh_tw": "符文：多爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r15": {
     "en": "Hel Rune",
     "zh": "海尔符文",
-    "zh_tw": "符文：海爾"
+    "zh_tw": "符文：海爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r16": {
     "en": "Io Rune",
     "zh": "艾欧符文",
-    "zh_tw": "符文：埃歐"
+    "zh_tw": "符文：埃歐",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r17": {
     "en": "Lum Rune",
     "zh": "卢姆符文",
-    "zh_tw": "符文：盧姆"
+    "zh_tw": "符文：盧姆",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r18": {
     "en": "Ko Rune",
     "zh": "科符文",
-    "zh_tw": "符文：科"
+    "zh_tw": "符文：科",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r19": {
     "en": "Fal Rune",
     "zh": "法尔符文",
-    "zh_tw": "符文：法爾"
+    "zh_tw": "符文：法爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r20": {
     "en": "Lem Rune",
     "zh": "兰姆符文",
-    "zh_tw": "符文：藍姆"
+    "zh_tw": "符文：藍姆",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r21": {
     "en": "Pul Rune",
     "zh": "普尔符文",
-    "zh_tw": "符文：普爾"
+    "zh_tw": "符文：普爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r22": {
     "en": "Um Rune",
     "zh": "乌姆符文",
-    "zh_tw": "符文：烏姆"
+    "zh_tw": "符文：烏姆",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r23": {
     "en": "Mal Rune",
     "zh": "玛尔符文",
-    "zh_tw": "符文：馬爾"
+    "zh_tw": "符文：馬爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r24": {
     "en": "Ist Rune",
     "zh": "伊司特符文",
-    "zh_tw": "符文：伊司特"
+    "zh_tw": "符文：伊司特",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r25": {
     "en": "Gul Rune",
     "zh": "古尔符文",
-    "zh_tw": "符文：古爾"
+    "zh_tw": "符文：古爾",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r26": {
     "en": "Vex Rune",
     "zh": "伐克斯符文",
-    "zh_tw": "符文：伐克斯"
+    "zh_tw": "符文：伐克斯",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r27": {
     "en": "Ohm Rune",
     "zh": "欧姆符文",
-    "zh_tw": "符文：歐姆"
+    "zh_tw": "符文：歐姆",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r28": {
     "en": "Lo Rune",
     "zh": "罗符文",
-    "zh_tw": "符文：羅"
+    "zh_tw": "符文：羅",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r29": {
     "en": "Sur Rune",
     "zh": "瑟符文",
-    "zh_tw": "符文：瑟"
+    "zh_tw": "符文：瑟",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r30": {
     "en": "Ber Rune",
     "zh": "贝符文",
-    "zh_tw": "符文：貝"
+    "zh_tw": "符文：貝",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r31": {
     "en": "Jah Rune",
     "zh": "扎哈符文",
-    "zh_tw": "符文：喬"
+    "zh_tw": "符文：喬",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r32": {
     "en": "Cham Rune",
     "zh": "查姆符文",
-    "zh_tw": "符文：查姆"
+    "zh_tw": "符文：查姆",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "r33": {
     "en": "Zod Rune",
     "zh": "佐德符文",
-    "zh_tw": "符文：薩德"
+    "zh_tw": "符文：薩德",
+    "table": "misc",
+    "type": "rune",
+    "w": 1,
+    "h": 1
   },
   "jew": {
     "en": "Jewel",
     "zh": "珠宝",
-    "zh_tw": "珠寶"
+    "zh_tw": "珠寶",
+    "table": "misc",
+    "type": "jewl",
+    "w": 1,
+    "h": 1
   },
   "ice": {
     "en": "Malah's Potion",
     "zh": "马拉的药水",
-    "zh_tw": "瑪拉的藥水"
+    "zh_tw": "瑪拉的藥水",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "0sc": {
     "en": "Scroll of Knowledge",
     "zh": "知识卷轴",
-    "zh_tw": "知識卷軸"
+    "zh_tw": "知識卷軸",
+    "table": "misc",
+    "type": "scro",
+    "w": 1,
+    "h": 1
   },
   "tr2": {
     "en": "Scroll of Resistance",
     "zh": "抗性卷轴",
-    "zh_tw": "抗性卷軸"
+    "zh_tw": "抗性卷軸",
+    "table": "misc",
+    "type": "ques",
+    "w": 2,
+    "h": 2
   },
   "pk1": {
     "en": "Key of Terror",
     "zh": "恐惧之钥",
-    "zh_tw": "恐懼之鑰"
+    "zh_tw": "恐懼之鑰",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 2
   },
   "pk2": {
     "en": "Key of Hate",
     "zh": "憎恨之钥",
-    "zh_tw": "憎恨之鑰"
+    "zh_tw": "憎恨之鑰",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 2
   },
   "pk3": {
     "en": "Key of Destruction",
     "zh": "毁灭之钥",
-    "zh_tw": "毀滅之鑰"
+    "zh_tw": "毀滅之鑰",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 2
   },
   "dhn": {
     "en": "Diablo's Horn",
     "zh": "迪亚波罗的角",
-    "zh_tw": "迪亞布羅之角"
+    "zh_tw": "迪亞布羅之角",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "bey": {
     "en": "Baal's Eye",
     "zh": "巴尔的眼睛",
-    "zh_tw": "巴爾之眼"
+    "zh_tw": "巴爾之眼",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "mbr": {
     "en": "Mephisto's Brain",
     "zh": "墨菲斯托的智慧",
-    "zh_tw": "墨菲斯托之腦"
+    "zh_tw": "墨菲斯托之腦",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "toa": {
     "en": "Token of Absolution",
     "zh": "赦免之证",
-    "zh_tw": "赦免徽章"
+    "zh_tw": "赦免徽章",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "tes": {
     "en": "Twisted Essence of Suffering",
     "zh": "扭曲的痛苦精华",
-    "zh_tw": "扭曲的苦怨精華"
+    "zh_tw": "扭曲的苦怨精華",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "ceh": {
     "en": "Charged Essence of Hatred",
     "zh": "充能的憎恨精华",
-    "zh_tw": "充盈的憎恨精華"
+    "zh_tw": "充盈的憎恨精華",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "bet": {
     "en": "Burning Essence of Terror",
     "zh": "燃烧的恐惧精华",
-    "zh_tw": "燃燒的恐懼精華"
+    "zh_tw": "燃燒的恐懼精華",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "fed": {
     "en": "Festering Essence of Destruction",
     "zh": "腐烂的毁灭精华",
-    "zh_tw": "潰爛的毀滅精華"
+    "zh_tw": "潰爛的毀滅精華",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "std": {
     "en": "Standard of Heroes",
     "zh": "英雄的旗帜",
-    "zh_tw": "英雄旗幟"
+    "zh_tw": "英雄旗幟",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "xa1": {
     "en": "Western Worldstone Shard",
     "zh": "西方世界之石碎片",
-    "zh_tw": "西方的世界之石碎片"
+    "zh_tw": "西方的世界之石碎片",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "xa2": {
     "en": "Eastern Worldstone Shard",
     "zh": "东方世界之石碎片",
-    "zh_tw": "東方的世界之石碎片"
+    "zh_tw": "東方的世界之石碎片",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "xa3": {
     "en": "Southern Worldstone Shard",
     "zh": "南方世界之石碎片",
-    "zh_tw": "南方的世界之石碎片"
+    "zh_tw": "南方的世界之石碎片",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "xa4": {
     "en": "Deep Worldstone Shard",
     "zh": "深层世界之石碎片",
-    "zh_tw": "深處的世界之石碎片"
+    "zh_tw": "深處的世界之石碎片",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "xa5": {
     "en": "Northern Worldstone Shard",
     "zh": "北方世界之石碎片",
-    "zh_tw": "北方的世界之石碎片"
+    "zh_tw": "北方的世界之石碎片",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "ua1": {
     "en": "Talic's Anguish",
     "zh": "塔力克的痛苦",
-    "zh_tw": "塔力克的怨慟"
+    "zh_tw": "塔力克的怨慟",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 2
   },
   "ua2": {
     "en": "Korlic's Pain",
     "zh": "科里克的痛楚",
-    "zh_tw": "科力克的苦痛"
+    "zh_tw": "科力克的苦痛",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 2
   },
   "ua3": {
     "en": "Madawc's Ire",
     "zh": "马道克的愤怒",
-    "zh_tw": "馬道克的怒火"
+    "zh_tw": "馬道克的怒火",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 2
   },
   "ua4": {
     "en": "Bul-Kathos' Nightmare",
     "zh": "布尔凯索的噩梦",
-    "zh_tw": "布爾凱索的夢魘"
+    "zh_tw": "布爾凱索的夢魘",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 2
   },
   "ua5": {
     "en": "Worusk's End",
     "zh": "沃鲁斯克的终结",
-    "zh_tw": "沃魯斯克的終結"
+    "zh_tw": "沃魯斯克的終結",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 2
   },
   "um1": {
     "en": "Defender's Fire",
     "zh": "防御者之火",
-    "zh_tw": "防禦者的火焰"
+    "zh_tw": "防禦者的火焰",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "um2": {
     "en": "Defender's Bile",
     "zh": "防御者之怒",
-    "zh_tw": "防禦者的膽汁"
+    "zh_tw": "防禦者的膽汁",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "um3": {
     "en": "Protector's Frost",
     "zh": "保卫者之霜",
-    "zh_tw": "保衛者的冰霜"
+    "zh_tw": "保衛者的冰霜",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "um4": {
     "en": "Protector's Stone",
     "zh": "保卫者之石",
-    "zh_tw": "保衛者的岩石"
+    "zh_tw": "保衛者的岩石",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "um5": {
     "en": "Guardian's Thunder",
     "zh": "守护者之雷",
-    "zh_tw": "守護者的閃電"
+    "zh_tw": "守護者的閃電",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "um6": {
     "en": "Guardian's Light",
     "zh": "守护者之光",
-    "zh_tw": "守護者的光芒"
+    "zh_tw": "守護者的光芒",
+    "table": "misc",
+    "type": "ques",
+    "w": 1,
+    "h": 1
   },
   "cjw": {
     "en": "Jewel",
     "zh": "珠宝",
-    "zh_tw": "珠寶"
+    "zh_tw": "珠寶",
+    "table": "misc",
+    "type": "cjwl",
+    "w": 1,
+    "h": 1
   },
   "cs2": {
     "en": "Grand Charm",
     "zh": "巨型神符",
-    "zh_tw": "特大咒符"
+    "zh_tw": "特大咒符",
+    "table": "misc",
+    "type": "csch",
+    "w": 1,
+    "h": 3
   }
 }

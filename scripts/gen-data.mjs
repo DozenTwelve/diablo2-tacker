@@ -69,7 +69,7 @@ for (const r of table("uniqueitems")) {
     prev.legacy &&= legacy;
   } else {
     const [, cn, tw] = category(r.code);
-    uniques.set(r.index, { ids: [id], ...names(r.index), category: cn, category_tw: tw, legacy });
+    uniques.set(r.index, { ids: [id], code: r.code, ...names(r.index), category: cn, category_tw: tw, legacy });
   }
 }
 
@@ -77,7 +77,7 @@ const sets = new Map();
 for (const r of table("setitems")) {
   if (!r["*ID"] || r.disableChronicle === "1") continue;
   if (!sets.has(r.set)) sets.set(r.set, { ...names(r.set), items: [] });
-  sets.get(r.set).items.push({ id: Number(r["*ID"]), ...names(r.index) });
+  sets.get(r.set).items.push({ id: Number(r["*ID"]), code: r.item, ...names(r.index) });
 }
 
 // id is the runes.txt row; a save's runeword_id maps to it as (runeword_id & 0xfff) - 27
@@ -94,12 +94,13 @@ for (let i = 1; i <= 33; i++) {
   runes.push({ code, en: n.en.replace(/ Rune$/, ""), zh: n.zh.replace(/符文$/, ""), zh_tw: n.zh_tw.replace(/^符文：|符文$/g, "") });
 }
 
-// Every base item code -> name, for bases, gems, charms, rares and anything else found in saves
+// Every base item code -> name, for bases, gems, charms, rares and anything else found in saves.
+// Also its table, item type and inventory size (w x h cells), in table order, for laying out mules
 const items = {};
 for (const t of ["armor", "weapons", "misc"]) {
   for (const r of table(t)) {
     const key = r.namestr || r.code;
-    if (r.code && strings.has(key)) items[r.code] = names(key);
+    if (r.code && strings.has(key)) items[r.code] = { ...names(key), table: t, type: r.type, w: Number(r.invwidth) || 1, h: Number(r.invheight) || 1 };
   }
 }
 

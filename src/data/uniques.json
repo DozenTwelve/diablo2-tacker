@@ -3,6 +3,7 @@
     "ids": [
       0
     ],
+    "code": "hax",
     "en": "The Gnasher",
     "zh": "外壳撕咬",
     "zh_tw": "噬咬者",
@@ -14,6 +15,7 @@
     "ids": [
       1
     ],
+    "code": "axe",
     "en": "Deathspade",
     "zh": "死亡黑桃",
     "zh_tw": "死亡之鏟",
@@ -25,6 +27,7 @@
     "ids": [
       2
     ],
+    "code": "2ax",
     "en": "Bladebone",
     "zh": "刃骨",
     "zh_tw": "肩胛骨",
@@ -36,6 +39,7 @@
     "ids": [
       3
     ],
+    "code": "mpi",
     "en": "Skull Splitter",
     "zh": "凿颅者",
     "zh_tw": "劈顱斧",
@@ -47,6 +51,7 @@
     "ids": [
       4
     ],
+    "code": "wax",
     "en": "Rakescar",
     "zh": "钯肉斧",
     "zh_tw": "耙痕",
@@ -58,6 +63,7 @@
     "ids": [
       5
     ],
+    "code": "lax",
     "en": "Axe of Fechmar",
     "zh": "费屈玛之斧",
     "zh_tw": "費屈瑪之斧",
@@ -69,6 +75,7 @@
     "ids": [
       6
     ],
+    "code": "bax",
     "en": "Goreshovel",
     "zh": "铲肉斧",
     "zh_tw": "血鍬",
@@ -80,6 +87,7 @@
     "ids": [
       7
     ],
+    "code": "btx",
     "en": "The Chieftain",
     "zh": "酋长",
     "zh_tw": "酋長",
@@ -91,6 +99,7 @@
     "ids": [
       8
     ],
+    "code": "gax",
     "en": "Brainhew",
     "zh": "劈颅者",
     "zh_tw": "劈腦",
@@ -102,6 +111,7 @@
     "ids": [
       9
     ],
+    "code": "gix",
     "en": "Humongous",
     "zh": "巨无霸",
     "zh_tw": "巨無霸",
@@ -113,6 +123,7 @@
     "ids": [
       10
     ],
+    "code": "wnd",
     "en": "Torch of Iro",
     "zh": "伊洛的火炬",
     "zh_tw": "伊洛的火炬",
@@ -124,6 +135,7 @@
     "ids": [
       11
     ],
+    "code": "ywn",
     "en": "Maelstrom",
     "zh": "漩涡之力",
     "zh_tw": "漩渦",
@@ -135,6 +147,7 @@
     "ids": [
       12
     ],
+    "code": "bwn",
     "en": "Gravenspine",
     "zh": "支柱雕塑",
     "zh_tw": "墓穴之脊",
@@ -146,6 +159,7 @@
     "ids": [
       13
     ],
+    "code": "gwn",
     "en": "Ume's Lament",
     "zh": "婴灵的哀歌",
     "zh_tw": "梅花嘆",
@@ -157,6 +171,7 @@
     "ids": [
       14
     ],
+    "code": "clb",
     "en": "Felloak",
     "zh": "凶猛橡木",
     "zh_tw": "魔橡樹",
@@ -168,6 +183,7 @@
     "ids": [
       15
     ],
+    "code": "scp",
     "en": "Knell Striker",
     "zh": "丧钟敲击者",
     "zh_tw": "喪鐘敲擊者",
@@ -179,6 +195,7 @@
     "ids": [
       16
     ],
+    "code": "gsc",
     "en": "Rusthandle",
     "zh": "腐锈权柄",
     "zh_tw": "鏽蝕把手",
@@ -190,6 +207,7 @@
     "ids": [
       17
     ],
+    "code": "wsp",
     "en": "Stormeye",
     "zh": "风暴之眼",
     "zh_tw": "暴風眼",
@@ -201,6 +219,7 @@
     "ids": [
       18
     ],
+    "code": "spc",
     "en": "Stoutnail",
     "zh": "坚硬钉爪",
     "zh_tw": "特粗鐵釘",
@@ -212,6 +231,7 @@
     "ids": [
       19
     ],
+    "code": "mac",
     "en": "Crushflange",
     "zh": "四叶破甲锤",
     "zh_tw": "碎擊釘錘",
@@ -223,6 +243,7 @@
     "ids": [
       20
     ],
+    "code": "mst",
     "en": "Bloodrise",
     "zh": "赤色飞星",
     "zh_tw": "血升",
@@ -234,6 +255,7 @@
     "ids": [
       21
     ],
+    "code": "fla",
     "en": "The General's Tan Do Li Ga",
     "zh": "将军的短连枷",
     "zh_tw": "將軍的連枷",
@@ -245,6 +267,7 @@
     "ids": [
       22
     ],
+    "code": "whm",
     "en": "Ironstone",
     "zh": "铁石",
     "zh_tw": "鐵石",
@@ -256,6 +279,7 @@
     "ids": [
       23
     ],
+    "code": "mau",
     "en": "Bonesnap",
     "zh": "碎骨",
     "zh_tw": "碎骨",
@@ -267,6 +291,7 @@
     "ids": [
       24
     ],
+    "code": "gma",
     "en": "Steeldriver",
     "zh": "钢榔头",
     "zh_tw": "打鋼鎚",
@@ -278,6 +303,7 @@
     "ids": [
       25
     ],
+    "code": "ssd",
     "en": "Rixot's Keen",
     "zh": "瑞克撒特的挽歌",
     "zh_tw": "瑞克塞斯的利刃",
@@ -289,6 +315,7 @@
     "ids": [
       26
     ],
+    "code": "scm",
     "en": "Blood Crescent",
     "zh": "赤色新月",
     "zh_tw": "血紅新月",
@@ -300,6 +327,7 @@
     "ids": [
       27
     ],
+    "code": "sbr",
     "en": "Skewer of Krintiz",
     "zh": "克林茨的肉叉",
     "zh_tw": "克里維茲的肉叉",
@@ -311,6 +339,7 @@
     "ids": [
       28
     ],
+    "code": "flc",
     "en": "Gleamscythe",
     "zh": "寒光镰刀",
     "zh_tw": "閃耀鐮刀",
@@ -323,6 +352,7 @@
       29,
       301
     ],
+    "code": "crs",
     "en": "Azurewrath",
     "zh": "碧蓝怒火",
     "zh_tw": "碧藍怒火",
@@ -334,6 +364,7 @@
     "ids": [
       30
     ],
+    "code": "bsd",
     "en": "Griswold's Edge",
     "zh": "格里斯沃尔德之锋",
     "zh_tw": "格里斯瓦德之刃",
@@ -345,6 +376,7 @@
     "ids": [
       31
     ],
+    "code": "lsd",
     "en": "Hellplague",
     "zh": "地狱瘟疫",
     "zh_tw": "地獄瘟疫",
@@ -356,6 +388,7 @@
     "ids": [
       32
     ],
+    "code": "wsd",
     "en": "Culwen's Point",
     "zh": "库文之刺",
     "zh_tw": "庫爾溫的尖刃",
@@ -367,6 +400,7 @@
     "ids": [
       33
     ],
+    "code": "2hs",
     "en": "Shadowfang",
     "zh": "暗影之牙",
     "zh_tw": "暗影之牙",
@@ -378,6 +412,7 @@
     "ids": [
       34
     ],
+    "code": "clm",
     "en": "Soulflay",
     "zh": "剥魂者",
     "zh_tw": "剝魂",
@@ -389,6 +424,7 @@
     "ids": [
       35
     ],
+    "code": "gis",
     "en": "Kinemil's Awl",
     "zh": "金麦尔的锥子",
     "zh_tw": "金麥爾的鑽錐",
@@ -400,6 +436,7 @@
     "ids": [
       36
     ],
+    "code": "bsw",
     "en": "Blacktongue",
     "zh": "黑舌",
     "zh_tw": "黑舌",
@@ -411,6 +448,7 @@
     "ids": [
       37
     ],
+    "code": "flb",
     "en": "Ripsaw",
     "zh": "碎肉锯",
     "zh_tw": "齒鋸",
@@ -422,6 +460,7 @@
     "ids": [
       38
     ],
+    "code": "gsd",
     "en": "The Patriarch",
     "zh": "大族长",
     "zh_tw": "尊父",
@@ -433,6 +472,7 @@
     "ids": [
       39
     ],
+    "code": "dgr",
     "en": "Gull",
     "zh": "海鸥",
     "zh_tw": "海鷗",
@@ -444,6 +484,7 @@
     "ids": [
       40
     ],
+    "code": "dir",
     "en": "The Diggler",
     "zh": "迪格勒",
     "zh_tw": "迪格勒",
@@ -455,6 +496,7 @@
     "ids": [
       41
     ],
+    "code": "kri",
     "en": "The Jade Tan Do",
     "zh": "玉尖刀",
     "zh_tw": "玉匕",
@@ -466,6 +508,7 @@
     "ids": [
       42
     ],
+    "code": "bld",
     "en": "Spectral Shard",
     "zh": "彩虹碎片",
     "zh_tw": "虹彩裂片",
@@ -477,6 +520,7 @@
     "ids": [
       43
     ],
+    "code": "spr",
     "en": "The Dragon Chang",
     "zh": "龙枪",
     "zh_tw": "龍槍",
@@ -488,6 +532,7 @@
     "ids": [
       44
     ],
+    "code": "tri",
     "en": "Razortine",
     "zh": "剃刀尖齿",
     "zh_tw": "剃刀叉",
@@ -499,6 +544,7 @@
     "ids": [
       45
     ],
+    "code": "brn",
     "en": "Bloodthief",
     "zh": "精华搬运者",
     "zh_tw": "血賊",
@@ -510,6 +556,7 @@
     "ids": [
       46
     ],
+    "code": "spt",
     "en": "Lance of Yaggai",
     "zh": "亚盖长枪",
     "zh_tw": "雅該長矛",
@@ -521,6 +568,7 @@
     "ids": [
       47
     ],
+    "code": "pik",
     "en": "The Tannr Gorerod",
     "zh": "皮匠的刺枪",
     "zh_tw": "坦納血杖",
@@ -532,6 +580,7 @@
     "ids": [
       48
     ],
+    "code": "bar",
     "en": "Dimoak's Hew",
     "zh": "迪马克的劈斧",
     "zh_tw": "迪馬克的砍刀",
@@ -543,6 +592,7 @@
     "ids": [
       49
     ],
+    "code": "vou",
     "en": "Steelgoad",
     "zh": "钢刺棒",
     "zh_tw": "鐵刺棒",
@@ -554,6 +604,7 @@
     "ids": [
       50
     ],
+    "code": "scy",
     "en": "Soul Harvest",
     "zh": "收魂者",
     "zh_tw": "靈魂收割者",
@@ -565,6 +616,7 @@
     "ids": [
       51
     ],
+    "code": "pax",
     "en": "The Battlebranch",
     "zh": "突围者",
     "zh_tw": "戰鬥枝椏",
@@ -576,6 +628,7 @@
     "ids": [
       52
     ],
+    "code": "hal",
     "en": "Woestave",
     "zh": "降灾长戟",
     "zh_tw": "悲哀護杖",
@@ -587,6 +640,7 @@
     "ids": [
       53
     ],
+    "code": "wsc",
     "en": "The Grim Reaper",
     "zh": "恐怖收割者",
     "zh_tw": "猙獰奪魂者",
@@ -598,6 +652,7 @@
     "ids": [
       54
     ],
+    "code": "sst",
     "en": "Bane Ash",
     "zh": "祸根之灰",
     "zh_tw": "禍根之灰",
@@ -609,6 +664,7 @@
     "ids": [
       55
     ],
+    "code": "lst",
     "en": "Serpent Lord",
     "zh": "海蛇之王",
     "zh_tw": "海蛇之王",
@@ -620,6 +676,7 @@
     "ids": [
       56
     ],
+    "code": "cst",
     "en": "Spire of Lazarus",
     "zh": "拉扎鲁斯的螺旋杖",
     "zh_tw": "拉撒雷茲之杖",
@@ -631,6 +688,7 @@
     "ids": [
       57
     ],
+    "code": "bst",
     "en": "The Salamander",
     "zh": "沙罗曼",
     "zh_tw": "火精靈",
@@ -642,6 +700,7 @@
     "ids": [
       58
     ],
+    "code": "wst",
     "en": "The Iron Jang Bong",
     "zh": "铁长棍",
     "zh_tw": "鐵長棒",
@@ -653,6 +712,7 @@
     "ids": [
       59
     ],
+    "code": "sbw",
     "en": "Pluckeye",
     "zh": "剜眼",
     "zh_tw": "奪人目",
@@ -664,6 +724,7 @@
     "ids": [
       60
     ],
+    "code": "hbw",
     "en": "Witherstring",
     "zh": "凋零之击",
     "zh_tw": "凋萎之弦",
@@ -675,6 +736,7 @@
     "ids": [
       61
     ],
+    "code": "lbw",
     "en": "Raven Claw",
     "zh": "赤鸦之爪",
     "zh_tw": "掠鴉之爪",
@@ -686,6 +748,7 @@
     "ids": [
       62
     ],
+    "code": "cbw",
     "en": "Rogue's Bow",
     "zh": "游猎之弓",
     "zh_tw": "俠盜之弓",
@@ -697,6 +760,7 @@
     "ids": [
       63
     ],
+    "code": "sbb",
     "en": "Stormstrike",
     "zh": "风暴之击",
     "zh_tw": "暴風之擊",
@@ -708,6 +772,7 @@
     "ids": [
       64
     ],
+    "code": "lbb",
     "en": "Wizendraw",
     "zh": "凋零劲弦",
     "zh_tw": "凋謝弓弦",
@@ -719,6 +784,7 @@
     "ids": [
       65
     ],
+    "code": "swb",
     "en": "Hellclap",
     "zh": "地狱飞啸",
     "zh_tw": "地獄轟鳴",
@@ -730,6 +796,7 @@
     "ids": [
       66
     ],
+    "code": "lwb",
     "en": "Blastbark",
     "zh": "爆裂喧嚣",
     "zh_tw": "爆裂咆哮",
@@ -741,6 +808,7 @@
     "ids": [
       67
     ],
+    "code": "lxb",
     "en": "Leadcrow",
     "zh": "铅鸦",
     "zh_tw": "鉛烏鴉",
@@ -752,6 +820,7 @@
     "ids": [
       68
     ],
+    "code": "mxb",
     "en": "Ichorsting",
     "zh": "灵液之刺",
     "zh_tw": "膿毒之刺",
@@ -763,6 +832,7 @@
     "ids": [
       69
     ],
+    "code": "hxb",
     "en": "Hellcast",
     "zh": "狱火投手",
     "zh_tw": "地獄擲弩",
@@ -774,6 +844,7 @@
     "ids": [
       70
     ],
+    "code": "rxb",
     "en": "Doomslinger",
     "zh": "末日投手",
     "zh_tw": "毀滅投索",
@@ -785,6 +856,7 @@
     "ids": [
       71
     ],
+    "code": "cap",
     "en": "Biggin's Bonnet",
     "zh": "幼童软帽",
     "zh_tw": "畢格因的軟帽",
@@ -796,6 +868,7 @@
     "ids": [
       72
     ],
+    "code": "skp",
     "en": "Tarnhelm",
     "zh": "塔恩之盔",
     "zh_tw": "塔因頭盔",
@@ -807,6 +880,7 @@
     "ids": [
       73
     ],
+    "code": "hlm",
     "en": "Coif of Glory",
     "zh": "荣光锁帽",
     "zh_tw": "光榮罩盔",
@@ -818,6 +892,7 @@
     "ids": [
       74
     ],
+    "code": "fhl",
     "en": "Duskdeep",
     "zh": "黄昏薄暮",
     "zh_tw": "黃昏深處",
@@ -829,6 +904,7 @@
     "ids": [
       75
     ],
+    "code": "bhm",
     "en": "Wormskull",
     "zh": "蛆虫头骨",
     "zh_tw": "蠕蟲頭骨",
@@ -840,6 +916,7 @@
     "ids": [
       76
     ],
+    "code": "ghm",
     "en": "Howltusk",
     "zh": "怒号长牙",
     "zh_tw": "怒號長牙",
@@ -851,6 +928,7 @@
     "ids": [
       77
     ],
+    "code": "crn",
     "en": "Undead Crown",
     "zh": "不死王冠",
     "zh_tw": "不死皇冠",
@@ -862,6 +940,7 @@
     "ids": [
       78
     ],
+    "code": "msk",
     "en": "The Face of Horror",
     "zh": "恐惧面容",
     "zh_tw": "恐懼之臉",
@@ -873,6 +952,7 @@
     "ids": [
       79
     ],
+    "code": "qui",
     "en": "Greyform",
     "zh": "灰影",
     "zh_tw": "灰暮之形",
@@ -884,6 +964,7 @@
     "ids": [
       80
     ],
+    "code": "lea",
     "en": "Blinkbat's Form",
     "zh": "火蝠之影",
     "zh_tw": "閃蝠之軀",
@@ -895,6 +976,7 @@
     "ids": [
       81
     ],
+    "code": "hla",
     "en": "The Centurion",
     "zh": "百夫长",
     "zh_tw": "百夫長",
@@ -906,6 +988,7 @@
     "ids": [
       82
     ],
+    "code": "stu",
     "en": "Twitchthroe",
     "zh": "抽动的挣扎",
     "zh_tw": "抽動掙扎",
@@ -917,6 +1000,7 @@
     "ids": [
       83
     ],
+    "code": "rng",
     "en": "Darkglow",
     "zh": "黑暗幽光",
     "zh_tw": "暗光",
@@ -928,6 +1012,7 @@
     "ids": [
       84
     ],
+    "code": "scl",
     "en": "Hawkmail",
     "zh": "雄鹰甲",
     "zh_tw": "鷹甲",
@@ -939,6 +1024,7 @@
     "ids": [
       85
     ],
+    "code": "chn",
     "en": "Sparking Mail",
     "zh": "电光锁甲",
     "zh_tw": "電光之甲",
@@ -950,6 +1036,7 @@
     "ids": [
       86
     ],
+    "code": "brs",
     "en": "Venom Ward",
     "zh": "毒液禁区",
     "zh_tw": "毒之守禦",
@@ -961,6 +1048,7 @@
     "ids": [
       87
     ],
+    "code": "spl",
     "en": "Iceblink",
     "zh": "闪耀冰晶",
     "zh_tw": "冰晶",
@@ -972,6 +1060,7 @@
     "ids": [
       88
     ],
+    "code": "plt",
     "en": "Boneflesh",
     "zh": "骨肉分离",
     "zh_tw": "骨肉",
@@ -983,6 +1072,7 @@
     "ids": [
       89
     ],
+    "code": "fld",
     "en": "Rockfleece",
     "zh": "石中毛",
     "zh_tw": "石羊毛",
@@ -994,6 +1084,7 @@
     "ids": [
       90
     ],
+    "code": "gth",
     "en": "Rattlecage",
     "zh": "作响之笼",
     "zh_tw": "震骨",
@@ -1005,6 +1096,7 @@
     "ids": [
       91
     ],
+    "code": "ful",
     "en": "Goldskin",
     "zh": "黄金之肤",
     "zh_tw": "黃金之膚",
@@ -1016,6 +1108,7 @@
     "ids": [
       92
     ],
+    "code": "aar",
     "en": "Silks of the Victor",
     "zh": "胜者的丝绸",
     "zh_tw": "勝利者的絲綢",
@@ -1027,6 +1120,7 @@
     "ids": [
       93
     ],
+    "code": "ltp",
     "en": "Heavenly Garb",
     "zh": "天界圣衣",
     "zh_tw": "天堂裝束",
@@ -1038,6 +1132,7 @@
     "ids": [
       94
     ],
+    "code": "buc",
     "en": "Pelta Lunata",
     "zh": "新月小盾",
     "zh_tw": "新月小盾",
@@ -1049,6 +1144,7 @@
     "ids": [
       95
     ],
+    "code": "sml",
     "en": "Umbral Disk",
     "zh": "太阳黑轮",
     "zh_tw": "陰影圓盤",
@@ -1060,6 +1156,7 @@
     "ids": [
       96
     ],
+    "code": "lrg",
     "en": "Stormguild",
     "zh": "风暴行会",
     "zh_tw": "風暴同盟",
@@ -1071,6 +1168,7 @@
     "ids": [
       97
     ],
+    "code": "bsh",
     "en": "Wall of the Eyeless",
     "zh": "无眼之墙",
     "zh_tw": "無眼者之牆",
@@ -1082,6 +1180,7 @@
     "ids": [
       98
     ],
+    "code": "spk",
     "en": "Swordback Hold",
     "zh": "剑背之架",
     "zh_tw": "劍棘之盾",
@@ -1093,6 +1192,7 @@
     "ids": [
       99
     ],
+    "code": "kit",
     "en": "Steelclash",
     "zh": "响钢",
     "zh_tw": "鋼鐵衝擊",
@@ -1104,6 +1204,7 @@
     "ids": [
       100
     ],
+    "code": "tow",
     "en": "Bverrit Keep",
     "zh": "贝弗提的壁垒",
     "zh_tw": "布雷維特要塞",
@@ -1115,6 +1216,7 @@
     "ids": [
       101
     ],
+    "code": "gts",
     "en": "The Ward",
     "zh": "御敌",
     "zh_tw": "庇護結界",
@@ -1126,6 +1228,7 @@
     "ids": [
       102
     ],
+    "code": "lgl",
     "en": "The Hand of Broc",
     "zh": "布洛克之手",
     "zh_tw": "柏克之手",
@@ -1137,6 +1240,7 @@
     "ids": [
       103
     ],
+    "code": "vgl",
     "en": "Bloodfist",
     "zh": "战损拳套",
     "zh_tw": "血拳",
@@ -1148,6 +1252,7 @@
     "ids": [
       104
     ],
+    "code": "mgl",
     "en": "Chance Guards",
     "zh": "吉运守护",
     "zh_tw": "運氣守護",
@@ -1159,6 +1264,7 @@
     "ids": [
       105
     ],
+    "code": "tgl",
     "en": "Magefist",
     "zh": "法师之拳",
     "zh_tw": "法師之拳",
@@ -1170,6 +1276,7 @@
     "ids": [
       106
     ],
+    "code": "hgl",
     "en": "Frostburn",
     "zh": "霜灼",
     "zh_tw": "霜燃",
@@ -1181,6 +1288,7 @@
     "ids": [
       107
     ],
+    "code": "lbt",
     "en": "Hotspur",
     "zh": "热刺靴",
     "zh_tw": "熱靴刺",
@@ -1192,6 +1300,7 @@
     "ids": [
       108
     ],
+    "code": "vbt",
     "en": "Gorefoot",
     "zh": "鏖战裹脚",
     "zh_tw": "血腳",
@@ -1203,6 +1312,7 @@
     "ids": [
       109
     ],
+    "code": "mbt",
     "en": "Treads of Cthon",
     "zh": "克索恩的征途",
     "zh_tw": "凱松的足靴",
@@ -1214,6 +1324,7 @@
     "ids": [
       110
     ],
+    "code": "tbt",
     "en": "Goblin Toe",
     "zh": "哥布林之趾",
     "zh_tw": "哥布林腳趾",
@@ -1225,6 +1336,7 @@
     "ids": [
       111
     ],
+    "code": "hbt",
     "en": "Tearhaunch",
     "zh": "刺股靴",
     "zh_tw": "裂臀",
@@ -1236,6 +1348,7 @@
     "ids": [
       112
     ],
+    "code": "lbl",
     "en": "Lenymo",
     "zh": "雷尼摩",
     "zh_tw": "雷尼摩",
@@ -1247,6 +1360,7 @@
     "ids": [
       113
     ],
+    "code": "vbl",
     "en": "Snakecord",
     "zh": "蛇皮索",
     "zh_tw": "蛇索",
@@ -1258,6 +1372,7 @@
     "ids": [
       114
     ],
+    "code": "mbl",
     "en": "Nightsmoke",
     "zh": "夜烟",
     "zh_tw": "夜煙",
@@ -1269,6 +1384,7 @@
     "ids": [
       115
     ],
+    "code": "tbl",
     "en": "Goldwrap",
     "zh": "金织带",
     "zh_tw": "黃金裹腰",
@@ -1280,6 +1396,7 @@
     "ids": [
       116
     ],
+    "code": "hbl",
     "en": "Bladebuckle",
     "zh": "刀刃腰扣",
     "zh_tw": "刀鋒扣帶",
@@ -1291,6 +1408,7 @@
     "ids": [
       117
     ],
+    "code": "amu",
     "en": "Nokozan Relic",
     "zh": "诺克兰的遗物",
     "zh_tw": "諾科藍遺物",
@@ -1302,6 +1420,7 @@
     "ids": [
       118
     ],
+    "code": "amu",
     "en": "The Eye of Etlich",
     "zh": "艾利奇之眼",
     "zh_tw": "艾利曲之眼",
@@ -1313,6 +1432,7 @@
     "ids": [
       119
     ],
+    "code": "amu",
     "en": "The Mahim-Oak Curio",
     "zh": "马哈姆橡木珍品",
     "zh_tw": "瑪哈姆橡木古董",
@@ -1324,6 +1444,7 @@
     "ids": [
       120
     ],
+    "code": "rin",
     "en": "Nagelring",
     "zh": "纳格尔之戒",
     "zh_tw": "拿各的戒指",
@@ -1335,6 +1456,7 @@
     "ids": [
       121
     ],
+    "code": "rin",
     "en": "Manald Heal",
     "zh": "马纳德的治疗",
     "zh_tw": "瑪那德的治療",
@@ -1346,6 +1468,7 @@
     "ids": [
       122
     ],
+    "code": "rin",
     "en": "The Stone of Jordan",
     "zh": "乔丹之石",
     "zh_tw": "喬丹之石",
@@ -1357,6 +1480,7 @@
     "ids": [
       123
     ],
+    "code": "vip",
     "en": "Amulet of the Viper",
     "zh": "蝮蛇护符",
     "zh_tw": "蝮蛇護符",
@@ -1368,6 +1492,7 @@
     "ids": [
       124
     ],
+    "code": "msf",
     "en": "Staff of Kings",
     "zh": "列王之杖",
     "zh_tw": "國王之杖",
@@ -1379,6 +1504,7 @@
     "ids": [
       125
     ],
+    "code": "hst",
     "en": "Horadric Staff",
     "zh": "赫拉迪姆法杖",
     "zh_tw": "赫拉迪姆之杖",
@@ -1390,6 +1516,7 @@
     "ids": [
       126
     ],
+    "code": "hfh",
     "en": "Hell Forge Hammer",
     "zh": "地狱熔炉之锤",
     "zh_tw": "地獄熔爐之鎚",
@@ -1401,6 +1528,7 @@
     "ids": [
       127
     ],
+    "code": "qf1",
     "en": "Khalim's Flail",
     "zh": "卡林姆的连枷",
     "zh_tw": "克林姆的連枷",
@@ -1412,6 +1540,7 @@
     "ids": [
       128
     ],
+    "code": "qf2",
     "en": "Khalim's Will",
     "zh": "卡林姆的意志",
     "zh_tw": "克林姆的遺願",
@@ -1423,6 +1552,7 @@
     "ids": [
       129
     ],
+    "code": "9ha",
     "en": "Coldkill",
     "zh": "冰殛",
     "zh_tw": "冷殺",
@@ -1434,6 +1564,7 @@
     "ids": [
       130
     ],
+    "code": "9ax",
     "en": "Butcher's Pupil",
     "zh": "屠夫之瞳",
     "zh_tw": "屠夫的徒弟",
@@ -1445,6 +1576,7 @@
     "ids": [
       131
     ],
+    "code": "92a",
     "en": "Islestrike",
     "zh": "海岛之击",
     "zh_tw": "島擊",
@@ -1456,6 +1588,7 @@
     "ids": [
       132
     ],
+    "code": "9mp",
     "en": "Pompeii's Wrath",
     "zh": "庞贝之怒",
     "zh_tw": "龐貝之怒",
@@ -1467,6 +1600,7 @@
     "ids": [
       133
     ],
+    "code": "9wa",
     "en": "Guardian Naga",
     "zh": "蛇神守护者",
     "zh_tw": "那伽守護者",
@@ -1478,6 +1612,7 @@
     "ids": [
       134
     ],
+    "code": "9la",
     "en": "Warlord's Trust",
     "zh": "战争领主的信赖",
     "zh_tw": "戰爵之證",
@@ -1489,6 +1624,7 @@
     "ids": [
       135
     ],
+    "code": "9ba",
     "en": "Spellsteel",
     "zh": "魔咒之钢",
     "zh_tw": "鋼鐵魔咒",
@@ -1500,6 +1636,7 @@
     "ids": [
       136
     ],
+    "code": "9bt",
     "en": "Stormrider",
     "zh": "御雷者",
     "zh_tw": "暴風騎士",
@@ -1511,6 +1648,7 @@
     "ids": [
       137
     ],
+    "code": "9ga",
     "en": "Boneslayer Blade",
     "zh": "碎骨者之刃",
     "zh_tw": "斬骨者之斧",
@@ -1522,6 +1660,7 @@
     "ids": [
       138
     ],
+    "code": "9gi",
     "en": "The Minotaur",
     "zh": "牛魔斧",
     "zh_tw": "牛頭怪",
@@ -1533,6 +1672,7 @@
     "ids": [
       139
     ],
+    "code": "9wn",
     "en": "Suicide Branch",
     "zh": "自戕树杈",
     "zh_tw": "自殘枝椏",
@@ -1544,6 +1684,7 @@
     "ids": [
       140
     ],
+    "code": "9yw",
     "en": "Carin Shard",
     "zh": "石冢碎片",
     "zh_tw": "凱林碎片",
@@ -1555,6 +1696,7 @@
     "ids": [
       141
     ],
+    "code": "9bw",
     "en": "Arm of King Leoric",
     "zh": "李奥瑞克的臂骨",
     "zh_tw": "李奧瑞克王的手骨",
@@ -1566,6 +1708,7 @@
     "ids": [
       142
     ],
+    "code": "9gw",
     "en": "Blackhand Key",
     "zh": "黑手钥匙",
     "zh_tw": "黑手之鑰",
@@ -1577,6 +1720,7 @@
     "ids": [
       143
     ],
+    "code": "9cl",
     "en": "Dark Clan Crusher",
     "zh": "暗族粉碎者",
     "zh_tw": "闇族碎滅者",
@@ -1588,6 +1732,7 @@
     "ids": [
       144
     ],
+    "code": "9sc",
     "en": "Zakarum's Hand",
     "zh": "萨卡兰姆之手",
     "zh_tw": "撒卡蘭姆之手",
@@ -1599,6 +1744,7 @@
     "ids": [
       145
     ],
+    "code": "9qs",
     "en": "The Fetid Sprinkler",
     "zh": "恶臭喷杖",
     "zh_tw": "惡臭散佈者",
@@ -1610,6 +1756,7 @@
     "ids": [
       146
     ],
+    "code": "9ws",
     "en": "Hand of Blessed Light",
     "zh": "圣光之手",
     "zh_tw": "聖光之手",
@@ -1621,6 +1768,7 @@
     "ids": [
       147
     ],
+    "code": "9sp",
     "en": "Fleshrender",
     "zh": "外壳撕裂者",
     "zh_tw": "血肉撕裂者",
@@ -1632,6 +1780,7 @@
     "ids": [
       148
     ],
+    "code": "9ma",
     "en": "Sureshrill Frost",
     "zh": "神河之霜",
     "zh_tw": "尖嘯冰霜",
@@ -1643,6 +1792,7 @@
     "ids": [
       149
     ],
+    "code": "9mt",
     "en": "Moonfall",
     "zh": "月陨",
     "zh_tw": "月落",
@@ -1654,6 +1804,7 @@
     "ids": [
       150
     ],
+    "code": "9fl",
     "en": "Baezil's Vortex",
     "zh": "贝希尔的漩涡",
     "zh_tw": "貝西爾的漩渦",
@@ -1665,6 +1816,7 @@
     "ids": [
       151
     ],
+    "code": "9wh",
     "en": "Earthshaker",
     "zh": "震地者",
     "zh_tw": "震地者",
@@ -1676,6 +1828,7 @@
     "ids": [
       152
     ],
+    "code": "9m9",
     "en": "Bloodtree Stump",
     "zh": "赤色木桩",
     "zh_tw": "血樹殘株",
@@ -1687,6 +1840,7 @@
     "ids": [
       153
     ],
+    "code": "9gm",
     "en": "The Gavel of Pain",
     "zh": "苦痛木槌",
     "zh_tw": "痛苦之槌",
@@ -1698,6 +1852,7 @@
     "ids": [
       154
     ],
+    "code": "9ss",
     "en": "Bloodletter",
     "zh": "击破者",
     "zh_tw": "放血者",
@@ -1709,6 +1864,7 @@
     "ids": [
       155
     ],
+    "code": "9sm",
     "en": "Coldsteel Eye",
     "zh": "冷钢之眼",
     "zh_tw": "冰鋼之眼",
@@ -1720,6 +1876,7 @@
     "ids": [
       156
     ],
+    "code": "9sb",
     "en": "Hexfire",
     "zh": "妖术之火",
     "zh_tw": "妖火",
@@ -1731,6 +1888,7 @@
     "ids": [
       157
     ],
+    "code": "9fc",
     "en": "Blade of Ali Baba",
     "zh": "阿里巴巴之刃",
     "zh_tw": "阿里巴巴之刃",
@@ -1742,6 +1900,7 @@
     "ids": [
       158
     ],
+    "code": "9cr",
     "en": "Ginther's Rift",
     "zh": "金瑟的破空之痕",
     "zh_tw": "金瑟的裂隙",
@@ -1753,6 +1912,7 @@
     "ids": [
       159
     ],
+    "code": "9bs",
     "en": "Headstriker",
     "zh": "斩首者",
     "zh_tw": "擊頭者",
@@ -1764,6 +1924,7 @@
     "ids": [
       160
     ],
+    "code": "9ls",
     "en": "Plague Bearer",
     "zh": "瘟疫散播者",
     "zh_tw": "疫病帶原者",
@@ -1775,6 +1936,7 @@
     "ids": [
       161
     ],
+    "code": "9wd",
     "en": "The Atlantean",
     "zh": "亚特兰蒂斯剑",
     "zh_tw": "亞特蘭提恩",
@@ -1786,6 +1948,7 @@
     "ids": [
       162
     ],
+    "code": "92h",
     "en": "Crainte Vomir",
     "zh": "恐惧喷吐",
     "zh_tw": "恐懼之嘔",
@@ -1797,6 +1960,7 @@
     "ids": [
       163
     ],
+    "code": "9cm",
     "en": "Bing Sz Wang",
     "zh": "冰之王",
     "zh_tw": "冰之王",
@@ -1808,6 +1972,7 @@
     "ids": [
       164
     ],
+    "code": "9gs",
     "en": "The Vile Husk",
     "zh": "邪祟之牙",
     "zh_tw": "兇邪軀殼",
@@ -1819,6 +1984,7 @@
     "ids": [
       165
     ],
+    "code": "9b9",
     "en": "Cloudcrack",
     "zh": "裂云剑",
     "zh_tw": "雲裂",
@@ -1830,6 +1996,7 @@
     "ids": [
       166
     ],
+    "code": "9fb",
     "en": "Todesfaelle Flamme",
     "zh": "索命之焰",
     "zh_tw": "死落之火",
@@ -1841,6 +2008,7 @@
     "ids": [
       167
     ],
+    "code": "9gd",
     "en": "Swordguard",
     "zh": "卫剑",
     "zh_tw": "劍衛",
@@ -1852,6 +2020,7 @@
     "ids": [
       168
     ],
+    "code": "9dg",
     "en": "Spineripper",
     "zh": "裂柱者 ",
     "zh_tw": "裂脊者",
@@ -1863,6 +2032,7 @@
     "ids": [
       169
     ],
+    "code": "9di",
     "en": "Heart Carver",
     "zh": "剜心者",
     "zh_tw": "刨心者",
@@ -1874,6 +2044,7 @@
     "ids": [
       170
     ],
+    "code": "9kr",
     "en": "Blackbog's Sharp",
     "zh": "黑沼之锋",
     "zh_tw": "黑沼之鋒",
@@ -1885,6 +2056,7 @@
     "ids": [
       171
     ],
+    "code": "9bl",
     "en": "Stormspike",
     "zh": "风暴匕刺",
     "zh_tw": "暴風尖刺",
@@ -1896,6 +2068,7 @@
     "ids": [
       172
     ],
+    "code": "9sr",
     "en": "The Impaler",
     "zh": "洞穿者",
     "zh_tw": "刺穿者",
@@ -1907,6 +2080,7 @@
     "ids": [
       173
     ],
+    "code": "9tr",
     "en": "Kelpie Snare",
     "zh": "水妖捕叉",
     "zh_tw": "水魔陷阱",
@@ -1918,6 +2092,7 @@
     "ids": [
       174
     ],
+    "code": "9br",
     "en": "Soulfeast Tine",
     "zh": "噬魂叉",
     "zh_tw": "噬魂叉",
@@ -1929,6 +2104,7 @@
     "ids": [
       175
     ],
+    "code": "9st",
     "en": "Hone Sundan",
     "zh": "骨寸断",
     "zh_tw": "骨寸斷",
@@ -1940,6 +2116,7 @@
     "ids": [
       176
     ],
+    "code": "9p9",
     "en": "Spire of Honor",
     "zh": "荣耀之巅",
     "zh_tw": "榮耀尖塔",
@@ -1951,6 +2128,7 @@
     "ids": [
       177
     ],
+    "code": "9b7",
     "en": "The Meat Scraper",
     "zh": "刮肉长戟",
     "zh_tw": "刮肉者",
@@ -1962,6 +2140,7 @@
     "ids": [
       178
     ],
+    "code": "9vo",
     "en": "Blackleach Blade",
     "zh": "暗蚀之刃",
     "zh_tw": "黑蛭長刀",
@@ -1973,6 +2152,7 @@
     "ids": [
       179
     ],
+    "code": "9s8",
     "en": "Athena's Wrath",
     "zh": "雅典娜之怒",
     "zh_tw": "雅典娜之怒",
@@ -1984,6 +2164,7 @@
     "ids": [
       180
     ],
+    "code": "9pa",
     "en": "Pierre Tombale Couant",
     "zh": "墓石长戟",
     "zh_tw": "墓石長戟",
@@ -1995,6 +2176,7 @@
     "ids": [
       181
     ],
+    "code": "9h9",
     "en": "Husoldal Evo",
     "zh": "皮肉吞噬者",
     "zh_tw": "血肉吞食者",
@@ -2006,6 +2188,7 @@
     "ids": [
       182
     ],
+    "code": "9wc",
     "en": "Grim's Burning Dead",
     "zh": "格里姆的烈焰亡灵",
     "zh_tw": "懼焰亡靈",
@@ -2017,6 +2200,7 @@
     "ids": [
       183
     ],
+    "code": "8ss",
     "en": "Razorswitch",
     "zh": "剃刀飞旋",
     "zh_tw": "剃刀杖",
@@ -2028,6 +2212,7 @@
     "ids": [
       184
     ],
+    "code": "8ls",
     "en": "Ribcracker",
     "zh": "肋骨粉碎者",
     "zh_tw": "肋骨粉碎者",
@@ -2039,6 +2224,7 @@
     "ids": [
       185
     ],
+    "code": "8cs",
     "en": "Chromatic Ire",
     "zh": "多彩之怒",
     "zh_tw": "炫彩之怒",
@@ -2050,6 +2236,7 @@
     "ids": [
       186
     ],
+    "code": "8bs",
     "en": "Warpspear",
     "zh": "扭曲之矛",
     "zh_tw": "扭曲之矛",
@@ -2061,6 +2248,7 @@
     "ids": [
       187
     ],
+    "code": "8ws",
     "en": "Skull Collector",
     "zh": "骷髅收集者",
     "zh_tw": "骷髏收集者",
@@ -2072,6 +2260,7 @@
     "ids": [
       188
     ],
+    "code": "8sb",
     "en": "Skystrike",
     "zh": "天击",
     "zh_tw": "天擊",
@@ -2083,6 +2272,7 @@
     "ids": [
       189
     ],
+    "code": "8hb",
     "en": "Riphook",
     "zh": "撕裂之钩",
     "zh_tw": "撕裂之鉤",
@@ -2094,6 +2284,7 @@
     "ids": [
       190
     ],
+    "code": "8lb",
     "en": "Kuko Shakaku",
     "zh": "赤焰之击",
     "zh_tw": "社角久子",
@@ -2105,6 +2296,7 @@
     "ids": [
       191
     ],
+    "code": "8cb",
     "en": "Endlesshail",
     "zh": "无尽冰雹",
     "zh_tw": "無盡冰雹",
@@ -2116,6 +2308,7 @@
     "ids": [
       192
     ],
+    "code": "8s8",
     "en": "Witchwild String",
     "zh": "狂法劲弦",
     "zh_tw": "狂巫之弦",
@@ -2127,6 +2320,7 @@
     "ids": [
       193
     ],
+    "code": "8l8",
     "en": "Cliffkiller",
     "zh": "峭壁杀手",
     "zh_tw": "懸崖殺手",
@@ -2138,6 +2332,7 @@
     "ids": [
       194
     ],
+    "code": "8sw",
     "en": "Magewrath",
     "zh": "法师之怒",
     "zh_tw": "巫師之怒",
@@ -2149,6 +2344,7 @@
     "ids": [
       195
     ],
+    "code": "8lw",
     "en": "Goldstrike Arch",
     "zh": "金击之弧",
     "zh_tw": "金擊之拱",
@@ -2160,6 +2356,7 @@
     "ids": [
       196
     ],
+    "code": "8lx",
     "en": "Langer Briser",
     "zh": "千步碎击",
     "zh_tw": "蘭古布利薩",
@@ -2171,6 +2368,7 @@
     "ids": [
       197
     ],
+    "code": "8mx",
     "en": "Pus Spitter",
     "zh": "吐脓毒弩",
     "zh_tw": "吐膿毒弩",
@@ -2182,6 +2380,7 @@
     "ids": [
       198
     ],
+    "code": "8hx",
     "en": "Buriza-Do Kyanon",
     "zh": "暴雪重炮",
     "zh_tw": "暴雪砲弩",
@@ -2193,6 +2392,7 @@
     "ids": [
       199
     ],
+    "code": "8rx",
     "en": "Demon Machine",
     "zh": "恶魔机弩",
     "zh_tw": "惡魔機弩",
@@ -2204,6 +2404,7 @@
     "ids": [
       201
     ],
+    "code": "xap",
     "en": "Peasant Crown",
     "zh": "农夫兜帽",
     "zh_tw": "農夫王冠",
@@ -2215,6 +2416,7 @@
     "ids": [
       202
     ],
+    "code": "xkp",
     "en": "Rockstopper",
     "zh": "磐石头盔",
     "zh_tw": "石禦",
@@ -2226,6 +2428,7 @@
     "ids": [
       203
     ],
+    "code": "xlm",
     "en": "Stealskull",
     "zh": "偷取颅盔",
     "zh_tw": "盜竊顱盔",
@@ -2237,6 +2440,7 @@
     "ids": [
       204
     ],
+    "code": "xhl",
     "en": "Darksight Helm",
     "zh": "暗视头盔",
     "zh_tw": "暗視之盔",
@@ -2248,6 +2452,7 @@
     "ids": [
       205
     ],
+    "code": "xhm",
     "en": "Valkyrie Wing",
     "zh": "女武神之翼",
     "zh_tw": "女武神之翼",
@@ -2259,6 +2464,7 @@
     "ids": [
       206
     ],
+    "code": "xrn",
     "en": "Crown of Thieves",
     "zh": "盗贼皇冠",
     "zh_tw": "盜賊皇冠",
@@ -2270,6 +2476,7 @@
     "ids": [
       207
     ],
+    "code": "xsk",
     "en": "Blackhorn's Face",
     "zh": "黑牛角面甲",
     "zh_tw": "黑荊角面具",
@@ -2281,6 +2488,7 @@
     "ids": [
       208
     ],
+    "code": "xh9",
     "en": "Vampire Gaze",
     "zh": "吸能鬼的凝视",
     "zh_tw": "吸血鬼的凝視",
@@ -2292,6 +2500,7 @@
     "ids": [
       209
     ],
+    "code": "xui",
     "en": "The Spirit Shroud",
     "zh": "覆灵裹身布",
     "zh_tw": "靈魂帷幕",
@@ -2303,6 +2512,7 @@
     "ids": [
       210
     ],
+    "code": "xea",
     "en": "Skin of the Vipermagi",
     "zh": "蝮蛇法妖之皮",
     "zh_tw": "蛇魔法師之皮",
@@ -2314,6 +2524,7 @@
     "ids": [
       211
     ],
+    "code": "xla",
     "en": "Skin of the Flayed One",
     "zh": "剥离者之皮",
     "zh_tw": "剝皮者之皮",
@@ -2325,6 +2536,7 @@
     "ids": [
       212
     ],
+    "code": "xtu",
     "en": "Iron Pelt",
     "zh": "铁皮",
     "zh_tw": "鋼鐵獸皮",
@@ -2336,6 +2548,7 @@
     "ids": [
       213
     ],
+    "code": "xng",
     "en": "Spirit Forge",
     "zh": "灵魂熔炉",
     "zh_tw": "靈魂熔爐",
@@ -2347,6 +2560,7 @@
     "ids": [
       214
     ],
+    "code": "xcl",
     "en": "Crow Caw",
     "zh": "鸦鸣",
     "zh_tw": "鴉啼",
@@ -2358,6 +2572,7 @@
     "ids": [
       215
     ],
+    "code": "xhn",
     "en": "Shaftstop",
     "zh": "摧锋甲",
     "zh_tw": "箭止",
@@ -2369,6 +2584,7 @@
     "ids": [
       216
     ],
+    "code": "xrs",
     "en": "Duriel's Shell",
     "zh": "督瑞尔之壳",
     "zh_tw": "都瑞爾之殼",
@@ -2380,6 +2596,7 @@
     "ids": [
       217
     ],
+    "code": "xpl",
     "en": "Skullder's Ire",
     "zh": "诗寇蒂的愤怒",
     "zh_tw": "斯寇德的憤怒",
@@ -2391,6 +2608,7 @@
     "ids": [
       218
     ],
+    "code": "xlt",
     "en": "Guardian Angel",
     "zh": "守护天使",
     "zh_tw": "守護天使",
@@ -2402,6 +2620,7 @@
     "ids": [
       219
     ],
+    "code": "xld",
     "en": "Toothrow",
     "zh": "排齿",
     "zh_tw": "排齒",
@@ -2413,6 +2632,7 @@
     "ids": [
       220
     ],
+    "code": "xth",
     "en": "Atma's Wail",
     "zh": "阿特玛的哭喊",
     "zh_tw": "亞特瑪的哭喊",
@@ -2424,6 +2644,7 @@
     "ids": [
       221
     ],
+    "code": "xul",
     "en": "Black Hades",
     "zh": "黑色冥王",
     "zh_tw": "黑色黑帝斯",
@@ -2435,6 +2656,7 @@
     "ids": [
       222
     ],
+    "code": "xar",
     "en": "Corpsemourn",
     "zh": "遗体哀悼",
     "zh_tw": "屍慟",
@@ -2446,6 +2668,7 @@
     "ids": [
       223
     ],
+    "code": "xtp",
     "en": "Que-Hegan's Wisdom",
     "zh": "魁黑刚的智慧",
     "zh_tw": "教宗的智慧",
@@ -2457,6 +2680,7 @@
     "ids": [
       224
     ],
+    "code": "xuc",
     "en": "Visceratuant",
     "zh": "刨肠",
     "zh_tw": "維斯爾坦特",
@@ -2468,6 +2692,7 @@
     "ids": [
       225
     ],
+    "code": "xml",
     "en": "Moser's Blessed Circle",
     "zh": "摩西尔的神圣圆环",
     "zh_tw": "摩瑟的祝福之圓",
@@ -2479,6 +2704,7 @@
     "ids": [
       226
     ],
+    "code": "xrg",
     "en": "Stormchaser",
     "zh": "风暴追逐者",
     "zh_tw": "風暴追逐者",
@@ -2490,6 +2716,7 @@
     "ids": [
       227
     ],
+    "code": "xit",
     "en": "Tiamat's Rebuke",
     "zh": "魔龙的斥责",
     "zh_tw": "魔龍的非難",
@@ -2501,6 +2728,7 @@
     "ids": [
       228
     ],
+    "code": "xow",
     "en": "Gerke's Sanctuary",
     "zh": "基尔克的避难地",
     "zh_tw": "基爾克的聖堂",
@@ -2512,6 +2740,7 @@
     "ids": [
       229
     ],
+    "code": "xts",
     "en": "Radament's Sphere",
     "zh": "罗达门特的领地",
     "zh_tw": "羅達門特的領域",
@@ -2523,6 +2752,7 @@
     "ids": [
       230
     ],
+    "code": "xsh",
     "en": "Lidless Wall",
     "zh": "警戒之墙",
     "zh_tw": "警戒之牆",
@@ -2534,6 +2764,7 @@
     "ids": [
       231
     ],
+    "code": "xpk",
     "en": "Lance Guard",
     "zh": "长枪卫士",
     "zh_tw": "長槍守衛",
@@ -2545,6 +2776,7 @@
     "ids": [
       232
     ],
+    "code": "xlg",
     "en": "Venom Grip",
     "zh": "剧毒之握",
     "zh_tw": "劇毒之握",
@@ -2556,6 +2788,7 @@
     "ids": [
       233
     ],
+    "code": "xvg",
     "en": "Gravepalm",
     "zh": "盗墓手套",
     "zh_tw": "墓穴手掌",
@@ -2567,6 +2800,7 @@
     "ids": [
       234
     ],
+    "code": "xmg",
     "en": "Ghoulhide",
     "zh": "食腐鬼皮",
     "zh_tw": "食屍鬼之皮",
@@ -2578,6 +2812,7 @@
     "ids": [
       235
     ],
+    "code": "xtg",
     "en": "Lava Gout",
     "zh": "熔岩痛击",
     "zh_tw": "熔岩之痛",
@@ -2589,6 +2824,7 @@
     "ids": [
       236
     ],
+    "code": "xhg",
     "en": "Hellmouth",
     "zh": "地狱之口",
     "zh_tw": "地獄之口",
@@ -2600,6 +2836,7 @@
     "ids": [
       237
     ],
+    "code": "xlb",
     "en": "Infernostride",
     "zh": "地狱阔步",
     "zh_tw": "地獄闊步",
@@ -2611,6 +2848,7 @@
     "ids": [
       238
     ],
+    "code": "xvb",
     "en": "Waterwalk",
     "zh": "水上飘",
     "zh_tw": "水上飄",
@@ -2622,6 +2860,7 @@
     "ids": [
       239
     ],
+    "code": "xmb",
     "en": "Silkweave",
     "zh": "丝织靴",
     "zh_tw": "紗織",
@@ -2633,6 +2872,7 @@
     "ids": [
       240
     ],
+    "code": "xtb",
     "en": "War Traveler",
     "zh": "战争旅者",
     "zh_tw": "戰爭旅者",
@@ -2644,6 +2884,7 @@
     "ids": [
       241
     ],
+    "code": "xhb",
     "en": "Gore Rider",
     "zh": "绯红骑士",
     "zh_tw": "蝕肉騎士",
@@ -2655,6 +2896,7 @@
     "ids": [
       242
     ],
+    "code": "zlb",
     "en": "String of Ears",
     "zh": "缠腰耳串",
     "zh_tw": "長串之耳",
@@ -2666,6 +2908,7 @@
     "ids": [
       243
     ],
+    "code": "zvb",
     "en": "Razortail",
     "zh": "剃刀之尾",
     "zh_tw": "剃刀之尾",
@@ -2677,6 +2920,7 @@
     "ids": [
       244
     ],
+    "code": "zmb",
     "en": "Gloom's Trap",
     "zh": "阴影陷阱",
     "zh_tw": "陰影陷阱",
@@ -2688,6 +2932,7 @@
     "ids": [
       245
     ],
+    "code": "ztb",
     "en": "Snowclash",
     "zh": "冰雪之击",
     "zh_tw": "冰雪交織",
@@ -2699,6 +2944,7 @@
     "ids": [
       246
     ],
+    "code": "zhb",
     "en": "Thundergod's Vigor",
     "zh": "雷神之力",
     "zh_tw": "雷神之力",
@@ -2710,6 +2956,7 @@
     "ids": [
       248
     ],
+    "code": "uap",
     "en": "Harlequin Crest",
     "zh": "谐角之冠",
     "zh_tw": "諧角之冠",
@@ -2721,6 +2968,7 @@
     "ids": [
       249
     ],
+    "code": "uhm",
     "en": "Veil of Steel",
     "zh": "钢铁面纱",
     "zh_tw": "鋼鐵面紗",
@@ -2732,6 +2980,7 @@
     "ids": [
       250
     ],
+    "code": "utu",
     "en": "The Gladiator's Bane",
     "zh": "角斗士的祸根",
     "zh_tw": "鬥士之禍",
@@ -2743,6 +2992,7 @@
     "ids": [
       251
     ],
+    "code": "upl",
     "en": "Arkaine's Valor",
     "zh": "阿凯尼的荣耀",
     "zh_tw": "阿凱尼的榮耀",
@@ -2754,6 +3004,7 @@
     "ids": [
       252
     ],
+    "code": "uml",
     "en": "Blackoak Shield",
     "zh": "黑橡树盾",
     "zh_tw": "黑橡樹盾",
@@ -2765,6 +3016,7 @@
     "ids": [
       253
     ],
+    "code": "uit",
     "en": "Stormshield",
     "zh": "暴风之盾",
     "zh_tw": "暴風之盾",
@@ -2776,6 +3028,7 @@
     "ids": [
       254
     ],
+    "code": "7bt",
     "en": "Hellslayer",
     "zh": "地狱重煞者",
     "zh_tw": "地獄殺戮者",
@@ -2787,6 +3040,7 @@
     "ids": [
       255
     ],
+    "code": "7ga",
     "en": "Messerschmidt's Reaver",
     "zh": "梅塞施密特的劫掠者",
     "zh_tw": "梅希斯密特之劫掠者",
@@ -2798,6 +3052,7 @@
     "ids": [
       256
     ],
+    "code": "7mt",
     "en": "Baranar's Star",
     "zh": "巴拉纳之星",
     "zh_tw": "巴拉那之星",
@@ -2809,6 +3064,7 @@
     "ids": [
       257
     ],
+    "code": "7wh",
     "en": "Schaefer's Hammer",
     "zh": "舍费尔之锤",
     "zh_tw": "史恰佛之鎚",
@@ -2820,6 +3076,7 @@
     "ids": [
       258
     ],
+    "code": "7gm",
     "en": "The Cranium Basher",
     "zh": "碎颅",
     "zh_tw": "碎腦鎚",
@@ -2831,6 +3088,7 @@
     "ids": [
       259
     ],
+    "code": "7cr",
     "en": "Lightsabre",
     "zh": "光之军刀",
     "zh_tw": "光之軍刀",
@@ -2842,6 +3100,7 @@
     "ids": [
       260
     ],
+    "code": "7b7",
     "en": "Doombringer",
     "zh": "末日使者",
     "zh_tw": "末日使者",
@@ -2853,6 +3112,7 @@
     "ids": [
       261
     ],
+    "code": "7gd",
     "en": "The Grandfather",
     "zh": "祖父",
     "zh_tw": "高祖",
@@ -2864,6 +3124,7 @@
     "ids": [
       262
     ],
+    "code": "7dg",
     "en": "Wizardspike",
     "zh": "巫师之刺",
     "zh_tw": "巫師之刺",
@@ -2875,6 +3136,7 @@
     "ids": [
       263
     ],
+    "code": "rin",
     "en": "Constricting Ring",
     "zh": "紧缩之戒",
     "zh_tw": "束縛之戒",
@@ -2886,6 +3148,7 @@
     "ids": [
       264
     ],
+    "code": "7wc",
     "en": "Stormspire",
     "zh": "风暴穹窿",
     "zh_tw": "暴風尖塔",
@@ -2897,6 +3160,7 @@
     "ids": [
       265
     ],
+    "code": "6l7",
     "en": "Eaglehorn",
     "zh": "鹰之号角",
     "zh_tw": "鷹角弓",
@@ -2908,6 +3172,7 @@
     "ids": [
       266
     ],
+    "code": "6lw",
     "en": "Windforce",
     "zh": "风之力",
     "zh_tw": "風之力",
@@ -2919,6 +3184,7 @@
     "ids": [
       268
     ],
+    "code": "rin",
     "en": "Bul-Kathos' Wedding Band",
     "zh": "布尔凯索的婚戒",
     "zh_tw": "布爾凱索的婚戒",
@@ -2930,6 +3196,7 @@
     "ids": [
       269
     ],
+    "code": "amu",
     "en": "The Cat's Eye",
     "zh": "猫眼",
     "zh_tw": "貓眼",
@@ -2941,6 +3208,7 @@
     "ids": [
       270
     ],
+    "code": "amu",
     "en": "The Rising Sun",
     "zh": "旭日",
     "zh_tw": "旭日東升",
@@ -2952,6 +3220,7 @@
     "ids": [
       271
     ],
+    "code": "amu",
     "en": "Crescent Moon",
     "zh": "新月",
     "zh_tw": "新月",
@@ -2963,6 +3232,7 @@
     "ids": [
       272
     ],
+    "code": "amu",
     "en": "Mara's Kaleidoscope",
     "zh": "玛拉的万花筒",
     "zh_tw": "馬拉的萬花筒",
@@ -2974,6 +3244,7 @@
     "ids": [
       273
     ],
+    "code": "amu",
     "en": "Atma's Scarab",
     "zh": "阿特玛的圣甲虫",
     "zh_tw": "亞特瑪的聖甲蟲",
@@ -2985,6 +3256,7 @@
     "ids": [
       274
     ],
+    "code": "rin",
     "en": "Dwarf Star",
     "zh": "矮人之星",
     "zh_tw": "矮人之星",
@@ -2996,6 +3268,7 @@
     "ids": [
       275
     ],
+    "code": "rin",
     "en": "Raven Frost",
     "zh": "乌鸦之霜",
     "zh_tw": "烏鴉之霜",
@@ -3007,6 +3280,7 @@
     "ids": [
       276
     ],
+    "code": "amu",
     "en": "Highlord's Wrath",
     "zh": "大君之怒",
     "zh_tw": "大君之怒",
@@ -3018,6 +3292,7 @@
     "ids": [
       277
     ],
+    "code": "amu",
     "en": "Saracen's Chance",
     "zh": "撒拉森的胜机",
     "zh_tw": "薩拉森的機會",
@@ -3029,6 +3304,7 @@
     "ids": [
       279
     ],
+    "code": "baa",
     "en": "Arreat's Face",
     "zh": "亚瑞特之貌",
     "zh_tw": "亞瑞特的面容",
@@ -3040,6 +3316,7 @@
     "ids": [
       280
     ],
+    "code": "nea",
     "en": "Homunculus",
     "zh": "魔胎",
     "zh_tw": "魔胎",
@@ -3051,6 +3328,7 @@
     "ids": [
       281
     ],
+    "code": "ama",
     "en": "Titan's Revenge",
     "zh": "泰坦的复仇",
     "zh_tw": "泰坦的復仇",
@@ -3062,6 +3340,7 @@
     "ids": [
       282
     ],
+    "code": "am7",
     "en": "Lycander's Aim",
     "zh": "莱姗德的远击",
     "zh_tw": "萊坎德的準頭",
@@ -3073,6 +3352,7 @@
     "ids": [
       283
     ],
+    "code": "am9",
     "en": "Lycander's Flank",
     "zh": "莱姗德的侧击",
     "zh_tw": "萊坎德的側翼",
@@ -3084,6 +3364,7 @@
     "ids": [
       284
     ],
+    "code": "oba",
     "en": "The Oculus",
     "zh": "海妖之瞳",
     "zh_tw": "核瞳",
@@ -3095,6 +3376,7 @@
     "ids": [
       285
     ],
+    "code": "pa9",
     "en": "Herald of Zakarum",
     "zh": "萨卡兰姆的使者",
     "zh_tw": "撒卡蘭姆使者",
@@ -3106,6 +3388,7 @@
     "ids": [
       286
     ],
+    "code": "9tw",
     "en": "Bartuc's Cut-Throat",
     "zh": "巴图克的割喉爪",
     "zh_tw": "霸圖克的割喉爪",
@@ -3117,6 +3400,7 @@
     "ids": [
       287
     ],
+    "code": "dra",
     "en": "Jalal's Mane",
     "zh": "狼王之鬃",
     "zh_tw": "加爾的鬃毛",
@@ -3128,6 +3412,7 @@
     "ids": [
       288
     ],
+    "code": "9ta",
     "en": "The Scalper",
     "zh": "头皮剥离者",
     "zh_tw": "頭皮剝斧",
@@ -3139,6 +3424,7 @@
     "ids": [
       289
     ],
+    "code": "7sb",
     "en": "Bloodmoon",
     "zh": "赤月",
     "zh_tw": "血月",
@@ -3150,6 +3436,7 @@
     "ids": [
       290
     ],
+    "code": "7sm",
     "en": "Djinn Slayer",
     "zh": "邪灵斩",
     "zh_tw": "巨靈殺手",
@@ -3161,6 +3448,7 @@
     "ids": [
       291
     ],
+    "code": "9tk",
     "en": "Deathbit",
     "zh": "死亡之吻",
     "zh_tw": "死亡尖鑽",
@@ -3172,6 +3460,7 @@
     "ids": [
       292
     ],
+    "code": "7bk",
     "en": "Warshrike",
     "zh": "战争伯劳鸟",
     "zh_tw": "戰爭之鳥",
@@ -3183,6 +3472,7 @@
     "ids": [
       293
     ],
+    "code": "6rx",
     "en": "Gut Siphon",
     "zh": "碎胆",
     "zh_tw": "內臟吸管",
@@ -3194,6 +3484,7 @@
     "ids": [
       294
     ],
+    "code": "7ha",
     "en": "Razor's Edge",
     "zh": "剃刀之锋",
     "zh_tw": "剃刀銳斧",
@@ -3205,6 +3496,7 @@
     "ids": [
       296
     ],
+    "code": "7sp",
     "en": "Demon Limb",
     "zh": "恶魔断肢",
     "zh_tw": "惡魔肢體",
@@ -3216,6 +3508,7 @@
     "ids": [
       297
     ],
+    "code": "ulm",
     "en": "Steel Shade",
     "zh": "钢罩",
     "zh_tw": "鋼影",
@@ -3227,6 +3520,7 @@
     "ids": [
       298
     ],
+    "code": "7pa",
     "en": "Tomb Reaver",
     "zh": "墓穴劫掠者",
     "zh_tw": "盜墓者",
@@ -3238,6 +3532,7 @@
     "ids": [
       299
     ],
+    "code": "7gw",
     "en": "Death's Web",
     "zh": "死亡迷网",
     "zh_tw": "死亡之網",
@@ -3249,6 +3544,7 @@
     "ids": [
       300
     ],
+    "code": "rin",
     "en": "Nature's Peace",
     "zh": "大自然的安宁",
     "zh_tw": "自然祥和",
@@ -3260,6 +3556,7 @@
     "ids": [
       302
     ],
+    "code": "amu",
     "en": "Seraph's Hymn",
     "zh": "炽天使的圣歌",
     "zh_tw": "熾天使之韻",
@@ -3271,6 +3568,7 @@
     "ids": [
       304
     ],
+    "code": "7kr",
     "en": "Fleshripper",
     "zh": "外壳割裂者",
     "zh_tw": "裂肉者",
@@ -3282,6 +3580,7 @@
     "ids": [
       306
     ],
+    "code": "7fl",
     "en": "Horizon's Tornado",
     "zh": "地平线的龙卷风",
     "zh_tw": "地平線的龍捲風",
@@ -3293,6 +3592,7 @@
     "ids": [
       307
     ],
+    "code": "7wh",
     "en": "Stone Crusher",
     "zh": "碎石者",
     "zh_tw": "碎石者",
@@ -3304,6 +3604,7 @@
     "ids": [
       308
     ],
+    "code": "7wb",
     "en": "Jade Talon",
     "zh": "碧玉爪",
     "zh_tw": "碧玉爪",
@@ -3315,6 +3616,7 @@
     "ids": [
       309
     ],
+    "code": "uhb",
     "en": "Shadow Dancer",
     "zh": "影舞者",
     "zh_tw": "影舞者",
@@ -3326,6 +3628,7 @@
     "ids": [
       310
     ],
+    "code": "drb",
     "en": "Cerebus' Bite",
     "zh": "冥犬的撕咬",
     "zh_tw": "地獄犬之咬",
@@ -3337,6 +3640,7 @@
     "ids": [
       311
     ],
+    "code": "uar",
     "en": "Tyrael's Might",
     "zh": "泰瑞尔的力量",
     "zh_tw": "泰瑞爾之力",
@@ -3348,6 +3652,7 @@
     "ids": [
       312
     ],
+    "code": "umg",
     "en": "Soul Drainer",
     "zh": "吸魂者",
     "zh_tw": "吸魂者",
@@ -3359,6 +3664,7 @@
     "ids": [
       313
     ],
+    "code": "72a",
     "en": "Rune Master",
     "zh": "符文大师",
     "zh_tw": "符文大師",
@@ -3370,6 +3676,7 @@
     "ids": [
       314
     ],
+    "code": "7wa",
     "en": "Death Cleaver",
     "zh": "死亡切肉斧",
     "zh_tw": "死亡劈斧",
@@ -3381,6 +3688,7 @@
     "ids": [
       315
     ],
+    "code": "7gi",
     "en": "Executioner's Justice",
     "zh": "行刑者的裁决",
     "zh_tw": "劊子手的裁決",
@@ -3392,6 +3700,7 @@
     "ids": [
       316
     ],
+    "code": "amd",
     "en": "Stoneraven",
     "zh": "石鸦",
     "zh_tw": "石鴉",
@@ -3403,6 +3712,7 @@
     "ids": [
       317
     ],
+    "code": "uld",
     "en": "Leviathan",
     "zh": "利维坦",
     "zh_tw": "利維坦",
@@ -3414,6 +3724,7 @@
     "ids": [
       319
     ],
+    "code": "rin",
     "en": "Wisp Projector",
     "zh": "鬼火投影",
     "zh_tw": "鬼火投射者",
@@ -3425,6 +3736,7 @@
     "ids": [
       320
     ],
+    "code": "7ts",
     "en": "Gargoyle's Bite",
     "zh": "石像鬼之牙",
     "zh_tw": "石像鬼之噬",
@@ -3436,6 +3748,7 @@
     "ids": [
       321
     ],
+    "code": "7b8",
     "en": "Lacerator",
     "zh": "撕裂者",
     "zh_tw": "撕裂者",
@@ -3447,6 +3760,7 @@
     "ids": [
       322
     ],
+    "code": "6ws",
     "en": "Mang Song's Lesson",
     "zh": "宋满的教训",
     "zh_tw": "曼宋的教誨",
@@ -3458,6 +3772,7 @@
     "ids": [
       323
     ],
+    "code": "7br",
     "en": "Viperfork",
     "zh": "蛇信长枪",
     "zh_tw": "蛇魔叉",
@@ -3469,6 +3784,7 @@
     "ids": [
       324
     ],
+    "code": "7ba",
     "en": "Ethereal Edge",
     "zh": "无形之锋",
     "zh_tw": "無形之刃",
@@ -3480,6 +3796,7 @@
     "ids": [
       325
     ],
+    "code": "bad",
     "en": "Demonhorn's Edge",
     "zh": "恶魔角锋",
     "zh_tw": "惡魔角尖",
@@ -3491,6 +3808,7 @@
     "ids": [
       326
     ],
+    "code": "7s8",
     "en": "The Reaper's Toll",
     "zh": "死神丧钟",
     "zh_tw": "死神喪鐘",
@@ -3502,6 +3820,7 @@
     "ids": [
       327
     ],
+    "code": "drd",
     "en": "Spirit Keeper",
     "zh": "灵体守护者",
     "zh_tw": "魂靈守衛者",
@@ -3513,6 +3832,7 @@
     "ids": [
       328
     ],
+    "code": "6hx",
     "en": "Hellrack",
     "zh": "地狱刑器",
     "zh_tw": "地獄刑具",
@@ -3524,6 +3844,7 @@
     "ids": [
       329
     ],
+    "code": "pac",
     "en": "Alma Negra",
     "zh": "黑魂",
     "zh_tw": "黑魂",
@@ -3535,6 +3856,7 @@
     "ids": [
       330
     ],
+    "code": "nef",
     "en": "Darkforce Spawn",
     "zh": "魔力肇生",
     "zh_tw": "魔力肇生",
@@ -3546,6 +3868,7 @@
     "ids": [
       331
     ],
+    "code": "6sw",
     "en": "Widowmaker",
     "zh": "寡妇制造者",
     "zh_tw": "絕命",
@@ -3557,6 +3880,7 @@
     "ids": [
       332
     ],
+    "code": "amb",
     "en": "Blood Raven's Charge",
     "zh": "血鸦的冲锋",
     "zh_tw": "血鴉之擊",
@@ -3568,6 +3892,7 @@
     "ids": [
       333
     ],
+    "code": "7bl",
     "en": "Ghostflame",
     "zh": "魂焰",
     "zh_tw": "鬼火",
@@ -3579,6 +3904,7 @@
     "ids": [
       334
     ],
+    "code": "7cs",
     "en": "Shadow Killer",
     "zh": "影弑",
     "zh_tw": "影殺者",
@@ -3590,6 +3916,7 @@
     "ids": [
       335
     ],
+    "code": "7ta",
     "en": "Gimmershred",
     "zh": "寒铁飞刃",
     "zh_tw": "吉默削斧",
@@ -3601,6 +3928,7 @@
     "ids": [
       336
     ],
+    "code": "ci3",
     "en": "Griffon's Eye",
     "zh": "狮鹫之眼",
     "zh_tw": "獅鷲之眼",
@@ -3612,6 +3940,7 @@
     "ids": [
       337
     ],
+    "code": "7m7",
     "en": "Windhammer",
     "zh": "风锤",
     "zh_tw": "風之鎚",
@@ -3623,6 +3952,7 @@
     "ids": [
       338
     ],
+    "code": "amf",
     "en": "Thunderstroke",
     "zh": "雷击",
     "zh_tw": "雷霆之擊",
@@ -3634,6 +3964,7 @@
     "ids": [
       340
     ],
+    "code": "7s7",
     "en": "Demon's Arch",
     "zh": "恶魔扑击",
     "zh_tw": "惡魔之拱",
@@ -3645,6 +3976,7 @@
     "ids": [
       341
     ],
+    "code": "nee",
     "en": "Boneflame",
     "zh": "骨焰",
     "zh_tw": "骨焰",
@@ -3656,6 +3988,7 @@
     "ids": [
       342
     ],
+    "code": "7p7",
     "en": "Steel Pillar",
     "zh": "钢铁支柱",
     "zh_tw": "鋼鐵之柱",
@@ -3667,6 +4000,7 @@
     "ids": [
       343
     ],
+    "code": "uhm",
     "en": "Nightwing's Veil",
     "zh": "夜翼面纱",
     "zh_tw": "夜翼面紗",
@@ -3678,6 +4012,7 @@
     "ids": [
       344
     ],
+    "code": "urn",
     "en": "Crown of Ages",
     "zh": "年纪之冠",
     "zh_tw": "歲月之冠",
@@ -3689,6 +4024,7 @@
     "ids": [
       345
     ],
+    "code": "usk",
     "en": "Andariel's Visage",
     "zh": "安达莉尔的仪容",
     "zh_tw": "安達莉爾的面貌",
@@ -3700,6 +4036,7 @@
     "ids": [
       346
     ],
+    "code": "ulm",
     "en": "Darkfear",
     "zh": "黑暗恐惧",
     "zh_tw": "黑暗恐懼",
@@ -3711,6 +4048,7 @@
     "ids": [
       347
     ],
+    "code": "pae",
     "en": "Dragonscale",
     "zh": "龙鳞",
     "zh_tw": "龍鱗",
@@ -3722,6 +4060,7 @@
     "ids": [
       348
     ],
+    "code": "uul",
     "en": "Steel Carapace",
     "zh": "钢铁甲壳",
     "zh_tw": "鋼鐵甲殼",
@@ -3733,6 +4072,7 @@
     "ids": [
       349
     ],
+    "code": "uow",
     "en": "Medusa's Gaze",
     "zh": "美杜莎的凝视",
     "zh_tw": "梅杜莎的凝視",
@@ -3744,6 +4084,7 @@
     "ids": [
       350
     ],
+    "code": "dre",
     "en": "Ravenlore",
     "zh": "乌鸦的智慧",
     "zh_tw": "掠鴉之王",
@@ -3755,6 +4096,7 @@
     "ids": [
       351
     ],
+    "code": "7bw",
     "en": "Boneshade",
     "zh": "白骨阴魂",
     "zh_tw": "骸骨陰影",
@@ -3766,6 +4108,7 @@
     "ids": [
       353
     ],
+    "code": "7gs",
     "en": "Flamebellow",
     "zh": "怒焰咆哮",
     "zh_tw": "火嚎",
@@ -3777,6 +4120,7 @@
     "ids": [
       354
     ],
+    "code": "obf",
     "en": "Death's Fathom",
     "zh": "死亡深渊",
     "zh_tw": "死亡深度",
@@ -3788,6 +4132,7 @@
     "ids": [
       355
     ],
+    "code": "bac",
     "en": "Wolfhowl",
     "zh": "狼嚎",
     "zh_tw": "狼嚎",
@@ -3799,6 +4144,7 @@
     "ids": [
       356
     ],
+    "code": "uts",
     "en": "Spirit Ward",
     "zh": "灵体守护",
     "zh_tw": "魂系結界",
@@ -3810,6 +4156,7 @@
     "ids": [
       357
     ],
+    "code": "ci2",
     "en": "Kira's Guardian",
     "zh": "奇拉的守护",
     "zh_tw": "奇拉的守護",
@@ -3821,6 +4168,7 @@
     "ids": [
       358
     ],
+    "code": "uui",
     "en": "Ormus' Robes",
     "zh": "奥玛斯的法袍",
     "zh_tw": "奧瑪斯之袍",
@@ -3832,6 +4180,7 @@
     "ids": [
       359
     ],
+    "code": "cm3",
     "en": "Gheed's Fortune",
     "zh": "基德的好运",
     "zh_tw": "基德的財運",
@@ -3843,6 +4192,7 @@
     "ids": [
       360
     ],
+    "code": "7fl",
     "en": "Stormlash",
     "zh": "风暴之鞭",
     "zh_tw": "暴風之鞭",
@@ -3854,6 +4204,7 @@
     "ids": [
       361
     ],
+    "code": "bae",
     "en": "Halaberd's Reign",
     "zh": "死亡女神的统治",
     "zh_tw": "海拉柏德的國度",
@@ -3865,6 +4216,7 @@
     "ids": [
       363
     ],
+    "code": "upk",
     "en": "Spike Thorn",
     "zh": "尖刺荆棘",
     "zh_tw": "尖刺荊棘",
@@ -3876,6 +4228,7 @@
     "ids": [
       364
     ],
+    "code": "uvg",
     "en": "Dracul's Grasp",
     "zh": "德古拉之握",
     "zh_tw": "德古拉之握",
@@ -3887,6 +4240,7 @@
     "ids": [
       365
     ],
+    "code": "7ls",
     "en": "Frostwind",
     "zh": "冰霜之风",
     "zh_tw": "霜風",
@@ -3898,6 +4252,7 @@
     "ids": [
       366
     ],
+    "code": "uar",
     "en": "Templar's Might",
     "zh": "圣殿骑士之力",
     "zh_tw": "聖堂騎士之力",
@@ -3909,6 +4264,7 @@
     "ids": [
       367
     ],
+    "code": "obc",
     "en": "Eschuta's Temper",
     "zh": "艾丝屈塔的脾气",
     "zh_tw": "艾斯屈塔的憤怒",
@@ -3920,6 +4276,7 @@
     "ids": [
       368
     ],
+    "code": "7lw",
     "en": "Firelizard's Talons",
     "zh": "火蜥蜴之爪",
     "zh_tw": "火蜥蜴之爪",
@@ -3931,6 +4288,7 @@
     "ids": [
       369
     ],
+    "code": "uvb",
     "en": "Sandstorm Trek",
     "zh": "沙暴之旅",
     "zh_tw": "沙暴之旅",
@@ -3942,6 +4300,7 @@
     "ids": [
       370
     ],
+    "code": "umb",
     "en": "Marrowwalk",
     "zh": "骨髓行走",
     "zh_tw": "骨髓行走",
@@ -3953,6 +4312,7 @@
     "ids": [
       371
     ],
+    "code": "7sc",
     "en": "Heaven's Light",
     "zh": "天堂之光",
     "zh_tw": "天堂之光",
@@ -3964,6 +4324,7 @@
     "ids": [
       373
     ],
+    "code": "ulc",
     "en": "Arachnid Mesh",
     "zh": "蜘蛛网纹",
     "zh_tw": "蜘蛛之網",
@@ -3975,6 +4336,7 @@
     "ids": [
       374
     ],
+    "code": "uvc",
     "en": "Nosferatu's Coil",
     "zh": "吸能圣王之圈",
     "zh_tw": "吸血鬼王之圈",
@@ -3986,6 +4348,7 @@
     "ids": [
       375
     ],
+    "code": "amu",
     "en": "Metalgrid",
     "zh": "金属网格",
     "zh_tw": "金屬網格",
@@ -3997,6 +4360,7 @@
     "ids": [
       376
     ],
+    "code": "umc",
     "en": "Verdungo's Hearty Cord",
     "zh": "行刑者的绞首绳",
     "zh_tw": "伐頓戈的強韌腰索",
@@ -4008,6 +4372,7 @@
     "ids": [
       378
     ],
+    "code": "rin",
     "en": "Carrion Wind",
     "zh": "腐肉之风",
     "zh_tw": "腐肉之風",
@@ -4019,6 +4384,7 @@
     "ids": [
       379
     ],
+    "code": "uh9",
     "en": "Giant Skull",
     "zh": "巨型颅骨",
     "zh_tw": "巨大顱骨",
@@ -4030,6 +4396,7 @@
     "ids": [
       380
     ],
+    "code": "7ws",
     "en": "Astreon's Iron Ward",
     "zh": "阿斯特隆的陨铁杖",
     "zh_tw": "愛斯特龍的鐵衛",
@@ -4041,6 +4408,7 @@
     "ids": [
       381
     ],
+    "code": "cm1",
     "en": "Annihilus",
     "zh": "毁灭",
     "zh_tw": "滅絕",
@@ -4052,6 +4420,7 @@
     "ids": [
       382
     ],
+    "code": "7sr",
     "en": "Arioc's Needle",
     "zh": "艾里欧克之针",
     "zh_tw": "愛理歐克之針",
@@ -4063,6 +4432,7 @@
     "ids": [
       383
     ],
+    "code": "7mp",
     "en": "Cranebeak",
     "zh": "鹤嘴锄",
     "zh_tw": "鶴嘴",
@@ -4074,6 +4444,7 @@
     "ids": [
       384
     ],
+    "code": "7cl",
     "en": "Nord's Tenderizer",
     "zh": "北方人的碎肉棒",
     "zh_tw": "北地肉鎚",
@@ -4085,6 +4456,7 @@
     "ids": [
       385
     ],
+    "code": "7gm",
     "en": "Earth Shifter",
     "zh": "撼地者",
     "zh_tw": "撼地者",
@@ -4096,6 +4468,7 @@
     "ids": [
       386
     ],
+    "code": "7gl",
     "en": "Wraith Flight",
     "zh": "怨灵飞行",
     "zh_tw": "死靈夜翔",
@@ -4107,6 +4480,7 @@
     "ids": [
       387
     ],
+    "code": "7o7",
     "en": "Bonehew",
     "zh": "斩骨",
     "zh_tw": "破骨",
@@ -4118,6 +4492,7 @@
     "ids": [
       388
     ],
+    "code": "6cs",
     "en": "Ondal's Wisdom",
     "zh": "温达的智慧",
     "zh_tw": "溫達的智慧",
@@ -4129,6 +4504,7 @@
     "ids": [
       389
     ],
+    "code": "7sc",
     "en": "The Redeemer",
     "zh": "救赎者",
     "zh_tw": "懺悔者",
@@ -4140,6 +4516,7 @@
     "ids": [
       390
     ],
+    "code": "ush",
     "en": "Head Hunter's Glory",
     "zh": "猎头者的荣耀",
     "zh_tw": "獵頭者的榮耀",
@@ -4151,6 +4528,7 @@
     "ids": [
       391
     ],
+    "code": "uhg",
     "en": "Steelrend",
     "zh": "碎钢",
     "zh_tw": "碎鋼",
@@ -4169,6 +4547,7 @@
       398,
       399
     ],
+    "code": "jew",
     "en": "Rainbow Facet",
     "zh": "彩虹魔石",
     "zh_tw": "彩虹刻面",
@@ -4180,6 +4559,7 @@
     "ids": [
       400
     ],
+    "code": "cm2",
     "en": "Hellfire Torch",
     "zh": "地狱火炬",
     "zh_tw": "地獄火炬",
@@ -4191,6 +4571,7 @@
     "ids": [
       401
     ],
+    "code": "cm3",
     "en": "Cold Rupture",
     "zh": "寒冰裂口",
     "zh_tw": "冰寒裂縫",
@@ -4202,6 +4583,7 @@
     "ids": [
       402
     ],
+    "code": "cm3",
     "en": "Flame Rift",
     "zh": "火焰裂隙",
     "zh_tw": "火焰裂隙",
@@ -4213,6 +4595,7 @@
     "ids": [
       403
     ],
+    "code": "cm3",
     "en": "Crack of the Heavens",
     "zh": "天堂裂痕",
     "zh_tw": "天堂裂擊",
@@ -4224,6 +4607,7 @@
     "ids": [
       404
     ],
+    "code": "cm3",
     "en": "Rotting Fissure",
     "zh": "腐烂裂迹",
     "zh_tw": "腐敗裂痕",
@@ -4235,6 +4619,7 @@
     "ids": [
       405
     ],
+    "code": "cm3",
     "en": "Bone Break",
     "zh": "白骨裂纹",
     "zh_tw": "分筋裂骨",
@@ -4246,6 +4631,7 @@
     "ids": [
       406
     ],
+    "code": "cm3",
     "en": "Black Cleft",
     "zh": "漆黑裂痕",
     "zh_tw": "漆黑裂口",
@@ -4257,6 +4643,7 @@
     "ids": [
       408
     ],
+    "code": "waf",
     "en": "Ars Al'Diabolos",
     "zh": "迪亚波罗斯之术",
     "zh_tw": "艾迪亞布羅斯學術",
@@ -4268,6 +4655,7 @@
     "ids": [
       409
     ],
+    "code": "wae",
     "en": "Ars Tor'Baalos",
     "zh": "巴洛斯之术",
     "zh_tw": "托巴爾羅斯學術",
@@ -4279,6 +4667,7 @@
     "ids": [
       410
     ],
+    "code": "wac",
     "en": "Ars Dul'Mephistos",
     "zh": "墨菲斯托斯之术",
     "zh_tw": "杜墨菲斯托斯學術",
@@ -4290,6 +4679,7 @@
     "ids": [
       411
     ],
+    "code": "wa6",
     "en": "Measured Wrath",
     "zh": "有度之怒",
     "zh_tw": "審慎之怒",
@@ -4301,6 +4691,7 @@
     "ids": [
       412
     ],
+    "code": "72h",
     "en": "Dreadfang",
     "zh": "惧牙",
     "zh_tw": "懼牙",
@@ -4312,6 +4703,7 @@
     "ids": [
       413
     ],
+    "code": "utb",
     "en": "Wraithstep",
     "zh": "怨灵步",
     "zh_tw": "怨靈步伐",
@@ -4323,6 +4715,7 @@
     "ids": [
       414
     ],
+    "code": "7di",
     "en": "Bloodpact Shard",
     "zh": "血契碎片",
     "zh_tw": "血誓碎片",
@@ -4334,6 +4727,7 @@
     "ids": [
       415
     ],
+    "code": "rin",
     "en": "Sling",
     "zh": "投石索",
     "zh_tw": "投索",
@@ -4345,6 +4739,7 @@
     "ids": [
       416
     ],
+    "code": "rin",
     "en": "Opalvein",
     "zh": "蛋白石脉",
     "zh_tw": "蛋白石脈",
@@ -4356,6 +4751,7 @@
     "ids": [
       417
     ],
+    "code": "amu",
     "en": "Entropy Locket",
     "zh": "熵之护符",
     "zh_tw": "無序墜盒",
@@ -4367,6 +4763,7 @@
     "ids": [
       418
     ],
+    "code": "utc",
     "en": "Gheed's Wager",
     "zh": "基德的赌注",
     "zh_tw": "基德的賭注",
@@ -4378,6 +4775,7 @@
     "ids": [
       419
     ],
+    "code": "xsk",
     "en": "Hellwarden's Will",
     "zh": "地狱禁卫的意志",
     "zh_tw": "地獄刑長的意志",
@@ -4389,6 +4787,7 @@
     "ids": [
       420
     ],
+    "code": "cjw",
     "en": "Defender's Bile",
     "zh": "防御者之怒",
     "zh_tw": "防禦者的膽汁",
@@ -4400,6 +4799,7 @@
     "ids": [
       421
     ],
+    "code": "cjw",
     "en": "Guardian's Thunder",
     "zh": "守护者之雷",
     "zh_tw": "守護者的閃電",
@@ -4411,6 +4811,7 @@
     "ids": [
       422
     ],
+    "code": "cjw",
     "en": "Protector's Frost",
     "zh": "保卫者之霜",
     "zh_tw": "保衛者的冰霜",
@@ -4422,6 +4823,7 @@
     "ids": [
       423
     ],
+    "code": "cjw",
     "en": "Defender's Fire",
     "zh": "防御者之火",
     "zh_tw": "防禦者的火焰",
@@ -4433,6 +4835,7 @@
     "ids": [
       424
     ],
+    "code": "cjw",
     "en": "Protector's Stone",
     "zh": "保卫者之石",
     "zh_tw": "保衛者的岩石",
@@ -4444,6 +4847,7 @@
     "ids": [
       425
     ],
+    "code": "cjw",
     "en": "Guardian's Light",
     "zh": "守护者之光",
     "zh_tw": "守護者的光芒",
@@ -4455,6 +4859,7 @@
     "ids": [
       426
     ],
+    "code": "cm3",
     "en": "Latent Cold Rupture",
     "zh": "潜在的寒冰裂口",
     "zh_tw": "潛伏冰寒裂縫",
@@ -4466,6 +4871,7 @@
     "ids": [
       427
     ],
+    "code": "cs2",
     "en": "Renewed Cold Rupture",
     "zh": "焕新的寒冰裂口",
     "zh_tw": "新生冰寒裂縫",
@@ -4477,6 +4883,7 @@
     "ids": [
       428
     ],
+    "code": "cm3",
     "en": "Latent Flame Rift",
     "zh": "潜在的火焰裂隙",
     "zh_tw": "潛伏火焰裂隙",
@@ -4488,6 +4895,7 @@
     "ids": [
       429
     ],
+    "code": "cm3",
     "en": "Latent Crack of the Heavens",
     "zh": "潜在的天堂裂痕",
     "zh_tw": "潛伏天堂裂擊",
@@ -4499,6 +4907,7 @@
     "ids": [
       430
     ],
+    "code": "cm3",
     "en": "Latent Rotting Fissure",
     "zh": "潜在的腐烂裂迹",
     "zh_tw": "潛伏腐敗裂痕",
@@ -4510,6 +4919,7 @@
     "ids": [
       431
     ],
+    "code": "cm3",
     "en": "Latent Bone Break",
     "zh": "潜在的白骨裂纹",
     "zh_tw": "潛伏分筋裂骨",
@@ -4521,6 +4931,7 @@
     "ids": [
       432
     ],
+    "code": "cm3",
     "en": "Latent Black Cleft",
     "zh": "潜在的漆黑裂痕",
     "zh_tw": "潛伏漆黑裂口",
@@ -4532,6 +4943,7 @@
     "ids": [
       433
     ],
+    "code": "cs2",
     "en": "Renewed Flame Rift",
     "zh": "焕新的火焰裂隙",
     "zh_tw": "新生火焰裂隙",
@@ -4543,6 +4955,7 @@
     "ids": [
       434
     ],
+    "code": "cs2",
     "en": "Renewed Crack of the Heavens",
     "zh": "焕新的天堂裂痕",
     "zh_tw": "新生天堂裂擊",
@@ -4554,6 +4967,7 @@
     "ids": [
       435
     ],
+    "code": "cs2",
     "en": "Renewed Rotting Fissure",
     "zh": "焕新的腐烂裂迹",
     "zh_tw": "新生腐敗裂痕",
@@ -4565,6 +4979,7 @@
     "ids": [
       436
     ],
+    "code": "cs2",
     "en": "Renewed Bone Break",
     "zh": "焕新的白骨裂纹",
     "zh_tw": "新生分筋裂骨",
@@ -4576,6 +4991,7 @@
     "ids": [
       437
     ],
+    "code": "cs2",
     "en": "Renewed Black Cleft",
     "zh": "焕新的漆黑裂痕",
     "zh_tw": "新生漆黑裂口",

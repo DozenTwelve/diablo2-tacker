@@ -6,18 +6,21 @@
     "items": [
       {
         "id": 0,
+        "code": "lrg",
         "en": "Civerb's Ward",
         "zh": "希弗伯的防护",
         "zh_tw": "克維雷布的防護"
       },
       {
         "id": 1,
+        "code": "amu",
         "en": "Civerb's Icon",
         "zh": "希弗伯的圣像",
         "zh_tw": "克維雷布的聖像"
       },
       {
         "id": 2,
+        "code": "gsc",
         "en": "Civerb's Cudgel",
         "zh": "希弗伯的短棍",
         "zh_tw": "克維雷布的短棍"
@@ -31,18 +34,21 @@
     "items": [
       {
         "id": 3,
+        "code": "mbt",
         "en": "Hsarus' Iron Heel",
         "zh": "萨鲁斯的铁踵",
         "zh_tw": "海沙魯的鐵跟"
       },
       {
         "id": 4,
+        "code": "buc",
         "en": "Hsarus' Iron Fist",
         "zh": "萨鲁斯的铁拳",
         "zh_tw": "海沙魯的鐵拳"
       },
       {
         "id": 5,
+        "code": "mbl",
         "en": "Hsarus' Iron Stay",
         "zh": "萨鲁斯的铁固腰",
         "zh_tw": "海沙魯的鐵扣"
@@ -56,18 +62,21 @@
     "items": [
       {
         "id": 6,
+        "code": "lsd",
         "en": "Cleglaw's Tooth",
         "zh": "克雷格劳之牙",
         "zh_tw": "克雷德勞之牙"
       },
       {
         "id": 7,
+        "code": "sml",
         "en": "Cleglaw's Claw",
         "zh": "克雷格劳之爪",
         "zh_tw": "克雷德勞之爪"
       },
       {
         "id": 8,
+        "code": "mgl",
         "en": "Cleglaw's Pincers",
         "zh": "克雷格劳之钳",
         "zh_tw": "克雷德勞之鉗"
@@ -81,24 +90,28 @@
     "items": [
       {
         "id": 9,
+        "code": "amu",
         "en": "Iratha's Collar",
         "zh": "艾蕾萨的护颈圈",
         "zh_tw": "依雷撒的項圈"
       },
       {
         "id": 10,
+        "code": "tgl",
         "en": "Iratha's Cuff",
         "zh": "艾蕾萨的袖手套",
         "zh_tw": "依雷撒的袖銬"
       },
       {
         "id": 11,
+        "code": "crn",
         "en": "Iratha's Coil",
         "zh": "艾蕾萨的铁围盔",
         "zh_tw": "依雷撒的盤頂"
       },
       {
         "id": 12,
+        "code": "tbl",
         "en": "Iratha's Cord",
         "zh": "艾蕾萨的束带",
         "zh_tw": "依雷撒的腰繩"
@@ -112,24 +125,28 @@
     "items": [
       {
         "id": 13,
+        "code": "bsd",
         "en": "Isenhart's Lightbrand",
         "zh": "依森哈特的光之烙印",
         "zh_tw": "依森哈特的光之烙鐵"
       },
       {
         "id": 14,
+        "code": "gts",
         "en": "Isenhart's Parry",
         "zh": "依森哈特的格挡",
         "zh_tw": "依森哈特的招架"
       },
       {
         "id": 15,
+        "code": "brs",
         "en": "Isenhart's Case",
         "zh": "依森哈特的胸胄",
         "zh_tw": "依森哈特的外殼"
       },
       {
         "id": 16,
+        "code": "fhl",
         "en": "Isenhart's Horns",
         "zh": "依森哈特的号角",
         "zh_tw": "依森哈特的角盔"
@@ -143,24 +160,28 @@
     "items": [
       {
         "id": 17,
+        "code": "lbb",
         "en": "Vidala's Barb",
         "zh": "维达拉的倒刺",
         "zh_tw": "維達拉的倒刺"
       },
       {
         "id": 18,
+        "code": "tbt",
         "en": "Vidala's Fetlock",
         "zh": "维达拉的扣带靴",
         "zh_tw": "維達拉的足距"
       },
       {
         "id": 19,
+        "code": "lea",
         "en": "Vidala's Ambush",
         "zh": "维达拉的突袭",
         "zh_tw": "維達拉的突襲"
       },
       {
         "id": 20,
+        "code": "amu",
         "en": "Vidala's Snare",
         "zh": "维达拉的陷阱",
         "zh_tw": "維達拉的圈套"
@@ -174,24 +195,28 @@
     "items": [
       {
         "id": 21,
+        "code": "kit",
         "en": "Milabrega's Orb",
         "zh": "米拉伯佳的宝球",
         "zh_tw": "米拉伯佳之球"
       },
       {
         "id": 22,
+        "code": "wsp",
         "en": "Milabrega's Rod",
         "zh": "米拉伯佳的权杖",
         "zh_tw": "米拉伯佳節杖"
       },
       {
         "id": 23,
+        "code": "crn",
         "en": "Milabrega's Diadem",
         "zh": "米拉伯佳的权冠",
         "zh_tw": "米拉伯佳權冠"
       },
       {
         "id": 24,
+        "code": "aar",
         "en": "Milabrega's Robe",
         "zh": "米拉伯佳的袍甲",
         "zh_tw": "米拉伯佳外袍"
@@ -205,30 +230,35 @@
     "items": [
       {
         "id": 25,
+        "code": "bst",
         "en": "Cathan's Rule",
         "zh": "卡珊的统治",
         "zh_tw": "卡珊的尺杖"
       },
       {
         "id": 26,
+        "code": "chn",
         "en": "Cathan's Mesh",
         "zh": "卡珊的札甲",
         "zh_tw": "卡珊的網衣"
       },
       {
         "id": 27,
+        "code": "msk",
         "en": "Cathan's Visage",
         "zh": "卡珊的面甲",
         "zh_tw": "卡珊的容貌"
       },
       {
         "id": 28,
+        "code": "amu",
         "en": "Cathan's Sigil",
         "zh": "卡珊的符徽",
         "zh_tw": "卡珊的魔咒"
       },
       {
         "id": 29,
+        "code": "rin",
         "en": "Cathan's Seal",
         "zh": "卡珊的印章",
         "zh_tw": "卡珊的封印"
@@ -242,30 +272,35 @@
     "items": [
       {
         "id": 30,
+        "code": "mpi",
         "en": "Tancred's Crowbill",
         "zh": "坦克雷的鸦嘴锄",
         "zh_tw": "坦克雷的鴉嘴鎬"
       },
       {
         "id": 31,
+        "code": "ful",
         "en": "Tancred's Spine",
         "zh": "坦克雷的支柱",
         "zh_tw": "坦克雷的脊柱"
       },
       {
         "id": 32,
+        "code": "lbt",
         "en": "Tancred's Hobnails",
         "zh": "坦克雷的钉头鞋",
         "zh_tw": "坦克雷的釘靴"
       },
       {
         "id": 33,
+        "code": "amu",
         "en": "Tancred's Weird",
         "zh": "坦克雷的怪诞",
         "zh_tw": "坦克雷的怪誕"
       },
       {
         "id": 34,
+        "code": "bhm",
         "en": "Tancred's Skull",
         "zh": "坦克雷的头骨",
         "zh_tw": "坦克雷的顱骨"
@@ -279,36 +314,42 @@
     "items": [
       {
         "id": 35,
+        "code": "hgl",
         "en": "Sigon's Gage",
         "zh": "西刚的挑战",
         "zh_tw": "西剛的挑戰"
       },
       {
         "id": 36,
+        "code": "ghm",
         "en": "Sigon's Visor",
         "zh": "西刚的面甲",
         "zh_tw": "西剛的護面"
       },
       {
         "id": 37,
+        "code": "gth",
         "en": "Sigon's Shelter",
         "zh": "西刚的遮蔽",
         "zh_tw": "西剛的庇護"
       },
       {
         "id": 38,
+        "code": "hbt",
         "en": "Sigon's Sabot",
         "zh": "西刚的木底鞋",
         "zh_tw": "西剛的硬靴"
       },
       {
         "id": 39,
+        "code": "hbl",
         "en": "Sigon's Wrap",
         "zh": "西刚的腰带",
         "zh_tw": "西剛的裹腰"
       },
       {
         "id": 40,
+        "code": "tow",
         "en": "Sigon's Guard",
         "zh": "西刚的守护",
         "zh_tw": "西剛的守護"
@@ -322,18 +363,21 @@
     "items": [
       {
         "id": 41,
+        "code": "cap",
         "en": "Infernal Cranium",
         "zh": "地狱颅骨",
         "zh_tw": "煉獄頭骨"
       },
       {
         "id": 42,
+        "code": "gwn",
         "en": "Infernal Torch",
         "zh": "地狱火炬",
         "zh_tw": "煉獄火炬"
       },
       {
         "id": 43,
+        "code": "tbl",
         "en": "Infernal Sign",
         "zh": "地狱印记",
         "zh_tw": "煉獄符印"
@@ -347,18 +391,21 @@
     "items": [
       {
         "id": 44,
+        "code": "hlm",
         "en": "Berserker's Headgear",
         "zh": "狂战士的头盔",
         "zh_tw": "狂戰士頭盔"
       },
       {
         "id": 45,
+        "code": "spl",
         "en": "Berserker's Hauberk",
         "zh": "狂战士的半身甲",
         "zh_tw": "狂戰士鎖子甲"
       },
       {
         "id": 46,
+        "code": "2ax",
         "en": "Berserker's Hatchet",
         "zh": "狂战士的手斧",
         "zh_tw": "狂戰士手斧"
@@ -372,18 +419,21 @@
     "items": [
       {
         "id": 47,
+        "code": "lgl",
         "en": "Death's Hand",
         "zh": "死神之手",
         "zh_tw": "死亡之手"
       },
       {
         "id": 48,
+        "code": "lbl",
         "en": "Death's Guard",
         "zh": "死神之卫",
         "zh_tw": "死亡之護"
       },
       {
         "id": 49,
+        "code": "wsd",
         "en": "Death's Touch",
         "zh": "死神之触",
         "zh_tw": "死亡之觸"
@@ -397,24 +447,28 @@
     "items": [
       {
         "id": 50,
+        "code": "sbr",
         "en": "Angelic Sickle",
         "zh": "天使的镰刀",
         "zh_tw": "天使的鐮刀"
       },
       {
         "id": 51,
+        "code": "rng",
         "en": "Angelic Mantle",
         "zh": "天使的披风",
         "zh_tw": "天使的披風"
       },
       {
         "id": 52,
+        "code": "rin",
         "en": "Angelic Halo",
         "zh": "天使的光环",
         "zh_tw": "天使的光暈"
       },
       {
         "id": 53,
+        "code": "amu",
         "en": "Angelic Wings",
         "zh": "天使的飞翼",
         "zh_tw": "天使的翅膀"
@@ -428,24 +482,28 @@
     "items": [
       {
         "id": 54,
+        "code": "swb",
         "en": "Arctic Horn",
         "zh": "北极号角",
         "zh_tw": "北極號角"
       },
       {
         "id": 55,
+        "code": "qui",
         "en": "Arctic Furs",
         "zh": "北极毛皮",
         "zh_tw": "北極毛皮"
       },
       {
         "id": 56,
+        "code": "vbl",
         "en": "Arctic Binding",
         "zh": "北极束带",
         "zh_tw": "北極捆索"
       },
       {
         "id": 57,
+        "code": "tgl",
         "en": "Arctic Mitts",
         "zh": "北极手套",
         "zh_tw": "北極手套"
@@ -459,24 +517,28 @@
     "items": [
       {
         "id": 58,
+        "code": "amu",
         "en": "Arcanna's Sign",
         "zh": "阿卡娜的符号",
         "zh_tw": "阿卡娜的符印"
       },
       {
         "id": 59,
+        "code": "wst",
         "en": "Arcanna's Deathwand",
         "zh": "阿卡娜的死亡之杖",
         "zh_tw": "阿卡娜的死亡之杖"
       },
       {
         "id": 60,
+        "code": "skp",
         "en": "Arcanna's Head",
         "zh": "阿卡娜的头",
         "zh_tw": "阿卡娜的頭"
       },
       {
         "id": 61,
+        "code": "ltp",
         "en": "Arcanna's Flesh",
         "zh": "阿卡娜的外壳",
         "zh_tw": "阿卡娜的血肉"
@@ -490,24 +552,28 @@
     "items": [
       {
         "id": 62,
+        "code": "xh9",
         "en": "Natalya's Totem",
         "zh": "娜塔亚的徽记",
         "zh_tw": "娜塔亞的圖騰"
       },
       {
         "id": 63,
+        "code": "7qr",
         "en": "Natalya's Mark",
         "zh": "娜塔亚的标记",
         "zh_tw": "娜塔亞的印記"
       },
       {
         "id": 64,
+        "code": "ucl",
         "en": "Natalya's Shadow",
         "zh": "娜塔亚的阴影",
         "zh_tw": "娜塔亞的影子"
       },
       {
         "id": 65,
+        "code": "xmb",
         "en": "Natalya's Soul",
         "zh": "娜塔亚的灵魂",
         "zh_tw": "娜塔亞的靈魂"
@@ -521,24 +587,28 @@
     "items": [
       {
         "id": 66,
+        "code": "dr8",
         "en": "Aldur's Stony Gaze",
         "zh": "艾尔多的冷酷凝视",
         "zh_tw": "艾爾多的冷酷凝視"
       },
       {
         "id": 67,
+        "code": "uul",
         "en": "Aldur's Deception",
         "zh": "艾尔多的欺骗",
         "zh_tw": "艾爾多的欺暪"
       },
       {
         "id": 68,
+        "code": "9mt",
         "en": "Aldur's Rhythm",
         "zh": "艾尔多的律动",
         "zh_tw": "艾爾多的律動"
       },
       {
         "id": 69,
+        "code": "xtb",
         "en": "Aldur's Advance",
         "zh": "艾尔多的成长",
         "zh_tw": "艾爾多的進擊"
@@ -552,36 +622,42 @@
     "items": [
       {
         "id": 70,
+        "code": "ba5",
         "en": "Immortal King's Will",
         "zh": "不朽之王的意志",
         "zh_tw": "不朽之王的意志"
       },
       {
         "id": 71,
+        "code": "uar",
         "en": "Immortal King's Soul Cage",
         "zh": "不朽之王的灵魂之笼",
         "zh_tw": "不朽之王的靈魂牢籠"
       },
       {
         "id": 72,
+        "code": "zhb",
         "en": "Immortal King's Detail",
         "zh": "不朽之王的功业",
         "zh_tw": "不朽之王的扈從"
       },
       {
         "id": 73,
+        "code": "xhg",
         "en": "Immortal King's Forge",
         "zh": "不朽之王的锤炼",
         "zh_tw": "不朽之王的熔爐"
       },
       {
         "id": 74,
+        "code": "xhb",
         "en": "Immortal King's Pillar",
         "zh": "不朽之王的基石",
         "zh_tw": "不朽之王之柱"
       },
       {
         "id": 75,
+        "code": "7m7",
         "en": "Immortal King's Stone Crusher",
         "zh": "不朽之王的碎石锤",
         "zh_tw": "不朽之王的碎魂者"
@@ -595,30 +671,35 @@
     "items": [
       {
         "id": 76,
+        "code": "zmb",
         "en": "Tal Rasha's Fine-Spun Cloth",
         "zh": "塔·拉夏的精织带",
         "zh_tw": "塔拉夏的精織腰布"
       },
       {
         "id": 77,
+        "code": "amu",
         "en": "Tal Rasha's Adjudication",
         "zh": "塔·拉夏的裁决",
         "zh_tw": "塔拉夏的判決"
       },
       {
         "id": 78,
+        "code": "oba",
         "en": "Tal Rasha's Lidless Eye",
         "zh": "塔·拉夏的无睑之眼",
         "zh_tw": "塔拉夏的警惕之眼"
       },
       {
         "id": 79,
+        "code": "uth",
         "en": "Tal Rasha's Guardianship",
         "zh": "塔·拉夏的守护",
         "zh_tw": "塔拉夏的守護"
       },
       {
         "id": 80,
+        "code": "xsk",
         "en": "Tal Rasha's Horadric Crest",
         "zh": "塔·拉夏的赫拉迪姆之冠",
         "zh_tw": "塔拉夏的赫拉迪姆之冠"
@@ -632,24 +713,28 @@
     "items": [
       {
         "id": 81,
+        "code": "urn",
         "en": "Griswold's Valor",
         "zh": "格里斯沃尔德的勇气",
         "zh_tw": "格里斯瓦德的勇氣"
       },
       {
         "id": 82,
+        "code": "xar",
         "en": "Griswold's Heart",
         "zh": "格里斯沃尔德的赤诚",
         "zh_tw": "格里斯瓦德之心"
       },
       {
         "id": 83,
+        "code": "7ws",
         "en": "Griswold's Redemption",
         "zh": "格里斯沃尔德的救赎",
         "zh_tw": "格里斯瓦德的救贖"
       },
       {
         "id": 84,
+        "code": "paf",
         "en": "Griswold's Honor",
         "zh": "格里斯沃尔德的荣耀",
         "zh_tw": "格里斯瓦德的榮耀"
@@ -663,30 +748,35 @@
     "items": [
       {
         "id": 85,
+        "code": "uh9",
         "en": "Trang-Oul's Guise",
         "zh": "塔格奥的伪装",
         "zh_tw": "塔格奧之容"
       },
       {
         "id": 86,
+        "code": "xul",
         "en": "Trang-Oul's Scales",
         "zh": "塔格奥的鳞片",
         "zh_tw": "塔格奧之鱗"
       },
       {
         "id": 87,
+        "code": "ne9",
         "en": "Trang-Oul's Wing",
         "zh": "塔格奥的飞翼",
         "zh_tw": "塔格奧之翼"
       },
       {
         "id": 88,
+        "code": "xmg",
         "en": "Trang-Oul's Claws",
         "zh": "塔格奥的利爪",
         "zh_tw": "塔格奧之爪"
       },
       {
         "id": 89,
+        "code": "utc",
         "en": "Trang-Oul's Girth",
         "zh": "塔格奥的肚带",
         "zh_tw": "塔格奧之腹"
@@ -700,30 +790,35 @@
     "items": [
       {
         "id": 90,
+        "code": "ci3",
         "en": "M'avina's True Sight",
         "zh": "艾维娜的真视",
         "zh_tw": "馬維娜的真實之眼"
       },
       {
         "id": 91,
+        "code": "uld",
         "en": "M'avina's Embrace",
         "zh": "艾维娜的拥抱",
         "zh_tw": "馬維娜的擁抱"
       },
       {
         "id": 92,
+        "code": "xtg",
         "en": "M'avina's Icy Clutch",
         "zh": "艾维娜的冰握",
         "zh_tw": "馬維娜的冰握"
       },
       {
         "id": 93,
+        "code": "zvb",
         "en": "M'avina's Tenet",
         "zh": "艾维娜的教义",
         "zh_tw": "馬維娜的教義"
       },
       {
         "id": 94,
+        "code": "amc",
         "en": "M'avina's Caster",
         "zh": "艾维娜的施展",
         "zh_tw": "馬維娜的強弓"
@@ -737,30 +832,35 @@
     "items": [
       {
         "id": 95,
+        "code": "amu",
         "en": "Telling of Beads",
         "zh": "赐福念珠",
         "zh_tw": "誦唸珠"
       },
       {
         "id": 96,
+        "code": "ulg",
         "en": "Laying of Hands",
         "zh": "按手礼套",
         "zh_tw": "按手禮"
       },
       {
         "id": 97,
+        "code": "xlb",
         "en": "Rite of Passage",
         "zh": "皈依之道",
         "zh_tw": "入門式"
       },
       {
         "id": 98,
+        "code": "uui",
         "en": "Dark Adherent",
         "zh": "隐秘教徒",
         "zh_tw": "隱門徒"
       },
       {
         "id": 99,
+        "code": "umc",
         "en": "Credendum",
         "zh": "信念腰带",
         "zh_tw": "守信條"
@@ -774,24 +874,28 @@
     "items": [
       {
         "id": 100,
+        "code": "7ma",
         "en": "Dangoon's Teaching",
         "zh": "覃君的教导",
         "zh_tw": "檀君的教導"
       },
       {
         "id": 101,
+        "code": "uts",
         "en": "Taebaek's Glory",
         "zh": "泰白的荣耀",
         "zh_tw": "太白山的榮光"
       },
       {
         "id": 102,
+        "code": "xrs",
         "en": "Haemosu's Adamant",
         "zh": "解慕苏的坚定",
         "zh_tw": "解慕漱的堅決"
       },
       {
         "id": 103,
+        "code": "uhm",
         "en": "Ondal's Almighty",
         "zh": "温达的全灵",
         "zh_tw": "溫達的全靈"
@@ -805,24 +909,28 @@
     "items": [
       {
         "id": 104,
+        "code": "xhm",
         "en": "Guillaume's Face",
         "zh": "威廉的威容",
         "zh_tw": "吉永之臉"
       },
       {
         "id": 105,
+        "code": "ztb",
         "en": "Wilhelm's Pride",
         "zh": "威廉的骄傲",
         "zh_tw": "威廉的自尊"
       },
       {
         "id": 106,
+        "code": "xvg",
         "en": "Magnus' Skin",
         "zh": "雄主的皮手套",
         "zh_tw": "馬格納斯之皮"
       },
       {
         "id": 107,
+        "code": "xml",
         "en": "Whitstan's Guard",
         "zh": "威斯顿之御",
         "zh_tw": "惠斯坦的守護"
@@ -836,24 +944,28 @@
     "items": [
       {
         "id": 108,
+        "code": "xrn",
         "en": "Hwanin's Splendor",
         "zh": "桓因的壮美",
         "zh_tw": "桓因的光輝"
       },
       {
         "id": 109,
+        "code": "xcl",
         "en": "Hwanin's Refuge",
         "zh": "桓因的庇佑",
         "zh_tw": "桓因的庇佑"
       },
       {
         "id": 110,
+        "code": "mbl",
         "en": "Hwanin's Blessing",
         "zh": "桓因的祝福",
         "zh_tw": "桓因的祝福"
       },
       {
         "id": 111,
+        "code": "9vo",
         "en": "Hwanin's Justice",
         "zh": "桓因的圣裁",
         "zh_tw": "桓因的制裁"
@@ -867,18 +979,21 @@
     "items": [
       {
         "id": 112,
+        "code": "7ls",
         "en": "Sazabi's Cobalt Redeemer",
         "zh": "圣·沙略的济世之剑",
         "zh_tw": "沙薩比的救贖鈷劍"
       },
       {
         "id": 113,
+        "code": "upl",
         "en": "Sazabi's Ghost Liberator",
         "zh": "圣·沙略的魂灵解救者",
         "zh_tw": "沙薩比的解靈框體"
       },
       {
         "id": 114,
+        "code": "xhl",
         "en": "Sazabi's Mental Sheath",
         "zh": "圣·沙略的心灵庇护",
         "zh_tw": "沙薩比的精神護罩"
@@ -892,12 +1007,14 @@
     "items": [
       {
         "id": 115,
+        "code": "7gd",
         "en": "Bul-Kathos' Sacred Charge",
         "zh": "布尔凯索的神圣职责",
         "zh_tw": "布爾凱索的神聖職責"
       },
       {
         "id": 116,
+        "code": "7wd",
         "en": "Bul-Kathos' Tribal Guardian",
         "zh": "布尔凯索的部族守护",
         "zh_tw": "布爾凱索的部族守護"
@@ -911,18 +1028,21 @@
     "items": [
       {
         "id": 117,
+        "code": "xap",
         "en": "Cow King's Horns",
         "zh": "牛魔王之角",
         "zh_tw": "牛王之角"
       },
       {
         "id": 118,
+        "code": "stu",
         "en": "Cow King's Hide",
         "zh": "牛魔王之皮",
         "zh_tw": "牛王之皮"
       },
       {
         "id": 119,
+        "code": "vbt",
         "en": "Cow King's Hooves",
         "zh": "牛魔王之蹄",
         "zh_tw": "牛王之蹄"
@@ -936,18 +1056,21 @@
     "items": [
       {
         "id": 120,
+        "code": "6cs",
         "en": "Naj's Puzzler",
         "zh": "诺吉的解密棒",
         "zh_tw": "娜吉的解謎杖"
       },
       {
         "id": 121,
+        "code": "ult",
         "en": "Naj's Light Plate",
         "zh": "诺吉的轻铠甲",
         "zh_tw": "娜吉的輕鎧"
       },
       {
         "id": 122,
+        "code": "ci0",
         "en": "Naj's Circlet",
         "zh": "诺吉的头环",
         "zh_tw": "娜吉的頭環"
@@ -961,24 +1084,28 @@
     "items": [
       {
         "id": 123,
+        "code": "cap",
         "en": "Sander's Paragon",
         "zh": "山德的崇拜",
         "zh_tw": "山德的模範"
       },
       {
         "id": 124,
+        "code": "vbt",
         "en": "Sander's Riprap",
         "zh": "山德的石碓",
         "zh_tw": "山德的碎石"
       },
       {
         "id": 125,
+        "code": "vgl",
         "en": "Sander's Taboo",
         "zh": "山德的禁忌",
         "zh_tw": "山德的禁忌"
       },
       {
         "id": 126,
+        "code": "bwn",
         "en": "Sander's Superstition",
         "zh": "山德的迷信",
         "zh_tw": "山德的迷信"
@@ -992,18 +1119,21 @@
     "items": [
       {
         "id": 132,
+        "code": "kri",
         "en": "Bane's Oathmaker",
         "zh": "祸殃立誓者",
         "zh_tw": "貝恩的立誓者"
       },
       {
         "id": 133,
+        "code": "hla",
         "en": "Bane's Wraithskin",
         "zh": "祸殃怨魂之肤",
         "zh_tw": "貝恩的靈膚"
       },
       {
         "id": 134,
+        "code": "vbl",
         "en": "Bane's Authority",
         "zh": "祸殃权柄",
         "zh_tw": "貝恩的權威"
@@ -1017,30 +1147,35 @@
     "items": [
       {
         "id": 135,
+        "code": "usk",
         "en": "Horazon's Countenance",
         "zh": "霍拉松的面容",
         "zh_tw": "赫拉森的面容"
       },
       {
         "id": 136,
+        "code": "xpl",
         "en": "Horazon's Dominion",
         "zh": "霍拉松的统治",
         "zh_tw": "赫拉森的統治"
       },
       {
         "id": 137,
+        "code": "xlg",
         "en": "Horazon's Hold",
         "zh": "霍拉松的握持",
         "zh_tw": "赫拉森的掌控"
       },
       {
         "id": 138,
+        "code": "utb",
         "en": "Horazon's Legacy",
         "zh": "霍拉松的传承",
         "zh_tw": "赫拉森的傳承"
       },
       {
         "id": 139,
+        "code": "wad",
         "en": "Horazon's Secrets",
         "zh": "霍拉松的秘密",
         "zh_tw": "赫拉森的秘密"
