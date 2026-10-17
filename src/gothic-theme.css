@@ -234,22 +234,6 @@ h3 {
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.gothic-btn-accent {
-  background: linear-gradient(
-    135deg,
-    var(--color-accent-blue),
-    var(--color-accent-emerald)
-  );
-  border-color: var(--color-accent-blue);
-  color: #000;
-}
-
-.gothic-btn-accent:hover {
-  box-shadow: 
-    0 0 20px var(--color-glow-blue),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
 /* Tab buttons */
 .gothic-tab-btn {
   padding: 0.6rem 1.2rem;
@@ -279,15 +263,6 @@ h3 {
   color: var(--color-gold);
 }
 
-/* Compact buttons for utility functions */
-.gothic-btn-compact {
-  padding: 0.4rem 0.8rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
 /* Small buttons - about half the size */
 .gothic-btn-small {
   padding: 0.4rem 0.75rem;
@@ -300,7 +275,6 @@ h3 {
    FORM ELEMENTS
    ============================================================================ */
 
-.gothic-input,
 .gothic-select,
 .gothic-textarea {
   width: 100%;
@@ -315,12 +289,10 @@ h3 {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.gothic-input::placeholder,
 .gothic-textarea::placeholder {
   color: var(--color-text-muted);
 }
 
-.gothic-input:focus,
 .gothic-select:focus,
 .gothic-textarea:focus {
   outline: none;
@@ -425,10 +397,6 @@ h3 {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-.gothic-stat-accent {
-  color: var(--color-accent-blue);
-}
-
 /* ============================================================================
    COLLAPSIBLE SECTIONS
    ============================================================================ */
@@ -505,10 +473,6 @@ h3 {
 .gothic-grid {
   display: grid;
   gap: 1.5rem;
-}
-
-.gothic-grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .gothic-grid-3 {
@@ -618,14 +582,6 @@ h3 {
   box-shadow: 0 0 8px var(--color-glow-gold);
 }
 
-.gothic-counter-value {
-  width: 2rem;
-  text-align: center;
-  font-family: monospace;
-  font-weight: 600;
-  color: var(--color-gold);
-}
-
 /* ============================================================================
    SECTION DIVIDERS
    ============================================================================ */
@@ -701,52 +657,12 @@ h3 {
   color: var(--color-gold);
 }
 
-.gothic-text-steel {
-  color: var(--color-steel);
-}
-
-.gothic-text-blue {
-  color: var(--color-accent-blue);
-}
-
-.gothic-text-emerald {
-  color: var(--color-accent-emerald);
-}
-
 .gothic-text-muted {
   color: var(--color-text-muted);
 }
 
-.gothic-glow-gold {
-  box-shadow: 0 0 12px var(--color-glow-gold);
-}
-
-.gothic-glow-blue {
-  box-shadow: 0 0 12px var(--color-glow-blue);
-}
-
-.gothic-shadow {
-  box-shadow: 0 4px 12px var(--color-shadow-dark);
-}
-
 .gothic-hidden {
   display: none;
-}
-
-.gothic-space-sm {
-  margin-bottom: 0.5rem;
-}
-
-.gothic-space-md {
-  margin-bottom: 1rem;
-}
-
-.gothic-space-lg {
-  margin-bottom: 1.5rem;
-}
-
-.gothic-space-xl {
-  margin-bottom: 2rem;
 }
 
 /* ============================================================================

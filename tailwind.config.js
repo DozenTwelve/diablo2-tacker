@@ -1,6 +1,6 @@
 // tailwind.config.js
-/* global module */
-module.exports = {
+
+export default {
   darkMode: 'class', // ✅ M 要大写！
   content: [
     "./index.html",
