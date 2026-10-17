@@ -75,7 +75,7 @@ export async function parseSaveFiles(files) {
       } else {
         const save = JSON.parse(parseD2s(bytes));
         save.items.forEach((it) => collect(it, owner, placeOf(it), items));
-        save.merc_items.items.forEach((it) => collect(it, owner, "merc", items));
+        (save.merc_items?.items ?? []).forEach((it) => collect(it, owner, "merc", items));
         owners.push({ name: owner, cls: save.character.class, level: save.character.level });
       }
     } catch (e) {

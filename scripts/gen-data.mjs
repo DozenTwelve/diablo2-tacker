@@ -153,6 +153,9 @@ for (let i = 1; i <= 33; i++) {
   });
 }
 
+// What new characters start with (charstats.txt item1-10): weapons, buckler, potions, scrolls
+const starterCodes = new Set(table("charstats").flatMap((r) => numbered(10, (i) => r[`item${i}`]).filter((c) => c && c !== "0")));
+
 // Every base item code -> name, for bases, gems, charms, rares and anything else found in saves.
 // Also its table, item type, inventory size (w x h cells) and icon, in table order, for laying out mules and stashes
 const items = {};
@@ -164,6 +167,7 @@ for (const t of ["armor", "weapons", "misc"]) {
         ...names(key), table: t, type: r.type, w: Number(r.invwidth) || 1, h: Number(r.invheight) || 1,
         img: baseImg[r.code], variants: variantsOf(baseImg[r.code]),
         stack: r.AdvancedStashStackable === "1" || undefined, // goes in the stackable tab
+        starter: starterCodes.has(r.code) || undefined,
       };
   }
 }

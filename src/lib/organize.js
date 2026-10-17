@@ -1,7 +1,8 @@
 // Rearrange every mule item into numbered mules, from saves parsed by the WASM wrapper (wasm/).
-// Level 1 characters are mules: they are emptied (their starting kit is dropped) and everything goes
-// into new mules cloned from a level 1 Barbarian. Other characters are not touched. Shared stash
-// pages are emptied into the mules too; the stackable page is left alone.
+// Works on one game mode at a time (softcore/hardcore, Reign of the Warlock or not): its mules (level 1
+// characters, or the ones named) are emptied, their starting kit dropped, and everything they and the
+// mode's shared stash pages hold goes into new mules cloned from one of them (a Barbarian if any).
+// Other characters, other modes and the stackable stash page are not touched.
 // Uniques and set items get fixed slots laid out from the whole catalog, so an empty slot is one not
 // owned yet. Extra copies, runewords, charms, jewels, rings and amulets, other magic/rare items, bases
 // and the rest are packed into their own mules.
@@ -10,8 +11,9 @@ import items from "../data/items.json";
 
 const GRIDS = [["Stash", 10, 10], ["Inventory", 10, 4]];
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// Mule suffixes A..Z, then AA, AB... (names can't hold digits)
+const suffix = (i) => (i < 26 ? LETTERS[i] : suffix(Math.floor(i / 26) - 1) + LETTERS[i % 26]);
 const GOLD_STATS = new Set([14, 15]);
-const STARTER_SCROLLS = new Set(["tsc", "isc"]);
 
 // Item type first, then table row (normal, exceptional, elite), so similar items end up together
 const rowOf = new Map(Object.keys(items).map((code, i) => [code, i]));
@@ -42,9 +44,8 @@ function pack(prefix, units) {
   const mules = [];
   let grid;
   const open = () => {
-    if (mules.length === LETTERS.length) throw new Error(`more than ${LETTERS.length} ${prefix} mules`);
     grid = emptyMule();
-    mules.push({ name: `${prefix}-${LETTERS[mules.length]}`, slots: [] });
+    mules.push({ name: `${prefix}-${suffix(mules.length)}`, slots: [] });
   };
   open();
   for (const unit of units) {
@@ -144,38 +145,62 @@ function groupOf(key, item, code) {
   return ["weapons", "armor"].includes(items[code].table) ? "BASE" : "MISC";
 }
 
+// Starting kit: a plain weapon, buckler, potion or scroll that new characters get, still where it started
 const isStarter = (item) =>
-  item.position.mode === "Equipped" || item.position.mode === "InBelt" || STARTER_SCROLLS.has(codeOfNumber(item.code));
+  items[codeOfNumber(item.code)]?.starter &&
+  item.quality === "Normal" &&
+  (item.position.mode !== "Stored" || item.position.store_page === "Inventory");
 const moveTo = (item, { page, x, y }) => ({
   ...item,
   position: { ...item.position, mode: "Stored", body_location: "None", inv_x: x, inv_y: y, store_page: page },
 });
 
-// saves: [{ name, ext: "d2s" | "d2i", json }] -> { saves: [{ name, ext, json, template? }], report }.
-// Only changed saves are returned; new mules carry `template`, the save they were cloned from.
-// report.moves lists every moved item: { from, key, to, page, x, y }.
-export function organize(saves) {
-  const mules = saves.filter((s) => s.ext === "d2s" && s.json.character.level === 1);
-  const template = mules.find((s) => s.json.character.class === "Barbarian");
-  if (!template) throw new Error("no level 1 Barbarian to clone mules from");
+// Game mode of a character or shared stash file: "SoftCore:Modern" (Reign of the Warlock), "HardCore:Legacy"...
+export const modeOfCharacter = (json) =>
+  `${json.character.flags.includes("HARDCORE") ? "HardCore" : "SoftCore"}:${
+    json.character.preview.game_version === "ReignOfTheWarlock" ? "Modern" : "Legacy"
+  }`;
+export const modeOfStash = (name) => `${/hardcore/i.test(name) ? "HardCore" : "SoftCore"}:${/^modern/i.test(name) ? "Modern" : "Legacy"}`;
+
+// Mules of a mode: the named characters, or else every level 1 character
+export const mulesOf = (saves, mode, names) =>
+  saves.filter(
+    (s) =>
+      s.ext === "d2s" &&
+      modeOfCharacter(s.json) === mode &&
+      (names ? names.some((n) => n.toLowerCase() === s.name.toLowerCase()) : s.json.character.level === 1),
+  );
+
+// saves: [{ name, ext: "d2s" | "d2i", json }]; options: { mode, mules: names }
+// -> { saves: [{ name, ext, json, template? }], report }. Only changed saves are returned; new mules carry
+// `template`, the save they were cloned from. Mules whose names the new layout uses are rewritten in place.
+// report: { mules: names emptied, moved, dropped: [item], moves: [{ from, key, to, page, x, y }], ... }
+export function organize(saves, { mode = "SoftCore:Modern", mules: names } = {}) {
+  const mules = mulesOf(saves, mode, names);
+  if (!mules.length) throw new Error(`no mules in ${mode}`);
+  const template = mules.find((s) => s.json.character.class === "Barbarian") ?? mules[0];
 
   const source = []; // { item, from }
-  let dropped = 0;
-  const out = [];
+  const dropped = [];
+  const out = new Map(); // name (lower case) -> changed save
   for (const s of mules) {
     for (const item of s.json.items) {
-      if (isStarter(item)) dropped++;
-      else source.push({ item, from: `${s.name} ${item.position.store_page}` });
+      if (isStarter(item)) dropped.push(item);
+      else source.push({ item, from: `${s.name} ${item.position.store_page === "Null" ? "equipped" : item.position.store_page}` });
     }
-    out.push({ ...s, json: { ...s.json, items: [] } });
+    const merc = s.json.merc_items?.items ?? [];
+    source.push(...merc.map((item) => ({ item, from: `${s.name} merc` })));
+    const json = { ...s.json, items: [] };
+    if (merc.length) json.merc_items = { ...s.json.merc_items, items: [] };
+    out.set(s.name.toLowerCase(), { ...s, json });
   }
-  for (const s of saves.filter((s) => s.ext === "d2i")) {
+  for (const s of saves.filter((s) => s.ext === "d2i" && modeOfStash(s.name) === mode)) {
     const tabs = s.json.map((tab, i) => {
       if (tab.tab_type !== "Normal") return tab;
       source.push(...tab.items.map((item) => ({ item, from: `${s.name} ${i + 1}` })));
       return { ...tab, items: [] };
     });
-    out.push({ ...s, json: tabs });
+    out.set(s.name.toLowerCase(), { ...s, json: tabs });
   }
 
   const museum = museumLayout();
@@ -205,27 +230,34 @@ export function organize(saves) {
     }
   }
 
-  const taken = new Set(saves.map((s) => s.name.toLowerCase()));
-  const clash = [...placed.keys()].filter((name) => taken.has(name.toLowerCase()));
-  if (clash.length) throw new Error(`mule names already used: ${clash.join(", ")}`);
+  // A new mule may take the name of a mule being emptied (organizing again), never another character's
+  const others = new Set(saves.filter((s) => s.ext === "d2s" && !out.has(s.name.toLowerCase())).map((s) => s.name.toLowerCase()));
+  const clash = [...placed.keys()].filter((name) => others.has(name.toLowerCase()));
+  if (clash.length) throw new Error(`mule names already used by other characters: ${clash.join(", ")}`);
   for (const [name, list] of placed) {
     const json = structuredClone(template.json);
     json.character.preview.name = name;
+    if (json.character.name) json.character.name = name; // saves before v98 keep the name here
     json.items = list;
     json.stats = json.stats.filter((s) => !GOLD_STATS.has(s.id));
     json.corpses = [];
-    out.push({ name, ext: "d2s", json, template: template.name });
+    if (json.merc_items) json.merc_items = { ...json.merc_items, items: [] };
+    if (json.iron_golem) json.iron_golem = { ...json.iron_golem, golem_item: null };
+    out.set(name.toLowerCase(), { name, ext: "d2s", json, template: template.name });
   }
 
   const owned = (prefix) => [...museum.slots.values()].filter((s) => s.mule.startsWith(`${prefix}-`));
   const report = {
+    mode,
+    mules: mules.map((s) => s.name),
+    template: template.name,
     moved: source.length,
     dropped,
     museum: Object.fromEntries(
       ["UW", "UA", "UJ", "SET"].map((p) => [p, { owned: owned(p).filter((s) => filled.has(s.ref)).length, total: owned(p).length }]),
     ),
-    mules: [...placed].map(([name, list]) => ({ name, items: list.length })),
+    newMules: [...placed].map(([name, list]) => ({ name, items: list.length })),
     moves,
   };
-  return { saves: out, report };
+  return { saves: [...out.values()], report };
 }

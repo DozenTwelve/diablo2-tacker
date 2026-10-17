@@ -33,4 +33,4 @@ npm run dev
 | `npm run build:wasm` | Rebuild the save parser (needs Rust, the `wasm32-unknown-unknown` target and `wasm-pack`) |
 | `node scripts/check-saves.mjs <save dir>` | Parse a save folder with the app's code and print a summary |
 | `node scripts/check-props.mjs` | Check every catalog property (uniques, sets, runewords) shows as text |
-| `node scripts/organize.mjs <save dir> <out dir>` | Rearrange level 1 mules and shared stash pages into numbered Barbarian mules; writes only the changed saves to a new folder |
+| `node scripts/organize.mjs <save dir> <out dir> [--mode SoftCore:Modern] [--mules a,b] [--yes]` | Rearrange mules (level 1 characters, or the named ones) of one game mode into numbered mules; lists what it would do, writes only with `--yes`, to a new folder, after checking every item is kept |

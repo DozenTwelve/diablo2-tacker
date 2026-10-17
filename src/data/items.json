@@ -250,7 +250,8 @@
     "type": "shie",
     "w": 2,
     "h": 2,
-    "img": "shield/buckler"
+    "img": "shield/buckler",
+    "starter": true
   },
   "sml": {
     "en": "Small Shield",
@@ -2395,7 +2396,8 @@
     "type": "axe",
     "w": 1,
     "h": 3,
-    "img": "axe/hand_axe"
+    "img": "axe/hand_axe",
+    "starter": true
   },
   "axe": {
     "en": "Axe",
@@ -2505,7 +2507,8 @@
     "type": "wand",
     "w": 1,
     "h": 2,
-    "img": "wand/wand"
+    "img": "wand/wand",
+    "starter": true
   },
   "ywn": {
     "en": "Yew Wand",
@@ -2549,7 +2552,8 @@
     "type": "club",
     "w": 1,
     "h": 3,
-    "img": "club/club"
+    "img": "club/club",
+    "starter": true
   },
   "scp": {
     "en": "Scepter",
@@ -2670,7 +2674,8 @@
     "type": "swor",
     "w": 1,
     "h": 3,
-    "img": "sword/short_sword"
+    "img": "sword/short_sword",
+    "starter": true
   },
   "scm": {
     "en": "Scimitar",
@@ -2824,7 +2829,8 @@
     "type": "knif",
     "w": 1,
     "h": 2,
-    "img": "knife/dagger"
+    "img": "knife/dagger",
+    "starter": true
   },
   "dir": {
     "en": "Dirk",
@@ -2912,7 +2918,8 @@
     "type": "jave",
     "w": 1,
     "h": 3,
-    "img": "javelin/javelin"
+    "img": "javelin/javelin",
+    "starter": true
   },
   "pil": {
     "en": "Pilum",
@@ -3088,7 +3095,8 @@
     "type": "staf",
     "w": 1,
     "h": 3,
-    "img": "staff/short_staff"
+    "img": "staff/short_staff",
+    "starter": true
   },
   "lst": {
     "en": "Long Staff",
@@ -4320,7 +4328,8 @@
     "type": "h2h",
     "w": 1,
     "h": 3,
-    "img": "h2h/katar"
+    "img": "h2h/katar",
+    "starter": true
   },
   "wrb": {
     "en": "Wrist Blade",
@@ -5953,7 +5962,8 @@
     "type": "scro",
     "w": 1,
     "h": 1,
-    "img": "scroll/town_portal_scroll"
+    "img": "scroll/town_portal_scroll",
+    "starter": true
   },
   "isc": {
     "en": "Scroll of Identify",
@@ -5964,7 +5974,8 @@
     "type": "scro",
     "w": 1,
     "h": 1,
-    "img": "scroll/identify_scroll"
+    "img": "scroll/identify_scroll",
+    "starter": true
   },
   "hrt": {
     "en": "Heart",
@@ -6600,7 +6611,8 @@
     "type": "hpot",
     "w": 1,
     "h": 1,
-    "img": "potion/lesser_healing_potion"
+    "img": "potion/lesser_healing_potion",
+    "starter": true
   },
   "hp2": {
     "en": "Light Healing Potion",
