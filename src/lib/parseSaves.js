@@ -1,5 +1,6 @@
 // Parse D2R save files in the browser with the d2s WASM wrapper (wasm/).
-// Output is a flat list of owned items: { key, code, quality, ethereal, sockets, owner, place, count }.
+// Output is a flat list of owned items: { key, code, quality, ethereal, sockets, stats, owner, place, count },
+// stats as [statId, layer, value] (see src/lib/stats.js).
 import { codeOfNumber, keyOf } from "./gameData";
 
 let parser;
@@ -18,6 +19,16 @@ function placeOf(item) {
   return store_page === "Null" ? mode.toLowerCase() : store_page.toLowerCase();
 }
 
+// Item and runeword stats together, summing a stat present in both (e.g. enhanced damage)
+function statsOf(item) {
+  const sums = new Map();
+  for (const { id, layer, value } of [...item.stats, ...(item.runeword_stats ?? [])]) {
+    const key = `${id}:${layer}`;
+    sums.set(key, (sums.get(key) ?? 0) + value);
+  }
+  return [...sums].map(([key, value]) => [...key.split(":").map(Number), value]);
+}
+
 function collect(item, owner, place, out) {
   // Stackable stash tabs keep a slot for every gem/rune type, even when the count is 0
   const count = place === "advanced" ? item.advanced_stash_stack_size : 1;
@@ -29,6 +40,7 @@ function collect(item, owner, place, out) {
     quality: item.quality,
     ethereal: item.flags.includes("ETHEREAL"),
     sockets: item.sockets.length,
+    stats: statsOf(item),
     owner,
     place,
     count,

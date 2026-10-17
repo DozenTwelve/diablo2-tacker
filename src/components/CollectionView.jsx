@@ -4,6 +4,13 @@ import { locationLines, totalCount } from "../lib/inventory";
 import { t } from "../lib/i18n";
 import ProgressBar from "./ProgressBar";
 
+// Locations only, one line per spot
+function tooltip(records, lang) {
+  const counts = new Map();
+  for (const { text, count } of locationLines(records, lang)) counts.set(text, (counts.get(text) ?? 0) + count);
+  return [...counts].map(([text, count]) => `${text} ×${count}`).join("\n");
+}
+
 // One collection tab: groups of entry keys, each shown as owned (with count) or missing.
 // groups: [{ title, keys: [key] }]
 export default function CollectionView({ label, groups, owned, lang }) {
@@ -35,7 +42,7 @@ export default function CollectionView({ label, groups, owned, lang }) {
                   <div
                     key={key}
                     className={records ? "gothic-text-gold" : "gothic-text-muted"}
-                    title={records ? locationLines(records, lang).map((l) => `${l.text} ×${l.count}`).join("\n") : t("missing", lang)}
+                    title={records ? tooltip(records, lang) : t("missing", lang)}
                   >
                     {labelOf(key, lang)}
                     {records && <span className="ml-2 text-sm">×{totalCount(records)}</span>}

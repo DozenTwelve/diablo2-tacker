@@ -15,6 +15,7 @@ try {
   const { parseSaveFiles } = await vite.ssrLoadModule("/src/lib/parseSaves.js");
   const { catalog, labelOf } = await vite.ssrLoadModule("/src/lib/gameData.js");
   const { groupByKey, totalCount, locationLines } = await vite.ssrLoadModule("/src/lib/inventory.js");
+  const { default: statData } = await vite.ssrLoadModule("/src/data/stats.json");
 
   const files = readdirSync(dir).map((name) => new File([readFileSync(join(dir, name))], name));
   const { items, errors, files: n } = await parseSaveFiles(files);
@@ -32,8 +33,11 @@ try {
   for (const key of ["r:r30", "b:cm3:Magic", "b:jew:Magic"]) {
     if (!owned.has(key)) continue;
     console.log(`${labelOf(key, "zh_tw")} ×${totalCount(owned.get(key))}`);
-    locationLines(owned.get(key), "zh_tw").forEach((l) => console.log(`  ${l.text} ×${l.count}`));
+    locationLines(owned.get(key), "zh_tw").slice(0, 3).forEach((l) => console.log(`  ${l.text} ×${l.count}  ${l.stats.join(", ")}`));
   }
+  // Not an error: some stats are hidden in game too (poison length, level requirement...)
+  const undescribed = new Set(items.flatMap((i) => i.stats.map(([id]) => id)).filter((id) => !statData.stats[id]?.pos));
+  console.log("stat ids without a description:", [...undescribed].sort((a, b) => a - b).join(" "));
   errors.forEach((e) => console.log("ERROR", e));
   unmatched.forEach((i) => console.log("UNMATCHED", i.key, i.owner));
   process.exitCode = errors.length || unmatched.length ? 1 : 0;

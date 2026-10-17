@@ -103,10 +103,59 @@ for (const t of ["armor", "weapons", "misc"]) {
   }
 }
 
+// Stat descriptions (itemstatcost.txt) with every string they need, as [en, zh, zh_tw].
+// Formatting lives in src/lib/stats.js.
+for (const f of ["skills", "ui"]) {
+  const raw = readFileSync(join(root, `data/local/lng/strings/${f}.json`), "utf8").replace(/^﻿/, "");
+  for (const s of JSON.parse(raw)) if (!strings.has(s.Key)) strings.set(s.Key, s);
+}
+const statStrings = {};
+const useString = (key) => {
+  if (key && strings.has(key)) statStrings[key] = [str(key, "enUS"), str(key, "zhCN"), str(key, "zhTW")];
+  return key || undefined;
+};
+const stats = {};
+for (const r of table("itemstatcost")) {
+  if (!r["*ID"] || !r.descfunc) continue;
+  stats[r["*ID"]] = {
+    priority: Number(r.descpriority),
+    func: Number(r.descfunc),
+    pos: useString(r.descstrpos),
+    neg: useString(r.descstrneg),
+    str2: useString(r.descstr2),
+    shift: Number(r.ValShift) || undefined,
+    // op 2-5: value is per character level, scaled by 2^(op param)
+    perLevel: ["2", "3", "4", "5"].includes(r.op) ? Number(r["op param"]) : undefined,
+    group: Number(r.dgrp) || undefined,
+    groupPos: useString(r.dgrpstrpos),
+  };
+}
+const playerClasses = table("playerclass").filter((r) => r.Code).map((r) => r.Code);
+const classes = table("charstats")
+  .filter((r) => r.class !== "Expansion")
+  .map((r) => ({
+    all: useString(r.StrAllSkills),
+    tabs: [1, 2, 3].map((i) => useString(r[`StrSkillTab${i}`])),
+    only: useString(r.StrClassOnly),
+  }));
+const skillDescs = new Map(table("skilldesc").map((r) => [r.skilldesc, r["str name"]]));
+const skills = {};
+for (const r of table("skills")) {
+  const name = useString(skillDescs.get(r.skilldesc));
+  if (r["*Id"] && name) skills[r["*Id"]] = { name, cls: r.charclass ? playerClasses.indexOf(r.charclass) : undefined };
+}
+// Damage pairs shown as one line: "<key>Range" for "Adds X-Y", "<key>" when min equals max
+for (const key of ["strModMinDamage", "strModFireDamage", "strModColdDamage", "strModLightningDamage", "strModMagicDamage", "strModPoisonDamage"]) {
+  useString(key);
+  useString(`${key}Range`);
+}
+useString("strModEnhancedDamage");
+
 const write = (name, data) => writeFileSync(new URL(`${name}.json`, outDir), JSON.stringify(data, null, 2) + "\n");
 write("uniques", [...uniques.values()]);
 write("sets", [...sets.values()]);
 write("runewords", runewords);
 write("runes", runes);
 write("items", items);
-console.log(`uniques ${uniques.size}, sets ${sets.size}, runewords ${runewords.length}, runes ${runes.length}, items ${Object.keys(items).length}`);
+write("stats", { stats, classes, skills, strings: statStrings });
+console.log(`uniques ${uniques.size}, sets ${sets.size}, runewords ${runewords.length}, runes ${runes.length}, items ${Object.keys(items).length}, stats ${Object.keys(stats).length}, skills ${Object.keys(skills).length}`);

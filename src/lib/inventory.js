@@ -1,5 +1,6 @@
 // Helpers over the owned item list from parseSaves.
 import { t } from "./i18n";
+import { describeStats } from "./stats";
 
 export function groupByKey(items) {
   const map = new Map();
@@ -23,13 +24,20 @@ function placeLabel(place, lang) {
   return page ? t("sharedPage", lang, page[1]) : t(place, lang);
 }
 
-// Identical copies in the same spot collapse into one line with a count.
+// Saves loaded before stats were recorded have none
+export const statLines = (record, lang) => describeStats(record.stats ?? [], lang);
+
+// Copies in the same spot with identical stats collapse into one line with a count.
 export function locationLines(records, lang) {
   const lines = new Map();
   for (const r of records) {
     const details = [r.ethereal && t("ethereal", lang), r.sockets > 0 && t("sockets", lang, r.sockets)].filter(Boolean);
     const text = [ownerLabel(r.owner, lang), placeLabel(r.place, lang), ...details].join(" · ");
-    lines.set(text, (lines.get(text) ?? 0) + r.count);
+    const stats = statLines(r, lang);
+    const key = [text, ...stats].join("\n");
+    const line = lines.get(key) ?? { text, stats, count: 0 };
+    line.count += r.count;
+    lines.set(key, line);
   }
-  return [...lines].map(([text, count]) => ({ text, count }));
+  return [...lines.values()];
 }
