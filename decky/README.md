@@ -8,6 +8,10 @@ menu in Game Mode, with the saves read straight from the Deck.
 - `src/index.tsx`: the quick access panel. "Open collection" opens the tracker in Steam's browser. "Get item icons"
   pulls the inventory icons out of the player's own game files with [casc-cli](https://github.com/ironsp4rk/casc-cli)
   (MIT) and turns them into PNGs in Decky's data folder; the plugin ships no game art.
+- The app's "Organize" page (only in the plugin) sorts the mules and the ticked inbox pages of the shared stash,
+  shows what would happen, and on "Organize now" posts the checked saves to the backend. The backend refuses while
+  D2R is running, copies the whole save folder to Decky's data folder (`backups/<time>`), writes each file next to
+  its target and renames it over, then reads everything back.
 
 ## Build and install
 

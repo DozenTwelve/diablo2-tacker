@@ -43,6 +43,9 @@ export function locationLines(records, lang) {
   return [...lines.values()];
 }
 
+// A character is a mule or a main character as the player marked it (roles, see CharacterView), else by level 1 or not
+export const roleOf = (o, roles) => roles[o.name] ?? (o.level > 1 ? "main" : "mule");
+
 // Owners from saveData; saves loaded before owners were recorded only have item owners
 export const ownersOf = (saveData) =>
   saveData.owners ?? [...new Set(saveData.items.map((i) => i.owner))].map((name) => ({ name }));

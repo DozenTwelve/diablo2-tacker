@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { labelOf } from "../lib/gameData";
-import { groupByKey, itemsByPlace, ownerLabel, ownersOf, placeLabel, totalCount } from "../lib/inventory";
+import { groupByKey, itemsByPlace, ownerLabel, ownersOf, placeLabel, roleOf, totalCount } from "../lib/inventory";
 import { museumLayout } from "../lib/organize";
 import { t } from "../lib/i18n";
 import { Link } from "../lib/router";
@@ -18,8 +18,6 @@ const gridSize = (place) =>
 const DOLLS = { equipped: undefined, merc: ["Head", "Torso", "RightArm", "LeftArm"] };
 
 const MUSEUM = /^(UW|UA|UJ|SET)-/;
-// A character is a mule or a main character as the player marked it (roles), else by level 1 or not
-const roleOf = (o, roles) => roles[o.name] ?? (o.level > 1 ? "main" : "mule");
 const groupOf = (o, roles) =>
   !o.cls ? "sharedStash" : roleOf(o, roles) === "main" ? "mainCharacters" : MUSEUM.test(o.name) ? "museumMules" : /^TRASH-/.test(o.name) ? "trashMules" : "otherMules";
 

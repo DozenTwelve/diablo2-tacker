@@ -4,9 +4,9 @@
 //   --mules  characters to empty into the new mules (default: every level 1 character of the mode)
 //   --inbox  shared stash pages to empty (default: every page); the others stay as they are
 //   --yes    write; without it, only list which characters would be emptied and what would be made
-// The save dir is only read; the out dir must not exist. Everything is written to <out dir>.partial and
-// checked there (every item is kept exactly once, only starting kit is dropped, nothing overlaps); only
-// then it becomes <out dir>. plan.txt there lists every moved item (it is not a save).
+// The save dir is only read; the out dir must not exist. The new saves are checked before writing (every item
+// is kept exactly once, only starting kit is dropped, nothing overlaps, see organizeFiles), written to
+// <out dir>.partial and only then renamed to <out dir>. plan.txt there lists every moved item (it is not a save).
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { createServer } from "vite";
@@ -30,27 +30,15 @@ const vite = await createServer({ server: { middlewareMode: true }, appType: "cu
 try {
   const wasm = await vite.ssrLoadModule("/wasm/pkg/d2_parser.js");
   wasm.initSync({ module: readFileSync(new URL("../wasm/pkg/d2_parser_bg.wasm", import.meta.url)) });
-  const { organize } = await vite.ssrLoadModule("/src/lib/organize.js");
-  const { default: items } = await vite.ssrLoadModule("/src/data/items.json");
+  const { organizeFiles } = await vite.ssrLoadModule("/src/lib/organize.js");
   const { codeOfNumber, labelOf } = await vite.ssrLoadModule("/src/lib/gameData.js");
   const { ownerLabel } = await vite.ssrLoadModule("/src/lib/inventory.js");
   const { describeStats } = await vite.ssrLoadModule("/src/lib/stats.js");
   const { statsOf } = await vite.ssrLoadModule("/src/lib/parseSaves.js");
 
   const junkText = (m, lang) => describeStats(statsOf(m.item, codeOfNumber(m.item.code)), lang).join("; ");
-  const parse = (ext, bytes) => JSON.parse(ext === "d2s" ? wasm.parseD2s(bytes) : wasm.parseD2i(bytes));
-  const write = (ext, json) => (ext === "d2s" ? wasm.writeD2s : wasm.writeD2i)(JSON.stringify(json));
-  // A save must come back byte for byte from its JSON: JavaScript numbers can't hold every 64-bit value
-  const saves = readdirSync(dir)
-    .filter((f) => /\.d2[si]$/.test(f))
-    .map((f) => {
-      const bytes = readFileSync(join(dir, f));
-      const save = { name: f.slice(0, -4), ext: f.slice(-3) };
-      save.json = parse(save.ext, bytes);
-      if (Buffer.compare(Buffer.from(write(save.ext, save.json)), bytes)) throw new Error(`${f} does not round-trip, not touching it`);
-      return save;
-    });
-  const { saves: changed, report } = organize(saves, { mode, mules: muleNames, inbox });
+  const files = readdirSync(dir).filter((f) => /\.d2[si]$/i.test(f)).map((name) => ({ name, bytes: new Uint8Array(readFileSync(join(dir, name))) }));
+  const { files: changed, saves, report } = organizeFiles(files, wasm, { mode, mules: muleNames, inbox });
 
   console.log(`mode ${mode}: emptying ${report.mules.length} characters into ${report.newMules.length} mules cloned from ${report.template}`);
   for (const name of report.mules) {
@@ -72,11 +60,12 @@ try {
 
   mkdirSync(partial);
   try {
-    for (const s of changed) {
-      writeFileSync(join(partial, `${s.name}.${s.ext}`), write(s.ext, s.json));
+    for (const f of changed) {
+      writeFileSync(join(partial, f.name), f.bytes);
       for (const ext of ["ctl", "key", "ma0", "map"]) {
-        const from = join(dir, `${s.template}.${ext}`);
-        if (s.template && existsSync(from) && !existsSync(join(dir, `${s.name}.${ext}`))) copyFileSync(from, join(partial, `${s.name}.${ext}`));
+        const from = join(dir, `${f.template}.${ext}`);
+        const to = `${f.name.slice(0, -4)}.${ext}`;
+        if (f.template && existsSync(from) && !existsSync(join(dir, to))) copyFileSync(from, join(partial, to));
       }
     }
     const plan = report.moves
@@ -88,41 +77,6 @@ try {
       })
       .sort((a, b) => a.localeCompare(b));
     writeFileSync(join(partial, "plan.txt"), plan.join("\n") + "\n");
-
-    // Items without their position: before (the emptied characters and the mode's shared pages, as read)
-    // minus the dropped starting kit must equal after (every written save)
-    const fingerprint = (item) => JSON.stringify({ ...item, position: undefined });
-    const held = (save, ext) =>
-      ext === "d2s" ? [...save.items, ...(save.merc_items?.items ?? [])] : save.filter((t) => t.tab_type === "Normal").flatMap((t) => t.items);
-    const sources = new Set([...report.mules, ...changed.filter((s) => s.ext === "d2i").map((s) => s.name)]);
-    const before = saves.filter((s) => sources.has(s.name)).flatMap((s) => held(s.json, s.ext));
-    const after = changed.flatMap((s) => held(parse(s.ext, readFileSync(join(partial, `${s.name}.${s.ext}`))), s.ext));
-    for (const item of report.dropped) {
-      if (!items[codeOfNumber(item.code)]?.starter || item.quality !== "Normal") throw new Error("dropped something that is not starting kit");
-    }
-    const remaining = new Map();
-    for (const f of before.map(fingerprint)) remaining.set(f, (remaining.get(f) ?? 0) + 1);
-    for (const f of [...report.dropped, ...after].map(fingerprint)) {
-      if (!remaining.get(f)) throw new Error("item check failed: an item was added or duplicated");
-      remaining.set(f, remaining.get(f) - 1);
-    }
-    if ([...remaining.values()].some(Boolean)) throw new Error("item check failed: an item was lost");
-
-    // Every written character holds only stored items, inside the stash (10x10) or inventory (10x4), not overlapping
-    for (const s of changed.filter((s) => s.ext === "d2s")) {
-      const used = new Set();
-      for (const i of parse("d2s", readFileSync(join(partial, `${s.name}.d2s`))).items) {
-        const { w, h } = items[codeOfNumber(i.code)];
-        const { mode: where, store_page: page, inv_x: x, inv_y: y } = i.position;
-        const [W, H] = { Stash: [10, 10], Inventory: [10, 4] }[page] ?? [0, 0];
-        if (where !== "Stored" || x + w > W || y + h > H) throw new Error(`${s.name}: item outside the stash and inventory at ${page} ${x},${y}`);
-        for (let a = 0; a < w; a++) for (let b = 0; b < h; b++) {
-          const cell = `${page}:${x + a}:${y + b}`;
-          if (used.has(cell)) throw new Error(`${s.name}: items overlap at ${cell}`);
-          used.add(cell);
-        }
-      }
-    }
     renameSync(partial, outDir);
   } catch (e) {
     rmSync(partial, { recursive: true, force: true });

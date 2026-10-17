@@ -1,14 +1,17 @@
 # Backend of the Decky plugin, without Decky so it can be tested anywhere (../test_tracker.py).
 # Finds D2R's saves and game files under Steam's Proton prefixes, turns the game's item icons into PNGs,
 # and serves the web app (web/), the saves and the icons on 127.0.0.1.
+import base64
 import glob
 import json
 import os
+import re
 import shutil
 import struct
 import subprocess
 import tempfile
 import threading
+import time
 import zlib
 from urllib.parse import unquote
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -95,11 +98,52 @@ def game_running():
     return subprocess.run(["pgrep", "-f", "D2R.exe"], capture_output=True).returncode == 0
 
 
-class Handler(SimpleHTTPRequestHandler):
-    """/api/saves: save file names; /api/saves/<name>: one save; /items/<x>.webp: an icon (PNG);
-    anything else: the web app, index.html for unknown paths (the app routes on the client)."""
+SAVE_NAME = re.compile(r"[^./\\\x00][^/\\\x00]*\.d2[si]")
+COMPANIONS = (".ctl", ".key", ".ma0", ".map")  # a character's other files, copied from the template for new mules
 
-    web_dir = save_folder = icon_dir = None  # set by serve()
+
+def write_saves(folder, files, backup_root):
+    """Write organized saves into the save folder: files is [{name, bytes, template?}] from the web app's
+    organizeFiles. The game must not be running. The whole folder is backed up first, each file is written
+    next to its target and renamed over it, then read back. Returns the backup folder."""
+    if game_running():
+        raise PermissionError("D2R is running; quit the game first")
+    for f in files:
+        if not SAVE_NAME.fullmatch(f["name"]):
+            raise ValueError(f"not a save file name: {f['name']}")
+    # ponytail: backups are kept forever (a save folder is a few MB); prune if anyone collects hundreds
+    backup = os.path.join(backup_root, time.strftime("%Y%m%d-%H%M%S"))
+    shutil.copytree(folder, backup)
+    try:
+        _write(folder, files)
+    except Exception as e:
+        raise IOError(f"{e}; the saves as they were are backed up in {backup}") from e
+    return backup
+
+
+def _write(folder, files):
+    for f in files:
+        target = os.path.join(folder, f["name"])
+        for ext in COMPANIONS if f.get("template") else ():
+            source = os.path.join(folder, f["template"] + ext)
+            other = target[:-4] + ext
+            if SAVE_NAME.fullmatch(f["template"] + ".d2s") and os.path.isfile(source) and not os.path.exists(other):
+                shutil.copyfile(source, other)
+        with open(target + ".tmp", "wb") as out:
+            out.write(f["bytes"])
+        os.replace(target + ".tmp", target)
+    for f in files:
+        with open(os.path.join(folder, f["name"]), "rb") as written:
+            if written.read() != f["bytes"]:
+                raise IOError(f"{f['name']} did not read back the same")
+
+
+class Handler(SimpleHTTPRequestHandler):
+    """GET /api/saves: save file names; /api/saves/<name>: one save; /items/<x>.webp: an icon (PNG);
+    anything else: the web app, index.html for unknown paths (the app routes on the client).
+    POST /api/write: organized saves to write (write_saves), only from the app itself."""
+
+    web_dir = save_folder = icon_dir = backup_dir = None  # set by serve()
 
     def log_message(self, *args):
         pass
@@ -133,15 +177,38 @@ class Handler(SimpleHTTPRequestHandler):
             self.path = "/index.html"
         return super().do_GET()
 
+    def do_POST(self):
+        # Only the app's own page: browsers send Origin on every POST, and another site can't send JSON here
+        # without a CORS preflight, which this server never answers
+        origin = f"http://127.0.0.1:{self.server.server_address[1]}"
+        if self.path != "/api/write" or self.headers.get("Origin") != origin or self.headers.get("Content-Type") != "application/json":
+            return self.send_error(403)
+        try:
+            body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
+            files = [{**f, "bytes": base64.b64decode(f["data"])} for f in body["files"]]
+            result = {"backup": write_saves(self.save_folder(), files, self.backup_dir)}
+            status = 200
+        except PermissionError as e:
+            result, status = {"error": str(e), "running": True}, 409
+        except Exception as e:
+            result, status = {"error": str(e)}, 500
+        data = json.dumps(result).encode()
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
     def translate_path(self, path):
         # Static files from web_dir only
         rel = os.path.normpath(path.split("?")[0]).lstrip("/")
         return os.path.join(self.web_dir, rel)
 
 
-def serve(web_dir, save_folder, icon_dir, port=PORT):
+def serve(web_dir, save_folder, icon_dir, backup_dir, port=PORT):
     """Start the server in a thread; save_folder is a function, so a new save folder is picked up."""
-    handler = type("BoundHandler", (Handler,), {"web_dir": web_dir, "save_folder": staticmethod(save_folder), "icon_dir": icon_dir})
+    bound = {"web_dir": web_dir, "save_folder": staticmethod(save_folder), "icon_dir": icon_dir, "backup_dir": backup_dir}
+    handler = type("BoundHandler", (Handler,), bound)
     server = ThreadingHTTPServer(("127.0.0.1", port), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     return server

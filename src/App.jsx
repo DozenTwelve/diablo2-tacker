@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { uniques, sets, runewords, runes, uniqueKey, setItemKey, runewordKey, runeKey } from "./lib/gameData";
 import { groupByKey } from "./lib/inventory";
 import { LANGS, nameOf, t } from "./lib/i18n";
@@ -9,12 +9,14 @@ import SaveLoader from "./components/SaveLoader";
 import SearchView from "./components/SearchView";
 import CollectionView from "./components/CollectionView";
 import CharacterView from "./components/CharacterView";
+import OrganizeView from "./components/OrganizeView";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { SET_GREEN } from "./components/StashGrid";
 import { propLines, setBonusLines } from "./lib/props";
 import { Link, usePath } from "./lib/router";
 
-const TABS = ["search", "characters", "uniques", "sets", "runewords", "runes"];
+// Organizing writes saves, which only the Steam Deck plugin can do
+const TABS = ["search", "characters", "uniques", "sets", "runewords", "runes", ...(onDeck ? ["organize"] : [])];
 
 // Collection tabs as groups of keys; uniques grouped by item category
 function collectionGroups(tab, lang) {
@@ -50,9 +52,10 @@ export default function App() {
   const tab = TABS.includes(first) ? first : "search";
   const owned = useMemo(() => groupByKey(saveData?.items ?? []), [saveData]);
   // On the Deck, read the saves fresh every time the page opens
+  const readDeck = useCallback(() => deckSaveFiles().then(parseSaveFiles).then(setSaveData), [setSaveData]);
   useEffect(() => {
-    if (onDeck) deckSaveFiles().then(parseSaveFiles).then(setSaveData);
-  }, [setSaveData]);
+    if (onDeck) readDeck();
+  }, [readDeck]);
   // For screen readers and the right Chinese glyphs
   useEffect(() => {
     document.documentElement.lang = { zh: "zh-Hans", zh_tw: "zh-Hant", en: "en", ko: "ko" }[lang] ?? "en";
@@ -95,6 +98,8 @@ export default function App() {
         <ErrorBoundary key={`${tab}/${name}`} lang={lang} onReset={() => setSaveData(null)}>
           {tab === "search" ? (
             <SearchView owned={owned} lang={lang} />
+          ) : tab === "organize" ? (
+            <OrganizeView onWritten={readDeck} lang={lang} />
           ) : tab === "characters" ? (
             saveData && <CharacterView saveData={saveData} name={name} lang={lang} />
           ) : (

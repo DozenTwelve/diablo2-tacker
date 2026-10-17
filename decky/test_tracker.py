@@ -1,4 +1,5 @@
 # python3 test_tracker.py [sprite dir]: checks tracker.py; with a sprite dir (data/hd/global/ui/items) also converts the real icons.
+import base64
 import json
 import os
 import struct
@@ -35,7 +36,8 @@ with tempfile.TemporaryDirectory() as tmp:
     open(os.path.join(web, "index.html"), "w").write("app")
     os.makedirs(os.path.join(icons, "axe"))
     open(os.path.join(icons, "axe/hand_axe.png"), "wb").write(data)
-    server = tracker.serve(web, lambda: saves, icons, port=0)
+    backups = os.path.join(tmp, "backups")
+    server = tracker.serve(web, lambda: saves, icons, backups, port=0)
     base = f"http://127.0.0.1:{server.server_address[1]}"
     get = lambda path: urllib.request.urlopen(base + path).read()
 
@@ -53,6 +55,27 @@ with tempfile.TemporaryDirectory() as tmp:
     assert missing("/items/../web/index.webp") and missing("/items/axe/none.webp")
     assert get("/characters/Zanna") == b"app" and get("/") == b"app"
     assert get("/../../../etc/passwd") == b"app"
+
+    def post(body, origin=base, kind="application/json"):
+        request = urllib.request.Request(base + "/api/write", json.dumps(body).encode(), {"Origin": origin, "Content-Type": kind})
+        try:
+            return 200, json.loads(urllib.request.urlopen(request).read())
+        except HTTPError as e:
+            return e.code, None
+
+    new = [{"name": "UW-A.d2s", "data": base64.b64encode(b"mule").decode(), "template": "Zanna"}]
+    assert post({"files": new}, origin="http://evil.example")[0] == 403
+    assert post({"files": new}, kind="text/plain")[0] == 403
+    assert post({"files": [{"name": "../x.d2s", "data": ""}]})[0] == 500
+    tracker.game_running = lambda: True
+    assert post({"files": new})[0] == 409
+    tracker.game_running = lambda: False
+    status, result = post({"files": new})
+    assert status == 200, result
+    assert open(os.path.join(saves, "UW-A.d2s"), "rb").read() == b"mule"
+    assert open(os.path.join(saves, "UW-A.key"), "rb").read() == b"Zanna.key"  # copied from the template
+    assert os.listdir(result["backup"]) and "UW-A.d2s" not in os.listdir(result["backup"])
+    assert not [f for f in os.listdir(saves) if f.endswith(".tmp")]
     server.shutdown()
 
 if len(sys.argv) > 1:

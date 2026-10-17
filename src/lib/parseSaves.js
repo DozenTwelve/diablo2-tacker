@@ -8,7 +8,7 @@ import { codeOfNumber, keyOf } from "./gameData";
 import { socketStats } from "./props";
 
 let parser;
-async function loadParser() {
+export async function loadParser() {
   if (!parser) {
     parser = await import("../../wasm/pkg/d2_parser.js");
     await parser.default();

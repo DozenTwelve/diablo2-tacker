@@ -303,3 +303,74 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
   };
   return { saves: [...out.values()], report };
 }
+
+// Organize save files and write the result, checked before anything is returned: every item is kept exactly
+// once (only starting kit is dropped), and every written character holds only stored items, inside its stash
+// (10x10) or inventory (10x4), not overlapping. Throws when a check fails or a save would not round-trip.
+// files: [{ name: "Zanna.d2s", bytes }]; wasm: the parser (parseD2s, parseD2i, writeD2s, writeD2i); options as organize()
+// -> { files: [{ name, bytes, template? }] (only changed saves), saves (as read), report }
+export function organizeFiles(files, wasm, options) {
+  const parse = (ext, bytes) => JSON.parse(ext === "d2s" ? wasm.parseD2s(bytes) : wasm.parseD2i(bytes));
+  const write = (ext, json) => (ext === "d2s" ? wasm.writeD2s : wasm.writeD2i)(JSON.stringify(json));
+  const equal = (a, b) => a.length === b.length && a.every((x, i) => x === b[i]);
+  // A save must come back byte for byte from its JSON: JavaScript numbers can't hold every 64-bit value
+  const saves = files
+    .filter((f) => /\.d2[si]$/i.test(f.name))
+    .map((f) => {
+      const save = { name: f.name.slice(0, -4), ext: f.name.slice(-3).toLowerCase() };
+      save.json = parse(save.ext, f.bytes);
+      if (!equal(write(save.ext, save.json), f.bytes)) throw new Error(`${f.name} does not round-trip, not touching it`);
+      return save;
+    });
+  const { saves: changed, report } = organize(saves, options);
+  const out = changed.map((s) => ({ name: `${s.name}.${s.ext}`, bytes: write(s.ext, s.json), template: s.template }));
+  const written = new Map(out.map((f, i) => [f.name, parse(changed[i].ext, f.bytes)]));
+
+  // Items without their position: before (the emptied characters and the emptied shared pages, as read) minus
+  // the dropped starting kit must equal after (every written save)
+  const fingerprint = (item) => JSON.stringify({ ...item, position: undefined });
+  const held = (json, ext, pages) =>
+    ext === "d2s"
+      ? [...json.items, ...(json.merc_items?.items ?? [])]
+      : json.flatMap((tab, i) => (tab.tab_type === "Normal" && (!pages || pages.includes(i + 1)) ? tab.items : []));
+  const emptied = new Set(report.mules);
+  const before = saves.flatMap((s) =>
+    s.ext === "d2s" ? (emptied.has(s.name) ? held(s.json, "d2s") : []) : changed.some((c) => c.name === s.name) ? held(s.json, "d2i", options?.inbox) : [],
+  );
+  const after = changed.flatMap((s) => held(written.get(`${s.name}.${s.ext}`), s.ext, options?.inbox));
+  for (const item of report.dropped) {
+    if (!items[codeOfNumber(item.code)]?.starter || item.quality !== "Normal") throw new Error("dropped something that is not starting kit");
+  }
+  const remaining = new Map();
+  for (const f of before.map(fingerprint)) remaining.set(f, (remaining.get(f) ?? 0) + 1);
+  for (const f of [...report.dropped, ...after].map(fingerprint)) {
+    if (!remaining.get(f)) throw new Error("item check failed: an item was added or duplicated");
+    remaining.set(f, remaining.get(f) - 1);
+  }
+  if ([...remaining.values()].some(Boolean)) throw new Error("item check failed: an item was lost");
+  // Pages that are not inboxes must come back unchanged
+  for (const s of changed.filter((s) => s.ext === "d2i")) {
+    const original = saves.find((o) => o.name === s.name).json;
+    written.get(`${s.name}.d2i`).forEach((tab, i) => {
+      if ((tab.tab_type !== "Normal" || (options?.inbox && !options.inbox.includes(i + 1))) && JSON.stringify(tab) !== JSON.stringify(original[i]))
+        throw new Error(`${s.name} page ${i + 1} changed`);
+    });
+  }
+
+  for (const s of changed.filter((s) => s.ext === "d2s")) {
+    const used = new Set();
+    for (const i of written.get(`${s.name}.d2s`).items) {
+      const { w, h } = items[codeOfNumber(i.code)];
+      const { mode: where, store_page: page, inv_x: x, inv_y: y } = i.position;
+      const [W, H] = { Stash: [10, 10], Inventory: [10, 4] }[page] ?? [0, 0];
+      if (where !== "Stored" || x + w > W || y + h > H) throw new Error(`${s.name}: item outside the stash and inventory at ${page} ${x},${y}`);
+      for (let a = 0; a < w; a++)
+        for (let b = 0; b < h; b++) {
+          const cell = `${page}:${x + a}:${y + b}`;
+          if (used.has(cell)) throw new Error(`${s.name}: items overlap at ${cell}`);
+          used.add(cell);
+        }
+    }
+  }
+  return { files: out, saves, report };
+}

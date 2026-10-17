@@ -9,6 +9,7 @@ import tracker
 HOME = decky.DECKY_USER_HOME
 WEB = os.path.join(decky.DECKY_PLUGIN_DIR, "web")
 ICONS = os.path.join(decky.DECKY_PLUGIN_RUNTIME_DIR, "items")
+BACKUPS = os.path.join(decky.DECKY_PLUGIN_RUNTIME_DIR, "backups")
 
 
 def casc():
@@ -22,7 +23,7 @@ def casc():
 class Plugin:
     async def _main(self):
         os.makedirs(decky.DECKY_PLUGIN_RUNTIME_DIR, exist_ok=True)
-        self.server = tracker.serve(WEB, lambda: tracker.save_dir(HOME), ICONS)
+        self.server = tracker.serve(WEB, lambda: tracker.save_dir(HOME), ICONS, BACKUPS)
         decky.logger.info(f"serving on 127.0.0.1:{tracker.PORT}")
 
     async def _unload(self):
