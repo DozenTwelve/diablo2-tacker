@@ -80,26 +80,61 @@ function museumLayout() {
 // Magic, rare and crafted items by base type
 const MAGIC_GROUPS = { scha: "CHARM", mcha: "CHARM", lcha: "CHARM", csch: "CHARM", jewl: "JEWEL", cjwl: "JEWEL", ring: "RING", amul: "RING" };
 
-// Within those groups, items sort by what they are for, then base type, then the stat's value (highest first):
-// skills, resistances (all, fire, cold, lightning, poison), life, attack, attributes, magic find, the rest
+// Within those groups, items sort by what they are for (a rank, then a sub rank), then base type, then
+// the stat's value, highest first. Ranks per group, first to last:
+//   charms: skills, resistances (all, fire, cold, lightning, poison), life, attack, attributes, magic find
+//   jewels: attack (enhanced/max damage, attack speed), hit recovery, resistances, life, attributes
+//   rings, amulets: skills (by class), cast rate (with magic find first), magic find, life leech, attack
 const RESISTS = [39, 43, 41, 45];
-const ATTACK = [17, 18, 19, 21, 22, 48, 49, 50, 51, 54, 55, 57, 58];
-function purpose(item) {
-  const v = new Map(item.stats.map((s) => [s.id, s.value]));
-  const has = (ids) => ids.some((id) => v.has(id));
-  if (has([83, 107, 127, 188])) return [0, 0, v.get(127) ?? v.get(188) ?? v.get(83) ?? 0];
+const ATTACK = [17, 18, 19, 21, 22, 48, 49, 50, 51, 54, 55, 57, 58, 93];
+const SKILLS = [83, 107, 127, 188];
+const statsOf = (item) => new Map(item.stats.map((s) => [s.id, s.value]));
+const layerOf = (item, id) => item.stats.find((s) => s.id === id)?.layer;
+function resistRank(v) {
   const res = RESISTS.map((id) => v.get(id) ?? 0);
   const best = Math.max(...res);
-  if (best > 0) return [1, res.every(Boolean) ? 0 : res.indexOf(best) + 1, best];
-  if (v.has(7)) return [2, 0, v.get(7)];
-  if (has(ATTACK)) return [3, 0, v.get(22) ?? v.get(19) ?? 0];
-  if (has([0, 1, 2, 3])) return [4, 0, [0, 1, 2, 3].reduce((n, id) => n + (v.get(id) ?? 0), 0)];
-  if (has([79, 80])) return [5, 0, v.get(80) ?? 0];
-  return [6, 0, 0];
+  return best > 0 ? [res.every(Boolean) ? 0 : res.indexOf(best) + 1, best] : null;
 }
-const byPurpose = (a, b) => {
-  const [pa, pb] = [purpose(a.item), purpose(b.item)];
-  return pa[0] - pb[0] || pa[1] - pb[1] || byOrder(a.code, b.code) || pb[2] - pa[2];
+const sumOf = (v, ids) => ids.reduce((n, id) => n + (v.get(id) ?? 0), 0);
+const PURPOSE = {
+  CHARM(item, v, has) {
+    if (has(SKILLS)) return [0, 0, v.get(127) ?? v.get(188) ?? v.get(83) ?? 0];
+    const res = resistRank(v);
+    if (res) return [1, ...res];
+    if (v.has(7)) return [2, 0, v.get(7)];
+    if (has(ATTACK)) return [3, 0, v.get(22) ?? v.get(19) ?? 0];
+    if (has([0, 1, 2, 3])) return [4, 0, sumOf(v, [0, 1, 2, 3])];
+    if (has([79, 80])) return [5, 0, v.get(80) ?? 0];
+    return [6, 0, 0];
+  },
+  JEWEL(item, v, has) {
+    if (has(ATTACK)) return [0, 0, v.get(17) ?? v.get(22) ?? v.get(93) ?? 0];
+    if (v.has(99)) return [1, 0, v.get(99)];
+    const res = resistRank(v);
+    if (res) return [2, ...res];
+    if (v.has(7)) return [3, 0, v.get(7)];
+    if (has([0, 1, 2, 3])) return [4, 0, sumOf(v, [0, 1, 2, 3])];
+    return [5, 0, 0];
+  },
+  RING(item, v, has) {
+    if (has(SKILLS)) {
+      const cls = v.has(83) ? layerOf(item, 83) : v.has(188) ? Math.floor(layerOf(item, 188) / 8) : -1;
+      return [0, cls, sumOf(v, SKILLS)];
+    }
+    if (v.has(105)) return [1, v.has(80) ? 0 : 1, v.get(80) ?? v.get(105)];
+    if (v.has(80)) return [2, 0, v.get(80)];
+    if (v.has(60)) return [3, 0, v.get(60)];
+    if (has(ATTACK)) return [4, 0, v.get(19) ?? 0];
+    return [5, 0, 0];
+  },
+};
+const purpose = (group, item) => {
+  const v = statsOf(item);
+  return PURPOSE[group](item, v, (ids) => ids.some((id) => v.has(id)));
+};
+const byPurpose = (group) => (a, b) => {
+  const [pa, pb] = [purpose(group, a.item), purpose(group, b.item)];
+  return byOrder(a.code, b.code) * (group === "RING") || pa[0] - pb[0] || pa[1] - pb[1] || byOrder(a.code, b.code) || pb[2] - pa[2];
 };
 
 function groupOf(key, item, code) {
@@ -163,7 +198,7 @@ export function organize(saves) {
   for (const [key, e] of filled) put(museum.slots.get(key).mule, e, museum.slots.get(key));
   for (const [prefix, list] of Object.entries(loose)) {
     if (!list.length) continue;
-    list.sort(["CHARM", "JEWEL", "RING"].includes(prefix) ? byPurpose : (a, b) => byOrder(a.code, b.code) || a.key.localeCompare(b.key));
+    list.sort(PURPOSE[prefix] ? byPurpose(prefix) : (a, b) => byOrder(a.code, b.code) || a.key.localeCompare(b.key));
     for (const m of pack(prefix, list.map((e, i) => [{ ref: i, code: e.code }]))) {
       placed.set(m.name, []);
       m.slots.forEach((s) => put(m.name, list[s.ref], s));
