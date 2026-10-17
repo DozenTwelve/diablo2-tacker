@@ -24,7 +24,8 @@ export function Tooltip({ tip, lang }) {
   const { item, ghost, rect, extra = [] } = tip;
   const above = rect.top > innerHeight / 2;
   const left = Math.min(Math.max(rect.left + rect.width / 2, 160), innerWidth - 160);
-  const named = /^[usw]:/.test(item.key);
+  const named = /^[usw]:/.test(item.key) && item.code; // a missing runeword has no base
+  const elsewhere = item.elsewhere ?? [];
   return (
     <div
       className="fixed z-50 pointer-events-none text-center text-sm leading-snug px-3 py-2"
@@ -39,11 +40,11 @@ export function Tooltip({ tip, lang }) {
     >
       <div style={{ color: ghost ? GREY : colorOf(item) }}>{labelOf(item.key, lang)}</div>
       {named && <div style={{ color: ghost ? GREY : colorOf(item) }}>{baseNameOf(item.code, lang)}</div>}
-      {ghost && !item.elsewhere.length && <div style={{ color: GREY }}>{t("missing", lang)}</div>}
-      {ghost && item.elsewhere.length > 0 && (
+      {ghost && !elsewhere.length && <div style={{ color: GREY }}>{t("missing", lang)}</div>}
+      {ghost && elsewhere.length > 0 && (
         <>
           <div style={{ color: GREY }}>{t("ownedElsewhere", lang)}</div>
-          {locationLines(item.elsewhere, lang).map((l) => (
+          {locationLines(elsewhere, lang).map((l) => (
             <div key={l.text} className="gothic-text-gold">
               {l.text}
               {l.count > 1 && ` ×${l.count}`}
