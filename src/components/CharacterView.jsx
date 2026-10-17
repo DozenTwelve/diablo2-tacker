@@ -13,13 +13,16 @@ const MUSEUM = /^(UW|UA|UJ|SET)-/;
 const groupOf = (o) => (!o.cls ? "sharedStash" : o.level > 1 ? "mainCharacters" : MUSEUM.test(o.name) ? "museumMules" : "otherMules");
 const GROUPS = ["mainCharacters", "museumMules", "otherMules", "sharedStash"];
 
-// Empty fixed slots of a museum mule (see src/lib/organize.js), by place
+// Empty fixed slots of a museum mule (see src/lib/organize.js), by place, with where else the item is owned
 let museum;
-function ghostsOf(owner, records) {
+function ghostsOf(owner, allItems) {
   museum ??= museumLayout();
-  const owned = new Set(records.map((r) => r.key));
+  const owned = new Set(allItems.filter((r) => r.owner === owner).map((r) => r.key));
   const ghosts = { stash: [], inventory: [] };
-  for (const [key, s] of museum.slots) if (s.mule === owner && !owned.has(key)) ghosts[s.page.toLowerCase()].push({ key, ...s });
+  for (const [key, s] of museum.slots) {
+    if (s.mule !== owner || owned.has(key)) continue;
+    ghosts[s.page.toLowerCase()].push({ key, ...s, elsewhere: allItems.filter((r) => r.key === key) });
+  }
   return ghosts;
 }
 
@@ -58,7 +61,7 @@ function CharacterPage({ saveData, name, lang }) {
   const owner = ownersOf(saveData).find((o) => o.name === name);
   if (!owner) return <p className="gothic-text-muted">{t("noCharacter", lang)}</p>;
   const records = saveData.items.filter((r) => r.owner === name);
-  const ghosts = MUSEUM.test(name) ? ghostsOf(name, records) : {};
+  const ghosts = MUSEUM.test(name) ? ghostsOf(name, saveData.items) : {};
   const places = itemsByPlace(saveData.items, name, lang);
   // Museum mules show their empty stash/inventory even when nothing is in it yet
   for (const place of Object.keys(ghosts)) if (!places.some((p) => p.place === place)) places.push({ place, lines: [] });

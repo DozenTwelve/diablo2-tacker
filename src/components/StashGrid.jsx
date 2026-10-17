@@ -1,7 +1,7 @@
 import { useState } from "react";
 import items from "../data/items.json";
 import { baseNameOf, imageOf, labelOf } from "../lib/gameData";
-import { statLines } from "../lib/inventory";
+import { locationLines, statLines } from "../lib/inventory";
 import { t } from "../lib/i18n";
 
 // In-game item name colors
@@ -18,7 +18,8 @@ const GREY = "#8a8a8a";
 
 const CELL = 44; // max cell size in px; the grid shrinks to fit narrow screens
 
-// Item box in game style: name, base (for named items), ethereal/sockets, stats; or "missing" for a ghost
+// Item box in game style: name, base (for named items), ethereal/sockets, stats.
+// For a ghost: where else it is owned (main characters...), or "missing"
 function Tooltip({ tip, lang }) {
   const { item, ghost, rect } = tip;
   const above = rect.top > innerHeight / 2;
@@ -38,9 +39,19 @@ function Tooltip({ tip, lang }) {
     >
       <div style={{ color: ghost ? GREY : colorOf(item) }}>{labelOf(item.key, lang)}</div>
       {named && <div style={{ color: ghost ? GREY : colorOf(item) }}>{baseNameOf(item.code, lang)}</div>}
-      {ghost ? (
-        <div style={{ color: GREY }}>{t("missing", lang)}</div>
-      ) : (
+      {ghost && !item.elsewhere.length && <div style={{ color: GREY }}>{t("missing", lang)}</div>}
+      {ghost && item.elsewhere.length > 0 && (
+        <>
+          <div style={{ color: GREY }}>{t("ownedElsewhere", lang)}</div>
+          {locationLines(item.elsewhere, lang).map((l) => (
+            <div key={l.text} className="gothic-text-gold">
+              {l.text}
+              {l.count > 1 && ` ×${l.count}`}
+            </div>
+          ))}
+        </>
+      )}
+      {!ghost && (
         <>
           {item.ethereal && <div style={{ color: GREY }}>{t("ethereal", lang)}</div>}
           {item.sockets > 0 && <div style={{ color: GREY }}>{t("sockets", lang, item.sockets)}</div>}
@@ -71,7 +82,7 @@ export default function StashGrid({ width, height, records, ghosts = [], lang })
         style={{
           gridColumn: `${x + 1} / span ${w}`,
           gridRow: `${y + 1} / span ${h}`,
-          border: ghost ? "1px dashed #555" : `1px solid ${colorOf(item)}40`,
+          border: ghost ? `1px dashed ${item.elsewhere.length ? "var(--color-gold-dark)" : "#555"}` : `1px solid ${colorOf(item)}40`,
           background: ghost ? "transparent" : item.ethereal ? "rgba(120, 120, 170, 0.22)" : "rgba(30, 30, 40, 0.6)",
         }}
       >
@@ -80,7 +91,15 @@ export default function StashGrid({ width, height, records, ghosts = [], lang })
           alt={labelOf(item.key, lang)}
           loading="lazy"
           className="w-full h-full object-contain"
-          style={ghost ? { opacity: 0.25, filter: "grayscale(1)" } : item.ethereal ? { opacity: 0.6 } : undefined}
+          style={
+            ghost
+              ? item.elsewhere.length
+                ? { opacity: 0.55 }
+                : { opacity: 0.25, filter: "grayscale(1)" }
+              : item.ethereal
+                ? { opacity: 0.6 }
+                : undefined
+          }
         />
       </div>
     );
