@@ -1,7 +1,6 @@
 // Rearrange every mule item into numbered mules, from saves parsed by the WASM wrapper (wasm/).
 // Level 1 characters are mules: they are emptied (their starting kit is dropped) and everything goes
-// into new mules cloned from a level 1 Barbarian. Other characters are not touched. Shared stash
-// pages are emptied into the mules too; the stackable page is left alone.
+// into new mules cloned from a level 1 Barbarian. Other characters and the shared stash are not touched.
 // Uniques and set items get fixed slots laid out from the whole catalog, so an empty slot is one not
 // owned yet. Extra copies, runewords, magic/rare items, bases and the rest are packed into their own mules.
 import { uniques, sets, uniqueKey, setItemKey, keyOf, codeOfNumber } from "./gameData";
@@ -90,7 +89,7 @@ const moveTo = (item, { page, x, y }) => ({
   position: { ...item.position, mode: "Stored", body_location: "None", inv_x: x, inv_y: y, store_page: page },
 });
 
-// saves: [{ name, ext: "d2s" | "d2i", json }] -> { saves: [{ name, ext, json, template? }], report }.
+// saves: [{ name, ext: "d2s" | "d2i", json }] (shared stashes only for their names) -> { saves: [{ name, ext, json, template? }], report }.
 // Only changed saves are returned; new mules carry `template`, the save they were cloned from.
 export function organize(saves) {
   const mules = saves.filter((s) => s.ext === "d2s" && s.json.character.level === 1);
@@ -106,14 +105,6 @@ export function organize(saves) {
       else source.push(item);
     }
     out.push({ ...s, json: { ...s.json, items: [] } });
-  }
-  for (const s of saves.filter((s) => s.ext === "d2i")) {
-    const tabs = s.json.map((tab) => {
-      if (tab.tab_type !== "Normal") return tab;
-      source.push(...tab.items);
-      return { ...tab, items: [] };
-    });
-    out.push({ ...s, json: tabs });
   }
 
   const museum = museumLayout();

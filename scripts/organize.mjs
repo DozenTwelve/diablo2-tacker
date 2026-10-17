@@ -33,20 +33,16 @@ try {
     }
   }
 
-  // Item contents without position, before (mule and shared page items, minus starting kit) and after
+  // Item contents without position, before (mule items minus starting kit) and after
   const fingerprint = (item) => JSON.stringify({ ...item, position: undefined });
-  const stored = (save, ext) =>
-    ext === "d2s" ? save.items : save.filter((t) => t.tab_type === "Normal").flatMap((t) => t.items);
   const before = changed
     .filter((s) => !s.template)
-    .flatMap((s) => stored(parse(s.ext, readFileSync(join(dir, `${s.name}.${s.ext}`))), s.ext))
+    .flatMap((s) => parse(s.ext, readFileSync(join(dir, `${s.name}.${s.ext}`))).items)
     .filter((i) => i.position.mode === "Stored" && !["tsc", "isc"].includes(codeOfNumber(i.code)));
   const after = [];
   for (const s of changed) {
-    const save = parse(s.ext, readFileSync(join(outDir, `${s.name}.${s.ext}`)));
-    const list = stored(save, s.ext);
+    const list = parse(s.ext, readFileSync(join(outDir, `${s.name}.${s.ext}`))).items;
     after.push(...list);
-    if (s.ext !== "d2s") continue;
     const used = new Set();
     for (const i of list) {
       const { w, h } = items[codeOfNumber(i.code)];
