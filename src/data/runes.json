@@ -1,126 +1,167 @@
 {
   "El": {
-    "chinese_name": "埃尔",
-    "tier": 1
+    "code": "r01",
+    "chinese_name": "艾尔",
+    "zh_tw": "艾爾"
   },
   "Eld": {
-    "chinese_name": "埃德",
-    "tier": 1
+    "code": "r02",
+    "chinese_name": "艾德",
+    "zh_tw": "艾德"
   },
   "Tir": {
-    "chinese_name": "缇尔",
-    "tier": 2
+    "code": "r03",
+    "chinese_name": "提尔",
+    "zh_tw": "特爾"
   },
   "Nef": {
-    "chinese_name": "内夫",
-    "tier": 2
+    "code": "r04",
+    "chinese_name": "奈夫",
+    "zh_tw": "那夫"
   },
   "Eth": {
-    "chinese_name": "以太",
-    "tier": 3
+    "code": "r05",
+    "chinese_name": "艾斯",
+    "zh_tw": "愛斯"
   },
   "Ith": {
-    "chinese_name": "伊斯",
-    "tier": 3
+    "code": "r06",
+    "chinese_name": "伊司",
+    "zh_tw": "伊司"
   },
   "Tal": {
+    "code": "r07",
     "chinese_name": "塔尔",
-    "tier": 4
+    "zh_tw": "塔爾"
   },
   "Ral": {
+    "code": "r08",
     "chinese_name": "拉尔",
-    "tier": 4
+    "zh_tw": "拉爾"
   },
   "Ort": {
-    "chinese_name": "奥特",
-    "tier": 5
+    "code": "r09",
+    "chinese_name": "欧特",
+    "zh_tw": "歐特"
   },
   "Thul": {
-    "chinese_name": "祖尔",
-    "tier": 5
+    "code": "r10",
+    "chinese_name": "图尔",
+    "zh_tw": "書爾"
   },
   "Amn": {
-    "chinese_name": "艾姆恩",
-    "tier": 6
+    "code": "r11",
+    "chinese_name": "安姆",
+    "zh_tw": "安姆"
   },
   "Sol": {
+    "code": "r12",
     "chinese_name": "索尔",
-    "tier": 6
+    "zh_tw": "索爾"
   },
   "Shael": {
-    "chinese_name": "谢尔",
-    "tier": 7
+    "code": "r13",
+    "chinese_name": "沙伊",
+    "zh_tw": "夏"
   },
   "Dol": {
+    "code": "r14",
     "chinese_name": "多尔",
-    "tier": 7
+    "zh_tw": "多爾"
   },
   "Hel": {
-    "chinese_name": "赫尔",
-    "tier": 8
+    "code": "r15",
+    "chinese_name": "海尔",
+    "zh_tw": "海爾"
   },
   "Io": {
+    "code": "r16",
     "chinese_name": "艾欧",
-    "tier": 8
+    "zh_tw": "埃歐"
   },
   "Lum": {
+    "code": "r17",
     "chinese_name": "卢姆",
-    "tier": 9
+    "zh_tw": "盧姆"
   },
   "Ko": {
+    "code": "r18",
     "chinese_name": "科",
-    "tier": 9
+    "zh_tw": "科"
   },
-  "Vex": {
-    "chinese_name": "沃克斯",
-    "tier": 10
+  "Fal": {
+    "code": "r19",
+    "chinese_name": "法尔",
+    "zh_tw": "法爾"
   },
-  "Gul": {
-    "chinese_name": "古尔",
-    "tier": 10
-  },
-  "Mal": {
-    "chinese_name": "玛尔",
-    "tier": 11
-  },
-  "Amon": {
-    "chinese_name": "阿蒙",
-    "tier": 11
+  "Lem": {
+    "code": "r20",
+    "chinese_name": "兰姆",
+    "zh_tw": "藍姆"
   },
   "Pul": {
+    "code": "r21",
     "chinese_name": "普尔",
-    "tier": 12
+    "zh_tw": "普爾"
   },
   "Um": {
+    "code": "r22",
     "chinese_name": "乌姆",
-    "tier": 12
+    "zh_tw": "烏姆"
+  },
+  "Mal": {
+    "code": "r23",
+    "chinese_name": "玛尔",
+    "zh_tw": "馬爾"
+  },
+  "Ist": {
+    "code": "r24",
+    "chinese_name": "伊司特",
+    "zh_tw": "伊司特"
+  },
+  "Gul": {
+    "code": "r25",
+    "chinese_name": "古尔",
+    "zh_tw": "古爾"
+  },
+  "Vex": {
+    "code": "r26",
+    "chinese_name": "伐克斯",
+    "zh_tw": "伐克斯"
   },
   "Ohm": {
+    "code": "r27",
     "chinese_name": "欧姆",
-    "tier": 13
+    "zh_tw": "歐姆"
   },
   "Lo": {
-    "chinese_name": "洛",
-    "tier": 13
+    "code": "r28",
+    "chinese_name": "罗",
+    "zh_tw": "羅"
   },
   "Sur": {
-    "chinese_name": "苏尔",
-    "tier": 14
+    "code": "r29",
+    "chinese_name": "瑟",
+    "zh_tw": "瑟"
   },
   "Ber": {
-    "chinese_name": "贝尔",
-    "tier": 14
+    "code": "r30",
+    "chinese_name": "贝",
+    "zh_tw": "貝"
   },
   "Jah": {
-    "chinese_name": "雅",
-    "tier": 15
+    "code": "r31",
+    "chinese_name": "扎哈",
+    "zh_tw": "喬"
   },
   "Cham": {
+    "code": "r32",
     "chinese_name": "查姆",
-    "tier": 15
+    "zh_tw": "查姆"
   },
   "Zod": {
+    "code": "r33",
     "chinese_name": "佐德",
-    "tier": 16
+    "zh_tw": "薩德"
   }
 }
