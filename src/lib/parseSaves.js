@@ -24,7 +24,7 @@ function placeOf(item) {
 }
 
 // Item, runeword and socket stats together (runes and gems by gems.txt, jewels their own), summed as in game
-function statsOf(item, code) {
+export function statsOf(item, code) {
   const sockets = item.sockets
     .filter(Boolean)
     .flatMap((s) => (socketStats(code, codeOfNumber(s.code)) ?? s.stats.map((x) => [x.id, x.layer, x.value])).map(([id, layer, value]) => ({ id, layer, value })));

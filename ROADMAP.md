@@ -15,22 +15,19 @@ Planned work, roughly in order. Nothing here is started yet.
 [docs/saves.md](docs/saves.md): finding the save folder on Windows and Steam Deck, copying it off a Deck, and putting
 changed saves back. The app shows the same paths under "Where are my saves?". Consoles are out of scope.
 
-## 3. Organizing other players' stashes
+## 3. Organizing other players' stashes (done)
 
-`scripts/organize.mjs` works for one game mode at a time, lists which characters it would empty and writes only with `--yes`. Before others use it:
+The agent skill `.claude/skills/organize-stash` walks through it: get the saves and a backup, dry run, explain the
+result in plain words (which mules, what goes where, starting kit dropped), write only after the player agrees, hand
+back the new saves. Only tested on one real save folder so far; expect messier stashes to turn up new cases.
 
-- Explain the result first, in plain words: how many mules it makes, which items go where, that starting kit is dropped, and that mules are numbered (`UW-A`, `SET-A`...) with fixed slots for uniques and set items.
-- Ask for a backup, then hand back the new saves to copy into the save folder (also an agent skill).
-- Expect stashes far messier than a tidy set of mules.
+## 4. Keeping it organized (done)
 
-## 4. Keeping it organized
-
-Players drop new finds into the shared stash and come back later:
-
-- **Inbox pages**: the player picks which shared stash pages are an inbox. Only those, plus the mules, are reorganized; other pages are working sets for main characters (charms, for example) and stay as they are.
-- Uniques and set items go to their museum slots, or to the duplicates mule; everything else is regrouped, adding mules (`AA`, `AB`...) as groups grow.
-- **To clean**: likely junk magic and rare items (by rules, such as a single low roll on a jewel) gathered in one place for the player to delete. Nothing is deleted automatically.
-- **Report** after each run: new museum items, new duplicates, items waiting to be cleaned.
+- `--inbox 4,5`: only those shared stash pages are emptied, with the mules; other pages are working sets and stay.
+- Uniques and set items go to their museum slots or to `DUP` mules; groups that grow get more mules (`-AA`, `-AB`...).
+- `TRASH` mules: magic charms and jewels where every stat is a low roll (thresholds in `isJunk`,
+  `src/lib/organize.js`), for the player to look through. Nothing is deleted. The app lists them under "To clean".
+- The dry run reports what the inbox pages bring: new museum items, new duplicates, likely junk.
 
 ## 5. Steam Deck plugin
 

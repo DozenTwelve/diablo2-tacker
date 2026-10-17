@@ -2,12 +2,14 @@
 // Works on one game mode at a time (softcore/hardcore, Reign of the Warlock or not): its mules (level 1
 // characters, or the ones named) are emptied, their starting kit dropped, and everything they and the
 // mode's shared stash pages hold goes into new mules cloned from one of them (a Barbarian if any).
+// With inbox pages given, only those shared stash pages are emptied; the others stay as they are.
 // Other characters, other modes and the stackable stash page are not touched.
 // Uniques and set items get fixed slots laid out from the whole catalog, so an empty slot is one not
 // owned yet. Extra copies, runewords, charms, jewels, rings and amulets, other magic/rare items, bases
 // and the rest are packed into their own mules.
 import { uniques, sets, uniqueKey, setItemKey, keyOf, codeOfNumber } from "./gameData";
 import items from "../data/items.json";
+import statData from "../data/stats.json";
 
 const GRIDS = [["Stash", 10, 10], ["Inventory", 10, 4]];
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -141,9 +143,38 @@ const byPurpose = (group) => (a, b) => {
   return byOrder(a.code, b.code) * (group === "RING") || pa[0] - pb[0] || pa[1] - pb[1] || byOrder(a.code, b.code) || pb[2] - pa[2];
 };
 
+// Likely junk, gathered in TRASH mules for the player to delete: a magic charm or jewel on which every
+// stat is below what is worth keeping. Values as the game shows them, for [small, large, grand charm, jewel];
+// Infinity: never worth keeping on its own. Any stat not listed (skills, attack speed, hit recovery, run
+// speed, enhanced damage...) keeps the item, so does all resistances at its own value.
+// ponytail: fixed thresholds, make them a setting if players disagree
+const JUNK_BASES = ["scha", "mcha", "lcha", "jewl"];
+const ATTRIBUTE = [2, 4, 6, 6];
+const RESIST = [8, 12, 20, 20];
+const KEEP_AT = {
+  7: [15, 25, 35, 15], // life
+  0: ATTRIBUTE, 1: ATTRIBUTE, 2: ATTRIBUTE, 3: ATTRIBUTE,
+  39: RESIST, 41: RESIST, 43: RESIST, 45: RESIST,
+  80: [6, 10, 10, 10], // magic find
+  19: [20, 48, 76, 40], // attack rating
+  21: [2, 4, 6, 8], 22: [3, 6, 10, 15], // min / max damage
+  ...Object.fromEntries([9, 11, 31, 79, 89, 48, 49, 50, 51, 54, 55, 57, 58, 59].map((id) => [id, Array(4).fill(Infinity)])),
+};
+const ALL_RESIST_AT = [3, 6, 10, 10];
+export function isJunk(item, code) {
+  const base = JUNK_BASES.indexOf(items[code]?.type);
+  if (item.quality !== "Magic" || base < 0) return false;
+  const v = new Map();
+  for (const s of item.stats) v.set(s.id, (v.get(s.id) ?? 0) + (s.value >> (statData.stats[s.id]?.shift ?? 0)));
+  const res = RESISTS.map((id) => v.get(id));
+  if (res.every((r) => r === res[0] && r >= ALL_RESIST_AT[base])) return false;
+  return v.size > 0 && [...v].every(([id, value]) => KEEP_AT[id] && value < KEEP_AT[id][base]);
+}
+
 function groupOf(key, item, code) {
   if (key.startsWith("u:") || key.startsWith("s:")) return "DUP"; // extra copies and legacy uniques
   if (key.startsWith("w:")) return "RW";
+  if (isJunk(item, code)) return "TRASH";
   if (!["Normal", "Superior", "Inferior"].includes(item.quality)) return MAGIC_GROUPS[items[code].type] ?? "MAG";
   return ["weapons", "armor"].includes(items[code].table) ? "BASE" : "MISC";
 }
@@ -174,11 +205,12 @@ export const mulesOf = (saves, mode, names) =>
       (names ? names.some((n) => n.toLowerCase() === s.name.toLowerCase()) : s.json.character.level === 1),
   );
 
-// saves: [{ name, ext: "d2s" | "d2i", json }]; options: { mode, mules: names }
+// saves: [{ name, ext: "d2s" | "d2i", json }]; options: { mode, mules: names, inbox: shared stash page numbers }
 // -> { saves: [{ name, ext, json, template? }], report }. Only changed saves are returned; new mules carry
 // `template`, the save they were cloned from. Mules whose names the new layout uses are rewritten in place.
-// report: { mules: names emptied, moved, dropped: [item], moves: [{ from, key, to, page, x, y }], ... }
-export function organize(saves, { mode = "SoftCore:Modern", mules: names } = {}) {
+// report: { mules: names emptied, moved, dropped: [item], moves: [{ from, key, to, page, x, y, group }],
+//   inbox: what the shared stash pages brought: { museum: keys, dup: keys, trash: keys, other }, ... }
+export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox } = {}) {
   const mules = mulesOf(saves, mode, names);
   if (!mules.length) throw new Error(`no mules in ${mode}`);
   const template = mules.find((s) => s.json.character.class === "Barbarian") ?? mules[0];
@@ -199,8 +231,8 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names } = {})
   }
   for (const s of saves.filter((s) => s.ext === "d2i" && modeOfStash(s.name) === mode)) {
     const tabs = s.json.map((tab, i) => {
-      if (tab.tab_type !== "Normal") return tab;
-      source.push(...tab.items.map((item) => ({ item, from: `${s.name} ${i + 1}` })));
+      if (tab.tab_type !== "Normal" || (inbox && !inbox.includes(i + 1))) return tab;
+      source.push(...tab.items.map((item) => ({ item, from: `${s.name} ${i + 1}`, stash: true })));
       return { ...tab, items: [] };
     });
     out.set(s.name.toLowerCase(), { ...s, json: tabs });
@@ -208,7 +240,7 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names } = {})
 
   const museum = museumLayout();
   const filled = new Map(); // museum key -> item
-  const loose = { DUP: [], RW: [], CHARM: [], JEWEL: [], RING: [], MAG: [], BASE: [], MISC: [] };
+  const loose = { DUP: [], RW: [], CHARM: [], JEWEL: [], RING: [], MAG: [], BASE: [], MISC: [], TRASH: [] };
   const entries = source.map((e) => ({ ...e, code: codeOfNumber(e.item.code), key: keyOf(e.item, codeOfNumber(e.item.code)) }));
   // Non-ethereal copies take the museum slot first
   entries.sort((a, b) => a.item.flags.includes("ETHEREAL") - b.item.flags.includes("ETHEREAL"));
@@ -219,17 +251,17 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names } = {})
 
   const placed = new Map(museum.names.map((name) => [name, []]));
   const moves = [];
-  const put = (mule, e, spot) => {
+  const put = (mule, e, spot, group) => {
     placed.get(mule).push(moveTo(e.item, spot));
-    moves.push({ from: e.from, key: e.key, to: mule, page: spot.page, x: spot.x, y: spot.y });
+    moves.push({ from: e.from, key: e.key, to: mule, page: spot.page, x: spot.x, y: spot.y, group, stash: e.stash, item: e.item });
   };
-  for (const [key, e] of filled) put(museum.slots.get(key).mule, e, museum.slots.get(key));
+  for (const [key, e] of filled) put(museum.slots.get(key).mule, e, museum.slots.get(key), "MUSEUM");
   for (const [prefix, list] of Object.entries(loose)) {
     if (!list.length) continue;
     list.sort(PURPOSE[prefix] ? byPurpose(prefix) : (a, b) => byOrder(a.code, b.code) || a.key.localeCompare(b.key));
     for (const m of pack(prefix, list.map((e, i) => [{ ref: i, code: e.code }]))) {
       placed.set(m.name, []);
-      m.slots.forEach((s) => put(m.name, list[s.ref], s));
+      m.slots.forEach((s) => put(m.name, list[s.ref], s, prefix));
     }
   }
 
@@ -249,6 +281,7 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names } = {})
     out.set(name.toLowerCase(), { name, ext: "d2s", json, template: template.name });
   }
 
+  const fromStash = (group) => moves.filter((m) => m.stash && m.group === group).map((m) => m.key);
   const owned = (prefix) => [...museum.slots.values()].filter((s) => s.mule.startsWith(`${prefix}-`));
   const report = {
     mode,
@@ -261,6 +294,12 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names } = {})
     ),
     newMules: [...placed].map(([name, list]) => ({ name, items: list.length })),
     moves,
+    inbox: {
+      museum: fromStash("MUSEUM"),
+      dup: fromStash("DUP"),
+      trash: fromStash("TRASH"),
+      other: moves.filter((m) => m.stash && !["MUSEUM", "DUP", "TRASH"].includes(m.group)).length,
+    },
   };
   return { saves: [...out.values()], report };
 }

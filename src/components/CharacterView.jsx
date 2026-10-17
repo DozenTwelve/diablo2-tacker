@@ -20,7 +20,7 @@ const MUSEUM = /^(UW|UA|UJ|SET)-/;
 // A character is a mule or a main character as the player marked it (roles), else by level 1 or not
 const roleOf = (o, roles) => roles[o.name] ?? (o.level > 1 ? "main" : "mule");
 const groupOf = (o, roles) =>
-  !o.cls ? "sharedStash" : roleOf(o, roles) === "main" ? "mainCharacters" : MUSEUM.test(o.name) ? "museumMules" : "otherMules";
+  !o.cls ? "sharedStash" : roleOf(o, roles) === "main" ? "mainCharacters" : MUSEUM.test(o.name) ? "museumMules" : /^TRASH-/.test(o.name) ? "trashMules" : "otherMules";
 
 // Akara's reset and Larzuk's socket per difficulty
 const DIFFICULTIES = ["normal", "nightmare", "hell"];
@@ -41,7 +41,7 @@ function Rewards({ quests, lang }) {
     </div>
   );
 }
-const GROUPS = ["mainCharacters", "museumMules", "otherMules", "sharedStash"];
+const GROUPS = ["mainCharacters", "museumMules", "otherMules", "trashMules", "sharedStash"];
 
 // Empty fixed slots of a museum mule (see src/lib/organize.js), by place, with where else the item is owned
 let museum;

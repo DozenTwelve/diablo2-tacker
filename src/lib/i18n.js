@@ -42,6 +42,7 @@ const UI = {
   mainCharacters: ["主力号", "主力號", "Main characters", "주력 캐릭터"],
   museumMules: ["图鉴骡子", "圖鑑騾子", "Collection mules", "도감 창고캐"],
   otherMules: ["其他骡子", "其他騾子", "Other mules", "기타 창고캐"],
+  trashMules: ["待清理（可能是垃圾，自己确认后再丢）", "待清理（可能是垃圾，自己確認後再丟）", "To clean (likely junk, check before dropping)", "정리 대기 (버릴 만한 것, 확인 후 버리세요)"],
   noCharacter: ["找不到这个角色", "找不到這個角色", "No such character", "해당 캐릭터가 없습니다"],
   reloadForGrid: ["这批存档是旧版本读取的，没有格子位置，请重新选择存档。", "這批存檔是舊版本讀取的，沒有格子位置，請重新選擇存檔。", "These saves were read by an older version and have no positions; please pick the saves again.", "이전 버전에서 읽은 저장 파일이라 위치 정보가 없습니다. 저장 파일을 다시 선택하세요."],
   itemCount: [(n) => `${n} 件`, (n) => `${n} 件`, (n) => `${n} item${n === 1 ? "" : "s"}`, (n) => `${n}개`],
