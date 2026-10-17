@@ -64,9 +64,9 @@ h1 {
    ============================================================================ */
 
 .gothic-container {
-  max-width: 70rem;
+  max-width: 84rem;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 0 1rem 4rem;
   position: relative;
 }
 
@@ -81,46 +81,6 @@ h1 {
   pointer-events: none;
   box-shadow: inset 0 0 80px 20px rgba(0, 0, 0, 0.4);
   z-index: -1;
-}
-
-/* ============================================================================
-   CARDS & PANELS
-   ============================================================================ */
-
-.gothic-card {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border-metal);
-  border-radius: 6px;
-  box-shadow: 
-    0 0 12px var(--color-shadow-dark),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.gothic-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(198, 166, 100, 0.3),
-    transparent
-  );
-}
-
-.gothic-card:hover {
-  box-shadow: 
-    0 0 20px var(--color-glow-gold),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  border-color: var(--color-gold-dark);
 }
 
 /* ============================================================================
@@ -310,92 +270,10 @@ h1 {
 }
 
 /* ============================================================================
-   HEADER & TITLE
-   ============================================================================ */
-
-.gothic-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding: 2rem 0;
-  position: relative;
-}
-
-.gothic-header::before,
-.gothic-header::after {
-  content: '⚔';
-  display: block;
-  font-size: 1.5rem;
-  color: var(--color-gold);
-  margin: 0.5rem 0;
-  opacity: 0.6;
-}
-
-.gothic-header h1 {
-  font-size: 2.5rem;
-  margin: 1rem 0;
-  letter-spacing: 0.1em;
-}
-
-.gothic-header p {
-  color: var(--color-text-secondary);
-  font-size: 1rem;
-  margin-top: 0.5rem;
-}
-
-/* ============================================================================
-   STAT DISPLAYS
-   ============================================================================ */
-
-.gothic-stat {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-gold);
-  margin-bottom: 1.5rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-}
-
-@media (max-width: 768px) {
-}
-
-/* ============================================================================
    RESPONSIVE ADJUSTMENTS
    ============================================================================ */
 
-@media (max-width: 768px) {
-  .gothic-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .gothic-container {
-    padding: 1.5rem 1rem;
-  }
-
-  .gothic-card {
-    padding: 1.2rem;
-  }
-}
-
 @media (max-width: 480px) {
-  .gothic-header h1 {
-    font-size: 1.5rem;
-    margin: 0.75rem 0;
-  }
-
-  .gothic-header::before,
-  .gothic-header::after {
-    font-size: 1.2rem;
-  }
-
-  .gothic-container {
-    padding: 1rem 0.75rem;
-  }
-
-  .gothic-card {
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-
   .gothic-btn {
     padding: 0.6rem 1rem;
     font-size: 0.85rem;
@@ -414,55 +292,167 @@ h1 {
   color: var(--color-text-muted);
 }
 
+
 /* ============================================================================
-   PROGRESS BAR
+   APP SHELL: top bar, page titles, sections
    ============================================================================ */
 
-.gothic-progress-container {
-  width: 100%;
-  height: 24px;
-  background: rgba(30, 30, 30, 0.8);
-  border: 1px solid var(--color-border-metal);
+.app-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin: 0 -1rem 2rem;
+  padding: 0.6rem 1rem;
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border-metal);
+}
+/* On small screens the bar takes three rows; it scrolls away instead of covering the page */
+@media (max-width: 1023px) {
+  .app-bar {
+    position: static;
+  }
+}
+
+.app-title {
+  font-family: 'Cinzel Decorative', 'Georgia', serif;
+  color: var(--color-gold);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Nav: plain text, the current page underlined in gold */
+.nav-link {
+  padding: 0.35rem 0.1rem;
+  color: var(--color-text-secondary);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.nav-link:hover {
+  color: var(--color-gold-light);
+}
+.nav-link.active {
+  color: var(--color-gold);
+  border-bottom-color: var(--color-gold);
+}
+
+/* Language switch: one strip of small segments */
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--color-border-steel);
   border-radius: 4px;
   overflow: hidden;
-  margin-bottom: 1.5rem;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-  position: relative;
+}
+.segmented button {
+  padding: 0.15rem 0.55rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+.segmented button + button {
+  border-left: 1px solid var(--color-border-steel);
+}
+.segmented button.active {
+  background: var(--color-gold-dark);
+  color: #000;
 }
 
-.gothic-progress-bar {
+/* Page title with its count set beside it, and a thin progress rule underneath */
+.page-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.15;
+  margin: 0;
+}
+.page-count {
+  font-family: 'Cinzel Decorative', 'Georgia', serif;
+  color: var(--color-text-secondary);
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
+  white-space: nowrap;
+}
+.progress-rule {
+  height: 3px;
+  background: var(--color-border-steel);
+  margin-top: 0.75rem;
+}
+.progress-rule > div {
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--color-gold-dark),
-    var(--color-gold),
-    var(--color-gold-light)
-  );
-  width: 0%;
-  transition: width 0.5s ease;
-  position: relative;
-  box-shadow: 
-    0 0 8px var(--color-glow-gold),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+  background: var(--color-gold);
 }
 
-.gothic-progress-bar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    -90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
-  border-radius: 4px;
+/* A titled group of a page: heading row over a hairline, no box */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px solid var(--color-border-metal);
+}
+.section-head h2,
+.section-head h3 {
+  font-size: 1.15rem;
+  margin: 0;
+  white-space: nowrap;
+}
+.section-count {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
 
-.gothic-progress-label {
-  display: none;
+/* Collection sidebar: every group with its count, a jump list */
+.toc a {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-left: 2px solid transparent;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.toc a:hover {
+  color: var(--color-gold-light);
+  border-left-color: var(--color-gold-dark);
+}
+.toc a.complete {
+  color: var(--color-gold);
+}
+
+/* Panels for things that need a frame: the dropdown, the first-visit save picker */
+.panel {
+  background: rgba(14, 14, 14, 0.96);
+  border: 1px solid var(--color-border-metal);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+/* Rows of a list (search results, item lists) split by hairlines */
+.rows > * + * {
+  border-top: 1px solid var(--color-border-steel);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* A character or stash in the list */
+.tile {
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--color-border-steel);
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  text-decoration: none;
+}
+a.tile:hover,
+button.tile:hover {
+  border-color: var(--color-gold-dark);
 }

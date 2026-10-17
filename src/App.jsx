@@ -7,8 +7,6 @@ import SaveLoader from "./components/SaveLoader";
 import SearchView from "./components/SearchView";
 import CollectionView from "./components/CollectionView";
 import CharacterView from "./components/CharacterView";
-import StackTab, { SECTIONS } from "./components/StackTab";
-import ProgressBar from "./components/ProgressBar";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { SET_GREEN } from "./components/StashGrid";
 import { propLines, setBonusLines } from "./lib/props";
@@ -39,6 +37,7 @@ function collectionGroups(tab, lang) {
       ],
     }));
   }
+  if (tab === "runes") return [{ title: t("runes", lang), keys: runes.map(runeKey) }];
   return [{ title: t("runewords", lang), keys: runewords.map(runewordKey) }];
 }
 
@@ -55,46 +54,48 @@ export default function App() {
 
   return (
     <div className="gothic-container">
-      <div className="gothic-header">
-        <h1>{t("title", lang)}</h1>
-        <p className="gothic-text-muted">Diablo II: Resurrected Collection Tracker</p>
-      </div>
-
-      <div className="flex flex-wrap gap-2 mb-6 items-center">
-        {TABS.map((tabName) => (
-          <Link key={tabName} to={`/${tabName}`} className={`gothic-tab-btn no-underline ${tab === tabName ? "active" : ""}`}>
-            {t(tabName, lang)}
+      <header className="app-bar">
+        <div className="flex flex-wrap items-center gap-x-8 gap-y-1">
+          <Link to="/search" className="app-title no-underline">
+            {t("title", lang)}
           </Link>
-        ))}
-        <div className="flex gap-2 ml-auto">
-          {Object.entries(LANGS).map(([code, label]) => (
-            <button key={code} className={`gothic-tab-btn ${lang === code ? "active" : ""}`} onClick={() => setLang(code)}>
-              {label}
-            </button>
-          ))}
+          <nav className="flex gap-5 overflow-x-auto order-last w-full lg:order-none lg:w-auto">
+            {TABS.map((tabName) => (
+              <Link
+                key={tabName}
+                to={`/${tabName}`}
+                className={`nav-link ${tab === tabName ? "active" : ""}`}
+                aria-current={tab === tabName ? "page" : undefined}
+              >
+                {t(tabName, lang)}
+              </Link>
+            ))}
+          </nav>
+          <div className="ml-auto flex items-center gap-4">
+            {saveData && <SaveLoader saveData={saveData} onLoad={setSaveData} notStored={notStored} lang={lang} compact />}
+            <div className="segmented" role="group" aria-label="Language">
+              {Object.entries(LANGS).map(([code, label]) => (
+                <button key={code} className={lang === code ? "active" : ""} aria-pressed={lang === code} onClick={() => setLang(code)}>
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </header>
 
-      <div className="space-y-6">
-        <SaveLoader saveData={saveData} onLoad={setSaveData} notStored={notStored} lang={lang} />
+      <main>
+        {!saveData && <SaveLoader saveData={saveData} onLoad={setSaveData} notStored={notStored} lang={lang} />}
         <ErrorBoundary key={`${tab}/${name}`} lang={lang} onReset={() => setSaveData(null)}>
           {tab === "search" ? (
             <SearchView owned={owned} lang={lang} />
-          ) : tab === "runes" ? (
-            // Runes as in the stackable tab, counted over every character and stash
-            <div className="space-y-6">
-              <ProgressBar label={t("runes", lang)} owned={runes.filter((r) => owned.has(runeKey(r))).length} total={runes.length} lang={lang} />
-              <div className="gothic-card">
-                <StackTab byKey={owned} sections={SECTIONS.filter(([name]) => name === "runes")} showWhere lang={lang} />
-              </div>
-            </div>
           ) : tab === "characters" ? (
             saveData && <CharacterView saveData={saveData} name={name} lang={lang} />
           ) : (
             <CollectionView key={tab} label={t(tab, lang)} groups={collectionGroups(tab, lang)} owned={owned} lang={lang} />
           )}
         </ErrorBoundary>
-      </div>
+      </main>
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import { useMemo, useState } from "react";
-import { catalog, labelOf, searchTextOf } from "../lib/gameData";
+import { catalog, imageOf, labelOf, searchTextOf } from "../lib/gameData";
 import { statLines, totalCount } from "../lib/inventory";
 import { t } from "../lib/i18n";
 import Locations from "./Locations";
+import PageTitle from "./PageTitle";
 
 const MAX_RESULTS = 100;
 
@@ -35,30 +36,57 @@ export default function SearchView({ owned, lang }) {
   // Owned first, then by name
   matches.sort((a, b) => !a.records - !b.records || labelOf(a.key, lang).localeCompare(labelOf(b.key, lang)));
 
+  // Icon of an owned copy, else the catalog's (a missing runeword has none)
+  const iconOf = (key, records) => {
+    if (records) return imageOf(records[0]);
+    const code = catalog.get(key)?.names.code ?? (key.startsWith("b:") || key.startsWith("r:") ? key.split(":")[1] : null);
+    return code && imageOf({ key, code });
+  };
+
   return (
-    <div className="space-y-4">
+    <>
+      <PageTitle label={t("search", lang)} />
       <input
-        className="gothic-input"
+        className="gothic-input max-w-2xl"
+        style={{ fontSize: "1.1rem" }}
         placeholder={t("searchPlaceholder", lang)}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         autoFocus
       />
-      {q && matches.length === 0 && <p className="gothic-text-muted">{t("noResults", lang)}</p>}
-      {matches.length > MAX_RESULTS && <p className="gothic-text-muted">{t("tooMany", lang, MAX_RESULTS)}</p>}
-      {matches.slice(0, MAX_RESULTS).map(({ key, records }) => {
-        return (
-          <div key={key} className="gothic-card">
-            <div className="flex justify-between gap-4">
-              <span className={records ? "gothic-text-gold" : "gothic-text-muted"}>{labelOf(key, lang)}</span>
-              <span className={records ? "gothic-text-gold" : "gothic-text-muted"}>
-                {records ? `×${totalCount(records)}` : t("missing", lang)}
-              </span>
-            </div>
-            {records && <Locations records={records} lang={lang} />}
-          </div>
-        );
-      })}
-    </div>
+      <div className="mt-6 max-w-3xl">
+        {q && matches.length === 0 && <p className="gothic-text-muted">{t("noResults", lang)}</p>}
+        {matches.length > MAX_RESULTS && <p className="gothic-text-muted mb-3">{t("tooMany", lang, MAX_RESULTS)}</p>}
+        <div className="rows">
+          {matches.slice(0, MAX_RESULTS).map(({ key, records }) => {
+            const icon = iconOf(key, records);
+            return (
+              <div key={key} className="flex gap-4 py-3">
+                <span className="w-10 h-10 shrink-0">
+                  {icon && (
+                    <img
+                      src={icon}
+                      alt=""
+                      loading="lazy"
+                      className="w-full h-full object-contain"
+                      style={records ? undefined : { opacity: 0.3, filter: "grayscale(1)" }}
+                    />
+                  )}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <div className="flex justify-between gap-4">
+                    <span className={records ? "gothic-text-gold" : "gothic-text-muted"}>{labelOf(key, lang)}</span>
+                    <span className={records ? "gothic-text-gold" : "gothic-text-muted"}>
+                      {records ? `×${totalCount(records)}` : t("missing", lang)}
+                    </span>
+                  </div>
+                  {records && <Locations records={records} lang={lang} />}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
   );
 }

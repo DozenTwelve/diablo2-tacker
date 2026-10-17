@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { baseNameOf, catalog, imageOf, labelOf } from "../lib/gameData";
-import { ownerLabel, placeLabel, statLines } from "../lib/inventory";
+import { ownerLabel, placeLabel, statLines, totalCount } from "../lib/inventory";
 import { rollScore } from "../lib/props";
 import { t } from "../lib/i18n";
 import { colorOf, STAT_COLOR } from "./StashGrid";
@@ -32,7 +32,7 @@ export default function Copies({ entryKey, records, onClose, lang }) {
           <div className="flex items-center justify-between gap-4">
             <h3 className="gothic-text-gold text-lg">
               {labelOf(entryKey, lang)}
-              <span className="gothic-text-muted ml-3">×{records.length}</span>
+              <span className="gothic-text-muted ml-3">×{totalCount(records)}</span>
             </h3>
             <button className="gothic-tab-btn" style={{ padding: "0.2rem 0.8rem" }} onClick={onClose}>
               ✕
@@ -45,6 +45,7 @@ export default function Copies({ entryKey, records, onClose, lang }) {
                 <div className="min-w-0">
                   <div className="gothic-text-gold">
                     {ownerLabel(r.owner, lang)} · {placeLabel(r.place, lang)}
+                    {r.count > 1 && ` ×${r.count}`}
                     {score != null && <span className="ml-2 gothic-text-muted">{score}%</span>}
                   </div>
                   <div style={{ color: colorOf(r) }}>

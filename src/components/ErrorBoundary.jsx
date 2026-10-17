@@ -13,7 +13,7 @@ export default class ErrorBoundary extends Component {
     if (!this.state.error) return this.props.children;
     const { lang, onReset } = this.props;
     return (
-      <div className="gothic-card space-y-3">
+      <div className="panel space-y-3">
         <p>{t("pageError", lang)}</p>
         <p className="text-xs gothic-text-muted">{String(this.state.error.message ?? this.state.error)}</p>
         <button

@@ -8,6 +8,7 @@ import { useStoredState } from "../lib/useStoredState";
 import StashGrid, { colorOf } from "./StashGrid";
 import Paperdoll from "./Paperdoll";
 import StackTab from "./StackTab";
+import PageTitle from "./PageTitle";
 
 // Places drawn as grids, with their size in cells; the rest (equipped, belt...) are lists
 const gridSize = (place) =>
@@ -72,11 +73,11 @@ function CharacterList({ saveData, lang }) {
     if (!list.length) return null;
     return (
       <section key={group}>
-        <h3 className="gothic-text-gold mb-3">
-          {t(group, lang)}
-          <span className="gothic-text-muted ml-4">({list.length})</span>
-        </h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        <div className="section-head">
+          <h2>{t(group, lang)}</h2>
+          <span className="section-count">{list.length}</span>
+        </div>
+        <div className="grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(10rem, 1fr))" }}>
           {list.map((o) => {
             const open = (kind) => o.quests?.[kind].filter((s) => s === "available").length;
             const body = (
@@ -95,11 +96,11 @@ function CharacterList({ saveData, lang }) {
               </>
             );
             return editing && o.cls ? (
-              <button key={o.name} className="gothic-card p-3 text-left w-full" style={{ outline: "1px dashed var(--color-gold-dark)" }} onClick={() => toggle(o)}>
+              <button key={o.name} className="tile text-left w-full" style={{ borderStyle: "dashed", borderColor: "var(--color-gold-dark)" }} onClick={() => toggle(o)}>
                 {body}
               </button>
             ) : (
-              <Link key={o.name} to={`/characters/${encodeURIComponent(o.name)}`} className="gothic-card block p-3 no-underline">
+              <Link key={o.name} to={`/characters/${encodeURIComponent(o.name)}`} className="tile">
                 {body}
               </Link>
             );
@@ -110,14 +111,14 @@ function CharacterList({ saveData, lang }) {
   });
   return (
     <>
-      <div className="flex flex-wrap items-center gap-3">
+      <PageTitle label={t("characters", lang)}>
         <button className={`gothic-btn gothic-btn-small ${editing ? "" : "gothic-btn-secondary"}`} onClick={() => setEditing(!editing)}>
           {t(editing ? "done" : "editRoles", lang)}
         </button>
-        {editing && <span className="text-sm gothic-text-muted">{t("editRolesHint", lang)}</span>}
-      </div>
-      {sections}
-      {changed && <p className="text-sm gothic-text-muted break-all">{t("mulesHint", lang, mules.join(","))}</p>}
+      </PageTitle>
+      {editing && <p className="text-sm gothic-text-muted -mt-4 mb-6">{t("editRolesHint", lang)}</p>}
+      <div className="space-y-10">{sections}</div>
+      {changed && <p className="text-sm gothic-text-muted break-all mt-8">{t("mulesHint", lang, mules.join(","))}</p>}
     </>
   );
 }
@@ -138,13 +139,13 @@ function CharacterPage({ saveData, name, lang }) {
   const noPositions = records.some((r) => (gridSize(r.place) && r.x == null) || (r.place in DOLLS && !r.slot));
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-10">
       <div>
-        <Link to="/characters" className="text-sm gothic-text-muted">
+        <Link to="/characters" className="text-sm gothic-text-muted no-underline">
           ← {t("characters", lang)}
         </Link>
-        <h2 className="gothic-text-gold text-xl mt-1">{ownerLabel(name, lang)}</h2>
-        <p className="text-sm gothic-text-muted">
+        <h1 className="page-title mt-2">{ownerLabel(name, lang)}</h1>
+        <p className="gothic-text-muted mt-1 mb-3">
           {owner.cls && `${t(owner.cls, lang)} Lv${owner.level} · `}
           {t("itemCount", lang, totalCount(records))}
         </p>
@@ -152,46 +153,48 @@ function CharacterPage({ saveData, name, lang }) {
       </div>
       {noPositions && <p className="text-sm text-red-400">{t("reloadForGrid", lang)}</p>}
       {dolls.length > 0 && (
-        <div className="flex flex-wrap gap-8 items-start">
+        <div className="flex flex-wrap gap-x-8 gap-y-10 items-start">
           {dolls.map((place) => (
             <div key={place} className="w-full" style={{ maxWidth: 8 * 44 }}>
-              <h3 className="gothic-text-gold mb-2 text-sm">{placeLabel(place, lang)}</h3>
+              <div className="section-head">
+                <h3>{placeLabel(place, lang)}</h3>
+              </div>
               <Paperdoll records={records.filter((r) => r.place === place)} slots={DOLLS[place]} lang={lang} />
             </div>
           ))}
         </div>
       )}
-      <div className="flex flex-wrap gap-6 items-start">
+      <div className="flex flex-wrap gap-x-8 gap-y-10 items-start">
         {grids.map(({ place }) => {
           const [w, h] = gridSize(place);
           const inPlace = records.filter((r) => r.place === place && r.x != null);
           return (
             <div key={place} className="w-full" style={{ maxWidth: w * 44 }}>
-              <h3 className="gothic-text-gold mb-2 text-sm">
-                {placeLabel(place, lang)}
-                <span className="gothic-text-muted ml-3">({totalCount(inPlace)})</span>
-              </h3>
+              <div className="section-head">
+                <h3>{placeLabel(place, lang)}</h3>
+                <span className="section-count">{totalCount(inPlace)}</span>
+              </div>
               <StashGrid width={w} height={h} records={inPlace} ghosts={ghosts[place]} lang={lang} />
             </div>
           );
         })}
       </div>
       {stacked.length > 0 && (
-        <div className="gothic-card">
-          <h3 className="gothic-text-gold mb-3">
-            {placeLabel("advanced", lang)}
-            <span className="gothic-text-muted ml-4">({totalCount(stacked)})</span>
-          </h3>
+        <section>
+          <div className="section-head">
+            <h3>{placeLabel("advanced", lang)}</h3>
+            <span className="section-count">{totalCount(stacked)}</span>
+          </div>
           <StackTab byKey={groupByKey(stacked)} lang={lang} />
-        </div>
+        </section>
       )}
       {lists.map(({ place, lines }) => (
-        <div key={place} className="gothic-card">
-          <h3 className="gothic-text-gold mb-3">
-            {placeLabel(place, lang)}
-            <span className="gothic-text-muted ml-4">({totalCount(lines)})</span>
-          </h3>
-          <ul className="grid md:grid-cols-2 gap-3 text-sm">
+        <section key={place}>
+          <div className="section-head">
+            <h3>{placeLabel(place, lang)}</h3>
+            <span className="section-count">{totalCount(lines)}</span>
+          </div>
+          <ul className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-3 text-sm">
             {lines.map(({ record, stats, count }, i) => (
               <li key={i}>
                 <span style={{ color: colorOf(record) }}>{labelOf(record.key, lang)}</span>
@@ -206,7 +209,7 @@ function CharacterPage({ saveData, name, lang }) {
               </li>
             ))}
           </ul>
-        </div>
+        </section>
       ))}
     </div>
   );

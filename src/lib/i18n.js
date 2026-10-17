@@ -56,6 +56,7 @@ const UI = {
   Warlock: ["术士", "術士", "Warlock", "워록"],
   pickFolder: ["选择存档文件夹", "選擇存檔資料夾", "Pick save folder", "저장 폴더 선택"],
   pickFiles: ["选择存档文件", "選擇存檔檔案", "Pick save files", "저장 파일 선택"],
+  savesShort: [(n) => `${n} 个存档`, (n) => `${n} 個存檔`, (n) => `${n} saves`, (n) => `저장 파일 ${n}개`],
   whereSaves: ["存档在哪？", "存檔在哪？", "Where are my saves?", "저장 파일은 어디에 있나요?"],
   savesOffline: [
     "只有单机（离线）角色存在本机；战网在线角色存在服务器上，读不到。",

@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { parseSaveFiles } from "../lib/parseSaves";
 import { t } from "../lib/i18n";
 
 const DECK_FIND = `find ~/.local/share/Steam/steamapps/compatdata -type d -path "*/Saved Games/Diablo II Resurrected"`;
 
-// The file inputs stay focusable (sr-only, not display:none) so saves can be picked from the keyboard
-export default function SaveLoader({ saveData, onLoad, notStored, lang }) {
+// The file inputs stay focusable (sr-only, not display:none) so saves can be picked from the keyboard.
+// Before any saves are loaded it is a panel on the page; after, compact: a menu in the top bar.
+export default function SaveLoader({ saveData, onLoad, notStored, lang, compact }) {
   const [busy, setBusy] = useState(false);
+  const menu = useRef(null);
 
   const handleFiles = async (e) => {
     const files = [...e.target.files];
@@ -15,13 +17,21 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang }) {
     setBusy(true);
     try {
       onLoad(await parseSaveFiles(files));
+      if (menu.current) menu.current.open = false;
     } finally {
       setBusy(false);
     }
   };
 
-  return (
-    <div className="gothic-card space-y-3">
+  const body = (
+    <div className="space-y-3">
+      <p className="text-sm">
+        {busy
+          ? t("parsing", lang)
+          : saveData
+            ? t("loaded", lang, saveData.files, saveData.items.length, new Date(saveData.loadedAt).toLocaleString())
+            : t("noSaves", lang)}
+      </p>
       <div className="flex flex-wrap gap-3 items-center">
         <label className="gothic-btn gothic-btn-small focus-within:outline focus-within:outline-2" style={{ cursor: "pointer", margin: 0 }}>
           {t("pickFolder", lang)}
@@ -40,13 +50,6 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang }) {
           </button>
         )}
       </div>
-      <p className="text-sm">
-        {busy
-          ? t("parsing", lang)
-          : saveData
-            ? t("loaded", lang, saveData.files, saveData.items.length, new Date(saveData.loadedAt).toLocaleString())
-            : t("noSaves", lang)}
-      </p>
       {notStored && <p className="text-sm text-red-400">{t("notStored", lang)}</p>}
       {saveData?.errors.map((err, i) => (
         <p key={i} className="text-sm text-red-400">
@@ -64,5 +67,17 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang }) {
         <p>{t("savesOffline", lang)}</p>
       </details>
     </div>
+  );
+
+  if (!compact) return <section className="panel mb-10 max-w-2xl">{body}</section>;
+  return (
+    <details ref={menu} className="relative">
+      <summary className={`text-sm cursor-pointer whitespace-nowrap ${saveData?.errors.length || notStored ? "text-red-400" : "gothic-text-muted"}`}>
+        {t("savesShort", lang, saveData.files)}
+      </summary>
+      <div className="panel absolute right-0 mt-2 z-30 shadow-2xl" style={{ width: "min(26rem, calc(100vw - 2rem))" }}>
+        {body}
+      </div>
+    </details>
   );
 }
