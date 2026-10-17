@@ -1,167 +1,200 @@
-{
-  "El": {
+[
+  {
     "code": "r01",
-    "chinese_name": "艾尔",
+    "en": "El",
+    "zh": "艾尔",
     "zh_tw": "艾爾"
   },
-  "Eld": {
+  {
     "code": "r02",
-    "chinese_name": "艾德",
+    "en": "Eld",
+    "zh": "艾德",
     "zh_tw": "艾德"
   },
-  "Tir": {
+  {
     "code": "r03",
-    "chinese_name": "提尔",
+    "en": "Tir",
+    "zh": "提尔",
     "zh_tw": "特爾"
   },
-  "Nef": {
+  {
     "code": "r04",
-    "chinese_name": "奈夫",
+    "en": "Nef",
+    "zh": "奈夫",
     "zh_tw": "那夫"
   },
-  "Eth": {
+  {
     "code": "r05",
-    "chinese_name": "艾斯",
+    "en": "Eth",
+    "zh": "艾斯",
     "zh_tw": "愛斯"
   },
-  "Ith": {
+  {
     "code": "r06",
-    "chinese_name": "伊司",
+    "en": "Ith",
+    "zh": "伊司",
     "zh_tw": "伊司"
   },
-  "Tal": {
+  {
     "code": "r07",
-    "chinese_name": "塔尔",
+    "en": "Tal",
+    "zh": "塔尔",
     "zh_tw": "塔爾"
   },
-  "Ral": {
+  {
     "code": "r08",
-    "chinese_name": "拉尔",
+    "en": "Ral",
+    "zh": "拉尔",
     "zh_tw": "拉爾"
   },
-  "Ort": {
+  {
     "code": "r09",
-    "chinese_name": "欧特",
+    "en": "Ort",
+    "zh": "欧特",
     "zh_tw": "歐特"
   },
-  "Thul": {
+  {
     "code": "r10",
-    "chinese_name": "图尔",
+    "en": "Thul",
+    "zh": "图尔",
     "zh_tw": "書爾"
   },
-  "Amn": {
+  {
     "code": "r11",
-    "chinese_name": "安姆",
+    "en": "Amn",
+    "zh": "安姆",
     "zh_tw": "安姆"
   },
-  "Sol": {
+  {
     "code": "r12",
-    "chinese_name": "索尔",
+    "en": "Sol",
+    "zh": "索尔",
     "zh_tw": "索爾"
   },
-  "Shael": {
+  {
     "code": "r13",
-    "chinese_name": "沙伊",
+    "en": "Shael",
+    "zh": "沙伊",
     "zh_tw": "夏"
   },
-  "Dol": {
+  {
     "code": "r14",
-    "chinese_name": "多尔",
+    "en": "Dol",
+    "zh": "多尔",
     "zh_tw": "多爾"
   },
-  "Hel": {
+  {
     "code": "r15",
-    "chinese_name": "海尔",
+    "en": "Hel",
+    "zh": "海尔",
     "zh_tw": "海爾"
   },
-  "Io": {
+  {
     "code": "r16",
-    "chinese_name": "艾欧",
+    "en": "Io",
+    "zh": "艾欧",
     "zh_tw": "埃歐"
   },
-  "Lum": {
+  {
     "code": "r17",
-    "chinese_name": "卢姆",
+    "en": "Lum",
+    "zh": "卢姆",
     "zh_tw": "盧姆"
   },
-  "Ko": {
+  {
     "code": "r18",
-    "chinese_name": "科",
+    "en": "Ko",
+    "zh": "科",
     "zh_tw": "科"
   },
-  "Fal": {
+  {
     "code": "r19",
-    "chinese_name": "法尔",
+    "en": "Fal",
+    "zh": "法尔",
     "zh_tw": "法爾"
   },
-  "Lem": {
+  {
     "code": "r20",
-    "chinese_name": "兰姆",
+    "en": "Lem",
+    "zh": "兰姆",
     "zh_tw": "藍姆"
   },
-  "Pul": {
+  {
     "code": "r21",
-    "chinese_name": "普尔",
+    "en": "Pul",
+    "zh": "普尔",
     "zh_tw": "普爾"
   },
-  "Um": {
+  {
     "code": "r22",
-    "chinese_name": "乌姆",
+    "en": "Um",
+    "zh": "乌姆",
     "zh_tw": "烏姆"
   },
-  "Mal": {
+  {
     "code": "r23",
-    "chinese_name": "玛尔",
+    "en": "Mal",
+    "zh": "玛尔",
     "zh_tw": "馬爾"
   },
-  "Ist": {
+  {
     "code": "r24",
-    "chinese_name": "伊司特",
+    "en": "Ist",
+    "zh": "伊司特",
     "zh_tw": "伊司特"
   },
-  "Gul": {
+  {
     "code": "r25",
-    "chinese_name": "古尔",
+    "en": "Gul",
+    "zh": "古尔",
     "zh_tw": "古爾"
   },
-  "Vex": {
+  {
     "code": "r26",
-    "chinese_name": "伐克斯",
+    "en": "Vex",
+    "zh": "伐克斯",
     "zh_tw": "伐克斯"
   },
-  "Ohm": {
+  {
     "code": "r27",
-    "chinese_name": "欧姆",
+    "en": "Ohm",
+    "zh": "欧姆",
     "zh_tw": "歐姆"
   },
-  "Lo": {
+  {
     "code": "r28",
-    "chinese_name": "罗",
+    "en": "Lo",
+    "zh": "罗",
     "zh_tw": "羅"
   },
-  "Sur": {
+  {
     "code": "r29",
-    "chinese_name": "瑟",
+    "en": "Sur",
+    "zh": "瑟",
     "zh_tw": "瑟"
   },
-  "Ber": {
+  {
     "code": "r30",
-    "chinese_name": "贝",
+    "en": "Ber",
+    "zh": "贝",
     "zh_tw": "貝"
   },
-  "Jah": {
+  {
     "code": "r31",
-    "chinese_name": "扎哈",
+    "en": "Jah",
+    "zh": "扎哈",
     "zh_tw": "喬"
   },
-  "Cham": {
+  {
     "code": "r32",
-    "chinese_name": "查姆",
+    "en": "Cham",
+    "zh": "查姆",
     "zh_tw": "查姆"
   },
-  "Zod": {
+  {
     "code": "r33",
-    "chinese_name": "佐德",
+    "en": "Zod",
+    "zh": "佐德",
     "zh_tw": "薩德"
   }
-}
+]

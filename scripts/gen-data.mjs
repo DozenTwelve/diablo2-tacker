@@ -16,7 +16,7 @@ const table = (name) => {
 };
 
 const strings = new Map();
-for (const f of ["item-names", "item-runes"]) {
+for (const f of ["item-modifiers", "item-nameaffixes", "item-gems", "item-runes", "item-names"]) {
   const raw = readFileSync(join(root, `data/local/lng/strings/${f}.json`), "utf8").replace(/^﻿/, "");
   for (const s of JSON.parse(raw)) strings.set(s.Key, s);
 }
@@ -35,7 +35,7 @@ const equiv = new Map(table("itemtypes").map((r) => [r.Code, [r.Equiv1, r.Equiv2
 const CATEGORIES = [
   ["grim", "魔法书", "魔法書"], ["jave", "标枪", "標槍"], ["thro", "投掷武器", "投擲武器"], ["helm", "头盔", "頭盔"],
   ["tors", "护甲", "護甲"], ["shld", "盾牌", "盾牌"], ["glov", "手套", "手套"], ["boot", "鞋子", "鞋子"],
-  ["belt", "腰带", "腰帶"], ["ring", "戒指", "戒指"], ["amul", "护身符", "護身符"], ["char", "咒符", "咒符"],
+  ["belt", "腰带", "腰帶"], ["ring", "戒指", "戒指"], ["amul", "护身符", "護身符"], ["char", "神符", "咒符"],
   ["jewl", "珠宝", "珠寶"], ["h2h", "拳刃", "拳刃"], ["orb", "法珠", "法珠"], ["axe", "斧", "斧"],
   ["swor", "刀剑", "刀劍"], ["xbow", "弩", "弩"], ["bow", "弓", "弓"], ["pole", "长柄武器", "長柄武器"],
   ["spea", "长矛", "長矛"], ["staf", "法杖", "法杖"], ["knif", "匕首", "匕首"], ["hamm", "重锤", "重鎚"],
@@ -54,42 +54,59 @@ const category = (code) => {
   return hit;
 };
 
-// Include what the in-game Chronicle tracks. Uniques: one entry per name; variants (Rainbow Facet) keep all ids
+const names = (key) => ({ en: str(key, "enUS"), zh: str(key, "zhCN"), zh_tw: str(key, "zhTW") });
+
+// Collections count what the in-game Chronicle tracks; other uniques (old Sunder charms, unused items)
+// are kept as legacy so saves holding them still get names. One entry per name; variants (Rainbow Facet) keep all ids
 const uniques = new Map();
 for (const r of table("uniqueitems")) {
-  if (!r["*ID"] || r.disableChronicle === "1") continue;
+  if (!r["*ID"] || !r.code) continue;
   const id = Number(r["*ID"]);
+  const legacy = r.disableChronicle === "1";
   const prev = uniques.get(r.index);
-  if (prev) prev.ids.push(id);
-  else {
+  if (prev) {
+    prev.ids.push(id);
+    prev.legacy &&= legacy;
+  } else {
     const [, cn, tw] = category(r.code);
-    uniques.set(r.index, { ids: [id], category: cn, category_tw: tw, zh: str(r.index, "zhCN"), zh_tw: str(r.index, "zhTW"), en: str(r.index, "enUS") });
+    uniques.set(r.index, { ids: [id], ...names(r.index), category: cn, category_tw: tw, legacy });
   }
 }
 
-const sets = {};
+const sets = new Map();
 for (const r of table("setitems")) {
   if (!r["*ID"] || r.disableChronicle === "1") continue;
-  const set = str(r.set, "enUS");
-  sets[set] ??= { chinese_name: str(r.set, "zhCN"), zh_tw: str(r.set, "zhTW"), items: [] };
-  sets[set].items.push({ id: Number(r["*ID"]), name: str(r.index, "enUS"), name_zh: str(r.index, "zhCN"), zh_tw: str(r.index, "zhTW") });
+  if (!sets.has(r.set)) sets.set(r.set, { ...names(r.set), items: [] });
+  sets.get(r.set).items.push({ id: Number(r["*ID"]), ...names(r.index) });
 }
 
 // id is the runes.txt row; a save's runeword_id maps to it as (runeword_id & 0xfff) - 27
-const runewords = {};
+const runewords = [];
 table("runes").forEach((r, id) => {
-  if (r.complete === "1") runewords[str(r.Name, "enUS")] = { id, 中文名: str(r.Name, "zhCN"), zh_tw: str(r.Name, "zhTW") };
+  const recipe = [1, 2, 3, 4, 5, 6].map((i) => r[`Rune${i}`]).filter(Boolean);
+  if (r.complete === "1") runewords.push({ id, ...names(r.Name), runes: recipe });
 });
 
-const runes = {};
+const runes = [];
 for (let i = 1; i <= 33; i++) {
-  const key = `r${String(i).padStart(2, "0")}`;
-  runes[str(key, "enUS").replace(/ Rune$/, "")] = { code: key, chinese_name: str(key, "zhCN").replace(/符文$/, ""), zh_tw: str(key, "zhTW").replace(/^符文：|符文$/g, "") };
+  const code = `r${String(i).padStart(2, "0")}`;
+  const n = names(code);
+  runes.push({ code, en: n.en.replace(/ Rune$/, ""), zh: n.zh.replace(/符文$/, ""), zh_tw: n.zh_tw.replace(/^符文：|符文$/g, "") });
+}
+
+// Every base item code -> name, for bases, gems, charms, rares and anything else found in saves
+const items = {};
+for (const t of ["armor", "weapons", "misc"]) {
+  for (const r of table(t)) {
+    const key = r.namestr || r.code;
+    if (r.code && strings.has(key)) items[r.code] = names(key);
+  }
 }
 
 const write = (name, data) => writeFileSync(new URL(`${name}.json`, outDir), JSON.stringify(data, null, 2) + "\n");
 write("uniques", [...uniques.values()]);
-write("sets", sets);
+write("sets", [...sets.values()]);
 write("runewords", runewords);
 write("runes", runes);
-console.log(`uniques ${uniques.size}, sets ${Object.keys(sets).length}, runewords ${Object.keys(runewords).length}, runes ${Object.keys(runes).length}`);
+write("items", items);
+console.log(`uniques ${uniques.size}, sets ${sets.size}, runewords ${runewords.length}, runes ${runes.length}, items ${Object.keys(items).length}`);

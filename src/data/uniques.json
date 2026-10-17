@@ -3,3761 +3,4160 @@
     "ids": [
       0
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "The Gnasher",
     "zh": "外壳撕咬",
     "zh_tw": "噬咬者",
-    "en": "The Gnasher"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       1
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Deathspade",
     "zh": "死亡黑桃",
     "zh_tw": "死亡之鏟",
-    "en": "Deathspade"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       2
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Bladebone",
     "zh": "刃骨",
     "zh_tw": "肩胛骨",
-    "en": "Bladebone"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       3
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Skull Splitter",
     "zh": "凿颅者",
     "zh_tw": "劈顱斧",
-    "en": "Skull Splitter"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       4
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Rakescar",
     "zh": "钯肉斧",
     "zh_tw": "耙痕",
-    "en": "Rakescar"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       5
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Axe of Fechmar",
     "zh": "费屈玛之斧",
     "zh_tw": "費屈瑪之斧",
-    "en": "Axe of Fechmar"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       6
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Goreshovel",
     "zh": "铲肉斧",
     "zh_tw": "血鍬",
-    "en": "Goreshovel"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       7
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "The Chieftain",
     "zh": "酋长",
     "zh_tw": "酋長",
-    "en": "The Chieftain"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       8
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Brainhew",
     "zh": "劈颅者",
     "zh_tw": "劈腦",
-    "en": "Brainhew"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       9
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Humongous",
     "zh": "巨无霸",
     "zh_tw": "巨無霸",
-    "en": "Humongous"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       10
     ],
-    "category": "魔杖",
-    "category_tw": "魔杖",
+    "en": "Torch of Iro",
     "zh": "伊洛的火炬",
     "zh_tw": "伊洛的火炬",
-    "en": "Torch of Iro"
+    "category": "魔杖",
+    "category_tw": "魔杖",
+    "legacy": false
   },
   {
     "ids": [
       11
     ],
-    "category": "魔杖",
-    "category_tw": "魔杖",
+    "en": "Maelstrom",
     "zh": "漩涡之力",
     "zh_tw": "漩渦",
-    "en": "Maelstrom"
+    "category": "魔杖",
+    "category_tw": "魔杖",
+    "legacy": false
   },
   {
     "ids": [
       12
     ],
-    "category": "魔杖",
-    "category_tw": "魔杖",
+    "en": "Gravenspine",
     "zh": "支柱雕塑",
     "zh_tw": "墓穴之脊",
-    "en": "Gravenspine"
+    "category": "魔杖",
+    "category_tw": "魔杖",
+    "legacy": false
   },
   {
     "ids": [
       13
     ],
-    "category": "魔杖",
-    "category_tw": "魔杖",
+    "en": "Ume's Lament",
     "zh": "婴灵的哀歌",
     "zh_tw": "梅花嘆",
-    "en": "Ume's Lament"
+    "category": "魔杖",
+    "category_tw": "魔杖",
+    "legacy": false
   },
   {
     "ids": [
       14
     ],
-    "category": "短棒",
-    "category_tw": "短棒",
+    "en": "Felloak",
     "zh": "凶猛橡木",
     "zh_tw": "魔橡樹",
-    "en": "Felloak"
+    "category": "短棒",
+    "category_tw": "短棒",
+    "legacy": false
   },
   {
     "ids": [
       15
     ],
-    "category": "权杖",
-    "category_tw": "權杖",
+    "en": "Knell Striker",
     "zh": "丧钟敲击者",
     "zh_tw": "喪鐘敲擊者",
-    "en": "Knell Striker"
+    "category": "权杖",
+    "category_tw": "權杖",
+    "legacy": false
   },
   {
     "ids": [
       16
     ],
-    "category": "权杖",
-    "category_tw": "權杖",
+    "en": "Rusthandle",
     "zh": "腐锈权柄",
     "zh_tw": "鏽蝕把手",
-    "en": "Rusthandle"
+    "category": "权杖",
+    "category_tw": "權杖",
+    "legacy": false
   },
   {
     "ids": [
       17
     ],
-    "category": "权杖",
-    "category_tw": "權杖",
+    "en": "Stormeye",
     "zh": "风暴之眼",
     "zh_tw": "暴風眼",
-    "en": "Stormeye"
+    "category": "权杖",
+    "category_tw": "權杖",
+    "legacy": false
   },
   {
     "ids": [
       18
     ],
-    "category": "短棒",
-    "category_tw": "短棒",
+    "en": "Stoutnail",
     "zh": "坚硬钉爪",
     "zh_tw": "特粗鐵釘",
-    "en": "Stoutnail"
+    "category": "短棒",
+    "category_tw": "短棒",
+    "legacy": false
   },
   {
     "ids": [
       19
     ],
-    "category": "钉锤",
-    "category_tw": "釘鎚",
+    "en": "Crushflange",
     "zh": "四叶破甲锤",
     "zh_tw": "碎擊釘錘",
-    "en": "Crushflange"
+    "category": "钉锤",
+    "category_tw": "釘鎚",
+    "legacy": false
   },
   {
     "ids": [
       20
     ],
-    "category": "钉锤",
-    "category_tw": "釘鎚",
+    "en": "Bloodrise",
     "zh": "赤色飞星",
     "zh_tw": "血升",
-    "en": "Bloodrise"
+    "category": "钉锤",
+    "category_tw": "釘鎚",
+    "legacy": false
   },
   {
     "ids": [
       21
     ],
-    "category": "钉锤",
-    "category_tw": "釘鎚",
+    "en": "The General's Tan Do Li Ga",
     "zh": "将军的短连枷",
     "zh_tw": "將軍的連枷",
-    "en": "The General's Tan Do Li Ga"
+    "category": "钉锤",
+    "category_tw": "釘鎚",
+    "legacy": false
   },
   {
     "ids": [
       22
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "Ironstone",
     "zh": "铁石",
     "zh_tw": "鐵石",
-    "en": "Ironstone"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       23
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "Bonesnap",
     "zh": "碎骨",
     "zh_tw": "碎骨",
-    "en": "Bonesnap"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       24
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "Steeldriver",
     "zh": "钢榔头",
     "zh_tw": "打鋼鎚",
-    "en": "Steeldriver"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       25
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Rixot's Keen",
     "zh": "瑞克撒特的挽歌",
     "zh_tw": "瑞克塞斯的利刃",
-    "en": "Rixot's Keen"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       26
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Blood Crescent",
     "zh": "赤色新月",
     "zh_tw": "血紅新月",
-    "en": "Blood Crescent"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       27
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Skewer of Krintiz",
     "zh": "克林茨的肉叉",
     "zh_tw": "克里維茲的肉叉",
-    "en": "Skewer of Krintiz"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       28
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Gleamscythe",
     "zh": "寒光镰刀",
     "zh_tw": "閃耀鐮刀",
-    "en": "Gleamscythe"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
+  },
+  {
+    "ids": [
+      29,
+      301
+    ],
+    "en": "Azurewrath",
+    "zh": "碧蓝怒火",
+    "zh_tw": "碧藍怒火",
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       30
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Griswold's Edge",
     "zh": "格里斯沃尔德之锋",
     "zh_tw": "格里斯瓦德之刃",
-    "en": "Griswold's Edge"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       31
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Hellplague",
     "zh": "地狱瘟疫",
     "zh_tw": "地獄瘟疫",
-    "en": "Hellplague"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       32
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Culwen's Point",
     "zh": "库文之刺",
     "zh_tw": "庫爾溫的尖刃",
-    "en": "Culwen's Point"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       33
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Shadowfang",
     "zh": "暗影之牙",
     "zh_tw": "暗影之牙",
-    "en": "Shadowfang"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       34
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Soulflay",
     "zh": "剥魂者",
     "zh_tw": "剝魂",
-    "en": "Soulflay"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       35
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Kinemil's Awl",
     "zh": "金麦尔的锥子",
     "zh_tw": "金麥爾的鑽錐",
-    "en": "Kinemil's Awl"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       36
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Blacktongue",
     "zh": "黑舌",
     "zh_tw": "黑舌",
-    "en": "Blacktongue"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       37
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Ripsaw",
     "zh": "碎肉锯",
     "zh_tw": "齒鋸",
-    "en": "Ripsaw"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       38
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "The Patriarch",
     "zh": "大族长",
     "zh_tw": "尊父",
-    "en": "The Patriarch"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       39
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "Gull",
     "zh": "海鸥",
     "zh_tw": "海鷗",
-    "en": "Gull"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
   },
   {
     "ids": [
       40
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "The Diggler",
     "zh": "迪格勒",
     "zh_tw": "迪格勒",
-    "en": "The Diggler"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
   },
   {
     "ids": [
       41
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "The Jade Tan Do",
     "zh": "玉尖刀",
     "zh_tw": "玉匕",
-    "en": "The Jade Tan Do"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
   },
   {
     "ids": [
       42
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "Spectral Shard",
     "zh": "彩虹碎片",
     "zh_tw": "虹彩裂片",
-    "en": "Spectral Shard"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
   },
   {
     "ids": [
       43
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "The Dragon Chang",
     "zh": "龙枪",
     "zh_tw": "龍槍",
-    "en": "The Dragon Chang"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       44
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Razortine",
     "zh": "剃刀尖齿",
     "zh_tw": "剃刀叉",
-    "en": "Razortine"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       45
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Bloodthief",
     "zh": "精华搬运者",
     "zh_tw": "血賊",
-    "en": "Bloodthief"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       46
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Lance of Yaggai",
     "zh": "亚盖长枪",
     "zh_tw": "雅該長矛",
-    "en": "Lance of Yaggai"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       47
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "The Tannr Gorerod",
     "zh": "皮匠的刺枪",
     "zh_tw": "坦納血杖",
-    "en": "The Tannr Gorerod"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       48
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Dimoak's Hew",
     "zh": "迪马克的劈斧",
     "zh_tw": "迪馬克的砍刀",
-    "en": "Dimoak's Hew"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       49
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Steelgoad",
     "zh": "钢刺棒",
     "zh_tw": "鐵刺棒",
-    "en": "Steelgoad"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       50
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Soul Harvest",
     "zh": "收魂者",
     "zh_tw": "靈魂收割者",
-    "en": "Soul Harvest"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       51
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "The Battlebranch",
     "zh": "突围者",
     "zh_tw": "戰鬥枝椏",
-    "en": "The Battlebranch"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       52
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Woestave",
     "zh": "降灾长戟",
     "zh_tw": "悲哀護杖",
-    "en": "Woestave"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       53
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "The Grim Reaper",
     "zh": "恐怖收割者",
     "zh_tw": "猙獰奪魂者",
-    "en": "The Grim Reaper"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       54
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Bane Ash",
     "zh": "祸根之灰",
     "zh_tw": "禍根之灰",
-    "en": "Bane Ash"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       55
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Serpent Lord",
     "zh": "海蛇之王",
     "zh_tw": "海蛇之王",
-    "en": "Serpent Lord"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       56
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Spire of Lazarus",
     "zh": "拉扎鲁斯的螺旋杖",
     "zh_tw": "拉撒雷茲之杖",
-    "en": "Spire of Lazarus"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       57
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "The Salamander",
     "zh": "沙罗曼",
     "zh_tw": "火精靈",
-    "en": "The Salamander"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       58
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "The Iron Jang Bong",
     "zh": "铁长棍",
     "zh_tw": "鐵長棒",
-    "en": "The Iron Jang Bong"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       59
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Pluckeye",
     "zh": "剜眼",
     "zh_tw": "奪人目",
-    "en": "Pluckeye"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       60
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Witherstring",
     "zh": "凋零之击",
     "zh_tw": "凋萎之弦",
-    "en": "Witherstring"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       61
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Raven Claw",
     "zh": "赤鸦之爪",
     "zh_tw": "掠鴉之爪",
-    "en": "Raven Claw"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       62
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Rogue's Bow",
     "zh": "游猎之弓",
     "zh_tw": "俠盜之弓",
-    "en": "Rogue's Bow"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       63
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Stormstrike",
     "zh": "风暴之击",
     "zh_tw": "暴風之擊",
-    "en": "Stormstrike"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       64
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Wizendraw",
     "zh": "凋零劲弦",
     "zh_tw": "凋謝弓弦",
-    "en": "Wizendraw"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       65
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Hellclap",
     "zh": "地狱飞啸",
     "zh_tw": "地獄轟鳴",
-    "en": "Hellclap"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       66
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Blastbark",
     "zh": "爆裂喧嚣",
     "zh_tw": "爆裂咆哮",
-    "en": "Blastbark"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       67
     ],
-    "category": "弩",
-    "category_tw": "弩",
+    "en": "Leadcrow",
     "zh": "铅鸦",
     "zh_tw": "鉛烏鴉",
-    "en": "Leadcrow"
+    "category": "弩",
+    "category_tw": "弩",
+    "legacy": false
   },
   {
     "ids": [
       68
     ],
-    "category": "弩",
-    "category_tw": "弩",
+    "en": "Ichorsting",
     "zh": "灵液之刺",
     "zh_tw": "膿毒之刺",
-    "en": "Ichorsting"
+    "category": "弩",
+    "category_tw": "弩",
+    "legacy": false
   },
   {
     "ids": [
       69
     ],
-    "category": "弩",
-    "category_tw": "弩",
+    "en": "Hellcast",
     "zh": "狱火投手",
     "zh_tw": "地獄擲弩",
-    "en": "Hellcast"
+    "category": "弩",
+    "category_tw": "弩",
+    "legacy": false
   },
   {
     "ids": [
       70
     ],
-    "category": "弩",
-    "category_tw": "弩",
+    "en": "Doomslinger",
     "zh": "末日投手",
     "zh_tw": "毀滅投索",
-    "en": "Doomslinger"
+    "category": "弩",
+    "category_tw": "弩",
+    "legacy": false
   },
   {
     "ids": [
       71
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Biggin's Bonnet",
     "zh": "幼童软帽",
     "zh_tw": "畢格因的軟帽",
-    "en": "Biggin's Bonnet"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       72
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Tarnhelm",
     "zh": "塔恩之盔",
     "zh_tw": "塔因頭盔",
-    "en": "Tarnhelm"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       73
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Coif of Glory",
     "zh": "荣光锁帽",
     "zh_tw": "光榮罩盔",
-    "en": "Coif of Glory"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       74
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Duskdeep",
     "zh": "黄昏薄暮",
     "zh_tw": "黃昏深處",
-    "en": "Duskdeep"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       75
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Wormskull",
     "zh": "蛆虫头骨",
     "zh_tw": "蠕蟲頭骨",
-    "en": "Wormskull"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       76
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Howltusk",
     "zh": "怒号长牙",
     "zh_tw": "怒號長牙",
-    "en": "Howltusk"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       77
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Undead Crown",
     "zh": "不死王冠",
     "zh_tw": "不死皇冠",
-    "en": "Undead Crown"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       78
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "The Face of Horror",
     "zh": "恐惧面容",
     "zh_tw": "恐懼之臉",
-    "en": "The Face of Horror"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       79
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Greyform",
     "zh": "灰影",
     "zh_tw": "灰暮之形",
-    "en": "Greyform"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       80
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Blinkbat's Form",
     "zh": "火蝠之影",
     "zh_tw": "閃蝠之軀",
-    "en": "Blinkbat's Form"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       81
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "The Centurion",
     "zh": "百夫长",
     "zh_tw": "百夫長",
-    "en": "The Centurion"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       82
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Twitchthroe",
     "zh": "抽动的挣扎",
     "zh_tw": "抽動掙扎",
-    "en": "Twitchthroe"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       83
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Darkglow",
     "zh": "黑暗幽光",
     "zh_tw": "暗光",
-    "en": "Darkglow"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       84
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Hawkmail",
     "zh": "雄鹰甲",
     "zh_tw": "鷹甲",
-    "en": "Hawkmail"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       85
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Sparking Mail",
     "zh": "电光锁甲",
     "zh_tw": "電光之甲",
-    "en": "Sparking Mail"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       86
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Venom Ward",
     "zh": "毒液禁区",
     "zh_tw": "毒之守禦",
-    "en": "Venom Ward"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       87
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Iceblink",
     "zh": "闪耀冰晶",
     "zh_tw": "冰晶",
-    "en": "Iceblink"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       88
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Boneflesh",
     "zh": "骨肉分离",
     "zh_tw": "骨肉",
-    "en": "Boneflesh"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       89
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Rockfleece",
     "zh": "石中毛",
     "zh_tw": "石羊毛",
-    "en": "Rockfleece"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       90
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Rattlecage",
     "zh": "作响之笼",
     "zh_tw": "震骨",
-    "en": "Rattlecage"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       91
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Goldskin",
     "zh": "黄金之肤",
     "zh_tw": "黃金之膚",
-    "en": "Goldskin"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       92
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Silks of the Victor",
     "zh": "胜者的丝绸",
     "zh_tw": "勝利者的絲綢",
-    "en": "Silks of the Victor"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       93
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Heavenly Garb",
     "zh": "天界圣衣",
     "zh_tw": "天堂裝束",
-    "en": "Heavenly Garb"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       94
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Pelta Lunata",
     "zh": "新月小盾",
     "zh_tw": "新月小盾",
-    "en": "Pelta Lunata"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       95
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Umbral Disk",
     "zh": "太阳黑轮",
     "zh_tw": "陰影圓盤",
-    "en": "Umbral Disk"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       96
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Stormguild",
     "zh": "风暴行会",
     "zh_tw": "風暴同盟",
-    "en": "Stormguild"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       97
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Wall of the Eyeless",
     "zh": "无眼之墙",
     "zh_tw": "無眼者之牆",
-    "en": "Wall of the Eyeless"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       98
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Swordback Hold",
     "zh": "剑背之架",
     "zh_tw": "劍棘之盾",
-    "en": "Swordback Hold"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       99
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Steelclash",
     "zh": "响钢",
     "zh_tw": "鋼鐵衝擊",
-    "en": "Steelclash"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       100
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Bverrit Keep",
     "zh": "贝弗提的壁垒",
     "zh_tw": "布雷維特要塞",
-    "en": "Bverrit Keep"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       101
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "The Ward",
     "zh": "御敌",
     "zh_tw": "庇護結界",
-    "en": "The Ward"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       102
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "The Hand of Broc",
     "zh": "布洛克之手",
     "zh_tw": "柏克之手",
-    "en": "The Hand of Broc"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       103
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Bloodfist",
     "zh": "战损拳套",
     "zh_tw": "血拳",
-    "en": "Bloodfist"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       104
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Chance Guards",
     "zh": "吉运守护",
     "zh_tw": "運氣守護",
-    "en": "Chance Guards"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       105
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Magefist",
     "zh": "法师之拳",
     "zh_tw": "法師之拳",
-    "en": "Magefist"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       106
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Frostburn",
     "zh": "霜灼",
     "zh_tw": "霜燃",
-    "en": "Frostburn"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       107
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Hotspur",
     "zh": "热刺靴",
     "zh_tw": "熱靴刺",
-    "en": "Hotspur"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       108
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Gorefoot",
     "zh": "鏖战裹脚",
     "zh_tw": "血腳",
-    "en": "Gorefoot"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       109
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Treads of Cthon",
     "zh": "克索恩的征途",
     "zh_tw": "凱松的足靴",
-    "en": "Treads of Cthon"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       110
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Goblin Toe",
     "zh": "哥布林之趾",
     "zh_tw": "哥布林腳趾",
-    "en": "Goblin Toe"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       111
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Tearhaunch",
     "zh": "刺股靴",
     "zh_tw": "裂臀",
-    "en": "Tearhaunch"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       112
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Lenymo",
     "zh": "雷尼摩",
     "zh_tw": "雷尼摩",
-    "en": "Lenymo"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       113
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Snakecord",
     "zh": "蛇皮索",
     "zh_tw": "蛇索",
-    "en": "Snakecord"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       114
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Nightsmoke",
     "zh": "夜烟",
     "zh_tw": "夜煙",
-    "en": "Nightsmoke"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       115
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Goldwrap",
     "zh": "金织带",
     "zh_tw": "黃金裹腰",
-    "en": "Goldwrap"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       116
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Bladebuckle",
     "zh": "刀刃腰扣",
     "zh_tw": "刀鋒扣帶",
-    "en": "Bladebuckle"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       117
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "Nokozan Relic",
     "zh": "诺克兰的遗物",
     "zh_tw": "諾科藍遺物",
-    "en": "Nokozan Relic"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       118
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "The Eye of Etlich",
     "zh": "艾利奇之眼",
     "zh_tw": "艾利曲之眼",
-    "en": "The Eye of Etlich"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       119
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "The Mahim-Oak Curio",
     "zh": "马哈姆橡木珍品",
     "zh_tw": "瑪哈姆橡木古董",
-    "en": "The Mahim-Oak Curio"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       120
     ],
-    "category": "戒指",
-    "category_tw": "戒指",
+    "en": "Nagelring",
     "zh": "纳格尔之戒",
     "zh_tw": "拿各的戒指",
-    "en": "Nagelring"
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": false
   },
   {
     "ids": [
       121
     ],
-    "category": "戒指",
-    "category_tw": "戒指",
+    "en": "Manald Heal",
     "zh": "马纳德的治疗",
     "zh_tw": "瑪那德的治療",
-    "en": "Manald Heal"
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": false
   },
   {
     "ids": [
       122
     ],
-    "category": "戒指",
-    "category_tw": "戒指",
+    "en": "The Stone of Jordan",
     "zh": "乔丹之石",
     "zh_tw": "喬丹之石",
-    "en": "The Stone of Jordan"
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": false
   },
   {
     "ids": [
       123
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "Amulet of the Viper",
     "zh": "蝮蛇护符",
     "zh_tw": "蝮蛇護符",
-    "en": "Amulet of the Viper"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       124
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Staff of Kings",
     "zh": "列王之杖",
     "zh_tw": "國王之杖",
-    "en": "Staff of Kings"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       125
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Horadric Staff",
     "zh": "赫拉迪姆法杖",
     "zh_tw": "赫拉迪姆之杖",
-    "en": "Horadric Staff"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       126
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "Hell Forge Hammer",
     "zh": "地狱熔炉之锤",
     "zh_tw": "地獄熔爐之鎚",
-    "en": "Hell Forge Hammer"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       127
     ],
-    "category": "钉锤",
-    "category_tw": "釘鎚",
+    "en": "Khalim's Flail",
     "zh": "卡林姆的连枷",
     "zh_tw": "克林姆的連枷",
-    "en": "Khalim's Flail"
+    "category": "钉锤",
+    "category_tw": "釘鎚",
+    "legacy": false
   },
   {
     "ids": [
       128
     ],
-    "category": "钉锤",
-    "category_tw": "釘鎚",
+    "en": "Khalim's Will",
     "zh": "卡林姆的意志",
     "zh_tw": "克林姆的遺願",
-    "en": "Khalim's Will"
+    "category": "钉锤",
+    "category_tw": "釘鎚",
+    "legacy": false
   },
   {
     "ids": [
       129
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Coldkill",
     "zh": "冰殛",
     "zh_tw": "冷殺",
-    "en": "Coldkill"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       130
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Butcher's Pupil",
     "zh": "屠夫之瞳",
     "zh_tw": "屠夫的徒弟",
-    "en": "Butcher's Pupil"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       131
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Islestrike",
     "zh": "海岛之击",
     "zh_tw": "島擊",
-    "en": "Islestrike"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       132
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Pompeii's Wrath",
     "zh": "庞贝之怒",
     "zh_tw": "龐貝之怒",
-    "en": "Pompeii's Wrath"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       133
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Guardian Naga",
     "zh": "蛇神守护者",
     "zh_tw": "那伽守護者",
-    "en": "Guardian Naga"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       134
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Warlord's Trust",
     "zh": "战争领主的信赖",
     "zh_tw": "戰爵之證",
-    "en": "Warlord's Trust"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       135
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Spellsteel",
     "zh": "魔咒之钢",
     "zh_tw": "鋼鐵魔咒",
-    "en": "Spellsteel"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       136
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Stormrider",
     "zh": "御雷者",
     "zh_tw": "暴風騎士",
-    "en": "Stormrider"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       137
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Boneslayer Blade",
     "zh": "碎骨者之刃",
     "zh_tw": "斬骨者之斧",
-    "en": "Boneslayer Blade"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       138
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "The Minotaur",
     "zh": "牛魔斧",
     "zh_tw": "牛頭怪",
-    "en": "The Minotaur"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       139
     ],
-    "category": "魔杖",
-    "category_tw": "魔杖",
+    "en": "Suicide Branch",
     "zh": "自戕树杈",
     "zh_tw": "自殘枝椏",
-    "en": "Suicide Branch"
+    "category": "魔杖",
+    "category_tw": "魔杖",
+    "legacy": false
   },
   {
     "ids": [
       140
     ],
-    "category": "魔杖",
-    "category_tw": "魔杖",
+    "en": "Carin Shard",
     "zh": "石冢碎片",
     "zh_tw": "凱林碎片",
-    "en": "Carin Shard"
+    "category": "魔杖",
+    "category_tw": "魔杖",
+    "legacy": false
   },
   {
     "ids": [
       141
     ],
-    "category": "魔杖",
-    "category_tw": "魔杖",
+    "en": "Arm of King Leoric",
     "zh": "李奥瑞克的臂骨",
     "zh_tw": "李奧瑞克王的手骨",
-    "en": "Arm of King Leoric"
+    "category": "魔杖",
+    "category_tw": "魔杖",
+    "legacy": false
   },
   {
     "ids": [
       142
     ],
-    "category": "魔杖",
-    "category_tw": "魔杖",
+    "en": "Blackhand Key",
     "zh": "黑手钥匙",
     "zh_tw": "黑手之鑰",
-    "en": "Blackhand Key"
+    "category": "魔杖",
+    "category_tw": "魔杖",
+    "legacy": false
   },
   {
     "ids": [
       143
     ],
-    "category": "短棒",
-    "category_tw": "短棒",
+    "en": "Dark Clan Crusher",
     "zh": "暗族粉碎者",
     "zh_tw": "闇族碎滅者",
-    "en": "Dark Clan Crusher"
+    "category": "短棒",
+    "category_tw": "短棒",
+    "legacy": false
   },
   {
     "ids": [
       144
     ],
-    "category": "权杖",
-    "category_tw": "權杖",
+    "en": "Zakarum's Hand",
     "zh": "萨卡兰姆之手",
     "zh_tw": "撒卡蘭姆之手",
-    "en": "Zakarum's Hand"
+    "category": "权杖",
+    "category_tw": "權杖",
+    "legacy": false
   },
   {
     "ids": [
       145
     ],
-    "category": "权杖",
-    "category_tw": "權杖",
+    "en": "The Fetid Sprinkler",
     "zh": "恶臭喷杖",
     "zh_tw": "惡臭散佈者",
-    "en": "The Fetid Sprinkler"
+    "category": "权杖",
+    "category_tw": "權杖",
+    "legacy": false
   },
   {
     "ids": [
       146
     ],
-    "category": "权杖",
-    "category_tw": "權杖",
+    "en": "Hand of Blessed Light",
     "zh": "圣光之手",
     "zh_tw": "聖光之手",
-    "en": "Hand of Blessed Light"
+    "category": "权杖",
+    "category_tw": "權杖",
+    "legacy": false
   },
   {
     "ids": [
       147
     ],
-    "category": "短棒",
-    "category_tw": "短棒",
+    "en": "Fleshrender",
     "zh": "外壳撕裂者",
     "zh_tw": "血肉撕裂者",
-    "en": "Fleshrender"
+    "category": "短棒",
+    "category_tw": "短棒",
+    "legacy": false
   },
   {
     "ids": [
       148
     ],
-    "category": "钉锤",
-    "category_tw": "釘鎚",
+    "en": "Sureshrill Frost",
     "zh": "神河之霜",
     "zh_tw": "尖嘯冰霜",
-    "en": "Sureshrill Frost"
+    "category": "钉锤",
+    "category_tw": "釘鎚",
+    "legacy": false
   },
   {
     "ids": [
       149
     ],
-    "category": "钉锤",
-    "category_tw": "釘鎚",
+    "en": "Moonfall",
     "zh": "月陨",
     "zh_tw": "月落",
-    "en": "Moonfall"
+    "category": "钉锤",
+    "category_tw": "釘鎚",
+    "legacy": false
   },
   {
     "ids": [
       150
     ],
-    "category": "钉锤",
-    "category_tw": "釘鎚",
+    "en": "Baezil's Vortex",
     "zh": "贝希尔的漩涡",
     "zh_tw": "貝西爾的漩渦",
-    "en": "Baezil's Vortex"
+    "category": "钉锤",
+    "category_tw": "釘鎚",
+    "legacy": false
   },
   {
     "ids": [
       151
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "Earthshaker",
     "zh": "震地者",
     "zh_tw": "震地者",
-    "en": "Earthshaker"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       152
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "Bloodtree Stump",
     "zh": "赤色木桩",
     "zh_tw": "血樹殘株",
-    "en": "Bloodtree Stump"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       153
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "The Gavel of Pain",
     "zh": "苦痛木槌",
     "zh_tw": "痛苦之槌",
-    "en": "The Gavel of Pain"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       154
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Bloodletter",
     "zh": "击破者",
     "zh_tw": "放血者",
-    "en": "Bloodletter"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       155
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Coldsteel Eye",
     "zh": "冷钢之眼",
     "zh_tw": "冰鋼之眼",
-    "en": "Coldsteel Eye"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       156
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Hexfire",
     "zh": "妖术之火",
     "zh_tw": "妖火",
-    "en": "Hexfire"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       157
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Blade of Ali Baba",
     "zh": "阿里巴巴之刃",
     "zh_tw": "阿里巴巴之刃",
-    "en": "Blade of Ali Baba"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       158
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Ginther's Rift",
     "zh": "金瑟的破空之痕",
     "zh_tw": "金瑟的裂隙",
-    "en": "Ginther's Rift"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       159
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Headstriker",
     "zh": "斩首者",
     "zh_tw": "擊頭者",
-    "en": "Headstriker"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       160
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Plague Bearer",
     "zh": "瘟疫散播者",
     "zh_tw": "疫病帶原者",
-    "en": "Plague Bearer"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       161
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "The Atlantean",
     "zh": "亚特兰蒂斯剑",
     "zh_tw": "亞特蘭提恩",
-    "en": "The Atlantean"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       162
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Crainte Vomir",
     "zh": "恐惧喷吐",
     "zh_tw": "恐懼之嘔",
-    "en": "Crainte Vomir"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       163
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Bing Sz Wang",
     "zh": "冰之王",
     "zh_tw": "冰之王",
-    "en": "Bing Sz Wang"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       164
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "The Vile Husk",
     "zh": "邪祟之牙",
     "zh_tw": "兇邪軀殼",
-    "en": "The Vile Husk"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       165
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Cloudcrack",
     "zh": "裂云剑",
     "zh_tw": "雲裂",
-    "en": "Cloudcrack"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       166
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Todesfaelle Flamme",
     "zh": "索命之焰",
     "zh_tw": "死落之火",
-    "en": "Todesfaelle Flamme"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       167
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Swordguard",
     "zh": "卫剑",
     "zh_tw": "劍衛",
-    "en": "Swordguard"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       168
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "Spineripper",
     "zh": "裂柱者 ",
     "zh_tw": "裂脊者",
-    "en": "Spineripper"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
   },
   {
     "ids": [
       169
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "Heart Carver",
     "zh": "剜心者",
     "zh_tw": "刨心者",
-    "en": "Heart Carver"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
   },
   {
     "ids": [
       170
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "Blackbog's Sharp",
     "zh": "黑沼之锋",
     "zh_tw": "黑沼之鋒",
-    "en": "Blackbog's Sharp"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
   },
   {
     "ids": [
       171
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "Stormspike",
     "zh": "风暴匕刺",
     "zh_tw": "暴風尖刺",
-    "en": "Stormspike"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
   },
   {
     "ids": [
       172
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "The Impaler",
     "zh": "洞穿者",
     "zh_tw": "刺穿者",
-    "en": "The Impaler"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       173
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Kelpie Snare",
     "zh": "水妖捕叉",
     "zh_tw": "水魔陷阱",
-    "en": "Kelpie Snare"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       174
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Soulfeast Tine",
     "zh": "噬魂叉",
     "zh_tw": "噬魂叉",
-    "en": "Soulfeast Tine"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       175
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Hone Sundan",
     "zh": "骨寸断",
     "zh_tw": "骨寸斷",
-    "en": "Hone Sundan"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       176
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Spire of Honor",
     "zh": "荣耀之巅",
     "zh_tw": "榮耀尖塔",
-    "en": "Spire of Honor"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       177
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "The Meat Scraper",
     "zh": "刮肉长戟",
     "zh_tw": "刮肉者",
-    "en": "The Meat Scraper"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       178
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Blackleach Blade",
     "zh": "暗蚀之刃",
     "zh_tw": "黑蛭長刀",
-    "en": "Blackleach Blade"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       179
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Athena's Wrath",
     "zh": "雅典娜之怒",
     "zh_tw": "雅典娜之怒",
-    "en": "Athena's Wrath"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       180
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Pierre Tombale Couant",
     "zh": "墓石长戟",
     "zh_tw": "墓石長戟",
-    "en": "Pierre Tombale Couant"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       181
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Husoldal Evo",
     "zh": "皮肉吞噬者",
     "zh_tw": "血肉吞食者",
-    "en": "Husoldal Evo"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       182
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Grim's Burning Dead",
     "zh": "格里姆的烈焰亡灵",
     "zh_tw": "懼焰亡靈",
-    "en": "Grim's Burning Dead"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       183
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Razorswitch",
     "zh": "剃刀飞旋",
     "zh_tw": "剃刀杖",
-    "en": "Razorswitch"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       184
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Ribcracker",
     "zh": "肋骨粉碎者",
     "zh_tw": "肋骨粉碎者",
-    "en": "Ribcracker"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       185
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Chromatic Ire",
     "zh": "多彩之怒",
     "zh_tw": "炫彩之怒",
-    "en": "Chromatic Ire"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       186
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Warpspear",
     "zh": "扭曲之矛",
     "zh_tw": "扭曲之矛",
-    "en": "Warpspear"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       187
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Skull Collector",
     "zh": "骷髅收集者",
     "zh_tw": "骷髏收集者",
-    "en": "Skull Collector"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       188
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Skystrike",
     "zh": "天击",
     "zh_tw": "天擊",
-    "en": "Skystrike"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       189
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Riphook",
     "zh": "撕裂之钩",
     "zh_tw": "撕裂之鉤",
-    "en": "Riphook"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       190
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Kuko Shakaku",
     "zh": "赤焰之击",
     "zh_tw": "社角久子",
-    "en": "Kuko Shakaku"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       191
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Endlesshail",
     "zh": "无尽冰雹",
     "zh_tw": "無盡冰雹",
-    "en": "Endlesshail"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       192
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Witchwild String",
     "zh": "狂法劲弦",
     "zh_tw": "狂巫之弦",
-    "en": "Witchwild String"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       193
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Cliffkiller",
     "zh": "峭壁杀手",
     "zh_tw": "懸崖殺手",
-    "en": "Cliffkiller"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       194
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Magewrath",
     "zh": "法师之怒",
     "zh_tw": "巫師之怒",
-    "en": "Magewrath"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       195
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Goldstrike Arch",
     "zh": "金击之弧",
     "zh_tw": "金擊之拱",
-    "en": "Goldstrike Arch"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       196
     ],
-    "category": "弩",
-    "category_tw": "弩",
+    "en": "Langer Briser",
     "zh": "千步碎击",
     "zh_tw": "蘭古布利薩",
-    "en": "Langer Briser"
+    "category": "弩",
+    "category_tw": "弩",
+    "legacy": false
   },
   {
     "ids": [
       197
     ],
-    "category": "弩",
-    "category_tw": "弩",
+    "en": "Pus Spitter",
     "zh": "吐脓毒弩",
     "zh_tw": "吐膿毒弩",
-    "en": "Pus Spitter"
+    "category": "弩",
+    "category_tw": "弩",
+    "legacy": false
   },
   {
     "ids": [
       198
     ],
-    "category": "弩",
-    "category_tw": "弩",
+    "en": "Buriza-Do Kyanon",
     "zh": "暴雪重炮",
     "zh_tw": "暴雪砲弩",
-    "en": "Buriza-Do Kyanon"
+    "category": "弩",
+    "category_tw": "弩",
+    "legacy": false
   },
   {
     "ids": [
       199
     ],
-    "category": "弩",
-    "category_tw": "弩",
+    "en": "Demon Machine",
     "zh": "恶魔机弩",
     "zh_tw": "惡魔機弩",
-    "en": "Demon Machine"
+    "category": "弩",
+    "category_tw": "弩",
+    "legacy": false
   },
   {
     "ids": [
       201
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Peasant Crown",
     "zh": "农夫兜帽",
     "zh_tw": "農夫王冠",
-    "en": "Peasant Crown"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       202
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Rockstopper",
     "zh": "磐石头盔",
     "zh_tw": "石禦",
-    "en": "Rockstopper"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       203
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Stealskull",
     "zh": "偷取颅盔",
     "zh_tw": "盜竊顱盔",
-    "en": "Stealskull"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       204
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Darksight Helm",
     "zh": "暗视头盔",
     "zh_tw": "暗視之盔",
-    "en": "Darksight Helm"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       205
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Valkyrie Wing",
     "zh": "女武神之翼",
     "zh_tw": "女武神之翼",
-    "en": "Valkyrie Wing"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       206
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Crown of Thieves",
     "zh": "盗贼皇冠",
     "zh_tw": "盜賊皇冠",
-    "en": "Crown of Thieves"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       207
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Blackhorn's Face",
     "zh": "黑牛角面甲",
     "zh_tw": "黑荊角面具",
-    "en": "Blackhorn's Face"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       208
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Vampire Gaze",
     "zh": "吸能鬼的凝视",
     "zh_tw": "吸血鬼的凝視",
-    "en": "Vampire Gaze"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       209
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "The Spirit Shroud",
     "zh": "覆灵裹身布",
     "zh_tw": "靈魂帷幕",
-    "en": "The Spirit Shroud"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       210
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Skin of the Vipermagi",
     "zh": "蝮蛇法妖之皮",
     "zh_tw": "蛇魔法師之皮",
-    "en": "Skin of the Vipermagi"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       211
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Skin of the Flayed One",
     "zh": "剥离者之皮",
     "zh_tw": "剝皮者之皮",
-    "en": "Skin of the Flayed One"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       212
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Iron Pelt",
     "zh": "铁皮",
     "zh_tw": "鋼鐵獸皮",
-    "en": "Iron Pelt"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       213
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Spirit Forge",
     "zh": "灵魂熔炉",
     "zh_tw": "靈魂熔爐",
-    "en": "Spirit Forge"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       214
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Crow Caw",
     "zh": "鸦鸣",
     "zh_tw": "鴉啼",
-    "en": "Crow Caw"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       215
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Shaftstop",
     "zh": "摧锋甲",
     "zh_tw": "箭止",
-    "en": "Shaftstop"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       216
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Duriel's Shell",
     "zh": "督瑞尔之壳",
     "zh_tw": "都瑞爾之殼",
-    "en": "Duriel's Shell"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       217
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Skullder's Ire",
     "zh": "诗寇蒂的愤怒",
     "zh_tw": "斯寇德的憤怒",
-    "en": "Skullder's Ire"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       218
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Guardian Angel",
     "zh": "守护天使",
     "zh_tw": "守護天使",
-    "en": "Guardian Angel"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       219
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Toothrow",
     "zh": "排齿",
     "zh_tw": "排齒",
-    "en": "Toothrow"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       220
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Atma's Wail",
     "zh": "阿特玛的哭喊",
     "zh_tw": "亞特瑪的哭喊",
-    "en": "Atma's Wail"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       221
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Black Hades",
     "zh": "黑色冥王",
     "zh_tw": "黑色黑帝斯",
-    "en": "Black Hades"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       222
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Corpsemourn",
     "zh": "遗体哀悼",
     "zh_tw": "屍慟",
-    "en": "Corpsemourn"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       223
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Que-Hegan's Wisdom",
     "zh": "魁黑刚的智慧",
     "zh_tw": "教宗的智慧",
-    "en": "Que-Hegan's Wisdom"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       224
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Visceratuant",
     "zh": "刨肠",
     "zh_tw": "維斯爾坦特",
-    "en": "Visceratuant"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       225
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Moser's Blessed Circle",
     "zh": "摩西尔的神圣圆环",
     "zh_tw": "摩瑟的祝福之圓",
-    "en": "Moser's Blessed Circle"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       226
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Stormchaser",
     "zh": "风暴追逐者",
     "zh_tw": "風暴追逐者",
-    "en": "Stormchaser"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       227
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Tiamat's Rebuke",
     "zh": "魔龙的斥责",
     "zh_tw": "魔龍的非難",
-    "en": "Tiamat's Rebuke"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       228
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Gerke's Sanctuary",
     "zh": "基尔克的避难地",
     "zh_tw": "基爾克的聖堂",
-    "en": "Gerke's Sanctuary"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       229
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Radament's Sphere",
     "zh": "罗达门特的领地",
     "zh_tw": "羅達門特的領域",
-    "en": "Radament's Sphere"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       230
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Lidless Wall",
     "zh": "警戒之墙",
     "zh_tw": "警戒之牆",
-    "en": "Lidless Wall"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       231
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Lance Guard",
     "zh": "长枪卫士",
     "zh_tw": "長槍守衛",
-    "en": "Lance Guard"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       232
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Venom Grip",
     "zh": "剧毒之握",
     "zh_tw": "劇毒之握",
-    "en": "Venom Grip"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       233
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Gravepalm",
     "zh": "盗墓手套",
     "zh_tw": "墓穴手掌",
-    "en": "Gravepalm"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       234
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Ghoulhide",
     "zh": "食腐鬼皮",
     "zh_tw": "食屍鬼之皮",
-    "en": "Ghoulhide"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       235
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Lava Gout",
     "zh": "熔岩痛击",
     "zh_tw": "熔岩之痛",
-    "en": "Lava Gout"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       236
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Hellmouth",
     "zh": "地狱之口",
     "zh_tw": "地獄之口",
-    "en": "Hellmouth"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       237
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Infernostride",
     "zh": "地狱阔步",
     "zh_tw": "地獄闊步",
-    "en": "Infernostride"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       238
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Waterwalk",
     "zh": "水上飘",
     "zh_tw": "水上飄",
-    "en": "Waterwalk"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       239
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Silkweave",
     "zh": "丝织靴",
     "zh_tw": "紗織",
-    "en": "Silkweave"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       240
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "War Traveler",
     "zh": "战争旅者",
     "zh_tw": "戰爭旅者",
-    "en": "War Traveler"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       241
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Gore Rider",
     "zh": "绯红骑士",
     "zh_tw": "蝕肉騎士",
-    "en": "Gore Rider"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       242
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "String of Ears",
     "zh": "缠腰耳串",
     "zh_tw": "長串之耳",
-    "en": "String of Ears"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       243
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Razortail",
     "zh": "剃刀之尾",
     "zh_tw": "剃刀之尾",
-    "en": "Razortail"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       244
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Gloom's Trap",
     "zh": "阴影陷阱",
     "zh_tw": "陰影陷阱",
-    "en": "Gloom's Trap"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       245
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Snowclash",
     "zh": "冰雪之击",
     "zh_tw": "冰雪交織",
-    "en": "Snowclash"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       246
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Thundergod's Vigor",
     "zh": "雷神之力",
     "zh_tw": "雷神之力",
-    "en": "Thundergod's Vigor"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       248
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Harlequin Crest",
     "zh": "谐角之冠",
     "zh_tw": "諧角之冠",
-    "en": "Harlequin Crest"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       249
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Veil of Steel",
     "zh": "钢铁面纱",
     "zh_tw": "鋼鐵面紗",
-    "en": "Veil of Steel"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       250
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "The Gladiator's Bane",
     "zh": "角斗士的祸根",
     "zh_tw": "鬥士之禍",
-    "en": "The Gladiator's Bane"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       251
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Arkaine's Valor",
     "zh": "阿凯尼的荣耀",
     "zh_tw": "阿凱尼的榮耀",
-    "en": "Arkaine's Valor"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       252
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Blackoak Shield",
     "zh": "黑橡树盾",
     "zh_tw": "黑橡樹盾",
-    "en": "Blackoak Shield"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       253
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Stormshield",
     "zh": "暴风之盾",
     "zh_tw": "暴風之盾",
-    "en": "Stormshield"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       254
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Hellslayer",
     "zh": "地狱重煞者",
     "zh_tw": "地獄殺戮者",
-    "en": "Hellslayer"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       255
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Messerschmidt's Reaver",
     "zh": "梅塞施密特的劫掠者",
     "zh_tw": "梅希斯密特之劫掠者",
-    "en": "Messerschmidt's Reaver"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       256
     ],
-    "category": "钉锤",
-    "category_tw": "釘鎚",
+    "en": "Baranar's Star",
     "zh": "巴拉纳之星",
     "zh_tw": "巴拉那之星",
-    "en": "Baranar's Star"
+    "category": "钉锤",
+    "category_tw": "釘鎚",
+    "legacy": false
   },
   {
     "ids": [
       257
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "Schaefer's Hammer",
     "zh": "舍费尔之锤",
     "zh_tw": "史恰佛之鎚",
-    "en": "Schaefer's Hammer"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       258
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "The Cranium Basher",
     "zh": "碎颅",
     "zh_tw": "碎腦鎚",
-    "en": "The Cranium Basher"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       259
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Lightsabre",
     "zh": "光之军刀",
     "zh_tw": "光之軍刀",
-    "en": "Lightsabre"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       260
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Doombringer",
     "zh": "末日使者",
     "zh_tw": "末日使者",
-    "en": "Doombringer"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       261
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "The Grandfather",
     "zh": "祖父",
     "zh_tw": "高祖",
-    "en": "The Grandfather"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       262
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "Wizardspike",
     "zh": "巫师之刺",
     "zh_tw": "巫師之刺",
-    "en": "Wizardspike"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
+  },
+  {
+    "ids": [
+      263
+    ],
+    "en": "Constricting Ring",
+    "zh": "紧缩之戒",
+    "zh_tw": "束縛之戒",
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": true
   },
   {
     "ids": [
       264
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Stormspire",
     "zh": "风暴穹窿",
     "zh_tw": "暴風尖塔",
-    "en": "Stormspire"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       265
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Eaglehorn",
     "zh": "鹰之号角",
     "zh_tw": "鷹角弓",
-    "en": "Eaglehorn"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       266
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Windforce",
     "zh": "风之力",
     "zh_tw": "風之力",
-    "en": "Windforce"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       268
     ],
-    "category": "戒指",
-    "category_tw": "戒指",
+    "en": "Bul-Kathos' Wedding Band",
     "zh": "布尔凯索的婚戒",
     "zh_tw": "布爾凱索的婚戒",
-    "en": "Bul-Kathos' Wedding Band"
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": false
   },
   {
     "ids": [
       269
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "The Cat's Eye",
     "zh": "猫眼",
     "zh_tw": "貓眼",
-    "en": "The Cat's Eye"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       270
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "The Rising Sun",
     "zh": "旭日",
     "zh_tw": "旭日東升",
-    "en": "The Rising Sun"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       271
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "Crescent Moon",
     "zh": "新月",
     "zh_tw": "新月",
-    "en": "Crescent Moon"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       272
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "Mara's Kaleidoscope",
     "zh": "玛拉的万花筒",
     "zh_tw": "馬拉的萬花筒",
-    "en": "Mara's Kaleidoscope"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       273
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "Atma's Scarab",
     "zh": "阿特玛的圣甲虫",
     "zh_tw": "亞特瑪的聖甲蟲",
-    "en": "Atma's Scarab"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       274
     ],
-    "category": "戒指",
-    "category_tw": "戒指",
+    "en": "Dwarf Star",
     "zh": "矮人之星",
     "zh_tw": "矮人之星",
-    "en": "Dwarf Star"
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": false
   },
   {
     "ids": [
       275
     ],
-    "category": "戒指",
-    "category_tw": "戒指",
+    "en": "Raven Frost",
     "zh": "乌鸦之霜",
     "zh_tw": "烏鴉之霜",
-    "en": "Raven Frost"
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": false
   },
   {
     "ids": [
       276
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "Highlord's Wrath",
     "zh": "大君之怒",
     "zh_tw": "大君之怒",
-    "en": "Highlord's Wrath"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       277
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "Saracen's Chance",
     "zh": "撒拉森的胜机",
     "zh_tw": "薩拉森的機會",
-    "en": "Saracen's Chance"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       279
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Arreat's Face",
     "zh": "亚瑞特之貌",
     "zh_tw": "亞瑞特的面容",
-    "en": "Arreat's Face"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       280
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Homunculus",
     "zh": "魔胎",
     "zh_tw": "魔胎",
-    "en": "Homunculus"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       281
     ],
-    "category": "标枪",
-    "category_tw": "標槍",
+    "en": "Titan's Revenge",
     "zh": "泰坦的复仇",
     "zh_tw": "泰坦的復仇",
-    "en": "Titan's Revenge"
+    "category": "标枪",
+    "category_tw": "標槍",
+    "legacy": false
   },
   {
     "ids": [
       282
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Lycander's Aim",
     "zh": "莱姗德的远击",
     "zh_tw": "萊坎德的準頭",
-    "en": "Lycander's Aim"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       283
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Lycander's Flank",
     "zh": "莱姗德的侧击",
     "zh_tw": "萊坎德的側翼",
-    "en": "Lycander's Flank"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       284
     ],
-    "category": "法珠",
-    "category_tw": "法珠",
+    "en": "The Oculus",
     "zh": "海妖之瞳",
     "zh_tw": "核瞳",
-    "en": "The Oculus"
+    "category": "法珠",
+    "category_tw": "法珠",
+    "legacy": false
   },
   {
     "ids": [
       285
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Herald of Zakarum",
     "zh": "萨卡兰姆的使者",
     "zh_tw": "撒卡蘭姆使者",
-    "en": "Herald of Zakarum"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       286
     ],
-    "category": "拳刃",
-    "category_tw": "拳刃",
+    "en": "Bartuc's Cut-Throat",
     "zh": "巴图克的割喉爪",
     "zh_tw": "霸圖克的割喉爪",
-    "en": "Bartuc's Cut-Throat"
+    "category": "拳刃",
+    "category_tw": "拳刃",
+    "legacy": false
   },
   {
     "ids": [
       287
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Jalal's Mane",
     "zh": "狼王之鬃",
     "zh_tw": "加爾的鬃毛",
-    "en": "Jalal's Mane"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       288
     ],
-    "category": "投掷武器",
-    "category_tw": "投擲武器",
+    "en": "The Scalper",
     "zh": "头皮剥离者",
     "zh_tw": "頭皮剝斧",
-    "en": "The Scalper"
+    "category": "投掷武器",
+    "category_tw": "投擲武器",
+    "legacy": false
   },
   {
     "ids": [
       289
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Bloodmoon",
     "zh": "赤月",
     "zh_tw": "血月",
-    "en": "Bloodmoon"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       290
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Djinn Slayer",
     "zh": "邪灵斩",
     "zh_tw": "巨靈殺手",
-    "en": "Djinn Slayer"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       291
     ],
-    "category": "投掷武器",
-    "category_tw": "投擲武器",
+    "en": "Deathbit",
     "zh": "死亡之吻",
     "zh_tw": "死亡尖鑽",
-    "en": "Deathbit"
+    "category": "投掷武器",
+    "category_tw": "投擲武器",
+    "legacy": false
   },
   {
     "ids": [
       292
     ],
-    "category": "投掷武器",
-    "category_tw": "投擲武器",
+    "en": "Warshrike",
     "zh": "战争伯劳鸟",
     "zh_tw": "戰爭之鳥",
-    "en": "Warshrike"
+    "category": "投掷武器",
+    "category_tw": "投擲武器",
+    "legacy": false
   },
   {
     "ids": [
       293
     ],
-    "category": "弩",
-    "category_tw": "弩",
+    "en": "Gut Siphon",
     "zh": "碎胆",
     "zh_tw": "內臟吸管",
-    "en": "Gut Siphon"
+    "category": "弩",
+    "category_tw": "弩",
+    "legacy": false
   },
   {
     "ids": [
       294
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Razor's Edge",
     "zh": "剃刀之锋",
     "zh_tw": "剃刀銳斧",
-    "en": "Razor's Edge"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       296
     ],
-    "category": "短棒",
-    "category_tw": "短棒",
+    "en": "Demon Limb",
     "zh": "恶魔断肢",
     "zh_tw": "惡魔肢體",
-    "en": "Demon Limb"
+    "category": "短棒",
+    "category_tw": "短棒",
+    "legacy": false
   },
   {
     "ids": [
       297
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Steel Shade",
     "zh": "钢罩",
     "zh_tw": "鋼影",
-    "en": "Steel Shade"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       298
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Tomb Reaver",
     "zh": "墓穴劫掠者",
     "zh_tw": "盜墓者",
-    "en": "Tomb Reaver"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       299
     ],
-    "category": "魔杖",
-    "category_tw": "魔杖",
+    "en": "Death's Web",
     "zh": "死亡迷网",
     "zh_tw": "死亡之網",
-    "en": "Death's Web"
+    "category": "魔杖",
+    "category_tw": "魔杖",
+    "legacy": false
   },
   {
     "ids": [
       300
     ],
-    "category": "戒指",
-    "category_tw": "戒指",
+    "en": "Nature's Peace",
     "zh": "大自然的安宁",
     "zh_tw": "自然祥和",
-    "en": "Nature's Peace"
-  },
-  {
-    "ids": [
-      301
-    ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
-    "zh": "碧蓝怒火",
-    "zh_tw": "碧藍怒火",
-    "en": "Azurewrath"
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": false
   },
   {
     "ids": [
       302
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "Seraph's Hymn",
     "zh": "炽天使的圣歌",
     "zh_tw": "熾天使之韻",
-    "en": "Seraph's Hymn"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       304
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "Fleshripper",
     "zh": "外壳割裂者",
     "zh_tw": "裂肉者",
-    "en": "Fleshripper"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
   },
   {
     "ids": [
       306
     ],
-    "category": "钉锤",
-    "category_tw": "釘鎚",
+    "en": "Horizon's Tornado",
     "zh": "地平线的龙卷风",
     "zh_tw": "地平線的龍捲風",
-    "en": "Horizon's Tornado"
+    "category": "钉锤",
+    "category_tw": "釘鎚",
+    "legacy": false
   },
   {
     "ids": [
       307
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "Stone Crusher",
     "zh": "碎石者",
     "zh_tw": "碎石者",
-    "en": "Stone Crusher"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       308
     ],
-    "category": "拳刃",
-    "category_tw": "拳刃",
+    "en": "Jade Talon",
     "zh": "碧玉爪",
     "zh_tw": "碧玉爪",
-    "en": "Jade Talon"
+    "category": "拳刃",
+    "category_tw": "拳刃",
+    "legacy": false
   },
   {
     "ids": [
       309
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Shadow Dancer",
     "zh": "影舞者",
     "zh_tw": "影舞者",
-    "en": "Shadow Dancer"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       310
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Cerebus' Bite",
     "zh": "冥犬的撕咬",
     "zh_tw": "地獄犬之咬",
-    "en": "Cerebus' Bite"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       311
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Tyrael's Might",
     "zh": "泰瑞尔的力量",
     "zh_tw": "泰瑞爾之力",
-    "en": "Tyrael's Might"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       312
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Soul Drainer",
     "zh": "吸魂者",
     "zh_tw": "吸魂者",
-    "en": "Soul Drainer"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       313
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Rune Master",
     "zh": "符文大师",
     "zh_tw": "符文大師",
-    "en": "Rune Master"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       314
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Death Cleaver",
     "zh": "死亡切肉斧",
     "zh_tw": "死亡劈斧",
-    "en": "Death Cleaver"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       315
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Executioner's Justice",
     "zh": "行刑者的裁决",
     "zh_tw": "劊子手的裁決",
-    "en": "Executioner's Justice"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       316
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Stoneraven",
     "zh": "石鸦",
     "zh_tw": "石鴉",
-    "en": "Stoneraven"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       317
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Leviathan",
     "zh": "利维坦",
     "zh_tw": "利維坦",
-    "en": "Leviathan"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       319
     ],
-    "category": "戒指",
-    "category_tw": "戒指",
+    "en": "Wisp Projector",
     "zh": "鬼火投影",
     "zh_tw": "鬼火投射者",
-    "en": "Wisp Projector"
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": false
   },
   {
     "ids": [
       320
     ],
-    "category": "标枪",
-    "category_tw": "標槍",
+    "en": "Gargoyle's Bite",
     "zh": "石像鬼之牙",
     "zh_tw": "石像鬼之噬",
-    "en": "Gargoyle's Bite"
+    "category": "标枪",
+    "category_tw": "標槍",
+    "legacy": false
   },
   {
     "ids": [
       321
     ],
-    "category": "投掷武器",
-    "category_tw": "投擲武器",
+    "en": "Lacerator",
     "zh": "撕裂者",
     "zh_tw": "撕裂者",
-    "en": "Lacerator"
+    "category": "投掷武器",
+    "category_tw": "投擲武器",
+    "legacy": false
   },
   {
     "ids": [
       322
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Mang Song's Lesson",
     "zh": "宋满的教训",
     "zh_tw": "曼宋的教誨",
-    "en": "Mang Song's Lesson"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       323
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Viperfork",
     "zh": "蛇信长枪",
     "zh_tw": "蛇魔叉",
-    "en": "Viperfork"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       324
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Ethereal Edge",
     "zh": "无形之锋",
     "zh_tw": "無形之刃",
-    "en": "Ethereal Edge"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       325
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Demonhorn's Edge",
     "zh": "恶魔角锋",
     "zh_tw": "惡魔角尖",
-    "en": "Demonhorn's Edge"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       326
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "The Reaper's Toll",
     "zh": "死神丧钟",
     "zh_tw": "死神喪鐘",
-    "en": "The Reaper's Toll"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       327
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Spirit Keeper",
     "zh": "灵体守护者",
     "zh_tw": "魂靈守衛者",
-    "en": "Spirit Keeper"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       328
     ],
-    "category": "弩",
-    "category_tw": "弩",
+    "en": "Hellrack",
     "zh": "地狱刑器",
     "zh_tw": "地獄刑具",
-    "en": "Hellrack"
+    "category": "弩",
+    "category_tw": "弩",
+    "legacy": false
   },
   {
     "ids": [
       329
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Alma Negra",
     "zh": "黑魂",
     "zh_tw": "黑魂",
-    "en": "Alma Negra"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       330
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Darkforce Spawn",
     "zh": "魔力肇生",
     "zh_tw": "魔力肇生",
-    "en": "Darkforce Spawn"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       331
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Widowmaker",
     "zh": "寡妇制造者",
     "zh_tw": "絕命",
-    "en": "Widowmaker"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       332
     ],
-    "category": "弓",
-    "category_tw": "弓",
+    "en": "Blood Raven's Charge",
     "zh": "血鸦的冲锋",
     "zh_tw": "血鴉之擊",
-    "en": "Blood Raven's Charge"
+    "category": "弓",
+    "category_tw": "弓",
+    "legacy": false
   },
   {
     "ids": [
       333
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "Ghostflame",
     "zh": "魂焰",
     "zh_tw": "鬼火",
-    "en": "Ghostflame"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
   },
   {
     "ids": [
       334
     ],
-    "category": "拳刃",
-    "category_tw": "拳刃",
+    "en": "Shadow Killer",
     "zh": "影弑",
     "zh_tw": "影殺者",
-    "en": "Shadow Killer"
+    "category": "拳刃",
+    "category_tw": "拳刃",
+    "legacy": false
   },
   {
     "ids": [
       335
     ],
-    "category": "投掷武器",
-    "category_tw": "投擲武器",
+    "en": "Gimmershred",
     "zh": "寒铁飞刃",
     "zh_tw": "吉默削斧",
-    "en": "Gimmershred"
+    "category": "投掷武器",
+    "category_tw": "投擲武器",
+    "legacy": false
   },
   {
     "ids": [
       336
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Griffon's Eye",
     "zh": "狮鹫之眼",
     "zh_tw": "獅鷲之眼",
-    "en": "Griffon's Eye"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       337
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "Windhammer",
     "zh": "风锤",
     "zh_tw": "風之鎚",
-    "en": "Windhammer"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       338
     ],
-    "category": "标枪",
-    "category_tw": "標槍",
+    "en": "Thunderstroke",
     "zh": "雷击",
     "zh_tw": "雷霆之擊",
-    "en": "Thunderstroke"
+    "category": "标枪",
+    "category_tw": "標槍",
+    "legacy": false
   },
   {
     "ids": [
       340
     ],
-    "category": "标枪",
-    "category_tw": "標槍",
+    "en": "Demon's Arch",
     "zh": "恶魔扑击",
     "zh_tw": "惡魔之拱",
-    "en": "Demon's Arch"
+    "category": "标枪",
+    "category_tw": "標槍",
+    "legacy": false
   },
   {
     "ids": [
       341
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Boneflame",
     "zh": "骨焰",
     "zh_tw": "骨焰",
-    "en": "Boneflame"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       342
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Steel Pillar",
     "zh": "钢铁支柱",
     "zh_tw": "鋼鐵之柱",
-    "en": "Steel Pillar"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       343
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Nightwing's Veil",
     "zh": "夜翼面纱",
     "zh_tw": "夜翼面紗",
-    "en": "Nightwing's Veil"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       344
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Crown of Ages",
     "zh": "年纪之冠",
     "zh_tw": "歲月之冠",
-    "en": "Crown of Ages"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       345
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Andariel's Visage",
     "zh": "安达莉尔的仪容",
     "zh_tw": "安達莉爾的面貌",
-    "en": "Andariel's Visage"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
+  },
+  {
+    "ids": [
+      346
+    ],
+    "en": "Darkfear",
+    "zh": "黑暗恐惧",
+    "zh_tw": "黑暗恐懼",
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": true
   },
   {
     "ids": [
       347
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Dragonscale",
     "zh": "龙鳞",
     "zh_tw": "龍鱗",
-    "en": "Dragonscale"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       348
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Steel Carapace",
     "zh": "钢铁甲壳",
     "zh_tw": "鋼鐵甲殼",
-    "en": "Steel Carapace"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       349
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Medusa's Gaze",
     "zh": "美杜莎的凝视",
     "zh_tw": "梅杜莎的凝視",
-    "en": "Medusa's Gaze"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       350
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Ravenlore",
     "zh": "乌鸦的智慧",
     "zh_tw": "掠鴉之王",
-    "en": "Ravenlore"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       351
     ],
-    "category": "魔杖",
-    "category_tw": "魔杖",
+    "en": "Boneshade",
     "zh": "白骨阴魂",
     "zh_tw": "骸骨陰影",
-    "en": "Boneshade"
+    "category": "魔杖",
+    "category_tw": "魔杖",
+    "legacy": false
   },
   {
     "ids": [
       353
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Flamebellow",
     "zh": "怒焰咆哮",
     "zh_tw": "火嚎",
-    "en": "Flamebellow"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       354
     ],
-    "category": "法珠",
-    "category_tw": "法珠",
+    "en": "Death's Fathom",
     "zh": "死亡深渊",
     "zh_tw": "死亡深度",
-    "en": "Death's Fathom"
+    "category": "法珠",
+    "category_tw": "法珠",
+    "legacy": false
   },
   {
     "ids": [
       355
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Wolfhowl",
     "zh": "狼嚎",
     "zh_tw": "狼嚎",
-    "en": "Wolfhowl"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       356
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Spirit Ward",
     "zh": "灵体守护",
     "zh_tw": "魂系結界",
-    "en": "Spirit Ward"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       357
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Kira's Guardian",
     "zh": "奇拉的守护",
     "zh_tw": "奇拉的守護",
-    "en": "Kira's Guardian"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       358
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Ormus' Robes",
     "zh": "奥玛斯的法袍",
     "zh_tw": "奧瑪斯之袍",
-    "en": "Ormus' Robes"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       359
     ],
-    "category": "咒符",
-    "category_tw": "咒符",
+    "en": "Gheed's Fortune",
     "zh": "基德的好运",
     "zh_tw": "基德的財運",
-    "en": "Gheed's Fortune"
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": false
   },
   {
     "ids": [
       360
     ],
-    "category": "钉锤",
-    "category_tw": "釘鎚",
+    "en": "Stormlash",
     "zh": "风暴之鞭",
     "zh_tw": "暴風之鞭",
-    "en": "Stormlash"
+    "category": "钉锤",
+    "category_tw": "釘鎚",
+    "legacy": false
   },
   {
     "ids": [
       361
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Halaberd's Reign",
     "zh": "死亡女神的统治",
     "zh_tw": "海拉柏德的國度",
-    "en": "Halaberd's Reign"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       363
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Spike Thorn",
     "zh": "尖刺荆棘",
     "zh_tw": "尖刺荊棘",
-    "en": "Spike Thorn"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       364
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Dracul's Grasp",
     "zh": "德古拉之握",
     "zh_tw": "德古拉之握",
-    "en": "Dracul's Grasp"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
       365
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Frostwind",
     "zh": "冰霜之风",
     "zh_tw": "霜風",
-    "en": "Frostwind"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       366
     ],
-    "category": "护甲",
-    "category_tw": "護甲",
+    "en": "Templar's Might",
     "zh": "圣殿骑士之力",
     "zh_tw": "聖堂騎士之力",
-    "en": "Templar's Might"
+    "category": "护甲",
+    "category_tw": "護甲",
+    "legacy": false
   },
   {
     "ids": [
       367
     ],
-    "category": "法珠",
-    "category_tw": "法珠",
+    "en": "Eschuta's Temper",
     "zh": "艾丝屈塔的脾气",
     "zh_tw": "艾斯屈塔的憤怒",
-    "en": "Eschuta's Temper"
+    "category": "法珠",
+    "category_tw": "法珠",
+    "legacy": false
   },
   {
     "ids": [
       368
     ],
-    "category": "拳刃",
-    "category_tw": "拳刃",
+    "en": "Firelizard's Talons",
     "zh": "火蜥蜴之爪",
     "zh_tw": "火蜥蜴之爪",
-    "en": "Firelizard's Talons"
+    "category": "拳刃",
+    "category_tw": "拳刃",
+    "legacy": false
   },
   {
     "ids": [
       369
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Sandstorm Trek",
     "zh": "沙暴之旅",
     "zh_tw": "沙暴之旅",
-    "en": "Sandstorm Trek"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       370
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Marrowwalk",
     "zh": "骨髓行走",
     "zh_tw": "骨髓行走",
-    "en": "Marrowwalk"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       371
     ],
-    "category": "权杖",
-    "category_tw": "權杖",
+    "en": "Heaven's Light",
     "zh": "天堂之光",
     "zh_tw": "天堂之光",
-    "en": "Heaven's Light"
+    "category": "权杖",
+    "category_tw": "權杖",
+    "legacy": false
   },
   {
     "ids": [
       373
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Arachnid Mesh",
     "zh": "蜘蛛网纹",
     "zh_tw": "蜘蛛之網",
-    "en": "Arachnid Mesh"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       374
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Nosferatu's Coil",
     "zh": "吸能圣王之圈",
     "zh_tw": "吸血鬼王之圈",
-    "en": "Nosferatu's Coil"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       375
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "Metalgrid",
     "zh": "金属网格",
     "zh_tw": "金屬網格",
-    "en": "Metalgrid"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       376
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Verdungo's Hearty Cord",
     "zh": "行刑者的绞首绳",
     "zh_tw": "伐頓戈的強韌腰索",
-    "en": "Verdungo's Hearty Cord"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       378
     ],
-    "category": "戒指",
-    "category_tw": "戒指",
+    "en": "Carrion Wind",
     "zh": "腐肉之风",
     "zh_tw": "腐肉之風",
-    "en": "Carrion Wind"
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": false
   },
   {
     "ids": [
       379
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Giant Skull",
     "zh": "巨型颅骨",
     "zh_tw": "巨大顱骨",
-    "en": "Giant Skull"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       380
     ],
-    "category": "权杖",
-    "category_tw": "權杖",
+    "en": "Astreon's Iron Ward",
     "zh": "阿斯特隆的陨铁杖",
     "zh_tw": "愛斯特龍的鐵衛",
-    "en": "Astreon's Iron Ward"
+    "category": "权杖",
+    "category_tw": "權杖",
+    "legacy": false
   },
   {
     "ids": [
       381
     ],
-    "category": "咒符",
-    "category_tw": "咒符",
+    "en": "Annihilus",
     "zh": "毁灭",
     "zh_tw": "滅絕",
-    "en": "Annihilus"
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": false
   },
   {
     "ids": [
       382
     ],
-    "category": "长矛",
-    "category_tw": "長矛",
+    "en": "Arioc's Needle",
     "zh": "艾里欧克之针",
     "zh_tw": "愛理歐克之針",
-    "en": "Arioc's Needle"
+    "category": "长矛",
+    "category_tw": "長矛",
+    "legacy": false
   },
   {
     "ids": [
       383
     ],
-    "category": "斧",
-    "category_tw": "斧",
+    "en": "Cranebeak",
     "zh": "鹤嘴锄",
     "zh_tw": "鶴嘴",
-    "en": "Cranebeak"
+    "category": "斧",
+    "category_tw": "斧",
+    "legacy": false
   },
   {
     "ids": [
       384
     ],
-    "category": "短棒",
-    "category_tw": "短棒",
+    "en": "Nord's Tenderizer",
     "zh": "北方人的碎肉棒",
     "zh_tw": "北地肉鎚",
-    "en": "Nord's Tenderizer"
+    "category": "短棒",
+    "category_tw": "短棒",
+    "legacy": false
   },
   {
     "ids": [
       385
     ],
-    "category": "重锤",
-    "category_tw": "重鎚",
+    "en": "Earth Shifter",
     "zh": "撼地者",
     "zh_tw": "撼地者",
-    "en": "Earth Shifter"
+    "category": "重锤",
+    "category_tw": "重鎚",
+    "legacy": false
   },
   {
     "ids": [
       386
     ],
-    "category": "标枪",
-    "category_tw": "標槍",
+    "en": "Wraith Flight",
     "zh": "怨灵飞行",
     "zh_tw": "死靈夜翔",
-    "en": "Wraith Flight"
+    "category": "标枪",
+    "category_tw": "標槍",
+    "legacy": false
   },
   {
     "ids": [
       387
     ],
-    "category": "长柄武器",
-    "category_tw": "長柄武器",
+    "en": "Bonehew",
     "zh": "斩骨",
     "zh_tw": "破骨",
-    "en": "Bonehew"
+    "category": "长柄武器",
+    "category_tw": "長柄武器",
+    "legacy": false
   },
   {
     "ids": [
       388
     ],
-    "category": "法杖",
-    "category_tw": "法杖",
+    "en": "Ondal's Wisdom",
     "zh": "温达的智慧",
     "zh_tw": "溫達的智慧",
-    "en": "Ondal's Wisdom"
+    "category": "法杖",
+    "category_tw": "法杖",
+    "legacy": false
   },
   {
     "ids": [
       389
     ],
-    "category": "权杖",
-    "category_tw": "權杖",
+    "en": "The Redeemer",
     "zh": "救赎者",
     "zh_tw": "懺悔者",
-    "en": "The Redeemer"
+    "category": "权杖",
+    "category_tw": "權杖",
+    "legacy": false
   },
   {
     "ids": [
       390
     ],
-    "category": "盾牌",
-    "category_tw": "盾牌",
+    "en": "Head Hunter's Glory",
     "zh": "猎头者的荣耀",
     "zh_tw": "獵頭者的榮耀",
-    "en": "Head Hunter's Glory"
+    "category": "盾牌",
+    "category_tw": "盾牌",
+    "legacy": false
   },
   {
     "ids": [
       391
     ],
-    "category": "手套",
-    "category_tw": "手套",
+    "en": "Steelrend",
     "zh": "碎钢",
     "zh_tw": "碎鋼",
-    "en": "Steelrend"
+    "category": "手套",
+    "category_tw": "手套",
+    "legacy": false
   },
   {
     "ids": [
@@ -3770,260 +4169,418 @@
       398,
       399
     ],
-    "category": "珠宝",
-    "category_tw": "珠寶",
+    "en": "Rainbow Facet",
     "zh": "彩虹魔石",
     "zh_tw": "彩虹刻面",
-    "en": "Rainbow Facet"
+    "category": "珠宝",
+    "category_tw": "珠寶",
+    "legacy": false
   },
   {
     "ids": [
       400
     ],
-    "category": "咒符",
-    "category_tw": "咒符",
+    "en": "Hellfire Torch",
     "zh": "地狱火炬",
     "zh_tw": "地獄火炬",
-    "en": "Hellfire Torch"
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": false
+  },
+  {
+    "ids": [
+      401
+    ],
+    "en": "Cold Rupture",
+    "zh": "寒冰裂口",
+    "zh_tw": "冰寒裂縫",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
+  },
+  {
+    "ids": [
+      402
+    ],
+    "en": "Flame Rift",
+    "zh": "火焰裂隙",
+    "zh_tw": "火焰裂隙",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
+  },
+  {
+    "ids": [
+      403
+    ],
+    "en": "Crack of the Heavens",
+    "zh": "天堂裂痕",
+    "zh_tw": "天堂裂擊",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
+  },
+  {
+    "ids": [
+      404
+    ],
+    "en": "Rotting Fissure",
+    "zh": "腐烂裂迹",
+    "zh_tw": "腐敗裂痕",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
+  },
+  {
+    "ids": [
+      405
+    ],
+    "en": "Bone Break",
+    "zh": "白骨裂纹",
+    "zh_tw": "分筋裂骨",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
+  },
+  {
+    "ids": [
+      406
+    ],
+    "en": "Black Cleft",
+    "zh": "漆黑裂痕",
+    "zh_tw": "漆黑裂口",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
   },
   {
     "ids": [
       408
     ],
-    "category": "魔法书",
-    "category_tw": "魔法書",
+    "en": "Ars Al'Diabolos",
     "zh": "迪亚波罗斯之术",
     "zh_tw": "艾迪亞布羅斯學術",
-    "en": "Ars Al'Diabolos"
+    "category": "魔法书",
+    "category_tw": "魔法書",
+    "legacy": false
   },
   {
     "ids": [
       409
     ],
-    "category": "魔法书",
-    "category_tw": "魔法書",
+    "en": "Ars Tor'Baalos",
     "zh": "巴洛斯之术",
     "zh_tw": "托巴爾羅斯學術",
-    "en": "Ars Tor'Baalos"
+    "category": "魔法书",
+    "category_tw": "魔法書",
+    "legacy": false
   },
   {
     "ids": [
       410
     ],
-    "category": "魔法书",
-    "category_tw": "魔法書",
+    "en": "Ars Dul'Mephistos",
     "zh": "墨菲斯托斯之术",
     "zh_tw": "杜墨菲斯托斯學術",
-    "en": "Ars Dul'Mephistos"
+    "category": "魔法书",
+    "category_tw": "魔法書",
+    "legacy": false
   },
   {
     "ids": [
       411
     ],
-    "category": "魔法书",
-    "category_tw": "魔法書",
+    "en": "Measured Wrath",
     "zh": "有度之怒",
     "zh_tw": "審慎之怒",
-    "en": "Measured Wrath"
+    "category": "魔法书",
+    "category_tw": "魔法書",
+    "legacy": false
   },
   {
     "ids": [
       412
     ],
-    "category": "刀剑",
-    "category_tw": "刀劍",
+    "en": "Dreadfang",
     "zh": "惧牙",
     "zh_tw": "懼牙",
-    "en": "Dreadfang"
+    "category": "刀剑",
+    "category_tw": "刀劍",
+    "legacy": false
   },
   {
     "ids": [
       413
     ],
-    "category": "鞋子",
-    "category_tw": "鞋子",
+    "en": "Wraithstep",
     "zh": "怨灵步",
     "zh_tw": "怨靈步伐",
-    "en": "Wraithstep"
+    "category": "鞋子",
+    "category_tw": "鞋子",
+    "legacy": false
   },
   {
     "ids": [
       414
     ],
-    "category": "匕首",
-    "category_tw": "匕首",
+    "en": "Bloodpact Shard",
     "zh": "血契碎片",
     "zh_tw": "血誓碎片",
-    "en": "Bloodpact Shard"
+    "category": "匕首",
+    "category_tw": "匕首",
+    "legacy": false
   },
   {
     "ids": [
       415
     ],
-    "category": "戒指",
-    "category_tw": "戒指",
+    "en": "Sling",
     "zh": "投石索",
     "zh_tw": "投索",
-    "en": "Sling"
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": false
   },
   {
     "ids": [
       416
     ],
-    "category": "戒指",
-    "category_tw": "戒指",
+    "en": "Opalvein",
     "zh": "蛋白石脉",
     "zh_tw": "蛋白石脈",
-    "en": "Opalvein"
+    "category": "戒指",
+    "category_tw": "戒指",
+    "legacy": false
   },
   {
     "ids": [
       417
     ],
-    "category": "护身符",
-    "category_tw": "護身符",
+    "en": "Entropy Locket",
     "zh": "熵之护符",
     "zh_tw": "無序墜盒",
-    "en": "Entropy Locket"
+    "category": "护身符",
+    "category_tw": "護身符",
+    "legacy": false
   },
   {
     "ids": [
       418
     ],
-    "category": "腰带",
-    "category_tw": "腰帶",
+    "en": "Gheed's Wager",
     "zh": "基德的赌注",
     "zh_tw": "基德的賭注",
-    "en": "Gheed's Wager"
+    "category": "腰带",
+    "category_tw": "腰帶",
+    "legacy": false
   },
   {
     "ids": [
       419
     ],
-    "category": "头盔",
-    "category_tw": "頭盔",
+    "en": "Hellwarden's Will",
     "zh": "地狱禁卫的意志",
     "zh_tw": "地獄刑長的意志",
-    "en": "Hellwarden's Will"
+    "category": "头盔",
+    "category_tw": "頭盔",
+    "legacy": false
   },
   {
     "ids": [
       420
     ],
-    "category": "珠宝",
-    "category_tw": "珠寶",
+    "en": "Defender's Bile",
     "zh": "防御者之怒",
     "zh_tw": "防禦者的膽汁",
-    "en": "Defender's Bile"
+    "category": "珠宝",
+    "category_tw": "珠寶",
+    "legacy": false
   },
   {
     "ids": [
       421
     ],
-    "category": "珠宝",
-    "category_tw": "珠寶",
+    "en": "Guardian's Thunder",
     "zh": "守护者之雷",
     "zh_tw": "守護者的閃電",
-    "en": "Guardian's Thunder"
+    "category": "珠宝",
+    "category_tw": "珠寶",
+    "legacy": false
   },
   {
     "ids": [
       422
     ],
-    "category": "珠宝",
-    "category_tw": "珠寶",
+    "en": "Protector's Frost",
     "zh": "保卫者之霜",
     "zh_tw": "保衛者的冰霜",
-    "en": "Protector's Frost"
+    "category": "珠宝",
+    "category_tw": "珠寶",
+    "legacy": false
   },
   {
     "ids": [
       423
     ],
-    "category": "珠宝",
-    "category_tw": "珠寶",
+    "en": "Defender's Fire",
     "zh": "防御者之火",
     "zh_tw": "防禦者的火焰",
-    "en": "Defender's Fire"
+    "category": "珠宝",
+    "category_tw": "珠寶",
+    "legacy": false
   },
   {
     "ids": [
       424
     ],
-    "category": "珠宝",
-    "category_tw": "珠寶",
+    "en": "Protector's Stone",
     "zh": "保卫者之石",
     "zh_tw": "保衛者的岩石",
-    "en": "Protector's Stone"
+    "category": "珠宝",
+    "category_tw": "珠寶",
+    "legacy": false
   },
   {
     "ids": [
       425
     ],
-    "category": "珠宝",
-    "category_tw": "珠寶",
+    "en": "Guardian's Light",
     "zh": "守护者之光",
     "zh_tw": "守護者的光芒",
-    "en": "Guardian's Light"
+    "category": "珠宝",
+    "category_tw": "珠寶",
+    "legacy": false
   },
   {
     "ids": [
       426
     ],
-    "category": "咒符",
-    "category_tw": "咒符",
+    "en": "Latent Cold Rupture",
     "zh": "潜在的寒冰裂口",
     "zh_tw": "潛伏冰寒裂縫",
-    "en": "Latent Cold Rupture"
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": false
+  },
+  {
+    "ids": [
+      427
+    ],
+    "en": "Renewed Cold Rupture",
+    "zh": "焕新的寒冰裂口",
+    "zh_tw": "新生冰寒裂縫",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
   },
   {
     "ids": [
       428
     ],
-    "category": "咒符",
-    "category_tw": "咒符",
+    "en": "Latent Flame Rift",
     "zh": "潜在的火焰裂隙",
     "zh_tw": "潛伏火焰裂隙",
-    "en": "Latent Flame Rift"
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": false
   },
   {
     "ids": [
       429
     ],
-    "category": "咒符",
-    "category_tw": "咒符",
+    "en": "Latent Crack of the Heavens",
     "zh": "潜在的天堂裂痕",
     "zh_tw": "潛伏天堂裂擊",
-    "en": "Latent Crack of the Heavens"
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": false
   },
   {
     "ids": [
       430
     ],
-    "category": "咒符",
-    "category_tw": "咒符",
+    "en": "Latent Rotting Fissure",
     "zh": "潜在的腐烂裂迹",
     "zh_tw": "潛伏腐敗裂痕",
-    "en": "Latent Rotting Fissure"
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": false
   },
   {
     "ids": [
       431
     ],
-    "category": "咒符",
-    "category_tw": "咒符",
+    "en": "Latent Bone Break",
     "zh": "潜在的白骨裂纹",
     "zh_tw": "潛伏分筋裂骨",
-    "en": "Latent Bone Break"
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": false
   },
   {
     "ids": [
       432
     ],
-    "category": "咒符",
-    "category_tw": "咒符",
+    "en": "Latent Black Cleft",
     "zh": "潜在的漆黑裂痕",
     "zh_tw": "潛伏漆黑裂口",
-    "en": "Latent Black Cleft"
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": false
+  },
+  {
+    "ids": [
+      433
+    ],
+    "en": "Renewed Flame Rift",
+    "zh": "焕新的火焰裂隙",
+    "zh_tw": "新生火焰裂隙",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
+  },
+  {
+    "ids": [
+      434
+    ],
+    "en": "Renewed Crack of the Heavens",
+    "zh": "焕新的天堂裂痕",
+    "zh_tw": "新生天堂裂擊",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
+  },
+  {
+    "ids": [
+      435
+    ],
+    "en": "Renewed Rotting Fissure",
+    "zh": "焕新的腐烂裂迹",
+    "zh_tw": "新生腐敗裂痕",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
+  },
+  {
+    "ids": [
+      436
+    ],
+    "en": "Renewed Bone Break",
+    "zh": "焕新的白骨裂纹",
+    "zh_tw": "新生分筋裂骨",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
+  },
+  {
+    "ids": [
+      437
+    ],
+    "en": "Renewed Black Cleft",
+    "zh": "焕新的漆黑裂痕",
+    "zh_tw": "新生漆黑裂口",
+    "category": "神符",
+    "category_tw": "咒符",
+    "legacy": true
   }
 ]

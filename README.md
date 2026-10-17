@@ -1,44 +1,33 @@
-# 🧙 Diablo II Set Tracker
+# Diablo II: Resurrected Collection Tracker
 
-> A lightweight, shareable Diablo II: Resurrected set collection tracker — powered by static JSON + React + Tailwind CSS.
+Load your D2R save folder and see everything you own: which character or stash page holds each item,
+how many copies, and which uniques, sets, runewords and runes you are still missing.
+Supports Reign of the Warlock saves. Names in Traditional and Simplified Chinese plus English.
 
-### 🌐 Live Site
+Saves are parsed in the browser (WebAssembly) and never uploaded.
+
+### Live Site
 
 - [https://d2r.gardenstatevampire.space/](https://d2r.gardenstatevampire.space/)
----
 
-## 🧰 Features
+## How it works
 
-- Track your Diablo II Set/Unique item collection
-- Fully static & fast — no backend needed
-- Automatically loads local JSON (or your own custom save)
-- Built with performance and simplicity in mind
+- `wasm/` wraps [d2s](https://github.com/ResurrectedTrader/d2s-rs) (MIT) to parse `.d2s` character saves
+  and `.d2i` shared stashes. The built package in `wasm/pkg/` is committed so deploys need no Rust.
+- `scripts/gen-data.mjs` builds `src/data/*.json` from the official game tables and string files,
+  extracted from the game's CASC storage (e.g. with [casc-cli](https://github.com/ironsp4rk/casc-cli)).
+  Raw game files are not committed.
+- `src/lib/` holds the logic (parsing saves, item lookups, translations), `src/components/` the UI.
 
----
-
-## ⚙️ Tech Stack
-
-- **Frontend**: React + Tailwind CSS
-- **Deployment**: Netlify + Cloudflare
-- **Data Source**: Custom JSON files (scraped from multiple Diablo II websites)
-- **Local Folder**: `Diablo2`
-
----
-
-## 🐍 Data Gathering
-
-Set & item data was collected using several Python scraping scripts targeting different D2R community websites.  
-Because item info across sites is inconsistent and sometimes messy, a lot of normalization logic was written to generate a clean, structured dataset.
-
-> Want to use your own custom item tracker?  
-> Just replace the default JSON file (`/public/data.json`) with your own version.
-
----
-
-## 🚀 Local Development
+## Development
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Diablo2.git
-cd Diablo2
 npm install
 npm run dev
+```
+
+| Command | What it does |
+|---|---|
+| `npm run gen:data [dir]` | Regenerate item data from extracted game files (default `~/Projects/Diablo2/d2r-gamedata`) |
+| `npm run build:wasm` | Rebuild the save parser (needs Rust, the `wasm32-unknown-unknown` target and `wasm-pack`) |
+| `node scripts/check-saves.mjs <save dir>` | Parse a save folder with the app's code and print a summary |

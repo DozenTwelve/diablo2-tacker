@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:wasm": "cd wasm && wasm-pack build --target web --release && rm pkg/.gitignore",
+    "gen:data": "node scripts/gen-data.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",
