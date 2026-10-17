@@ -60,10 +60,19 @@ function collect(item, owner, place, out) {
   if (item.runeword_id == null) item.sockets.forEach((s) => s && collect(s, owner, "socketed", out));
 }
 
+// Once-per-difficulty rewards, [normal, nightmare, hell]: "available", "used" or null (not unlocked yet).
+// Akara's skill/stat reset and Larzuk's socket (Siege on Harrogath)
+const rewardOf = (flags = "") => (flags.includes("REWARD_PENDING") ? "available" : flags.includes("REWARD_GRANTED") ? "used" : null);
+const questsOf = (q) =>
+  q && {
+    respec: ["normal", "nightmare", "hell"].map((d) => rewardOf(q[d]?.act5?.akara_respec)),
+    socket: ["normal", "nightmare", "hell"].map((d) => rewardOf(q[d]?.act5?.siege_on_harrogath)),
+  };
+
 export async function parseSaveFiles(files) {
   const { parseD2s, parseD2i } = await loadParser();
   const items = [];
-  const owners = []; // { name, cls?, level? }; shared stashes have no class
+  const owners = []; // { name, cls?, level?, quests? }; shared stashes have no class
   const errors = [];
   const saves = files.filter((f) => /\.d2[si]$/i.test(f.name));
   // A folder pick includes subfolders: same-named saves from different folders get the folder added
@@ -85,7 +94,7 @@ export async function parseSaveFiles(files) {
         const save = JSON.parse(parseD2s(bytes));
         save.items.forEach((it) => collect(it, owner, placeOf(it), items));
         (save.merc_items?.items ?? []).forEach((it) => collect(it, owner, "merc", items));
-        owners.push({ name: owner, cls: save.character.class, level: save.character.level });
+        owners.push({ name: owner, cls: save.character.class, level: save.character.level, quests: questsOf(save.quests) });
       }
     } catch (e) {
       errors.push(`${file.name}: ${e.message ?? e}`);

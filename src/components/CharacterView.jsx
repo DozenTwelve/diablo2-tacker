@@ -3,6 +3,7 @@ import { groupByKey, itemsByPlace, ownerLabel, ownersOf, placeLabel, totalCount 
 import { museumLayout } from "../lib/organize";
 import { t } from "../lib/i18n";
 import { Link } from "../lib/router";
+import { useStoredState } from "../lib/useStoredState";
 import StashGrid, { colorOf } from "./StashGrid";
 import Paperdoll from "./Paperdoll";
 import StackTab from "./StackTab";
@@ -15,7 +16,30 @@ const gridSize = (place) =>
 const DOLLS = { equipped: undefined, merc: ["Head", "Torso", "RightArm", "LeftArm"] };
 
 const MUSEUM = /^(UW|UA|UJ|SET)-/;
-const groupOf = (o) => (!o.cls ? "sharedStash" : o.level > 1 ? "mainCharacters" : MUSEUM.test(o.name) ? "museumMules" : "otherMules");
+// A character is a mule or a main character as the player marked it (roles), else by level 1 or not
+const roleOf = (o, roles) => roles[o.name] ?? (o.level > 1 ? "main" : "mule");
+const groupOf = (o, roles) =>
+  !o.cls ? "sharedStash" : roleOf(o, roles) === "main" ? "mainCharacters" : MUSEUM.test(o.name) ? "museumMules" : "otherMules";
+
+// Akara's reset and Larzuk's socket per difficulty
+const DIFFICULTIES = ["normal", "nightmare", "hell"];
+const REWARD_COLOR = { available: "var(--color-gold)", used: "var(--color-text-muted)" };
+function Rewards({ quests, lang }) {
+  return (
+    <div className="text-sm space-y-1">
+      {["respec", "socket"].map((kind) => (
+        <div key={kind} className="flex flex-wrap gap-x-4">
+          <span className="gothic-text-muted w-28">{t(kind, lang)}</span>
+          {quests[kind].map((state, i) => (
+            <span key={i} style={{ color: REWARD_COLOR[state] ?? "#555" }}>
+              {t(DIFFICULTIES[i], lang)} {t(state ?? "locked", lang)}
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
 const GROUPS = ["mainCharacters", "museumMules", "otherMules", "sharedStash"];
 
 // Empty fixed slots of a museum mule (see src/lib/organize.js), by place, with where else the item is owned
@@ -33,11 +57,15 @@ function ghostsOf(owner, allItems) {
 
 // /characters: every character and stash as a card, grouped
 function CharacterList({ saveData, lang }) {
+  const [roles, setRoles] = useStoredState("roles", {});
   const counts = new Map();
   for (const r of saveData.items) counts.set(r.owner, (counts.get(r.owner) ?? 0) + r.count);
   const owners = [...ownersOf(saveData)].sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
-  return GROUPS.map((group) => {
-    const list = owners.filter((o) => groupOf(o) === group);
+  const toggle = (o) => setRoles({ ...roles, [o.name]: roleOf(o, roles) === "main" ? "mule" : "main" });
+  const changed = owners.some((o) => o.cls && roles[o.name] && roles[o.name] !== (o.level > 1 ? "main" : "mule"));
+  const mules = owners.filter((o) => o.cls && roleOf(o, roles) === "mule").map((o) => o.name);
+  const sections = GROUPS.map((group) => {
+    const list = owners.filter((o) => groupOf(o, roles) === group);
     if (!list.length) return null;
     return (
       <section key={group}>
@@ -46,19 +74,41 @@ function CharacterList({ saveData, lang }) {
           <span className="gothic-text-muted ml-4">({list.length})</span>
         </h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-          {list.map((o) => (
-            <Link key={o.name} to={`/characters/${encodeURIComponent(o.name)}`} className="gothic-card block p-3 no-underline">
-              <div className="gothic-text-gold truncate">{ownerLabel(o.name, lang)}</div>
-              <div className="text-xs gothic-text-muted">
-                {o.cls && `${t(o.cls, lang)} Lv${o.level} · `}
-                {t("itemCount", lang, counts.get(o.name) ?? 0)}
+          {list.map((o) => {
+            const open = (kind) => o.quests?.[kind].filter((s) => s === "available").length;
+            return (
+              <div key={o.name} className="gothic-card p-3 space-y-1">
+                <Link to={`/characters/${encodeURIComponent(o.name)}`} className="block no-underline">
+                  <div className="gothic-text-gold truncate">{ownerLabel(o.name, lang)}</div>
+                  <div className="text-xs gothic-text-muted">
+                    {o.cls && `${t(o.cls, lang)} Lv${o.level} · `}
+                    {t("itemCount", lang, counts.get(o.name) ?? 0)}
+                  </div>
+                  {roleOf(o, roles) === "main" && (open("respec") > 0 || open("socket") > 0) && (
+                    <div className="text-xs gothic-text-gold">
+                      {open("respec") > 0 && `${t("respec", lang)} ×${open("respec")} `}
+                      {open("socket") > 0 && `${t("socket", lang)} ×${open("socket")}`}
+                    </div>
+                  )}
+                </Link>
+                {o.cls && (
+                  <button className="text-xs gothic-text-muted underline" onClick={() => toggle(o)}>
+                    {t(roleOf(o, roles) === "main" ? "makeMule" : "makeMain", lang)}
+                  </button>
+                )}
               </div>
-            </Link>
-          ))}
+            );
+          })}
         </div>
       </section>
     );
   });
+  return (
+    <>
+      {sections}
+      {changed && <p className="text-sm gothic-text-muted break-all">{t("mulesHint", lang, mules.join(","))}</p>}
+    </>
+  );
 }
 
 // /characters/<name>: storage drawn as in game, other places as lists
@@ -87,6 +137,7 @@ function CharacterPage({ saveData, name, lang }) {
           {owner.cls && `${t(owner.cls, lang)} Lv${owner.level} · `}
           {t("itemCount", lang, totalCount(records))}
         </p>
+        {owner.quests && <Rewards quests={owner.quests} lang={lang} />}
       </div>
       {noPositions && <p className="text-sm text-red-400">{t("reloadForGrid", lang)}</p>}
       {dolls.length > 0 && (
