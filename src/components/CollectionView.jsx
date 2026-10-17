@@ -1,9 +1,17 @@
 import { useState } from "react";
 import { catalog, imageOf, labelOf } from "../lib/gameData";
-import { locationLines } from "../lib/inventory";
+import { locationLines, ownerLabel } from "../lib/inventory";
 import { t } from "../lib/i18n";
 import ProgressBar from "./ProgressBar";
 import { Tooltip } from "./StashGrid";
+import Copies from "./Copies";
+
+// "LastOne ×2、JavaZon、Zanna ×2": owners of several copies on one line
+function ownerSummary(records, lang) {
+  const counts = new Map();
+  for (const r of records) counts.set(r.owner, (counts.get(r.owner) ?? 0) + 1);
+  return [...counts].map(([owner, n]) => `${ownerLabel(owner, lang)}${n > 1 ? ` ×${n}` : ""}`).join("、");
+}
 
 // Icon for an entry: an owned copy's (runewords take their base's look), else the catalog one.
 // A missing runeword has no base, so it shows its runes instead.
@@ -22,17 +30,22 @@ function Icon({ entryKey, records, lang }) {
 }
 
 // One collection tab: groups of entry keys, each an icon tile, owned or dimmed.
-// Hovering shows an owned copy's stats and where every copy is.
+// Hovering shows an owned copy's stats and where it is; with several copies, the catalog ranges and their
+// owners in one line, and clicking lists every copy (Copies).
 // groups: [{ title, keys: [key], notes?: [[color, line]] }] (notes: set bonuses)
 export default function CollectionView({ label, groups, owned, lang }) {
   const [missingOnly, setMissingOnly] = useState(false);
   const [tip, setTip] = useState(null);
+  const [opened, setOpened] = useState(null); // key whose copies are listed
   const all = groups.flatMap((g) => g.keys);
 
   const show = (key, records) => (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const names = catalog.get(key).names;
-    if (records) {
+    if (records?.length > 1) {
+      const extra = [ownerSummary(records, lang), t("clickForCopies", lang, records.length)];
+      setTip({ item: { key, code: names.code, quality: records[0].quality }, summary: true, extra, rect });
+    } else if (records) {
       const extra = locationLines(records, lang).map((l) => `${l.text}${l.count > 1 ? ` ×${l.count}` : ""}`);
       setTip({ item: records[0], extra, rect });
     } else {
@@ -76,8 +89,8 @@ export default function CollectionView({ label, groups, owned, lang }) {
                     key={key}
                     onMouseEnter={show(key, records)}
                     onMouseLeave={() => setTip(null)}
-                    onClick={show(key, records)}
-                    className="flex flex-col items-center gap-1 p-1"
+                    onClick={records ? () => (setTip(null), setOpened(key)) : show(key, records)}
+                    className={`flex flex-col items-center gap-1 p-1 ${records ? "cursor-pointer" : ""}`}
                     style={{ background: "rgba(0, 0, 0, 0.45)", border: "1px solid var(--color-border-metal)" }}
                   >
                     <div className="w-full" style={{ height: 88 }}>
@@ -95,6 +108,7 @@ export default function CollectionView({ label, groups, owned, lang }) {
         );
       })}
       {tip && <Tooltip tip={tip} lang={lang} />}
+      <Copies entryKey={opened} records={opened ? owned.get(opened) : null} onClose={() => setOpened(null)} lang={lang} />
     </div>
   );
 }

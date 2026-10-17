@@ -75,3 +75,15 @@ export function propLines(props, lang) {
 // Set bonuses ([[pieces worn, props]], see scripts/gen-data.mjs) as lines ending in "(2 Items)"
 export const setBonusLines = (tiers = [], lang) =>
   tiers.flatMap(([pieces, props]) => propLines(props, lang).map((line) => `${line} ${t("setPieces", lang, pieces)}`));
+
+// How good an owned copy's rolls are, 0-100: the mean position of its variable stats within their ranges.
+// null when nothing on it can roll differently.
+export function rollScore(record, props) {
+  const key = ([id, layer]) => `${id}:${layer}`;
+  const lo = new Map(propStats(props, 0).map((s) => [key(s), s[2]]));
+  const hi = new Map(propStats(props, 1).map((s) => [key(s), s[2]]));
+  const parts = record.stats
+    .filter((s) => lo.has(key(s)) && lo.get(key(s)) !== hi.get(key(s)))
+    .map((s) => Math.min(1, Math.max(0, (s[2] - lo.get(key(s))) / (hi.get(key(s)) - lo.get(key(s))))));
+  return parts.length ? Math.round((parts.reduce((a, b) => a + b, 0) / parts.length) * 100) : null;
+}

@@ -23,6 +23,7 @@ const CELL = 44; // max cell size in px; the grid shrinks to fit narrow screens
 // Item box in game style: name, base (for named items), then ethereal/sockets and stats of an owned item,
 // or for a ghost (not owned here) its catalog properties as ranges; a set item's bonuses for more pieces;
 // for a ghost where else it is owned (main characters...) or "missing"; tip.extra lines in gold.
+// tip.summary: an owned item shown by its catalog ranges (several copies), not one copy's stats.
 const Lines = ({ lines, color }) =>
   lines.map((line, i) => (
     <div key={i} style={{ color }}>
@@ -31,7 +32,7 @@ const Lines = ({ lines, color }) =>
   ));
 
 export function Tooltip({ tip, lang }) {
-  const { item, ghost, rect, extra = [] } = tip;
+  const { item, ghost, summary, rect, extra = [] } = tip;
   const above = rect.top > innerHeight / 2;
   const left = Math.min(Math.max(rect.left + rect.width / 2, 160), innerWidth - 160);
   const named = /^[usw]:/.test(item.key) && item.code; // a missing runeword has no base
@@ -52,7 +53,7 @@ export function Tooltip({ tip, lang }) {
     >
       <div style={{ color: nameColor }}>{labelOf(item.key, lang)}</div>
       {named && <div style={{ color: nameColor }}>{baseNameOf(item.code, lang)}</div>}
-      {ghost ? (
+      {ghost || summary ? (
         <Lines lines={propLines(entry?.props ?? [], lang)} color={STAT_COLOR} />
       ) : (
         <>
