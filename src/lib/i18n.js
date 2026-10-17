@@ -17,8 +17,14 @@ const UI = {
   materials: ["材料", "材料", "Materials", "재료"],
   potions: ["药水", "藥水", "Potions", "물약"],
   characters: ["角色", "角色", "Characters", "캐릭터"],
-  makeMain: ["设为主力", "設為主力", "Make main", "주력으로 지정"],
-  makeMule: ["设为骡子", "設為騾子", "Make mule", "창고캐로 지정"],
+  editRoles: ["调整主力 / 骡子", "調整主力 / 騾子", "Choose mules", "주력 / 창고캐 지정"],
+  editRolesHint: [
+    "点角色就能在主力和骡子之间切换",
+    "點角色就能在主力和騾子之間切換",
+    "Click a character to switch it between main and mule",
+    "캐릭터를 누르면 주력과 창고캐가 바뀝니다",
+  ],
+  done: ["完成", "完成", "Done", "완료"],
   mulesHint: [
     (list) => `整理骡子时请用：--mules ${list}`,
     (list) => `整理騾子時請用：--mules ${list}`,

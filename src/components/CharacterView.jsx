@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { labelOf } from "../lib/gameData";
 import { groupByKey, itemsByPlace, ownerLabel, ownersOf, placeLabel, totalCount } from "../lib/inventory";
 import { museumLayout } from "../lib/organize";
@@ -55,9 +56,11 @@ function ghostsOf(owner, allItems) {
   return ghosts;
 }
 
-// /characters: every character and stash as a card, grouped
+// /characters: every character and stash as a card, grouped. In editing mode a click on a character
+// switches it between main character and mule instead of opening it.
 function CharacterList({ saveData, lang }) {
   const [roles, setRoles] = useStoredState("roles", {});
+  const [editing, setEditing] = useState(false);
   const counts = new Map();
   for (const r of saveData.items) counts.set(r.owner, (counts.get(r.owner) ?? 0) + r.count);
   const owners = [...ownersOf(saveData)].sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
@@ -76,27 +79,29 @@ function CharacterList({ saveData, lang }) {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {list.map((o) => {
             const open = (kind) => o.quests?.[kind].filter((s) => s === "available").length;
-            return (
-              <div key={o.name} className="gothic-card p-3 space-y-1">
-                <Link to={`/characters/${encodeURIComponent(o.name)}`} className="block no-underline">
-                  <div className="gothic-text-gold truncate">{ownerLabel(o.name, lang)}</div>
-                  <div className="text-xs gothic-text-muted">
-                    {o.cls && `${t(o.cls, lang)} Lv${o.level} · `}
-                    {t("itemCount", lang, counts.get(o.name) ?? 0)}
+            const body = (
+              <>
+                <div className="gothic-text-gold truncate">{ownerLabel(o.name, lang)}</div>
+                <div className="text-xs gothic-text-muted">
+                  {o.cls && `${t(o.cls, lang)} Lv${o.level} · `}
+                  {t("itemCount", lang, counts.get(o.name) ?? 0)}
+                </div>
+                {roleOf(o, roles) === "main" && (open("respec") > 0 || open("socket") > 0) && (
+                  <div className="text-xs gothic-text-gold">
+                    {open("respec") > 0 && `${t("respec", lang)} ×${open("respec")} `}
+                    {open("socket") > 0 && `${t("socket", lang)} ×${open("socket")}`}
                   </div>
-                  {roleOf(o, roles) === "main" && (open("respec") > 0 || open("socket") > 0) && (
-                    <div className="text-xs gothic-text-gold">
-                      {open("respec") > 0 && `${t("respec", lang)} ×${open("respec")} `}
-                      {open("socket") > 0 && `${t("socket", lang)} ×${open("socket")}`}
-                    </div>
-                  )}
-                </Link>
-                {o.cls && (
-                  <button className="text-xs gothic-text-muted underline" onClick={() => toggle(o)}>
-                    {t(roleOf(o, roles) === "main" ? "makeMule" : "makeMain", lang)}
-                  </button>
                 )}
-              </div>
+              </>
+            );
+            return editing && o.cls ? (
+              <button key={o.name} className="gothic-card p-3 text-left w-full" style={{ outline: "1px dashed var(--color-gold-dark)" }} onClick={() => toggle(o)}>
+                {body}
+              </button>
+            ) : (
+              <Link key={o.name} to={`/characters/${encodeURIComponent(o.name)}`} className="gothic-card block p-3 no-underline">
+                {body}
+              </Link>
             );
           })}
         </div>
@@ -105,6 +110,12 @@ function CharacterList({ saveData, lang }) {
   });
   return (
     <>
+      <div className="flex flex-wrap items-center gap-3">
+        <button className={`gothic-btn gothic-btn-small ${editing ? "" : "gothic-btn-secondary"}`} onClick={() => setEditing(!editing)}>
+          {t(editing ? "done" : "editRoles", lang)}
+        </button>
+        {editing && <span className="text-sm gothic-text-muted">{t("editRolesHint", lang)}</span>}
+      </div>
       {sections}
       {changed && <p className="text-sm gothic-text-muted break-all">{t("mulesHint", lang, mules.join(","))}</p>}
     </>
