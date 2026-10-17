@@ -20,7 +20,7 @@ function collectionGroups(tab, lang) {
   if (tab === "uniques") {
     const byCategory = new Map();
     for (const u of uniques.filter((u) => !u.legacy)) {
-      const title = lang === "zh" ? u.category : u.category_tw;
+      const title = nameOf(u.category, lang);
       if (!byCategory.has(title)) byCategory.set(title, []);
       byCategory.get(title).push(uniqueKey(u));
     }
@@ -33,7 +33,7 @@ function collectionGroups(tab, lang) {
       keys: s.items.map(setItemKey),
       notes: [
         ...setBonusLines(s.bonus, lang).map((line) => [SET_GREEN, line]),
-        ["var(--color-gold)", `${t("fullSet", lang)}：`],
+        ["var(--color-gold)", `${t("fullSet", lang)}${t("colon", lang)}`],
         ...propLines(s.full, lang).map((line) => ["var(--color-gold)", line]),
       ],
     }));
@@ -77,7 +77,7 @@ export default function App() {
         ) : tab === "runes" ? (
           // Runes as in the stackable tab, counted over every character and stash
           <div className="space-y-6">
-            <ProgressBar label={t("runes", lang)} owned={runes.filter((r) => owned.has(runeKey(r))).length} total={runes.length} />
+            <ProgressBar label={t("runes", lang)} owned={runes.filter((r) => owned.has(runeKey(r))).length} total={runes.length} lang={lang} />
             <div className="gothic-card">
               <StackTab byKey={owned} sections={SECTIONS.filter(([name]) => name === "runes")} showWhere lang={lang} />
             </div>

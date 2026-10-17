@@ -10,7 +10,7 @@ import Copies from "./Copies";
 function ownerSummary(records, lang) {
   const counts = new Map();
   for (const r of records) counts.set(r.owner, (counts.get(r.owner) ?? 0) + 1);
-  return [...counts].map(([owner, n]) => `${ownerLabel(owner, lang)}${n > 1 ? ` ×${n}` : ""}`).join("、");
+  return [...counts].map(([owner, n]) => `${ownerLabel(owner, lang)}${n > 1 ? ` ×${n}` : ""}`).join(t("listSeparator", lang));
 }
 
 // Icon for an entry: an owned copy's (runewords take their base's look), else the catalog one.
@@ -56,7 +56,7 @@ export default function CollectionView({ label, groups, owned, lang }) {
 
   return (
     <div className="space-y-6">
-      <ProgressBar label={label} owned={all.filter((k) => owned.has(k)).length} total={all.length} />
+      <ProgressBar label={label} owned={all.filter((k) => owned.has(k)).length} total={all.length} lang={lang} />
       <label className="gothic-checkbox">
         <input type="checkbox" checked={missingOnly} onChange={(e) => setMissingOnly(e.target.checked)} />
         <span>{t("missingOnly", lang)}</span>

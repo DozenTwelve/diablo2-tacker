@@ -33,13 +33,15 @@ const equiv = new Map(table("itemtypes").map((r) => [r.Code, [r.Equiv1, r.Equiv2
 
 // Checked in order, so more specific types come first (grimoires are shields, javelins are thrown)
 const CATEGORIES = [
-  ["grim", "魔法书", "魔法書"], ["jave", "标枪", "標槍"], ["thro", "投掷武器", "投擲武器"], ["helm", "头盔", "頭盔"],
-  ["tors", "护甲", "護甲"], ["shld", "盾牌", "盾牌"], ["glov", "手套", "手套"], ["boot", "鞋子", "鞋子"],
-  ["belt", "腰带", "腰帶"], ["ring", "戒指", "戒指"], ["amul", "护身符", "護身符"], ["char", "神符", "咒符"],
-  ["jewl", "珠宝", "珠寶"], ["h2h", "拳刃", "拳刃"], ["orb", "法珠", "法珠"], ["axe", "斧", "斧"],
-  ["swor", "刀剑", "刀劍"], ["xbow", "弩", "弩"], ["bow", "弓", "弓"], ["pole", "长柄武器", "長柄武器"],
-  ["spea", "长矛", "長矛"], ["staf", "法杖", "法杖"], ["knif", "匕首", "匕首"], ["hamm", "重锤", "重鎚"],
-  ["wand", "魔杖", "魔杖"], ["scep", "权杖", "權杖"], ["mace", "钉锤", "釘鎚"], ["club", "短棒", "短棒"],
+  ["grim", "魔法书", "魔法書", "Grimoires"], ["jave", "标枪", "標槍", "Javelins"], ["thro", "投掷武器", "投擲武器", "Throwing"],
+  ["helm", "头盔", "頭盔", "Helms"], ["tors", "护甲", "護甲", "Armor"], ["shld", "盾牌", "盾牌", "Shields"],
+  ["glov", "手套", "手套", "Gloves"], ["boot", "鞋子", "鞋子", "Boots"], ["belt", "腰带", "腰帶", "Belts"],
+  ["ring", "戒指", "戒指", "Rings"], ["amul", "护身符", "護身符", "Amulets"], ["char", "神符", "咒符", "Charms"],
+  ["jewl", "珠宝", "珠寶", "Jewels"], ["h2h", "拳刃", "拳刃", "Claws"], ["orb", "法珠", "法珠", "Orbs"], ["axe", "斧", "斧", "Axes"],
+  ["swor", "刀剑", "刀劍", "Swords"], ["xbow", "弩", "弩", "Crossbows"], ["bow", "弓", "弓", "Bows"],
+  ["pole", "长柄武器", "長柄武器", "Polearms"], ["spea", "长矛", "長矛", "Spears"], ["staf", "法杖", "法杖", "Staves"],
+  ["knif", "匕首", "匕首", "Daggers"], ["hamm", "重锤", "重鎚", "Hammers"], ["wand", "魔杖", "魔杖", "Wands"],
+  ["scep", "权杖", "權杖", "Scepters"], ["mace", "钉锤", "釘鎚", "Maces"], ["club", "短棒", "短棒", "Clubs"],
 ];
 const ancestors = (type) => {
   const seen = new Set();
@@ -101,9 +103,9 @@ for (const r of table("uniqueitems")) {
     prev.ids.push(id);
     prev.legacy &&= legacy;
   } else {
-    const [, cn, tw] = category(r.code);
+    const [, zh, zh_tw, en] = category(r.code);
     uniques.set(r.index, {
-      ids: [id], code: r.code, img: imgOf(uniqueImg, r.index, r.code), ...names(r.index), category: cn, category_tw: tw, legacy,
+      ids: [id], code: r.code, img: imgOf(uniqueImg, r.index, r.code), ...names(r.index), category: { en, zh, zh_tw }, legacy,
       props: propsOf(r, ITEM_PROPS),
     });
   }
