@@ -3,6 +3,8 @@ import { uniques, sets, runewords, runes, uniqueKey, setItemKey, runewordKey, ru
 import { groupByKey } from "./lib/inventory";
 import { LANGS, nameOf, t } from "./lib/i18n";
 import { useStoredState } from "./lib/useStoredState";
+import { deckSaveFiles, onDeck } from "./lib/deck";
+import { parseSaveFiles } from "./lib/parseSaves";
 import SaveLoader from "./components/SaveLoader";
 import SearchView from "./components/SearchView";
 import CollectionView from "./components/CollectionView";
@@ -47,6 +49,10 @@ export default function App() {
   const [first = "search", name] = usePath();
   const tab = TABS.includes(first) ? first : "search";
   const owned = useMemo(() => groupByKey(saveData?.items ?? []), [saveData]);
+  // On the Deck, read the saves fresh every time the page opens
+  useEffect(() => {
+    if (onDeck) deckSaveFiles().then(parseSaveFiles).then(setSaveData);
+  }, [setSaveData]);
   // For screen readers and the right Chinese glyphs
   useEffect(() => {
     document.documentElement.lang = { zh: "zh-Hans", zh_tw: "zh-Hant", en: "en", ko: "ko" }[lang] ?? "en";

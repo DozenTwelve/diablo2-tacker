@@ -1,0 +1,11 @@
+{
+  "name": "D2R Collection Tracker",
+  "author": "yzr",
+  "flags": [],
+  "api_version": 1,
+  "publish": {
+    "tags": ["diablo", "collection"],
+    "description": "See your Diablo II: Resurrected collection: every unique, set item, runeword and rune you own, and which character holds it. Reads the saves on this Deck; item icons come from your own game files.",
+    "image": ""
+  }
+}

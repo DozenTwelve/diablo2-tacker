@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { parseSaveFiles } from "../lib/parseSaves";
 import { t } from "../lib/i18n";
+import { deckSaveFiles, onDeck } from "../lib/deck";
 
 const DECK_FIND = `find ~/.local/share/Steam/steamapps/compatdata -type d -path "*/Saved Games/Diablo II Resurrected"`;
 
@@ -10,9 +11,7 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
   const [busy, setBusy] = useState(false);
   const menu = useRef(null);
 
-  const handleFiles = async (e) => {
-    const files = [...e.target.files];
-    e.target.value = "";
+  const load = async (files) => {
     if (!files.length) return;
     setBusy(true);
     try {
@@ -21,6 +20,11 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
     } finally {
       setBusy(false);
     }
+  };
+  const handleFiles = (e) => {
+    const files = [...e.target.files];
+    e.target.value = "";
+    load(files);
   };
 
   const body = (
@@ -33,18 +37,29 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
             : t("noSaves", lang)}
       </p>
       <div className="flex flex-wrap gap-3 items-center">
-        <label className="gothic-btn gothic-btn-small focus-within:outline focus-within:outline-2" style={{ cursor: "pointer", margin: 0 }}>
-          {t("pickFolder", lang)}
-          <input type="file" webkitdirectory="" multiple onChange={handleFiles} className="sr-only" />
-        </label>
-        <label
-          className="gothic-btn gothic-btn-secondary gothic-btn-small focus-within:outline focus-within:outline-2"
-          style={{ cursor: "pointer", margin: 0 }}
-        >
-          {t("pickFiles", lang)}
-          <input type="file" accept=".d2s,.d2i" multiple onChange={handleFiles} className="sr-only" />
-        </label>
-        {saveData && (
+        {onDeck ? (
+          <button className="gothic-btn gothic-btn-small" onClick={async () => load(await deckSaveFiles())}>
+            {t("reloadSaves", lang)}
+          </button>
+        ) : (
+          <>
+            <label
+              className="gothic-btn gothic-btn-small focus-within:outline focus-within:outline-2"
+              style={{ cursor: "pointer", margin: 0 }}
+            >
+              {t("pickFolder", lang)}
+              <input type="file" webkitdirectory="" multiple onChange={handleFiles} className="sr-only" />
+            </label>
+            <label
+              className="gothic-btn gothic-btn-secondary gothic-btn-small focus-within:outline focus-within:outline-2"
+              style={{ cursor: "pointer", margin: 0 }}
+            >
+              {t("pickFiles", lang)}
+              <input type="file" accept=".d2s,.d2i" multiple onChange={handleFiles} className="sr-only" />
+            </label>
+          </>
+        )}
+        {saveData && !onDeck && (
           <button className="gothic-btn gothic-btn-secondary gothic-btn-small" onClick={() => onLoad(null)}>
             {t("clear", lang)}
           </button>
@@ -57,22 +72,26 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
         </p>
       ))}
       <p className="text-xs gothic-text-muted">{t("privacy", lang)}</p>
-      <details className="text-xs gothic-text-muted space-y-2">
-        <summary style={{ cursor: "pointer" }}>{t("whereSaves", lang)}</summary>
-        <p>
-          Windows: <code className="select-all">%USERPROFILE%\Saved Games\Diablo II Resurrected</code>
-        </p>
-        <p>{t("savesDeck", lang)}</p>
-        <code className="block select-all break-all">{DECK_FIND}</code>
-        <p>{t("savesOffline", lang)}</p>
-      </details>
+      {!onDeck && (
+        <details className="text-xs gothic-text-muted space-y-2">
+          <summary style={{ cursor: "pointer" }}>{t("whereSaves", lang)}</summary>
+          <p>
+            Windows: <code className="select-all">%USERPROFILE%\Saved Games\Diablo II Resurrected</code>
+          </p>
+          <p>{t("savesDeck", lang)}</p>
+          <code className="block select-all break-all">{DECK_FIND}</code>
+          <p>{t("savesOffline", lang)}</p>
+        </details>
+      )}
     </div>
   );
 
   if (!compact) return <section className="panel mb-10 max-w-2xl">{body}</section>;
   return (
     <details ref={menu} className="relative">
-      <summary className={`text-sm cursor-pointer whitespace-nowrap ${saveData?.errors.length || notStored ? "text-red-400" : "gothic-text-muted"}`}>
+      <summary
+        className={`text-sm cursor-pointer whitespace-nowrap ${saveData?.errors.length || notStored ? "text-red-400" : "gothic-text-muted"}`}
+      >
         {t("savesShort", lang, saveData.files)}
       </summary>
       <div className="panel absolute right-0 mt-2 z-30 shadow-2xl" style={{ width: "min(26rem, calc(100vw - 2rem))" }}>
