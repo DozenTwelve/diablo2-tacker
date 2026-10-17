@@ -11,16 +11,29 @@ export function parseD2i(bytes: Uint8Array): string;
  */
 export function parseD2s(bytes: Uint8Array): string;
 
+/**
+ * Write a `.d2i` shared stash from JSON produced by `parseD2i` (possibly edited).
+ */
+export function writeD2i(json: string): Uint8Array;
+
+/**
+ * Write a `.d2s` character save from JSON produced by `parseD2s` (possibly edited).
+ */
+export function writeD2s(json: string): Uint8Array;
+
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
     readonly memory: WebAssembly.Memory;
     readonly parseD2i: (a: number, b: number) => [number, number, number, number];
     readonly parseD2s: (a: number, b: number) => [number, number, number, number];
+    readonly writeD2i: (a: number, b: number) => [number, number, number, number];
+    readonly writeD2s: (a: number, b: number) => [number, number, number, number];
     readonly __wbindgen_externrefs: WebAssembly.Table;
     readonly __wbindgen_malloc: (a: number, b: number) => number;
     readonly __externref_table_dealloc: (a: number) => void;
     readonly __wbindgen_free: (a: number, b: number, c: number) => void;
+    readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
     readonly __wbindgen_start: () => void;
 }
 
