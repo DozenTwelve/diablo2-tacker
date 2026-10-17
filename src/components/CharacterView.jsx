@@ -35,7 +35,7 @@ function ghostsOf(owner, allItems) {
 function CharacterList({ saveData, lang }) {
   const counts = new Map();
   for (const r of saveData.items) counts.set(r.owner, (counts.get(r.owner) ?? 0) + r.count);
-  const owners = ownersOf(saveData).sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+  const owners = [...ownersOf(saveData)].sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
   return GROUPS.map((group) => {
     const list = owners.filter((o) => groupOf(o) === group);
     if (!list.length) return null;

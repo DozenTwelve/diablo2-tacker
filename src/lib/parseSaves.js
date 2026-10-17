@@ -66,8 +66,13 @@ export async function parseSaveFiles(files) {
   const owners = []; // { name, cls?, level? }; shared stashes have no class
   const errors = [];
   const saves = files.filter((f) => /\.d2[si]$/i.test(f.name));
+  // A folder pick includes subfolders: same-named saves from different folders get the folder added
+  const baseName = (f) => f.name.replace(/\.d2[si]$/i, "");
+  const counts = new Map();
+  for (const f of saves) counts.set(baseName(f), (counts.get(baseName(f)) ?? 0) + 1);
   for (const file of saves) {
-    const owner = file.name.replace(/\.d2[si]$/i, "");
+    const folder = file.webkitRelativePath?.split("/").slice(-2, -1)[0];
+    const owner = counts.get(baseName(file)) > 1 && folder ? `${baseName(file)} (${folder})` : baseName(file);
     try {
       const bytes = new Uint8Array(await file.arrayBuffer());
       if (/\.d2i$/i.test(file.name)) {

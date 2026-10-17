@@ -1,9 +1,8 @@
-import { useState } from "react";
 import items from "../data/items.json";
 import { imageOf, keyOf, labelOf } from "../lib/gameData";
 import { locationLines, totalCount } from "../lib/inventory";
 import { t } from "../lib/i18n";
-import { Tooltip } from "./StashGrid";
+import { Tooltip, tipHandlers, useTip } from "./StashGrid";
 
 // Everything the stackable tab holds, in table order, split as the game groups it
 const STACKABLE = Object.keys(items).filter((code) => items[code].stack);
@@ -22,7 +21,7 @@ const keyOfCode = (code) => keyOf({ quality: "Normal" }, code);
 // Icon slots with counts; empty ones dimmed. byKey: key -> records (counts summed, locations in the tooltip).
 // showWhere: list where the records are (for totals over all characters)
 export default function StackTab({ byKey, sections = SECTIONS, showWhere = false, lang }) {
-  const [tip, setTip] = useState(null);
+  const [tip, setTip] = useTip();
   return (
     <div className="space-y-5">
       {sections.map(([name, codes, columns]) => (
@@ -41,10 +40,11 @@ export default function StackTab({ byKey, sections = SECTIONS, showWhere = false
               const show = (e) =>
                 setTip({ item: { key, code, quality: "Normal", stats: [] }, extra, rect: e.currentTarget.getBoundingClientRect() });
               return (
-                <div
+                <button
+                  type="button"
                   key={code}
-                  onMouseEnter={show}
-                  onMouseLeave={() => setTip(null)}
+                  aria-label={labelOf(key, lang)}
+                  {...tipHandlers(show, setTip)}
                   onClick={show}
                   className="relative aspect-square"
                   style={{ background: "rgba(0, 0, 0, 0.55)", border: "1px solid var(--color-border-metal)" }}
@@ -64,7 +64,7 @@ export default function StackTab({ byKey, sections = SECTIONS, showWhere = false
                       {count}
                     </span>
                   )}
-                </div>
+                </button>
               );
             })}
           </div>

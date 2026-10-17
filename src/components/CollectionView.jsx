@@ -3,7 +3,7 @@ import { catalog, imageOf, labelOf } from "../lib/gameData";
 import { locationLines, ownerLabel } from "../lib/inventory";
 import { t } from "../lib/i18n";
 import ProgressBar from "./ProgressBar";
-import { Tooltip } from "./StashGrid";
+import { Tooltip, tipHandlers, useTip } from "./StashGrid";
 import Copies from "./Copies";
 
 // "LastOne ×2、JavaZon、Zanna ×2": owners of several copies on one line
@@ -21,11 +21,11 @@ function Icon({ entryKey, records, lang }) {
   if (records) return <img src={imageOf(records[0])} alt={labelOf(entryKey, lang)} loading="lazy" className="w-full h-full object-contain" />;
   if (names.code) return <img src={imageOf({ key: entryKey, code: names.code })} alt="" loading="lazy" className="w-full h-full object-contain" style={style} />;
   return (
-    <div className="flex flex-wrap items-center justify-center w-full h-full" style={style}>
+    <span className="flex flex-wrap items-center justify-center w-full h-full" style={style}>
       {names.runes.map((code, i) => (
         <img key={i} src={imageOf({ key: `r:${code}`, code })} alt="" loading="lazy" style={{ width: 22, height: 22 }} />
       ))}
-    </div>
+    </span>
   );
 }
 
@@ -35,7 +35,7 @@ function Icon({ entryKey, records, lang }) {
 // groups: [{ title, keys: [key], notes?: [[color, line]] }] (notes: set bonuses)
 export default function CollectionView({ label, groups, owned, lang }) {
   const [missingOnly, setMissingOnly] = useState(false);
-  const [tip, setTip] = useState(null);
+  const [tip, setTip] = useTip();
   const [opened, setOpened] = useState(null); // key whose copies are listed
   const all = groups.flatMap((g) => g.keys);
 
@@ -85,22 +85,22 @@ export default function CollectionView({ label, groups, owned, lang }) {
               {shown.map((key) => {
                 const records = owned.get(key);
                 return (
-                  <div
+                  <button
+                    type="button"
                     key={key}
-                    onMouseEnter={show(key, records)}
-                    onMouseLeave={() => setTip(null)}
+                    {...tipHandlers(show(key, records), setTip)}
                     onClick={records ? () => (setTip(null), setOpened(key)) : show(key, records)}
-                    className={`flex flex-col items-center gap-1 p-1 ${records ? "cursor-pointer" : ""}`}
+                    className={`flex flex-col items-center gap-1 p-1 ${records ? "cursor-pointer" : "cursor-default"}`}
                     style={{ background: "rgba(0, 0, 0, 0.45)", border: "1px solid var(--color-border-metal)" }}
                   >
-                    <div className="w-full" style={{ height: 88 }}>
+                    <span className="block w-full" style={{ height: 88 }}>
                       <Icon entryKey={key} records={records} lang={lang} />
-                    </div>
-                    <div className={`text-xs text-center leading-tight ${records ? "gothic-text-gold" : "gothic-text-muted"}`}>
+                    </span>
+                    <span className={`block text-xs text-center leading-tight ${records ? "gothic-text-gold" : "gothic-text-muted"}`}>
                       {labelOf(key, lang)}
                       {records?.length > 1 && ` ×${records.length}`}
-                    </div>
-                  </div>
+                    </span>
+                  </button>
                 );
               })}
             </div>

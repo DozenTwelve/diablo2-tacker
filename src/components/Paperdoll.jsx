@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { colorOf, ItemImage, Tooltip } from "./StashGrid";
+import { labelOf } from "../lib/gameData";
+import { colorOf, ItemImage, Tooltip, tipHandlers, useTip } from "./StashGrid";
 
 // Equipment slots laid out as the in-game character screen, on an 8 x 7 cell grid: [column, row, width, height].
 // Weapon set II (RightHand/LeftHand) takes the weapon and shield spots when switched to.
@@ -20,7 +21,7 @@ const CELL = 44;
 
 // records: equipped items (with slot); slots: which slots to draw (a mercenary has fewer)
 export default function Paperdoll({ records, slots = Object.keys(SLOTS), lang }) {
-  const [tip, setTip] = useState(null);
+  const [tip, setTip] = useTip();
   const [second, setSecond] = useState(false);
   const bySlot = new Map(records.map((r) => [r.slot, r]));
   const hasSwitch = records.some((r) => r.slot === "RightHand" || r.slot === "LeftHand");
@@ -50,10 +51,11 @@ export default function Paperdoll({ records, slots = Object.keys(SLOTS), lang })
           const item = bySlot.get(second && SWITCH[slot] ? SWITCH[slot] : slot);
           const show = (e) => item && setTip({ item, rect: e.currentTarget.getBoundingClientRect() });
           return (
-            <div
+            <button
+              type="button"
               key={slot}
-              onMouseEnter={show}
-              onMouseLeave={() => setTip(null)}
+              aria-label={item ? labelOf(item.key, lang) : slot}
+              {...tipHandlers(show, setTip)}
               onClick={show}
               className="flex items-center justify-center"
               style={{
@@ -64,7 +66,7 @@ export default function Paperdoll({ records, slots = Object.keys(SLOTS), lang })
               }}
             >
               {item && <ItemImage item={item} lang={lang} />}
-            </div>
+            </button>
           );
         })}
       </div>

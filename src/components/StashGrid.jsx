@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import items from "../data/items.json";
 import { baseNameOf, catalog, imageOf, labelOf } from "../lib/gameData";
 import { propLines, runewordLines, setBonusLines } from "../lib/props";
@@ -31,8 +31,27 @@ const Lines = ({ lines, color }) =>
     </div>
   ));
 
+// Tooltip state for things shown on hover, keyboard focus or tap; scrolling closes it so it never floats
+// over unrelated content
+export function useTip() {
+  const [tip, setTip] = useState(null);
+  useEffect(() => {
+    if (!tip) return;
+    const close = () => setTip(null);
+    addEventListener("scroll", close, true);
+    addEventListener("resize", close);
+    return () => {
+      removeEventListener("scroll", close, true);
+      removeEventListener("resize", close);
+    };
+  }, [tip]);
+  return [tip, setTip];
+}
+export const tipHandlers = (show, setTip) => ({ onMouseEnter: show, onFocus: show, onMouseLeave: () => setTip(null), onBlur: () => setTip(null) });
+
 export function Tooltip({ tip, lang }) {
   const { item, ghost, summary, rect, extra = [] } = tip;
+  // On the side with more room, never taller than that room
   const above = rect.top > innerHeight / 2;
   const left = Math.min(Math.max(rect.left + rect.width / 2, 160), innerWidth - 160);
   const named = /^[usw]:/.test(item.key) && item.code; // a missing runeword has no base
@@ -47,6 +66,8 @@ export function Tooltip({ tip, lang }) {
         top: above ? rect.top - 6 : rect.bottom + 6,
         transform: `translate(-50%, ${above ? "-100%" : "0"})`,
         maxWidth: 300,
+        maxHeight: above ? rect.top - 12 : innerHeight - rect.bottom - 12,
+        overflow: "hidden",
         background: "rgba(0, 0, 0, 0.92)",
         border: "1px solid #3a3a3a",
       }}
@@ -88,15 +109,16 @@ export function ItemImage({ item, ghost, lang }) {
 
 // A W x H storage grid as in game. records: items in it, with x/y; ghosts: [{ key, code, x, y }] empty fixed slots.
 export default function StashGrid({ width, height, records, ghosts = [], lang }) {
-  const [tip, setTip] = useState(null);
+  const [tip, setTip] = useTip();
   const cell = (item, x, y, ghost) => {
     const { w, h } = items[item.code];
     const show = (e) => setTip({ item, ghost, rect: e.currentTarget.getBoundingClientRect() });
     return (
-      <div
+      <button
+        type="button"
         key={ghost ? `ghost:${item.key}` : `${x}:${y}`}
-        onMouseEnter={show}
-        onMouseLeave={() => setTip(null)}
+        aria-label={labelOf(item.key, lang)}
+        {...tipHandlers(show, setTip)}
         onClick={show}
         className="relative flex items-center justify-center"
         style={{
@@ -107,7 +129,7 @@ export default function StashGrid({ width, height, records, ghosts = [], lang })
         }}
       >
         <ItemImage item={item} ghost={ghost} lang={lang} />
-      </div>
+      </button>
     );
   };
   return (

@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { uniques, sets, runewords, runes, uniqueKey, setItemKey, runewordKey, runeKey } from "./lib/gameData";
 import { groupByKey } from "./lib/inventory";
 import { LANGS, nameOf, t } from "./lib/i18n";
@@ -9,6 +9,7 @@ import CollectionView from "./components/CollectionView";
 import CharacterView from "./components/CharacterView";
 import StackTab, { SECTIONS } from "./components/StackTab";
 import ProgressBar from "./components/ProgressBar";
+import ErrorBoundary from "./components/ErrorBoundary";
 import { SET_GREEN } from "./components/StashGrid";
 import { propLines, setBonusLines } from "./lib/props";
 import { Link, usePath } from "./lib/router";
@@ -43,10 +44,14 @@ function collectionGroups(tab, lang) {
 
 export default function App() {
   const [lang, setLang] = useStoredState("lang", "zh_tw");
-  const [saveData, setSaveData] = useStoredState("saveData", null);
+  const [saveData, setSaveData, notStored] = useStoredState("saveData", null);
   const [first = "search", name] = usePath();
   const tab = TABS.includes(first) ? first : "search";
   const owned = useMemo(() => groupByKey(saveData?.items ?? []), [saveData]);
+  // For screen readers and the right Chinese glyphs
+  useEffect(() => {
+    document.documentElement.lang = { zh: "zh-Hans", zh_tw: "zh-Hant", en: "en", ko: "ko" }[lang] ?? "en";
+  }, [lang]);
 
   return (
     <div className="gothic-container">
@@ -71,22 +76,24 @@ export default function App() {
       </div>
 
       <div className="space-y-6">
-        <SaveLoader saveData={saveData} onLoad={setSaveData} lang={lang} />
-        {tab === "search" ? (
-          <SearchView owned={owned} lang={lang} />
-        ) : tab === "runes" ? (
-          // Runes as in the stackable tab, counted over every character and stash
-          <div className="space-y-6">
-            <ProgressBar label={t("runes", lang)} owned={runes.filter((r) => owned.has(runeKey(r))).length} total={runes.length} lang={lang} />
-            <div className="gothic-card">
-              <StackTab byKey={owned} sections={SECTIONS.filter(([name]) => name === "runes")} showWhere lang={lang} />
+        <SaveLoader saveData={saveData} onLoad={setSaveData} notStored={notStored} lang={lang} />
+        <ErrorBoundary key={`${tab}/${name}`} lang={lang} onReset={() => setSaveData(null)}>
+          {tab === "search" ? (
+            <SearchView owned={owned} lang={lang} />
+          ) : tab === "runes" ? (
+            // Runes as in the stackable tab, counted over every character and stash
+            <div className="space-y-6">
+              <ProgressBar label={t("runes", lang)} owned={runes.filter((r) => owned.has(runeKey(r))).length} total={runes.length} lang={lang} />
+              <div className="gothic-card">
+                <StackTab byKey={owned} sections={SECTIONS.filter(([name]) => name === "runes")} showWhere lang={lang} />
+              </div>
             </div>
-          </div>
-        ) : tab === "characters" ? (
-          saveData && <CharacterView saveData={saveData} name={name} lang={lang} />
-        ) : (
-          <CollectionView key={tab} label={t(tab, lang)} groups={collectionGroups(tab, lang)} owned={owned} lang={lang} />
-        )}
+          ) : tab === "characters" ? (
+            saveData && <CharacterView saveData={saveData} name={name} lang={lang} />
+          ) : (
+            <CollectionView key={tab} label={t(tab, lang)} groups={collectionGroups(tab, lang)} owned={owned} lang={lang} />
+          )}
+        </ErrorBoundary>
       </div>
     </div>
   );

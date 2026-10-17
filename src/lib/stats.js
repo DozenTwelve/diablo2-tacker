@@ -43,7 +43,8 @@ function describe(id, layer, value, lang) {
   }
   if (stat.perLevel != null) {
     const per = v / 2 ** stat.perLevel;
-    return `${format(template, [`${per >= 0 ? "+" : ""}${per}/Lv`])} ${str(stat.str2, lang)}`;
+    // "+1/Lv%" reads better as "+1%/Lv"
+    return `${format(template, [`${per >= 0 ? "+" : ""}${per}/Lv`]).replace("/Lv%", "%/Lv")} ${str(stat.str2, lang)}`;
   }
   return format(template, [v]);
 }

@@ -6,16 +6,23 @@ const subscribe = (onChange) => {
   return () => removeEventListener("popstate", onChange);
 };
 
-// Path segments, decoded: "/characters/UW-A" -> ["characters", "UW-A"]
-export const usePath = () =>
-  useSyncExternalStore(subscribe, () => location.pathname)
-    .split("/")
-    .filter(Boolean)
-    .map(decodeURIComponent);
+// A path segment that isn't valid percent-encoding ("50%") stays as typed
+const decode = (segment) => {
+  try {
+    return decodeURIComponent(segment);
+  } catch {
+    return segment;
+  }
+};
 
-export function navigate(path) {
-  history.pushState(null, "", path);
-  dispatchEvent(new PopStateEvent("popstate"));
+// Path segments, decoded: "/characters/UW-A" -> ["characters", "UW-A"]
+export const usePath = () => useSyncExternalStore(subscribe, () => location.pathname).split("/").filter(Boolean).map(decode);
+
+function navigate(path) {
+  if (path !== location.pathname) {
+    history.pushState(null, "", path);
+    dispatchEvent(new PopStateEvent("popstate"));
+  }
   scrollTo(0, 0);
 }
 

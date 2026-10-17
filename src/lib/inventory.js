@@ -14,8 +14,9 @@ export function groupByKey(items) {
 export const totalCount = (records = []) => records.reduce((n, r) => n + r.count, 0);
 
 export function ownerLabel(owner, lang) {
-  if (owner.startsWith("ModernSharedStash")) return t("sharedStash", lang);
-  if (owner.startsWith("SharedStash")) return t("legacyStash", lang);
+  const hardcore = /HardCore/i.test(owner) ? ` · ${t("hardcore", lang)}` : "";
+  if (owner.startsWith("ModernSharedStash")) return t("sharedStash", lang) + hardcore;
+  if (owner.startsWith("SharedStash")) return t("legacyStash", lang) + hardcore;
   return owner;
 }
 
