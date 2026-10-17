@@ -1,6 +1,7 @@
 // Generate src/data/*.json from D2R game tables extracted from CASC.
 // Usage: node scripts/gen-data.mjs [gamedata dir]   (default: ~/Projects/Diablo2/d2r-gamedata)
-// The dir must contain data/global/excel/*.txt and data/local/lng/strings/*.json.
+// The dir must contain data/global/excel/*.txt, data/local/lng/strings/*.json, data/hd/items/{items,uniques,sets}.json
+// and the icon sprites in data/hd/global/ui/items/<group>/<type>/*.sprite (only their names are read here).
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
@@ -17,7 +18,7 @@ const table = (name) => {
 
 const strings = new Map();
 for (const f of ["item-modifiers", "item-nameaffixes", "item-gems", "item-runes", "item-names"]) {
-  const raw = readFileSync(join(root, `data/local/lng/strings/${f}.json`), "utf8").replace(/^﻿/, "");
+  const raw = readFileSync(join(root, `data/local/lng/strings/${f}.json`), "utf8").replace(/^\uFEFF/, "");
   for (const s of JSON.parse(raw)) strings.set(s.Key, s);
 }
 const str = (key, lang) => {
@@ -202,11 +203,11 @@ for (const t of ["armor", "weapons", "misc"]) {
 // Stat descriptions (itemstatcost.txt) with every string they need, as [en, zh, zh_tw].
 // Formatting lives in src/lib/stats.js.
 for (const f of ["skills", "ui", "monsters"]) {
-  const raw = readFileSync(join(root, `data/local/lng/strings/${f}.json`), "utf8").replace(/^﻿/, "");
+  const raw = readFileSync(join(root, `data/local/lng/strings/${f}.json`), "utf8").replace(/^\uFEFF/, "");
   for (const s of JSON.parse(raw)) if (!strings.has(s.Key)) strings.set(s.Key, s);
 }
 const statStrings = {};
-const useString = (key) => {
+const keepString = (key) => {
   if (key && strings.has(key)) statStrings[key] = Object.values(LANGS).map((column) => str(key, column));
   return key || undefined;
 };
@@ -216,43 +217,43 @@ for (const r of table("itemstatcost")) {
   stats[r["*ID"]] = {
     priority: Number(r.descpriority),
     func: Number(r.descfunc),
-    pos: useString(r.descstrpos),
-    neg: useString(r.descstrneg),
-    str2: useString(r.descstr2),
+    pos: keepString(r.descstrpos),
+    neg: keepString(r.descstrneg),
+    str2: keepString(r.descstr2),
     shift: Number(r.ValShift) || undefined,
     // op 2-5: value is per character level, scaled by 2^(op param)
     perLevel: ["2", "3", "4", "5"].includes(r.op) ? Number(r["op param"]) : undefined,
     group: Number(r.dgrp) || undefined,
-    groupPos: useString(r.dgrpstrpos),
+    groupPos: keepString(r.dgrpstrpos),
   };
 }
 const playerClasses = table("playerclass").filter((r) => r.Code).map((r) => r.Code);
 const classes = table("charstats")
   .filter((r) => r.class !== "Expansion")
   .map((r) => ({
-    all: useString(r.StrAllSkills),
-    tabs: [1, 2, 3].map((i) => useString(r[`StrSkillTab${i}`])),
-    only: useString(r.StrClassOnly),
+    all: keepString(r.StrAllSkills),
+    tabs: [1, 2, 3].map((i) => keepString(r[`StrSkillTab${i}`])),
+    only: keepString(r.StrClassOnly),
   }));
 const skillDescs = new Map(table("skilldesc").map((r) => [r.skilldesc, r["str name"]]));
 const skills = {};
 for (const r of table("skills")) {
-  const name = useString(skillDescs.get(r.skilldesc));
+  const name = keepString(skillDescs.get(r.skilldesc));
   if (r["*Id"] && name) {
     skills[r["*Id"]] = { name, cls: r.charclass ? playerClasses.indexOf(r.charclass) : undefined, req: Number(r.reqlevel) || 1 };
   }
 }
 // Damage pairs shown as one line: "<key>Range" for "Adds X-Y", "<key>" when min equals max
 for (const key of ["strModMinDamage", "strModFireDamage", "strModColdDamage", "strModLightningDamage", "strModMagicDamage", "strModPoisonDamage"]) {
-  useString(key);
-  useString(`${key}Range`);
+  keepString(key);
+  keepString(`${key}Range`);
 }
-useString("strModEnhancedDamage");
+keepString("strModEnhancedDamage");
 // Random skill properties (skill-rand, randclassskill), which have no stat description of their own
-useString("ChronicleItemModifierClassSkillRandom");
-useString("ChronicleRandomClassSkillLevel");
+keepString("ChronicleItemModifierClassSkillRandom");
+keepString("ChronicleRandomClassSkillLevel");
 // Repair rate shown as "Repairs 1 durability in N seconds" (item_replenish_durability, desc function 11)
-useString("ModStre9u");
+keepString("ModStre9u");
 
 const write = (name, data) => writeFileSync(new URL(`${name}.json`, outDir), JSON.stringify(data, null, 2) + "\n");
 write("uniques", [...uniques.values()]);
@@ -270,7 +271,7 @@ for (const r of table("properties")) {
 const monstats = table("monstats");
 const monsters = {};
 for (const props of [...uniques.values(), ...[...sets.values()].flatMap((s) => s.items), ...runewords].map((e) => e.props)) {
-  for (const [code, par] of props) if (code === "reanimate") monsters[par] = useString(monstats[par]?.NameStr);
+  for (const [code, par] of props) if (code === "reanimate") monsters[par] = keepString(monstats[par]?.NameStr);
 }
 write("stats", { stats, classes, skills, strings: statStrings, properties, gems, monsters });
 console.log(`uniques ${uniques.size}, sets ${sets.size}, runewords ${runewords.length}, runes ${runes.length}, items ${Object.keys(items).length}, stats ${Object.keys(stats).length}, skills ${Object.keys(skills).length}`);

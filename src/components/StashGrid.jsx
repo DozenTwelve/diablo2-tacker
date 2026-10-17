@@ -12,10 +12,11 @@ const QUALITY_COLORS = {
   Rare: "#ffff64",
   Magic: "#6969ff",
   Craft: "#ffa500",
+  Tempered: "#ffa500",
 };
 export const SET_GREEN = QUALITY_COLORS.Set;
 export const colorOf = (r) => (r.key.startsWith("w:") ? QUALITY_COLORS.Unique : QUALITY_COLORS[r.quality] ?? "#ddd");
-const STAT_COLOR = "#7878f5";
+export const STAT_COLOR = "#7878f5";
 const GREY = "#8a8a8a";
 
 const CELL = 44; // max cell size in px; the grid shrinks to fit narrow screens

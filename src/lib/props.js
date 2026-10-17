@@ -18,7 +18,7 @@ const INDESTRUCTIBLE = 152;
 // A skill on event with level 0 takes it from the item level: (item level - skill's required level) / 3.9,
 // lowest from lvl (the item's lowest level), highest from 99.
 // ponytail: formula from the Phrozen Keep notes, checked on one save (Snowclash, item level 87 -> 16)
-export function propStats(props, pick, lvl = 1) {
+function propStats(props, pick, lvl = 1) {
   const out = [];
   for (const [code, par, min, max] of props) {
     if (typeof par === "string") continue; // a param naming no skill (e.g. a visual state)

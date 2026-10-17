@@ -29,7 +29,7 @@ npm run dev
 | Command | What it does |
 |---|---|
 | `npm run gen:data [dir]` | Regenerate item data from extracted game files (default `~/Projects/Diablo2/d2r-gamedata`) |
-| `node scripts/gen-images.mjs [dir]` | Convert the game's inventory icons (`data/hd/global/ui/items/*.sprite`) to `public/items/*.webp` (git-ignored: Blizzard art stays out of the repo) |
+| `node scripts/gen-images.mjs [dir]` | Convert the game's inventory icons (`data/hd/global/ui/items/<group>/<type>/*.sprite`) to `public/items/*.webp` (git-ignored: Blizzard art stays out of the repo) |
 | `npm run build:wasm` | Rebuild the save parser (needs Rust, the `wasm32-unknown-unknown` target and `wasm-pack`) |
 | `node scripts/check-saves.mjs <save dir>` | Parse a save folder with the app's code and print a summary |
 | `node scripts/check-props.mjs` | Check every catalog property (uniques, sets, runewords) shows as text |

@@ -3,9 +3,7 @@ import { baseNameOf, catalog, imageOf, labelOf } from "../lib/gameData";
 import { ownerLabel, placeLabel, statLines } from "../lib/inventory";
 import { rollScore } from "../lib/props";
 import { t } from "../lib/i18n";
-import { colorOf } from "./StashGrid";
-
-const STAT_COLOR = "#7878f5";
+import { colorOf, STAT_COLOR } from "./StashGrid";
 
 // Every copy of one catalog entry, best rolls first: where it is, its base, and its stats.
 // A native <dialog>: Esc and the backdrop close it. records: null when closed.

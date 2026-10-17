@@ -1,5 +1,5 @@
 /* ============================================================================
-   DIABLO II EQUIPMENT TRACKER - GOTHIC THEME
+   DIABLO II COLLECTION TRACKER - GOTHIC THEME
    Dark fantasy aesthetic with burnished gold, steel gray, and spectral accents
    ============================================================================ */
 
@@ -17,13 +17,9 @@
   --color-steel-dark: #666666;
   --color-steel-light: #CCCCCC;
   --color-accent-blue: #2FA1D6;
-  --color-accent-emerald: #4EC9B0;
   
   --color-bg-primary: #0F0F0F;
-  --color-bg-secondary: #1A1A1A;
-  --color-bg-tertiary: #252525;
   --color-bg-card: rgba(20, 20, 20, 0.85);
-  --color-bg-overlay: rgba(0, 0, 0, 0.4);
   
   --color-text-primary: #E8E8E8;
   --color-text-secondary: #B0B0B0;
@@ -33,9 +29,7 @@
   --color-border-steel: #333333;
   
   --color-shadow-dark: rgba(0, 0, 0, 0.8);
-  --color-shadow-light: rgba(0, 0, 0, 0.3);
   --color-glow-gold: rgba(198, 166, 100, 0.3);
-  --color-glow-blue: rgba(47, 161, 214, 0.2);
 }
 
 /* ============================================================================
@@ -58,24 +52,11 @@ h6 {
   font-family: 'Cinzel Decorative', 'Georgia', serif;
   color: var(--color-gold);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  font-weight: 700;
   letter-spacing: 0.05em;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
-}
-
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
-}
-
-h3 {
-  font-size: 1.35rem;
-  margin-bottom: 0.5rem;
 }
 
 /* ============================================================================
@@ -275,9 +256,7 @@ h3 {
    FORM ELEMENTS
    ============================================================================ */
 
-.gothic-input,
-.gothic-select,
-.gothic-textarea {
+.gothic-input {
   width: 100%;
   padding: 0.75rem;
   font-family: 'Noto Serif SC', serif;
@@ -290,41 +269,17 @@ h3 {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.gothic-input::placeholder,
-.gothic-textarea::placeholder {
+.gothic-input::placeholder {
   color: var(--color-text-muted);
 }
 
-.gothic-input:focus,
-.gothic-select:focus,
-.gothic-textarea:focus {
+.gothic-input:focus {
   outline: none;
   border-color: var(--color-gold);
   box-shadow: 
     inset 0 2px 4px rgba(0, 0, 0, 0.5),
     0 0 12px var(--color-glow-gold);
   background: rgba(35, 35, 35, 0.9);
-}
-
-.gothic-select {
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23C6A664' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  padding-right: 2.5rem;
-}
-
-.gothic-select-compact {
-  width: 110px;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.85rem;
-  padding-right: 2rem;
-}
-
-.gothic-textarea {
-  min-height: 80px;
-  resize: vertical;
 }
 
 /* ============================================================================
@@ -400,204 +355,7 @@ h3 {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* ============================================================================
-   COLLAPSIBLE SECTIONS
-   ============================================================================ */
-
-.gothic-collapse-btn {
-  width: 100%;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(80, 60, 40, 0.4);
-  border: 1px solid var(--color-border-metal);
-  border-radius: 6px;
-  color: var(--color-gold);
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: left;
-  margin-bottom: 0;
-}
-
-.gothic-collapse-btn:hover {
-  background: rgba(100, 75, 50, 0.6);
-  box-shadow: 0 0 12px var(--color-glow-gold);
-}
-
-.gothic-collapse-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease, border 0.3s ease;
-  padding: 0;
-  background: rgba(15, 15, 15, 0.6);
-  border: none;
-  border-top: none;
-}
-
-.gothic-collapse-content.open {
-  max-height: 2000px;
-  padding: 1.5rem;
-  border: 1px solid var(--color-border-metal);
-  border-top: none;
-  border-radius: 0 0 6px 6px;
-}
-
-.gothic-collapse-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.gothic-collapse-content li {
-  padding: 0.5rem 0;
-  color: var(--color-text-primary);
-  border-bottom: 1px solid rgba(198, 166, 100, 0.1);
-  font-size: 0.95rem;
-}
-
-.gothic-collapse-content li:last-child {
-  border-bottom: none;
-}
-
-.gothic-collapse-content li::before {
-  content: '✦ ';
-  color: var(--color-gold);
-  margin-right: 0.5rem;
-}
-
-/* ============================================================================
-   GRID LAYOUTS
-   ============================================================================ */
-
-.gothic-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.gothic-grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.gothic-grid-4 {
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-}
-
 @media (max-width: 768px) {
-  .gothic-grid-3,
-  .gothic-grid-4 {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-}
-
-/* ============================================================================
-   ITEM CARD (for runewords/runes)
-   ============================================================================ */
-
-.gothic-item-card {
-  background: rgba(25, 25, 25, 0.9);
-  border: 1px solid var(--color-border-metal);
-  border-radius: 6px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
-  position: relative;
-  overflow: hidden;
-}
-
-.gothic-item-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(198, 166, 100, 0.2),
-    transparent
-  );
-}
-
-.gothic-item-card:hover {
-  border-color: var(--color-gold);
-  box-shadow: 
-    0 0 16px var(--color-glow-gold),
-    inset 0 0 8px rgba(198, 166, 100, 0.1);
-  transform: translateY(-4px);
-}
-
-.gothic-item-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-  gap: 0.5rem;
-}
-
-.gothic-item-name {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-gold);
-}
-
-.gothic-item-code {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  font-family: monospace;
-}
-
-.gothic-item-counter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.gothic-counter-btn {
-  width: 1.75rem;
-  height: 1.75rem;
-  padding: 0;
-  border-radius: 50%;
-  border: 1px solid var(--color-border-metal);
-  background: rgba(60, 60, 60, 0.8);
-  color: var(--color-gold);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-
-.gothic-counter-btn:hover {
-  background: var(--color-gold);
-  color: #000;
-  box-shadow: 0 0 8px var(--color-glow-gold);
-}
-
-/* ============================================================================
-   SECTION DIVIDERS
-   ============================================================================ */
-
-.gothic-divider {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-border-metal),
-    transparent
-  );
-  margin: 2rem 0;
 }
 
 /* ============================================================================
@@ -615,14 +373,6 @@ h3 {
 
   .gothic-card {
     padding: 1.2rem;
-  }
-
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  h2 {
-    font-size: 1.35rem;
   }
 }
 
@@ -662,10 +412,6 @@ h3 {
 
 .gothic-text-muted {
   color: var(--color-text-muted);
-}
-
-.gothic-hidden {
-  display: none;
 }
 
 /* ============================================================================
