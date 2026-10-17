@@ -8,7 +8,7 @@ Saves are parsed in the browser (WebAssembly) and never uploaded.
 
 ### Live Site
 
-- [https://d2r.gardenstatevampire.space/](https://d2r.gardenstatevampire.space/)
+- [https://d2r.diamonddoge.org/](https://d2r.diamonddoge.org/)
 
 ## How it works
 
