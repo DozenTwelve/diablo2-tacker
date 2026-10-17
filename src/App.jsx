@@ -6,8 +6,9 @@ import { useStoredState } from "./lib/useStoredState";
 import SaveLoader from "./components/SaveLoader";
 import SearchView from "./components/SearchView";
 import CollectionView from "./components/CollectionView";
+import CharacterView from "./components/CharacterView";
 
-const TABS = ["search", "uniques", "sets", "runewords", "runes"];
+const TABS = ["search", "characters", "uniques", "sets", "runewords", "runes"];
 
 // Collection tabs as groups of keys; uniques grouped by item category
 function collectionGroups(tab, lang) {
@@ -57,6 +58,8 @@ export default function App() {
         <SaveLoader saveData={saveData} onLoad={setSaveData} lang={lang} />
         {tab === "search" ? (
           <SearchView owned={owned} lang={lang} />
+        ) : tab === "characters" ? (
+          saveData && <CharacterView saveData={saveData} lang={lang} />
         ) : (
           <CollectionView key={tab} label={t(tab, lang)} groups={collectionGroups(tab, lang)} owned={owned} lang={lang} />
         )}

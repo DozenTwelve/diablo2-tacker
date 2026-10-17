@@ -13,13 +13,13 @@ export function groupByKey(items) {
 
 export const totalCount = (records = []) => records.reduce((n, r) => n + r.count, 0);
 
-function ownerLabel(owner, lang) {
+export function ownerLabel(owner, lang) {
   if (owner.startsWith("ModernSharedStash")) return t("sharedStash", lang);
   if (owner.startsWith("SharedStash")) return t("legacyStash", lang);
   return owner;
 }
 
-function placeLabel(place, lang) {
+export function placeLabel(place, lang) {
   const page = place.match(/^shared(\d+)$/);
   return page ? t("sharedPage", lang, page[1]) : t(place, lang);
 }
@@ -40,4 +40,34 @@ export function locationLines(records, lang) {
     lines.set(key, line);
   }
   return [...lines.values()];
+}
+
+// Owners from saveData; saves loaded before owners were recorded only have item owners
+export const ownersOf = (saveData) =>
+  saveData.owners ?? [...new Set(saveData.items.map((i) => i.owner))].map((name) => ({ name }));
+
+// One owner's items as place groups in a fixed order, identical items collapsed with a count.
+const PLACE_ORDER = ["equipped", "merc", "inventory", "belt", "cube", "stash", "advanced"];
+const placeRank = (place) => {
+  const i = PLACE_ORDER.indexOf(place);
+  if (i >= 0) return i;
+  const page = place.match(/^shared(\d+)$/);
+  return page ? PLACE_ORDER.length + Number(page[1]) : 100;
+};
+
+export function itemsByPlace(items, owner, lang) {
+  const places = new Map();
+  for (const r of items) {
+    if (r.owner !== owner) continue;
+    const stats = statLines(r, lang);
+    const id = [r.key, r.ethereal, r.sockets, ...stats].join("\n");
+    if (!places.has(r.place)) places.set(r.place, new Map());
+    const lines = places.get(r.place);
+    const line = lines.get(id) ?? { record: r, stats, count: 0 };
+    line.count += r.count;
+    lines.set(id, line);
+  }
+  return [...places]
+    .sort(([a], [b]) => placeRank(a) - placeRank(b))
+    .map(([place, lines]) => ({ place, lines: [...lines.values()] }));
 }

@@ -46,6 +46,8 @@ function describe(id, layer, value, lang) {
 // Min/max stat pairs the game shows as one line: "Adds X-Y" (<key>Range), or "+X" when equal
 const RANGES = [
   [21, 22, "strModMinDamage"],
+  [23, 24, "strModMinDamage"],
+  [159, 160, "strModMinDamage"],
   [48, 49, "strModFireDamage"],
   [54, 55, "strModColdDamage"],
   [50, 51, "strModLightningDamage"],
@@ -53,7 +55,7 @@ const RANGES = [
 ];
 const range = (key, min, max, lang, ...rest) =>
   min === max ? format(str(key, lang), [min, ...rest]) : format(str(`${key}Range`, lang), [min, max, ...rest]);
-// Two-handed / thrown copies of min/max damage, shown once
+// Two-handed / thrown copies of min/max damage, shown once when one-handed damage is there too
 const DUPLICATE_DAMAGE = [23, 24, 159, 160];
 
 const groupMembers = {};
@@ -68,10 +70,10 @@ export function describeStats(list, lang) {
     lines.push({ priority: stats[priorityOf]?.priority ?? 0, text });
   };
 
+  if (get(21) != null || get(22) != null) DUPLICATE_DAMAGE.forEach((id) => byId.delete(`${id}:0`));
   for (const [min, max, key] of RANGES) {
     if (get(min) != null && get(max) != null) take([min, max], max, range(key, get(min), get(max), lang));
   }
-  if (get(21) != null || get(22) != null) DUPLICATE_DAMAGE.forEach((id) => byId.delete(`${id}:0`));
   if (get(57) != null && get(58) != null && get(59) != null) {
     // poison damage is stored per frame; the game shows the total over its length (25 frames/s)
     const len = get(59);

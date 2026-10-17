@@ -1,5 +1,5 @@
 // Parse D2R save files in the browser with the d2s WASM wrapper (wasm/).
-// Output is a flat list of owned items: { key, code, quality, ethereal, sockets, stats, owner, place, count },
+// Output: owners (characters and shared stashes) and a flat list of owned items: { key, code, quality, ethereal, sockets, stats, owner, place, count },
 // stats as [statId, layer, value] (see src/lib/stats.js).
 import { codeOfNumber, keyOf } from "./gameData";
 
@@ -52,6 +52,7 @@ function collect(item, owner, place, out) {
 export async function parseSaveFiles(files) {
   const { parseD2s, parseD2i } = await loadParser();
   const items = [];
+  const owners = []; // { name, cls?, level? }; shared stashes have no class
   const errors = [];
   const saves = files.filter((f) => /\.d2[si]$/i.test(f.name));
   for (const file of saves) {
@@ -63,14 +64,16 @@ export async function parseSaveFiles(files) {
           const place = tab.tab_type === "AdvancedStash" ? "advanced" : `shared${i + 1}`;
           tab.items.forEach((it) => collect(it, owner, place, items));
         });
+        owners.push({ name: owner });
       } else {
         const save = JSON.parse(parseD2s(bytes));
         save.items.forEach((it) => collect(it, owner, placeOf(it), items));
         save.merc_items.items.forEach((it) => collect(it, owner, "merc", items));
+        owners.push({ name: owner, cls: save.character.class, level: save.character.level });
       }
     } catch (e) {
       errors.push(`${file.name}: ${e.message ?? e}`);
     }
   }
-  return { items, errors, files: saves.length, loadedAt: new Date().toISOString() };
+  return { items, owners, errors, files: saves.length, loadedAt: new Date().toISOString() };
 }
