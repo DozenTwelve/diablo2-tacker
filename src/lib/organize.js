@@ -1,8 +1,10 @@
 // Rearrange every mule item into numbered mules, from saves parsed by the WASM wrapper (wasm/).
 // Level 1 characters are mules: they are emptied (their starting kit is dropped) and everything goes
-// into new mules cloned from a level 1 Barbarian. Other characters and the shared stash are not touched.
+// into new mules cloned from a level 1 Barbarian. Other characters are not touched. Shared stash
+// pages are emptied into the mules too; the stackable page is left alone.
 // Uniques and set items get fixed slots laid out from the whole catalog, so an empty slot is one not
-// owned yet. Extra copies, runewords, magic/rare items, bases and the rest are packed into their own mules.
+// owned yet. Extra copies, runewords, charms, jewels, rings and amulets, other magic/rare items, bases
+// and the rest are packed into their own mules.
 import { uniques, sets, uniqueKey, setItemKey, keyOf, codeOfNumber } from "./gameData";
 import items from "../data/items.json";
 
@@ -75,11 +77,36 @@ function museumLayout() {
   return { names: mules.map((m) => m.name), slots };
 }
 
+// Magic, rare and crafted items by base type
+const MAGIC_GROUPS = { scha: "CHARM", mcha: "CHARM", lcha: "CHARM", csch: "CHARM", jewl: "JEWEL", cjwl: "JEWEL", ring: "RING", amul: "RING" };
+
+// Within those groups, items sort by what they are for, then base type, then the stat's value (highest first):
+// skills, resistances (all, fire, cold, lightning, poison), life, attack, attributes, magic find, the rest
+const RESISTS = [39, 43, 41, 45];
+const ATTACK = [17, 18, 19, 21, 22, 48, 49, 50, 51, 54, 55, 57, 58];
+function purpose(item) {
+  const v = new Map(item.stats.map((s) => [s.id, s.value]));
+  const has = (ids) => ids.some((id) => v.has(id));
+  if (has([83, 107, 127, 188])) return [0, 0, v.get(127) ?? v.get(188) ?? v.get(83) ?? 0];
+  const res = RESISTS.map((id) => v.get(id) ?? 0);
+  const best = Math.max(...res);
+  if (best > 0) return [1, res.every(Boolean) ? 0 : res.indexOf(best) + 1, best];
+  if (v.has(7)) return [2, 0, v.get(7)];
+  if (has(ATTACK)) return [3, 0, v.get(22) ?? v.get(19) ?? 0];
+  if (has([0, 1, 2, 3])) return [4, 0, [0, 1, 2, 3].reduce((n, id) => n + (v.get(id) ?? 0), 0)];
+  if (has([79, 80])) return [5, 0, v.get(80) ?? 0];
+  return [6, 0, 0];
+}
+const byPurpose = (a, b) => {
+  const [pa, pb] = [purpose(a.item), purpose(b.item)];
+  return pa[0] - pb[0] || pa[1] - pb[1] || byOrder(a.code, b.code) || pb[2] - pa[2];
+};
+
 function groupOf(key, item, code) {
   if (key.startsWith("u:") || key.startsWith("s:")) return "DUP"; // extra copies and legacy uniques
   if (key.startsWith("w:")) return "RW";
-  if (!["Normal", "Superior", "Inferior"].includes(item.quality)) return "MAG";
-  return ["weapons", "armor"].includes(items[code]?.table) ? "BASE" : "MISC";
+  if (!["Normal", "Superior", "Inferior"].includes(item.quality)) return MAGIC_GROUPS[items[code].type] ?? "MAG";
+  return ["weapons", "armor"].includes(items[code].table) ? "BASE" : "MISC";
 }
 
 const isStarter = (item) =>
@@ -89,42 +116,57 @@ const moveTo = (item, { page, x, y }) => ({
   position: { ...item.position, mode: "Stored", body_location: "None", inv_x: x, inv_y: y, store_page: page },
 });
 
-// saves: [{ name, ext: "d2s" | "d2i", json }] (shared stashes only for their names) -> { saves: [{ name, ext, json, template? }], report }.
+// saves: [{ name, ext: "d2s" | "d2i", json }] -> { saves: [{ name, ext, json, template? }], report }.
 // Only changed saves are returned; new mules carry `template`, the save they were cloned from.
+// report.moves lists every moved item: { from, key, to, page, x, y }.
 export function organize(saves) {
   const mules = saves.filter((s) => s.ext === "d2s" && s.json.character.level === 1);
   const template = mules.find((s) => s.json.character.class === "Barbarian");
   if (!template) throw new Error("no level 1 Barbarian to clone mules from");
 
-  const source = []; // { item, code, key }
+  const source = []; // { item, from }
   let dropped = 0;
   const out = [];
   for (const s of mules) {
     for (const item of s.json.items) {
       if (isStarter(item)) dropped++;
-      else source.push(item);
+      else source.push({ item, from: `${s.name} ${item.position.store_page}` });
     }
     out.push({ ...s, json: { ...s.json, items: [] } });
+  }
+  for (const s of saves.filter((s) => s.ext === "d2i")) {
+    const tabs = s.json.map((tab, i) => {
+      if (tab.tab_type !== "Normal") return tab;
+      source.push(...tab.items.map((item) => ({ item, from: `${s.name} ${i + 1}` })));
+      return { ...tab, items: [] };
+    });
+    out.push({ ...s, json: tabs });
   }
 
   const museum = museumLayout();
   const filled = new Map(); // museum key -> item
-  const loose = { DUP: [], RW: [], MAG: [], BASE: [], MISC: [] };
-  const entries = source.map((item) => ({ item, code: codeOfNumber(item.code), key: keyOf(item, codeOfNumber(item.code)) }));
+  const loose = { DUP: [], RW: [], CHARM: [], JEWEL: [], RING: [], MAG: [], BASE: [], MISC: [] };
+  const entries = source.map((e) => ({ ...e, code: codeOfNumber(e.item.code), key: keyOf(e.item, codeOfNumber(e.item.code)) }));
   // Non-ethereal copies take the museum slot first
   entries.sort((a, b) => a.item.flags.includes("ETHEREAL") - b.item.flags.includes("ETHEREAL"));
   for (const e of entries) {
-    if (museum.slots.has(e.key) && !filled.has(e.key)) filled.set(e.key, e.item);
+    if (museum.slots.has(e.key) && !filled.has(e.key)) filled.set(e.key, e);
     else loose[groupOf(e.key, e.item, e.code)].push(e);
   }
 
   const placed = new Map(museum.names.map((name) => [name, []]));
-  for (const [key, item] of filled) placed.get(museum.slots.get(key).mule).push(moveTo(item, museum.slots.get(key)));
+  const moves = [];
+  const put = (mule, e, spot) => {
+    placed.get(mule).push(moveTo(e.item, spot));
+    moves.push({ from: e.from, key: e.key, to: mule, page: spot.page, x: spot.x, y: spot.y });
+  };
+  for (const [key, e] of filled) put(museum.slots.get(key).mule, e, museum.slots.get(key));
   for (const [prefix, list] of Object.entries(loose)) {
     if (!list.length) continue;
-    list.sort((a, b) => byOrder(a.code, b.code) || a.key.localeCompare(b.key));
+    list.sort(["CHARM", "JEWEL", "RING"].includes(prefix) ? byPurpose : (a, b) => byOrder(a.code, b.code) || a.key.localeCompare(b.key));
     for (const m of pack(prefix, list.map((e, i) => [{ ref: i, code: e.code }]))) {
-      placed.set(m.name, m.slots.map((s) => moveTo(list[s.ref].item, s)));
+      placed.set(m.name, []);
+      m.slots.forEach((s) => put(m.name, list[s.ref], s));
     }
   }
 
@@ -148,6 +190,7 @@ export function organize(saves) {
       ["UW", "UA", "UJ", "SET"].map((p) => [p, { owned: owned(p).filter((s) => filled.has(s.ref)).length, total: owned(p).length }]),
     ),
     mules: [...placed].map(([name, list]) => ({ name, items: list.length })),
+    moves,
   };
   return { saves: out, report };
 }

@@ -31,4 +31,4 @@ npm run dev
 | `npm run gen:data [dir]` | Regenerate item data from extracted game files (default `~/Projects/Diablo2/d2r-gamedata`) |
 | `npm run build:wasm` | Rebuild the save parser (needs Rust, the `wasm32-unknown-unknown` target and `wasm-pack`) |
 | `node scripts/check-saves.mjs <save dir>` | Parse a save folder with the app's code and print a summary |
-| `node scripts/organize.mjs <save dir> <out dir>` | Rearrange level 1 mules into numbered Barbarian mules; writes only the changed saves to a new folder |
+| `node scripts/organize.mjs <save dir> <out dir>` | Rearrange level 1 mules and shared stash pages into numbered Barbarian mules; writes only the changed saves to a new folder |

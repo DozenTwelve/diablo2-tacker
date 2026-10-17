@@ -1,6 +1,7 @@
 // Rearrange a save folder's mules (see src/lib/organize.js) and write the changed saves to a new folder.
 // Usage: node scripts/organize.mjs <save dir> <out dir>   (out dir must not exist; save dir is only read)
 // Checks the written files: every moved item is there exactly once and no two items overlap.
+// Also writes <out dir>/plan.txt, every moved item with where it came from and where it went (not a save).
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { createServer } from "vite";
@@ -15,7 +16,8 @@ try {
   wasm.initSync({ module: readFileSync(new URL("../wasm/pkg/d2_parser_bg.wasm", import.meta.url)) });
   const { organize } = await vite.ssrLoadModule("/src/lib/organize.js");
   const { default: items } = await vite.ssrLoadModule("/src/data/items.json");
-  const { codeOfNumber } = await vite.ssrLoadModule("/src/lib/gameData.js");
+  const { codeOfNumber, labelOf } = await vite.ssrLoadModule("/src/lib/gameData.js");
+  const { ownerLabel } = await vite.ssrLoadModule("/src/lib/inventory.js");
 
   const parse = (ext, bytes) => JSON.parse(ext === "d2s" ? wasm.parseD2s(bytes) : wasm.parseD2i(bytes));
   const saves = readdirSync(dir)
@@ -33,16 +35,29 @@ try {
     }
   }
 
-  // Item contents without position, before (mule items minus starting kit) and after
+  const plan = report.moves
+    .map((m) => {
+      const [owner, place] = m.from.split(" ");
+      const from = `${ownerLabel(owner, "zh_tw")} ${/^\d+$/.test(place) ? `第${place}頁` : place}`;
+      return [from, labelOf(m.key, "zh_tw"), `→ ${m.to} ${m.page} (${m.x},${m.y})`].join("\t");
+    })
+    .sort((a, b) => a.localeCompare(b));
+  writeFileSync(join(outDir, "plan.txt"), plan.join("\n") + "\n");
+
+  // Item contents without position, before (mule and shared page items, minus starting kit) and after
   const fingerprint = (item) => JSON.stringify({ ...item, position: undefined });
+  const stored = (save, ext) =>
+    ext === "d2s" ? save.items : save.filter((t) => t.tab_type === "Normal").flatMap((t) => t.items);
   const before = changed
     .filter((s) => !s.template)
-    .flatMap((s) => parse(s.ext, readFileSync(join(dir, `${s.name}.${s.ext}`))).items)
+    .flatMap((s) => stored(parse(s.ext, readFileSync(join(dir, `${s.name}.${s.ext}`))), s.ext))
     .filter((i) => i.position.mode === "Stored" && !["tsc", "isc"].includes(codeOfNumber(i.code)));
   const after = [];
   for (const s of changed) {
-    const list = parse(s.ext, readFileSync(join(outDir, `${s.name}.${s.ext}`))).items;
+    const save = parse(s.ext, readFileSync(join(outDir, `${s.name}.${s.ext}`)));
+    const list = stored(save, s.ext);
     after.push(...list);
+    if (s.ext !== "d2s") continue;
     const used = new Set();
     for (const i of list) {
       const { w, h } = items[codeOfNumber(i.code)];
