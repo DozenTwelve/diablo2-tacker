@@ -2,14 +2,16 @@
 // using the descriptions from itemstatcost.txt (src/data/stats.json, see scripts/gen-data.mjs).
 import data from "../data/stats.json";
 
-const { stats, classes, skills, strings } = data;
+const { stats, classes, skills, strings, monsters } = data;
 const LANG_INDEX = { en: 0, zh: 1, zh_tw: 2, ko: 3 }; // string columns, see scripts/gen-data.mjs
 export const str = (key, lang) => strings[key]?.[LANG_INDEX[lang]] ?? "";
 
-// The printf subset D2R strings use: %d %+d %s %%. Pre-formatted string args are inserted as is.
+// The printf subset D2R strings use: %d %+d %s %%, and positional %0 %1 (some translations reorder).
+// Pre-formatted string args are inserted as is.
 export function format(template, args) {
   let i = 0;
-  return template.replace(/%(\+?)([ds%])/g, (_, plus, type) => {
+  return template.replace(/%(\d)|%(\+?)([ds%])/g, (_, at, plus, type) => {
+    if (at) return String(args[at]);
     if (type === "%") return "%";
     const v = args[i++];
     if (type === "s" || typeof v === "string") return v ?? "";
@@ -25,6 +27,9 @@ function describe(id, layer, value, lang) {
   const v = stat.shift ? value >> stat.shift : value;
   const template = str(v < 0 && stat.neg ? stat.neg : stat.pos, lang);
   switch (stat.func) {
+    case 11: return format(str("ModStre9u", lang), [1, Math.round(100 / v)]); // repair rate: 1 in 100/v seconds
+    case 12: return v > 1 ? `${template} +${v}` : template; // freeze / blind: the amount only when above 1
+    case 23: return format(template, [v, str(monsters[layer], lang)]); // reanimate: chance, monster
     case 5: return format(template, [Math.floor((v * 100) / 128)]);
     case 13: return format(str(classes[layer]?.all, lang), [v]);
     // layer is class * 8 + tab
@@ -62,7 +67,9 @@ const groupMembers = {};
 for (const [id, s] of Object.entries(stats)) if (s.group) (groupMembers[s.group] ??= []).push(Number(id));
 
 export function describeStats(list, lang) {
-  const byId = new Map(list.map(([id, layer, value]) => [`${id}:${layer}`, value]));
+  // A stat set twice (e.g. all resistances and cold resistance) adds up, as in game
+  const byId = new Map();
+  for (const [id, layer, value] of list) byId.set(`${id}:${layer}`, (byId.get(`${id}:${layer}`) ?? 0) + value);
   const get = (id) => byId.get(`${id}:0`);
   const lines = [];
   const take = (ids, priorityOf, text) => {

@@ -19,13 +19,15 @@ const uniqueById = new Map(uniques.flatMap((u) => u.ids.map((id) => [id, u])));
 const setItemById = new Map(sets.flatMap((s) => s.items.map((i) => [i.id, i])));
 const runeCodes = new Set(runes.map((r) => r.code));
 const runewordRows = new Set(runewords.map((w) => w.id));
-const runewordByRecipe = new Map(runewords.map((w) => [w.runes.join(), w]));
+// Runewords by runes; some share them (Hustle in armor and in weapons), told apart by the kind of base
+const runewordsByRecipe = new Map();
+for (const w of runewords) runewordsByRecipe.set(w.runes.join(), [...(runewordsByRecipe.get(w.runes.join()) ?? []), w]);
 
 // Every catalog entry by key, so search can also list what is missing.
-// Legacy uniques are not collectible (not in the Chronicle) and only show up when owned.
+// Legacy uniques and set items are not collectible (not in the Chronicle) and only show up when owned.
 export const catalog = new Map([
   ...uniques.map((u) => [uniqueKey(u), { kind: "Unique", names: u, legacy: u.legacy }]),
-  ...sets.flatMap((s) => s.items.map((i) => [setItemKey(i), { kind: "Set", names: i }])),
+  ...sets.flatMap((s) => s.items.map((i) => [setItemKey(i), { kind: "Set", names: i, legacy: i.legacy }])),
   ...runewords.map((w) => [runewordKey(w), { kind: "runewords", names: w }]),
   ...runes.map((r) => [runeKey(r), { kind: "runes", names: r }]),
 ]);
@@ -40,7 +42,8 @@ export function keyOf(item, code) {
     // follow it (Cure), so fall back to the runes socketed in it
     const row = (item.runeword_id & 0xfff) - 27;
     if (runewordRows.has(row)) return `w:${row}`;
-    const byRecipe = runewordByRecipe.get(item.sockets.map((s) => s && codeOfNumber(s.code)).join());
+    const candidates = runewordsByRecipe.get(item.sockets.map((s) => s && codeOfNumber(s.code)).join()) ?? [];
+    const byRecipe = candidates.find((w) => w.slots.includes(items[code]?.gemSlot)) ?? candidates[0];
     if (byRecipe) return runewordKey(byRecipe);
   }
   const fileIndex = item.quality_data?.SetUnique?.file_index;
@@ -69,10 +72,11 @@ export function searchTextOf(key) {
 export const baseNameOf = (code, lang) => nameOf(items[code], lang);
 
 // Inventory icon URL (public/items, see scripts/gen-images.mjs) for an owned record or { key, code }
+// Uniques drawn with their base's plain look (most rings and amulets) take the item's own look like bases do.
 export function imageOf({ key, code, gfx }) {
-  const own = catalog.get(key)?.names.img;
-  if (own) return `/items/${own}.webp`;
   const base = items[code];
+  const own = catalog.get(key)?.names.img;
+  if (own && own !== base?.img) return `/items/${own}.webp`;
   const variant = gfx != null && base.variants ? (gfx % base.variants) + 1 : "";
   return `/items/${base.img}${variant}.webp`;
 }

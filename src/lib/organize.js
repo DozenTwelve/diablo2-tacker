@@ -72,7 +72,10 @@ export function museumLayout() {
     ...Object.entries(groups).flatMap(([prefix, list]) =>
       pack(prefix, list.sort((a, b) => byOrder(a.code, b.code)).map((u) => [{ ref: uniqueKey(u), code: u.code }])),
     ),
-    ...pack("SET", sets.map((s) => [...s.items].sort(bySize).map((i) => ({ ref: setItemKey(i), code: i.code })))),
+    ...pack(
+      "SET",
+      sets.filter((s) => !s.legacy).map((s) => s.items.filter((i) => !i.legacy).sort(bySize).map((i) => ({ ref: setItemKey(i), code: i.code }))),
+    ),
   ];
   const slots = new Map(mules.flatMap((m) => m.slots.map((s) => [s.ref, { mule: m.name, ...s }])));
   return { names: mules.map((m) => m.name), slots };

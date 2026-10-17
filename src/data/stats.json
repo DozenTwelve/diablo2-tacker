@@ -1492,1090 +1492,1372 @@
   ],
   "skills": {
     "0": {
-      "name": "skillname0"
+      "name": "skillname0",
+      "req": 1
     },
     "1": {
-      "name": "skillname1"
+      "name": "skillname1",
+      "req": 1
     },
     "2": {
-      "name": "skillname2"
+      "name": "skillname2",
+      "req": 1
     },
     "3": {
-      "name": "skillname3"
+      "name": "skillname3",
+      "req": 1
     },
     "4": {
-      "name": "skillname4"
+      "name": "skillname4",
+      "req": 1
     },
     "5": {
-      "name": "skillname5"
+      "name": "skillname5",
+      "req": 1
     },
     "6": {
       "name": "skillname6",
-      "cls": 0
+      "cls": 0,
+      "req": 1
     },
     "7": {
       "name": "skillname7",
-      "cls": 0
+      "cls": 0,
+      "req": 1
     },
     "8": {
       "name": "skillname8",
-      "cls": 0
+      "cls": 0,
+      "req": 1
     },
     "9": {
       "name": "skillname9",
-      "cls": 0
+      "cls": 0,
+      "req": 1
     },
     "10": {
       "name": "skillname10",
-      "cls": 0
+      "cls": 0,
+      "req": 1
     },
     "11": {
       "name": "skillname11",
-      "cls": 0
+      "cls": 0,
+      "req": 6
     },
     "12": {
       "name": "skillname12",
-      "cls": 0
+      "cls": 0,
+      "req": 6
     },
     "13": {
       "name": "skillname13",
-      "cls": 0
+      "cls": 0,
+      "req": 6
     },
     "14": {
       "name": "skillname14",
-      "cls": 0
+      "cls": 0,
+      "req": 6
     },
     "15": {
       "name": "skillname15",
-      "cls": 0
+      "cls": 0,
+      "req": 6
     },
     "16": {
       "name": "skillname16",
-      "cls": 0
+      "cls": 0,
+      "req": 12
     },
     "17": {
       "name": "skillname17",
-      "cls": 0
+      "cls": 0,
+      "req": 12
     },
     "18": {
       "name": "skillname18",
-      "cls": 0
+      "cls": 0,
+      "req": 12
     },
     "19": {
       "name": "skillname19",
-      "cls": 0
+      "cls": 0,
+      "req": 12
     },
     "20": {
       "name": "skillname20",
-      "cls": 0
+      "cls": 0,
+      "req": 12
     },
     "21": {
       "name": "skillname21",
-      "cls": 0
+      "cls": 0,
+      "req": 18
     },
     "22": {
       "name": "skillname22",
-      "cls": 0
+      "cls": 0,
+      "req": 18
     },
     "23": {
       "name": "skillname23",
-      "cls": 0
+      "cls": 0,
+      "req": 18
     },
     "24": {
       "name": "skillname24",
-      "cls": 0
+      "cls": 0,
+      "req": 18
     },
     "25": {
       "name": "skillname25",
-      "cls": 0
+      "cls": 0,
+      "req": 18
     },
     "26": {
       "name": "skillname26",
-      "cls": 0
+      "cls": 0,
+      "req": 24
     },
     "27": {
       "name": "skillname27",
-      "cls": 0
+      "cls": 0,
+      "req": 24
     },
     "28": {
       "name": "skillname28",
-      "cls": 0
+      "cls": 0,
+      "req": 24
     },
     "29": {
       "name": "skillname29",
-      "cls": 0
+      "cls": 0,
+      "req": 24
     },
     "30": {
       "name": "skillname30",
-      "cls": 0
+      "cls": 0,
+      "req": 24
     },
     "31": {
       "name": "skillname31",
-      "cls": 0
+      "cls": 0,
+      "req": 30
     },
     "32": {
       "name": "skillname32",
-      "cls": 0
+      "cls": 0,
+      "req": 30
     },
     "33": {
       "name": "skillname33",
-      "cls": 0
+      "cls": 0,
+      "req": 30
     },
     "34": {
       "name": "skillname34",
-      "cls": 0
+      "cls": 0,
+      "req": 30
     },
     "35": {
       "name": "skillname35",
-      "cls": 0
+      "cls": 0,
+      "req": 30
     },
     "36": {
       "name": "skillname36",
-      "cls": 1
+      "cls": 1,
+      "req": 1
     },
     "37": {
       "name": "skillname37",
-      "cls": 1
+      "cls": 1,
+      "req": 1
     },
     "38": {
       "name": "skillname38",
-      "cls": 1
+      "cls": 1,
+      "req": 1
     },
     "39": {
       "name": "skillname39",
-      "cls": 1
+      "cls": 1,
+      "req": 1
     },
     "40": {
       "name": "skillname40",
-      "cls": 1
+      "cls": 1,
+      "req": 1
     },
     "41": {
       "name": "skillname41",
-      "cls": 1
+      "cls": 1,
+      "req": 6
     },
     "42": {
       "name": "skillname42",
-      "cls": 1
+      "cls": 1,
+      "req": 6
     },
     "43": {
       "name": "skillname43",
-      "cls": 1
+      "cls": 1,
+      "req": 6
     },
     "44": {
       "name": "skillname44",
-      "cls": 1
+      "cls": 1,
+      "req": 6
     },
     "45": {
       "name": "skillname45",
-      "cls": 1
+      "cls": 1,
+      "req": 6
     },
     "46": {
       "name": "skillname46",
-      "cls": 1
+      "cls": 1,
+      "req": 12
     },
     "47": {
       "name": "skillname47",
-      "cls": 1
+      "cls": 1,
+      "req": 12
     },
     "48": {
       "name": "skillname48",
-      "cls": 1
+      "cls": 1,
+      "req": 12
     },
     "49": {
       "name": "skillname49",
-      "cls": 1
+      "cls": 1,
+      "req": 12
     },
     "50": {
       "name": "skillname50",
-      "cls": 1
+      "cls": 1,
+      "req": 12
     },
     "51": {
       "name": "skillname51",
-      "cls": 1
+      "cls": 1,
+      "req": 18
     },
     "52": {
       "name": "skillname52",
-      "cls": 1
+      "cls": 1,
+      "req": 18
     },
     "53": {
       "name": "skillname53",
-      "cls": 1
+      "cls": 1,
+      "req": 18
     },
     "54": {
       "name": "skillname54",
-      "cls": 1
+      "cls": 1,
+      "req": 18
     },
     "55": {
       "name": "skillname55",
-      "cls": 1
+      "cls": 1,
+      "req": 18
     },
     "56": {
       "name": "skillname56",
-      "cls": 1
+      "cls": 1,
+      "req": 24
     },
     "57": {
       "name": "skillname57",
-      "cls": 1
+      "cls": 1,
+      "req": 24
     },
     "58": {
       "name": "skillname58",
-      "cls": 1
+      "cls": 1,
+      "req": 24
     },
     "59": {
       "name": "skillname59",
-      "cls": 1
+      "cls": 1,
+      "req": 24
     },
     "60": {
       "name": "skillname60",
-      "cls": 1
+      "cls": 1,
+      "req": 24
     },
     "61": {
       "name": "skillsname61",
-      "cls": 1
+      "cls": 1,
+      "req": 30
     },
     "62": {
       "name": "skillname62",
-      "cls": 1
+      "cls": 1,
+      "req": 30
     },
     "63": {
       "name": "skillname63",
-      "cls": 1
+      "cls": 1,
+      "req": 30
     },
     "64": {
       "name": "skillname64",
-      "cls": 1
+      "cls": 1,
+      "req": 30
     },
     "65": {
       "name": "skillname65",
-      "cls": 1
+      "cls": 1,
+      "req": 30
     },
     "66": {
       "name": "skillname66",
-      "cls": 2
+      "cls": 2,
+      "req": 1
     },
     "67": {
       "name": "skillname67",
-      "cls": 2
+      "cls": 2,
+      "req": 1
     },
     "68": {
       "name": "skillname68",
-      "cls": 2
+      "cls": 2,
+      "req": 1
     },
     "69": {
       "name": "skillname69",
-      "cls": 2
+      "cls": 2,
+      "req": 1
     },
     "70": {
       "name": "skillname70",
-      "cls": 2
+      "cls": 2,
+      "req": 1
     },
     "71": {
       "name": "skillname71",
-      "cls": 2
+      "cls": 2,
+      "req": 6
     },
     "72": {
       "name": "skillname72",
-      "cls": 2
+      "cls": 2,
+      "req": 6
     },
     "73": {
       "name": "skillname73",
-      "cls": 2
+      "cls": 2,
+      "req": 6
     },
     "74": {
       "name": "skillname74",
-      "cls": 2
+      "cls": 2,
+      "req": 6
     },
     "75": {
       "name": "skillname75",
-      "cls": 2
+      "cls": 2,
+      "req": 6
     },
     "76": {
       "name": "skillname76",
-      "cls": 2
+      "cls": 2,
+      "req": 12
     },
     "77": {
       "name": "skillname77",
-      "cls": 2
+      "cls": 2,
+      "req": 12
     },
     "78": {
       "name": "skillname78",
-      "cls": 2
+      "cls": 2,
+      "req": 12
     },
     "79": {
       "name": "skillname79",
-      "cls": 2
+      "cls": 2,
+      "req": 12
     },
     "80": {
       "name": "skillname80",
-      "cls": 2
+      "cls": 2,
+      "req": 12
     },
     "81": {
       "name": "skillname81",
-      "cls": 2
+      "cls": 2,
+      "req": 18
     },
     "82": {
       "name": "skillname82",
-      "cls": 2
+      "cls": 2,
+      "req": 18
     },
     "83": {
       "name": "skillname83",
-      "cls": 2
+      "cls": 2,
+      "req": 18
     },
     "84": {
       "name": "skillname84",
-      "cls": 2
+      "cls": 2,
+      "req": 18
     },
     "85": {
       "name": "skillname85",
-      "cls": 2
+      "cls": 2,
+      "req": 18
     },
     "86": {
       "name": "skillname86",
-      "cls": 2
+      "cls": 2,
+      "req": 24
     },
     "87": {
       "name": "skillname87",
-      "cls": 2
+      "cls": 2,
+      "req": 24
     },
     "88": {
       "name": "skillname88",
-      "cls": 2
+      "cls": 2,
+      "req": 24
     },
     "89": {
       "name": "skillname89",
-      "cls": 2
+      "cls": 2,
+      "req": 24
     },
     "90": {
       "name": "skillname90",
-      "cls": 2
+      "cls": 2,
+      "req": 24
     },
     "91": {
       "name": "skillname91",
-      "cls": 2
+      "cls": 2,
+      "req": 30
     },
     "92": {
       "name": "skillname92",
-      "cls": 2
+      "cls": 2,
+      "req": 30
     },
     "93": {
       "name": "skillname93",
-      "cls": 2
+      "cls": 2,
+      "req": 30
     },
     "94": {
       "name": "skillname94",
-      "cls": 2
+      "cls": 2,
+      "req": 30
     },
     "95": {
       "name": "skillname95",
-      "cls": 2
+      "cls": 2,
+      "req": 30
     },
     "96": {
       "name": "skillname96",
-      "cls": 3
+      "cls": 3,
+      "req": 1
     },
     "97": {
       "name": "skillname97",
-      "cls": 3
+      "cls": 3,
+      "req": 1
     },
     "98": {
       "name": "skillname98",
-      "cls": 3
+      "cls": 3,
+      "req": 1
     },
     "99": {
       "name": "skillname99",
-      "cls": 3
+      "cls": 3,
+      "req": 1
     },
     "100": {
       "name": "skillname100",
-      "cls": 3
+      "cls": 3,
+      "req": 1
     },
     "101": {
       "name": "skillname101",
-      "cls": 3
+      "cls": 3,
+      "req": 6
     },
     "102": {
       "name": "skillname102",
-      "cls": 3
+      "cls": 3,
+      "req": 6
     },
     "103": {
       "name": "skillname103",
-      "cls": 3
+      "cls": 3,
+      "req": 6
     },
     "104": {
       "name": "skillname104",
-      "cls": 3
+      "cls": 3,
+      "req": 6
     },
     "105": {
       "name": "skillname105",
-      "cls": 3
+      "cls": 3,
+      "req": 6
     },
     "106": {
       "name": "skillname106",
-      "cls": 3
+      "cls": 3,
+      "req": 12
     },
     "107": {
       "name": "skillname107",
-      "cls": 3
+      "cls": 3,
+      "req": 12
     },
     "108": {
       "name": "skillname108",
-      "cls": 3
+      "cls": 3,
+      "req": 12
     },
     "109": {
       "name": "skillname109",
-      "cls": 3
+      "cls": 3,
+      "req": 12
     },
     "110": {
       "name": "skillname110",
-      "cls": 3
+      "cls": 3,
+      "req": 12
     },
     "111": {
       "name": "skillname111",
-      "cls": 3
+      "cls": 3,
+      "req": 18
     },
     "112": {
       "name": "skillname112",
-      "cls": 3
+      "cls": 3,
+      "req": 18
     },
     "113": {
       "name": "skillname113",
-      "cls": 3
+      "cls": 3,
+      "req": 18
     },
     "114": {
       "name": "skillname114",
-      "cls": 3
+      "cls": 3,
+      "req": 18
     },
     "115": {
       "name": "skillname115",
-      "cls": 3
+      "cls": 3,
+      "req": 18
     },
     "116": {
       "name": "skillname116",
-      "cls": 3
+      "cls": 3,
+      "req": 24
     },
     "117": {
       "name": "skillname117",
-      "cls": 3
+      "cls": 3,
+      "req": 24
     },
     "118": {
       "name": "skillname118",
-      "cls": 3
+      "cls": 3,
+      "req": 24
     },
     "119": {
       "name": "skillname119",
-      "cls": 3
+      "cls": 3,
+      "req": 24
     },
     "120": {
       "name": "skillname120",
-      "cls": 3
+      "cls": 3,
+      "req": 24
     },
     "121": {
       "name": "skillname121",
-      "cls": 3
+      "cls": 3,
+      "req": 30
     },
     "122": {
       "name": "skillname122",
-      "cls": 3
+      "cls": 3,
+      "req": 30
     },
     "123": {
       "name": "skillname123",
-      "cls": 3
+      "cls": 3,
+      "req": 30
     },
     "124": {
       "name": "skillname124",
-      "cls": 3
+      "cls": 3,
+      "req": 30
     },
     "125": {
       "name": "skillname125",
-      "cls": 3
+      "cls": 3,
+      "req": 30
     },
     "126": {
       "name": "skillname126",
-      "cls": 4
+      "cls": 4,
+      "req": 1
     },
     "127": {
       "name": "skillname127",
-      "cls": 4
+      "cls": 4,
+      "req": 1
     },
     "128": {
       "name": "skillname128",
-      "cls": 4
+      "cls": 4,
+      "req": 1
     },
     "129": {
       "name": "skillname129",
-      "cls": 4
+      "cls": 4,
+      "req": 1
     },
     "130": {
       "name": "skillname130",
-      "cls": 4
+      "cls": 4,
+      "req": 1
     },
     "131": {
       "name": "skillname131",
-      "cls": 4
+      "cls": 4,
+      "req": 1
     },
     "132": {
       "name": "skillname132",
-      "cls": 4
+      "cls": 4,
+      "req": 6
     },
     "133": {
       "name": "skillname133",
-      "cls": 4
+      "cls": 4,
+      "req": 6
     },
     "134": {
       "name": "skillname134",
-      "cls": 4
+      "cls": 4,
+      "req": 6
     },
     "135": {
       "name": "skillname135",
-      "cls": 4
+      "cls": 4,
+      "req": 6
     },
     "136": {
       "name": "skillname136",
-      "cls": 4
+      "cls": 4,
+      "req": 6
     },
     "137": {
       "name": "skillname137",
-      "cls": 4
+      "cls": 4,
+      "req": 6
     },
     "138": {
       "name": "skillname138",
-      "cls": 4
+      "cls": 4,
+      "req": 6
     },
     "139": {
       "name": "skillname139",
-      "cls": 4
+      "cls": 4,
+      "req": 12
     },
     "140": {
       "name": "skillname140",
-      "cls": 4
+      "cls": 4,
+      "req": 12
     },
     "141": {
       "name": "skillname141",
-      "cls": 4
+      "cls": 4,
+      "req": 12
     },
     "142": {
       "name": "skillname142",
-      "cls": 4
+      "cls": 4,
+      "req": 12
     },
     "143": {
       "name": "skillname143",
-      "cls": 4
+      "cls": 4,
+      "req": 18
     },
     "144": {
       "name": "skillname144",
-      "cls": 4
+      "cls": 4,
+      "req": 18
     },
     "145": {
       "name": "skillname145",
-      "cls": 4
+      "cls": 4,
+      "req": 18
     },
     "146": {
       "name": "skillname146",
-      "cls": 4
+      "cls": 4,
+      "req": 18
     },
     "147": {
       "name": "skillname147",
-      "cls": 4
+      "cls": 4,
+      "req": 24
     },
     "148": {
       "name": "skillname148",
-      "cls": 4
+      "cls": 4,
+      "req": 24
     },
     "149": {
       "name": "skillname149",
-      "cls": 4
+      "cls": 4,
+      "req": 24
     },
     "150": {
       "name": "skillname150",
-      "cls": 4
+      "cls": 4,
+      "req": 24
     },
     "151": {
       "name": "skillname151",
-      "cls": 4
+      "cls": 4,
+      "req": 30
     },
     "152": {
       "name": "skillname152",
-      "cls": 4
+      "cls": 4,
+      "req": 30
     },
     "153": {
       "name": "skillname153",
-      "cls": 4
+      "cls": 4,
+      "req": 30
     },
     "154": {
       "name": "skillname154",
-      "cls": 4
+      "cls": 4,
+      "req": 30
     },
     "155": {
       "name": "skillname155",
-      "cls": 4
+      "cls": 4,
+      "req": 30
     },
     "197": {
-      "name": "Skillname226"
+      "name": "Skillname226",
+      "req": 1
     },
     "217": {
-      "name": "skillname217"
+      "name": "skillname217",
+      "req": 1
     },
     "218": {
-      "name": "skillname218"
+      "name": "skillname218",
+      "req": 1
     },
     "219": {
-      "name": "skillname219"
+      "name": "skillname219",
+      "req": 1
     },
     "220": {
-      "name": "skillname220"
+      "name": "skillname220",
+      "req": 1
     },
     "221": {
       "name": "Skillname222",
-      "cls": 5
+      "cls": 5,
+      "req": 1
     },
     "222": {
       "name": "Skillname223",
-      "cls": 5
+      "cls": 5,
+      "req": 1
     },
     "223": {
       "name": "Skillname224",
-      "cls": 5
+      "cls": 5,
+      "req": 1
     },
     "224": {
       "name": "Skillname225",
-      "cls": 5
+      "cls": 5,
+      "req": 1
     },
     "225": {
       "name": "Skillname226",
-      "cls": 5
+      "cls": 5,
+      "req": 1
     },
     "226": {
       "name": "Skillname227",
-      "cls": 5
+      "cls": 5,
+      "req": 6
     },
     "227": {
       "name": "Skillname228",
-      "cls": 5
+      "cls": 5,
+      "req": 6
     },
     "228": {
       "name": "Skillname229",
-      "cls": 5
+      "cls": 5,
+      "req": 6
     },
     "229": {
       "name": "Skillname230",
-      "cls": 5
+      "cls": 5,
+      "req": 6
     },
     "230": {
       "name": "Skillname231",
-      "cls": 5
+      "cls": 5,
+      "req": 6
     },
     "231": {
       "name": "Skillname232",
-      "cls": 5
+      "cls": 5,
+      "req": 12
     },
     "232": {
       "name": "Skillname233",
-      "cls": 5
+      "cls": 5,
+      "req": 12
     },
     "233": {
       "name": "Skillname234",
-      "cls": 5
+      "cls": 5,
+      "req": 12
     },
     "234": {
       "name": "Skillname235",
-      "cls": 5
+      "cls": 5,
+      "req": 12
     },
     "235": {
       "name": "Skillname236",
-      "cls": 5
+      "cls": 5,
+      "req": 12
     },
     "236": {
       "name": "Skillname237",
-      "cls": 5
+      "cls": 5,
+      "req": 18
     },
     "237": {
       "name": "Skillname238",
-      "cls": 5
+      "cls": 5,
+      "req": 18
     },
     "238": {
       "name": "Skillname239",
-      "cls": 5
+      "cls": 5,
+      "req": 18
     },
     "239": {
       "name": "Skillname240",
-      "cls": 5
+      "cls": 5,
+      "req": 18
     },
     "240": {
       "name": "Skillname241",
-      "cls": 5
+      "cls": 5,
+      "req": 18
     },
     "241": {
       "name": "Skillname242",
-      "cls": 5
+      "cls": 5,
+      "req": 24
     },
     "242": {
       "name": "Skillname243",
-      "cls": 5
+      "cls": 5,
+      "req": 24
     },
     "243": {
       "name": "Skillname244",
-      "cls": 5
+      "cls": 5,
+      "req": 24
     },
     "244": {
       "name": "Skillname245",
-      "cls": 5
+      "cls": 5,
+      "req": 24
     },
     "245": {
       "name": "Skillname246",
-      "cls": 5
+      "cls": 5,
+      "req": 24
     },
     "246": {
       "name": "Skillname247",
-      "cls": 5
+      "cls": 5,
+      "req": 30
     },
     "247": {
       "name": "Skillname248",
-      "cls": 5
+      "cls": 5,
+      "req": 30
     },
     "248": {
       "name": "Skillname249",
-      "cls": 5
+      "cls": 5,
+      "req": 30
     },
     "249": {
       "name": "Skillname250",
-      "cls": 5
+      "cls": 5,
+      "req": 30
     },
     "250": {
       "name": "Skillname251",
-      "cls": 5
+      "cls": 5,
+      "req": 30
     },
     "251": {
       "name": "Skillname252",
-      "cls": 6
+      "cls": 6,
+      "req": 1
     },
     "252": {
       "name": "Skillname253",
-      "cls": 6
+      "cls": 6,
+      "req": 1
     },
     "253": {
       "name": "Skillname254",
-      "cls": 6
+      "cls": 6,
+      "req": 1
     },
     "254": {
       "name": "Skillname255",
-      "cls": 6
+      "cls": 6,
+      "req": 1
     },
     "255": {
       "name": "Skillname256",
-      "cls": 6
+      "cls": 6,
+      "req": 1
     },
     "256": {
       "name": "Skillname257",
-      "cls": 6
+      "cls": 6,
+      "req": 6
     },
     "257": {
       "name": "Skillname258",
-      "cls": 6
+      "cls": 6,
+      "req": 6
     },
     "258": {
       "name": "Skillname259",
-      "cls": 6
+      "cls": 6,
+      "req": 6
     },
     "259": {
       "name": "Skillname260",
-      "cls": 6
+      "cls": 6,
+      "req": 6
     },
     "260": {
       "name": "Skillname261",
-      "cls": 6
+      "cls": 6,
+      "req": 6
     },
     "261": {
       "name": "Skillname262",
-      "cls": 6
+      "cls": 6,
+      "req": 12
     },
     "262": {
       "name": "Skillname263",
-      "cls": 6
+      "cls": 6,
+      "req": 12
     },
     "263": {
       "name": "Skillname264",
-      "cls": 6
+      "cls": 6,
+      "req": 12
     },
     "264": {
       "name": "Skillname265",
-      "cls": 6
+      "cls": 6,
+      "req": 12
     },
     "265": {
       "name": "Skillname266",
-      "cls": 6
+      "cls": 6,
+      "req": 12
     },
     "266": {
       "name": "Skillname267",
-      "cls": 6
+      "cls": 6,
+      "req": 18
     },
     "267": {
       "name": "Skillname268",
-      "cls": 6
+      "cls": 6,
+      "req": 18
     },
     "268": {
       "name": "Skillname269",
-      "cls": 6
+      "cls": 6,
+      "req": 18
     },
     "269": {
       "name": "Skillname270",
-      "cls": 6
+      "cls": 6,
+      "req": 18
     },
     "270": {
       "name": "Skillname271",
-      "cls": 6
+      "cls": 6,
+      "req": 18
     },
     "271": {
       "name": "Skillname272",
-      "cls": 6
+      "cls": 6,
+      "req": 24
     },
     "272": {
       "name": "Skillname273",
-      "cls": 6
+      "cls": 6,
+      "req": 24
     },
     "273": {
       "name": "Skillname274",
-      "cls": 6
+      "cls": 6,
+      "req": 24
     },
     "274": {
       "name": "Skillname275",
-      "cls": 6
+      "cls": 6,
+      "req": 24
     },
     "275": {
       "name": "Skillname276",
-      "cls": 6
+      "cls": 6,
+      "req": 24
     },
     "276": {
       "name": "Skillname277",
-      "cls": 6
+      "cls": 6,
+      "req": 30
     },
     "277": {
       "name": "Skillname278",
-      "cls": 6
+      "cls": 6,
+      "req": 30
     },
     "278": {
       "name": "Skillname279",
-      "cls": 6
+      "cls": 6,
+      "req": 30
     },
     "279": {
       "name": "Skillname280",
-      "cls": 6
+      "cls": 6,
+      "req": 30
     },
     "280": {
       "name": "Skillname281",
-      "cls": 6
+      "cls": 6,
+      "req": 30
     },
     "350": {
-      "name": "Runeword22"
+      "name": "Runeword22",
+      "req": 1
     },
     "357": {
-      "name": "SkillNameInteract"
+      "name": "SkillNameInteract",
+      "req": 1
     },
     "358": {
-      "name": "SkillNameLoot"
+      "name": "SkillNameLoot",
+      "req": 1
     },
     "359": {
-      "name": "skillname219"
+      "name": "skillname219",
+      "req": 1
     },
     "360": {
-      "name": "SkillNameEmoteWheel"
+      "name": "SkillNameEmoteWheel",
+      "req": 1
     },
     "361": {
-      "name": "SkillNameSwapWeapons"
+      "name": "SkillNameSwapWeapons",
+      "req": 1
     },
     "362": {
-      "name": "SkillNameMap"
+      "name": "SkillNameMap",
+      "req": 1
     },
     "363": {
-      "name": "SkillNameShowItems"
+      "name": "SkillNameShowItems",
+      "req": 1
     },
     "364": {
-      "name": "SkillNameRunToggle"
+      "name": "SkillNameRunToggle",
+      "req": 1
     },
     "370": {
-      "name": "SkillNameCubeLoot"
+      "name": "SkillNameCubeLoot",
+      "req": 1
     },
     "371": {
-      "name": "SkillnameMetamorphosisBear"
+      "name": "SkillnameMetamorphosisBear",
+      "req": 1
     },
     "372": {
-      "name": "SkillnameMetamorphosisWolf"
+      "name": "SkillnameMetamorphosisWolf",
+      "req": 1
     },
     "373": {
       "name": "SummonGoatmanName",
-      "cls": 7
+      "cls": 7,
+      "req": 1
     },
     "374": {
       "name": "DemonicMasteryName",
-      "cls": 7
+      "cls": 7,
+      "req": 1
     },
     "375": {
       "name": "DeathMarkName",
-      "cls": 7
+      "cls": 7,
+      "req": 6
     },
     "376": {
       "name": "SummonTaintedName",
-      "cls": 7
+      "cls": 7,
+      "req": 12
     },
     "377": {
       "name": "SummonDefilerName",
-      "cls": 7
+      "cls": 7,
+      "req": 18
     },
     "378": {
       "name": "BloodOathName",
-      "cls": 7
+      "cls": 7,
+      "req": 6
     },
     "379": {
       "name": "EngorgeName",
-      "cls": 7
+      "cls": 7,
+      "req": 24
     },
     "380": {
       "name": "BloodBoilName",
-      "cls": 7
+      "cls": 7,
+      "req": 18
     },
     "381": {
       "name": "ConsumeName",
-      "cls": 7
+      "cls": 7,
+      "req": 30
     },
     "382": {
       "name": "BindDemonName",
-      "cls": 7
+      "cls": 7,
+      "req": 30
     },
     "383": {
       "name": "LevitateName",
-      "cls": 7
+      "cls": 7,
+      "req": 1
     },
     "384": {
       "name": "EldritchBlastName",
-      "cls": 7
+      "cls": 7,
+      "req": 24
     },
     "385": {
       "name": "BaneHexName",
-      "cls": 7
+      "cls": 7,
+      "req": 1
     },
     "386": {
       "name": "SiphonHexName",
-      "cls": 7
+      "cls": 7,
+      "req": 24
     },
     "387": {
       "name": "PsychicWardName",
-      "cls": 7
+      "cls": 7,
+      "req": 18
     },
     "388": {
       "name": "EchoingStrikeName",
-      "cls": 7
+      "cls": 7,
+      "req": 12
     },
     "389": {
       "name": "PurgeHexName",
-      "cls": 7
+      "cls": 7,
+      "req": 12
     },
     "390": {
       "name": "BladeWarpName",
-      "cls": 7
+      "cls": 7,
+      "req": 18
     },
     "391": {
       "name": "CleaveName",
-      "cls": 7
+      "cls": 7,
+      "req": 6
     },
     "392": {
       "name": "MirroredBladesName",
-      "cls": 7
+      "cls": 7,
+      "req": 30
     },
     "393": {
       "name": "LethargySigilName",
-      "cls": 7
+      "cls": 7,
+      "req": 6
     },
     "394": {
       "name": "RingOfFireName",
-      "cls": 7
+      "cls": 7,
+      "req": 6
     },
     "395": {
       "name": "MiasmaBoltName",
-      "cls": 7
+      "cls": 7,
+      "req": 1
     },
     "396": {
       "name": "RancorSigilName",
-      "cls": 7
+      "cls": 7,
+      "req": 12
     },
     "397": {
       "name": "EnhancedEntropyName",
-      "cls": 7
+      "cls": 7,
+      "req": 24
     },
     "398": {
       "name": "FlameWaveName",
-      "cls": 7
+      "cls": 7,
+      "req": 18
     },
     "399": {
       "name": "MiasmaChainName",
-      "cls": 7
+      "cls": 7,
+      "req": 12
     },
     "400": {
       "name": "DeathSigilName",
-      "cls": 7
+      "cls": 7,
+      "req": 24
     },
     "401": {
       "name": "ApocalypseName",
-      "cls": 7
+      "cls": 7,
+      "req": 30
     },
     "402": {
       "name": "AbyssName",
-      "cls": 7
+      "cls": 7,
+      "req": 30
     },
     "406": {
-      "name": "Skillname235"
+      "name": "Skillname235",
+      "req": 1
     },
     "407": {
-      "name": "skillname143"
+      "name": "skillname143",
+      "req": 18
     },
     "408": {
-      "name": "skillname52"
+      "name": "skillname52",
+      "req": 18
     },
     "409": {
-      "name": "skillname52"
+      "name": "skillname52",
+      "req": 18
     },
     "410": {
-      "name": "skillname151"
+      "name": "skillname151",
+      "req": 30
     },
     "411": {
-      "name": "skillan219"
+      "name": "skillan219",
+      "req": 1
     },
     "412": {
-      "name": "Skillname241"
+      "name": "Skillname241",
+      "req": 18
     },
     "413": {
-      "name": "Skillname245"
+      "name": "Skillname245",
+      "req": 24
     },
     "414": {
-      "name": "skillname57"
+      "name": "skillname57",
+      "req": 24
     },
     "416": {
-      "name": "skillname139"
+      "name": "skillname139",
+      "req": 1
     },
     "418": {
-      "name": "skillname152"
+      "name": "skillname152",
+      "req": 1
     },
     "419": {
-      "name": "CleaveName"
+      "name": "CleaveName",
+      "req": 1
     },
     "420": {
-      "name": "skillname100"
+      "name": "skillname100",
+      "req": 1
     },
     "421": {
-      "name": "skillname36"
+      "name": "skillname36",
+      "req": 1
     },
     "422": {
-      "name": "skillname47"
+      "name": "skillname47",
+      "req": 1
     },
     "423": {
-      "name": "skillname123"
+      "name": "skillname123",
+      "req": 30
     },
     "424": {
-      "name": "skillname123"
+      "name": "skillname123",
+      "req": 30
     },
     "425": {
-      "name": "skillname123"
+      "name": "skillname123",
+      "req": 30
     },
     "427": {
-      "name": "skillname126"
+      "name": "skillname126",
+      "req": 1
     }
   },
   "strings": {
@@ -5308,6 +5590,18 @@
       "+%d 随机职业技能等级",
       "%+d 隨機職業的技能等級",
       "무작위 직업의 기술 레벨 %+d"
+    ],
+    "ModStre9u": [
+      "Repairs %d durability in %d seconds",
+      "每 %1 秒修复 %0 点耐久度",
+      "每 %1 秒修復 %0 點耐久度",
+      "내구도 %d 회복 (%d초마다)"
+    ],
+    "Returned": [
+      "Returned",
+      "回魂骷髅",
+      "返世亡靈",
+      "되돌아온 자"
     ]
   },
   "properties": {
@@ -7330,5 +7624,2048 @@
         0
       ]
     ]
+  },
+  "gems": {
+    "gcv": {
+      "weapon": [
+        [
+          "att",
+          0,
+          40,
+          40
+        ]
+      ],
+      "helm": [
+        [
+          "str",
+          0,
+          3,
+          3
+        ]
+      ],
+      "shield": [
+        [
+          "ac",
+          0,
+          8,
+          8
+        ]
+      ]
+    },
+    "gfv": {
+      "weapon": [
+        [
+          "att",
+          0,
+          60,
+          60
+        ]
+      ],
+      "helm": [
+        [
+          "str",
+          0,
+          4,
+          4
+        ]
+      ],
+      "shield": [
+        [
+          "ac",
+          0,
+          12,
+          12
+        ]
+      ]
+    },
+    "gsv": {
+      "weapon": [
+        [
+          "att",
+          0,
+          80,
+          80
+        ]
+      ],
+      "helm": [
+        [
+          "str",
+          0,
+          6,
+          6
+        ]
+      ],
+      "shield": [
+        [
+          "ac",
+          0,
+          18,
+          18
+        ]
+      ]
+    },
+    "gzv": {
+      "weapon": [
+        [
+          "att",
+          0,
+          100,
+          100
+        ]
+      ],
+      "helm": [
+        [
+          "str",
+          0,
+          8,
+          8
+        ]
+      ],
+      "shield": [
+        [
+          "ac",
+          0,
+          24,
+          24
+        ]
+      ]
+    },
+    "gpv": {
+      "weapon": [
+        [
+          "att",
+          0,
+          150,
+          150
+        ]
+      ],
+      "helm": [
+        [
+          "str",
+          0,
+          10,
+          10
+        ]
+      ],
+      "shield": [
+        [
+          "ac",
+          0,
+          30,
+          30
+        ]
+      ]
+    },
+    "gcb": {
+      "weapon": [
+        [
+          "cold-min",
+          0,
+          1,
+          1
+        ],
+        [
+          "cold-max",
+          0,
+          3,
+          3
+        ],
+        [
+          "cold-len",
+          0,
+          25,
+          25
+        ]
+      ],
+      "helm": [
+        [
+          "mana",
+          0,
+          10,
+          10
+        ]
+      ],
+      "shield": [
+        [
+          "res-cold",
+          0,
+          12,
+          12
+        ]
+      ]
+    },
+    "gfb": {
+      "weapon": [
+        [
+          "cold-min",
+          0,
+          3,
+          3
+        ],
+        [
+          "cold-max",
+          0,
+          5,
+          5
+        ],
+        [
+          "cold-len",
+          0,
+          35,
+          35
+        ]
+      ],
+      "helm": [
+        [
+          "mana",
+          0,
+          17,
+          17
+        ]
+      ],
+      "shield": [
+        [
+          "res-cold",
+          0,
+          16,
+          16
+        ]
+      ]
+    },
+    "gsb": {
+      "weapon": [
+        [
+          "cold-min",
+          0,
+          4,
+          4
+        ],
+        [
+          "cold-max",
+          0,
+          7,
+          7
+        ],
+        [
+          "cold-len",
+          0,
+          50,
+          50
+        ]
+      ],
+      "helm": [
+        [
+          "mana",
+          0,
+          24,
+          24
+        ]
+      ],
+      "shield": [
+        [
+          "res-cold",
+          0,
+          22,
+          22
+        ]
+      ]
+    },
+    "glb": {
+      "weapon": [
+        [
+          "cold-min",
+          0,
+          6,
+          6
+        ],
+        [
+          "cold-max",
+          0,
+          10,
+          10
+        ],
+        [
+          "cold-len",
+          0,
+          60,
+          60
+        ]
+      ],
+      "helm": [
+        [
+          "mana",
+          0,
+          31,
+          31
+        ]
+      ],
+      "shield": [
+        [
+          "res-cold",
+          0,
+          28,
+          28
+        ]
+      ]
+    },
+    "gpb": {
+      "weapon": [
+        [
+          "cold-min",
+          0,
+          10,
+          10
+        ],
+        [
+          "cold-max",
+          0,
+          14,
+          14
+        ],
+        [
+          "cold-len",
+          0,
+          75,
+          75
+        ]
+      ],
+      "helm": [
+        [
+          "mana",
+          0,
+          38,
+          38
+        ]
+      ],
+      "shield": [
+        [
+          "res-cold",
+          0,
+          40,
+          40
+        ]
+      ]
+    },
+    "gcg": {
+      "weapon": [
+        [
+          "pois-min",
+          0,
+          34,
+          34
+        ],
+        [
+          "pois-max",
+          0,
+          34,
+          34
+        ],
+        [
+          "pois-len",
+          0,
+          75,
+          75
+        ]
+      ],
+      "helm": [
+        [
+          "dex",
+          0,
+          3,
+          3
+        ]
+      ],
+      "shield": [
+        [
+          "res-pois",
+          0,
+          12,
+          12
+        ]
+      ]
+    },
+    "gfg": {
+      "weapon": [
+        [
+          "pois-min",
+          0,
+          51,
+          51
+        ],
+        [
+          "pois-max",
+          0,
+          51,
+          51
+        ],
+        [
+          "pois-len",
+          0,
+          100,
+          100
+        ]
+      ],
+      "helm": [
+        [
+          "dex",
+          0,
+          4,
+          4
+        ]
+      ],
+      "shield": [
+        [
+          "res-pois",
+          0,
+          16,
+          16
+        ]
+      ]
+    },
+    "gsg": {
+      "weapon": [
+        [
+          "pois-min",
+          0,
+          82,
+          82
+        ],
+        [
+          "pois-max",
+          0,
+          82,
+          82
+        ],
+        [
+          "pois-len",
+          0,
+          125,
+          125
+        ]
+      ],
+      "helm": [
+        [
+          "dex",
+          0,
+          6,
+          6
+        ]
+      ],
+      "shield": [
+        [
+          "res-pois",
+          0,
+          22,
+          22
+        ]
+      ]
+    },
+    "glg": {
+      "weapon": [
+        [
+          "pois-min",
+          0,
+          101,
+          101
+        ],
+        [
+          "pois-max",
+          0,
+          101,
+          101
+        ],
+        [
+          "pois-len",
+          0,
+          152,
+          152
+        ]
+      ],
+      "helm": [
+        [
+          "dex",
+          0,
+          8,
+          8
+        ]
+      ],
+      "shield": [
+        [
+          "res-pois",
+          0,
+          28,
+          28
+        ]
+      ]
+    },
+    "gpg": {
+      "weapon": [
+        [
+          "pois-min",
+          0,
+          143,
+          143
+        ],
+        [
+          "pois-max",
+          0,
+          143,
+          143
+        ],
+        [
+          "pois-len",
+          0,
+          179,
+          179
+        ]
+      ],
+      "helm": [
+        [
+          "dex",
+          0,
+          10,
+          10
+        ]
+      ],
+      "shield": [
+        [
+          "res-pois",
+          0,
+          40,
+          40
+        ]
+      ]
+    },
+    "gcr": {
+      "weapon": [
+        [
+          "fire-min",
+          0,
+          3,
+          3
+        ],
+        [
+          "fire-max",
+          0,
+          4,
+          4
+        ]
+      ],
+      "helm": [
+        [
+          "hp",
+          0,
+          10,
+          10
+        ]
+      ],
+      "shield": [
+        [
+          "res-fire",
+          0,
+          12,
+          12
+        ]
+      ]
+    },
+    "gfr": {
+      "weapon": [
+        [
+          "fire-min",
+          0,
+          5,
+          5
+        ],
+        [
+          "fire-max",
+          0,
+          8,
+          8
+        ]
+      ],
+      "helm": [
+        [
+          "hp",
+          0,
+          17,
+          17
+        ]
+      ],
+      "shield": [
+        [
+          "res-fire",
+          0,
+          16,
+          16
+        ]
+      ]
+    },
+    "gsr": {
+      "weapon": [
+        [
+          "fire-min",
+          0,
+          8,
+          8
+        ],
+        [
+          "fire-max",
+          0,
+          12,
+          12
+        ]
+      ],
+      "helm": [
+        [
+          "hp",
+          0,
+          24,
+          24
+        ]
+      ],
+      "shield": [
+        [
+          "res-fire",
+          0,
+          22,
+          22
+        ]
+      ]
+    },
+    "glr": {
+      "weapon": [
+        [
+          "fire-min",
+          0,
+          10,
+          10
+        ],
+        [
+          "fire-max",
+          0,
+          16,
+          16
+        ]
+      ],
+      "helm": [
+        [
+          "hp",
+          0,
+          31,
+          31
+        ]
+      ],
+      "shield": [
+        [
+          "res-fire",
+          0,
+          28,
+          28
+        ]
+      ]
+    },
+    "gpr": {
+      "weapon": [
+        [
+          "fire-min",
+          0,
+          15,
+          15
+        ],
+        [
+          "fire-max",
+          0,
+          20,
+          20
+        ]
+      ],
+      "helm": [
+        [
+          "hp",
+          0,
+          38,
+          38
+        ]
+      ],
+      "shield": [
+        [
+          "res-fire",
+          0,
+          40,
+          40
+        ]
+      ]
+    },
+    "gcw": {
+      "weapon": [
+        [
+          "dmg-undead",
+          0,
+          28,
+          28
+        ]
+      ],
+      "helm": [
+        [
+          "att",
+          0,
+          20,
+          20
+        ]
+      ],
+      "shield": [
+        [
+          "res-all",
+          0,
+          6,
+          6
+        ]
+      ]
+    },
+    "gfw": {
+      "weapon": [
+        [
+          "dmg-undead",
+          0,
+          34,
+          34
+        ]
+      ],
+      "helm": [
+        [
+          "att",
+          0,
+          40,
+          40
+        ]
+      ],
+      "shield": [
+        [
+          "res-all",
+          0,
+          8,
+          8
+        ]
+      ]
+    },
+    "gsw": {
+      "weapon": [
+        [
+          "dmg-undead",
+          0,
+          44,
+          44
+        ]
+      ],
+      "helm": [
+        [
+          "att",
+          0,
+          60,
+          60
+        ]
+      ],
+      "shield": [
+        [
+          "res-all",
+          0,
+          11,
+          11
+        ]
+      ]
+    },
+    "glw": {
+      "weapon": [
+        [
+          "dmg-undead",
+          0,
+          54,
+          54
+        ]
+      ],
+      "helm": [
+        [
+          "att",
+          0,
+          80,
+          80
+        ]
+      ],
+      "shield": [
+        [
+          "res-all",
+          0,
+          14,
+          14
+        ]
+      ]
+    },
+    "gpw": {
+      "weapon": [
+        [
+          "dmg-undead",
+          0,
+          68,
+          68
+        ]
+      ],
+      "helm": [
+        [
+          "att",
+          0,
+          100,
+          100
+        ]
+      ],
+      "shield": [
+        [
+          "res-all",
+          0,
+          19,
+          19
+        ]
+      ]
+    },
+    "gcy": {
+      "weapon": [
+        [
+          "ltng-min",
+          0,
+          1,
+          1
+        ],
+        [
+          "ltng-max",
+          0,
+          8,
+          8
+        ]
+      ],
+      "helm": [
+        [
+          "mag%",
+          0,
+          9,
+          9
+        ]
+      ],
+      "shield": [
+        [
+          "res-ltng",
+          0,
+          12,
+          12
+        ]
+      ]
+    },
+    "gfy": {
+      "weapon": [
+        [
+          "ltng-min",
+          0,
+          1,
+          1
+        ],
+        [
+          "ltng-max",
+          0,
+          14,
+          14
+        ]
+      ],
+      "helm": [
+        [
+          "mag%",
+          0,
+          13,
+          13
+        ]
+      ],
+      "shield": [
+        [
+          "res-ltng",
+          0,
+          16,
+          16
+        ]
+      ]
+    },
+    "gsy": {
+      "weapon": [
+        [
+          "ltng-min",
+          0,
+          1,
+          1
+        ],
+        [
+          "ltng-max",
+          0,
+          22,
+          22
+        ]
+      ],
+      "helm": [
+        [
+          "mag%",
+          0,
+          16,
+          16
+        ]
+      ],
+      "shield": [
+        [
+          "res-ltng",
+          0,
+          22,
+          22
+        ]
+      ]
+    },
+    "gly": {
+      "weapon": [
+        [
+          "ltng-min",
+          0,
+          1,
+          1
+        ],
+        [
+          "ltng-max",
+          0,
+          30,
+          30
+        ]
+      ],
+      "helm": [
+        [
+          "mag%",
+          0,
+          20,
+          20
+        ]
+      ],
+      "shield": [
+        [
+          "res-ltng",
+          0,
+          28,
+          28
+        ]
+      ]
+    },
+    "gpy": {
+      "weapon": [
+        [
+          "ltng-min",
+          0,
+          1,
+          1
+        ],
+        [
+          "ltng-max",
+          0,
+          40,
+          40
+        ]
+      ],
+      "helm": [
+        [
+          "mag%",
+          0,
+          24,
+          24
+        ]
+      ],
+      "shield": [
+        [
+          "res-ltng",
+          0,
+          40,
+          40
+        ]
+      ]
+    },
+    "skc": {
+      "weapon": [
+        [
+          "manasteal",
+          0,
+          1,
+          1
+        ],
+        [
+          "lifesteal",
+          0,
+          2,
+          2
+        ]
+      ],
+      "helm": [
+        [
+          "regen",
+          0,
+          2,
+          2
+        ],
+        [
+          "regen-mana",
+          0,
+          8,
+          8
+        ]
+      ],
+      "shield": [
+        [
+          "thorns",
+          0,
+          4,
+          4
+        ]
+      ]
+    },
+    "skf": {
+      "weapon": [
+        [
+          "manasteal",
+          0,
+          2,
+          2
+        ],
+        [
+          "lifesteal",
+          0,
+          2,
+          2
+        ]
+      ],
+      "helm": [
+        [
+          "regen",
+          0,
+          3,
+          3
+        ],
+        [
+          "regen-mana",
+          0,
+          8,
+          8
+        ]
+      ],
+      "shield": [
+        [
+          "thorns",
+          0,
+          8,
+          8
+        ]
+      ]
+    },
+    "sku": {
+      "weapon": [
+        [
+          "manasteal",
+          0,
+          2,
+          2
+        ],
+        [
+          "lifesteal",
+          0,
+          3,
+          3
+        ]
+      ],
+      "helm": [
+        [
+          "regen",
+          0,
+          3,
+          3
+        ],
+        [
+          "regen-mana",
+          0,
+          12,
+          12
+        ]
+      ],
+      "shield": [
+        [
+          "thorns",
+          0,
+          12,
+          12
+        ]
+      ]
+    },
+    "skl": {
+      "weapon": [
+        [
+          "manasteal",
+          0,
+          3,
+          3
+        ],
+        [
+          "lifesteal",
+          0,
+          3,
+          3
+        ]
+      ],
+      "helm": [
+        [
+          "regen",
+          0,
+          4,
+          4
+        ],
+        [
+          "regen-mana",
+          0,
+          12,
+          12
+        ]
+      ],
+      "shield": [
+        [
+          "thorns",
+          0,
+          16,
+          16
+        ]
+      ]
+    },
+    "skz": {
+      "weapon": [
+        [
+          "manasteal",
+          0,
+          3,
+          3
+        ],
+        [
+          "lifesteal",
+          0,
+          4,
+          4
+        ]
+      ],
+      "helm": [
+        [
+          "regen",
+          0,
+          5,
+          5
+        ],
+        [
+          "regen-mana",
+          0,
+          19,
+          19
+        ]
+      ],
+      "shield": [
+        [
+          "thorns",
+          0,
+          20,
+          20
+        ]
+      ]
+    },
+    "r01": {
+      "weapon": [
+        [
+          "light",
+          0,
+          1,
+          1
+        ],
+        [
+          "att",
+          0,
+          50,
+          50
+        ]
+      ],
+      "helm": [
+        [
+          "light",
+          0,
+          1,
+          1
+        ],
+        [
+          "ac",
+          0,
+          15,
+          15
+        ]
+      ],
+      "shield": [
+        [
+          "light",
+          0,
+          1,
+          1
+        ],
+        [
+          "ac",
+          0,
+          15,
+          15
+        ]
+      ]
+    },
+    "r02": {
+      "weapon": [
+        [
+          "att-undead",
+          0,
+          50,
+          50
+        ],
+        [
+          "dmg-undead",
+          0,
+          75,
+          75
+        ]
+      ],
+      "helm": [
+        [
+          "stamdrain",
+          0,
+          15,
+          15
+        ]
+      ],
+      "shield": [
+        [
+          "block",
+          0,
+          7,
+          7
+        ]
+      ]
+    },
+    "r03": {
+      "weapon": [
+        [
+          "mana-kill",
+          0,
+          2,
+          2
+        ]
+      ],
+      "helm": [
+        [
+          "mana-kill",
+          0,
+          2,
+          2
+        ]
+      ],
+      "shield": [
+        [
+          "mana-kill",
+          0,
+          2,
+          2
+        ]
+      ]
+    },
+    "r04": {
+      "weapon": [
+        [
+          "knock",
+          0,
+          1,
+          1
+        ]
+      ],
+      "helm": [
+        [
+          "ac-miss",
+          0,
+          30,
+          30
+        ]
+      ],
+      "shield": [
+        [
+          "ac-miss",
+          0,
+          30,
+          30
+        ]
+      ]
+    },
+    "r05": {
+      "weapon": [
+        [
+          "reduce-ac",
+          0,
+          25,
+          25
+        ]
+      ],
+      "helm": [
+        [
+          "regen-mana",
+          0,
+          15,
+          15
+        ]
+      ],
+      "shield": [
+        [
+          "regen-mana",
+          0,
+          15,
+          15
+        ]
+      ]
+    },
+    "r06": {
+      "weapon": [
+        [
+          "dmg-max",
+          0,
+          9,
+          9
+        ]
+      ],
+      "helm": [
+        [
+          "dmg-to-mana",
+          0,
+          15,
+          15
+        ]
+      ],
+      "shield": [
+        [
+          "dmg-to-mana",
+          0,
+          15,
+          15
+        ]
+      ]
+    },
+    "r07": {
+      "weapon": [
+        [
+          "dmg-pois",
+          125,
+          154,
+          154
+        ]
+      ],
+      "helm": [
+        [
+          "res-pois",
+          0,
+          30,
+          30
+        ]
+      ],
+      "shield": [
+        [
+          "res-pois",
+          0,
+          35,
+          35
+        ]
+      ]
+    },
+    "r08": {
+      "weapon": [
+        [
+          "dmg-fire",
+          0,
+          5,
+          30
+        ]
+      ],
+      "helm": [
+        [
+          "res-fire",
+          0,
+          30,
+          30
+        ]
+      ],
+      "shield": [
+        [
+          "res-fire",
+          0,
+          35,
+          35
+        ]
+      ]
+    },
+    "r09": {
+      "weapon": [
+        [
+          "dmg-ltng",
+          0,
+          1,
+          50
+        ]
+      ],
+      "helm": [
+        [
+          "res-ltng",
+          0,
+          30,
+          30
+        ]
+      ],
+      "shield": [
+        [
+          "res-ltng",
+          0,
+          35,
+          35
+        ]
+      ]
+    },
+    "r10": {
+      "weapon": [
+        [
+          "dmg-cold",
+          75,
+          3,
+          14
+        ]
+      ],
+      "helm": [
+        [
+          "res-cold",
+          0,
+          30,
+          30
+        ]
+      ],
+      "shield": [
+        [
+          "res-cold",
+          0,
+          35,
+          35
+        ]
+      ]
+    },
+    "r11": {
+      "weapon": [
+        [
+          "lifesteal",
+          0,
+          7,
+          7
+        ]
+      ],
+      "helm": [
+        [
+          "thorns",
+          0,
+          14,
+          14
+        ]
+      ],
+      "shield": [
+        [
+          "thorns",
+          0,
+          14,
+          14
+        ]
+      ]
+    },
+    "r12": {
+      "weapon": [
+        [
+          "dmg-min",
+          0,
+          9,
+          9
+        ]
+      ],
+      "helm": [
+        [
+          "red-dmg",
+          0,
+          7,
+          7
+        ]
+      ],
+      "shield": [
+        [
+          "red-dmg",
+          0,
+          7,
+          7
+        ]
+      ]
+    },
+    "r13": {
+      "weapon": [
+        [
+          "swing2",
+          0,
+          20,
+          20
+        ]
+      ],
+      "helm": [
+        [
+          "balance2",
+          0,
+          20,
+          20
+        ]
+      ],
+      "shield": [
+        [
+          "block2",
+          0,
+          20,
+          20
+        ]
+      ]
+    },
+    "r14": {
+      "weapon": [
+        [
+          "howl",
+          0,
+          32,
+          32
+        ]
+      ],
+      "helm": [
+        [
+          "regen",
+          0,
+          7,
+          7
+        ]
+      ],
+      "shield": [
+        [
+          "regen",
+          0,
+          7,
+          7
+        ]
+      ]
+    },
+    "r15": {
+      "weapon": [
+        [
+          "ease",
+          0,
+          -20,
+          -20
+        ]
+      ],
+      "helm": [
+        [
+          "ease",
+          0,
+          -15,
+          -15
+        ]
+      ],
+      "shield": [
+        [
+          "ease",
+          0,
+          -15,
+          -15
+        ]
+      ]
+    },
+    "r16": {
+      "weapon": [
+        [
+          "vit",
+          0,
+          10,
+          10
+        ]
+      ],
+      "helm": [
+        [
+          "vit",
+          0,
+          10,
+          10
+        ]
+      ],
+      "shield": [
+        [
+          "vit",
+          0,
+          10,
+          10
+        ]
+      ]
+    },
+    "r17": {
+      "weapon": [
+        [
+          "enr",
+          0,
+          10,
+          10
+        ]
+      ],
+      "helm": [
+        [
+          "enr",
+          0,
+          10,
+          10
+        ]
+      ],
+      "shield": [
+        [
+          "enr",
+          0,
+          10,
+          10
+        ]
+      ]
+    },
+    "r18": {
+      "weapon": [
+        [
+          "dex",
+          0,
+          10,
+          10
+        ]
+      ],
+      "helm": [
+        [
+          "dex",
+          0,
+          10,
+          10
+        ]
+      ],
+      "shield": [
+        [
+          "dex",
+          0,
+          10,
+          10
+        ]
+      ]
+    },
+    "r19": {
+      "weapon": [
+        [
+          "str",
+          0,
+          10,
+          10
+        ]
+      ],
+      "helm": [
+        [
+          "str",
+          0,
+          10,
+          10
+        ]
+      ],
+      "shield": [
+        [
+          "str",
+          0,
+          10,
+          10
+        ]
+      ]
+    },
+    "r20": {
+      "weapon": [
+        [
+          "gold%",
+          0,
+          75,
+          75
+        ]
+      ],
+      "helm": [
+        [
+          "gold%",
+          0,
+          50,
+          50
+        ]
+      ],
+      "shield": [
+        [
+          "gold%",
+          0,
+          50,
+          50
+        ]
+      ]
+    },
+    "r21": {
+      "weapon": [
+        [
+          "att-demon",
+          0,
+          100,
+          100
+        ],
+        [
+          "dmg-demon",
+          0,
+          75,
+          75
+        ]
+      ],
+      "helm": [
+        [
+          "ac%",
+          0,
+          30,
+          30
+        ]
+      ],
+      "shield": [
+        [
+          "ac%",
+          0,
+          30,
+          30
+        ]
+      ]
+    },
+    "r22": {
+      "weapon": [
+        [
+          "openwounds",
+          0,
+          25,
+          25
+        ]
+      ],
+      "helm": [
+        [
+          "res-all",
+          0,
+          15,
+          15
+        ]
+      ],
+      "shield": [
+        [
+          "res-all",
+          0,
+          22,
+          22
+        ]
+      ]
+    },
+    "r23": {
+      "weapon": [
+        [
+          "noheal",
+          0,
+          1,
+          1
+        ]
+      ],
+      "helm": [
+        [
+          "red-mag",
+          0,
+          7,
+          7
+        ]
+      ],
+      "shield": [
+        [
+          "red-mag",
+          0,
+          7,
+          7
+        ]
+      ]
+    },
+    "r24": {
+      "weapon": [
+        [
+          "mag%",
+          0,
+          30,
+          30
+        ]
+      ],
+      "helm": [
+        [
+          "mag%",
+          0,
+          25,
+          25
+        ]
+      ],
+      "shield": [
+        [
+          "mag%",
+          0,
+          25,
+          25
+        ]
+      ]
+    },
+    "r25": {
+      "weapon": [
+        [
+          "att%",
+          0,
+          20,
+          20
+        ]
+      ],
+      "helm": [
+        [
+          "res-pois-max",
+          0,
+          5,
+          5
+        ]
+      ],
+      "shield": [
+        [
+          "res-pois-max",
+          0,
+          5,
+          5
+        ]
+      ]
+    },
+    "r26": {
+      "weapon": [
+        [
+          "manasteal",
+          0,
+          7,
+          7
+        ]
+      ],
+      "helm": [
+        [
+          "res-fire-max",
+          0,
+          5,
+          5
+        ]
+      ],
+      "shield": [
+        [
+          "res-fire-max",
+          0,
+          5,
+          5
+        ]
+      ]
+    },
+    "r27": {
+      "weapon": [
+        [
+          "dmg%",
+          0,
+          50,
+          50
+        ]
+      ],
+      "helm": [
+        [
+          "res-cold-max",
+          0,
+          5,
+          5
+        ]
+      ],
+      "shield": [
+        [
+          "res-cold-max",
+          0,
+          5,
+          5
+        ]
+      ]
+    },
+    "r28": {
+      "weapon": [
+        [
+          "deadly",
+          0,
+          20,
+          20
+        ]
+      ],
+      "helm": [
+        [
+          "res-ltng-max",
+          0,
+          5,
+          5
+        ]
+      ],
+      "shield": [
+        [
+          "res-ltng-max",
+          0,
+          5,
+          5
+        ]
+      ]
+    },
+    "r29": {
+      "weapon": [
+        [
+          "stupidity",
+          0,
+          1,
+          1
+        ]
+      ],
+      "helm": [
+        [
+          "mana%",
+          0,
+          5,
+          5
+        ]
+      ],
+      "shield": [
+        [
+          "mana",
+          0,
+          50,
+          50
+        ]
+      ]
+    },
+    "r30": {
+      "weapon": [
+        [
+          "crush",
+          0,
+          20,
+          20
+        ]
+      ],
+      "helm": [
+        [
+          "red-dmg%",
+          0,
+          8,
+          8
+        ]
+      ],
+      "shield": [
+        [
+          "red-dmg%",
+          0,
+          8,
+          8
+        ]
+      ]
+    },
+    "r31": {
+      "weapon": [
+        [
+          "ignore-ac",
+          0,
+          1,
+          1
+        ]
+      ],
+      "helm": [
+        [
+          "hp%",
+          0,
+          5,
+          5
+        ]
+      ],
+      "shield": [
+        [
+          "hp",
+          0,
+          50,
+          50
+        ]
+      ]
+    },
+    "r32": {
+      "weapon": [
+        [
+          "freeze",
+          0,
+          3,
+          3
+        ]
+      ],
+      "helm": [
+        [
+          "nofreeze",
+          0,
+          1,
+          1
+        ]
+      ],
+      "shield": [
+        [
+          "nofreeze",
+          0,
+          1,
+          1
+        ]
+      ]
+    },
+    "r33": {
+      "weapon": [
+        [
+          "indestruct",
+          0,
+          1,
+          1
+        ]
+      ],
+      "helm": [
+        [
+          "indestruct",
+          0,
+          1,
+          1
+        ]
+      ],
+      "shield": [
+        [
+          "indestruct",
+          0,
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  "monsters": {
+    "1": "Returned"
   }
 }

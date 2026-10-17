@@ -1,7 +1,7 @@
 import { useState } from "react";
 import items from "../data/items.json";
 import { baseNameOf, catalog, imageOf, labelOf } from "../lib/gameData";
-import { propLines, setBonusLines } from "../lib/props";
+import { propLines, runewordLines, setBonusLines } from "../lib/props";
 import { locationLines, statLines } from "../lib/inventory";
 import { t } from "../lib/i18n";
 
@@ -54,7 +54,7 @@ export function Tooltip({ tip, lang }) {
       <div style={{ color: nameColor }}>{labelOf(item.key, lang)}</div>
       {named && <div style={{ color: nameColor }}>{baseNameOf(item.code, lang)}</div>}
       {ghost || summary ? (
-        <Lines lines={propLines(entry?.props ?? [], lang)} color={STAT_COLOR} />
+        <Lines lines={entry?.runes ? runewordLines(entry, lang) : propLines(entry?.props ?? [], lang, entry?.lvl)} color={STAT_COLOR} />
       ) : (
         <>
           {item.ethereal && <div style={{ color: GREY }}>{t("ethereal", lang)}</div>}

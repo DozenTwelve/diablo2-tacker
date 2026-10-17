@@ -16,6 +16,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 7,
     "props": [
       [
         "str",
@@ -60,6 +61,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 12,
     "props": [
       [
         "stupidity",
@@ -110,6 +112,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 20,
     "props": [
       [
         "dmg-undead",
@@ -172,6 +175,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 28,
     "props": [
       [
         "stupidity",
@@ -234,6 +238,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 36,
     "props": [
       [
         "pois-min",
@@ -296,6 +301,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 11,
     "props": [
       [
         "dmg%",
@@ -340,6 +346,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 19,
     "props": [
       [
         "swing3",
@@ -390,6 +397,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 26,
     "props": [
       [
         "dmg%",
@@ -440,6 +448,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 34,
     "props": [
       [
         "dmg-min",
@@ -496,6 +505,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "str",
@@ -552,6 +562,7 @@
       "ko": "마법봉"
     },
     "legacy": false,
+    "lvl": 7,
     "props": [
       [
         "nec",
@@ -608,6 +619,7 @@
       "ko": "마법봉"
     },
     "legacy": false,
+    "lvl": 19,
     "props": [
       [
         "ltng-min",
@@ -682,6 +694,7 @@
       "ko": "마법봉"
     },
     "legacy": false,
+    "lvl": 27,
     "props": [
       [
         "str",
@@ -756,6 +769,7 @@
       "ko": "마법봉"
     },
     "legacy": false,
+    "lvl": 38,
     "props": [
       [
         "nec",
@@ -812,6 +826,7 @@
       "ko": "곤봉"
     },
     "legacy": false,
+    "lvl": 4,
     "props": [
       [
         "res-ltng",
@@ -868,6 +883,7 @@
       "ko": "홀"
     },
     "legacy": false,
+    "lvl": 7,
     "props": [
       [
         "crush",
@@ -924,6 +940,7 @@
       "ko": "홀"
     },
     "legacy": false,
+    "lvl": 23,
     "props": [
       [
         "pal",
@@ -992,6 +1009,7 @@
       "ko": "홀"
     },
     "legacy": false,
+    "lvl": 31,
     "props": [
       [
         "dmg-ltng",
@@ -1054,6 +1072,7 @@
       "ko": "곤봉"
     },
     "legacy": false,
+    "lvl": 7,
     "props": [
       [
         "thorns",
@@ -1098,6 +1117,7 @@
       "ko": "철퇴"
     },
     "legacy": false,
+    "lvl": 12,
     "props": [
       [
         "str",
@@ -1154,6 +1174,7 @@
       "ko": "철퇴"
     },
     "legacy": false,
+    "lvl": 20,
     "props": [
       [
         "dmg%",
@@ -1216,6 +1237,7 @@
       "ko": "철퇴"
     },
     "legacy": false,
+    "lvl": 28,
     "props": [
       [
         "dmg-min",
@@ -1278,6 +1300,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 36,
     "props": [
       [
         "att",
@@ -1334,6 +1357,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 32,
     "props": [
       [
         "dmg%",
@@ -1384,6 +1408,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "ease",
@@ -1428,6 +1453,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 3,
     "props": [
       [
         "dmg-min",
@@ -1484,6 +1510,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 10,
     "props": [
       [
         "res-all",
@@ -1546,6 +1573,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 14,
     "props": [
       [
         "ignore-ac",
@@ -1602,6 +1630,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 18,
     "props": [
       [
         "light",
@@ -1659,6 +1688,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 18,
     "props": [
       [
         "deadly",
@@ -1715,6 +1745,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 23,
     "props": [
       [
         "fire-min",
@@ -1777,6 +1808,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 30,
     "props": [
       [
         "manasteal",
@@ -1845,6 +1877,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "allskills",
@@ -1901,6 +1934,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 16,
     "props": [
       [
         "manasteal",
@@ -1957,6 +1991,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 26,
     "props": [
       [
         "manasteal",
@@ -2007,6 +2042,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 31,
     "props": [
       [
         "att",
@@ -2063,6 +2099,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 35,
     "props": [
       [
         "dmg-pois",
@@ -2119,6 +2156,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 35,
     "props": [
       [
         "openwounds",
@@ -2163,6 +2201,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "red-dmg",
@@ -2219,6 +2258,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 6,
     "props": [
       [
         "dmg-min",
@@ -2263,6 +2303,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 15,
     "props": [
       [
         "dex",
@@ -2319,6 +2360,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 26,
     "props": [
       [
         "att",
@@ -2369,6 +2411,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 34,
     "props": [
       [
         "cast3",
@@ -2413,6 +2456,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 11,
     "props": [
       [
         "att",
@@ -2463,6 +2507,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 16,
     "props": [
       [
         "slow",
@@ -2519,6 +2564,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 23,
     "props": [
       [
         "openwounds",
@@ -2569,6 +2615,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 30,
     "props": [
       [
         "thorns",
@@ -2619,6 +2666,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 36,
     "props": [
       [
         "fire-min",
@@ -2687,6 +2735,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 11,
     "props": [
       [
         "dex",
@@ -2731,6 +2780,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 19,
     "props": [
       [
         "howl",
@@ -2787,6 +2837,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 26,
     "props": [
       [
         "openwounds",
@@ -2843,6 +2894,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 30,
     "props": [
       [
         "swing3",
@@ -2893,6 +2945,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 38,
     "props": [
       [
         "slow",
@@ -2961,6 +3014,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "deadly",
@@ -3017,6 +3071,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 7,
     "props": [
       [
         "fire-min",
@@ -3079,6 +3134,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 12,
     "props": [
       [
         "dmg-pois",
@@ -3141,6 +3197,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 24,
     "props": [
       [
         "res-ltng",
@@ -3215,6 +3272,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 28,
     "props": [
       [
         "dmg-fire",
@@ -3271,6 +3329,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 38,
     "props": [
       [
         "ac",
@@ -3339,6 +3398,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 10,
     "props": [
       [
         "att",
@@ -3401,6 +3461,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 18,
     "props": [
       [
         "swing3",
@@ -3457,6 +3518,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 20,
     "props": [
       [
         "att%",
@@ -3507,6 +3569,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 27,
     "props": [
       [
         "res-all",
@@ -3569,6 +3632,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 34,
     "props": [
       [
         "dmg-ltng",
@@ -3625,6 +3689,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 35,
     "props": [
       [
         "magicarrow",
@@ -3693,6 +3758,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 36,
     "props": [
       [
         "swing1",
@@ -3761,6 +3827,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 38,
     "props": [
       [
         "dmg%",
@@ -3811,6 +3878,7 @@
       "ko": "석궁"
     },
     "legacy": false,
+    "lvl": 12,
     "props": [
       [
         "dex",
@@ -3867,6 +3935,7 @@
       "ko": "석궁"
     },
     "legacy": false,
+    "lvl": 24,
     "props": [
       [
         "dmg-pois",
@@ -3923,6 +3992,7 @@
       "ko": "석궁"
     },
     "legacy": false,
+    "lvl": 36,
     "props": [
       [
         "explosivearrow",
@@ -3985,6 +4055,7 @@
       "ko": "석궁"
     },
     "legacy": false,
+    "lvl": 38,
     "props": [
       [
         "ama",
@@ -4035,6 +4106,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 4,
     "props": [
       [
         "hp",
@@ -4085,6 +4157,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 20,
     "props": [
       [
         "gold%",
@@ -4123,6 +4196,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 19,
     "props": [
       [
         "light-thorns",
@@ -4173,6 +4247,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 23,
     "props": [
       [
         "light",
@@ -4229,6 +4304,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 28,
     "props": [
       [
         "nec",
@@ -4279,6 +4355,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 34,
     "props": [
       [
         "red-mag",
@@ -4335,6 +4412,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "lifesteal",
@@ -4403,6 +4481,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 27,
     "props": [
       [
         "howl",
@@ -4453,6 +4532,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 10,
     "props": [
       [
         "red-mag",
@@ -4509,6 +4589,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 16,
     "props": [
       [
         "ac-miss",
@@ -4571,6 +4652,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 19,
     "props": [
       [
         "ac",
@@ -4639,6 +4721,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 22,
     "props": [
       [
         "swing2",
@@ -4695,6 +4778,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 19,
     "props": [
       [
         "att",
@@ -4751,6 +4835,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 20,
     "props": [
       [
         "ac%",
@@ -4801,6 +4886,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 23,
     "props": [
       [
         "ac%",
@@ -4845,6 +4931,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 27,
     "props": [
       [
         "res-pois-max",
@@ -4895,6 +4982,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 30,
     "props": [
       [
         "freeze",
@@ -4945,6 +5033,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 35,
     "props": [
       [
         "lifesteal",
@@ -4989,6 +5078,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 38,
     "props": [
       [
         "ease",
@@ -5039,6 +5129,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "howl",
@@ -5083,6 +5174,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 38,
     "props": [
       [
         "ac%",
@@ -5133,6 +5225,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 38,
     "props": [
       [
         "manasteal",
@@ -5177,6 +5270,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "ac%",
@@ -5233,6 +5327,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 3,
     "props": [
       [
         "ac",
@@ -5301,6 +5396,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 12,
     "props": [
       [
         "stupidity",
@@ -5369,6 +5465,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 18,
     "props": [
       [
         "red-mag",
@@ -5437,6 +5534,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 27,
     "props": [
       [
         "mana-kill",
@@ -5493,6 +5591,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 20,
     "props": [
       [
         "thorns",
@@ -5555,6 +5654,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 23,
     "props": [
       [
         "block",
@@ -5629,6 +5729,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 26,
     "props": [
       [
         "ac",
@@ -5691,6 +5792,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 35,
     "props": [
       [
         "ac",
@@ -5753,6 +5855,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 7,
     "props": [
       [
         "manasteal",
@@ -5809,6 +5912,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 12,
     "props": [
       [
         "dmg-min",
@@ -5865,6 +5969,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 20,
     "props": [
       [
         "gold%",
@@ -5921,6 +6026,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 31,
     "props": [
       [
         "cast3",
@@ -5977,6 +6083,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "ac",
@@ -6027,6 +6134,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 7,
     "props": [
       [
         "res-fire-max",
@@ -6083,6 +6191,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 12,
     "props": [
       [
         "bloody",
@@ -6145,6 +6254,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 20,
     "props": [
       [
         "move2",
@@ -6201,6 +6311,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 30,
     "props": [
       [
         "crush",
@@ -6257,6 +6368,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "ac",
@@ -6319,6 +6431,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 10,
     "props": [
       [
         "mana",
@@ -6363,6 +6476,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 16,
     "props": [
       [
         "dmg-pois",
@@ -6419,6 +6533,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 27,
     "props": [
       [
         "res-all",
@@ -6475,6 +6590,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 36,
     "props": [
       [
         "mag%",
@@ -6531,6 +6647,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "thorns",
@@ -6593,6 +6710,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 14,
     "props": [
       [
         "dmg-fire",
@@ -6643,6 +6761,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 20,
     "props": [
       [
         "ac-miss",
@@ -6705,6 +6824,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 34,
     "props": [
       [
         "dex",
@@ -6773,6 +6893,7 @@
       "ko": "반지"
     },
     "legacy": false,
+    "lvl": 10,
     "props": [
       [
         "red-mag",
@@ -6817,6 +6938,7 @@
       "ko": "반지"
     },
     "legacy": false,
+    "lvl": 20,
     "props": [
       [
         "manasteal",
@@ -6867,6 +6989,7 @@
       "ko": "반지"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "mana",
@@ -6917,6 +7040,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 1,
     "props": [
       [
         "mana",
@@ -6955,6 +7079,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 1,
     "props": [
       [
         "res-all",
@@ -6987,6 +7112,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 1,
     "props": [
       [
         "mana",
@@ -7037,6 +7163,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 1,
     "props": [
       [
         "fire-min",
@@ -7081,6 +7208,7 @@
       "ko": "철퇴"
     },
     "legacy": false,
+    "lvl": 1,
     "props": [
       [
         "ltng-min",
@@ -7125,6 +7253,7 @@
       "ko": "철퇴"
     },
     "legacy": false,
+    "lvl": 1,
     "props": [
       [
         "ltng-min",
@@ -7181,6 +7310,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 44,
     "props": [
       [
         "dmg-cold",
@@ -7243,6 +7373,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 47,
     "props": [
       [
         "deadly",
@@ -7299,6 +7430,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 51,
     "props": [
       [
         "dru",
@@ -7379,6 +7511,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 53,
     "props": [
       [
         "hit-skill",
@@ -7429,6 +7562,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 56,
     "props": [
       [
         "hit-skill",
@@ -7485,6 +7619,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 43,
     "props": [
       [
         "ac",
@@ -7541,6 +7676,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 47,
     "props": [
       [
         "ease",
@@ -7621,6 +7757,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "hit-skill",
@@ -7689,6 +7826,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "att-und/lvl",
@@ -7757,6 +7895,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 53,
     "props": [
       [
         "stupidity",
@@ -7819,6 +7958,7 @@
       "ko": "마법봉"
     },
     "legacy": false,
+    "lvl": 41,
     "props": [
       [
         "thorns",
@@ -7875,6 +8015,7 @@
       "ko": "마법봉"
     },
     "legacy": false,
+    "lvl": 43,
     "props": [
       [
         "hp/lvl",
@@ -7937,6 +8078,7 @@
       "ko": "마법봉"
     },
     "legacy": false,
+    "lvl": 44,
     "props": [
       [
         "skilltab",
@@ -8017,6 +8159,7 @@
       "ko": "마법봉"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "skilltab",
@@ -8085,6 +8228,7 @@
       "ko": "곤봉"
     },
     "legacy": false,
+    "lvl": 42,
     "props": [
       [
         "dru",
@@ -8141,6 +8285,7 @@
       "ko": "홀"
     },
     "legacy": false,
+    "lvl": 45,
     "props": [
       [
         "manasteal",
@@ -8215,6 +8360,7 @@
       "ko": "홀"
     },
     "legacy": false,
+    "lvl": 46,
     "props": [
       [
         "pal",
@@ -8277,6 +8423,7 @@
       "ko": "홀"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "pal",
@@ -8357,6 +8504,7 @@
       "ko": "곤봉"
     },
     "legacy": false,
+    "lvl": 46,
     "props": [
       [
         "openwounds",
@@ -8431,6 +8579,7 @@
       "ko": "철퇴"
     },
     "legacy": false,
+    "lvl": 47,
     "props": [
       [
         "dmg-cold",
@@ -8487,6 +8636,7 @@
       "ko": "철퇴"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "hit-skill",
@@ -8549,6 +8699,7 @@
       "ko": "철퇴"
     },
     "legacy": false,
+    "lvl": 53,
     "props": [
       [
         "hit-skill",
@@ -8611,6 +8762,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 51,
     "props": [
       [
         "hit-skill",
@@ -8673,6 +8825,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 56,
     "props": [
       [
         "crush",
@@ -8735,6 +8888,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 53,
     "props": [
       [
         "hit-skill",
@@ -8797,6 +8951,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 38,
     "props": [
       [
         "dmg-norm",
@@ -8877,6 +9032,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "stupidity",
@@ -8939,6 +9095,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 41,
     "props": [
       [
         "charged",
@@ -9001,6 +9158,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 43,
     "props": [
       [
         "sock",
@@ -9057,6 +9215,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 45,
     "props": [
       [
         "red-mag",
@@ -9113,6 +9272,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 47,
     "props": [
       [
         "noheal",
@@ -9163,6 +9323,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "hit-skill",
@@ -9219,6 +9380,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "dur",
@@ -9287,6 +9449,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "slow",
@@ -9343,6 +9506,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 51,
     "props": [
       [
         "ease",
@@ -9399,6 +9563,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 52,
     "props": [
       [
         "hit-skill",
@@ -9455,6 +9620,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 53,
     "props": [
       [
         "hit-skill",
@@ -9529,6 +9695,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 54,
     "props": [
       [
         "dmg-fire",
@@ -9591,6 +9758,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 55,
     "props": [
       [
         "ease",
@@ -9665,6 +9833,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 40,
     "props": [
       [
         "ignore-ac",
@@ -9733,6 +9902,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 44,
     "props": [
       [
         "deadly",
@@ -9795,6 +9965,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 46,
     "props": [
       [
         "slow",
@@ -9863,6 +10034,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "dmg-ltng",
@@ -9913,6 +10085,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "ignore-ac",
@@ -9981,6 +10154,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 41,
     "props": [
       [
         "slow",
@@ -10037,6 +10211,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 43,
     "props": [
       [
         "ease",
@@ -10099,6 +10274,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 45,
     "props": [
       [
         "sock",
@@ -10149,6 +10325,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 47,
     "props": [
       [
         "att%",
@@ -10223,6 +10400,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "dmg%",
@@ -10279,6 +10457,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "ease",
@@ -10335,6 +10514,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "dru",
@@ -10391,6 +10571,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 51,
     "props": [
       [
         "deadly",
@@ -10453,6 +10634,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 52,
     "props": [
       [
         "regen",
@@ -10509,6 +10691,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 52,
     "props": [
       [
         "dmg-fire",
@@ -10583,6 +10766,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 36,
     "props": [
       [
         "cast3",
@@ -10645,6 +10829,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "dmg-norm",
@@ -10719,6 +10904,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 43,
     "props": [
       [
         "sor",
@@ -10787,6 +10973,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 47,
     "props": [
       [
         "sor",
@@ -10843,6 +11030,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "mana%",
@@ -10887,6 +11075,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 36,
     "props": [
       [
         "dmg-ltng",
@@ -10949,6 +11138,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "openwounds",
@@ -11005,6 +11195,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 41,
     "props": [
       [
         "skill",
@@ -11061,6 +11252,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 44,
     "props": [
       [
         "res-cold",
@@ -11117,6 +11309,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 47,
     "props": [
       [
         "hit-skill",
@@ -11173,6 +11366,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "ama",
@@ -11235,6 +11429,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 51,
     "props": [
       [
         "manasteal",
@@ -11309,6 +11504,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 54,
     "props": [
       [
         "dmg%",
@@ -11371,6 +11567,7 @@
       "ko": "석궁"
     },
     "legacy": false,
+    "lvl": 40,
     "props": [
       [
         "knock",
@@ -11433,6 +11630,7 @@
       "ko": "석궁"
     },
     "legacy": false,
+    "lvl": 44,
     "props": [
       [
         "dmg-pois",
@@ -11501,6 +11699,7 @@
       "ko": "석궁"
     },
     "legacy": false,
+    "lvl": 59,
     "props": [
       [
         "pierce",
@@ -11569,6 +11768,7 @@
       "ko": "석궁"
     },
     "legacy": false,
+    "lvl": 57,
     "props": [
       [
         "ac",
@@ -11631,6 +11831,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 36,
     "props": [
       [
         "enr",
@@ -11687,6 +11888,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "res-ltng",
@@ -11749,6 +11951,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 43,
     "props": [
       [
         "manasteal",
@@ -11805,6 +12008,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 46,
     "props": [
       [
         "light",
@@ -11867,6 +12071,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 52,
     "props": [
       [
         "ac%",
@@ -11917,6 +12122,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 57,
     "props": [
       [
         "dex",
@@ -11979,6 +12185,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "light-thorns",
@@ -12035,6 +12242,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "manasteal",
@@ -12097,6 +12305,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 36,
     "props": [
       [
         "nofreeze",
@@ -12147,6 +12356,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 37,
     "props": [
       [
         "ac%",
@@ -12197,6 +12407,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "rep-dur",
@@ -12253,6 +12464,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 41,
     "props": [
       [
         "dur",
@@ -12309,6 +12521,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 43,
     "props": [
       [
         "light",
@@ -12371,6 +12584,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 45,
     "props": [
       [
         "openwounds",
@@ -12427,6 +12641,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 46,
     "props": [
       [
         "ac-miss",
@@ -12471,6 +12686,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "str",
@@ -12551,6 +12767,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "allskills",
@@ -12607,6 +12824,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 53,
     "props": [
       [
         "light",
@@ -12669,6 +12887,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 56,
     "props": [
       [
         "thorns",
@@ -12731,6 +12950,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 59,
     "props": [
       [
         "dex",
@@ -12799,6 +13019,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 61,
     "props": [
       [
         "light",
@@ -12855,6 +13076,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 63,
     "props": [
       [
         "str",
@@ -12917,6 +13139,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 59,
     "props": [
       [
         "cast2",
@@ -12979,6 +13202,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 36,
     "props": [
       [
         "sor",
@@ -13029,6 +13253,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "res-all",
@@ -13079,6 +13304,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 43,
     "props": [
       [
         "dmg-ltng",
@@ -13153,6 +13379,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 46,
     "props": [
       [
         "dmg-cold",
@@ -13227,6 +13454,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 52,
     "props": [
       [
         "red-dmg",
@@ -13289,6 +13517,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 58,
     "props": [
       [
         "dmg-pois",
@@ -13357,6 +13586,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "light",
@@ -13419,6 +13649,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 43,
     "props": [
       [
         "hp",
@@ -13475,6 +13706,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 37,
     "props": [
       [
         "res-pois",
@@ -13537,6 +13769,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "enr",
@@ -13587,6 +13820,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 44,
     "props": [
       [
         "att-und/lvl",
@@ -13637,6 +13871,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "res-fire",
@@ -13699,6 +13934,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 55,
     "props": [
       [
         "dmg-fire",
@@ -13755,6 +13991,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 37,
     "props": [
       [
         "dmg-fire",
@@ -13829,6 +14066,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 40,
     "props": [
       [
         "ac-miss",
@@ -13897,6 +14135,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 44,
     "props": [
       [
         "ac%",
@@ -13947,6 +14186,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "vit",
@@ -14021,6 +14261,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 55,
     "props": [
       [
         "ease",
@@ -14089,6 +14330,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 37,
     "props": [
       [
         "red-mag",
@@ -14145,6 +14387,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 39,
     "props": [
       [
         "thorns/lvl",
@@ -14201,6 +14444,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 45,
     "props": [
       [
         "light",
@@ -14257,6 +14501,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 49,
     "props": [
       [
         "gethit-skill",
@@ -14325,6 +14570,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 55,
     "props": [
       [
         "gethit-skill",
@@ -14399,6 +14645,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 69,
     "props": [
       [
         "allskills",
@@ -14473,6 +14720,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 77,
     "props": [
       [
         "res-all",
@@ -14535,6 +14783,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "ac%",
@@ -14609,6 +14858,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "ac%",
@@ -14659,6 +14909,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 67,
     "props": [
       [
         "dex/lvl",
@@ -14727,6 +14978,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 77,
     "props": [
       [
         "ac/lvl",
@@ -14801,6 +15053,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 71,
     "props": [
       [
         "str/lvl",
@@ -14863,6 +15116,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "dmg%/lvl",
@@ -14937,6 +15191,7 @@
       "ko": "철퇴"
     },
     "legacy": false,
+    "lvl": 70,
     "props": [
       [
         "att%",
@@ -15011,6 +15266,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 83,
     "props": [
       [
         "hit-skill",
@@ -15091,6 +15347,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "swing2",
@@ -15159,6 +15416,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 66,
     "props": [
       [
         "light",
@@ -15239,6 +15497,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "hp%",
@@ -15301,6 +15560,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "str",
@@ -15375,6 +15635,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 69,
     "props": [
       [
         "mana/lvl",
@@ -15431,6 +15692,7 @@
       "ko": "반지"
     },
     "legacy": true,
+    "lvl": 95,
     "props": [
       [
         "res-all",
@@ -15475,6 +15737,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 78,
     "props": [
       [
         "res-ltng",
@@ -15549,6 +15812,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 77,
     "props": [
       [
         "ignore-ac",
@@ -15605,6 +15869,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 80,
     "props": [
       [
         "dex",
@@ -15673,6 +15938,7 @@
       "ko": "반지"
     },
     "legacy": false,
+    "lvl": 66,
     "props": [
       [
         "hp/lvl",
@@ -15717,6 +15983,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 58,
     "props": [
       [
         "move2",
@@ -15767,6 +16034,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 73,
     "props": [
       [
         "abs-fire/lvl",
@@ -15823,6 +16091,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 58,
     "props": [
       [
         "manasteal",
@@ -15879,6 +16148,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 80,
     "props": [
       [
         "allskills",
@@ -15935,6 +16205,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 60,
     "props": [
       [
         "dmg-pois",
@@ -15991,6 +16262,7 @@
       "ko": "반지"
     },
     "legacy": false,
+    "lvl": 53,
     "props": [
       [
         "gold%",
@@ -16047,6 +16319,7 @@
       "ko": "반지"
     },
     "legacy": false,
+    "lvl": 53,
     "props": [
       [
         "nofreeze",
@@ -16103,6 +16376,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 73,
     "props": [
       [
         "res-ltng",
@@ -16159,6 +16433,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 55,
     "props": [
       [
         "res-all",
@@ -16215,6 +16490,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "bar",
@@ -16289,6 +16565,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "nec",
@@ -16363,6 +16640,7 @@
       "ko": "투창"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "ama",
@@ -16443,6 +16721,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "ama",
@@ -16517,6 +16796,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "ama",
@@ -16591,6 +16871,7 @@
       "ko": "오브"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "sor",
@@ -16665,6 +16946,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "pal",
@@ -16739,6 +17021,7 @@
       "ko": "클로"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "ass",
@@ -16813,6 +17096,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 50,
     "props": [
       [
         "dru",
@@ -16887,6 +17171,7 @@
       "ko": "투척 무기"
     },
     "legacy": false,
+    "lvl": 65,
     "props": [
       [
         "rep-quant",
@@ -16949,6 +17234,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 69,
     "props": [
       [
         "dmg%",
@@ -16999,6 +17285,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 73,
     "props": [
       [
         "dmg%",
@@ -17061,6 +17348,7 @@
       "ko": "투척 무기"
     },
     "legacy": false,
+    "lvl": 52,
     "props": [
       [
         "deadly",
@@ -17117,6 +17405,7 @@
       "ko": "투척 무기"
     },
     "legacy": false,
+    "lvl": 83,
     "props": [
       [
         "dmg%",
@@ -17173,6 +17462,7 @@
       "ko": "석궁"
     },
     "legacy": false,
+    "lvl": 79,
     "props": [
       [
         "dmg%",
@@ -17223,6 +17513,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "dmg%",
@@ -17273,6 +17564,7 @@
       "ko": "곤봉"
     },
     "legacy": false,
+    "lvl": 71,
     "props": [
       [
         "dmg%",
@@ -17335,6 +17627,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 70,
     "props": [
       [
         "ac%",
@@ -17379,6 +17672,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 86,
     "props": [
       [
         "swing2",
@@ -17459,6 +17753,7 @@
       "ko": "마법봉"
     },
     "legacy": false,
+    "lvl": 74,
     "props": [
       [
         "allskills",
@@ -17509,6 +17804,7 @@
       "ko": "반지"
     },
     "legacy": false,
+    "lvl": 77,
     "props": [
       [
         "noheal",
@@ -17559,6 +17855,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 73,
     "props": [
       [
         "allskills",
@@ -17621,6 +17918,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 76,
     "props": [
       [
         "dmg%",
@@ -17683,6 +17981,7 @@
       "ko": "철퇴"
     },
     "legacy": false,
+    "lvl": 72,
     "props": [
       [
         "dmg%",
@@ -17733,6 +18032,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 76,
     "props": [
       [
         "dmg%",
@@ -17789,6 +18089,7 @@
       "ko": "클로"
     },
     "legacy": false,
+    "lvl": 74,
     "props": [
       [
         "dmg%",
@@ -17845,6 +18146,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 79,
     "props": [
       [
         "ac%",
@@ -17901,6 +18203,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 71,
     "props": [
       [
         "ac%",
@@ -17957,6 +18260,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 87,
     "props": [
       [
         "ease",
@@ -18031,6 +18335,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 82,
     "props": [
       [
         "ac%",
@@ -18081,6 +18386,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 80,
     "props": [
       [
         "dmg%",
@@ -18125,6 +18431,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 78,
     "props": [
       [
         "dmg%",
@@ -18175,6 +18482,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 83,
     "props": [
       [
         "dmg%",
@@ -18225,6 +18533,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 72,
     "props": [
       [
         "dmg%",
@@ -18275,6 +18584,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 73,
     "props": [
       [
         "ac%",
@@ -18325,6 +18635,7 @@
       "ko": "반지"
     },
     "legacy": false,
+    "lvl": 84,
     "props": [
       [
         "abs-ltng%",
@@ -18381,6 +18692,7 @@
       "ko": "투창"
     },
     "legacy": false,
+    "lvl": 78,
     "props": [
       [
         "dmg%",
@@ -18431,6 +18743,7 @@
       "ko": "투척 무기"
     },
     "legacy": false,
+    "lvl": 76,
     "props": [
       [
         "dmg%",
@@ -18493,6 +18806,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 86,
     "props": [
       [
         "allskills",
@@ -18549,6 +18863,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 79,
     "props": [
       [
         "dmg%",
@@ -18605,6 +18920,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 82,
     "props": [
       [
         "dmg%",
@@ -18673,6 +18989,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 69,
     "props": [
       [
         "ac%",
@@ -18735,6 +19052,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 83,
     "props": [
       [
         "dmg%",
@@ -18797,6 +19115,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "ac%",
@@ -18859,6 +19178,7 @@
       "ko": "석궁"
     },
     "legacy": false,
+    "lvl": 84,
     "props": [
       [
         "dmg%",
@@ -18915,6 +19235,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "ac%",
@@ -18977,6 +19298,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 72,
     "props": [
       [
         "ac%",
@@ -19033,6 +19355,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 73,
     "props": [
       [
         "dmg%",
@@ -19083,6 +19406,7 @@
       "ko": "활"
     },
     "legacy": false,
+    "lvl": 79,
     "props": [
       [
         "dmg%",
@@ -19133,6 +19457,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 70,
     "props": [
       [
         "dmg%",
@@ -19195,6 +19520,7 @@
       "ko": "클로"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "dmg%",
@@ -19257,6 +19583,7 @@
       "ko": "투척 무기"
     },
     "legacy": false,
+    "lvl": 78,
     "props": [
       [
         "dmg%",
@@ -19313,6 +19640,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 84,
     "props": [
       [
         "ac",
@@ -19363,6 +19691,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 76,
     "props": [
       [
         "dmg%",
@@ -19407,6 +19736,7 @@
       "ko": "투창"
     },
     "legacy": false,
+    "lvl": 77,
     "props": [
       [
         "dmg%",
@@ -19469,6 +19799,7 @@
       "ko": "투창"
     },
     "legacy": false,
+    "lvl": 76,
     "props": [
       [
         "dmg%",
@@ -19525,6 +19856,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 80,
     "props": [
       [
         "ac%",
@@ -19575,6 +19907,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 77,
     "props": [
       [
         "dmg%",
@@ -19631,6 +19964,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "ac%",
@@ -19693,6 +20027,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 86,
     "props": [
       [
         "balance2",
@@ -19761,6 +20096,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "ac%",
@@ -19841,6 +20177,7 @@
       "ko": "투구"
     },
     "legacy": true,
+    "lvl": 1,
     "props": []
   },
   {
@@ -19860,6 +20197,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 84,
     "props": [
       [
         "ac%",
@@ -19922,6 +20260,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 74,
     "props": [
       [
         "ac%",
@@ -19984,6 +20323,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 84,
     "props": [
       [
         "ac%",
@@ -20040,6 +20380,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 82,
     "props": [
       [
         "ac%",
@@ -20096,6 +20437,7 @@
       "ko": "마법봉"
     },
     "legacy": false,
+    "lvl": 84,
     "props": [
       [
         "nec",
@@ -20158,6 +20500,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 79,
     "props": [
       [
         "dmg%",
@@ -20226,6 +20569,7 @@
       "ko": "오브"
     },
     "legacy": false,
+    "lvl": 81,
     "props": [
       [
         "sor",
@@ -20276,6 +20620,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "ac%",
@@ -20350,6 +20695,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 76,
     "props": [
       [
         "ac%",
@@ -20406,6 +20752,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "ac",
@@ -20450,6 +20797,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 83,
     "props": [
       [
         "ac",
@@ -20512,6 +20860,7 @@
       "ko": "부적"
     },
     "legacy": false,
+    "lvl": 70,
     "props": [
       [
         "mag%",
@@ -20550,6 +20899,7 @@
       "ko": "철퇴"
     },
     "legacy": false,
+    "lvl": 86,
     "props": [
       [
         "dmg%",
@@ -20618,6 +20968,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "ac%",
@@ -20680,6 +21031,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 78,
     "props": [
       [
         "ac%",
@@ -20736,6 +21088,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 84,
     "props": [
       [
         "ac%",
@@ -20792,6 +21145,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 78,
     "props": [
       [
         "dmg%",
@@ -20854,6 +21208,7 @@
       "ko": "갑옷"
     },
     "legacy": false,
+    "lvl": 82,
     "props": [
       [
         "ac%",
@@ -20916,6 +21271,7 @@
       "ko": "오브"
     },
     "legacy": false,
+    "lvl": 80,
     "props": [
       [
         "sor",
@@ -20966,6 +21322,7 @@
       "ko": "클로"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "dmg%",
@@ -21028,6 +21385,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 72,
     "props": [
       [
         "ac%",
@@ -21102,6 +21460,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 74,
     "props": [
       [
         "ac%",
@@ -21182,6 +21541,7 @@
       "ko": "홀"
     },
     "legacy": false,
+    "lvl": 69,
     "props": [
       [
         "dmg%",
@@ -21250,6 +21610,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 87,
     "props": [
       [
         "ac%",
@@ -21306,6 +21667,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 68,
     "props": [
       [
         "str",
@@ -21362,6 +21724,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "ac",
@@ -21412,6 +21775,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 71,
     "props": [
       [
         "ac%",
@@ -21468,6 +21832,7 @@
       "ko": "반지"
     },
     "legacy": false,
+    "lvl": 68,
     "props": [
       [
         "ac-miss",
@@ -21530,6 +21895,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 73,
     "props": [
       [
         "ac",
@@ -21580,6 +21946,7 @@
       "ko": "홀"
     },
     "legacy": false,
+    "lvl": 68,
     "props": [
       [
         "dmg%",
@@ -21654,6 +22021,7 @@
       "ko": "부적"
     },
     "legacy": false,
+    "lvl": 110,
     "props": [
       [
         "allskills",
@@ -21698,6 +22066,7 @@
       "ko": "창"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "dmg%",
@@ -21754,6 +22123,7 @@
       "ko": "도끼"
     },
     "legacy": false,
+    "lvl": 71,
     "props": [
       [
         "dmg%",
@@ -21810,6 +22180,7 @@
       "ko": "곤봉"
     },
     "legacy": false,
+    "lvl": 76,
     "props": [
       [
         "dmg%",
@@ -21872,6 +22243,7 @@
       "ko": "망치"
     },
     "legacy": false,
+    "lvl": 77,
     "props": [
       [
         "dmg%",
@@ -21934,6 +22306,7 @@
       "ko": "투창"
     },
     "legacy": false,
+    "lvl": 84,
     "props": [
       [
         "dmg%",
@@ -21984,6 +22357,7 @@
       "ko": "장병기"
     },
     "legacy": false,
+    "lvl": 72,
     "props": [
       [
         "dmg%",
@@ -22040,6 +22414,7 @@
       "ko": "지팡이"
     },
     "legacy": false,
+    "lvl": 74,
     "props": [
       [
         "cast2",
@@ -22096,6 +22471,7 @@
       "ko": "홀"
     },
     "legacy": false,
+    "lvl": 80,
     "props": [
       [
         "dmg%",
@@ -22170,6 +22546,7 @@
       "ko": "방패"
     },
     "legacy": false,
+    "lvl": 83,
     "props": [
       [
         "ac",
@@ -22226,6 +22603,7 @@
       "ko": "장갑"
     },
     "legacy": false,
+    "lvl": 78,
     "props": [
       [
         "ac",
@@ -22277,6 +22655,7 @@
       "ko": "주얼"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "dmg-ltng",
@@ -22321,6 +22700,7 @@
       "ko": "부적"
     },
     "legacy": false,
+    "lvl": 110,
     "props": [
       [
         "randclassskill",
@@ -22377,6 +22757,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 69,
     "props": [
       [
         "pierce-immunity-cold",
@@ -22409,6 +22790,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 69,
     "props": [
       [
         "pierce-immunity-fire",
@@ -22441,6 +22823,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 69,
     "props": [
       [
         "pierce-immunity-light",
@@ -22473,6 +22856,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 69,
     "props": [
       [
         "pierce-immunity-poison",
@@ -22505,6 +22889,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 69,
     "props": [
       [
         "pierce-immunity-damage",
@@ -22537,6 +22922,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 69,
     "props": [
       [
         "pierce-immunity-magic",
@@ -22569,6 +22955,7 @@
       "ko": "마법서"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "skilltab",
@@ -22643,6 +23030,7 @@
       "ko": "마법서"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "skilltab",
@@ -22717,6 +23105,7 @@
       "ko": "마법서"
     },
     "legacy": false,
+    "lvl": 85,
     "props": [
       [
         "war",
@@ -22791,6 +23180,7 @@
       "ko": "마법서"
     },
     "legacy": false,
+    "lvl": 58,
     "props": [
       [
         "war",
@@ -22871,6 +23261,7 @@
       "ko": "검"
     },
     "legacy": false,
+    "lvl": 69,
     "props": [
       [
         "hit-skill",
@@ -22939,6 +23330,7 @@
       "ko": "장화"
     },
     "legacy": false,
+    "lvl": 73,
     "props": [
       [
         "skilltab-war",
@@ -22995,6 +23387,7 @@
       "ko": "단검"
     },
     "legacy": false,
+    "lvl": 73,
     "props": [
       [
         "allskills",
@@ -23063,6 +23456,7 @@
       "ko": "반지"
     },
     "legacy": false,
+    "lvl": 58,
     "props": [
       [
         "oskill",
@@ -23119,6 +23513,7 @@
       "ko": "반지"
     },
     "legacy": false,
+    "lvl": 58,
     "props": [
       [
         "att-skill",
@@ -23175,6 +23570,7 @@
       "ko": "목걸이"
     },
     "legacy": false,
+    "lvl": 60,
     "props": [
       [
         "hit-skill",
@@ -23231,6 +23627,7 @@
       "ko": "허리띠"
     },
     "legacy": false,
+    "lvl": 79,
     "props": [
       [
         "cast1",
@@ -23293,6 +23690,7 @@
       "ko": "투구"
     },
     "legacy": false,
+    "lvl": 55,
     "props": [
       [
         "allskills",
@@ -23355,6 +23753,7 @@
       "ko": "주얼"
     },
     "legacy": false,
+    "lvl": 110,
     "props": [
       [
         "gethit-skill",
@@ -23417,6 +23816,7 @@
       "ko": "주얼"
     },
     "legacy": false,
+    "lvl": 110,
     "props": [
       [
         "gethit-skill",
@@ -23479,6 +23879,7 @@
       "ko": "주얼"
     },
     "legacy": false,
+    "lvl": 110,
     "props": [
       [
         "gethit-skill",
@@ -23541,6 +23942,7 @@
       "ko": "주얼"
     },
     "legacy": false,
+    "lvl": 110,
     "props": [
       [
         "gethit-skill",
@@ -23603,6 +24005,7 @@
       "ko": "주얼"
     },
     "legacy": false,
+    "lvl": 110,
     "props": [
       [
         "gethit-skill",
@@ -23665,6 +24068,7 @@
       "ko": "주얼"
     },
     "legacy": false,
+    "lvl": 110,
     "props": [
       [
         "gethit-skill",
@@ -23727,6 +24131,7 @@
       "ko": "부적"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-cold",
@@ -23759,6 +24164,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-cold",
@@ -23827,6 +24233,7 @@
       "ko": "부적"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-fire",
@@ -23859,6 +24266,7 @@
       "ko": "부적"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-light",
@@ -23891,6 +24299,7 @@
       "ko": "부적"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-poison",
@@ -23923,6 +24332,7 @@
       "ko": "부적"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-damage",
@@ -23955,6 +24365,7 @@
       "ko": "부적"
     },
     "legacy": false,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-magic",
@@ -23987,6 +24398,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-fire",
@@ -24049,6 +24461,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-light",
@@ -24111,6 +24524,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-poison",
@@ -24173,6 +24587,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-damage",
@@ -24235,6 +24650,7 @@
       "ko": "부적"
     },
     "legacy": true,
+    "lvl": 75,
     "props": [
       [
         "pierce-immunity-magic",

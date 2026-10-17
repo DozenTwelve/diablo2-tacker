@@ -28,7 +28,7 @@ function collectionGroups(tab, lang) {
   }
   if (tab === "sets") {
     // Set bonuses under each set: for more pieces worn (green), then the full set (gold)
-    return sets.map((s) => ({
+    return sets.filter((s) => !s.legacy).map((s) => ({
       title: nameOf(s, lang),
       keys: s.items.map(setItemKey),
       notes: [

@@ -109,6 +109,7 @@ for (const r of table("uniqueitems")) {
     const [, zh, zh_tw, en, ko] = category(r.code);
     uniques.set(r.index, {
       ids: [id], code: r.code, img: imgOf(uniqueImg, r.index, r.code), ...names(r.index), category: { en, zh, zh_tw, ko }, legacy,
+      lvl: Number(r.lvl) || 1, // lowest item level, for skills whose level comes from it (see src/lib/props.js)
       props: propsOf(r, ITEM_PROPS),
     });
   }
@@ -127,22 +128,47 @@ const setBonus = new Map(
     },
   ]),
 );
+// Set items outside the Chronicle (Warlord's) are kept as legacy, like uniques
 const sets = new Map();
 for (const r of table("setitems")) {
-  if (!r["*ID"] || r.disableChronicle === "1") continue;
-  if (!sets.has(r.set)) sets.set(r.set, { ...names(r.set), ...setBonus.get(r.set), items: [] });
-  sets.get(r.set).items.push({
-    id: Number(r["*ID"]), code: r.item, img: imgOf(setImg, r.index, r.item), ...names(r.index), props: propsOf(r, ITEM_PROPS),
+  if (!r["*ID"]) continue;
+  if (!sets.has(r.set)) sets.set(r.set, { ...names(r.set), ...setBonus.get(r.set), legacy: true, items: [] });
+  const set = sets.get(r.set);
+  const legacy = r.disableChronicle === "1";
+  set.legacy &&= legacy;
+  set.items.push({
+    id: Number(r["*ID"]), code: r.item, img: imgOf(setImg, r.index, r.item), ...names(r.index), legacy, lvl: Number(r.lvl) || 1,
+    props: propsOf(r, ITEM_PROPS),
     bonus: tiers(r, 2, (i) => ["a", "b"].map((x) => [`aprop${i}${x}`, `apar${i}${x}`, `amin${i}${x}`, `amax${i}${x}`])),
   });
 }
 
-// id is the runes.txt row; a save's runeword_id maps to it as (runeword_id & 0xfff) - 27
+// Which gems.txt bonuses a socketed rune or gem gives: weapon, shield, or helm (also armor, belt...)
+const gemSlotOf = (type) => {
+  const all = ancestors(type);
+  return all.has("weap") ? "weapon" : all.has("shld") ? "shield" : "helm";
+};
+
+// id is the runes.txt row; a save's runeword_id maps to it as (runeword_id & 0xfff) - 27.
+// slots: which kinds of base it can be made in, for its runes' bonuses
 const runewords = [];
 table("runes").forEach((r, id) => {
   const recipe = [1, 2, 3, 4, 5, 6].map((i) => r[`Rune${i}`]).filter(Boolean);
-  if (r.complete === "1") runewords.push({ id, ...names(r.Name), runes: recipe, props: propsOf(r, RUNEWORD_PROPS) });
+  const slots = [...new Set(numbered(6, (i) => r[`itype${i}`]).filter(Boolean).map(gemSlotOf))];
+  if (r.complete === "1") runewords.push({ id, ...names(r.Name), runes: recipe, slots, props: propsOf(r, RUNEWORD_PROPS) });
 });
+
+// Socketed rune and gem bonuses by slot (gems.txt)
+const gems = {};
+for (const r of table("gems")) {
+  if (!r.code) continue;
+  gems[r.code] = Object.fromEntries(
+    ["weapon", "helm", "shield"].map((slot) => [
+      slot,
+      propsOf(r, numbered(3, (i) => [`${slot}Mod${i}Code`, `${slot}Mod${i}Param`, `${slot}Mod${i}Min`, `${slot}Mod${i}Max`])),
+    ]),
+  );
+}
 
 const runes = [];
 for (let i = 1; i <= 33; i++) {
@@ -168,13 +194,14 @@ for (const t of ["armor", "weapons", "misc"]) {
         img: baseImg[r.code], variants: variantsOf(baseImg[r.code]),
         stack: r.AdvancedStashStackable === "1" || undefined, // goes in the stackable tab
         starter: starterCodes.has(r.code) || undefined,
+        gemSlot: t === "misc" ? undefined : gemSlotOf(r.type),
       };
   }
 }
 
 // Stat descriptions (itemstatcost.txt) with every string they need, as [en, zh, zh_tw].
 // Formatting lives in src/lib/stats.js.
-for (const f of ["skills", "ui"]) {
+for (const f of ["skills", "ui", "monsters"]) {
   const raw = readFileSync(join(root, `data/local/lng/strings/${f}.json`), "utf8").replace(/^﻿/, "");
   for (const s of JSON.parse(raw)) if (!strings.has(s.Key)) strings.set(s.Key, s);
 }
@@ -211,7 +238,9 @@ const skillDescs = new Map(table("skilldesc").map((r) => [r.skilldesc, r["str na
 const skills = {};
 for (const r of table("skills")) {
   const name = useString(skillDescs.get(r.skilldesc));
-  if (r["*Id"] && name) skills[r["*Id"]] = { name, cls: r.charclass ? playerClasses.indexOf(r.charclass) : undefined };
+  if (r["*Id"] && name) {
+    skills[r["*Id"]] = { name, cls: r.charclass ? playerClasses.indexOf(r.charclass) : undefined, req: Number(r.reqlevel) || 1 };
+  }
 }
 // Damage pairs shown as one line: "<key>Range" for "Adds X-Y", "<key>" when min equals max
 for (const key of ["strModMinDamage", "strModFireDamage", "strModColdDamage", "strModLightningDamage", "strModMagicDamage", "strModPoisonDamage"]) {
@@ -222,6 +251,8 @@ useString("strModEnhancedDamage");
 // Random skill properties (skill-rand, randclassskill), which have no stat description of their own
 useString("ChronicleItemModifierClassSkillRandom");
 useString("ChronicleRandomClassSkillLevel");
+// Repair rate shown as "Repairs 1 durability in N seconds" (item_replenish_durability, desc function 11)
+useString("ModStre9u");
 
 const write = (name, data) => writeFileSync(new URL(`${name}.json`, outDir), JSON.stringify(data, null, 2) + "\n");
 write("uniques", [...uniques.values()]);
@@ -235,5 +266,11 @@ const properties = {};
 for (const r of table("properties")) {
   if (r.code) properties[r.code.toLowerCase()] = numbered(7, (i) => r[`func${i}`] && [Number(r[`func${i}`]), statIds.get(r[`stat${i}`]) ?? null, Number(r[`val${i}`]) || 0]).filter(Boolean);
 }
-write("stats", { stats, classes, skills, strings: statStrings, properties });
+// Monsters an item can reanimate targets as (the param of "reanimate"), by monstats.txt row
+const monstats = table("monstats");
+const monsters = {};
+for (const props of [...uniques.values(), ...[...sets.values()].flatMap((s) => s.items), ...runewords].map((e) => e.props)) {
+  for (const [code, par] of props) if (code === "reanimate") monsters[par] = useString(monstats[par]?.NameStr);
+}
+write("stats", { stats, classes, skills, strings: statStrings, properties, gems, monsters });
 console.log(`uniques ${uniques.size}, sets ${sets.size}, runewords ${runewords.length}, runes ${runes.length}, items ${Object.keys(items).length}, stats ${Object.keys(stats).length}, skills ${Object.keys(skills).length}`);

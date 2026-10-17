@@ -5,6 +5,7 @@
 // gfx: which look a ring, amulet, charm or jewel has),
 // stats as [statId, layer, value] (see src/lib/stats.js).
 import { codeOfNumber, keyOf } from "./gameData";
+import { socketStats } from "./props";
 
 let parser;
 async function loadParser() {
@@ -22,10 +23,13 @@ function placeOf(item) {
   return store_page === "Null" ? mode.toLowerCase() : store_page.toLowerCase();
 }
 
-// Item and runeword stats together, summing a stat present in both (e.g. enhanced damage)
-function statsOf(item) {
+// Item, runeword and socket stats together (runes and gems by gems.txt, jewels their own), summed as in game
+function statsOf(item, code) {
+  const sockets = item.sockets
+    .filter(Boolean)
+    .flatMap((s) => (socketStats(code, codeOfNumber(s.code)) ?? s.stats.map((x) => [x.id, x.layer, x.value])).map(([id, layer, value]) => ({ id, layer, value })));
   const sums = new Map();
-  for (const { id, layer, value } of [...item.stats, ...(item.runeword_stats ?? [])]) {
+  for (const { id, layer, value } of [...item.stats, ...(item.runeword_stats ?? []), ...sockets]) {
     const key = `${id}:${layer}`;
     sums.set(key, (sums.get(key) ?? 0) + value);
   }
@@ -43,7 +47,7 @@ function collect(item, owner, place, out) {
     quality: item.quality,
     ethereal: item.flags.includes("ETHEREAL"),
     sockets: item.sockets.length,
-    stats: statsOf(item),
+    stats: statsOf(item, code),
     owner,
     place,
     x: item.position.inv_x,

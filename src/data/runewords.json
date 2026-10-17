@@ -10,6 +10,9 @@
       "r09",
       "r07"
     ],
+    "slots": [
+      "shield"
+    ],
     "props": [
       [
         "res-cold",
@@ -47,6 +50,9 @@
       "r15",
       "r13",
       "r08"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -87,6 +93,9 @@
       "r22",
       "r23",
       "r17"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -144,6 +153,9 @@
       "r16",
       "r04"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "crush",
@@ -194,6 +206,9 @@
       "r22",
       "r22"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "hit-skill",
@@ -232,6 +247,9 @@
       "r27",
       "r29",
       "r05"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -289,6 +307,9 @@
       "r28",
       "r23",
       "r25"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -349,6 +370,9 @@
       "r33",
       "r05"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "swing2",
@@ -407,6 +431,9 @@
       "r24",
       "r27"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "swing2",
@@ -464,6 +491,9 @@
       "r30",
       "r24"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "res-all",
@@ -520,6 +550,9 @@
       "r27",
       "r22"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "demon-heal",
@@ -575,6 +608,9 @@
       "r13",
       "r22",
       "r03"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -634,6 +670,9 @@
       "r09",
       "r25"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -689,6 +728,9 @@
       "r20",
       "r24",
       "r16"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -748,6 +790,9 @@
       "r31",
       "r18"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -806,6 +851,9 @@
       "r28",
       "r32"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -861,6 +909,10 @@
       "r29",
       "r28",
       "r12"
+    ],
+    "slots": [
+      "helm",
+      "shield"
     ],
     "props": [
       [
@@ -918,6 +970,10 @@
       "r31",
       "r21"
     ],
+    "slots": [
+      "helm",
+      "shield"
+    ],
     "props": [
       [
         "ac",
@@ -973,6 +1029,9 @@
       "r13",
       "r22",
       "r10"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -1030,6 +1089,9 @@
       "r07",
       "r11"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg-demon",
@@ -1085,6 +1147,9 @@
       "r31",
       "r06",
       "r30"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -1142,6 +1207,9 @@
       "r08",
       "r12"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "hit-skill",
@@ -1181,6 +1249,9 @@
       "r24",
       "r12",
       "r29"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -1239,6 +1310,9 @@
       "r24",
       "r14"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "block2",
@@ -1295,6 +1369,9 @@
       "r31",
       "r20",
       "r02"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -1353,6 +1430,9 @@
       "r09",
       "r31"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -1409,6 +1489,9 @@
       "r21",
       "r26"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "fireskill",
@@ -1459,6 +1542,10 @@
       "r12",
       "r14",
       "r28"
+    ],
+    "slots": [
+      "weapon",
+      "helm"
     ],
     "props": [
       [
@@ -1516,6 +1603,9 @@
       "r25",
       "r05"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -1571,6 +1661,9 @@
       "r19",
       "r22",
       "r21"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -1630,6 +1723,9 @@
       "r23",
       "r08"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg-dem/lvl",
@@ -1686,6 +1782,9 @@
       "r32",
       "r11",
       "r28"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -1744,6 +1843,9 @@
       "r12",
       "r18"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -1801,6 +1903,9 @@
       "r21",
       "r10"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "cast2",
@@ -1857,6 +1962,9 @@
       "r08",
       "r09",
       "r07"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -1916,6 +2024,9 @@
       "r03",
       "r12"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -1966,6 +2077,9 @@
       "r13",
       "r31",
       "r28"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -2024,6 +2138,9 @@
       "r30",
       "r24"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -2081,6 +2198,9 @@
       "r07",
       "r12"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -2137,6 +2257,9 @@
       "r08",
       "r10"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -2187,6 +2310,9 @@
       "r22",
       "r25",
       "r19"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -2247,6 +2373,9 @@
       "r31",
       "r30"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -2303,6 +2432,9 @@
       "r20",
       "r18"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg-cold",
@@ -2358,6 +2490,9 @@
       "r03",
       "r08"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "fireskill",
@@ -2408,6 +2543,9 @@
       "r17",
       "r19"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "str",
@@ -2457,6 +2595,9 @@
       "r09",
       "r12"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "enr",
@@ -2494,6 +2635,9 @@
       "r06",
       "r01",
       "r05"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -2545,6 +2689,9 @@
       "r18",
       "r04"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -2595,6 +2742,9 @@
       "r16",
       "r12",
       "r05"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -2654,6 +2804,9 @@
       "r10",
       "r06"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "allskills",
@@ -2704,6 +2857,9 @@
       "r11",
       "r04"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "hit-skill",
@@ -2740,6 +2896,9 @@
     "runes": [
       "r04",
       "r03"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -2791,6 +2950,9 @@
       "r21",
       "r23",
       "r17"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -2849,6 +3011,9 @@
       "r10",
       "r05",
       "r19"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -2909,6 +3074,9 @@
       "r16",
       "r04"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "allskills",
@@ -2966,6 +3134,9 @@
       "r02",
       "r20"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg%",
@@ -3021,6 +3192,9 @@
       "r07",
       "r09",
       "r10"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -3078,6 +3252,9 @@
       "r10",
       "r11"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "hit-skill",
@@ -3116,6 +3293,9 @@
       "r18",
       "r01",
       "r02"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -3174,6 +3354,10 @@
       "r28",
       "r31"
     ],
+    "slots": [
+      "weapon",
+      "shield"
+    ],
     "props": [
       [
         "dmg%",
@@ -3229,6 +3413,9 @@
       "r32",
       "r13",
       "r22"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -3287,6 +3474,9 @@
       "r16",
       "r28"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg-dem/lvl",
@@ -3343,6 +3533,9 @@
       "r25",
       "r02"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "hit-skill",
@@ -3379,6 +3572,9 @@
     "runes": [
       "r23",
       "r03"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -3436,6 +3632,9 @@
       "r12",
       "r06"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "light",
@@ -3486,6 +3685,9 @@
       "r23",
       "r06"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "hit-skill",
@@ -3522,6 +3724,9 @@
     "runes": [
       "r13",
       "r05"
+    ],
+    "slots": [
+      "shield"
     ],
     "props": [
       [
@@ -3573,6 +3778,9 @@
       "r18",
       "r20",
       "r25"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -3629,6 +3837,9 @@
       "r18",
       "r18",
       "r23"
+    ],
+    "slots": [
+      "shield"
     ],
     "props": [
       [
@@ -3689,6 +3900,9 @@
       "r03",
       "r26"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "manasteal",
@@ -3744,6 +3958,9 @@
       "r04",
       "r17"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "ac-miss",
@@ -3794,6 +4011,10 @@
       "r10",
       "r09",
       "r11"
+    ],
+    "slots": [
+      "weapon",
+      "shield"
     ],
     "props": [
       [
@@ -3850,6 +4071,9 @@
       "r05",
       "r17"
     ],
+    "slots": [
+      "shield"
+    ],
     "props": [
       [
         "light",
@@ -3905,6 +4129,9 @@
       "r07",
       "r05"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "red-mag",
@@ -3954,6 +4181,9 @@
       "r03",
       "r01"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "swing2",
@@ -3998,6 +4228,9 @@
       "r22",
       "r21",
       "r17"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -4054,6 +4287,9 @@
       "r11",
       "r03"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "str",
@@ -4091,6 +4327,9 @@
       "r13",
       "r10",
       "r20"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -4132,6 +4371,9 @@
       "r02",
       "r01",
       "r15"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -4189,6 +4431,9 @@
       "r14",
       "r23"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "dmg-pois",
@@ -4232,6 +4477,9 @@
       "r10",
       "r33",
       "r24"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -4283,6 +4531,9 @@
       "r18",
       "r03"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "gold%",
@@ -4307,6 +4558,9 @@
     "runes": [
       "r14",
       "r16"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -4362,6 +4616,9 @@
     "runes": [
       "r29",
       "r01"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -4419,6 +4676,9 @@
       "r06",
       "r02"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "pierce",
@@ -4469,6 +4729,9 @@
       "r17",
       "r30",
       "r23"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -4525,6 +4788,9 @@
       "r09",
       "r05"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "move2",
@@ -4575,6 +4841,9 @@
       "r18",
       "r02"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "move2",
@@ -4619,6 +4888,9 @@
       "r18",
       "r02"
     ],
+    "slots": [
+      "weapon"
+    ],
     "props": [
       [
         "hit-skill",
@@ -4656,6 +4928,9 @@
       "r23",
       "r25",
       "r11"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [
@@ -4713,6 +4988,9 @@
       "r32",
       "r19"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "hit-skill",
@@ -4763,6 +5041,9 @@
       "r16",
       "r09"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "hp%",
@@ -4801,6 +5082,9 @@
       "r16",
       "r08"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "hp%",
@@ -4838,6 +5122,9 @@
       "r13",
       "r16",
       "r10"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -4883,6 +5170,9 @@
       "r16",
       "r07"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "hp%",
@@ -4927,6 +5217,9 @@
       "r16",
       "r12"
     ],
+    "slots": [
+      "helm"
+    ],
     "props": [
       [
         "hp%",
@@ -4970,6 +5263,9 @@
       "r24",
       "r08",
       "r16"
+    ],
+    "slots": [
+      "helm"
     ],
     "props": [
       [
@@ -5019,6 +5315,9 @@
     "runes": [
       "r14",
       "r25"
+    ],
+    "slots": [
+      "shield"
     ],
     "props": [
       [
@@ -5075,6 +5374,9 @@
       "r11",
       "r13",
       "r27"
+    ],
+    "slots": [
+      "weapon"
     ],
     "props": [
       [

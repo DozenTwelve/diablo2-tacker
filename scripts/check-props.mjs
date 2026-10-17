@@ -13,7 +13,7 @@ try {
   const { propLines } = await vite.ssrLoadModule("/src/lib/props.js");
 
   const all = [
-    ...uniques.filter((u) => !u.legacy).map((u) => [u.en, u.props]),
+    ...uniques.filter((u) => !u.legacy).map((u) => [u.en, u.props, u.lvl]),
     ...sets.flatMap((s) => [
       [`${s.en} (full)`, s.full],
       ...s.bonus.map(([n, props]) => [`${s.en} (${n})`, props]),
@@ -23,10 +23,10 @@ try {
   ];
   const silent = new Map(); // property code -> items where it shows nothing
   let count = 0;
-  for (const [name, props] of all) {
+  for (const [name, props, lvl] of all) {
     for (const prop of props) {
       count++;
-      if (NOT_SHOWN.has(prop[0]) || propLines([prop], "zh_tw").length) continue;
+      if (NOT_SHOWN.has(prop[0]) || propLines([prop], "zh_tw", lvl).length) continue;
       if (!silent.has(prop[0])) silent.set(prop[0], []);
       silent.get(prop[0]).push(name);
     }
