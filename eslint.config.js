@@ -4,7 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
-  { ignores: ['dist', 'wasm/pkg', 'wasm/target'] },
+  { ignores: ['dist', 'wasm/pkg', 'wasm/target', 'decky/dist', 'decky/out', 'decky/node_modules'] },
   {
     files: ['**/*.{js,jsx,mjs}'],
     languageOptions: {
