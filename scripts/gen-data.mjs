@@ -1,7 +1,7 @@
 // Generate src/data/*.json from D2R game tables extracted from CASC.
 // Usage: node scripts/gen-data.mjs [gamedata dir]   (default: ~/Projects/Diablo2/d2r-gamedata)
 // The dir must contain data/global/excel/*.txt and data/local/lng/strings/*.json.
-import { readFileSync, writeFileSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 
@@ -56,6 +56,27 @@ const category = (code) => {
 
 const names = (key) => ({ en: str(key, "enUS"), zh: str(key, "zhCN"), zh_tw: str(key, "zhTW") });
 
+// Inventory icon assets (public/items/<asset>.webp, see scripts/gen-images.mjs): by base code, and by unique
+// and set item index in snake case ("Fechmar's Axe" -> fechmars_axe). The few named otherwise use their base's icon
+const hdItems = (name) =>
+  Object.assign({}, ...JSON.parse(readFileSync(join(root, `data/hd/items/${name}.json`), "utf8").replace(/^\uFEFF/, "")));
+const baseImg = Object.fromEntries(Object.entries(hdItems("items")).map(([code, v]) => [code, v.asset]));
+const uniqueImg = hdItems("uniques");
+const setImg = hdItems("sets");
+const snake = (index) => index.toLowerCase().replace(/'/g, "").replace(/[^a-z0-9]+/g, "_");
+// Some assets are relative paths ("../misc/body_part/fragment_fire"); icons are stored by their last two parts
+// Rings, amulets, charms and jewels have numbered looks ("ring/ring1"...), picked per item by its gfx id
+const spriteDir = join(root, "data/hd/global/ui/items");
+const sprites = new Set(
+  readdirSync(spriteDir).flatMap((g) => readdirSync(join(spriteDir, g)).flatMap((sub) => readdirSync(join(spriteDir, g, sub)).map((f) => `${sub}/${f.replace(/\.sprite$/, "")}`))),
+);
+const variantsOf = (asset) => {
+  let n = 0;
+  while (sprites.has(`${asset}${n + 1}`)) n++;
+  return n || undefined;
+};
+const imgOf = (table, index, code) => (table[snake(index)]?.normal ?? baseImg[code]).split("/").slice(-2).join("/");
+
 // Collections count what the in-game Chronicle tracks; other uniques (old Sunder charms, unused items)
 // are kept as legacy so saves holding them still get names. One entry per name; variants (Rainbow Facet) keep all ids
 const uniques = new Map();
@@ -69,7 +90,7 @@ for (const r of table("uniqueitems")) {
     prev.legacy &&= legacy;
   } else {
     const [, cn, tw] = category(r.code);
-    uniques.set(r.index, { ids: [id], code: r.code, ...names(r.index), category: cn, category_tw: tw, legacy });
+    uniques.set(r.index, { ids: [id], code: r.code, img: imgOf(uniqueImg, r.index, r.code), ...names(r.index), category: cn, category_tw: tw, legacy });
   }
 }
 
@@ -77,7 +98,7 @@ const sets = new Map();
 for (const r of table("setitems")) {
   if (!r["*ID"] || r.disableChronicle === "1") continue;
   if (!sets.has(r.set)) sets.set(r.set, { ...names(r.set), items: [] });
-  sets.get(r.set).items.push({ id: Number(r["*ID"]), code: r.item, ...names(r.index) });
+  sets.get(r.set).items.push({ id: Number(r["*ID"]), code: r.item, img: imgOf(setImg, r.index, r.item), ...names(r.index) });
 }
 
 // id is the runes.txt row; a save's runeword_id maps to it as (runeword_id & 0xfff) - 27
@@ -100,7 +121,11 @@ const items = {};
 for (const t of ["armor", "weapons", "misc"]) {
   for (const r of table(t)) {
     const key = r.namestr || r.code;
-    if (r.code && strings.has(key)) items[r.code] = { ...names(key), table: t, type: r.type, w: Number(r.invwidth) || 1, h: Number(r.invheight) || 1 };
+    if (r.code && strings.has(key))
+      items[r.code] = {
+        ...names(key), table: t, type: r.type, w: Number(r.invwidth) || 1, h: Number(r.invheight) || 1,
+        img: baseImg[r.code], variants: variantsOf(baseImg[r.code]),
+      };
   }
 }
 

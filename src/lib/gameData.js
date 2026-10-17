@@ -67,3 +67,12 @@ export function searchTextOf(key) {
 }
 
 export const baseNameOf = (code, lang) => nameOf(items[code], lang);
+
+// Inventory icon URL (public/items, see scripts/gen-images.mjs) for an owned record or { key, code }
+export function imageOf({ key, code, gfx }) {
+  const own = catalog.get(key)?.names.img;
+  if (own) return `/items/${own}.webp`;
+  const base = items[code];
+  const variant = gfx != null && base.variants ? (gfx % base.variants) + 1 : "";
+  return `/items/${base.img}${variant}.webp`;
+}

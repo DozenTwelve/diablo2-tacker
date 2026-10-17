@@ -6,7 +6,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/cap_hat"
   },
   "skp": {
     "en": "Skull Cap",
@@ -15,7 +16,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/skull_cap"
   },
   "hlm": {
     "en": "Helm",
@@ -24,7 +26,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/helm"
   },
   "fhl": {
     "en": "Full Helm",
@@ -33,7 +36,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/full_helm"
   },
   "ghm": {
     "en": "Great Helm",
@@ -42,7 +46,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/great_helm"
   },
   "crn": {
     "en": "Crown",
@@ -51,7 +56,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/crown"
   },
   "msk": {
     "en": "Mask",
@@ -60,7 +66,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/mask"
   },
   "qui": {
     "en": "Quilted Armor",
@@ -69,7 +76,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/quilted_armor"
   },
   "lea": {
     "en": "Leather Armor",
@@ -78,7 +86,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/leather_armor"
   },
   "hla": {
     "en": "Hard Leather Armor",
@@ -87,7 +96,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/hard_leather_armor"
   },
   "stu": {
     "en": "Studded Leather",
@@ -96,7 +106,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/studded_leather"
   },
   "rng": {
     "en": "Ring Mail",
@@ -105,7 +116,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/ring_mail"
   },
   "scl": {
     "en": "Scale Mail",
@@ -114,7 +126,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/scale_mail"
   },
   "chn": {
     "en": "Chain Mail",
@@ -123,7 +136,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/chain_mail"
   },
   "brs": {
     "en": "Breast Plate",
@@ -132,7 +146,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/breast_plate"
   },
   "spl": {
     "en": "Splint Mail",
@@ -141,7 +156,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/splint_mail"
   },
   "plt": {
     "en": "Plate Mail",
@@ -150,7 +166,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/plate_mail"
   },
   "fld": {
     "en": "Field Plate",
@@ -159,7 +176,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/field_plate"
   },
   "gth": {
     "en": "Gothic Plate",
@@ -168,7 +186,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/gothic_plate"
   },
   "ful": {
     "en": "Full Plate Mail",
@@ -177,7 +196,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/full_plate_mail"
   },
   "aar": {
     "en": "Ancient Armor",
@@ -186,7 +206,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/ancient_armor"
   },
   "ltp": {
     "en": "Light Plate",
@@ -195,7 +216,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/light_plate"
   },
   "buc": {
     "en": "Buckler",
@@ -204,7 +226,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/buckler"
   },
   "sml": {
     "en": "Small Shield",
@@ -213,7 +236,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/small_shield"
   },
   "lrg": {
     "en": "Large Shield",
@@ -222,7 +246,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/large_shield"
   },
   "kit": {
     "en": "Kite Shield",
@@ -231,7 +256,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/kite_shield"
   },
   "tow": {
     "en": "Tower Shield",
@@ -240,7 +266,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/tower_shield"
   },
   "gts": {
     "en": "Gothic Shield",
@@ -249,7 +276,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "shield/gothic_shield"
   },
   "lgl": {
     "en": "Leather Gloves",
@@ -258,7 +286,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/gloves_l"
   },
   "vgl": {
     "en": "Heavy Gloves",
@@ -267,7 +296,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/heavy_gloves"
   },
   "mgl": {
     "en": "Chain Gloves",
@@ -276,7 +306,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/bracers_m"
   },
   "tgl": {
     "en": "Light Gauntlets",
@@ -285,7 +316,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/light_gauntlets"
   },
   "hgl": {
     "en": "Gauntlets",
@@ -294,7 +326,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/gaunlets_h"
   },
   "lbt": {
     "en": "Boots",
@@ -303,7 +336,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/leather_boots"
   },
   "vbt": {
     "en": "Heavy Boots",
@@ -312,7 +346,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/heavy_boots"
   },
   "mbt": {
     "en": "Chain Boots",
@@ -321,7 +356,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/chain_boots"
   },
   "tbt": {
     "en": "Light Plated Boots",
@@ -330,7 +366,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/light_plate_boots"
   },
   "hbt": {
     "en": "Greaves",
@@ -339,7 +376,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/plate_boots"
   },
   "lbl": {
     "en": "Sash",
@@ -348,7 +386,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/sash_l"
   },
   "vbl": {
     "en": "Light Belt",
@@ -357,7 +396,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/light_belt"
   },
   "mbl": {
     "en": "Belt",
@@ -366,7 +406,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/belt_m"
   },
   "tbl": {
     "en": "Heavy Belt",
@@ -375,7 +416,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/heavy_belt"
   },
   "hbl": {
     "en": "Plated Belt",
@@ -384,7 +426,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/girdle_h"
   },
   "bhm": {
     "en": "Bone Helm",
@@ -393,7 +436,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/bone_helm"
   },
   "bsh": {
     "en": "Bone Shield",
@@ -402,7 +446,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/bone_shield"
   },
   "spk": {
     "en": "Spiked Shield",
@@ -411,7 +456,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/spiked_shield"
   },
   "xap": {
     "en": "War Hat",
@@ -420,7 +466,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/cap_hat"
   },
   "xkp": {
     "en": "Sallet",
@@ -429,7 +476,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/skull_cap"
   },
   "xlm": {
     "en": "Casque",
@@ -438,7 +486,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/helm"
   },
   "xhl": {
     "en": "Basinet",
@@ -447,7 +496,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/full_helm"
   },
   "xhm": {
     "en": "Winged Helm",
@@ -456,7 +506,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/great_helm"
   },
   "xrn": {
     "en": "Grand Crown",
@@ -465,7 +516,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/crown"
   },
   "xsk": {
     "en": "Death Mask",
@@ -474,7 +526,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/mask"
   },
   "xui": {
     "en": "Ghost Armor",
@@ -483,7 +536,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/quilted_armor"
   },
   "xea": {
     "en": "Serpentskin Armor",
@@ -492,7 +546,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/leather_armor"
   },
   "xla": {
     "en": "Demonhide Armor",
@@ -501,7 +556,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/hard_leather_armor"
   },
   "xtu": {
     "en": "Trellised Armor",
@@ -510,7 +566,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/studded_leather"
   },
   "xng": {
     "en": "Linked Mail",
@@ -519,7 +576,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/ring_mail"
   },
   "xcl": {
     "en": "Tigulated Mail",
@@ -528,7 +586,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/scale_mail"
   },
   "xhn": {
     "en": "Mesh Armor",
@@ -537,7 +596,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/chain_mail"
   },
   "xrs": {
     "en": "Cuirass",
@@ -546,7 +606,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/breast_plate"
   },
   "xpl": {
     "en": "Russet Armor",
@@ -555,7 +616,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/splint_mail"
   },
   "xlt": {
     "en": "Templar Coat",
@@ -564,7 +626,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/plate_mail"
   },
   "xld": {
     "en": "Sharktooth Armor",
@@ -573,7 +636,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/field_plate"
   },
   "xth": {
     "en": "Embossed Plate",
@@ -582,7 +646,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/gothic_plate"
   },
   "xul": {
     "en": "Chaos Armor",
@@ -591,7 +656,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/full_plate_mail"
   },
   "xar": {
     "en": "Ornate Plate",
@@ -600,7 +666,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/ancient_armor"
   },
   "xtp": {
     "en": "Mage Plate",
@@ -609,7 +676,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/light_plate"
   },
   "xuc": {
     "en": "Defender",
@@ -618,7 +686,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/buckler"
   },
   "xml": {
     "en": "Round Shield",
@@ -627,7 +696,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/small_shield"
   },
   "xrg": {
     "en": "Scutum",
@@ -636,7 +706,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/large_shield"
   },
   "xit": {
     "en": "Dragon Shield",
@@ -645,7 +716,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/kite_shield"
   },
   "xow": {
     "en": "Pavise",
@@ -654,7 +726,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/tower_shield"
   },
   "xts": {
     "en": "Ancient Shield",
@@ -663,7 +736,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "shield/gothic_shield"
   },
   "xlg": {
     "en": "Demonhide Gloves",
@@ -672,7 +746,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/gloves_l"
   },
   "xvg": {
     "en": "Sharkskin Gloves",
@@ -681,7 +756,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/heavy_gloves"
   },
   "xmg": {
     "en": "Heavy Bracers",
@@ -690,7 +766,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/bracers_m"
   },
   "xtg": {
     "en": "Battle Gauntlets",
@@ -699,7 +776,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/light_gauntlets"
   },
   "xhg": {
     "en": "War Gauntlets",
@@ -708,7 +786,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/gaunlets_h"
   },
   "xlb": {
     "en": "Demonhide Boots",
@@ -717,7 +796,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/leather_boots"
   },
   "xvb": {
     "en": "Sharkskin Boots",
@@ -726,7 +806,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/heavy_boots"
   },
   "xmb": {
     "en": "Mesh Boots",
@@ -735,7 +816,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/chain_boots"
   },
   "xtb": {
     "en": "Battle Boots",
@@ -744,7 +826,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/light_plate_boots"
   },
   "xhb": {
     "en": "War Boots",
@@ -753,7 +836,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/plate_boots"
   },
   "zlb": {
     "en": "Demonhide Sash",
@@ -762,7 +846,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/sash_l"
   },
   "zvb": {
     "en": "Sharkskin Belt",
@@ -771,7 +856,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/light_belt"
   },
   "zmb": {
     "en": "Mesh Belt",
@@ -780,7 +866,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/belt_m"
   },
   "ztb": {
     "en": "Battle Belt",
@@ -789,7 +876,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/heavy_belt"
   },
   "zhb": {
     "en": "War Belt",
@@ -798,7 +886,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/girdle_h"
   },
   "xh9": {
     "en": "Grim Helm",
@@ -807,7 +896,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/bone_helm"
   },
   "xsh": {
     "en": "Grim Shield",
@@ -816,7 +906,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/bone_shield"
   },
   "xpk": {
     "en": "Barbed Shield",
@@ -825,7 +916,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/spiked_shield"
   },
   "dr1": {
     "en": "Wolf Head",
@@ -834,7 +926,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/wolf_head"
   },
   "dr2": {
     "en": "Hawk Helm",
@@ -843,7 +936,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/hawk_helm"
   },
   "dr3": {
     "en": "Antlers",
@@ -852,7 +946,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/antlers"
   },
   "dr4": {
     "en": "Falcon Mask",
@@ -861,7 +956,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/falcon_mask"
   },
   "dr5": {
     "en": "Spirit Mask",
@@ -870,7 +966,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/spirit_mask"
   },
   "ba1": {
     "en": "Jawbone Cap",
@@ -879,7 +976,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/jawbone_cap"
   },
   "ba2": {
     "en": "Fanged Helm",
@@ -888,7 +986,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/fanged_helm"
   },
   "ba3": {
     "en": "Horned Helm",
@@ -897,7 +996,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/horned_helm"
   },
   "ba4": {
     "en": "Assault Helmet",
@@ -906,7 +1006,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/assault_helmet"
   },
   "ba5": {
     "en": "Avenger Guard",
@@ -915,7 +1016,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/avenger_guard"
   },
   "pa1": {
     "en": "Targe",
@@ -924,7 +1026,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/targe"
   },
   "pa2": {
     "en": "Rondache",
@@ -933,7 +1036,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/rondache"
   },
   "pa3": {
     "en": "Heraldic Shield",
@@ -942,7 +1046,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "shield/heraldic_shield"
   },
   "pa4": {
     "en": "Aerin Shield",
@@ -951,7 +1056,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "shield/aerin_shield"
   },
   "pa5": {
     "en": "Crown Shield",
@@ -960,7 +1066,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/crown_shield"
   },
   "ne1": {
     "en": "Preserved Head",
@@ -969,7 +1076,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/preserved_head"
   },
   "ne2": {
     "en": "Zombie Head",
@@ -978,7 +1086,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/zombie_head"
   },
   "ne3": {
     "en": "Unraveller Head",
@@ -987,7 +1096,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/unraveller_head"
   },
   "ne4": {
     "en": "Gargoyle Head",
@@ -996,7 +1106,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/gargoyle_head"
   },
   "ne5": {
     "en": "Demon Head",
@@ -1005,7 +1116,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/demon_head"
   },
   "ci0": {
     "en": "Circlet",
@@ -1014,7 +1126,8 @@
     "table": "armor",
     "type": "circ",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "circlet/circlet"
   },
   "ci1": {
     "en": "Coronet",
@@ -1023,7 +1136,8 @@
     "table": "armor",
     "type": "circ",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "circlet/coronet"
   },
   "ci2": {
     "en": "Tiara",
@@ -1032,7 +1146,8 @@
     "table": "armor",
     "type": "circ",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "circlet/tiara"
   },
   "ci3": {
     "en": "Diadem",
@@ -1041,7 +1156,8 @@
     "table": "armor",
     "type": "circ",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "circlet/diadem"
   },
   "uap": {
     "en": "Shako",
@@ -1050,7 +1166,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/cap_hat"
   },
   "ukp": {
     "en": "Hydraskull",
@@ -1059,7 +1176,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/skull_cap"
   },
   "ulm": {
     "en": "Armet",
@@ -1068,7 +1186,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/helm"
   },
   "uhl": {
     "en": "Giant Conch",
@@ -1077,7 +1196,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/full_helm"
   },
   "uhm": {
     "en": "Spired Helm",
@@ -1086,7 +1206,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/great_helm"
   },
   "urn": {
     "en": "Corona",
@@ -1095,7 +1216,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/crown"
   },
   "usk": {
     "en": "Demonhead",
@@ -1104,7 +1226,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/mask"
   },
   "uui": {
     "en": "Dusk Shroud",
@@ -1113,7 +1236,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/quilted_armor"
   },
   "uea": {
     "en": "Wyrmhide",
@@ -1122,7 +1246,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/leather_armor"
   },
   "ula": {
     "en": "Scarab Husk",
@@ -1131,7 +1256,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/hard_leather_armor"
   },
   "utu": {
     "en": "Wire Fleece",
@@ -1140,7 +1266,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/studded_leather"
   },
   "ung": {
     "en": "Diamond Mail",
@@ -1149,7 +1276,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/ring_mail"
   },
   "ucl": {
     "en": "Loricated Mail",
@@ -1158,7 +1286,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/scale_mail"
   },
   "uhn": {
     "en": "Boneweave",
@@ -1167,7 +1296,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/chain_mail"
   },
   "urs": {
     "en": "Great Hauberk",
@@ -1176,7 +1306,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/breast_plate"
   },
   "upl": {
     "en": "Balrog Skin",
@@ -1185,7 +1316,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/splint_mail"
   },
   "ult": {
     "en": "Hellforge Plate",
@@ -1194,7 +1326,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/plate_mail"
   },
   "uld": {
     "en": "Kraken Shell",
@@ -1203,7 +1336,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/field_plate"
   },
   "uth": {
     "en": "Lacquered Plate",
@@ -1212,7 +1346,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/gothic_plate"
   },
   "uul": {
     "en": "Shadow Plate",
@@ -1221,7 +1356,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/full_plate_mail"
   },
   "uar": {
     "en": "Sacred Armor",
@@ -1230,7 +1366,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/ancient_armor"
   },
   "utp": {
     "en": "Archon Plate",
@@ -1239,7 +1376,8 @@
     "table": "armor",
     "type": "tors",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "armor/light_plate"
   },
   "uuc": {
     "en": "Heater",
@@ -1248,7 +1386,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/buckler"
   },
   "uml": {
     "en": "Luna",
@@ -1257,7 +1396,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/small_shield"
   },
   "urg": {
     "en": "Hyperion",
@@ -1266,7 +1406,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/large_shield"
   },
   "uit": {
     "en": "Monarch",
@@ -1275,7 +1416,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/kite_shield"
   },
   "uow": {
     "en": "Aegis",
@@ -1284,7 +1426,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/tower_shield"
   },
   "uts": {
     "en": "Ward",
@@ -1293,7 +1436,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "shield/gothic_shield"
   },
   "ulg": {
     "en": "Bramble Mitts",
@@ -1302,7 +1446,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/gloves_l"
   },
   "uvg": {
     "en": "Vampirebone Gloves",
@@ -1311,7 +1456,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/heavy_gloves"
   },
   "umg": {
     "en": "Vambraces",
@@ -1320,7 +1466,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/bracers_m"
   },
   "utg": {
     "en": "Crusader Gauntlets",
@@ -1329,7 +1476,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/light_gauntlets"
   },
   "uhg": {
     "en": "Ogre Gauntlets",
@@ -1338,7 +1486,8 @@
     "table": "armor",
     "type": "glov",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "glove/gaunlets_h"
   },
   "ulb": {
     "en": "Wyrmhide Boots",
@@ -1347,7 +1496,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/leather_boots"
   },
   "uvb": {
     "en": "Scarabshell Boots",
@@ -1356,7 +1506,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/heavy_boots"
   },
   "umb": {
     "en": "Boneweave Boots",
@@ -1365,7 +1516,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/chain_boots"
   },
   "utb": {
     "en": "Mirrored Boots",
@@ -1374,7 +1526,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/light_plate_boots"
   },
   "uhb": {
     "en": "Myrmidon Greaves",
@@ -1383,7 +1536,8 @@
     "table": "armor",
     "type": "boot",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "boot/plate_boots"
   },
   "ulc": {
     "en": "Spiderweb Sash",
@@ -1392,7 +1546,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/sash_l"
   },
   "uvc": {
     "en": "Vampirefang Belt",
@@ -1401,7 +1556,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/light_belt"
   },
   "umc": {
     "en": "Mithril Coil",
@@ -1410,7 +1566,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/belt_m"
   },
   "utc": {
     "en": "Troll Belt",
@@ -1419,7 +1576,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/heavy_belt"
   },
   "uhc": {
     "en": "Colossus Girdle",
@@ -1428,7 +1586,8 @@
     "table": "armor",
     "type": "belt",
     "w": 2,
-    "h": 1
+    "h": 1,
+    "img": "belt/girdle_h"
   },
   "uh9": {
     "en": "Bone Visage",
@@ -1437,7 +1596,8 @@
     "table": "armor",
     "type": "helm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/bone_helm"
   },
   "ush": {
     "en": "Troll Nest",
@@ -1446,7 +1606,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/bone_shield"
   },
   "upk": {
     "en": "Blade Barrier",
@@ -1455,7 +1616,8 @@
     "table": "armor",
     "type": "shie",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "shield/spiked_shield"
   },
   "dr6": {
     "en": "Alpha Helm",
@@ -1464,7 +1626,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/wolf_head"
   },
   "dr7": {
     "en": "Griffon Headdress",
@@ -1473,7 +1636,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/hawk_helm"
   },
   "dr8": {
     "en": "Hunter's Guise",
@@ -1482,7 +1646,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/antlers"
   },
   "dr9": {
     "en": "Sacred Feathers",
@@ -1491,7 +1656,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/falcon_mask"
   },
   "dra": {
     "en": "Totemic Mask",
@@ -1500,7 +1666,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/spirit_mask"
   },
   "ba6": {
     "en": "Jawbone Visor",
@@ -1509,7 +1676,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/jawbone_cap"
   },
   "ba7": {
     "en": "Lion Helm",
@@ -1518,7 +1686,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/fanged_helm"
   },
   "ba8": {
     "en": "Rage Mask",
@@ -1527,7 +1696,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/horned_helm"
   },
   "ba9": {
     "en": "Savage Helmet",
@@ -1536,7 +1706,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/assault_helmet"
   },
   "baa": {
     "en": "Slayer Guard",
@@ -1545,7 +1716,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/avenger_guard"
   },
   "pa6": {
     "en": "Akaran Targe",
@@ -1554,7 +1726,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/targe"
   },
   "pa7": {
     "en": "Akaran Rondache",
@@ -1563,7 +1736,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/rondache"
   },
   "pa8": {
     "en": "Protector Shield",
@@ -1572,7 +1746,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "shield/heraldic_shield"
   },
   "pa9": {
     "en": "Gilded Shield",
@@ -1581,7 +1756,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "shield/aerin_shield"
   },
   "paa": {
     "en": "Royal Shield",
@@ -1590,7 +1766,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/crown_shield"
   },
   "ne6": {
     "en": "Mummified Trophy",
@@ -1599,7 +1776,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/preserved_head"
   },
   "ne7": {
     "en": "Fetish Trophy",
@@ -1608,7 +1786,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/zombie_head"
   },
   "ne8": {
     "en": "Sexton Trophy",
@@ -1617,7 +1796,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/unraveller_head"
   },
   "ne9": {
     "en": "Cantor Trophy",
@@ -1626,7 +1806,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/gargoyle_head"
   },
   "nea": {
     "en": "Hierophant Trophy",
@@ -1635,7 +1816,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/demon_head"
   },
   "drb": {
     "en": "Blood Spirit",
@@ -1644,7 +1826,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/wolf_head"
   },
   "drc": {
     "en": "Sun Spirit",
@@ -1653,7 +1836,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/hawk_helm"
   },
   "drd": {
     "en": "Earth Spirit",
@@ -1662,7 +1846,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/antlers"
   },
   "dre": {
     "en": "Sky Spirit",
@@ -1671,7 +1856,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/falcon_mask"
   },
   "drf": {
     "en": "Dream Spirit",
@@ -1680,7 +1866,8 @@
     "table": "armor",
     "type": "pelt",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "pelt/spirit_mask"
   },
   "bab": {
     "en": "Carnage Helm",
@@ -1689,7 +1876,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/jawbone_cap"
   },
   "bac": {
     "en": "Fury Visor",
@@ -1698,7 +1886,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/fanged_helm"
   },
   "bad": {
     "en": "Destroyer Helm",
@@ -1707,7 +1896,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/horned_helm"
   },
   "bae": {
     "en": "Conqueror Crown",
@@ -1716,7 +1906,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/assault_helmet"
   },
   "baf": {
     "en": "Guardian Crown",
@@ -1725,7 +1916,8 @@
     "table": "armor",
     "type": "phlm",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "helmet/avenger_guard"
   },
   "pab": {
     "en": "Sacred Targe",
@@ -1734,7 +1926,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/targe"
   },
   "pac": {
     "en": "Sacred Rondache",
@@ -1743,7 +1936,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/rondache"
   },
   "pad": {
     "en": "Kurast Shield",
@@ -1752,7 +1946,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "shield/heraldic_shield"
   },
   "pae": {
     "en": "Zakarum Shield",
@@ -1761,7 +1956,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "shield/aerin_shield"
   },
   "paf": {
     "en": "Vortex Shield",
@@ -1770,7 +1966,8 @@
     "table": "armor",
     "type": "ashd",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "shield/crown_shield"
   },
   "neb": {
     "en": "Minion Skull",
@@ -1779,7 +1976,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/preserved_head"
   },
   "neg": {
     "en": "Hellspawn Skull",
@@ -1788,7 +1986,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/zombie_head"
   },
   "ned": {
     "en": "Overseer Skull",
@@ -1797,7 +1996,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/unraveller_head"
   },
   "nee": {
     "en": "Succubus Skull",
@@ -1806,7 +2006,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/gargoyle_head"
   },
   "nef": {
     "en": "Bloodlord Skull",
@@ -1815,7 +2016,8 @@
     "table": "armor",
     "type": "head",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "voodoo_head/demon_head"
   },
   "wa1": {
     "en": "Old Book",
@@ -1824,7 +2026,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/oldbook"
   },
   "wa2": {
     "en": "Tome",
@@ -1833,7 +2036,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/tome_book"
   },
   "wa3": {
     "en": "Codex",
@@ -1842,7 +2046,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/codex"
   },
   "wa4": {
     "en": "Compendium",
@@ -1851,7 +2056,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/compendium"
   },
   "wa5": {
     "en": "Grimoire",
@@ -1860,7 +2066,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/grimoire"
   },
   "wa6": {
     "en": "Burnt Text",
@@ -1869,7 +2076,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/oldbook"
   },
   "wa7": {
     "en": "Dark Tome",
@@ -1878,7 +2086,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/tome_book"
   },
   "wa8": {
     "en": "Dark Codex",
@@ -1887,7 +2096,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/codex"
   },
   "wa9": {
     "en": "Possessed Compendium",
@@ -1896,7 +2106,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/compendium"
   },
   "waa": {
     "en": "Possessed Grimoire",
@@ -1905,7 +2116,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/grimoire"
   },
   "wab": {
     "en": "Forgotten Volume",
@@ -1914,7 +2126,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/oldbook"
   },
   "wac": {
     "en": "Occult Tome",
@@ -1923,7 +2136,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/tome_book"
   },
   "wad": {
     "en": "Occult Codex",
@@ -1932,7 +2146,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/codex"
   },
   "wae": {
     "en": "Blasphemous Compendium",
@@ -1941,7 +2156,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/compendium"
   },
   "waf": {
     "en": "Blasphemous Grimoire",
@@ -1950,7 +2166,8 @@
     "table": "armor",
     "type": "grim",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "grimoires/grimoire"
   },
   "hax": {
     "en": "Hand Axe",
@@ -1959,7 +2176,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "axe/hand_axe"
   },
   "axe": {
     "en": "Axe",
@@ -1968,7 +2186,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/axe"
   },
   "2ax": {
     "en": "Double Axe",
@@ -1977,7 +2196,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/double_axe"
   },
   "mpi": {
     "en": "Military Pick",
@@ -1986,7 +2206,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/military_pick"
   },
   "wax": {
     "en": "War Axe",
@@ -1995,7 +2216,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/war_axe"
   },
   "lax": {
     "en": "Large Axe",
@@ -2004,7 +2226,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/large_axe"
   },
   "bax": {
     "en": "Broad Axe",
@@ -2013,7 +2236,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/broad_axe"
   },
   "btx": {
     "en": "Battle Axe",
@@ -2022,7 +2246,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/battle_axe"
   },
   "gax": {
     "en": "Great Axe",
@@ -2031,7 +2256,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "axe/great_axe"
   },
   "gix": {
     "en": "Giant Axe",
@@ -2040,7 +2266,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/giant_axe"
   },
   "wnd": {
     "en": "Wand",
@@ -2049,7 +2276,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/wand"
   },
   "ywn": {
     "en": "Yew Wand",
@@ -2058,7 +2286,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/yew_wand"
   },
   "bwn": {
     "en": "Bone Wand",
@@ -2067,7 +2296,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/bone_wand"
   },
   "gwn": {
     "en": "Grim Wand",
@@ -2076,7 +2306,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/grim_wand"
   },
   "clb": {
     "en": "Club",
@@ -2085,7 +2316,8 @@
     "table": "weapons",
     "type": "club",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "club/club"
   },
   "scp": {
     "en": "Scepter",
@@ -2094,7 +2326,8 @@
     "table": "weapons",
     "type": "scep",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "scepter/scepter"
   },
   "gsc": {
     "en": "Grand Scepter",
@@ -2103,7 +2336,8 @@
     "table": "weapons",
     "type": "scep",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "scepter/grand_scepter"
   },
   "wsp": {
     "en": "War Scepter",
@@ -2112,7 +2346,8 @@
     "table": "weapons",
     "type": "scep",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "scepter/war_scepter"
   },
   "spc": {
     "en": "Spiked Club",
@@ -2121,7 +2356,8 @@
     "table": "weapons",
     "type": "club",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "club/spiked_club"
   },
   "mac": {
     "en": "Mace",
@@ -2130,7 +2366,8 @@
     "table": "weapons",
     "type": "mace",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "mace/mace"
   },
   "mst": {
     "en": "Morning Star",
@@ -2139,7 +2376,8 @@
     "table": "weapons",
     "type": "mace",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "mace/morning_star"
   },
   "fla": {
     "en": "Flail",
@@ -2148,7 +2386,8 @@
     "table": "weapons",
     "type": "mace",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "mace/flail"
   },
   "whm": {
     "en": "War Hammer",
@@ -2157,7 +2396,8 @@
     "table": "weapons",
     "type": "hamm",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "hammer/war_hammer"
   },
   "mau": {
     "en": "Maul",
@@ -2166,7 +2406,8 @@
     "table": "weapons",
     "type": "hamm",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "hammer/maul"
   },
   "gma": {
     "en": "Great Maul",
@@ -2175,7 +2416,8 @@
     "table": "weapons",
     "type": "hamm",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "hammer/great_maul"
   },
   "ssd": {
     "en": "Short Sword",
@@ -2184,7 +2426,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/short_sword"
   },
   "scm": {
     "en": "Scimitar",
@@ -2193,7 +2436,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/scimitar"
   },
   "sbr": {
     "en": "Sabre",
@@ -2202,7 +2446,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/saber"
   },
   "flc": {
     "en": "Falchion",
@@ -2211,7 +2456,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/falchion"
   },
   "crs": {
     "en": "Crystal Sword",
@@ -2220,7 +2466,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "sword/crystal_sword"
   },
   "bsd": {
     "en": "Broad Sword",
@@ -2229,7 +2476,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "sword/broad_sword"
   },
   "lsd": {
     "en": "Long Sword",
@@ -2238,7 +2486,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "sword/long_sword"
   },
   "wsd": {
     "en": "War Sword",
@@ -2247,7 +2496,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/war_sword"
   },
   "2hs": {
     "en": "Two-Handed Sword",
@@ -2256,7 +2506,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/two_handed_sword"
   },
   "clm": {
     "en": "Claymore",
@@ -2265,7 +2516,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/claymore"
   },
   "gis": {
     "en": "Giant Sword",
@@ -2274,7 +2526,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/giant_sword"
   },
   "bsw": {
     "en": "Bastard Sword",
@@ -2283,7 +2536,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/bastard_sword"
   },
   "flb": {
     "en": "Flamberge",
@@ -2292,7 +2546,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "sword/flamberge"
   },
   "gsd": {
     "en": "Great Sword",
@@ -2301,7 +2556,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "sword/great_sword"
   },
   "dgr": {
     "en": "Dagger",
@@ -2310,7 +2566,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/dagger"
   },
   "dir": {
     "en": "Dirk",
@@ -2319,7 +2576,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/dirk"
   },
   "kri": {
     "en": "Kris",
@@ -2328,7 +2586,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "knife/kriss"
   },
   "bld": {
     "en": "Blade",
@@ -2337,7 +2596,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "knife/blade"
   },
   "tkf": {
     "en": "Throwing Knife",
@@ -2346,7 +2606,8 @@
     "table": "weapons",
     "type": "tkni",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/throwing_knife"
   },
   "tax": {
     "en": "Throwing Axe",
@@ -2355,7 +2616,8 @@
     "table": "weapons",
     "type": "taxe",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "axe/throwing_axe"
   },
   "bkf": {
     "en": "Balanced Knife",
@@ -2364,7 +2626,8 @@
     "table": "weapons",
     "type": "tkni",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/balanced_knife"
   },
   "bal": {
     "en": "Balanced Axe",
@@ -2373,7 +2636,8 @@
     "table": "weapons",
     "type": "taxe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/balanced_axe"
   },
   "jav": {
     "en": "Javelin",
@@ -2382,7 +2646,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/javelin"
   },
   "pil": {
     "en": "Pilum",
@@ -2391,7 +2656,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/pilum"
   },
   "ssp": {
     "en": "Short Spear",
@@ -2400,7 +2666,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/short_spear"
   },
   "glv": {
     "en": "Glaive",
@@ -2409,7 +2676,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "javelin/glaive"
   },
   "tsp": {
     "en": "Throwing Spear",
@@ -2418,7 +2686,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "javelin/throwing_spear"
   },
   "spr": {
     "en": "Spear",
@@ -2427,7 +2696,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/spear"
   },
   "tri": {
     "en": "Trident",
@@ -2436,7 +2706,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/trident"
   },
   "brn": {
     "en": "Brandistock",
@@ -2445,7 +2716,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/brandistock"
   },
   "spt": {
     "en": "Spetum",
@@ -2454,7 +2726,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/spetum"
   },
   "pik": {
     "en": "Pike",
@@ -2463,7 +2736,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/pike"
   },
   "bar": {
     "en": "Bardiche",
@@ -2472,7 +2746,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/bardiche"
   },
   "vou": {
     "en": "Voulge",
@@ -2481,7 +2756,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/voulge"
   },
   "scy": {
     "en": "Scythe",
@@ -2490,7 +2766,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/scythe"
   },
   "pax": {
     "en": "Poleaxe",
@@ -2499,7 +2776,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/poleaxe"
   },
   "hal": {
     "en": "Halberd",
@@ -2508,7 +2786,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/halberd"
   },
   "wsc": {
     "en": "War Scythe",
@@ -2517,7 +2796,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/war_scythe"
   },
   "sst": {
     "en": "Short Staff",
@@ -2526,7 +2806,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "staff/short_staff"
   },
   "lst": {
     "en": "Long Staff",
@@ -2535,7 +2816,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "staff/long_staff"
   },
   "cst": {
     "en": "Gnarled Staff",
@@ -2544,7 +2826,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "staff/gnarled_staff"
   },
   "bst": {
     "en": "Battle Staff",
@@ -2553,7 +2836,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "staff/battle_staff"
   },
   "wst": {
     "en": "War Staff",
@@ -2562,7 +2846,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "staff/war_staff"
   },
   "sbw": {
     "en": "Short Bow",
@@ -2571,7 +2856,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/short_bow"
   },
   "hbw": {
     "en": "Hunter's Bow",
@@ -2580,7 +2866,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/hunters_bow"
   },
   "lbw": {
     "en": "Long Bow",
@@ -2589,7 +2876,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/long_bow"
   },
   "cbw": {
     "en": "Composite Bow",
@@ -2598,7 +2886,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/composite_bow"
   },
   "sbb": {
     "en": "Short Battle Bow",
@@ -2607,7 +2896,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/short_battle_bow"
   },
   "lbb": {
     "en": "Long Battle Bow",
@@ -2616,7 +2906,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/long_battle_bow"
   },
   "swb": {
     "en": "Short War Bow",
@@ -2625,7 +2916,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/short_war_bow"
   },
   "lwb": {
     "en": "Long War Bow",
@@ -2634,7 +2926,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/long_war_bow"
   },
   "lxb": {
     "en": "Light Crossbow",
@@ -2643,7 +2936,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/light_crossbow"
   },
   "mxb": {
     "en": "Crossbow",
@@ -2652,7 +2946,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/crossbow"
   },
   "hxb": {
     "en": "Heavy Crossbow",
@@ -2661,7 +2956,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/heavy_crossbow"
   },
   "rxb": {
     "en": "Repeating Crossbow",
@@ -2670,7 +2966,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/repeating_crossbow"
   },
   "gps": {
     "en": "Rancid Gas Potion",
@@ -2679,7 +2976,8 @@
     "table": "weapons",
     "type": "tpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/rancid_gas_potion"
   },
   "ops": {
     "en": "Oil Potion",
@@ -2688,7 +2986,8 @@
     "table": "weapons",
     "type": "tpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/oil_potion"
   },
   "gpm": {
     "en": "Choking Gas Potion",
@@ -2697,7 +2996,8 @@
     "table": "weapons",
     "type": "tpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/choking_gas_potion"
   },
   "opm": {
     "en": "Exploding Potion",
@@ -2706,7 +3006,8 @@
     "table": "weapons",
     "type": "tpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/exploding_potion"
   },
   "gpl": {
     "en": "Strangling Gas Potion",
@@ -2715,7 +3016,8 @@
     "table": "weapons",
     "type": "tpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/strangling_gas_potion"
   },
   "opl": {
     "en": "Fulminating Potion",
@@ -2724,7 +3026,8 @@
     "table": "weapons",
     "type": "tpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/fulminating_potion"
   },
   "d33": {
     "en": "Decoy Gidbinn",
@@ -2733,7 +3036,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/decoy_dagger"
   },
   "g33": {
     "en": "The Gidbinn",
@@ -2742,7 +3046,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/gidbinn"
   },
   "leg": {
     "en": "Wirt's Leg",
@@ -2751,7 +3056,8 @@
     "table": "weapons",
     "type": "club",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "club/wirts_leg"
   },
   "hdm": {
     "en": "Horadric Malus",
@@ -2760,7 +3066,8 @@
     "table": "weapons",
     "type": "hamm",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "hammer/horadric_malus"
   },
   "hfh": {
     "en": "Hell Forge Hammer",
@@ -2769,7 +3076,8 @@
     "table": "weapons",
     "type": "hamm",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "hammer/hellforge_hammer"
   },
   "hst": {
     "en": "Horadric Staff",
@@ -2778,7 +3086,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "staff/horadric_staff"
   },
   "msf": {
     "en": "Shaft of the Horadric Staff",
@@ -2787,7 +3096,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "staff/staff_of_the_kings"
   },
   "9ha": {
     "en": "Hatchet",
@@ -2796,7 +3106,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "axe/hand_axe"
   },
   "9ax": {
     "en": "Cleaver",
@@ -2805,7 +3116,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/axe"
   },
   "92a": {
     "en": "Twin Axe",
@@ -2814,7 +3126,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/double_axe"
   },
   "9mp": {
     "en": "Crowbill",
@@ -2823,7 +3136,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/military_pick"
   },
   "9wa": {
     "en": "Naga",
@@ -2832,7 +3146,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/war_axe"
   },
   "9la": {
     "en": "Military Axe",
@@ -2841,7 +3156,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/large_axe"
   },
   "9ba": {
     "en": "Bearded Axe",
@@ -2850,7 +3166,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/broad_axe"
   },
   "9bt": {
     "en": "Tabar",
@@ -2859,7 +3176,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/battle_axe"
   },
   "9ga": {
     "en": "Gothic Axe",
@@ -2868,7 +3186,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "axe/great_axe"
   },
   "9gi": {
     "en": "Ancient Axe",
@@ -2877,7 +3196,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/giant_axe"
   },
   "9wn": {
     "en": "Burnt Wand",
@@ -2886,7 +3206,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/wand"
   },
   "9yw": {
     "en": "Petrified Wand",
@@ -2895,7 +3216,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/yew_wand"
   },
   "9bw": {
     "en": "Tomb Wand",
@@ -2904,7 +3226,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/bone_wand"
   },
   "9gw": {
     "en": "Grave Wand",
@@ -2913,7 +3236,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/grim_wand"
   },
   "9cl": {
     "en": "Cudgel",
@@ -2922,7 +3246,8 @@
     "table": "weapons",
     "type": "club",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "club/club"
   },
   "9sc": {
     "en": "Rune Scepter",
@@ -2931,7 +3256,8 @@
     "table": "weapons",
     "type": "scep",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "scepter/scepter"
   },
   "9qs": {
     "en": "Holy Water Sprinkler",
@@ -2940,7 +3266,8 @@
     "table": "weapons",
     "type": "scep",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "scepter/grand_scepter"
   },
   "9ws": {
     "en": "Divine Scepter",
@@ -2949,7 +3276,8 @@
     "table": "weapons",
     "type": "scep",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "scepter/war_scepter"
   },
   "9sp": {
     "en": "Barbed Club",
@@ -2958,7 +3286,8 @@
     "table": "weapons",
     "type": "club",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "club/spiked_club"
   },
   "9ma": {
     "en": "Flanged Mace",
@@ -2967,7 +3296,8 @@
     "table": "weapons",
     "type": "mace",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "mace/mace"
   },
   "9mt": {
     "en": "Jagged Star",
@@ -2976,7 +3306,8 @@
     "table": "weapons",
     "type": "mace",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "mace/morning_star"
   },
   "9fl": {
     "en": "Knout",
@@ -2985,7 +3316,8 @@
     "table": "weapons",
     "type": "mace",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "mace/flail"
   },
   "9wh": {
     "en": "Battle Hammer",
@@ -2994,7 +3326,8 @@
     "table": "weapons",
     "type": "hamm",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "hammer/war_hammer"
   },
   "9m9": {
     "en": "War Club",
@@ -3003,7 +3336,8 @@
     "table": "weapons",
     "type": "hamm",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "hammer/maul"
   },
   "9gm": {
     "en": "Martel de Fer",
@@ -3012,7 +3346,8 @@
     "table": "weapons",
     "type": "hamm",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "hammer/great_maul"
   },
   "9ss": {
     "en": "Gladius",
@@ -3021,7 +3356,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/short_sword"
   },
   "9sm": {
     "en": "Cutlass",
@@ -3030,7 +3366,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/scimitar"
   },
   "9sb": {
     "en": "Shamshir",
@@ -3039,7 +3376,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/saber"
   },
   "9fc": {
     "en": "Tulwar",
@@ -3048,7 +3386,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/falchion"
   },
   "9cr": {
     "en": "Dimensional Blade",
@@ -3057,7 +3396,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "sword/crystal_sword"
   },
   "9bs": {
     "en": "Battle Sword",
@@ -3066,7 +3406,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "sword/broad_sword"
   },
   "9ls": {
     "en": "Rune Sword",
@@ -3075,7 +3416,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "sword/long_sword"
   },
   "9wd": {
     "en": "Ancient Sword",
@@ -3084,7 +3426,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/war_sword"
   },
   "92h": {
     "en": "Espandon",
@@ -3093,7 +3436,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/two_handed_sword"
   },
   "9cm": {
     "en": "Dacian Falx",
@@ -3102,7 +3446,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/claymore"
   },
   "9gs": {
     "en": "Tusk Sword",
@@ -3111,7 +3456,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/giant_sword"
   },
   "9b9": {
     "en": "Gothic Sword",
@@ -3120,7 +3466,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/bastard_sword"
   },
   "9fb": {
     "en": "Zweihander",
@@ -3129,7 +3476,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "sword/flamberge"
   },
   "9gd": {
     "en": "Executioner Sword",
@@ -3138,7 +3486,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "sword/great_sword"
   },
   "9dg": {
     "en": "Poignard",
@@ -3147,7 +3496,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/dagger"
   },
   "9di": {
     "en": "Rondel",
@@ -3156,7 +3506,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/dirk"
   },
   "9kr": {
     "en": "Cinquedeas",
@@ -3165,7 +3516,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "knife/kriss"
   },
   "9bl": {
     "en": "Stiletto",
@@ -3174,7 +3526,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "knife/blade"
   },
   "9tk": {
     "en": "Battle Dart",
@@ -3183,7 +3536,8 @@
     "table": "weapons",
     "type": "tkni",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/throwing_knife"
   },
   "9ta": {
     "en": "Francisca",
@@ -3192,7 +3546,8 @@
     "table": "weapons",
     "type": "taxe",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "axe/throwing_axe"
   },
   "9bk": {
     "en": "War Dart",
@@ -3201,7 +3556,8 @@
     "table": "weapons",
     "type": "tkni",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/balanced_knife"
   },
   "9b8": {
     "en": "Hurlbat",
@@ -3210,7 +3566,8 @@
     "table": "weapons",
     "type": "taxe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/balanced_axe"
   },
   "9ja": {
     "en": "War Javelin",
@@ -3219,7 +3576,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/javelin"
   },
   "9pi": {
     "en": "Great Pilum",
@@ -3228,7 +3586,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/pilum"
   },
   "9s9": {
     "en": "Simbilan",
@@ -3237,7 +3596,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/short_spear"
   },
   "9gl": {
     "en": "Spiculum",
@@ -3246,7 +3606,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "javelin/glaive"
   },
   "9ts": {
     "en": "Harpoon",
@@ -3255,7 +3616,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "javelin/throwing_spear"
   },
   "9sr": {
     "en": "War Spear",
@@ -3264,7 +3626,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/spear"
   },
   "9tr": {
     "en": "Fuscina",
@@ -3273,7 +3636,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/trident"
   },
   "9br": {
     "en": "War Fork",
@@ -3282,7 +3646,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/brandistock"
   },
   "9st": {
     "en": "Yari",
@@ -3291,7 +3656,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/spetum"
   },
   "9p9": {
     "en": "Lance",
@@ -3300,7 +3666,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/pike"
   },
   "9b7": {
     "en": "Lochaber Axe",
@@ -3309,7 +3676,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/bardiche"
   },
   "9vo": {
     "en": "Bill",
@@ -3318,7 +3686,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/voulge"
   },
   "9s8": {
     "en": "Battle Scythe",
@@ -3327,7 +3696,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/scythe"
   },
   "9pa": {
     "en": "Partizan",
@@ -3336,7 +3706,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/poleaxe"
   },
   "9h9": {
     "en": "Bec-de-Corbin",
@@ -3345,7 +3716,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/halberd"
   },
   "9wc": {
     "en": "Grim Scythe",
@@ -3354,7 +3726,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/war_scythe"
   },
   "8ss": {
     "en": "Jo Staff",
@@ -3363,7 +3736,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "staff/short_staff"
   },
   "8ls": {
     "en": "Quarterstaff",
@@ -3372,7 +3746,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "staff/long_staff"
   },
   "8cs": {
     "en": "Cedar Staff",
@@ -3381,7 +3756,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "staff/gnarled_staff"
   },
   "8bs": {
     "en": "Gothic Staff",
@@ -3390,7 +3766,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "staff/battle_staff"
   },
   "8ws": {
     "en": "Rune Staff",
@@ -3399,7 +3776,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "staff/war_staff"
   },
   "8sb": {
     "en": "Edge Bow",
@@ -3408,7 +3786,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/short_bow"
   },
   "8hb": {
     "en": "Razor Bow",
@@ -3417,7 +3796,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/hunters_bow"
   },
   "8lb": {
     "en": "Cedar Bow",
@@ -3426,7 +3806,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/long_bow"
   },
   "8cb": {
     "en": "Double Bow",
@@ -3435,7 +3816,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/composite_bow"
   },
   "8s8": {
     "en": "Short Siege Bow",
@@ -3444,7 +3826,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/short_battle_bow"
   },
   "8l8": {
     "en": "Large Siege Bow",
@@ -3453,7 +3836,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/long_battle_bow"
   },
   "8sw": {
     "en": "Rune Bow",
@@ -3462,7 +3846,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/short_war_bow"
   },
   "8lw": {
     "en": "Gothic Bow",
@@ -3471,7 +3856,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/long_war_bow"
   },
   "8lx": {
     "en": "Arbalest",
@@ -3480,7 +3866,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/light_crossbow"
   },
   "8mx": {
     "en": "Siege Crossbow",
@@ -3489,7 +3876,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/crossbow"
   },
   "8hx": {
     "en": "Ballista",
@@ -3498,7 +3886,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/heavy_crossbow"
   },
   "8rx": {
     "en": "Chu-Ko-Nu",
@@ -3507,7 +3896,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/repeating_crossbow"
   },
   "qf1": {
     "en": "Khalim's Flail",
@@ -3516,7 +3906,8 @@
     "table": "weapons",
     "type": "mace",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "mace/khalim_flail"
   },
   "qf2": {
     "en": "Khalim's Will",
@@ -3525,7 +3916,8 @@
     "table": "weapons",
     "type": "mace",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "mace/super_khalim_flail"
   },
   "ktr": {
     "en": "Katar",
@@ -3534,7 +3926,8 @@
     "table": "weapons",
     "type": "h2h",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/katar"
   },
   "wrb": {
     "en": "Wrist Blade",
@@ -3543,7 +3936,8 @@
     "table": "weapons",
     "type": "h2h",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/katar"
   },
   "axf": {
     "en": "Hatchet Hands",
@@ -3552,7 +3946,8 @@
     "table": "weapons",
     "type": "h2h",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/hatchet_hands"
   },
   "ces": {
     "en": "Cestus",
@@ -3561,7 +3956,8 @@
     "table": "weapons",
     "type": "h2h",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/hatchet_hands"
   },
   "clw": {
     "en": "Claws",
@@ -3570,7 +3966,8 @@
     "table": "weapons",
     "type": "h2h",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/claws"
   },
   "btl": {
     "en": "Blade Talons",
@@ -3579,7 +3976,8 @@
     "table": "weapons",
     "type": "h2h",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/claws"
   },
   "skr": {
     "en": "Scissors Katar",
@@ -3588,7 +3986,8 @@
     "table": "weapons",
     "type": "h2h",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/scissors_katar"
   },
   "9ar": {
     "en": "Quhab",
@@ -3597,7 +3996,8 @@
     "table": "weapons",
     "type": "h2h",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/katar"
   },
   "9wb": {
     "en": "Wrist Spike",
@@ -3606,7 +4006,8 @@
     "table": "weapons",
     "type": "h2h",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/katar"
   },
   "9xf": {
     "en": "Fascia",
@@ -3615,7 +4016,8 @@
     "table": "weapons",
     "type": "h2h",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/hatchet_hands"
   },
   "9cs": {
     "en": "Hand Scythe",
@@ -3624,7 +4026,8 @@
     "table": "weapons",
     "type": "h2h2",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/hatchet_hands"
   },
   "9lw": {
     "en": "Greater Claws",
@@ -3633,7 +4036,8 @@
     "table": "weapons",
     "type": "h2h2",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/claws"
   },
   "9tw": {
     "en": "Greater Talons",
@@ -3642,7 +4046,8 @@
     "table": "weapons",
     "type": "h2h2",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/claws"
   },
   "9qr": {
     "en": "Scissors Quhab",
@@ -3651,7 +4056,8 @@
     "table": "weapons",
     "type": "h2h2",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/scissors_katar"
   },
   "7ar": {
     "en": "Suwayyah",
@@ -3660,7 +4066,8 @@
     "table": "weapons",
     "type": "h2h2",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/katar"
   },
   "7wb": {
     "en": "Wrist Sword",
@@ -3669,7 +4076,8 @@
     "table": "weapons",
     "type": "h2h2",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/katar"
   },
   "7xf": {
     "en": "War Fist",
@@ -3678,7 +4086,8 @@
     "table": "weapons",
     "type": "h2h2",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/hatchet_hands"
   },
   "7cs": {
     "en": "Battle Cestus",
@@ -3687,7 +4096,8 @@
     "table": "weapons",
     "type": "h2h2",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/hatchet_hands"
   },
   "7lw": {
     "en": "Feral Claws",
@@ -3696,7 +4106,8 @@
     "table": "weapons",
     "type": "h2h2",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/claws"
   },
   "7tw": {
     "en": "Runic Talons",
@@ -3705,7 +4116,8 @@
     "table": "weapons",
     "type": "h2h2",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/claws"
   },
   "7qr": {
     "en": "Scissors Suwayyah",
@@ -3714,7 +4126,8 @@
     "table": "weapons",
     "type": "h2h2",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "h2h/scissors_katar"
   },
   "7ha": {
     "en": "Tomahawk",
@@ -3723,7 +4136,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "axe/hand_axe"
   },
   "7ax": {
     "en": "Small Crescent",
@@ -3732,7 +4146,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/axe"
   },
   "72a": {
     "en": "Ettin Axe",
@@ -3741,7 +4156,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/double_axe"
   },
   "7mp": {
     "en": "War Spike",
@@ -3750,7 +4166,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/military_pick"
   },
   "7wa": {
     "en": "Berserker Axe",
@@ -3759,7 +4176,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/war_axe"
   },
   "7la": {
     "en": "Feral Axe",
@@ -3768,7 +4186,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/large_axe"
   },
   "7ba": {
     "en": "Silver-edged Axe",
@@ -3777,7 +4196,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/broad_axe"
   },
   "7bt": {
     "en": "Decapitator",
@@ -3786,7 +4206,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/battle_axe"
   },
   "7ga": {
     "en": "Champion Axe",
@@ -3795,7 +4216,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "axe/great_axe"
   },
   "7gi": {
     "en": "Glorious Axe",
@@ -3804,7 +4226,8 @@
     "table": "weapons",
     "type": "axe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/giant_axe"
   },
   "7wn": {
     "en": "Polished Wand",
@@ -3813,7 +4236,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/wand"
   },
   "7yw": {
     "en": "Ghost Wand",
@@ -3822,7 +4246,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/yew_wand"
   },
   "7bw": {
     "en": "Lich Wand",
@@ -3831,7 +4256,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/bone_wand"
   },
   "7gw": {
     "en": "Unearthed Wand",
@@ -3840,7 +4266,8 @@
     "table": "weapons",
     "type": "wand",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "wand/grim_wand"
   },
   "7cl": {
     "en": "Truncheon",
@@ -3849,7 +4276,8 @@
     "table": "weapons",
     "type": "club",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "club/club"
   },
   "7sc": {
     "en": "Mighty Scepter",
@@ -3858,7 +4286,8 @@
     "table": "weapons",
     "type": "scep",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "scepter/scepter"
   },
   "7qs": {
     "en": "Seraph Rod",
@@ -3867,7 +4296,8 @@
     "table": "weapons",
     "type": "scep",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "scepter/grand_scepter"
   },
   "7ws": {
     "en": "Caduceus",
@@ -3876,7 +4306,8 @@
     "table": "weapons",
     "type": "scep",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "scepter/war_scepter"
   },
   "7sp": {
     "en": "Tyrant Club",
@@ -3885,7 +4316,8 @@
     "table": "weapons",
     "type": "club",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "club/spiked_club"
   },
   "7ma": {
     "en": "Reinforced Mace",
@@ -3894,7 +4326,8 @@
     "table": "weapons",
     "type": "mace",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "mace/mace"
   },
   "7mt": {
     "en": "Devil Star",
@@ -3903,7 +4336,8 @@
     "table": "weapons",
     "type": "mace",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "mace/morning_star"
   },
   "7fl": {
     "en": "Scourge",
@@ -3912,7 +4346,8 @@
     "table": "weapons",
     "type": "mace",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "mace/flail"
   },
   "7wh": {
     "en": "Legendary Mallet",
@@ -3921,7 +4356,8 @@
     "table": "weapons",
     "type": "hamm",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "hammer/war_hammer"
   },
   "7m7": {
     "en": "Ogre Maul",
@@ -3930,7 +4366,8 @@
     "table": "weapons",
     "type": "hamm",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "hammer/maul"
   },
   "7gm": {
     "en": "Thunder Maul",
@@ -3939,7 +4376,8 @@
     "table": "weapons",
     "type": "hamm",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "hammer/great_maul"
   },
   "7ss": {
     "en": "Falcata",
@@ -3948,7 +4386,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/short_sword"
   },
   "7sm": {
     "en": "Ataghan",
@@ -3957,7 +4396,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/scimitar"
   },
   "7sb": {
     "en": "Elegant Blade",
@@ -3966,7 +4406,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/saber"
   },
   "7fc": {
     "en": "Hydra Edge",
@@ -3975,7 +4416,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/falchion"
   },
   "7cr": {
     "en": "Phase Blade",
@@ -3984,7 +4426,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "sword/crystal_sword"
   },
   "7bs": {
     "en": "Conquest Sword",
@@ -3993,7 +4436,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "sword/broad_sword"
   },
   "7ls": {
     "en": "Cryptic Sword",
@@ -4002,7 +4446,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "sword/long_sword"
   },
   "7wd": {
     "en": "Mythical Sword",
@@ -4011,7 +4456,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "sword/war_sword"
   },
   "72h": {
     "en": "Legend Sword",
@@ -4020,7 +4466,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/two_handed_sword"
   },
   "7cm": {
     "en": "Highland Blade",
@@ -4029,7 +4476,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/claymore"
   },
   "7gs": {
     "en": "Balrog Blade",
@@ -4038,7 +4486,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/giant_sword"
   },
   "7b7": {
     "en": "Champion Sword",
@@ -4047,7 +4496,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "sword/bastard_sword"
   },
   "7fb": {
     "en": "Colossus Sword",
@@ -4056,7 +4506,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "sword/flamberge"
   },
   "7gd": {
     "en": "Colossus Blade",
@@ -4065,7 +4516,8 @@
     "table": "weapons",
     "type": "swor",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "sword/great_sword"
   },
   "7dg": {
     "en": "Bone Knife",
@@ -4074,7 +4526,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/dagger"
   },
   "7di": {
     "en": "Mithril Point",
@@ -4083,7 +4536,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/dirk"
   },
   "7kr": {
     "en": "Fanged Knife",
@@ -4092,7 +4546,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "knife/kriss"
   },
   "7bl": {
     "en": "Legend Spike",
@@ -4101,7 +4556,8 @@
     "table": "weapons",
     "type": "knif",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "knife/blade"
   },
   "7tk": {
     "en": "Flying Knife",
@@ -4110,7 +4566,8 @@
     "table": "weapons",
     "type": "tkni",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/throwing_knife"
   },
   "7ta": {
     "en": "Flying Axe",
@@ -4119,7 +4576,8 @@
     "table": "weapons",
     "type": "taxe",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "axe/throwing_axe"
   },
   "7bk": {
     "en": "Winged Knife",
@@ -4128,7 +4586,8 @@
     "table": "weapons",
     "type": "tkni",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "knife/balanced_knife"
   },
   "7b8": {
     "en": "Winged Axe",
@@ -4137,7 +4596,8 @@
     "table": "weapons",
     "type": "taxe",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "axe/balanced_axe"
   },
   "7ja": {
     "en": "Hyperion Javelin",
@@ -4146,7 +4606,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/javelin"
   },
   "7pi": {
     "en": "Stygian Pilum",
@@ -4155,7 +4616,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/pilum"
   },
   "7s7": {
     "en": "Balrog Spear",
@@ -4164,7 +4626,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/short_spear"
   },
   "7gl": {
     "en": "Ghost Glaive",
@@ -4173,7 +4636,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "javelin/glaive"
   },
   "7ts": {
     "en": "Winged Harpoon",
@@ -4182,7 +4646,8 @@
     "table": "weapons",
     "type": "jave",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "javelin/throwing_spear"
   },
   "7sr": {
     "en": "Hyperion Spear",
@@ -4191,7 +4656,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/spear"
   },
   "7tr": {
     "en": "Stygian Pike",
@@ -4200,7 +4666,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/trident"
   },
   "7br": {
     "en": "Mancatcher",
@@ -4209,7 +4676,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/brandistock"
   },
   "7st": {
     "en": "Ghost Spear",
@@ -4218,7 +4686,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/spetum"
   },
   "7p7": {
     "en": "War Pike",
@@ -4227,7 +4696,8 @@
     "table": "weapons",
     "type": "spea",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/pike"
   },
   "7o7": {
     "en": "Ogre Axe",
@@ -4236,7 +4706,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/bardiche"
   },
   "7vo": {
     "en": "Colossus Voulge",
@@ -4245,7 +4716,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/voulge"
   },
   "7s8": {
     "en": "Thresher",
@@ -4254,7 +4726,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/scythe"
   },
   "7pa": {
     "en": "Cryptic Axe",
@@ -4263,7 +4736,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/poleaxe"
   },
   "7h7": {
     "en": "Great Poleaxe",
@@ -4272,7 +4746,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/halberd"
   },
   "7wc": {
     "en": "Giant Thresher",
@@ -4281,7 +4756,8 @@
     "table": "weapons",
     "type": "pole",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "polearm/war_scythe"
   },
   "6ss": {
     "en": "Walking Stick",
@@ -4290,7 +4766,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "staff/short_staff"
   },
   "6ls": {
     "en": "Stalagmite",
@@ -4299,7 +4776,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "staff/long_staff"
   },
   "6cs": {
     "en": "Elder Staff",
@@ -4308,7 +4786,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "staff/gnarled_staff"
   },
   "6bs": {
     "en": "Shillelagh",
@@ -4317,7 +4796,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 1,
-    "h": 4
+    "h": 4,
+    "img": "staff/battle_staff"
   },
   "6ws": {
     "en": "Archon Staff",
@@ -4326,7 +4806,8 @@
     "table": "weapons",
     "type": "staf",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "staff/war_staff"
   },
   "6sb": {
     "en": "Spider Bow",
@@ -4335,7 +4816,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/short_bow"
   },
   "6hb": {
     "en": "Blade Bow",
@@ -4344,7 +4826,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/hunters_bow"
   },
   "6lb": {
     "en": "Shadow Bow",
@@ -4353,7 +4836,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/long_bow"
   },
   "6cb": {
     "en": "Great Bow",
@@ -4362,7 +4846,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/composite_bow"
   },
   "6s7": {
     "en": "Diamond Bow",
@@ -4371,7 +4856,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/short_battle_bow"
   },
   "6l7": {
     "en": "Crusader Bow",
@@ -4380,7 +4866,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/long_battle_bow"
   },
   "6sw": {
     "en": "Ward Bow",
@@ -4389,7 +4876,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/short_war_bow"
   },
   "6lw": {
     "en": "Hydra Bow",
@@ -4398,7 +4886,8 @@
     "table": "weapons",
     "type": "bow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/long_war_bow"
   },
   "6lx": {
     "en": "Pellet Bow",
@@ -4407,7 +4896,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/light_crossbow"
   },
   "6mx": {
     "en": "Gorgon Crossbow",
@@ -4416,7 +4906,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/crossbow"
   },
   "6hx": {
     "en": "Colossus Crossbow",
@@ -4425,7 +4916,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/heavy_crossbow"
   },
   "6rx": {
     "en": "Demon Crossbow",
@@ -4434,7 +4926,8 @@
     "table": "weapons",
     "type": "xbow",
     "w": 2,
-    "h": 3
+    "h": 3,
+    "img": "bow/repeating_crossbow"
   },
   "ob1": {
     "en": "Eagle Orb",
@@ -4443,7 +4936,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/eagle_orb"
   },
   "ob2": {
     "en": "Sacred Globe",
@@ -4452,7 +4946,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/sacred_globe"
   },
   "ob3": {
     "en": "Smoked Sphere",
@@ -4461,7 +4956,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/smoked_sphere"
   },
   "ob4": {
     "en": "Clasped Orb",
@@ -4470,7 +4966,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/clasped_orb"
   },
   "ob5": {
     "en": "Jared's Stone",
@@ -4479,7 +4976,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "orb/dragon_stone"
   },
   "am1": {
     "en": "Stag Bow",
@@ -4488,7 +4986,8 @@
     "table": "weapons",
     "type": "abow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/stag_bow"
   },
   "am2": {
     "en": "Reflex Bow",
@@ -4497,7 +4996,8 @@
     "table": "weapons",
     "type": "abow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/reflex_bow"
   },
   "am3": {
     "en": "Maiden Spear",
@@ -4506,7 +5006,8 @@
     "table": "weapons",
     "type": "aspe",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/maiden_spear"
   },
   "am4": {
     "en": "Maiden Pike",
@@ -4515,7 +5016,8 @@
     "table": "weapons",
     "type": "aspe",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/maiden_pike"
   },
   "am5": {
     "en": "Maiden Javelin",
@@ -4524,7 +5026,8 @@
     "table": "weapons",
     "type": "ajav",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/maiden_javelin"
   },
   "ob6": {
     "en": "Glowing Orb",
@@ -4533,7 +5036,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/eagle_orb"
   },
   "ob7": {
     "en": "Crystalline Globe",
@@ -4542,7 +5046,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/sacred_globe"
   },
   "ob8": {
     "en": "Cloudy Sphere",
@@ -4551,7 +5056,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/smoked_sphere"
   },
   "ob9": {
     "en": "Sparkling Ball",
@@ -4560,7 +5066,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/clasped_orb"
   },
   "oba": {
     "en": "Swirling Crystal",
@@ -4569,7 +5076,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "orb/dragon_stone"
   },
   "am6": {
     "en": "Ashwood Bow",
@@ -4578,7 +5086,8 @@
     "table": "weapons",
     "type": "abow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/stag_bow"
   },
   "am7": {
     "en": "Ceremonial Bow",
@@ -4587,7 +5096,8 @@
     "table": "weapons",
     "type": "abow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/reflex_bow"
   },
   "am8": {
     "en": "Ceremonial Spear",
@@ -4596,7 +5106,8 @@
     "table": "weapons",
     "type": "aspe",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/maiden_spear"
   },
   "am9": {
     "en": "Ceremonial Pike",
@@ -4605,7 +5116,8 @@
     "table": "weapons",
     "type": "aspe",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/maiden_pike"
   },
   "ama": {
     "en": "Ceremonial Javelin",
@@ -4614,7 +5126,8 @@
     "table": "weapons",
     "type": "ajav",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/maiden_javelin"
   },
   "obb": {
     "en": "Heavenly Stone",
@@ -4623,7 +5136,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/eagle_orb"
   },
   "obc": {
     "en": "Eldritch Orb",
@@ -4632,7 +5146,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/sacred_globe"
   },
   "obd": {
     "en": "Demon Heart",
@@ -4641,7 +5156,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/smoked_sphere"
   },
   "obe": {
     "en": "Vortex Orb",
@@ -4650,7 +5166,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "orb/clasped_orb"
   },
   "obf": {
     "en": "Dimensional Shard",
@@ -4659,7 +5176,8 @@
     "table": "weapons",
     "type": "orb",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "orb/dragon_stone"
   },
   "amb": {
     "en": "Matriarchal Bow",
@@ -4668,7 +5186,8 @@
     "table": "weapons",
     "type": "abow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/stag_bow"
   },
   "amc": {
     "en": "Grand Matron Bow",
@@ -4677,7 +5196,8 @@
     "table": "weapons",
     "type": "abow",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "bow/reflex_bow"
   },
   "amd": {
     "en": "Matriarchal Spear",
@@ -4686,7 +5206,8 @@
     "table": "weapons",
     "type": "aspe",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/maiden_spear"
   },
   "ame": {
     "en": "Matriarchal Pike",
@@ -4695,7 +5216,8 @@
     "table": "weapons",
     "type": "aspe",
     "w": 2,
-    "h": 4
+    "h": 4,
+    "img": "spear/maiden_pike"
   },
   "amf": {
     "en": "Matriarchal Javelin",
@@ -4704,7 +5226,8 @@
     "table": "weapons",
     "type": "ajav",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "javelin/maiden_javelin"
   },
   "elx": {
     "en": "Elixir",
@@ -4713,7 +5236,8 @@
     "table": "misc",
     "type": "elix",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/elixir"
   },
   "vps": {
     "en": "Stamina Potion",
@@ -4722,7 +5246,8 @@
     "table": "misc",
     "type": "spot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/stamina_potion"
   },
   "yps": {
     "en": "Antidote Potion",
@@ -4731,7 +5256,8 @@
     "table": "misc",
     "type": "apot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/antidote_potion"
   },
   "rvs": {
     "en": "Rejuvenation Potion",
@@ -4740,7 +5266,8 @@
     "table": "misc",
     "type": "rpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/rejuv_potion"
   },
   "rvl": {
     "en": "Full Rejuvenation Potion",
@@ -4749,7 +5276,8 @@
     "table": "misc",
     "type": "rpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/full_rejuv_potion"
   },
   "wms": {
     "en": "Thawing Potion",
@@ -4758,7 +5286,8 @@
     "table": "misc",
     "type": "wpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/thawing_potion"
   },
   "tbk": {
     "en": "Tome of Town Portal",
@@ -4767,7 +5296,8 @@
     "table": "misc",
     "type": "book",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "book/town_portal_book"
   },
   "ibk": {
     "en": "Tome of Identify",
@@ -4776,7 +5306,8 @@
     "table": "misc",
     "type": "book",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "book/identify_book"
   },
   "amu": {
     "en": "Amulet",
@@ -4785,7 +5316,9 @@
     "table": "misc",
     "type": "amul",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "amulet/amulet",
+    "variants": 3
   },
   "vip": {
     "en": "Top of the Horadric Staff",
@@ -4794,7 +5327,9 @@
     "table": "misc",
     "type": "amul",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "amulet/viper_amulet",
+    "variants": 3
   },
   "rin": {
     "en": "Ring",
@@ -4803,7 +5338,9 @@
     "table": "misc",
     "type": "ring",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "ring/ring",
+    "variants": 5
   },
   "gld": {
     "en": "Gold",
@@ -4812,7 +5349,8 @@
     "table": "misc",
     "type": "gold",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gold/gold"
   },
   "bks": {
     "en": "Scroll of Inifuss",
@@ -4821,7 +5359,8 @@
     "table": "misc",
     "type": "ques",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "quest/bark_scroll"
   },
   "bkd": {
     "en": "Key to the Cairn Stones",
@@ -4830,7 +5369,8 @@
     "table": "misc",
     "type": "ques",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "scroll/deciphered_bark_scroll"
   },
   "aqv": {
     "en": "Arrows",
@@ -4839,7 +5379,8 @@
     "table": "misc",
     "type": "bowq",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "quiver/arrows"
   },
   "tch": {
     "en": "Torch",
@@ -4848,7 +5389,8 @@
     "table": "misc",
     "type": "torc",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "torch/torch"
   },
   "cqv": {
     "en": "Bolts",
@@ -4857,7 +5399,8 @@
     "table": "misc",
     "type": "xboq",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "quiver/bolts"
   },
   "tsc": {
     "en": "Scroll of Town Portal",
@@ -4866,7 +5409,8 @@
     "table": "misc",
     "type": "scro",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "scroll/town_portal_scroll"
   },
   "isc": {
     "en": "Scroll of Identify",
@@ -4875,7 +5419,8 @@
     "table": "misc",
     "type": "scro",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "scroll/identify_scroll"
   },
   "hrt": {
     "en": "Heart",
@@ -4884,7 +5429,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/heart"
   },
   "brz": {
     "en": "Brain",
@@ -4893,7 +5439,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/brain"
   },
   "jaw": {
     "en": "Jawbone",
@@ -4902,7 +5449,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/jawbone"
   },
   "eyz": {
     "en": "Eye",
@@ -4911,7 +5459,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/eye"
   },
   "hrn": {
     "en": "Horn",
@@ -4920,7 +5469,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/horn"
   },
   "tal": {
     "en": "Tail",
@@ -4929,7 +5479,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/tail"
   },
   "flg": {
     "en": "Flag",
@@ -4938,7 +5489,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/flag"
   },
   "fng": {
     "en": "Fang",
@@ -4947,7 +5499,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/fang"
   },
   "qll": {
     "en": "Quill",
@@ -4956,7 +5509,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/quill"
   },
   "sol": {
     "en": "Soul",
@@ -4965,7 +5519,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/soul"
   },
   "scz": {
     "en": "Scalp",
@@ -4974,7 +5529,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "scepter/scepter"
   },
   "spe": {
     "en": "Spleen",
@@ -4983,7 +5539,8 @@
     "table": "misc",
     "type": "body",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/soul"
   },
   "key": {
     "en": "Key",
@@ -4992,7 +5549,8 @@
     "table": "misc",
     "type": "key",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "key/skeleton_key"
   },
   "luv": {
     "en": "The Black Tower Key",
@@ -5001,7 +5559,8 @@
     "table": "misc",
     "type": "key",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "key/mephisto_key"
   },
   "j34": {
     "en": "A Jade Figurine",
@@ -5010,7 +5569,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "quest/jade_figurine"
   },
   "g34": {
     "en": "The Golden Bird",
@@ -5019,7 +5579,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "quest/gold_bird"
   },
   "bbb": {
     "en": "Lam Esen's Tome",
@@ -5028,7 +5589,8 @@
     "table": "misc",
     "type": "ques",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "quest/lam_esens_tome"
   },
   "box": {
     "en": "Horadric Cube",
@@ -5037,7 +5599,8 @@
     "table": "misc",
     "type": "ques",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "quest/horadric_cube"
   },
   "tr1": {
     "en": "Horadric Scroll",
@@ -5046,7 +5609,8 @@
     "table": "misc",
     "type": "ques",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "quest/scroll_of_horadric_quest_info"
   },
   "mss": {
     "en": "Mephisto's Soulstone",
@@ -5055,7 +5619,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "quest/mephisto_soul_stone"
   },
   "qey": {
     "en": "Khalim's Eye",
@@ -5064,7 +5629,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/eye"
   },
   "qhr": {
     "en": "Khalim's Heart",
@@ -5073,7 +5639,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/heart"
   },
   "qbr": {
     "en": "Khalim's Brain",
@@ -5082,7 +5649,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/brain"
   },
   "ear": {
     "en": "Ear",
@@ -5091,7 +5659,8 @@
     "table": "misc",
     "type": "play",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/player_ear"
   },
   "gcv": {
     "en": "Chipped Amethyst",
@@ -5100,7 +5669,8 @@
     "table": "misc",
     "type": "gema",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/chipped_amethyst"
   },
   "gfv": {
     "en": "Flawed Amethyst",
@@ -5109,7 +5679,8 @@
     "table": "misc",
     "type": "gema",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawed_amethyst"
   },
   "gsv": {
     "en": "Amethyst",
@@ -5118,7 +5689,8 @@
     "table": "misc",
     "type": "gema",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/amethyst"
   },
   "gzv": {
     "en": "Flawless Amethyst",
@@ -5127,7 +5699,8 @@
     "table": "misc",
     "type": "gema",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawless_amethyst"
   },
   "gpv": {
     "en": "Perfect Amethyst",
@@ -5136,7 +5709,8 @@
     "table": "misc",
     "type": "gema",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/perfect_amethyst"
   },
   "gcy": {
     "en": "Chipped Topaz",
@@ -5145,7 +5719,8 @@
     "table": "misc",
     "type": "gemt",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/chipped_topaz"
   },
   "gfy": {
     "en": "Flawed Topaz",
@@ -5154,7 +5729,8 @@
     "table": "misc",
     "type": "gemt",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawed_topaz"
   },
   "gsy": {
     "en": "Topaz",
@@ -5163,7 +5739,8 @@
     "table": "misc",
     "type": "gemt",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/topaz"
   },
   "gly": {
     "en": "Flawless Topaz",
@@ -5172,7 +5749,8 @@
     "table": "misc",
     "type": "gemt",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawless_topaz"
   },
   "gpy": {
     "en": "Perfect Topaz",
@@ -5181,7 +5759,8 @@
     "table": "misc",
     "type": "gemt",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/perfect_topaz"
   },
   "gcb": {
     "en": "Chipped Sapphire",
@@ -5190,7 +5769,8 @@
     "table": "misc",
     "type": "gems",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/chipped_saphire"
   },
   "gfb": {
     "en": "Flawed Sapphire",
@@ -5199,7 +5779,8 @@
     "table": "misc",
     "type": "gems",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawed_saphire"
   },
   "gsb": {
     "en": "Sapphire",
@@ -5208,7 +5789,8 @@
     "table": "misc",
     "type": "gems",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/saphire"
   },
   "glb": {
     "en": "Flawless Sapphire",
@@ -5217,7 +5799,8 @@
     "table": "misc",
     "type": "gems",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawless_saphire"
   },
   "gpb": {
     "en": "Perfect Sapphire",
@@ -5226,7 +5809,8 @@
     "table": "misc",
     "type": "gems",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/perfect_saphire"
   },
   "gcg": {
     "en": "Chipped Emerald",
@@ -5235,7 +5819,8 @@
     "table": "misc",
     "type": "geme",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/chipped_emerald"
   },
   "gfg": {
     "en": "Flawed Emerald",
@@ -5244,7 +5829,8 @@
     "table": "misc",
     "type": "geme",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawed_emerald"
   },
   "gsg": {
     "en": "Emerald",
@@ -5253,7 +5839,8 @@
     "table": "misc",
     "type": "geme",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/emerald"
   },
   "glg": {
     "en": "Flawless Emerald",
@@ -5262,7 +5849,8 @@
     "table": "misc",
     "type": "geme",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawless_emerald"
   },
   "gpg": {
     "en": "Perfect Emerald",
@@ -5271,7 +5859,8 @@
     "table": "misc",
     "type": "geme",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/perfect_emerald"
   },
   "gcr": {
     "en": "Chipped Ruby",
@@ -5280,7 +5869,8 @@
     "table": "misc",
     "type": "gemr",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/chipped_ruby"
   },
   "gfr": {
     "en": "Flawed Ruby",
@@ -5289,7 +5879,8 @@
     "table": "misc",
     "type": "gemr",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawed_ruby"
   },
   "gsr": {
     "en": "Ruby",
@@ -5298,7 +5889,8 @@
     "table": "misc",
     "type": "gemr",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/ruby"
   },
   "glr": {
     "en": "Flawless Ruby",
@@ -5307,7 +5899,8 @@
     "table": "misc",
     "type": "gemr",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawless_ruby"
   },
   "gpr": {
     "en": "Perfect Ruby",
@@ -5316,7 +5909,8 @@
     "table": "misc",
     "type": "gemr",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/perfect_ruby"
   },
   "gcw": {
     "en": "Chipped Diamond",
@@ -5325,7 +5919,8 @@
     "table": "misc",
     "type": "gemd",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/chipped_diamond"
   },
   "gfw": {
     "en": "Flawed Diamond",
@@ -5334,7 +5929,8 @@
     "table": "misc",
     "type": "gemd",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawed_diamond"
   },
   "gsw": {
     "en": "Diamond",
@@ -5343,7 +5939,8 @@
     "table": "misc",
     "type": "gemd",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/diamond"
   },
   "glw": {
     "en": "Flawless Diamond",
@@ -5352,7 +5949,8 @@
     "table": "misc",
     "type": "gemd",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawless_diamond"
   },
   "gpw": {
     "en": "Perfect Diamond",
@@ -5361,7 +5959,9 @@
     "table": "misc",
     "type": "gemd",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/perfect_diamond",
+    "variants": 6
   },
   "hp1": {
     "en": "Minor Healing Potion",
@@ -5370,7 +5970,8 @@
     "table": "misc",
     "type": "hpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/lesser_healing_potion"
   },
   "hp2": {
     "en": "Light Healing Potion",
@@ -5379,7 +5980,8 @@
     "table": "misc",
     "type": "hpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/light_healing_potion"
   },
   "hp3": {
     "en": "Healing Potion",
@@ -5388,7 +5990,8 @@
     "table": "misc",
     "type": "hpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/healing_potion2"
   },
   "hp4": {
     "en": "Greater Healing Potion",
@@ -5397,7 +6000,8 @@
     "table": "misc",
     "type": "hpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/strong_healing_potion"
   },
   "hp5": {
     "en": "Super Healing Potion",
@@ -5406,7 +6010,8 @@
     "table": "misc",
     "type": "hpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/greater_healing_potion"
   },
   "mp1": {
     "en": "Minor Mana Potion",
@@ -5415,7 +6020,8 @@
     "table": "misc",
     "type": "mpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/lesser_mana_potion"
   },
   "mp2": {
     "en": "Light Mana Potion",
@@ -5424,7 +6030,8 @@
     "table": "misc",
     "type": "mpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/light_mana_potion"
   },
   "mp3": {
     "en": "Mana Potion",
@@ -5433,7 +6040,8 @@
     "table": "misc",
     "type": "mpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/mana_potion2"
   },
   "mp4": {
     "en": "Greater Mana Potion",
@@ -5442,7 +6050,8 @@
     "table": "misc",
     "type": "mpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/strong_mana_potion"
   },
   "mp5": {
     "en": "Super Mana Potion",
@@ -5451,7 +6060,8 @@
     "table": "misc",
     "type": "mpot",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "potion/greater_mana_potion"
   },
   "skc": {
     "en": "Chipped Skull",
@@ -5460,7 +6070,8 @@
     "table": "misc",
     "type": "gemz",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/chipped_skull"
   },
   "skf": {
     "en": "Flawed Skull",
@@ -5469,7 +6080,8 @@
     "table": "misc",
     "type": "gemz",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawed_skull"
   },
   "sku": {
     "en": "Skull",
@@ -5478,7 +6090,8 @@
     "table": "misc",
     "type": "gemz",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/skull"
   },
   "skl": {
     "en": "Flawless Skull",
@@ -5487,7 +6100,8 @@
     "table": "misc",
     "type": "gemz",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/flawless_skull"
   },
   "skz": {
     "en": "Perfect Skull",
@@ -5496,7 +6110,8 @@
     "table": "misc",
     "type": "gemz",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/perfect_skull"
   },
   "hrb": {
     "en": "Herb",
@@ -5505,7 +6120,8 @@
     "table": "misc",
     "type": "herb",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "herb/herb"
   },
   "cm1": {
     "en": "Small Charm",
@@ -5514,7 +6130,9 @@
     "table": "misc",
     "type": "scha",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "charm/charm_small",
+    "variants": 3
   },
   "cm2": {
     "en": "Large Charm",
@@ -5523,7 +6141,9 @@
     "table": "misc",
     "type": "mcha",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "charm/charm_medium",
+    "variants": 3
   },
   "cm3": {
     "en": "Grand Charm",
@@ -5532,7 +6152,9 @@
     "table": "misc",
     "type": "lcha",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "charm/charm_large",
+    "variants": 3
   },
   "r01": {
     "en": "El Rune",
@@ -5541,7 +6163,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/el_rune"
   },
   "r02": {
     "en": "Eld Rune",
@@ -5550,7 +6173,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/eld_rune"
   },
   "r03": {
     "en": "Tir Rune",
@@ -5559,7 +6183,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/tir_rune"
   },
   "r04": {
     "en": "Nef Rune",
@@ -5568,7 +6193,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/nef_rune"
   },
   "r05": {
     "en": "Eth Rune",
@@ -5577,7 +6203,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/eth_rune"
   },
   "r06": {
     "en": "Ith Rune",
@@ -5586,7 +6213,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/ith_rune"
   },
   "r07": {
     "en": "Tal Rune",
@@ -5595,7 +6223,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/tal_rune"
   },
   "r08": {
     "en": "Ral Rune",
@@ -5604,7 +6233,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/ral_rune"
   },
   "r09": {
     "en": "Ort Rune",
@@ -5613,7 +6243,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/ort_rune"
   },
   "r10": {
     "en": "Thul Rune",
@@ -5622,7 +6253,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/thul_rune"
   },
   "r11": {
     "en": "Amn Rune",
@@ -5631,7 +6263,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/amn_rune"
   },
   "r12": {
     "en": "Sol Rune",
@@ -5640,7 +6273,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/sol_rune"
   },
   "r13": {
     "en": "Shael Rune",
@@ -5649,7 +6283,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/shael_rune"
   },
   "r14": {
     "en": "Dol Rune",
@@ -5658,7 +6293,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/dol_rune"
   },
   "r15": {
     "en": "Hel Rune",
@@ -5667,7 +6303,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/hel_rune"
   },
   "r16": {
     "en": "Io Rune",
@@ -5676,7 +6313,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/io_rune"
   },
   "r17": {
     "en": "Lum Rune",
@@ -5685,7 +6323,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/lum_rune"
   },
   "r18": {
     "en": "Ko Rune",
@@ -5694,7 +6333,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/ko_rune"
   },
   "r19": {
     "en": "Fal Rune",
@@ -5703,7 +6343,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/fal_rune"
   },
   "r20": {
     "en": "Lem Rune",
@@ -5712,7 +6353,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/lem_rune"
   },
   "r21": {
     "en": "Pul Rune",
@@ -5721,7 +6363,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/pul_rune"
   },
   "r22": {
     "en": "Um Rune",
@@ -5730,7 +6373,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/um_rune"
   },
   "r23": {
     "en": "Mal Rune",
@@ -5739,7 +6383,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/mal_rune"
   },
   "r24": {
     "en": "Ist Rune",
@@ -5748,7 +6393,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/ist_rune"
   },
   "r25": {
     "en": "Gul Rune",
@@ -5757,7 +6403,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/gul_rune"
   },
   "r26": {
     "en": "Vex Rune",
@@ -5766,7 +6413,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/vex_rune"
   },
   "r27": {
     "en": "Ohm Rune",
@@ -5775,7 +6423,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/ohm_rune"
   },
   "r28": {
     "en": "Lo Rune",
@@ -5784,7 +6433,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/lo_rune"
   },
   "r29": {
     "en": "Sur Rune",
@@ -5793,7 +6443,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/sur_rune"
   },
   "r30": {
     "en": "Ber Rune",
@@ -5802,7 +6453,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/ber_rune"
   },
   "r31": {
     "en": "Jah Rune",
@@ -5811,7 +6463,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/jah_rune"
   },
   "r32": {
     "en": "Cham Rune",
@@ -5820,7 +6473,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/cham_rune"
   },
   "r33": {
     "en": "Zod Rune",
@@ -5829,7 +6483,8 @@
     "table": "misc",
     "type": "rune",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "rune/zod_rune"
   },
   "jew": {
     "en": "Jewel",
@@ -5838,7 +6493,9 @@
     "table": "misc",
     "type": "jewl",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/perfect_diamond",
+    "variants": 6
   },
   "ice": {
     "en": "Malah's Potion",
@@ -5847,7 +6504,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "quest/scroll_of_self_resurrect"
   },
   "0sc": {
     "en": "Scroll of Knowledge",
@@ -5856,7 +6514,8 @@
     "table": "misc",
     "type": "scro",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "scroll/identify_scroll"
   },
   "tr2": {
     "en": "Scroll of Resistance",
@@ -5865,7 +6524,8 @@
     "table": "misc",
     "type": "ques",
     "w": 2,
-    "h": 2
+    "h": 2,
+    "img": "quest/bark_scroll"
   },
   "pk1": {
     "en": "Key of Terror",
@@ -5874,7 +6534,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "key/mephisto_key"
   },
   "pk2": {
     "en": "Key of Hate",
@@ -5883,7 +6544,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "key/mephisto_key"
   },
   "pk3": {
     "en": "Key of Destruction",
@@ -5892,7 +6554,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "key/mephisto_key"
   },
   "dhn": {
     "en": "Diablo's Horn",
@@ -5901,7 +6564,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/fang"
   },
   "bey": {
     "en": "Baal's Eye",
@@ -5910,7 +6574,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/eye"
   },
   "mbr": {
     "en": "Mephisto's Brain",
@@ -5919,7 +6584,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/brain"
   },
   "toa": {
     "en": "Token of Absolution",
@@ -5928,7 +6594,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "quest/token_of_absolution"
   },
   "tes": {
     "en": "Twisted Essence of Suffering",
@@ -5937,7 +6604,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "quest/twisted_essence_of_suffering"
   },
   "ceh": {
     "en": "Charged Essence of Hatred",
@@ -5946,7 +6614,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "quest/charged_essense_of_hatred"
   },
   "bet": {
     "en": "Burning Essence of Terror",
@@ -5955,7 +6624,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "quest/burning_essence_of_terror"
   },
   "fed": {
     "en": "Festering Essence of Destruction",
@@ -5964,7 +6634,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "quest/festering_essence_of_destruction"
   },
   "std": {
     "en": "Standard of Heroes",
@@ -5973,7 +6644,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/flag"
   },
   "xa1": {
     "en": "Western Worldstone Shard",
@@ -5982,7 +6654,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "shard/mote_of_anguish"
   },
   "xa2": {
     "en": "Eastern Worldstone Shard",
@@ -5991,7 +6664,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "shard/mote_of_pain"
   },
   "xa3": {
     "en": "Southern Worldstone Shard",
@@ -6000,7 +6674,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "shard/mote_of_hatred"
   },
   "xa4": {
     "en": "Deep Worldstone Shard",
@@ -6009,7 +6684,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "shard/mote_of_terror"
   },
   "xa5": {
     "en": "Northern Worldstone Shard",
@@ -6018,7 +6694,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "shard/mote_of_destruction"
   },
   "ua1": {
     "en": "Talic's Anguish",
@@ -6027,7 +6704,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "shard/talics_anguish"
   },
   "ua2": {
     "en": "Korlic's Pain",
@@ -6036,7 +6714,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "shard/korlics_pain"
   },
   "ua3": {
     "en": "Madawc's Ire",
@@ -6045,7 +6724,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "shard/madawcs_ire"
   },
   "ua4": {
     "en": "Bul-Kathos' Nightmare",
@@ -6054,7 +6734,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "shard/bulkathos_nightmare"
   },
   "ua5": {
     "en": "Worusk's End",
@@ -6063,7 +6744,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 2
+    "h": 2,
+    "img": "shard/worusks_end"
   },
   "um1": {
     "en": "Defender's Fire",
@@ -6072,7 +6754,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/fragment_cold"
   },
   "um2": {
     "en": "Defender's Bile",
@@ -6081,7 +6764,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/fragment_magic"
   },
   "um3": {
     "en": "Protector's Frost",
@@ -6090,7 +6774,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/fragment_lightning"
   },
   "um4": {
     "en": "Protector's Stone",
@@ -6099,7 +6784,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/fragment_fire"
   },
   "um5": {
     "en": "Guardian's Thunder",
@@ -6108,7 +6794,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/fragment_physical"
   },
   "um6": {
     "en": "Guardian's Light",
@@ -6117,7 +6804,8 @@
     "table": "misc",
     "type": "ques",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "body_part/fragment_poison"
   },
   "cjw": {
     "en": "Jewel",
@@ -6126,7 +6814,9 @@
     "table": "misc",
     "type": "cjwl",
     "w": 1,
-    "h": 1
+    "h": 1,
+    "img": "gem/perfect_diamond",
+    "variants": 6
   },
   "cs2": {
     "en": "Grand Charm",
@@ -6135,6 +6825,8 @@
     "table": "misc",
     "type": "csch",
     "w": 1,
-    "h": 3
+    "h": 3,
+    "img": "charm/charm_large",
+    "variants": 3
   }
 }
