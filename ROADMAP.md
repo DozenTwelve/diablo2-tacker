@@ -2,11 +2,13 @@
 
 Planned work, roughly in order. Nothing here is started yet.
 
-## 1. Load speed
+## 1. Load speed (done)
 
-- Split the generated data (`src/data/*.json`) so each page loads only what it needs, e.g. set data with the sets page.
-- Serve item icons with long-lived cache headers.
-- Keep loaded saves in IndexedDB instead of localStorage, whose ~5 MB limit a large save folder can exceed.
+- Build assets are cached for a year and item icons for 30 days (`public/_headers`, read by Netlify and Cloudflare Pages).
+- Not done, measured first: every page, starting with search, needs the whole catalog (about 190 kB gzipped with React), so
+  splitting the data per page saves little. Item icons already load lazily. A parsed save folder takes about 200 bytes per
+  item in localStorage (1,052 items: 215 kB), far from its ~5 MB limit, and the app already keeps working when storage is
+  full, so IndexedDB can wait until someone hits it.
 
 ## 2. Getting saves in and out
 
