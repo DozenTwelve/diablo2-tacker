@@ -25,9 +25,10 @@ def compatdata(home):
 
 
 def save_dir(home):
-    """The save folder, the most recently used one if several prefixes have D2R."""
+    """The save folder; if several prefixes have D2R, the one with the most recently written save."""
     found = glob.glob(os.path.join(compatdata(home), "*/pfx/drive_c/users/steamuser/Saved Games/Diablo II Resurrected"))
-    return max(found, key=os.path.getmtime) if found else None
+    newest = lambda d: max((os.path.getmtime(os.path.join(d, f)) for f in list_saves(d)), default=0)
+    return max(found, key=newest) if found else None
 
 
 def game_data_dir(home):
@@ -40,7 +41,7 @@ def game_data_dir(home):
 def list_saves(folder):
     if not folder or not os.path.isdir(folder):
         return []
-    return sorted(f for f in os.listdir(folder) if f.lower().endswith(SAVE_EXTENSIONS) and os.path.isfile(os.path.join(folder, f)))
+    return sorted(f for f in os.listdir(folder) if f.endswith(SAVE_EXTENSIONS) and os.path.isfile(os.path.join(folder, f)))
 
 
 def png(width, height, rgba):
@@ -60,6 +61,8 @@ def sprite_to_png(data):
     if data[:4] != b"SpA1":
         raise ValueError("not a SpA1 sprite")
     width, height = struct.unpack_from("<II", data, 8)
+    if len(data) < 40 + width * height * 4:
+        raise ValueError("sprite is cut short")
     return png(width, height, data[40 : 40 + width * height * 4])
 
 
@@ -117,7 +120,16 @@ def write_saves(folder, files, backup_root):
     try:
         _write(folder, files)
     except Exception as e:
-        raise IOError(f"{e}; the saves as they were are backed up in {backup}") from e
+        # Put the folder back as it was: every file now there that the backup doesn't have came from this write
+        try:
+            for name in os.listdir(folder):
+                if not os.path.exists(os.path.join(backup, name)):
+                    os.remove(os.path.join(folder, name))
+            shutil.copytree(backup, folder, dirs_exist_ok=True)
+            restored = "the save folder is back as it was"
+        except Exception:
+            restored = "restoring failed"
+        raise IOError(f"{e}; {restored}, a backup is in {backup}") from e
     return backup
 
 
@@ -131,6 +143,8 @@ def _write(folder, files):
                 shutil.copyfile(source, other)
         with open(target + ".tmp", "wb") as out:
             out.write(f["bytes"])
+            out.flush()
+            os.fsync(out.fileno())
         os.replace(target + ".tmp", target)
     for f in files:
         with open(os.path.join(folder, f["name"]), "rb") as written:
@@ -156,7 +170,13 @@ class Handler(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    def local(self):
+        # A page elsewhere can point its own name at 127.0.0.1 (DNS rebinding); its requests carry that name
+        return self.headers.get("Host") == f"127.0.0.1:{self.server.server_address[1]}"
+
     def do_GET(self):
+        if not self.local():
+            return self.send_error(403)
         path = self.path.split("?")[0]
         folder = self.save_folder()
         if path == "/api/saves":
@@ -181,7 +201,7 @@ class Handler(SimpleHTTPRequestHandler):
         # Only the app's own page: browsers send Origin on every POST, and another site can't send JSON here
         # without a CORS preflight, which this server never answers
         origin = f"http://127.0.0.1:{self.server.server_address[1]}"
-        if self.path != "/api/write" or self.headers.get("Origin") != origin or self.headers.get("Content-Type") != "application/json":
+        if not self.local() or self.path != "/api/write" or self.headers.get("Origin") != origin or self.headers.get("Content-Type") != "application/json":
             return self.send_error(403)
         try:
             body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))

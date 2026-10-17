@@ -37,7 +37,7 @@ try {
   const { statsOf } = await vite.ssrLoadModule("/src/lib/parseSaves.js");
 
   const junkText = (m, lang) => describeStats(statsOf(m.item, codeOfNumber(m.item.code)), lang).join("; ");
-  const files = readdirSync(dir).filter((f) => /\.d2[si]$/i.test(f)).map((name) => ({ name, bytes: new Uint8Array(readFileSync(join(dir, name))) }));
+  const files = readdirSync(dir).filter((f) => /\.d2[si]$/.test(f)).map((name) => ({ name, bytes: new Uint8Array(readFileSync(join(dir, name))) }));
   const { files: changed, saves, report } = organizeFiles(files, wasm, { mode, mules: muleNames, inbox });
 
   console.log(`mode ${mode}: emptying ${report.mules.length} characters into ${report.newMules.length} mules cloned from ${report.template}`);

@@ -108,6 +108,7 @@ const UI = {
     "The saves changed since this page read them (played since?), so nothing was written. They are read again; preview once more.",
     "이 페이지가 읽은 뒤 저장 파일이 바뀌어(게임을 했나요?) 아무것도 쓰지 않았습니다. 다시 읽었으니 다시 미리 보기 하세요.",
   ],
+  readFailed: [(e) => `读取存档失败：${e}`, (e) => `讀取存檔失敗：${e}`, (e) => `Reading the saves failed: ${e}`, (e) => `저장 파일 읽기 실패: ${e}`],
   writeFailed: [(e) => `写入失败：${e}`, (e) => `寫入失敗：${e}`, (e) => `Writing failed: ${e}`, (e) => `쓰기 실패: ${e}`],
   reloadSaves: ["重新读取存档", "重新讀取存檔", "Read saves again", "저장 파일 다시 읽기"],
   savesShort: [(n) => `${n} 个存档`, (n) => `${n} 個存檔`, (n) => `${n} saves`, (n) => `저장 파일 ${n}개`],

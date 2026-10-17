@@ -26,7 +26,7 @@ with tempfile.TemporaryDirectory() as tmp:
     home = os.path.join(tmp, "home")
     saves = os.path.join(tracker.compatdata(home), "123/pfx/drive_c/users/steamuser/Saved Games/Diablo II Resurrected")
     os.makedirs(saves)
-    for name in ["Zanna.d2s", "Mule 二.d2s", "SharedStash.d2i", "Zanna.key"]:
+    for name in ["Zanna.d2s", "Mule 二.d2s", "SharedStash.d2i", "Zanna.key", "OLD.D2S"]:
         open(os.path.join(saves, name), "wb").write(name.encode())
     assert tracker.save_dir(home) == saves
     assert tracker.list_saves(saves) == ["Mule 二.d2s", "SharedStash.d2i", "Zanna.d2s"]
@@ -76,6 +76,23 @@ with tempfile.TemporaryDirectory() as tmp:
     assert open(os.path.join(saves, "UW-A.key"), "rb").read() == b"Zanna.key"  # copied from the template
     assert os.listdir(result["backup"]) and "UW-A.d2s" not in os.listdir(result["backup"])
     assert not [f for f in os.listdir(saves) if f.endswith(".tmp")]
+
+    # A write that fails half way puts the folder back as it was
+    os.mkdir(os.path.join(saves, "Bad.d2s"))
+    before = sorted(os.listdir(saves))
+    broken = [{"name": "UW-B.d2s", "data": base64.b64encode(b"x").decode(), "template": "Zanna"}, {"name": "Bad.d2s", "data": ""}]
+    import time; time.sleep(1)  # backups are named by the second
+    assert post({"files": broken})[0] == 500
+    assert sorted(os.listdir(saves)) == before
+    os.rmdir(os.path.join(saves, "Bad.d2s"))
+
+    # Only requests to 127.0.0.1 itself: another name pointed at it (DNS rebinding) gets nothing
+    request = urllib.request.Request(base + "/api/saves", headers={"Host": "evil.example"})
+    try:
+        urllib.request.urlopen(request)
+        raise AssertionError("served a request for another host")
+    except HTTPError as e:
+        assert e.code == 403
     server.shutdown()
 
 if len(sys.argv) > 1:

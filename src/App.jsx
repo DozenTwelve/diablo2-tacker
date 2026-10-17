@@ -98,7 +98,7 @@ export default function App() {
         <ErrorBoundary key={`${tab}/${name}`} lang={lang} onReset={() => setSaveData(null)}>
           {tab === "search" ? (
             <SearchView owned={owned} lang={lang} />
-          ) : tab === "organize" ? (
+          ) : tab === "organize" && onDeck ? (
             <OrganizeView onWritten={readDeck} lang={lang} />
           ) : tab === "characters" ? (
             saveData && <CharacterView saveData={saveData} name={name} lang={lang} />

@@ -35,7 +35,7 @@ export default function OrganizeView({ onWritten, lang }) {
     Promise.all([deckSaveFiles(), loadParser()]).then(async ([list, parser]) => {
       setFiles(await Promise.all(list.map(async (f) => ({ name: f.name, bytes: new Uint8Array(await f.arrayBuffer()) }))));
       setWasm(parser);
-    });
+    }, (e) => setState({ readError: e.message ?? String(e) }));
   }, [reads]);
 
   // Characters (with their mode) and shared stash pages per mode, from the files as they are now
@@ -52,7 +52,13 @@ export default function OrganizeView({ onWritten, lang }) {
       return { name: name.slice(0, -4), mode: modeOfStash(name), pages };
     });
   }, [files, wasm]);
-  if (!saves) return <PageTitle label={t("organize", lang)} />;
+  if (!saves)
+    return (
+      <>
+        <PageTitle label={t("organize", lang)} />
+        {state.readError && <p className="text-red-400">{t("readFailed", lang, state.readError)}</p>}
+      </>
+    );
 
   const modes = [...new Set(saves.filter((s) => s.level != null).map((s) => s.mode))].sort();
   const current = mode ?? (modes.includes("SoftCore:Modern") ? "SoftCore:Modern" : modes[0]);

@@ -315,9 +315,10 @@ export function organizeFiles(files, wasm, options) {
   const equal = (a, b) => a.length === b.length && a.every((x, i) => x === b[i]);
   // A save must come back byte for byte from its JSON: JavaScript numbers can't hold every 64-bit value
   const saves = files
-    .filter((f) => /\.d2[si]$/i.test(f.name))
+    // Lower case only, as written back: "X.D2S" would come back as a second file "X.d2s" next to it
+    .filter((f) => /\.d2[si]$/.test(f.name))
     .map((f) => {
-      const save = { name: f.name.slice(0, -4), ext: f.name.slice(-3).toLowerCase() };
+      const save = { name: f.name.slice(0, -4), ext: f.name.slice(-3) };
       save.json = parse(save.ext, f.bytes);
       if (!equal(write(save.ext, save.json), f.bytes)) throw new Error(`${f.name} does not round-trip, not touching it`);
       return save;

@@ -2,9 +2,13 @@
 // on the Deck instead of a file picker.
 export const onDeck = import.meta.env.VITE_DECK === "1";
 
+const get = async (url) => {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`${url}: ${response.status}`);
+  return response;
+};
+
 export async function deckSaveFiles() {
-  const names = await (await fetch("/api/saves")).json();
-  return Promise.all(
-    names.map(async (name) => new File([await (await fetch(`/api/saves/${encodeURIComponent(name)}`)).blob()], name)),
-  );
+  const names = await (await get("/api/saves")).json();
+  return Promise.all(names.map(async (name) => new File([await (await get(`/api/saves/${encodeURIComponent(name)}`)).blob()], name)));
 }
