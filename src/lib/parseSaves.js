@@ -1,7 +1,8 @@
 // Parse D2R save files in the browser with the d2s WASM wrapper (wasm/).
 // Output: owners (characters and shared stashes) and a flat list of owned items:
-// { key, code, quality, ethereal, sockets, stats, owner, place, x, y, gfx, count }
-// (x/y: grid position in stash/inventory/cube; gfx: which look a ring, amulet, charm or jewel has),
+// { key, code, quality, ethereal, sockets, stats, owner, place, x, y, slot, gfx, count }
+// (x/y: grid position in stash/inventory/cube; slot: body location when equipped, e.g. "Head";
+// gfx: which look a ring, amulet, charm or jewel has),
 // stats as [statId, layer, value] (see src/lib/stats.js).
 import { codeOfNumber, keyOf } from "./gameData";
 
@@ -47,6 +48,7 @@ function collect(item, owner, place, out) {
     place,
     x: item.position.inv_x,
     y: item.position.inv_y,
+    slot: item.position.mode === "Equipped" ? item.position.body_location : undefined,
     gfx: item.variable_gfx_id ?? undefined,
     count,
   });

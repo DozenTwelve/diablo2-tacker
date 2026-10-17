@@ -4,10 +4,14 @@ import { museumLayout } from "../lib/organize";
 import { t } from "../lib/i18n";
 import { Link } from "../lib/router";
 import StashGrid, { colorOf } from "./StashGrid";
+import Paperdoll from "./Paperdoll";
 
 // Places drawn as grids, with their size in cells; the rest (equipped, belt...) are lists
 const gridSize = (place) =>
   ({ stash: [10, 10], inventory: [10, 4], cube: [3, 4] })[place] ?? (/^shared\d+$/.test(place) ? [10, 10] : null);
+
+// Equipment drawn as the in-game character screen; a mercenary only has these slots
+const DOLLS = { equipped: undefined, merc: ["Head", "Torso", "RightArm", "LeftArm"] };
 
 const MUSEUM = /^(UW|UA|UJ|SET)-/;
 const groupOf = (o) => (!o.cls ? "sharedStash" : o.level > 1 ? "mainCharacters" : MUSEUM.test(o.name) ? "museumMules" : "otherMules");
@@ -66,8 +70,9 @@ function CharacterPage({ saveData, name, lang }) {
   // Museum mules show their empty stash/inventory even when nothing is in it yet
   for (const place of Object.keys(ghosts)) if (!places.some((p) => p.place === place)) places.push({ place, lines: [] });
   const grids = places.filter((p) => gridSize(p.place));
-  const lists = places.filter((p) => !gridSize(p.place));
-  const noPositions = records.some((r) => gridSize(r.place) && r.x == null);
+  const lists = places.filter((p) => !gridSize(p.place) && !(p.place in DOLLS));
+  const dolls = Object.keys(DOLLS).filter((place) => records.some((r) => r.place === place));
+  const noPositions = records.some((r) => (gridSize(r.place) && r.x == null) || (r.place in DOLLS && !r.slot));
 
   return (
     <div className="space-y-4">
@@ -82,6 +87,16 @@ function CharacterPage({ saveData, name, lang }) {
         </p>
       </div>
       {noPositions && <p className="text-sm text-red-400">{t("reloadForGrid", lang)}</p>}
+      {dolls.length > 0 && (
+        <div className="flex flex-wrap gap-8 items-start">
+          {dolls.map((place) => (
+            <div key={place} className="w-full" style={{ maxWidth: 8 * 44 }}>
+              <h3 className="gothic-text-gold mb-2 text-sm">{placeLabel(place, lang)}</h3>
+              <Paperdoll records={records.filter((r) => r.place === place)} slots={DOLLS[place]} lang={lang} />
+            </div>
+          ))}
+        </div>
+      )}
       <div className="flex flex-wrap gap-6 items-start">
         {grids.map(({ place }) => {
           const [w, h] = gridSize(place);

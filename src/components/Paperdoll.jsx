@@ -1,0 +1,74 @@
+import { useState } from "react";
+import { colorOf, ItemImage, Tooltip } from "./StashGrid";
+
+// Equipment slots laid out as the in-game character screen, on an 8 x 7 cell grid: [column, row, width, height].
+// Weapon set II (RightHand/LeftHand) takes the weapon and shield spots when switched to.
+const SLOTS = {
+  Head: [3, 0, 2, 2],
+  Neck: [5, 1, 1, 1],
+  RightArm: [0, 1, 2, 4],
+  Torso: [3, 2, 2, 3],
+  LeftArm: [6, 1, 2, 4],
+  RightRing: [2, 5, 1, 1],
+  Belt: [3, 5, 2, 1],
+  LeftRing: [5, 5, 1, 1],
+  Gloves: [0, 5, 2, 2],
+  Feet: [6, 5, 2, 2],
+};
+const SWITCH = { RightArm: "RightHand", LeftArm: "LeftHand" };
+const CELL = 44;
+
+// records: equipped items (with slot); slots: which slots to draw (a mercenary has fewer)
+export default function Paperdoll({ records, slots = Object.keys(SLOTS), lang }) {
+  const [tip, setTip] = useState(null);
+  const [second, setSecond] = useState(false);
+  const bySlot = new Map(records.map((r) => [r.slot, r]));
+  const hasSwitch = records.some((r) => r.slot === "RightHand" || r.slot === "LeftHand");
+
+  return (
+    <div className="w-full" style={{ maxWidth: 8 * CELL }}>
+      {hasSwitch && (
+        <div className="flex gap-2 mb-2">
+          {["I", "II"].map((label, i) => (
+            <button
+              key={label}
+              className={`gothic-tab-btn ${second === Boolean(i) ? "active" : ""}`}
+              style={{ padding: "0.15rem 0.8rem" }}
+              onClick={() => setSecond(Boolean(i))}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      )}
+      <div
+        className="grid gap-1"
+        style={{ gridTemplateColumns: "repeat(8, minmax(0, 1fr))", gridTemplateRows: "repeat(7, minmax(0, 1fr))", aspectRatio: "8 / 7" }}
+      >
+        {slots.map((slot) => {
+          const [x, y, w, h] = SLOTS[slot];
+          const item = bySlot.get(second && SWITCH[slot] ? SWITCH[slot] : slot);
+          const show = (e) => item && setTip({ item, rect: e.currentTarget.getBoundingClientRect() });
+          return (
+            <div
+              key={slot}
+              onMouseEnter={show}
+              onMouseLeave={() => setTip(null)}
+              onClick={show}
+              className="flex items-center justify-center"
+              style={{
+                gridColumn: `${x + 1} / span ${w}`,
+                gridRow: `${y + 1} / span ${h}`,
+                background: "rgba(0, 0, 0, 0.55)",
+                border: `1px solid ${item ? `${colorOf(item)}66` : "var(--color-border-metal)"}`,
+              }}
+            >
+              {item && <ItemImage item={item} lang={lang} />}
+            </div>
+          );
+        })}
+      </div>
+      {tip && <Tooltip tip={tip} lang={lang} />}
+    </div>
+  );
+}

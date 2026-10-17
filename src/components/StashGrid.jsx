@@ -20,7 +20,7 @@ const CELL = 44; // max cell size in px; the grid shrinks to fit narrow screens
 
 // Item box in game style: name, base (for named items), ethereal/sockets, stats.
 // For a ghost: where else it is owned (main characters...), or "missing"
-function Tooltip({ tip, lang }) {
+export function Tooltip({ tip, lang }) {
   const { item, ghost, rect } = tip;
   const above = rect.top > innerHeight / 2;
   const left = Math.min(Math.max(rect.left + rect.width / 2, 160), innerWidth - 160);
@@ -66,6 +66,17 @@ function Tooltip({ tip, lang }) {
   );
 }
 
+export function ItemImage({ item, ghost, lang }) {
+  const style = ghost
+    ? item.elsewhere.length
+      ? { opacity: 0.55 }
+      : { opacity: 0.25, filter: "grayscale(1)" }
+    : item.ethereal
+      ? { opacity: 0.6 }
+      : undefined;
+  return <img src={imageOf(item)} alt={labelOf(item.key, lang)} loading="lazy" className="w-full h-full object-contain" style={style} />;
+}
+
 // A W x H storage grid as in game. records: items in it, with x/y; ghosts: [{ key, code, x, y }] empty fixed slots.
 export default function StashGrid({ width, height, records, ghosts = [], lang }) {
   const [tip, setTip] = useState(null);
@@ -86,21 +97,7 @@ export default function StashGrid({ width, height, records, ghosts = [], lang })
           background: ghost ? "transparent" : item.ethereal ? "rgba(120, 120, 170, 0.22)" : "rgba(30, 30, 40, 0.6)",
         }}
       >
-        <img
-          src={imageOf(item)}
-          alt={labelOf(item.key, lang)}
-          loading="lazy"
-          className="w-full h-full object-contain"
-          style={
-            ghost
-              ? item.elsewhere.length
-                ? { opacity: 0.55 }
-                : { opacity: 0.25, filter: "grayscale(1)" }
-              : item.ethereal
-                ? { opacity: 0.6 }
-                : undefined
-          }
-        />
+        <ItemImage item={item} ghost={ghost} lang={lang} />
       </div>
     );
   };
