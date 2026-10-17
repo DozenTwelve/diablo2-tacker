@@ -32,4 +32,5 @@ npm run dev
 | `node scripts/gen-images.mjs [dir]` | Convert the game's inventory icons (`data/hd/global/ui/items/*.sprite`) to `public/items/*.webp` (git-ignored: Blizzard art stays out of the repo) |
 | `npm run build:wasm` | Rebuild the save parser (needs Rust, the `wasm32-unknown-unknown` target and `wasm-pack`) |
 | `node scripts/check-saves.mjs <save dir>` | Parse a save folder with the app's code and print a summary |
+| `node scripts/check-props.mjs` | Check every catalog property (uniques, sets, runewords) shows as text |
 | `node scripts/organize.mjs <save dir> <out dir>` | Rearrange level 1 mules and shared stash pages into numbered Barbarian mules; writes only the changed saves to a new folder |

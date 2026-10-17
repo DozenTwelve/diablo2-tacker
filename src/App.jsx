@@ -9,6 +9,8 @@ import CollectionView from "./components/CollectionView";
 import CharacterView from "./components/CharacterView";
 import StackTab, { SECTIONS } from "./components/StackTab";
 import ProgressBar from "./components/ProgressBar";
+import { SET_GREEN } from "./components/StashGrid";
+import { propLines, setBonusLines } from "./lib/props";
 import { Link, usePath } from "./lib/router";
 
 const TABS = ["search", "characters", "uniques", "sets", "runewords", "runes"];
@@ -24,7 +26,18 @@ function collectionGroups(tab, lang) {
     }
     return [...byCategory].map(([title, keys]) => ({ title, keys }));
   }
-  if (tab === "sets") return sets.map((s) => ({ title: nameOf(s, lang), keys: s.items.map(setItemKey) }));
+  if (tab === "sets") {
+    // Set bonuses under each set: for more pieces worn (green), then the full set (gold)
+    return sets.map((s) => ({
+      title: nameOf(s, lang),
+      keys: s.items.map(setItemKey),
+      notes: [
+        ...setBonusLines(s.bonus, lang).map((line) => [SET_GREEN, line]),
+        ["var(--color-gold)", `${t("fullSet", lang)}：`],
+        ...propLines(s.full, lang).map((line) => ["var(--color-gold)", line]),
+      ],
+    }));
+  }
   return [{ title: t("runewords", lang), keys: runewords.map(runewordKey) }];
 }
 

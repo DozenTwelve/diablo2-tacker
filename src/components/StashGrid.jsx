@@ -1,7 +1,7 @@
 import { useState } from "react";
 import items from "../data/items.json";
 import { baseNameOf, catalog, imageOf, labelOf } from "../lib/gameData";
-import { propLines } from "../lib/props";
+import { propLines, setBonusLines } from "../lib/props";
 import { locationLines, statLines } from "../lib/inventory";
 import { t } from "../lib/i18n";
 
@@ -13,22 +13,31 @@ const QUALITY_COLORS = {
   Magic: "#6969ff",
   Craft: "#ffa500",
 };
+export const SET_GREEN = QUALITY_COLORS.Set;
 export const colorOf = (r) => (r.key.startsWith("w:") ? QUALITY_COLORS.Unique : QUALITY_COLORS[r.quality] ?? "#ddd");
 const STAT_COLOR = "#7878f5";
 const GREY = "#8a8a8a";
 
 const CELL = 44; // max cell size in px; the grid shrinks to fit narrow screens
 
-// Item box in game style: name, base (for named items), ethereal/sockets, stats.
-// For a ghost: its catalog properties as ranges, then where else it is owned (main characters...) or "missing".
-// tip.extra: more lines, in gold
+// Item box in game style: name, base (for named items), then ethereal/sockets and stats of an owned item,
+// or for a ghost (not owned here) its catalog properties as ranges; a set item's bonuses for more pieces;
+// for a ghost where else it is owned (main characters...) or "missing"; tip.extra lines in gold.
+const Lines = ({ lines, color }) =>
+  lines.map((line, i) => (
+    <div key={i} style={{ color }}>
+      {line}
+    </div>
+  ));
+
 export function Tooltip({ tip, lang }) {
   const { item, ghost, rect, extra = [] } = tip;
   const above = rect.top > innerHeight / 2;
   const left = Math.min(Math.max(rect.left + rect.width / 2, 160), innerWidth - 160);
   const named = /^[usw]:/.test(item.key) && item.code; // a missing runeword has no base
   const elsewhere = item.elsewhere ?? [];
-  const ranges = ghost ? propLines(catalog.get(item.key)?.names.props ?? [], lang) : [];
+  const entry = catalog.get(item.key)?.names;
+  const nameColor = ghost ? GREY : colorOf(item);
   return (
     <div
       className="fixed z-50 pointer-events-none text-center text-sm leading-snug px-3 py-2"
@@ -41,41 +50,26 @@ export function Tooltip({ tip, lang }) {
         border: "1px solid #3a3a3a",
       }}
     >
-      <div style={{ color: ghost ? GREY : colorOf(item) }}>{labelOf(item.key, lang)}</div>
-      {named && <div style={{ color: ghost ? GREY : colorOf(item) }}>{baseNameOf(item.code, lang)}</div>}
-      {ranges.map((line, i) => (
-        <div key={i} style={{ color: STAT_COLOR }}>
-          {line}
-        </div>
-      ))}
+      <div style={{ color: nameColor }}>{labelOf(item.key, lang)}</div>
+      {named && <div style={{ color: nameColor }}>{baseNameOf(item.code, lang)}</div>}
+      {ghost ? (
+        <Lines lines={propLines(entry?.props ?? [], lang)} color={STAT_COLOR} />
+      ) : (
+        <>
+          {item.ethereal && <div style={{ color: GREY }}>{t("ethereal", lang)}</div>}
+          {item.sockets > 0 && <div style={{ color: GREY }}>{t("sockets", lang, item.sockets)}</div>}
+          <Lines lines={statLines(item, lang)} color={STAT_COLOR} />
+        </>
+      )}
+      <Lines lines={setBonusLines(entry?.bonus, lang)} color={SET_GREEN} />
       {ghost && !elsewhere.length && <div style={{ color: GREY }}>{t("missing", lang)}</div>}
       {ghost && elsewhere.length > 0 && (
         <>
           <div style={{ color: GREY }}>{t("ownedElsewhere", lang)}</div>
-          {locationLines(elsewhere, lang).map((l) => (
-            <div key={l.text} className="gothic-text-gold">
-              {l.text}
-              {l.count > 1 && ` ×${l.count}`}
-            </div>
-          ))}
+          <Lines lines={locationLines(elsewhere, lang).map((l) => `${l.text}${l.count > 1 ? ` ×${l.count}` : ""}`)} color="var(--color-gold)" />
         </>
       )}
-      {extra.map((line) => (
-        <div key={line} className="gothic-text-gold">
-          {line}
-        </div>
-      ))}
-      {!ghost && (
-        <>
-          {item.ethereal && <div style={{ color: GREY }}>{t("ethereal", lang)}</div>}
-          {item.sockets > 0 && <div style={{ color: GREY }}>{t("sockets", lang, item.sockets)}</div>}
-          {statLines(item, lang).map((line, i) => (
-            <div key={i} style={{ color: STAT_COLOR }}>
-              {line}
-            </div>
-          ))}
-        </>
-      )}
+      <Lines lines={extra} color="var(--color-gold)" />
     </div>
   );
 }

@@ -43,6 +43,8 @@ const UI = {
   noResults: ["没有找到", "沒有找到"],
   tooMany: [(n) => `结果太多，只显示前 ${n} 个`, (n) => `結果太多，只顯示前 ${n} 個`],
   missing: ["缺失", "缺失"],
+  setPieces: [(n) => `（${n} 件套装）`, (n) => `（${n} 件套裝）`],
+  fullSet: ["完整套装", "完整套裝"],
   ownedElsewhere: ["已有，不在这个骡子：", "已有，不在這個騾子："],
   missingOnly: ["只看缺失", "只看缺失"],
   ethereal: ["无形", "無形"],

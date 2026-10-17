@@ -4843,6 +4843,16 @@
       "Adds %d-%d poison damage over %d seconds",
       "+ %d-%d 毒素伤害，持续%d秒",
       "附加 %d - %d 毒素傷害，時效 %d 秒"
+    ],
+    "ChronicleItemModifierClassSkillRandom": [
+      "%+d to a random %s Skill %s",
+      "%+d 随机%s技能%s",
+      "%+d 隨機%s技能%s"
+    ],
+    "ChronicleRandomClassSkillLevel": [
+      "%+d to a Random Class' Skill Levels",
+      "+%d 随机职业技能等级",
+      "%+d 隨機職業的技能等級"
     ]
   },
   "properties": {

@@ -109,12 +109,26 @@ for (const r of table("uniqueitems")) {
   }
 }
 
+// Set bonuses as [[pieces worn, props]]: an item's own (setitems aprop1-5, from 2 pieces; "add func" 1 means
+// with specific other pieces instead, shown the same way) and the set's (sets.txt PCode2-5), plus the full set's
+const tiers = (r, from, columns) =>
+  numbered(5, (i) => [i + from - 1, propsOf(r, columns(i))]).filter(([, props]) => props.length);
+const setBonus = new Map(
+  table("sets").map((r) => [
+    r.index,
+    {
+      bonus: tiers(r, 2, (i) => ["a", "b"].map((x) => [`PCode${i + 1}${x}`, `PParam${i + 1}${x}`, `PMin${i + 1}${x}`, `PMax${i + 1}${x}`])),
+      full: propsOf(r, numbered(8, (i) => [`FCode${i}`, `FParam${i}`, `FMin${i}`, `FMax${i}`])),
+    },
+  ]),
+);
 const sets = new Map();
 for (const r of table("setitems")) {
   if (!r["*ID"] || r.disableChronicle === "1") continue;
-  if (!sets.has(r.set)) sets.set(r.set, { ...names(r.set), items: [] });
+  if (!sets.has(r.set)) sets.set(r.set, { ...names(r.set), ...setBonus.get(r.set), items: [] });
   sets.get(r.set).items.push({
     id: Number(r["*ID"]), code: r.item, img: imgOf(setImg, r.index, r.item), ...names(r.index), props: propsOf(r, ITEM_PROPS),
+    bonus: tiers(r, 2, (i) => ["a", "b"].map((x) => [`aprop${i}${x}`, `apar${i}${x}`, `amin${i}${x}`, `amax${i}${x}`])),
   });
 }
 
@@ -194,6 +208,9 @@ for (const key of ["strModMinDamage", "strModFireDamage", "strModColdDamage", "s
   useString(`${key}Range`);
 }
 useString("strModEnhancedDamage");
+// Random skill properties (skill-rand, randclassskill), which have no stat description of their own
+useString("ChronicleItemModifierClassSkillRandom");
+useString("ChronicleRandomClassSkillLevel");
 
 const write = (name, data) => writeFileSync(new URL(`${name}.json`, outDir), JSON.stringify(data, null, 2) + "\n");
 write("uniques", [...uniques.values()]);

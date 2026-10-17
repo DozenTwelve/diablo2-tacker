@@ -2,9 +2,11 @@
 // as the stats a save holds ([statId, layer, value], see src/lib/stats.js), and as description lines with
 // ranges: "+60-70% Enhanced Damage".
 import data from "../data/stats.json";
-import { describeStats } from "./stats";
+import { describeStats, format, str } from "./stats";
+import { t } from "./i18n";
 
-const { stats, properties } = data;
+const { stats, properties, skills } = data;
+const CLASSES = ["Amazon", "Sorceress", "Necromancer", "Paladin", "Barbarian", "Druid", "Assassin", "Warlock"];
 const INDESTRUCTIBLE = 152;
 
 // Stats for the lowest (pick 0) or highest (pick 1) roll. func is the properties.txt function:
@@ -15,6 +17,7 @@ const INDESTRUCTIBLE = 152;
 export function propStats(props, pick) {
   const out = [];
   for (const [code, par, min, max] of props) {
+    if (typeof par === "string") continue; // a param naming no skill (e.g. a visual state)
     const roll = pick ? max : min;
     let prev;
     for (const [func, stat, val] of properties[code] ?? []) {
@@ -51,8 +54,24 @@ function merge(lo, hi) {
   return a.map((part, i) => (i % 2 && part !== b[i] ? `${part}-${b[i]}` : part)).join("");
 }
 
+// Properties shown without a stat: sockets (min-max, or the param), ethereal, random skills
+const span = (min, max) => (min === max ? min : `${min}-${max}`);
+const SPECIAL = {
+  sock: ([, par, min, max], lang) => t("sockets", lang, min || max ? span(min, max) : par),
+  ethereal: (prop, lang) => t("ethereal", lang),
+  // +level to a random skill among skill ids min-max, all of one class
+  "skill-rand": ([, par, min], lang) =>
+    format(str("ChronicleItemModifierClassSkillRandom", lang), [par, t(CLASSES[skills[min]?.cls], lang), ""]).trim(),
+  randclassskill: ([code], lang) => format(str("ChronicleRandomClassSkillLevel", lang), [properties[code][0][2]]),
+};
+
 export function propLines(props, lang) {
+  const special = props.filter(([code]) => SPECIAL[code]).map((prop) => SPECIAL[prop[0]](prop, lang));
   const lo = describeStats(propStats(props, 0), lang);
   const hi = describeStats(propStats(props, 1), lang);
-  return lo.length === hi.length ? lo.map((line, i) => merge(line, hi[i])) : hi;
+  return [...special, ...(lo.length === hi.length ? lo.map((line, i) => merge(line, hi[i])) : hi)];
 }
+
+// Set bonuses ([[pieces worn, props]], see scripts/gen-data.mjs) as lines ending in "(2 Items)"
+export const setBonusLines = (tiers = [], lang) =>
+  tiers.flatMap(([pieces, props]) => propLines(props, lang).map((line) => `${line} ${t("setPieces", lang, pieces)}`));

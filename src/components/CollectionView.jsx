@@ -22,7 +22,8 @@ function Icon({ entryKey, records, lang }) {
 }
 
 // One collection tab: groups of entry keys, each an icon tile, owned or dimmed.
-// Hovering shows an owned copy's stats and where every copy is. groups: [{ title, keys: [key] }]
+// Hovering shows an owned copy's stats and where every copy is.
+// groups: [{ title, keys: [key], notes?: [[color, line]] }] (notes: set bonuses)
 export default function CollectionView({ label, groups, owned, lang }) {
   const [missingOnly, setMissingOnly] = useState(false);
   const [tip, setTip] = useState(null);
@@ -47,7 +48,7 @@ export default function CollectionView({ label, groups, owned, lang }) {
         <input type="checkbox" checked={missingOnly} onChange={(e) => setMissingOnly(e.target.checked)} />
         <span>{t("missingOnly", lang)}</span>
       </label>
-      {groups.map(({ title, keys }) => {
+      {groups.map(({ title, keys, notes = [] }) => {
         const shown = missingOnly ? keys.filter((k) => !owned.has(k)) : keys;
         if (!shown.length) return null;
         return (
@@ -58,6 +59,15 @@ export default function CollectionView({ label, groups, owned, lang }) {
                 ({keys.filter((k) => owned.has(k)).length} / {keys.length})
               </span>
             </h3>
+            {notes.length > 0 && (
+              <div className="text-sm leading-snug mb-4">
+                {notes.map(([color, line], i) => (
+                  <div key={i} style={{ color }}>
+                    {line}
+                  </div>
+                ))}
+              </div>
+            )}
             <div className="grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(88px, 1fr))" }}>
               {shown.map((key) => {
                 const records = owned.get(key);

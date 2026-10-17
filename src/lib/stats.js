@@ -4,10 +4,10 @@ import data from "../data/stats.json";
 
 const { stats, classes, skills, strings } = data;
 const LANG_INDEX = { en: 0, zh: 1, zh_tw: 2 };
-const str = (key, lang) => strings[key]?.[LANG_INDEX[lang]] ?? "";
+export const str = (key, lang) => strings[key]?.[LANG_INDEX[lang]] ?? "";
 
 // The printf subset D2R strings use: %d %+d %s %%. Pre-formatted string args are inserted as is.
-function format(template, args) {
+export function format(template, args) {
   let i = 0;
   return template.replace(/%(\+?)([ds%])/g, (_, plus, type) => {
     if (type === "%") return "%";
