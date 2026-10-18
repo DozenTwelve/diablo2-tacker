@@ -19,12 +19,13 @@ const SLOTS = {
 const SWITCH = { RightArm: "RightHand", LeftArm: "LeftHand" };
 const CELL = 44;
 
-// records: equipped items (with slot); slots: which slots to draw (a mercenary has fewer)
-export default function Paperdoll({ records, slots = Object.keys(SLOTS), lang }) {
+// records: equipped items (with slot); slots: which slots to draw (a mercenary has fewer);
+// onSlot: called with the slot (RightHand/LeftHand for weapon set II) when one is clicked, instead of the tooltip
+export default function Paperdoll({ records, slots = Object.keys(SLOTS), onSlot, lang }) {
   const [tip, setTip] = useTip();
   const [second, setSecond] = useState(false);
   const bySlot = new Map(records.map((r) => [r.slot, r]));
-  const hasSwitch = records.some((r) => r.slot === "RightHand" || r.slot === "LeftHand");
+  const hasSwitch = Boolean(onSlot) || records.some((r) => r.slot === "RightHand" || r.slot === "LeftHand");
 
   return (
     <div className="w-full" style={{ maxWidth: 8 * CELL }}>
@@ -48,7 +49,8 @@ export default function Paperdoll({ records, slots = Object.keys(SLOTS), lang })
       >
         {slots.map((slot) => {
           const [x, y, w, h] = SLOTS[slot];
-          const item = bySlot.get(second && SWITCH[slot] ? SWITCH[slot] : slot);
+          const shown = second && SWITCH[slot] ? SWITCH[slot] : slot;
+          const item = bySlot.get(shown);
           const show = (e) => item && setTip({ item, rect: e.currentTarget.getBoundingClientRect() });
           return (
             <button
@@ -56,7 +58,7 @@ export default function Paperdoll({ records, slots = Object.keys(SLOTS), lang })
               key={slot}
               aria-label={item ? labelOf(item.key, lang) : slot}
               {...tipHandlers(show, setTip)}
-              onClick={show}
+              onClick={onSlot ? () => (setTip(null), onSlot(shown)) : show}
               className="flex items-center justify-center"
               style={{
                 gridColumn: `${x + 1} / span ${w}`,

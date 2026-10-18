@@ -26,9 +26,10 @@ function navigate(path) {
   scrollTo(0, 0);
 }
 
-// <a> that navigates in place; modified clicks (new tab...) keep the browser's behavior
-export function Link({ to, ...props }) {
+// <a> that navigates in place; modified clicks (new tab...) keep the browser's behavior. onClick runs first.
+export function Link({ to, onClick: before, ...props }) {
   const onClick = (e) => {
+    before?.(e);
     if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
     navigate(to);

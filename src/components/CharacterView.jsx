@@ -10,6 +10,7 @@ import Paperdoll from "./Paperdoll";
 import StackTab from "./StackTab";
 import PageTitle from "./PageTitle";
 import BuildGear from "./BuildGear";
+import { buildsOf } from "../lib/builds";
 
 // Places drawn as grids, with their size in cells; the rest (equipped, belt...) are lists
 const gridSize = (place) =>
@@ -135,7 +136,9 @@ function CharacterPage({ saveData, name, lang }) {
   const grids = places.filter((p) => gridSize(p.place));
   const lists = places.filter((p) => !gridSize(p.place) && !(p.place in DOLLS) && p.place !== "advanced");
   const stacked = records.filter((r) => r.place === "advanced");
-  const dolls = Object.keys(DOLLS).filter((place) => records.some((r) => r.place === place));
+  // A main character with builds for its class picks one on its equipment, even with nothing equipped
+  const builds = owner.cls && roleOf(owner, roles) === "main" && buildsOf(owner.cls).length > 0;
+  const dolls = Object.keys(DOLLS).filter((place) => (builds && place === "equipped") || records.some((r) => r.place === place));
   const noPositions = records.some((r) => (gridSize(r.place) && r.x == null) || (r.place in DOLLS && !r.slot));
 
   return (
@@ -154,17 +157,20 @@ function CharacterPage({ saveData, name, lang }) {
       {noPositions && <p className="text-sm text-red-400">{t("reloadForGrid", lang)}</p>}
       {dolls.length > 0 && (
         <div className="flex flex-wrap gap-x-8 gap-y-10 items-start">
-          {dolls.map((place) => (
-            <div key={place} className="w-full" style={{ maxWidth: 8 * 44 }}>
-              <div className="section-head">
-                <h3>{placeLabel(place, lang)}</h3>
+          {dolls.map((place) =>
+            builds && place === "equipped" ? (
+              <BuildGear key={place} owner={owner} records={records.filter((r) => r.place === place)} saveData={saveData} lang={lang} />
+            ) : (
+              <div key={place} className="w-full" style={{ maxWidth: 8 * 44 }}>
+                <div className="section-head">
+                  <h3>{placeLabel(place, lang)}</h3>
+                </div>
+                <Paperdoll records={records.filter((r) => r.place === place)} slots={DOLLS[place]} lang={lang} />
               </div>
-              <Paperdoll records={records.filter((r) => r.place === place)} slots={DOLLS[place]} lang={lang} />
-            </div>
-          ))}
+            ),
+          )}
         </div>
       )}
-      {owner.cls && roleOf(owner, roles) === "main" && <BuildGear owner={owner} saveData={saveData} lang={lang} />}
       <div className="flex flex-wrap gap-x-8 gap-y-10 items-start">
         {grids.map(({ place }) => {
           const [w, h] = gridSize(place);
