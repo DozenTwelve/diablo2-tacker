@@ -9,6 +9,7 @@ import StashGrid, { colorOf } from "./StashGrid";
 import Paperdoll from "./Paperdoll";
 import StackTab from "./StackTab";
 import PageTitle from "./PageTitle";
+import BuildGear from "./BuildGear";
 
 // Places drawn as grids, with their size in cells; the rest (equipped, belt...) are lists
 const gridSize = (place) =>
@@ -123,6 +124,7 @@ function CharacterList({ saveData, lang }) {
 
 // /characters/<name>: storage drawn as in game, other places as lists
 function CharacterPage({ saveData, name, lang }) {
+  const [roles] = useStoredState("roles", {});
   const owner = ownersOf(saveData).find((o) => o.name === name);
   if (!owner) return <p className="gothic-text-muted">{t("noCharacter", lang)}</p>;
   const records = saveData.items.filter((r) => r.owner === name);
@@ -162,6 +164,7 @@ function CharacterPage({ saveData, name, lang }) {
           ))}
         </div>
       )}
+      {owner.cls && roleOf(owner, roles) === "main" && <BuildGear owner={owner} saveData={saveData} lang={lang} />}
       <div className="flex flex-wrap gap-x-8 gap-y-10 items-start">
         {grids.map(({ place }) => {
           const [w, h] = gridSize(place);

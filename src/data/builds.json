@@ -1,0 +1,8605 @@
+[
+ {
+  "id": "lightning-strike-amazon",
+  "cls": "Amazon",
+  "name": {
+   "en": "Lightning Strike",
+   "zh": "闪电打击",
+   "zh_tw": "閃電攻擊",
+   "ko": "번개 타격"
+  },
+  "url": "https://maxroll.gg/d2/guides/lightning-strike-amazon",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Infinity",
+     "note": {
+      "en": "Matriarchal or Maiden Spear",
+      "zh": "女族长矛或处子长矛",
+      "zh_tw": "女傑長矛或女戰長矛",
+      "ko": "메이트리어컬 스피어 또는 메이든 스피어"
+     }
+    },
+    {
+     "item": "Thunderstroke"
+    },
+    {
+     "item": "Titan's Revenge",
+     "note": {
+      "en": "Ethereal, upgraded preferred",
+      "zh": "无形，升级版优先",
+      "zh_tw": "無形，升級版優先",
+      "ko": "에테리얼, 업그레이드 우선"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic javelin: +3 Javelin skills, IAS",
+      "zh": "魔法标枪：+3 标枪和长矛技能、攻速",
+      "zh_tw": "魔法標槍：+3 標槍與長矛技能、攻速",
+      "ko": "마법 재벌린: 투창과 창 기술 +3, 공격 속도"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Stormshield",
+     "note": {
+      "en": "Ber or 5/5 Lightning Facet",
+      "zh": "贝 或 5/5 闪电彩虹魔石",
+      "zh_tw": "貝 或 5/5 閃電彩虹刻面",
+      "ko": "베르 또는 5/5 번개 무지개 자락"
+     }
+    },
+    {
+     "text": {
+      "en": "Monarch: 4x 5/5 Lightning Facets",
+      "zh": "统治者大盾：4x 5/5 闪电彩虹魔石",
+      "zh_tw": "君主盾：4x 5/5 閃電彩虹刻面",
+      "ko": "모너크: 5/5 번개 무지개 자락 4개"
+     }
+    },
+    {
+     "item": "Sanctuary"
+    },
+    {
+     "item": "Moser's Blessed Circle"
+    },
+    {
+     "item": "Rhyme"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms"
+    },
+    {
+     "text": {
+      "en": "Wand: Lower Resist charges",
+      "zh": "魔杖：降低抗性充能",
+      "zh_tw": "魔杖：降低抗性充能",
+      "ko": "원드: 저항 감소 충전"
+     }
+    },
+    {
+     "item": "Naj's Puzzler"
+    },
+    {
+     "text": {
+      "en": "Staff: Teleport charges",
+      "zh": "法杖：传送术充能",
+      "zh_tw": "法杖：傳送術充能",
+      "ko": "스태프: 순간이동 충전"
+     }
+    },
+    {
+     "item": "Harmony"
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    }
+   ],
+   "helm": [
+    {
+     "item": "Griffon's Eye",
+     "note": {
+      "en": "5/5 Lightning Facet, Cham or jewel",
+      "zh": "5/5 闪电彩虹魔石、查姆或珠宝",
+      "zh_tw": "5/5 閃電彩虹刻面、查姆或珠寶",
+      "ko": "5/5 번개 무지개 자락, 참 또는 주얼"
+     }
+    },
+    {
+     "item": "Crown of Ages",
+     "note": {
+      "en": "Cham + Ber or 2x Lightning Facet",
+      "zh": "查姆+贝 或 2x 闪电彩虹魔石",
+      "zh_tw": "查姆+貝 或 2x 閃電彩虹刻面",
+      "ko": "참+베르 또는 번개 무지개 자락 2개"
+     }
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Valkyrie Wing"
+    },
+    {
+     "item": "Kira's Guardian"
+    },
+    {
+     "item": "Rockstopper"
+    },
+    {
+     "item": "Peasant Crown"
+    },
+    {
+     "item": "Tarnhelm"
+    },
+    {
+     "item": "Lore"
+    },
+    {
+     "text": {
+      "en": "Magic 3-socket Crown: 3x P.Topaz or Ral/Ort/Thul",
+      "zh": "魔法 3孔王冠：3x 完美的黄宝石 或 拉尔/欧特/图尔",
+      "zh_tw": "魔法 3孔皇冠：3x 完美黃寶石 或 拉爾/歐特/書爾",
+      "ko": "마법 3소켓 크라운: 최상급 토파즈 3개 또는 랄/오르트/주울"
+     }
+    },
+    {
+     "item": "Ground"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Treachery"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "text": {
+      "en": "Dusk Shroud: 4x Perfect Topaz",
+      "zh": "灰幕寿衣：4x 完美的黄宝石",
+      "zh_tw": "灰暮罩衣：4x 完美黃寶石",
+      "ko": "더스크 슈라우드: 최상급 토파즈 4개"
+     }
+    },
+    {
+     "item": "Duriel's Shell"
+    },
+    {
+     "item": "Peace"
+    },
+    {
+     "item": "Smoke"
+    }
+   ],
+   "gloves": [
+    {
+     "text": {
+      "en": "Rare gloves: +Javelin skills, IAS, resists",
+      "zh": "稀有手套：+标枪和长矛技能、攻速、抗性",
+      "zh_tw": "稀有手套：+標槍與長矛技能、攻速、抗性",
+      "ko": "레어 장갑: 투창과 창 기술, 공격 속도, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic gloves: +3 Javelin skills or Light res, IAS",
+      "zh": "魔法手套：+3 标枪和长矛技能或闪电抗性、攻速",
+      "zh_tw": "魔法手套：+3 標槍與長矛技能或電擊抗性、攻速",
+      "ko": "마법 장갑: 투창과 창 기술 +3 또는 번개 저항, 공격 속도"
+     }
+    },
+    {
+     "item": "Death's Hand",
+     "note": {
+      "en": "2-piece Death's set",
+      "zh": "死神的伪装 2件套",
+      "zh_tw": "死亡的偽裝 2件套",
+      "ko": "죽음의 위장 2세트"
+     }
+    },
+    {
+     "item": "Sander's Taboo"
+    },
+    {
+     "item": "Laying of Hands"
+    }
+   ],
+   "belt": [
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Goldwrap",
+     "note": {
+      "en": "Battle Belt",
+      "zh": "战斗腰带",
+      "zh_tw": "戰鬥腰帶",
+      "ko": "배틀 벨트"
+     }
+    },
+    {
+     "item": "Death's Guard",
+     "note": {
+      "en": "2-piece Death's set",
+      "zh": "死神的伪装 2件套",
+      "zh_tw": "死亡的偽裝 2件套",
+      "ko": "죽음의 위장 2세트"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare belt: life, resists",
+      "zh": "稀有腰带：生命、抗性",
+      "zh_tw": "稀有腰帶：生命、抗性",
+      "ko": "레어 벨트: 생명력, 저항"
+     }
+    },
+    {
+     "item": "Credendum"
+    },
+    {
+     "text": {
+      "en": "Magic belt: Lightning res, life",
+      "zh": "魔法腰带：闪电抗性、生命",
+      "zh_tw": "魔法腰帶：電擊抗性、生命",
+      "ko": "마법 벨트: 번개 저항, 생명력"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "text": {
+      "en": "Rare boots: FRW, FHR, resists",
+      "zh": "稀有靴子：跑速、打击回复、抗性",
+      "zh_tw": "稀有靴子：跑速、打擊恢復、抗性",
+      "ko": "레어 부츠: 이동 속도, 타격 회복, 저항"
+     }
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "Natalya's Soul"
+    },
+    {
+     "text": {
+      "en": "Magic boots: Fire res, FRW",
+      "zh": "魔法靴子：火焰抗性、跑速",
+      "zh_tw": "魔法靴子：火焰抗性、跑速",
+      "ko": "마법 부츠: 화염 저항, 이동 속도"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Highlord's Wrath"
+    },
+    {
+     "item": "The Cat's Eye"
+    },
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "text": {
+      "en": "Magic amulet: all resists",
+      "zh": "魔法护符：所有抗性",
+      "zh_tw": "魔法護身符：所有抗性",
+      "ko": "마법 목걸이: 모든 저항"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "Raven Frost"
+    },
+    {
+     "text": {
+      "en": "Rare ring: AR, Dex, life, resists",
+      "zh": "稀有戒指：命中值、敏捷、生命、抗性",
+      "zh_tw": "稀有戒指：準確率、敏捷、生命、抗性",
+      "ko": "레어 반지: 명중률, 민첩, 생명력, 저항"
+     }
+    },
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Nature's Peace"
+    },
+    {
+     "item": "Dwarf Star"
+    },
+    {
+     "item": "Nagelring"
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Javelin skills, life / FHR / FRW",
+      "zh": "巨型神符：+1 标枪和长矛技能，生命/打击回复/跑速",
+      "zh_tw": "特大咒符：+1 標槍與長矛技能，生命/打擊恢復/跑速",
+      "ko": "거대 부적: 투창과 창 기술 +1, 생명력/타격 회복/이동 속도"
+     }
+    },
+    {
+     "text": {
+      "en": "Grand charms: resists, FHR / FRW",
+      "zh": "巨型神符：抗性，打击回复/跑速",
+      "zh_tw": "特大咒符：抗性，打擊恢復/跑速",
+      "ko": "거대 부적: 저항, 타격 회복/이동 속도"
+     }
+    },
+    {
+     "text": {
+      "en": "Large charms: life, resists",
+      "zh": "大型神符：生命、抗性",
+      "zh_tw": "大型咒符：生命、抗性",
+      "ko": "큰 부적: 생명력, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Small charms: life, resists, MF, FHR / FRW",
+      "zh": "小型神符：生命、抗性、MF，打击回复/跑速",
+      "zh_tw": "小型咒符：生命、抗性、MF，打擊恢復/跑速",
+      "ko": "작은 부적: 생명력, 저항, MF, 타격 회복/이동 속도"
+     }
+    },
+    {
+     "item": "Crack of the Heavens"
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Amazon",
+      "zh": "亚马逊",
+      "zh_tw": "亞馬遜",
+      "ko": "아마존"
+     }
+    },
+    {
+     "item": "Annihilus"
+    }
+   ]
+  }
+ },
+ {
+  "id": "lightning-fury-amazon-guide",
+  "cls": "Amazon",
+  "name": {
+   "en": "Lightning Fury",
+   "zh": "闪电之怒",
+   "zh_tw": "閃電之怒",
+   "ko": "번개 분노"
+  },
+  "url": "https://maxroll.gg/d2/guides/lightning-fury-amazon-guide",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Titan's Revenge",
+     "note": {
+      "en": "Ethereal, upgraded preferred",
+      "zh": "无形，升级版优先",
+      "zh_tw": "無形，升級版優先",
+      "ko": "에테리얼, 업그레이드 우선"
+     }
+    },
+    {
+     "item": "Thunderstroke"
+    },
+    {
+     "text": {
+      "en": "Magic javelin: +3 Javelin skills, IAS",
+      "zh": "魔法标枪：+3 标枪和长矛技能、攻速",
+      "zh_tw": "魔法標槍：+3 標槍與長矛技能、攻速",
+      "ko": "마법 재벌린: 투창과 창 기술 +3, 공격 속도"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Phoenix",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Stormshield"
+    },
+    {
+     "text": {
+      "en": "Magic Monarch: 4x Rainbow Facets",
+      "zh": "魔法统治者大盾：4x 彩虹魔石",
+      "zh_tw": "魔法君主盾：4x 彩虹刻面",
+      "ko": "마법 모너크: 무지개 자락 4개"
+     }
+    },
+    {
+     "item": "Sanctuary",
+     "note": {
+      "en": "Troll Nest",
+      "zh": "巨魔巢",
+      "zh_tw": "食人妖骨盾",
+      "ko": "트롤 네스트"
+     }
+    },
+    {
+     "item": "Rhyme",
+     "note": {
+      "en": "Bone Shield",
+      "zh": "骨盾",
+      "zh_tw": "骨盾",
+      "ko": "본 쉴드"
+     }
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms"
+    },
+    {
+     "text": {
+      "en": "Wand: Lower Resist charges",
+      "zh": "魔杖：降低抗性充能",
+      "zh_tw": "魔杖：降低抗性充能",
+      "ko": "원드: 저항 감소 충전"
+     }
+    },
+    {
+     "item": "Naj's Puzzler"
+    },
+    {
+     "text": {
+      "en": "Staff: Teleport charges",
+      "zh": "法杖：传送术充能",
+      "zh_tw": "法杖：傳送術充能",
+      "ko": "스태프: 순간이동 충전"
+     }
+    },
+    {
+     "item": "Harmony"
+    },
+    {
+     "item": "Mania"
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Phoenix",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Lidless Wall"
+    }
+   ],
+   "helm": [
+    {
+     "item": "Griffon's Eye"
+    },
+    {
+     "item": "Kira's Guardian"
+    },
+    {
+     "item": "Rockstopper"
+    },
+    {
+     "item": "Tarnhelm"
+    },
+    {
+     "item": "Peasant Crown"
+    },
+    {
+     "item": "Wisdom"
+    },
+    {
+     "item": "Lore"
+    },
+    {
+     "item": "Ground"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Treachery"
+    },
+    {
+     "item": "Hysteria"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Duriel's Shell"
+    },
+    {
+     "item": "Peace"
+    },
+    {
+     "item": "Smoke"
+    }
+   ],
+   "gloves": [
+    {
+     "text": {
+      "en": "Rare gloves: +Javelin skills, IAS, resists",
+      "zh": "稀有手套：+标枪和长矛技能、攻速、抗性",
+      "zh_tw": "稀有手套：+標槍與長矛技能、攻速、抗性",
+      "ko": "레어 장갑: 투창과 창 기술, 공격 속도, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic gloves: +3 Javelin skills, IAS",
+      "zh": "魔法手套：+3 标枪和长矛技能、攻速",
+      "zh_tw": "魔法手套：+3 標槍與長矛技能、攻速",
+      "ko": "마법 장갑: 투창과 창 기술 +3, 공격 속도"
+     }
+    },
+    {
+     "item": "Death's Hand",
+     "note": {
+      "en": "2-piece Death's set",
+      "zh": "死神的伪装 2件套",
+      "zh_tw": "死亡的偽裝 2件套",
+      "ko": "죽음의 위장 2세트"
+     }
+    },
+    {
+     "item": "Sander's Taboo"
+    },
+    {
+     "item": "Laying of Hands"
+    }
+   ],
+   "belt": [
+    {
+     "item": "Razortail"
+    },
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Goldwrap",
+     "note": {
+      "en": "Battle Belt, upgraded",
+      "zh": "战斗腰带，升级版",
+      "zh_tw": "戰鬥腰帶，升級版",
+      "ko": "배틀 벨트, 업그레이드"
+     }
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Nosferatu's Coil"
+    },
+    {
+     "item": "Death's Guard",
+     "note": {
+      "en": "Upgraded, 2-piece Death's set",
+      "zh": "升级版，死神的伪装 2件套",
+      "zh_tw": "升級版，死亡的偽裝 2件套",
+      "ko": "업그레이드, 죽음의 위장 2세트"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "Silkweave"
+    },
+    {
+     "item": "Horazon's Legacy"
+    },
+    {
+     "text": {
+      "en": "Rare boots: FRW, FHR, resists",
+      "zh": "稀有靴子：跑速、打击回复、抗性",
+      "zh_tw": "稀有靴子：跑速、打擊恢復、抗性",
+      "ko": "레어 부츠: 이동 속도, 타격 회복, 저항"
+     }
+    },
+    {
+     "item": "Natalya's Soul"
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Highlord's Wrath"
+    },
+    {
+     "item": "The Cat's Eye"
+    },
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 skills, FCR",
+      "zh": "施法者合成护符：+2 技能、施法速度",
+      "zh_tw": "施法者合成護身符：+2 技能、施法速度",
+      "ko": "시전자 제작 목걸이: 기술 +2, 시전 속도"
+     }
+    },
+    {
+     "item": "Mara's Kaleidoscope"
+    }
+   ],
+   "ring": [
+    {
+     "item": "Raven Frost"
+    },
+    {
+     "text": {
+      "en": "Rare ring: AR, Dex, life, resists",
+      "zh": "稀有戒指：命中值、敏捷、生命、抗性",
+      "zh_tw": "稀有戒指：準確率、敏捷、生命、抗性",
+      "ko": "레어 반지: 명중률, 민첩, 생명력, 저항"
+     }
+    },
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Nature's Peace"
+    },
+    {
+     "item": "Dwarf Star"
+    },
+    {
+     "item": "Manald Heal"
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "text": {
+      "en": "Magic ring: MF",
+      "zh": "魔法戒指：MF",
+      "zh_tw": "魔法戒指：MF",
+      "ko": "마법 반지: MF"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Javelin skills, life / FHR / FRW",
+      "zh": "巨型神符：+1 标枪和长矛技能，生命/打击回复/跑速",
+      "zh_tw": "特大咒符：+1 標槍與長矛技能，生命/打擊恢復/跑速",
+      "ko": "거대 부적: 투창과 창 기술 +1, 생명력/타격 회복/이동 속도"
+     }
+    },
+    {
+     "text": {
+      "en": "Large charms: life, resists",
+      "zh": "大型神符：生命、抗性",
+      "zh_tw": "大型咒符：生命、抗性",
+      "ko": "큰 부적: 생명력, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Small charms: life, resists, MF",
+      "zh": "小型神符：生命、抗性、MF",
+      "zh_tw": "小型咒符：生命、抗性、MF",
+      "ko": "작은 부적: 생명력, 저항, MF"
+     }
+    },
+    {
+     "item": "Renewed Crack of the Heavens"
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch"
+    },
+    {
+     "item": "Annihilus"
+    }
+   ]
+  }
+ },
+ {
+  "id": "strafe-amazon",
+  "cls": "Amazon",
+  "name": {
+   "en": "Strafe",
+   "zh": "扫射",
+   "zh_tw": "掃射",
+   "ko": "난사"
+  },
+  "url": "https://maxroll.gg/d2/guides/strafe-amazon",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Faith",
+     "note": {
+      "en": "Grand Matron Bow",
+      "zh": "仕女长之弓",
+      "zh_tw": "主母之弓",
+      "ko": "그랜드 메이트런 보우"
+     }
+    },
+    {
+     "item": "Windforce"
+    },
+    {
+     "item": "Mist",
+     "note": {
+      "en": "Matriarchal Bow",
+      "zh": "女族长弓",
+      "zh_tw": "女傑之弓",
+      "ko": "메이트리어컬 보우"
+     }
+    },
+    {
+     "item": "M'avina's Caster"
+    },
+    {
+     "item": "Buriza-Do Kyanon",
+     "note": {
+      "en": "Upgraded optional",
+      "zh": "可升级",
+      "zh_tw": "可升級",
+      "ko": "업그레이드 가능"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare bow: ED, IAS",
+      "zh": "稀有弓：强化伤害、攻速",
+      "zh_tw": "稀有弓：傷害強化、攻速",
+      "ko": "레어 활: 피해 증가, 공격 속도"
+     }
+    },
+    {
+     "item": "Eaglehorn"
+    }
+   ],
+   "offhand": [
+    {
+     "text": {
+      "en": "Arrows or bolts",
+      "zh": "箭矢或弩矢",
+      "zh_tw": "弓矢或弩箭",
+      "ko": "화살 또는 쇠뇌용 화살"
+     }
+    }
+   ],
+   "swap": [
+    {
+     "item": "Mania"
+    },
+    {
+     "item": "Demon Limb"
+    },
+    {
+     "item": "Call to Arms",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Naj's Puzzler"
+    },
+    {
+     "item": "Spellsteel"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    }
+   ],
+   "helm": [
+    {
+     "item": "Guillaume's Face"
+    },
+    {
+     "text": {
+      "en": "Magic socketed Diadem",
+      "zh": "魔法带孔权冠",
+      "zh_tw": "魔法帶孔權冠",
+      "ko": "마법 소켓 다이어뎀"
+     }
+    },
+    {
+     "item": "Andariel's Visage"
+    },
+    {
+     "item": "Wisdom",
+     "note": {
+      "en": "Diadem",
+      "zh": "权冠",
+      "zh_tw": "權冠",
+      "ko": "다이어뎀"
+     }
+    },
+    {
+     "item": "Giant Skull"
+    },
+    {
+     "item": "Stealskull"
+    },
+    {
+     "item": "M'avina's True Sight"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Bulwark"
+    },
+    {
+     "item": "Sigon's Visor",
+     "note": {
+      "en": "3-piece Sigon's set",
+      "zh": "西刚的全身甲胄 3件套",
+      "zh_tw": "西剛的全套鋼甲 3件套",
+      "ko": "시곤의 온전한 강철 3세트"
+     }
+    }
+   ],
+   "armor": [
+    {
+     "item": "Fortitude"
+    },
+    {
+     "text": {
+      "en": "Magic socketed Dusk Shroud",
+      "zh": "魔法带孔灰幕寿衣",
+      "zh_tw": "魔法帶孔灰暮罩衣",
+      "ko": "마법 소켓 더스크 슈라우드"
+     }
+    },
+    {
+     "item": "Treachery"
+    },
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "M'avina's Embrace"
+    },
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Lionheart"
+    },
+    {
+     "item": "Twitchthroe"
+    },
+    {
+     "item": "Tyrael's Might"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Laying of Hands"
+    },
+    {
+     "item": "Lava Gout"
+    },
+    {
+     "item": "Death's Hand"
+    },
+    {
+     "item": "M'avina's Icy Clutch"
+    },
+    {
+     "text": {
+      "en": "Hit Power crafted gloves",
+      "zh": "打击合成手套",
+      "zh_tw": "打擊合成手套",
+      "ko": "타격 제작 장갑"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare gloves: IAS, Dex, resists",
+      "zh": "稀有手套：攻速、敏捷、抗性",
+      "zh_tw": "稀有手套：攻速、敏捷、抗性",
+      "ko": "레어 장갑: 공격 속도, 민첩, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic gloves: +3 Bow skills, IAS",
+      "zh": "魔法手套：+3 弓和弩技能、攻速",
+      "zh_tw": "魔法手套：+3 弓與弩技能、攻速",
+      "ko": "마법 장갑: 활과 쇠뇌 기술 +3, 공격 속도"
+     }
+    },
+    {
+     "item": "Sigon's Gage",
+     "note": {
+      "en": "3-piece Sigon's set",
+      "zh": "西刚的全身甲胄 3件套",
+      "zh_tw": "西剛的全套鋼甲 3件套",
+      "ko": "시곤의 온전한 강철 3세트"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Razortail"
+    },
+    {
+     "item": "Death's Guard"
+    },
+    {
+     "item": "Nosferatu's Coil"
+    },
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "item": "M'avina's Tenet"
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "Gore Rider"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "text": {
+      "en": "Rare boots: FRW, FHR, resists",
+      "zh": "稀有靴子：跑速、打击回复、抗性",
+      "zh_tw": "稀有靴子：跑速、打擊恢復、抗性",
+      "ko": "레어 부츠: 이동 속도, 타격 회복, 저항"
+     }
+    },
+    {
+     "item": "Sigon's Sabot",
+     "note": {
+      "en": "3-piece Sigon's set",
+      "zh": "西刚的全身甲胄 3件套",
+      "zh_tw": "西剛的全套鋼甲 3件套",
+      "ko": "시곤의 온전한 강철 3세트"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Atma's Scarab"
+    },
+    {
+     "item": "Highlord's Wrath"
+    },
+    {
+     "item": "The Cat's Eye"
+    },
+    {
+     "item": "Metalgrid"
+    },
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "text": {
+      "en": "Blood crafted amulet",
+      "zh": "鲜血合成护符",
+      "zh_tw": "鮮血合成護身符",
+      "ko": "피 제작 목걸이"
+     }
+    },
+    {
+     "item": "Angelic Wings",
+     "note": {
+      "en": "2-piece Angelic set",
+      "zh": "天使的装束 2件套",
+      "zh_tw": "天使的衣裝 2件套",
+      "ko": "천사의 의복 2세트"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "Raven Frost"
+    },
+    {
+     "text": {
+      "en": "Blood crafted ring",
+      "zh": "鲜血合成戒指",
+      "zh_tw": "鮮血合成戒指",
+      "ko": "피 제작 반지"
+     }
+    },
+    {
+     "item": "Angelic Halo",
+     "note": {
+      "en": "2-piece Angelic set",
+      "zh": "天使的装束 2件套",
+      "zh_tw": "天使的衣裝 2件套",
+      "ko": "천사의 의복 2세트"
+     }
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Bow skills, life / FHR / FRW",
+      "zh": "巨型神符：+1 弓和弩技能，生命/打击回复/跑速",
+      "zh_tw": "特大咒符：+1 弓與弩技能，生命/打擊恢復/跑速",
+      "ko": "거대 부적: 활과 쇠뇌 기술 +1, 생명력/타격 회복/이동 속도"
+     }
+    },
+    {
+     "text": {
+      "en": "Large charms: life, resists",
+      "zh": "大型神符：生命、抗性",
+      "zh_tw": "大型咒符：生命、抗性",
+      "ko": "큰 부적: 생명력, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Small charms: life, resists, MF",
+      "zh": "小型神符：生命、抗性、MF",
+      "zh_tw": "小型咒符：生命、抗性、MF",
+      "ko": "작은 부적: 생명력, 저항, MF"
+     }
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Hellfire Torch"
+    },
+    {
+     "item": "Bone Break"
+    }
+   ]
+  }
+ },
+ {
+  "id": "enchant-sorceress",
+  "cls": "Sorceress",
+  "name": {
+   "en": "Enchant",
+   "zh": "附魔",
+   "zh_tw": "附魔",
+   "ko": "인챈트"
+  },
+  "url": "https://maxroll.gg/d2/guides/enchant-sorceress",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Demon Machine",
+     "note": {
+      "en": "Demon Crossbow, upgraded",
+      "zh": "恶魔弩，升级",
+      "zh_tw": "惡魔弩，升級",
+      "ko": "데몬 크로스보우, 업그레이드"
+     }
+    },
+    {
+     "item": "Raven Claw"
+    },
+    {
+     "item": "Widowmaker"
+    },
+    {
+     "text": {
+      "en": "Magic Eldritch Orb: +3 Fire skills, 2x Fire Facets",
+      "zh": "魔法怪异法珠：+3 火焰技能，2 颗火焰彩虹魔石",
+      "zh_tw": "魔法異能法珠：+3 火焰技能，2 顆火焰彩虹刻面",
+      "ko": "매직 엘드리치 오브: 화염 기술 +3, 화염 무지개 자락 2개"
+     }
+    },
+    {
+     "item": "Eschuta's Temper"
+    },
+    {
+     "item": "Leaf"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "text": {
+      "en": "Bolts / Arrows (with crossbow / bow)",
+      "zh": "弩矢 / 箭矢（配合弩 / 弓）",
+      "zh_tw": "弩箭 / 弓矢（搭配弩 / 弓）",
+      "ko": "쇠뇌용 화살 / 화살 (쇠뇌 / 활 사용 시)"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms"
+    },
+    {
+     "item": "Memory"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Lidless Wall"
+    },
+    {
+     "item": "Splendor"
+    }
+   ],
+   "helm": [
+    {
+     "item": "Flickering Flame"
+    },
+    {
+     "item": "Crown of Ages",
+     "note": {
+      "en": "2x 5/5 Fire Facets",
+      "zh": "2 颗 5/5 火焰彩虹魔石",
+      "zh_tw": "2 顆 5/5 火焰彩虹刻面",
+      "ko": "5/5 화염 무지개 자락 2개"
+     }
+    },
+    {
+     "item": "Andariel's Visage",
+     "note": {
+      "en": "Ethereal",
+      "zh": "无形",
+      "zh_tw": "無形",
+      "ko": "에테리얼"
+     }
+    },
+    {
+     "item": "Hellwarden's Will"
+    },
+    {
+     "item": "Coven"
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Wisdom"
+    },
+    {
+     "item": "Tarnhelm"
+    },
+    {
+     "item": "Lore"
+    },
+    {
+     "text": {
+      "en": "Magic diadem / circlet: +3 Fire skills, Fire Facets",
+      "zh": "魔法权冠 / 头环：+3 火焰技能，火焰彩虹魔石",
+      "zh_tw": "魔法權冠 / 頭環：+3 火焰技能，火焰彩虹刻面",
+      "ko": "매직 다이어뎀 / 써클릿: 화염 기술 +3, 화염 무지개 자락"
+     }
+    }
+   ],
+   "armor": [
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Ormus' Robes"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Tal Rasha's Guardianship",
+     "note": {
+      "en": "3-piece Tal Rasha's set",
+      "zh": "塔·拉夏的裹身布 3件",
+      "zh_tw": "塔拉夏的外袍 3件",
+      "ko": "탈 라샤 세트 3부위"
+     }
+    },
+    {
+     "item": "Guardian Angel"
+    },
+    {
+     "item": "Treachery"
+    },
+    {
+     "item": "Enlightenment"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Magefist"
+    },
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "text": {
+      "en": "Rare gloves: IAS, resists, MF, Str",
+      "zh": "稀有手套：攻速、抗性、MF、力量",
+      "zh_tw": "稀有手套：攻速、抗性、MF、力量",
+      "ko": "레어 장갑: 공속, 저항, 매찬, 힘"
+     }
+    },
+    {
+     "item": "Frostburn"
+    },
+    {
+     "item": "Death's Hand",
+     "note": {
+      "en": "2-piece Death's set",
+      "zh": "死神的伪装 2件",
+      "zh_tw": "死亡的偽裝 2件",
+      "ko": "죽음 세트 2부위"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Razortail"
+    },
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "text": {
+      "en": "Caster crafted belt: FCR, mana",
+      "zh": "施法者合成腰带：快速施法、法力",
+      "zh_tw": "施法者合成腰帶：快速施法、法力",
+      "ko": "캐스터 조합 벨트: 시전 속도, 마나"
+     }
+    },
+    {
+     "item": "Tal Rasha's Fine-Spun Cloth",
+     "note": {
+      "en": "3-piece Tal Rasha's set",
+      "zh": "塔·拉夏的裹身布 3件",
+      "zh_tw": "塔拉夏的外袍 3件",
+      "ko": "탈 라샤 세트 3부위"
+     }
+    },
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Death's Guard",
+     "note": {
+      "en": "2-piece Death's set, Demonhide Sash",
+      "zh": "死神的伪装 2件，恶魔皮带",
+      "zh_tw": "死亡的偽裝 2件，魔皮束帶",
+      "ko": "죽음 세트 2부위, 데몬하이드 새시"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "text": {
+      "en": "Rare boots: FRW, FHR, resists, MF",
+      "zh": "稀有靴子：跑速、快速打击恢复、抗性、MF",
+      "zh_tw": "稀有靴子：跑速、快速打擊恢復、抗性、MF",
+      "ko": "레어 부츠: 이속, 타격 회복, 저항, 매찬"
+     }
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "Sander's Riprap"
+    }
+   ],
+   "amulet": [
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 Sorc skills, FCR, resists",
+      "zh": "施法者合成护符：+2 法师技能、快速施法、抗性",
+      "zh_tw": "施法者合成護身符：+2 魔法師技能、快速施法、抗性",
+      "ko": "캐스터 조합 목걸이: 소서리스 기술 +2, 시전 속도, 저항"
+     }
+    },
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "item": "Tal Rasha's Adjudication",
+     "note": {
+      "en": "3-piece Tal Rasha's set",
+      "zh": "塔·拉夏的裹身布 3件",
+      "zh_tw": "塔拉夏的外袍 3件",
+      "ko": "탈 라샤 세트 3부위"
+     }
+    },
+    {
+     "item": "Highlord's Wrath"
+    },
+    {
+     "text": {
+      "en": "Magic amulet: +3 Fire skills, FCR",
+      "zh": "魔法护符：+3 火焰技能、快速施法",
+      "zh_tw": "魔法護身符：+3 火焰技能、快速施法",
+      "ko": "매직 목걸이: 화염 기술 +3, 시전 속도"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "Raven Frost"
+    },
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Sling"
+    },
+    {
+     "item": "Opalvein"
+    },
+    {
+     "text": {
+      "en": "Rare rings: FCR, mana, resists, life / leech",
+      "zh": "稀有戒指：快速施法、法力、抗性、生命 / 吸取",
+      "zh_tw": "稀有戒指：快速施法、法力、抗性、生命 / 吸取",
+      "ko": "레어 반지: 시전 속도, 마나, 저항, 생명력 / 흡수"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic ring: 40% MF",
+      "zh": "魔法戒指：40% MF",
+      "zh_tw": "魔法戒指：40% MF",
+      "ko": "매직 반지: 매찬 40%"
+     }
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "item": "Wisp Projector"
+    },
+    {
+     "item": "Dwarf Star"
+    },
+    {
+     "item": "Nature's Peace"
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Fire skills, life",
+      "zh": "巨型神符：+1 火焰技能、生命",
+      "zh_tw": "特大咒符：+1 火焰技能、生命",
+      "ko": "거대 부적: 화염 기술 +1, 생명력"
+     }
+    },
+    {
+     "text": {
+      "en": "Large / small charms: FHR, life, mana, resists, MF",
+      "zh": "大型 / 小型神符：快速打击恢复、生命、法力、抗性、MF",
+      "zh_tw": "大型 / 小型咒符：快速打擊恢復、生命、法力、抗性、MF",
+      "ko": "큰 / 작은 부적: 타격 회복, 생명력, 마나, 저항, 매찬"
+     }
+    },
+    {
+     "item": "Renewed Flame Rift"
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Sorceress",
+      "zh": "法师",
+      "zh_tw": "魔法師",
+      "ko": "소서리스"
+     }
+    },
+    {
+     "item": "Annihilus"
+    }
+   ]
+  }
+ },
+ {
+  "id": "blizzard-sorceress",
+  "cls": "Sorceress",
+  "name": {
+   "en": "Blizzard",
+   "zh": "暴风雪",
+   "zh_tw": "暴風雪",
+   "ko": "눈보라"
+  },
+  "url": "https://maxroll.gg/d2/guides/blizzard-sorceress",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Doom",
+     "note": {
+      "en": "Double Axe",
+      "zh": "双刃斧",
+      "zh_tw": "雙刃斧",
+      "ko": "더블 액스"
+     }
+    },
+    {
+     "item": "Heart of the Oak"
+    },
+    {
+     "item": "Obsession",
+     "note": {
+      "en": "Archon Staff",
+      "zh": "统治者之杖",
+      "zh_tw": "統御者法杖",
+      "ko": "아콘 스태프"
+     }
+    },
+    {
+     "item": "Spirit"
+    },
+    {
+     "item": "The Oculus"
+    },
+    {
+     "item": "Death's Fathom"
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "item": "Tal Rasha's Lidless Eye",
+     "note": {
+      "en": "Only with other Tal Rasha's pieces",
+      "zh": "仅搭配其他塔·拉夏部件",
+      "zh_tw": "僅搭配其他塔拉夏部件",
+      "ko": "다른 탈 라샤 부위와 함께만"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "text": {
+      "en": "Monarch: 4x Rainbow Facets",
+      "zh": "统治者大盾：4x 彩虹魔石",
+      "zh_tw": "君主盾：4x 彩虹刻面",
+      "ko": "모너크: 무지개 자락 4개"
+     }
+    },
+    {
+     "item": "Rhyme"
+    },
+    {
+     "item": "Ancients' Pledge"
+    },
+    {
+     "item": "Stormshield"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Memory",
+     "note": {
+      "en": "Battle Staff",
+      "zh": "战斗杖",
+      "zh_tw": "戰鬥法杖",
+      "ko": "배틀 스태프"
+     }
+    },
+    {
+     "item": "Gull"
+    },
+    {
+     "item": "Blade of Ali Baba"
+    },
+    {
+     "text": {
+      "en": "Wand: Lower Resist charges",
+      "zh": "魔杖：降低抗性充能",
+      "zh_tw": "魔杖：降低抗性充能",
+      "ko": "원드: 저항 감소 충전"
+     }
+    },
+    {
+     "item": "Doom",
+     "note": {
+      "en": "Double Axe",
+      "zh": "双刃斧",
+      "zh_tw": "雙刃斧",
+      "ko": "더블 액스"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Rhyme"
+    },
+    {
+     "text": {
+      "en": "Magic Monarch: MF",
+      "zh": "魔法统治者大盾：MF",
+      "zh_tw": "魔法君主盾：MF",
+      "ko": "마법 모너크: MF"
+     }
+    },
+    {
+     "text": {
+      "en": "Monarch: 4x Rainbow Facets",
+      "zh": "统治者大盾：4x 彩虹魔石",
+      "zh_tw": "君主盾：4x 彩虹刻面",
+      "ko": "모너크: 무지개 자락 4개"
+     }
+    }
+   ],
+   "helm": [
+    {
+     "text": {
+      "en": "Magic Diadem: +Cold skills, FCR",
+      "zh": "魔法权冠：+冰系法术、施法速度",
+      "zh_tw": "魔法權冠：+冰冷技能、施法速度",
+      "ko": "마법 다이어뎀: 냉기 기술, 시전 속도"
+     }
+    },
+    {
+     "item": "Nightwing's Veil"
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Lore"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Tal Rasha's Horadric Crest"
+    },
+    {
+     "text": {
+      "en": "Rare Diadem: skills, FCR, resists",
+      "zh": "稀有权冠：技能、施法速度、抗性",
+      "zh_tw": "稀有權冠：技能、施法速度、抗性",
+      "ko": "레어 다이어뎀: 기술, 시전 속도, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Socketed Mask: gems",
+      "zh": "带孔覆面甲：宝石",
+      "zh_tw": "帶孔面具：寶石",
+      "ko": "소켓 마스크: 보석"
+     }
+    }
+   ],
+   "armor": [
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Stealth"
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Ormus' Robes"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Tal Rasha's Guardianship"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Magefist"
+    },
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "text": {
+      "en": "Magic gloves: resists, MF",
+      "zh": "魔法手套：抗性、MF",
+      "zh_tw": "魔法手套：抗性、MF",
+      "ko": "마법 장갑: 저항, MF"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "item": "Snowclash"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Tal Rasha's Fine-Spun Cloth"
+    },
+    {
+     "item": "Immortal King's Detail"
+    },
+    {
+     "text": {
+      "en": "Magic belt: FHR, resists",
+      "zh": "魔法腰带：打击回复、抗性",
+      "zh_tw": "魔法腰帶：打擊恢復、抗性",
+      "ko": "마법 벨트: 타격 회복, 저항"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "Waterwalk"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "text": {
+      "en": "Rare boots: FRW, FHR, resists",
+      "zh": "稀有靴子：跑速、打击回复、抗性",
+      "zh_tw": "稀有靴子：跑速、打擊恢復、抗性",
+      "ko": "레어 부츠: 이동 속도, 타격 회복, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic boots: FRW, resists",
+      "zh": "魔法靴子：跑速、抗性",
+      "zh_tw": "魔法靴子：跑速、抗性",
+      "ko": "마법 부츠: 이동 속도, 저항"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "item": "Tal Rasha's Adjudication"
+    },
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 skills, FCR",
+      "zh": "施法者合成护符：+2 技能、施法速度",
+      "zh_tw": "施法者合成護身符：+2 技能、施法速度",
+      "ko": "시전자 제작 목걸이: 기술 +2, 시전 속도"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic amulet: +2 Sorceress skills, FCR / MF",
+      "zh": "魔法护符：+2 法师技能、施法速度/MF",
+      "zh_tw": "魔法護身符：+2 魔法使技能、施法速度/MF",
+      "ko": "마법 목걸이: 소서리스 기술 +2, 시전 속도/MF"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "item": "Dwarf Star"
+    },
+    {
+     "text": {
+      "en": "Rare ring: FCR, resists, life",
+      "zh": "稀有戒指：施法速度、抗性、生命",
+      "zh_tw": "稀有戒指：施法速度、抗性、生命",
+      "ko": "레어 반지: 시전 속도, 저항, 생명력"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic ring: FCR, MF",
+      "zh": "魔法戒指：施法速度、MF",
+      "zh_tw": "魔法戒指：施法速度、MF",
+      "ko": "마법 반지: 시전 속도, MF"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Cold skills, life / FHR",
+      "zh": "巨型神符：+1 冰系法术，生命/打击回复",
+      "zh_tw": "特大咒符：+1 冰冷技能，生命/打擊恢復",
+      "ko": "거대 부적: 냉기 기술 +1, 생명력/타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Large charms: life, resists",
+      "zh": "大型神符：生命、抗性",
+      "zh_tw": "大型咒符：生命、抗性",
+      "ko": "큰 부적: 생명력, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Small charms: life, resists, MF",
+      "zh": "小型神符：生命、抗性、MF",
+      "zh_tw": "小型咒符：生命、抗性、MF",
+      "ko": "작은 부적: 생명력, 저항, MF"
+     }
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch"
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Cold Rupture"
+    }
+   ]
+  }
+ },
+ {
+  "id": "lightning-sorceress",
+  "cls": "Sorceress",
+  "name": {
+   "en": "Lightning",
+   "zh": "闪电",
+   "zh_tw": "閃電",
+   "ko": "번개"
+  },
+  "url": "https://maxroll.gg/d2/guides/lightning-sorceress",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Heart of the Oak",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "item": "Eschuta's Temper"
+    },
+    {
+     "item": "The Oculus"
+    },
+    {
+     "item": "Crescent Moon",
+     "kind": "runewords"
+    },
+    {
+     "text": {
+      "en": "Crystal Sword: 6x 5/5 Lightning Facets",
+      "zh": "水晶剑：6x 5/5 闪电彩虹魔石",
+      "zh_tw": "水晶劍：6x 5/5 閃電彩虹刻面",
+      "ko": "크리스탈 소드: 5/5 번개 무지개 자락 6개"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic Eldritch Orb: +3 Lightning, FCR",
+      "zh": "魔法怪异法珠：+3 雷系法术、施法速度",
+      "zh_tw": "魔法異能法珠：+3 閃電技能、施法速度",
+      "ko": "마법 엘드리치 오브: 번개 기술 +3, 시전 속도"
+     }
+    },
+    {
+     "item": "Obsession"
+    },
+    {
+     "item": "Tal Rasha's Lidless Eye"
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "item": "Spirit"
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Stormshield"
+    },
+    {
+     "item": "Gerke's Sanctuary"
+    },
+    {
+     "text": {
+      "en": "Magic Monarch: 4x 5/5 Lightning Facets",
+      "zh": "魔法统治者大盾：4x 5/5 闪电彩虹魔石",
+      "zh_tw": "魔法君主盾：4x 5/5 閃電彩虹刻面",
+      "ko": "마법 모너크: 5/5 번개 무지개 자락 4개"
+     }
+    },
+    {
+     "item": "Moser's Blessed Circle"
+    },
+    {
+     "item": "Ancients' Pledge"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms"
+    },
+    {
+     "text": {
+      "en": "Crystal Sword: 6x Ist",
+      "zh": "水晶剑：6x 伊司特",
+      "zh_tw": "水晶劍：6x 伊司特",
+      "ko": "크리스탈 소드: 이스트 6개"
+     }
+    },
+    {
+     "item": "Blade of Ali Baba"
+    },
+    {
+     "item": "Gull"
+    },
+    {
+     "text": {
+      "en": "Wand: Lower Resist charges",
+      "zh": "魔杖：降低抗性充能",
+      "zh_tw": "魔杖：降低抗性充能",
+      "ko": "원드: 저항 감소 충전"
+     }
+    },
+    {
+     "item": "Harmony"
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch, ethereal optional",
+      "zh": "统治者大盾，可无形",
+      "zh_tw": "君主盾，可無形",
+      "ko": "모너크, 에테리얼 가능"
+     }
+    },
+    {
+     "item": "Lidless Wall"
+    },
+    {
+     "text": {
+      "en": "Monarch: 4x Ist",
+      "zh": "统治者大盾：4x 伊司特",
+      "zh_tw": "君主盾：4x 伊司特",
+      "ko": "모너크: 이스트 4개"
+     }
+    },
+    {
+     "item": "Rhyme"
+    },
+    {
+     "item": "Stormshield"
+    },
+    {
+     "item": "Moser's Blessed Circle"
+    }
+   ],
+   "helm": [
+    {
+     "item": "Griffon's Eye"
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Crown of Ages",
+     "note": {
+      "en": "2x 5/5 Lightning Facets",
+      "zh": "2x 5/5 闪电彩虹魔石",
+      "zh_tw": "2x 5/5 閃電彩虹刻面",
+      "ko": "5/5 번개 무지개 자락 2개"
+     }
+    },
+    {
+     "item": "Tal Rasha's Horadric Crest"
+    },
+    {
+     "item": "Tarnhelm"
+    },
+    {
+     "item": "Peasant Crown"
+    },
+    {
+     "item": "Lore"
+    },
+    {
+     "item": "Ground"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Tal Rasha's Guardianship",
+     "note": {
+      "en": "3-piece Tal Rasha's set",
+      "zh": "塔·拉夏的裹身布 3件套",
+      "zh_tw": "塔拉夏的外袍 3件套",
+      "ko": "탈 라샤의 수의 3세트"
+     }
+    },
+    {
+     "item": "Ormus' Robes"
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Fortitude"
+    },
+    {
+     "item": "Smoke"
+    },
+    {
+     "item": "Stealth"
+    },
+    {
+     "item": "Treachery"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Magefist"
+    },
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "item": "Frostburn"
+    },
+    {
+     "text": {
+      "en": "Rare gloves: resists, MF",
+      "zh": "稀有手套：抗性、MF",
+      "zh_tw": "稀有手套：抗性、MF",
+      "ko": "레어 장갑: 저항, MF"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Tal Rasha's Fine-Spun Cloth",
+     "note": {
+      "en": "3-piece Tal Rasha's set",
+      "zh": "塔·拉夏的裹身布 3件套",
+      "zh_tw": "塔拉夏的外袍 3件套",
+      "ko": "탈 라샤의 수의 3세트"
+     }
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Goldwrap",
+     "note": {
+      "en": "Battle Belt",
+      "zh": "战斗腰带",
+      "zh_tw": "戰鬥腰帶",
+      "ko": "배틀 벨트"
+     }
+    },
+    {
+     "text": {
+      "en": "Caster crafted belt: FCR, life",
+      "zh": "施法者合成腰带：施法速度、生命",
+      "zh_tw": "施法者合成腰帶：施法速度、生命",
+      "ko": "시전자 제작 벨트: 시전 속도, 생명력"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare belt: life, resists",
+      "zh": "稀有腰带：生命、抗性",
+      "zh_tw": "稀有腰帶：生命、抗性",
+      "ko": "레어 벨트: 생명력, 저항"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "Silkweave"
+    },
+    {
+     "text": {
+      "en": "Rare boots: FRW, FHR, resists",
+      "zh": "稀有靴子：跑速、打击回复、抗性",
+      "zh_tw": "稀有靴子：跑速、打擊恢復、抗性",
+      "ko": "레어 부츠: 이동 속도, 타격 회복, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Caster crafted boots: FRW, mana",
+      "zh": "施法者合成靴子：跑速、法力",
+      "zh_tw": "施法者合成靴子：跑速、法力",
+      "ko": "시전자 제작 부츠: 이동 속도, 마나"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "item": "Tal Rasha's Adjudication",
+     "note": {
+      "en": "3-piece Tal Rasha's set",
+      "zh": "塔·拉夏的裹身布 3件套",
+      "zh_tw": "塔拉夏的外袍 3件套",
+      "ko": "탈 라샤의 수의 3세트"
+     }
+    },
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 skills, FCR",
+      "zh": "施法者合成护符：+2 技能、施法速度",
+      "zh_tw": "施法者合成護身符：+2 技能、施法速度",
+      "ko": "시전자 제작 목걸이: 기술 +2, 시전 속도"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic amulet: +Lightning skills, FCR / life",
+      "zh": "魔法护符：+雷系法术、施法速度/生命",
+      "zh_tw": "魔法護身符：+閃電技能、施法速度/生命",
+      "ko": "마법 목걸이: 번개 기술, 시전 속도/생명력"
+     }
+    },
+    {
+     "item": "Metalgrid"
+    }
+   ],
+   "ring": [
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "text": {
+      "en": "Rare ring: FCR, resists, life",
+      "zh": "稀有戒指：施法速度、抗性、生命",
+      "zh_tw": "稀有戒指：施法速度、抗性、生命",
+      "ko": "레어 반지: 시전 속도, 저항, 생명력"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic ring: MF",
+      "zh": "魔法戒指：MF",
+      "zh_tw": "魔法戒指：MF",
+      "ko": "마법 반지: MF"
+     }
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Wisp Projector"
+    },
+    {
+     "item": "Nature's Peace"
+    },
+    {
+     "item": "Dwarf Star"
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Lightning skills, life / FHR",
+      "zh": "巨型神符：+1 雷系法术，生命/打击回复",
+      "zh_tw": "特大咒符：+1 閃電技能，生命/打擊恢復",
+      "ko": "거대 부적: 번개 기술 +1, 생명력/타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Grand charms: resists",
+      "zh": "巨型神符：抗性",
+      "zh_tw": "特大咒符：抗性",
+      "ko": "거대 부적: 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Small charms: life, resists, MF, FHR",
+      "zh": "小型神符：生命、抗性、MF、打击回复",
+      "zh_tw": "小型咒符：生命、抗性、MF、打擊恢復",
+      "ko": "작은 부적: 생명력, 저항, MF, 타격 회복"
+     }
+    },
+    {
+     "item": "Crack of the Heavens"
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Sorceress",
+      "zh": "法师",
+      "zh_tw": "魔法使",
+      "ko": "소서리스"
+     }
+    },
+    {
+     "item": "Annihilus"
+    }
+   ]
+  }
+ },
+ {
+  "id": "meteor-sorceress",
+  "cls": "Sorceress",
+  "name": {
+   "en": "Meteor",
+   "zh": "陨石",
+   "zh_tw": "隕石",
+   "ko": "메테오"
+  },
+  "url": "https://maxroll.gg/d2/guides/meteor-sorceress",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Heart of the Oak"
+    },
+    {
+     "item": "Spirit"
+    },
+    {
+     "item": "Obsession",
+     "note": {
+      "en": "Archon Staff",
+      "zh": "统治者之杖",
+      "zh_tw": "統御者法杖",
+      "ko": "아콘 스태프"
+     }
+    },
+    {
+     "item": "The Oculus"
+    },
+    {
+     "item": "Eschuta's Temper"
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "item": "Tal Rasha's Lidless Eye",
+     "note": {
+      "en": "With other Tal Rasha pieces",
+      "zh": "搭配其他塔·拉夏部件",
+      "zh_tw": "搭配其他塔拉夏部件",
+      "ko": "다른 탈 라샤 부위와 함께"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Rhyme"
+    },
+    {
+     "item": "Ancients' Pledge"
+    },
+    {
+     "item": "Stormshield"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Memory",
+     "note": {
+      "en": "Battle Staff",
+      "zh": "战斗杖",
+      "zh_tw": "戰鬥法杖",
+      "ko": "배틀 스태프"
+     }
+    },
+    {
+     "item": "Gull"
+    },
+    {
+     "item": "Blade of Ali Baba"
+    },
+    {
+     "text": {
+      "en": "Wand with Lower Resist charges",
+      "zh": "带降低抗性充能的魔杖",
+      "zh_tw": "帶降低抗性充能的魔杖",
+      "ko": "저항력 낮추기 충전 원드"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Rhyme"
+    },
+    {
+     "text": {
+      "en": "Monarch: 4x Ist (MF)",
+      "zh": "统治者大盾：4x 伊司特（MF）",
+      "zh_tw": "君主盾：4x 伊司特（MF）",
+      "ko": "모너크: 이스트 4개 (MF)"
+     }
+    }
+   ],
+   "helm": [
+    {
+     "item": "Flickering Flame",
+     "note": {
+      "en": "Diadem",
+      "zh": "权冠",
+      "zh_tw": "權冠",
+      "ko": "다이어뎀"
+     }
+    },
+    {
+     "item": "Lore"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Tal Rasha's Horadric Crest"
+    },
+    {
+     "text": {
+      "en": "Rare diadem: +2 skills, FCR, resists, 2x Ber",
+      "zh": "稀有权冠：+2 技能、施法速度、抗性、2x 贝",
+      "zh_tw": "稀有權冠：+2 技能、施法速度、抗性、2x 貝",
+      "ko": "레어 다이어뎀: +2 스킬, 시전 속도, 저항, 베르 2개"
+     }
+    },
+    {
+     "text": {
+      "en": "Mask: 3x Perfect Topaz (MF)",
+      "zh": "覆面甲：3x 完美的黄宝石（MF）",
+      "zh_tw": "面具：3x 完美黃寶石（MF）",
+      "ko": "마스크: 최상급 토파즈 3개 (MF)"
+     }
+    }
+   ],
+   "armor": [
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Stealth"
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Ormus' Robes"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Tal Rasha's Guardianship"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Magefist"
+    },
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "text": {
+      "en": "Rare/magic gloves: MF, resists",
+      "zh": "稀有/魔法手套：MF、抗性",
+      "zh_tw": "稀有/魔法手套：MF、抗性",
+      "ko": "레어/마법 장갑: MF, 저항"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Tal Rasha's Fine-Spun Cloth"
+    },
+    {
+     "item": "Immortal King's Detail"
+    },
+    {
+     "text": {
+      "en": "Magic belt: FHR, Fire resist",
+      "zh": "魔法腰带：打击恢复、火焰抗性",
+      "zh_tw": "魔法腰帶：擊中恢復、火焰抗性",
+      "ko": "마법 벨트: 타격 회복, 화염 저항"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "Waterwalk"
+    },
+    {
+     "item": "Marrowwalk"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "text": {
+      "en": "Rare/magic boots: FRW, resists, MF",
+      "zh": "稀有/魔法靴子：移动速度、抗性、MF",
+      "zh_tw": "稀有/魔法靴子：移動速度、抗性、MF",
+      "ko": "레어/마법 부츠: 이동 속도, 저항, MF"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "item": "Tal Rasha's Adjudication"
+    },
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 skills, FCR, resists",
+      "zh": "施法者合成护符：+2 技能、施法速度、抗性",
+      "zh_tw": "施法者合成護身符：+2 技能、施法速度、抗性",
+      "ko": "캐스터 제작 목걸이: +2 스킬, 시전 속도, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic amulet: +3 Fire skills, MF / FCR",
+      "zh": "魔法护符：+3 火焰技能、MF / 施法速度",
+      "zh_tw": "魔法護身符：+3 火焰技能、MF / 施法速度",
+      "ko": "마법 목걸이: +3 화염 스킬, MF / 시전 속도"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "item": "Dwarf Star"
+    },
+    {
+     "text": {
+      "en": "Rare ring: FCR, resists, life, MF",
+      "zh": "稀有戒指：施法速度、抗性、生命、MF",
+      "zh_tw": "稀有戒指：施法速度、抗性、生命、MF",
+      "ko": "레어 반지: 시전 속도, 저항, 생명력, MF"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic ring: MF or FCR",
+      "zh": "魔法戒指：MF 或施法速度",
+      "zh_tw": "魔法戒指：MF 或施法速度",
+      "ko": "마법 반지: MF 또는 시전 속도"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Fire skills, life / FHR",
+      "zh": "巨型神符：+1 火焰技能，生命 / 打击恢复",
+      "zh_tw": "特大咒符：+1 火焰技能，生命 / 擊中恢復",
+      "ko": "거대 부적: +1 화염 스킬, 생명력 / 타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Small/large charms: life, resists, MF",
+      "zh": "小型/大型神符：生命、抗性、MF",
+      "zh_tw": "小型/大型咒符：生命、抗性、MF",
+      "ko": "작은/큰 부적: 생명력, 저항, MF"
+     }
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Sorceress",
+      "zh": "法师",
+      "zh_tw": "魔法使",
+      "ko": "소서리스"
+     }
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Flame Rift"
+    }
+   ]
+  }
+ },
+ {
+  "id": "summoner-necromancer-guide",
+  "cls": "Necromancer",
+  "name": {
+   "en": "Summoner",
+   "zh": "召唤",
+   "zh_tw": "召喚",
+   "ko": "소환"
+  },
+  "url": "https://maxroll.gg/d2/guides/summoner-necromancer-guide",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Heart of the Oak"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Beast"
+    },
+    {
+     "item": "Arm of King Leoric"
+    },
+    {
+     "item": "Ume's Lament"
+    },
+    {
+     "item": "Blade of Ali Baba"
+    },
+    {
+     "item": "Wizardspike"
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Trang-Oul's Wing"
+    },
+    {
+     "item": "Homunculus"
+    },
+    {
+     "item": "Vigilance"
+    },
+    {
+     "item": "Splendor"
+    },
+    {
+     "item": "Rhyme"
+    },
+    {
+     "item": "Ancients' Pledge"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Naj's Puzzler"
+    },
+    {
+     "text": {
+      "en": "Long staff with Teleport charges",
+      "zh": "带传送充能的长杖",
+      "zh_tw": "帶傳送充能的長杖",
+      "ko": "순간이동 충전 롱스태프"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    }
+   ],
+   "helm": [
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Coven",
+     "note": {
+      "en": "Diadem",
+      "zh": "权冠",
+      "zh_tw": "權冠",
+      "ko": "다이어뎀"
+     }
+    },
+    {
+     "item": "Trang-Oul's Guise"
+    },
+    {
+     "text": {
+      "en": "Rare diadem: +2 skills, FCR, resists, 2x Ber",
+      "zh": "稀有权冠：+2 技能、施法速度、抗性、2x 贝",
+      "zh_tw": "稀有權冠：+2 技能、施法速度、抗性、2x 貝",
+      "ko": "레어 다이어뎀: +2 스킬, 시전 속도, 저항, 베르 2개"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic diadem: +3 Summoning skills, FCR",
+      "zh": "魔法权冠：+3 召唤技能、施法速度",
+      "zh_tw": "魔法權冠：+3 召喚技能、施法速度",
+      "ko": "마법 다이어뎀: +3 소환 스킬, 시전 속도"
+     }
+    },
+    {
+     "item": "Peasant Crown"
+    },
+    {
+     "item": "Lore"
+    },
+    {
+     "item": "Wormskull"
+    },
+    {
+     "item": "Tarnhelm"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Bone"
+    },
+    {
+     "item": "Trang-Oul's Scales"
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "The Spirit Shroud"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Magefist"
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "item": "Gheed's Wager"
+    },
+    {
+     "item": "String of Ears"
+    },
+    {
+     "item": "Trang-Oul's Girth"
+    }
+   ],
+   "boots": [
+    {
+     "item": "Marrowwalk"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "Silkweave"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Natalya's Soul"
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "text": {
+      "en": "Rare amulet: +2 skills, FCR, Teleport charges",
+      "zh": "稀有护符：+2 技能、施法速度、传送充能",
+      "zh_tw": "稀有護身符：+2 技能、施法速度、傳送充能",
+      "ko": "레어 목걸이: +2 스킬, 시전 속도, 순간이동 충전"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Opalvein"
+    },
+    {
+     "item": "Sling"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "text": {
+      "en": "Rare ring: FCR, resists, life, MF",
+      "zh": "稀有戒指：施法速度、抗性、生命、MF",
+      "zh_tw": "稀有戒指：施法速度、抗性、生命、MF",
+      "ko": "레어 반지: 시전 속도, 저항, 생명력, MF"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Summoning skills, life / FHR",
+      "zh": "巨型神符：+1 召唤技能，生命 / 打击恢复",
+      "zh_tw": "特大咒符：+1 召喚技能，生命 / 擊中恢復",
+      "ko": "거대 부적: +1 소환 스킬, 생명력 / 타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Small/large charms: life, resists, MF",
+      "zh": "小型/大型神符：生命、抗性、MF",
+      "zh_tw": "小型/大型咒符：生命、抗性、MF",
+      "ko": "작은/큰 부적: 생명력, 저항, MF"
+     }
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch"
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Renewed Bone Break"
+    }
+   ]
+  }
+ },
+ {
+  "id": "poison-nova-necromancer",
+  "cls": "Necromancer",
+  "name": {
+   "en": "Poison Nova",
+   "zh": "剧毒新星",
+   "zh_tw": "劇毒新星",
+   "ko": "독 확산"
+  },
+  "url": "https://maxroll.gg/d2/guides/poison-nova-necromancer",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Death's Web"
+    },
+    {
+     "item": "Plague"
+    },
+    {
+     "item": "Heart of the Oak",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "item": "White",
+     "note": {
+      "en": "Base with +2-3 Poison Nova",
+      "zh": "底材带 +2-3 剧毒新星",
+      "zh_tw": "底材帶 +2-3 劇毒新星",
+      "ko": "독 확산 +2-3 베이스"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "text": {
+      "en": "Crystal Sword: 6x 5/5 Rainbow Facet (poison)",
+      "zh": "水晶剑：6x 5/5 彩虹魔石（毒素）",
+      "zh_tw": "水晶劍：6x 5/5 彩虹刻面（毒素）",
+      "ko": "크리스탈 소드: 5/5 무지개 자락 (독) 6개"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Trang-Oul's Wing",
+     "note": {
+      "en": "3-piece Trang-Oul's set",
+      "zh": "塔格奥 3 件套",
+      "zh_tw": "塔格奧 3 件套",
+      "ko": "트래그울 3세트"
+     }
+    },
+    {
+     "item": "Homunculus"
+    },
+    {
+     "item": "Darkforce Spawn"
+    },
+    {
+     "item": "Stormshield"
+    },
+    {
+     "item": "Moser's Blessed Circle"
+    },
+    {
+     "item": "Rhyme"
+    },
+    {
+     "item": "Ancients' Pledge"
+    },
+    {
+     "text": {
+      "en": "Magic Demon Head: +3 Poison & Bone, +3 Poison Nova",
+      "zh": "魔法恶魔头骨：+3 毒素和骨头技能、+3 剧毒新星",
+      "zh_tw": "魔法惡魔頭顱：+3 毒素與骨骼技能、+3 劇毒新星",
+      "ko": "마법 데몬 헤드: +3 독과 뼈 스킬, +3 독 확산"
+     }
+    },
+    {
+     "text": {
+      "en": "Monarch: 4x 5/5 Rainbow Facet (poison)",
+      "zh": "统治者大盾：4x 5/5 彩虹魔石（毒素）",
+      "zh_tw": "君主盾：4x 5/5 彩虹刻面（毒素）",
+      "ko": "모너크: 5/5 무지개 자락 (독) 4개"
+     }
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms"
+    },
+    {
+     "item": "Naj's Puzzler",
+     "note": {
+      "en": "Teleport charges, if no Enigma",
+      "zh": "传送充能，无谜团时",
+      "zh_tw": "傳送充能，無謎團時",
+      "ko": "순간이동 충전, 수수께끼 없을 때"
+     }
+    },
+    {
+     "text": {
+      "en": "Staff with Teleport charges",
+      "zh": "带传送充能的法杖",
+      "zh_tw": "帶傳送充能的法杖",
+      "ko": "순간이동 충전 지팡이"
+     }
+    },
+    {
+     "item": "Harmony"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Lidless Wall"
+    }
+   ],
+   "helm": [
+    {
+     "text": {
+      "en": "Rare circlet: +2 skills, FCR, 2 sockets",
+      "zh": "稀有头环：+2 技能、施法速度、2 孔",
+      "zh_tw": "稀有頭環：+2 技能、施法速度、2 孔",
+      "ko": "레어 써클릿: +2 스킬, 시전 속도, 소켓 2개"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic circlet: +3 Poison & Bone, FCR, 2 sockets",
+      "zh": "魔法头环：+3 毒素和骨头技能、施法速度、2 孔",
+      "zh_tw": "魔法頭環：+3 毒素與骨骼技能、施法速度、2 孔",
+      "ko": "마법 써클릿: +3 독과 뼈 스킬, 시전 속도, 소켓 2개"
+     }
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Crown of Ages",
+     "note": {
+      "en": "2x Poison Facet or 2x Ber",
+      "zh": "2x 毒素彩虹魔石或 2x 贝",
+      "zh_tw": "2x 毒素彩虹刻面或 2x 貝",
+      "ko": "독 자락 2개 또는 베르 2개"
+     }
+    },
+    {
+     "item": "Trang-Oul's Guise"
+    },
+    {
+     "item": "Peasant Crown"
+    },
+    {
+     "item": "Tarnhelm"
+    },
+    {
+     "item": "Lore"
+    },
+    {
+     "item": "Cure"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Bramble"
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Trang-Oul's Scales"
+    },
+    {
+     "item": "Bone"
+    },
+    {
+     "item": "Smoke"
+    },
+    {
+     "item": "Stealth"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Trang-Oul's Claws",
+     "note": {
+      "en": "1 or 3-piece Trang-Oul's set",
+      "zh": "塔格奥 1 或 3 件套",
+      "zh_tw": "塔格奧 1 或 3 件套",
+      "ko": "트래그울 1 또는 3세트"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Trang-Oul's Girth",
+     "note": {
+      "en": "3-piece Trang-Oul's set",
+      "zh": "塔格奥 3 件套",
+      "zh_tw": "塔格奧 3 件套",
+      "ko": "트래그울 3세트"
+     }
+    },
+    {
+     "text": {
+      "en": "Caster crafted belt: FCR, FHR, life",
+      "zh": "施法者合成腰带：施法速度、打击恢复、生命",
+      "zh_tw": "施法者合成腰帶：施法速度、擊中恢復、生命",
+      "ko": "캐스터 제작 벨트: 시전 속도, 타격 회복, 생명력"
+     }
+    },
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Goldwrap",
+     "note": {
+      "en": "Battle Belt",
+      "zh": "战斗腰带",
+      "zh_tw": "戰鬥腰帶",
+      "ko": "배틀 벨트"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic belt: life, Fire resist",
+      "zh": "魔法腰带：生命、火焰抗性",
+      "zh_tw": "魔法腰帶：生命、火焰抗性",
+      "ko": "마법 벨트: 생명력, 화염 저항"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "Waterwalk"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "text": {
+      "en": "Rare/magic boots: FRW, resists",
+      "zh": "稀有/魔法靴子：移动速度、抗性",
+      "zh_tw": "稀有/魔法靴子：移動速度、抗性",
+      "ko": "레어/마법 부츠: 이동 속도, 저항"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 skills, FCR, resists",
+      "zh": "施法者合成护符：+2 技能、施法速度、抗性",
+      "zh_tw": "施法者合成護身符：+2 技能、施法速度、抗性",
+      "ko": "캐스터 제작 목걸이: +2 스킬, 시전 속도, 저항"
+     }
+    },
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "text": {
+      "en": "Magic amulet: +3 Poison & Bone, FCR / Teleport",
+      "zh": "魔法护符：+3 毒素和骨头技能、施法速度 / 传送",
+      "zh_tw": "魔法護身符：+3 毒素與骨骼技能、施法速度 / 傳送",
+      "ko": "마법 목걸이: +3 독과 뼈 스킬, 시전 속도 / 순간이동"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "text": {
+      "en": "Rare ring: FCR, life, mana, resists",
+      "zh": "稀有戒指：施法速度、生命、法力、抗性",
+      "zh_tw": "稀有戒指：施法速度、生命、法力、抗性",
+      "ko": "레어 반지: 시전 속도, 생명력, 마나, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Blood crafted ring: FCR, life, resists",
+      "zh": "鲜血合成戒指：施法速度、生命、抗性",
+      "zh_tw": "鮮血合成戒指：施法速度、生命、抗性",
+      "ko": "피 제작 반지: 시전 속도, 생명력, 저항"
+     }
+    },
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "text": {
+      "en": "Magic ring: 40% MF",
+      "zh": "魔法戒指：40% MF",
+      "zh_tw": "魔法戒指：40% MF",
+      "ko": "마법 반지: 40% MF"
+     }
+    },
+    {
+     "item": "Wisp Projector"
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Poison & Bone skills, life / FHR",
+      "zh": "巨型神符：+1 毒素和骨头技能，生命 / 打击恢复",
+      "zh_tw": "特大咒符：+1 毒素與骨骼技能，生命 / 擊中恢復",
+      "ko": "거대 부적: +1 독과 뼈 스킬, 생명력 / 타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Grand charms: all resists / FHR",
+      "zh": "巨型神符：全抗性 / 打击恢复",
+      "zh_tw": "特大咒符：全抗性 / 擊中恢復",
+      "ko": "거대 부적: 모든 저항 / 타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Small charms: MF, life, FHR, resists",
+      "zh": "小型神符：MF、生命、打击恢复、抗性",
+      "zh_tw": "小型咒符：MF、生命、擊中恢復、抗性",
+      "ko": "작은 부적: MF, 생명력, 타격 회복, 저항"
+     }
+    },
+    {
+     "item": "Rotting Fissure"
+    },
+    {
+     "item": "Flame Rift"
+    },
+    {
+     "item": "Bone Break"
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Necromancer",
+      "zh": "死灵法师",
+      "zh_tw": "死靈法師",
+      "ko": "네크로맨서"
+     }
+    },
+    {
+     "item": "Annihilus"
+    }
+   ]
+  }
+ },
+ {
+  "id": "bone-spear-necromancer",
+  "cls": "Necromancer",
+  "name": {
+   "en": "Bone Spear",
+   "zh": "骨矛",
+   "zh_tw": "骨矛",
+   "ko": "뼈 창"
+  },
+  "url": "https://maxroll.gg/d2/guides/bone-spear-necromancer",
+  "slots": {
+   "weapon": [
+    {
+     "item": "White",
+     "note": {
+      "en": "Unearthed Wand",
+      "zh": "出土魔杖",
+      "zh_tw": "埋骨魔杖",
+      "ko": "언어스드 원드"
+     }
+    },
+    {
+     "item": "Void"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Heart of the Oak"
+    },
+    {
+     "item": "Ume's Lament"
+    },
+    {
+     "item": "Blade of Ali Baba"
+    },
+    {
+     "item": "Wizardspike"
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Trang-Oul's Wing"
+    },
+    {
+     "item": "Homunculus"
+    },
+    {
+     "item": "Splendor"
+    },
+    {
+     "item": "Rhyme"
+    },
+    {
+     "item": "Ancients' Pledge"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Naj's Puzzler"
+    },
+    {
+     "text": {
+      "en": "Long staff with Teleport charges",
+      "zh": "带传送充能的长杖",
+      "zh_tw": "帶傳送充能的長杖",
+      "ko": "순간이동 충전 롱스태프"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    }
+   ],
+   "helm": [
+    {
+     "text": {
+      "en": "Magic diadem: +3 Poison & Bone skills",
+      "zh": "魔法权冠：+3 毒素和骨头技能",
+      "zh_tw": "魔法權冠：+3 毒素與骨骼技能",
+      "ko": "마법 다이어뎀: +3 독과 뼈 스킬"
+     }
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "text": {
+      "en": "Rare circlet: +2 skills, FCR, resists",
+      "zh": "稀有头环：+2 技能、施法速度、抗性",
+      "zh_tw": "稀有頭環：+2 技能、施法速度、抗性",
+      "ko": "레어 써클릿: +2 스킬, 시전 속도, 저항"
+     }
+    },
+    {
+     "item": "Coven",
+     "note": {
+      "en": "Diadem",
+      "zh": "权冠",
+      "zh_tw": "權冠",
+      "ko": "다이어뎀"
+     }
+    },
+    {
+     "item": "Hellwarden's Will"
+    },
+    {
+     "item": "Trang-Oul's Guise"
+    },
+    {
+     "item": "Peasant Crown"
+    },
+    {
+     "item": "Wormskull"
+    },
+    {
+     "item": "Tarnhelm"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Trang-Oul's Scales"
+    },
+    {
+     "item": "The Spirit Shroud"
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Bone"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Magefist"
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Trang-Oul's Girth"
+    },
+    {
+     "item": "Goldwrap"
+    }
+   ],
+   "boots": [
+    {
+     "item": "Marrowwalk"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "Silkweave"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Natalya's Soul"
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "text": {
+      "en": "Rare amulet: +2 skills, FCR, Teleport charges",
+      "zh": "稀有护符：+2 技能、施法速度、传送充能",
+      "zh_tw": "稀有護身符：+2 技能、施法速度、傳送充能",
+      "ko": "레어 목걸이: +2 스킬, 시전 속도, 순간이동 충전"
+     }
+    },
+    {
+     "item": "Entropy Locket"
+    },
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 skills, FCR, resists",
+      "zh": "施法者合成护符：+2 技能、施法速度、抗性",
+      "zh_tw": "施法者合成護身符：+2 技能、施法速度、抗性",
+      "ko": "캐스터 제작 목걸이: +2 스킬, 시전 속도, 저항"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "Sling"
+    },
+    {
+     "item": "Opalvein"
+    },
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "text": {
+      "en": "Rare ring: FCR, resists, life, MF",
+      "zh": "稀有戒指：施法速度、抗性、生命、MF",
+      "zh_tw": "稀有戒指：施法速度、抗性、生命、MF",
+      "ko": "레어 반지: 시전 속도, 저항, 생명력, MF"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Poison & Bone skills, life / FHR",
+      "zh": "巨型神符：+1 毒素和骨头技能，生命 / 打击恢复",
+      "zh_tw": "特大咒符：+1 毒素與骨骼技能，生命 / 擊中恢復",
+      "ko": "거대 부적: +1 독과 뼈 스킬, 생명력 / 타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Small/large charms: life, resists, MF",
+      "zh": "小型/大型神符：生命、抗性、MF",
+      "zh_tw": "小型/大型咒符：生命、抗性、MF",
+      "ko": "작은/큰 부적: 생명력, 저항, MF"
+     }
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Paladin",
+      "zh": "圣骑士",
+      "zh_tw": "聖騎士",
+      "ko": "팔라딘"
+     }
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Renewed Black Cleft"
+    }
+   ]
+  }
+ },
+ {
+  "id": "blessed-hammer-paladin",
+  "cls": "Paladin",
+  "name": {
+   "en": "Blessed Hammer",
+   "zh": "祝福之锤",
+   "zh_tw": "祝福之錘",
+   "ko": "축복받은 망치"
+  },
+  "url": "https://maxroll.gg/d2/guides/blessed-hammer-paladin",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Void"
+    },
+    {
+     "item": "Heart of the Oak",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "item": "Astreon's Iron Ward"
+    },
+    {
+     "item": "Suicide Branch"
+    },
+    {
+     "item": "Spectral Shard"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic scepter: +3 Blessed Hammer, FCR",
+      "zh": "魔法权杖：+3 祝福之锤、施法速度",
+      "zh_tw": "魔法權杖：+3 祝福之錘、施法速度",
+      "ko": "마법 셉터: +3 축복받은 망치, 시전 속도"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Sacred Targe",
+      "zh": "神圣小盾",
+      "zh_tw": "神聖小盾",
+      "ko": "세이크리드 타아지"
+     }
+    },
+    {
+     "item": "Phoenix",
+     "note": {
+      "en": "Sacred Targe",
+      "zh": "神圣小盾",
+      "zh_tw": "神聖小盾",
+      "ko": "세이크리드 타아지"
+     }
+    },
+    {
+     "item": "Herald of Zakarum"
+    },
+    {
+     "text": {
+      "en": "Targe: 4x Perfect Diamond",
+      "zh": "小盾：4x 完美的钻石",
+      "zh_tw": "小盾：4x 完美鑽石",
+      "ko": "타아지: 최상급 다이아몬드 4개"
+     }
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms",
+     "note": {
+      "en": "War Scepter",
+      "zh": "战争权杖",
+      "zh_tw": "征戰權杖",
+      "ko": "워 셉터"
+     }
+    },
+    {
+     "item": "Blade of Ali Baba"
+    },
+    {
+     "item": "Gull"
+    },
+    {
+     "text": {
+      "en": "Staff with Teleport charges",
+      "zh": "带传送充能的法杖",
+      "zh_tw": "帶傳送充能的法杖",
+      "ko": "순간이동 충전 지팡이"
+     }
+    },
+    {
+     "item": "Ancients' Pledge",
+     "note": {
+      "en": "Targe",
+      "zh": "小盾",
+      "zh_tw": "小盾",
+      "ko": "타아지"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Sacred Targe",
+      "zh": "神圣小盾",
+      "zh_tw": "神聖小盾",
+      "ko": "세이크리드 타아지"
+     }
+    },
+    {
+     "item": "Rhyme",
+     "note": {
+      "en": "Targe",
+      "zh": "小盾",
+      "zh_tw": "小盾",
+      "ko": "타아지"
+     }
+    },
+    {
+     "item": "Lidless Wall"
+    }
+   ],
+   "helm": [
+    {
+     "item": "Hellwarden's Will"
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Rockstopper"
+    },
+    {
+     "item": "Lore"
+    },
+    {
+     "text": {
+      "en": "Rare diadem: +2 skills, FCR, resists, 2x Ber",
+      "zh": "稀有权冠：+2 技能、施法速度、抗性、2x 贝",
+      "zh_tw": "稀有權冠：+2 技能、施法速度、抗性、2x 貝",
+      "ko": "레어 다이어뎀: +2 스킬, 시전 속도, 저항, 베르 2개"
+     }
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Principle"
+    },
+    {
+     "item": "Smoke"
+    },
+    {
+     "item": "Stealth"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Magefist"
+    },
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Bloodfist"
+    },
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "text": {
+      "en": "Magic gloves: MF, Fire resist",
+      "zh": "魔法手套：MF、火焰抗性",
+      "zh_tw": "魔法手套：MF、火焰抗性",
+      "ko": "마법 장갑: MF, 화염 저항"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Gheed's Wager"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "item": "Nightsmoke"
+    },
+    {
+     "item": "Immortal King's Detail"
+    },
+    {
+     "text": {
+      "en": "Rare belt: FHR, Str, life, resists",
+      "zh": "稀有腰带：打击恢复、力量、生命、抗性",
+      "zh_tw": "稀有腰帶：擊中恢復、力量、生命、抗性",
+      "ko": "레어 벨트: 타격 회복, 힘, 생명력, 저항"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Waterwalk"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "text": {
+      "en": "Rare boots: FRW, FHR, resists, MF",
+      "zh": "稀有靴子：移动速度、打击恢复、抗性、MF",
+      "zh_tw": "稀有靴子：移動速度、擊中恢復、抗性、MF",
+      "ko": "레어 부츠: 이동 속도, 타격 회복, 저항, MF"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "item": "Seraph's Hymn"
+    },
+    {
+     "item": "Telling of Beads"
+    },
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 skills, FCR, resists",
+      "zh": "施法者合成护符：+2 技能、施法速度、抗性",
+      "zh_tw": "施法者合成護身符：+2 技能、施法速度、抗性",
+      "ko": "캐스터 제작 목걸이: +2 스킬, 시전 속도, 저항"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "Sling"
+    },
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "item": "Nature's Peace",
+     "note": {
+      "en": "Stops Nihlathak's Corpse Explosion",
+      "zh": "阻止尼拉塞克的尸体爆炸",
+      "zh_tw": "阻止尼拉塞克的屍體爆炸",
+      "ko": "니흘라탁 시체 폭발 방지"
+     }
+    },
+    {
+     "item": "Dwarf Star"
+    },
+    {
+     "item": "Wisp Projector"
+    },
+    {
+     "text": {
+      "en": "Rare ring: FCR, resists, life, MF",
+      "zh": "稀有戒指：施法速度、抗性、生命、MF",
+      "zh_tw": "稀有戒指：施法速度、抗性、生命、MF",
+      "ko": "레어 반지: 시전 속도, 저항, 생명력, MF"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic ring: 40% MF",
+      "zh": "魔法戒指：40% MF",
+      "zh_tw": "魔法戒指：40% MF",
+      "ko": "마법 반지: 40% MF"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Combat skills, life / FHR",
+      "zh": "巨型神符：+1 战斗技能，生命 / 打击恢复",
+      "zh_tw": "特大咒符：+1 戰鬥技能，生命 / 擊中恢復",
+      "ko": "거대 부적: +1 전투 스킬, 생명력 / 타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Small/large charms: life, resists, MF",
+      "zh": "小型/大型神符：生命、抗性、MF",
+      "zh_tw": "小型/大型咒符：生命、抗性、MF",
+      "ko": "작은/큰 부적: 생명력, 저항, MF"
+     }
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Paladin",
+      "zh": "圣骑士",
+      "zh_tw": "聖騎士",
+      "ko": "팔라딘"
+     }
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Renewed Black Cleft"
+    }
+   ]
+  }
+ },
+ {
+  "id": "smite-paladin",
+  "cls": "Paladin",
+  "name": {
+   "en": "Smite",
+   "zh": "盾击",
+   "zh_tw": "盾牌重擊",
+   "ko": "강타"
+  },
+  "url": "https://maxroll.gg/d2/guides/smite-paladin",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Black",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "item": "Grief",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Death",
+     "note": {
+      "en": "Berserker Axe",
+      "zh": "狂战斧",
+      "zh_tw": "狂戰斧",
+      "ko": "버서커 액스"
+     }
+    },
+    {
+     "item": "Kingslayer",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Last Wish",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Fleshripper"
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "item": "The Gnasher"
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Exile",
+     "note": {
+      "en": "Ethereal Vortex Shield preferred",
+      "zh": "无形漩涡盾为佳",
+      "zh_tw": "無形渦旋盾為佳",
+      "ko": "에테리얼 볼텍스 쉴드 권장"
+     }
+    },
+    {
+     "item": "Rhyme",
+     "note": {
+      "en": "Targe",
+      "zh": "小盾",
+      "zh_tw": "小盾",
+      "ko": "타아지"
+     }
+    },
+    {
+     "item": "Sanctuary",
+     "note": {
+      "en": "Sacred Targe",
+      "zh": "神圣小盾",
+      "zh_tw": "神聖小盾",
+      "ko": "세이크리드 타아지"
+     }
+    },
+    {
+     "item": "Herald of Zakarum"
+    },
+    {
+     "text": {
+      "en": "Gemmed Targe",
+      "zh": "镶宝小盾",
+      "zh_tw": "鑲嵌寶石的小盾",
+      "ko": "보석 박힌 타아지"
+     }
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Spirit"
+    }
+   ],
+   "helm": [
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Rockstopper"
+    },
+    {
+     "item": "Vampire Gaze"
+    },
+    {
+     "item": "Guillaume's Face"
+    },
+    {
+     "item": "Tal Rasha's Horadric Crest"
+    },
+    {
+     "item": "Wisdom",
+     "note": {
+      "en": "Mask",
+      "zh": "覆面甲",
+      "zh_tw": "面具",
+      "ko": "마스크"
+     }
+    },
+    {
+     "text": {
+      "en": "Resistance Mask",
+      "zh": "抗性覆面甲",
+      "zh_tw": "抗性面具",
+      "ko": "저항 마스크"
+     }
+    },
+    {
+     "item": "Bulwark"
+    },
+    {
+     "item": "Temper"
+    },
+    {
+     "item": "Ground"
+    },
+    {
+     "item": "Hearth"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Duress"
+    },
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Treachery"
+    },
+    {
+     "item": "Smoke"
+    },
+    {
+     "item": "Hysteria"
+    },
+    {
+     "item": "Duriel's Shell"
+    },
+    {
+     "item": "Guardian Angel"
+    },
+    {
+     "item": "Shaftstop"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Bloodfist"
+    },
+    {
+     "item": "Dracul's Grasp"
+    },
+    {
+     "item": "Death's Hand",
+     "note": {
+      "en": "2-piece Death's set",
+      "zh": "死神的伪装 2件",
+      "zh_tw": "死亡的偽裝 2件",
+      "ko": "죽음의 위장 2부위"
+     }
+    },
+    {
+     "item": "Laying of Hands"
+    },
+    {
+     "text": {
+      "en": "Blood crafted gloves: IAS, CB, OW, resists",
+      "zh": "合成手套（鲜血）：IAS、压碎性打击、撕开伤口、抗性",
+      "zh_tw": "合成手套（鮮血）：IAS、壓碎性打擊、撕裂傷口、抗性",
+      "ko": "제작 장갑(피): 공격 속도, 강타, 상처 악화, 저항"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Nightsmoke"
+    },
+    {
+     "item": "String of Ears"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Trang-Oul's Girth"
+    },
+    {
+     "item": "Death's Guard",
+     "note": {
+      "en": "2-piece Death's set",
+      "zh": "死神的伪装 2件",
+      "zh_tw": "死亡的偽裝 2件",
+      "ko": "죽음의 위장 2부위"
+     }
+    },
+    {
+     "text": {
+      "en": "Blood crafted belt: FHR, life, resists",
+      "zh": "合成腰带（鲜血）：FHR、生命、抗性",
+      "zh_tw": "合成腰帶（鮮血）：FHR、生命、抗性",
+      "ko": "제작 벨트(피): 타격 회복, 생명력, 저항"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "Goblin Toe"
+    },
+    {
+     "item": "Gore Rider"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "Waterwalk"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "text": {
+      "en": "Rare boots: FRW, FHR, resists, attributes",
+      "zh": "稀有靴子：FRW、FHR、抗性、属性",
+      "zh_tw": "稀有靴子：FRW、FHR、抗性、屬性",
+      "ko": "희귀 부츠: 이동 속도, 타격 회복, 저항, 능력치"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "item": "Seraph's Hymn"
+    },
+    {
+     "item": "Metalgrid"
+    },
+    {
+     "text": {
+      "en": "Safety crafted amulet: skills, block, life, resists",
+      "zh": "合成护符（安全）：技能、格挡、生命、抗性",
+      "zh_tw": "合成護身符（安全）：技能、格擋、生命、抗性",
+      "ko": "제작 목걸이(안전): 기술, 막기, 생명력, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Prismatic amulet: all resists",
+      "zh": "棱彩护符：全抗性",
+      "zh_tw": "光繽護身符：全抗性",
+      "ko": "휘황한 목걸이: 모든 저항"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "Wisp Projector"
+    },
+    {
+     "item": "Raven Frost"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Dwarf Star"
+    },
+    {
+     "text": {
+      "en": "Rare ring: skills, attributes, life, resists",
+      "zh": "稀有戒指：技能、属性、生命、抗性",
+      "zh_tw": "稀有戒指：技能、屬性、生命、抗性",
+      "ko": "희귀 반지: 기술, 능력치, 생명력, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Blood crafted ring: attributes, life, resists",
+      "zh": "合成戒指（鲜血）：属性、生命、抗性",
+      "zh_tw": "合成戒指（鮮血）：屬性、生命、抗性",
+      "ko": "제작 반지(피): 능력치, 생명력, 저항"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Paladin Combat Skills, max dmg / AR / life",
+      "zh": "巨型神符：+1圣骑士战斗技能，最大伤害/命中/生命",
+      "zh_tw": "特大咒符：+1聖騎士戰鬥技能，最大傷害/準確率/生命",
+      "ko": "거대 부적: 팔라딘 전투 기술 +1, 최대 피해/명중/생명력"
+     }
+    },
+    {
+     "text": {
+      "en": "Large/small charms: max dmg, AR, life, resists, FHR, MF",
+      "zh": "大型/小型神符：最大伤害、命中、生命、抗性、FHR、MF",
+      "zh_tw": "大型/小型咒符：最大傷害、準確率、生命、抗性、FHR、MF",
+      "ko": "큰/작은 부적: 최대 피해, 명중, 생명력, 저항, 타격 회복, MF"
+     }
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Paladin",
+      "zh": "圣骑士",
+      "zh_tw": "聖騎士",
+      "ko": "팔라딘"
+     }
+    },
+    {
+     "item": "Annihilus"
+    }
+   ]
+  }
+ },
+ {
+  "id": "fist-of-the-heavens-paladin",
+  "cls": "Paladin",
+  "name": {
+   "en": "Fist of the Heavens",
+   "zh": "天堂之拳",
+   "zh_tw": "天堂之拳",
+   "ko": "천상의 주먹"
+  },
+  "url": "https://maxroll.gg/d2/guides/fist-of-the-heavens-paladin",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Hand of Blessed Light"
+    },
+    {
+     "item": "Heart of the Oak",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "item": "Suicide Branch"
+    },
+    {
+     "item": "Spectral Shard"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic War Scepter: +FoH skills, FCR, 2x Facet/Ist",
+      "zh": "魔法战争权杖：天堂之拳技能、FCR，2个彩虹魔石/伊司特",
+      "zh_tw": "魔法征戰權杖：天堂之拳技能、FCR，2個彩虹刻面/伊司特",
+      "ko": "마법 워 셉터: 천상의 주먹 기술, 시전 속도, 무지개 자락/이스트 2개"
+     }
+    },
+    {
+     "item": "Heaven's Light",
+     "note": {
+      "en": "Shael; Tri-Brid variant",
+      "zh": "沙伊；三修流",
+      "zh_tw": "夏；三修流",
+      "ko": "샤엘; 트라이브리드"
+     }
+    },
+    {
+     "item": "Astreon's Iron Ward",
+     "note": {
+      "en": "Shael; Tri-Brid variant",
+      "zh": "沙伊；三修流",
+      "zh_tw": "夏；三修流",
+      "ko": "샤엘; 트라이브리드"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Herald of Zakarum",
+     "note": {
+      "en": "Um",
+      "zh": "乌姆",
+      "zh_tw": "烏姆",
+      "ko": "우움"
+     }
+    },
+    {
+     "item": "Ancients' Pledge",
+     "note": {
+      "en": "Targe",
+      "zh": "小盾",
+      "zh_tw": "小盾",
+      "ko": "타아지"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Sacred Targe",
+      "zh": "神圣小盾",
+      "zh_tw": "神聖小盾",
+      "ko": "세이크리드 타아지"
+     }
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms"
+    },
+    {
+     "item": "Blade of Ali Baba"
+    },
+    {
+     "item": "Gull"
+    },
+    {
+     "text": {
+      "en": "Battle Staff of Teleportation (charges)",
+      "zh": "传送术之战斗杖（充能）",
+      "zh_tw": "傳送之戰鬥法杖（充能）",
+      "ko": "순간이동의 배틀 스태프 (충전)"
+     }
+    },
+    {
+     "item": "Herald of Zakarum"
+    },
+    {
+     "item": "Spirit"
+    },
+    {
+     "item": "Rhyme"
+    },
+    {
+     "item": "Lidless Wall"
+    }
+   ],
+   "helm": [
+    {
+     "item": "Griffon's Eye",
+     "note": {
+      "en": "Rainbow Facet",
+      "zh": "彩虹魔石",
+      "zh_tw": "彩虹刻面",
+      "ko": "무지개 자락"
+     }
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Coven"
+    },
+    {
+     "item": "Hellwarden's Will"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Rockstopper"
+    },
+    {
+     "item": "Peasant Crown"
+    },
+    {
+     "item": "Lore"
+    },
+    {
+     "text": {
+      "en": "Rare Diadem: skills, FCR, FHR, life, resists",
+      "zh": "稀有权冠：技能、FCR、FHR、生命、抗性",
+      "zh_tw": "稀有權冠：技能、FCR、FHR、生命、抗性",
+      "ko": "희귀 다이어뎀: 기술, 시전 속도, 타격 회복, 생명력, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Gemmed Mask: 3x Perfect Topaz (MF)",
+      "zh": "镶宝覆面甲：3颗完美的黄宝石（MF）",
+      "zh_tw": "鑲嵌寶石的面具：3顆完美黃寶石（MF）",
+      "ko": "보석 박힌 마스크: 최상급 토파즈 3개 (MF)"
+     }
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma",
+     "note": {
+      "en": "Mage Plate",
+      "zh": "法师铠",
+      "zh_tw": "法師鎧甲",
+      "ko": "메이지 플레이트"
+     }
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Principle"
+    },
+    {
+     "item": "Smoke"
+    },
+    {
+     "item": "Stealth"
+    },
+    {
+     "text": {
+      "en": "Gemmed Gothic Plate: 4x Perfect Topaz (MF)",
+      "zh": "镶宝哥特甲：4颗完美的黄宝石（MF）",
+      "zh_tw": "鑲嵌寶石的哥德鎧甲：4顆完美黃寶石（MF）",
+      "ko": "보석 박힌 고딕 플레이트: 최상급 토파즈 4개 (MF)"
+     }
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Magefist"
+    },
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Bloodfist"
+    },
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "text": {
+      "en": "Magic gloves: resist + MF",
+      "zh": "魔法手套：抗性+MF",
+      "zh_tw": "魔法手套：抗性+MF",
+      "ko": "마법 장갑: 저항 + MF"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Gheed's Wager"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "text": {
+      "en": "Caster crafted belt: FCR, life, resists",
+      "zh": "合成腰带（施法者）：FCR、生命、抗性",
+      "zh_tw": "合成腰帶（施法者）：FCR、生命、抗性",
+      "ko": "제작 벨트(시전자): 시전 속도, 생명력, 저항"
+     }
+    },
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "text": {
+      "en": "Rare belt: FHR, life, resists, MF",
+      "zh": "稀有腰带：FHR、生命、抗性、MF",
+      "zh_tw": "稀有腰帶：FHR、生命、抗性、MF",
+      "ko": "희귀 벨트: 타격 회복, 생명력, 저항, MF"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "Waterwalk"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "Silkweave"
+    },
+    {
+     "text": {
+      "en": "Rare boots: FRW, FHR, resists, life",
+      "zh": "稀有靴子：FRW、FHR、抗性、生命",
+      "zh_tw": "稀有靴子：FRW、FHR、抗性、生命",
+      "ko": "희귀 부츠: 이동 속도, 타격 회복, 저항, 생명력"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "item": "Entropy Locket"
+    },
+    {
+     "item": "Seraph's Hymn"
+    },
+    {
+     "item": "Telling of Beads"
+    },
+    {
+     "text": {
+      "en": "Caster crafted amulet: skills, FCR, life",
+      "zh": "合成护符（施法者）：技能、FCR、生命",
+      "zh_tw": "合成護身符（施法者）：技能、FCR、生命",
+      "ko": "제작 목걸이(시전자): 기술, 시전 속도, 생명력"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Sling"
+    },
+    {
+     "item": "Opalvein"
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "item": "Nature's Peace"
+    },
+    {
+     "item": "Dwarf Star"
+    },
+    {
+     "item": "Wisp Projector"
+    },
+    {
+     "text": {
+      "en": "Rare ring: FCR, life, mana, resists",
+      "zh": "稀有戒指：FCR、生命、法力、抗性",
+      "zh_tw": "稀有戒指：FCR、生命、法力、抗性",
+      "ko": "희귀 반지: 시전 속도, 생명력, 마나, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic ring: MF (Fortuitous of Fortune)",
+      "zh": "魔法戒指：MF（巧遇+财富之）",
+      "zh_tw": "魔法戒指：MF（巧運+機運之）",
+      "ko": "마법 반지: MF (우연한 + 행운의)"
+     }
+    },
+    {
+     "item": "Raven Frost",
+     "note": {
+      "en": "Tri-Brid variant",
+      "zh": "三修流",
+      "zh_tw": "三修流",
+      "ko": "트라이브리드"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Paladin Combat Skills, life / FHR / FRW",
+      "zh": "巨型神符：+1圣骑士战斗技能，生命/FHR/FRW",
+      "zh_tw": "特大咒符：+1聖騎士戰鬥技能，生命/FHR/FRW",
+      "ko": "거대 부적: 팔라딘 전투 기술 +1, 생명력/타격 회복/이동 속도"
+     }
+    },
+    {
+     "text": {
+      "en": "Large/small charms: life, resists, FHR, MF",
+      "zh": "大型/小型神符：生命、抗性、FHR、MF",
+      "zh_tw": "大型/小型咒符：生命、抗性、FHR、MF",
+      "ko": "큰/작은 부적: 생명력, 저항, 타격 회복, MF"
+     }
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Paladin",
+      "zh": "圣骑士",
+      "zh_tw": "聖騎士",
+      "ko": "팔라딘"
+     }
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Renewed Black Cleft"
+    },
+    {
+     "item": "Renewed Crack of the Heavens"
+    }
+   ]
+  }
+ },
+ {
+  "id": "frenzy-barbarian",
+  "cls": "Barbarian",
+  "name": {
+   "en": "Frenzy",
+   "zh": "狂乱",
+   "zh_tw": "狂亂",
+   "ko": "광란"
+  },
+  "url": "https://maxroll.gg/d2/guides/frenzy-barbarian",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Beast",
+     "note": {
+      "en": "Berserker Axe",
+      "zh": "狂战斧",
+      "zh_tw": "狂戰斧",
+      "ko": "버서커 액스"
+     }
+    },
+    {
+     "item": "Grief",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Last Wish",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Breath of the Dying",
+     "note": {
+      "en": "Ethereal Berserker Axe",
+      "zh": "无形狂战斧",
+      "zh_tw": "無形狂戰斧",
+      "ko": "에테리얼 버서커 액스"
+     }
+    },
+    {
+     "item": "Oath",
+     "note": {
+      "en": "Balrog Blade",
+      "zh": "炎魔剑",
+      "zh_tw": "炎魔之刃",
+      "ko": "발록 블레이드"
+     }
+    },
+    {
+     "item": "Unbending Will",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Black",
+     "note": {
+      "en": "Knout",
+      "zh": "链子锤",
+      "zh_tw": "刑罪連枷",
+      "ko": "나우트"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Beast",
+     "note": {
+      "en": "Berserker Axe",
+      "zh": "狂战斧",
+      "zh_tw": "狂戰斧",
+      "ko": "버서커 액스"
+     }
+    },
+    {
+     "item": "Grief",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Last Wish",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Breath of the Dying",
+     "note": {
+      "en": "Ethereal Berserker Axe",
+      "zh": "无形狂战斧",
+      "zh_tw": "無形狂戰斧",
+      "ko": "에테리얼 버서커 액스"
+     }
+    },
+    {
+     "item": "Oath",
+     "note": {
+      "en": "Balrog Blade",
+      "zh": "炎魔剑",
+      "zh_tw": "炎魔之刃",
+      "ko": "발록 블레이드"
+     }
+    },
+    {
+     "item": "Unbending Will",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Black",
+     "note": {
+      "en": "Knout",
+      "zh": "链子锤",
+      "zh_tw": "刑罪連枷",
+      "ko": "나우트"
+     }
+    }
+   ],
+   "swap": [
+    {
+     "item": "Heart of the Oak",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "item": "Call to Arms",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "text": {
+      "en": "Magic Balanced Knife: +3 Warcries",
+      "zh": "魔法平衡飞刀：+3 战斗怒吼",
+      "zh_tw": "魔法平衡飛刀：+3 戰鬥吶喊",
+      "ko": "매직 밸런스드 나이프: 함성 +3"
+     }
+    }
+   ],
+   "helm": [
+    {
+     "item": "Arreat's Face"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Vampire Gaze"
+    },
+    {
+     "item": "Guillaume's Face"
+    },
+    {
+     "item": "Immortal King's Will"
+    },
+    {
+     "text": {
+      "en": "Rare Barbarian helm: +2 Barb skills, life, FHR, 2 sockets",
+      "zh": "稀有野蛮人头盔：+2 野蛮人技能、生命、快速打击恢复、2 孔",
+      "zh_tw": "稀有野蠻人頭盔：+2 野蠻人技能、生命、快速打擊恢復、2 孔",
+      "ko": "레어 바바리안 투구: 바바리안 기술 +2, 생명력, 타격 회복, 소켓 2"
+     }
+    },
+    {
+     "item": "Wisdom"
+    },
+    {
+     "item": "Bulwark",
+     "note": {
+      "en": "Assault Helmet",
+      "zh": "强攻盔",
+      "zh_tw": "突擊頭盔",
+      "ko": "어썰트 헬멧"
+     }
+    }
+   ],
+   "armor": [
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Fortitude"
+    },
+    {
+     "item": "Lionheart"
+    },
+    {
+     "item": "Duriel's Shell"
+    },
+    {
+     "item": "Tyrael's Might"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Laying of Hands"
+    },
+    {
+     "text": {
+      "en": "Blood crafted gloves: CB, leech, resists, MF",
+      "zh": "鲜血合成手套：压碎性打击、吸取、抗性、MF",
+      "zh_tw": "鮮血合成手套：壓碎性打擊、吸取、抗性、MF",
+      "ko": "블러드 조합 장갑: 강타, 흡수, 저항, 매찬"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "String of Ears"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Trang-Oul's Girth"
+    },
+    {
+     "item": "Immortal King's Detail"
+    }
+   ],
+   "boots": [
+    {
+     "item": "Goblin Toe"
+    },
+    {
+     "item": "Gore Rider"
+    },
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Immortal King's Pillar"
+    },
+    {
+     "item": "Aldur's Advance"
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "item": "Highlord's Wrath"
+    },
+    {
+     "item": "Metalgrid"
+    },
+    {
+     "text": {
+      "en": "Blood crafted amulet: +2 Barb skills, resists, leech",
+      "zh": "鲜血合成护符：+2 野蛮人技能、抗性、吸取",
+      "zh_tw": "鮮血合成護身符：+2 野蠻人技能、抗性、吸取",
+      "ko": "블러드 조합 목걸이: 바바리안 기술 +2, 저항, 흡수"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "Raven Frost"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "text": {
+      "en": "Blood crafted ring: leech, damage, Dex, resists",
+      "zh": "鲜血合成戒指：吸取、伤害、敏捷、抗性",
+      "zh_tw": "鮮血合成戒指：吸取、傷害、敏捷、抗性",
+      "ko": "블러드 조합 반지: 흡수, 피해, 민첩, 저항"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Warcries / Combat skills, max dmg, AR, life",
+      "zh": "巨型神符：+1 战斗怒吼 / 战斗技能、最大伤害、准确率、生命",
+      "zh_tw": "特大咒符：+1 戰鬥吶喊 / 戰鬥技能、最大傷害、準確率、生命",
+      "ko": "거대 부적: 함성 / 전투 기술 +1, 최대 피해, 명중률, 생명력"
+     }
+    },
+    {
+     "text": {
+      "en": "Large / small charms: max dmg, AR, life, resists, FRW, FHR, MF",
+      "zh": "大型 / 小型神符：最大伤害、准确率、生命、抗性、跑速、快速打击恢复、MF",
+      "zh_tw": "大型 / 小型咒符：最大傷害、準確率、生命、抗性、跑速、快速打擊恢復、MF",
+      "ko": "큰 / 작은 부적: 최대 피해, 명중률, 생명력, 저항, 이속, 타격 회복, 매찬"
+     }
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Barbarian",
+      "zh": "野蛮人",
+      "zh_tw": "野蠻人",
+      "ko": "바바리안"
+     }
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Bone Break"
+    }
+   ]
+  }
+ },
+ {
+  "id": "whirlwind-barbarian-guide",
+  "cls": "Barbarian",
+  "name": {
+   "en": "Whirlwind",
+   "zh": "旋风斩",
+   "zh_tw": "旋風斬",
+   "ko": "소용돌이"
+  },
+  "url": "https://maxroll.gg/d2/guides/whirlwind-barbarian-guide",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Beast",
+     "note": {
+      "en": "Berserker Axe",
+      "zh": "狂战斧",
+      "zh_tw": "狂戰斧",
+      "ko": "버서커 액스"
+     }
+    },
+    {
+     "item": "Grief",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Last Wish",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Breath of the Dying",
+     "note": {
+      "en": "War Pike",
+      "zh": "战争长枪",
+      "zh_tw": "征戰長槍",
+      "ko": "워 파이크"
+     }
+    },
+    {
+     "item": "Obedience",
+     "note": {
+      "en": "Thresher",
+      "zh": "砍斧",
+      "zh_tw": "斬鐮",
+      "ko": "쓰레셔"
+     }
+    },
+    {
+     "item": "Unbending Will",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Immortal King's Stone Crusher",
+     "note": {
+      "en": "Immortal King set",
+      "zh": "不朽之王套装",
+      "zh_tw": "不朽之王套裝",
+      "ko": "불멸왕 세트"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare Thunder Maul: ED, IAS, CB, eth/sockets",
+      "zh": "稀有雷锤：ED、IAS、压碎性打击，无形/有孔",
+      "zh_tw": "稀有雷霆重鎚：ED、IAS、壓碎性打擊，無形/有孔",
+      "ko": "희귀 썬더 마울: 피해 증가, 공격 속도, 강타, 에테리얼/소켓"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Beast",
+     "note": {
+      "en": "Berserker Axe",
+      "zh": "狂战斧",
+      "zh_tw": "狂戰斧",
+      "ko": "버서커 액스"
+     }
+    },
+    {
+     "item": "Grief",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Last Wish",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Breath of the Dying",
+     "note": {
+      "en": "Berserker Axe",
+      "zh": "狂战斧",
+      "zh_tw": "狂戰斧",
+      "ko": "버서커 액스"
+     }
+    },
+    {
+     "item": "Unbending Will",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     }
+    },
+    {
+     "item": "Phoenix",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Stormshield"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Heart of the Oak",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "item": "Call to Arms",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "text": {
+      "en": "Magic Balanced Knife: +Warcries (Echoing)",
+      "zh": "魔法平衡飞刀：+战吼（回响）",
+      "zh_tw": "魔法平衡飛刀：+戰吼（回音）",
+      "ko": "마법 밸런스드 나이프: +함성 (메아리치는)"
+     }
+    }
+   ],
+   "helm": [
+    {
+     "item": "Arreat's Face"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Vampire Gaze"
+    },
+    {
+     "item": "Guillaume's Face"
+    },
+    {
+     "item": "Immortal King's Will",
+     "note": {
+      "en": "Immortal King set",
+      "zh": "不朽之王套装",
+      "zh_tw": "不朽之王套裝",
+      "ko": "불멸왕 세트"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare barbarian helm: skills, CB/DS, leech, life",
+      "zh": "稀有野蛮人头盔：技能、压碎/致命一击、吸取、生命",
+      "zh_tw": "稀有野蠻人頭盔：技能、壓碎/致命一擊、偷取、生命",
+      "ko": "희귀 바바리안 투구: 기술, 강타/치명타, 흡수, 생명력"
+     }
+    },
+    {
+     "item": "Wisdom"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Fortitude"
+    },
+    {
+     "item": "Lionheart"
+    },
+    {
+     "item": "Duriel's Shell"
+    },
+    {
+     "item": "Tyrael's Might"
+    },
+    {
+     "item": "Immortal King's Soul Cage",
+     "note": {
+      "en": "Immortal King set",
+      "zh": "不朽之王套装",
+      "zh_tw": "不朽之王套裝",
+      "ko": "불멸왕 세트"
+     }
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Laying of Hands"
+    },
+    {
+     "item": "Immortal King's Forge",
+     "note": {
+      "en": "Immortal King set",
+      "zh": "不朽之王套装",
+      "zh_tw": "不朽之王套裝",
+      "ko": "불멸왕 세트"
+     }
+    },
+    {
+     "text": {
+      "en": "Blood crafted gloves: leech, attributes, life",
+      "zh": "合成手套（鲜血）：吸取、属性、生命",
+      "zh_tw": "合成手套（鮮血）：偷取、屬性、生命",
+      "ko": "제작 장갑(피): 흡수, 능력치, 생명력"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "String of Ears"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Trang-Oul's Girth"
+    },
+    {
+     "item": "Immortal King's Detail",
+     "note": {
+      "en": "Immortal King set",
+      "zh": "不朽之王套装",
+      "zh_tw": "不朽之王套裝",
+      "ko": "불멸왕 세트"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "Goblin Toe"
+    },
+    {
+     "item": "Gore Rider"
+    },
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Immortal King's Pillar",
+     "note": {
+      "en": "Immortal King set",
+      "zh": "不朽之王套装",
+      "zh_tw": "不朽之王套裝",
+      "ko": "불멸왕 세트"
+     }
+    },
+    {
+     "item": "Aldur's Advance"
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "item": "Highlord's Wrath"
+    },
+    {
+     "item": "Metalgrid"
+    },
+    {
+     "item": "Telling of Beads"
+    },
+    {
+     "text": {
+      "en": "Caster crafted amulet: skills, FCR, life",
+      "zh": "合成护符（施法者）：技能、FCR、生命",
+      "zh_tw": "合成護身符（施法者）：技能、FCR、生命",
+      "ko": "제작 목걸이(시전자): 기술, 시전 속도, 생명력"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "Raven Frost"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "text": {
+      "en": "Blood crafted ring: leech, attributes, AR",
+      "zh": "合成戒指（鲜血）：吸取、属性、命中",
+      "zh_tw": "合成戒指（鮮血）：偷取、屬性、準確率",
+      "ko": "제작 반지(피): 흡수, 능력치, 명중"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic ring: Platinum of Maiming",
+      "zh": "魔法戒指：白金+毁伤之",
+      "zh_tw": "魔法戒指：白金+殘害之",
+      "ko": "마법 반지: 백금의 + 폭행의"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Warcries/Combat, max dmg / AR / life",
+      "zh": "巨型神符：+1战吼/战斗技能，最大伤害/命中/生命",
+      "zh_tw": "特大咒符：+1戰吼/戰鬥技能，最大傷害/準確率/生命",
+      "ko": "거대 부적: 함성/전투 기술 +1, 최대 피해/명중/생명력"
+     }
+    },
+    {
+     "text": {
+      "en": "Large/small charms: max dmg, AR, life, resists, FHR, MF",
+      "zh": "大型/小型神符：最大伤害、命中、生命、抗性、FHR、MF",
+      "zh_tw": "大型/小型咒符：最大傷害、準確率、生命、抗性、FHR、MF",
+      "ko": "큰/작은 부적: 최대 피해, 명중, 생명력, 저항, 타격 회복, MF"
+     }
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Barbarian",
+      "zh": "野蛮人",
+      "zh_tw": "野蠻人",
+      "ko": "바바리안"
+     }
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Bone Break"
+    }
+   ]
+  }
+ },
+ {
+  "id": "berserk-barbarian",
+  "cls": "Barbarian",
+  "name": {
+   "en": "Berserk",
+   "zh": "狂战士",
+   "zh_tw": "狂暴之擊",
+   "ko": "광폭화"
+  },
+  "url": "https://maxroll.gg/d2/guides/berserk-barbarian",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Grief",
+     "note": {
+      "en": "Phase Blade or Zweihander",
+      "zh": "相位之刃或双手重剑",
+      "zh_tw": "幻化之刃或日耳曼大劍",
+      "ko": "페이즈 블레이드 또는 즈바이핸더"
+     }
+    },
+    {
+     "item": "Oath",
+     "note": {
+      "en": "Highland/Cryptic Sword/Balrog Blade",
+      "zh": "高地剑/秘文剑/炎魔剑",
+      "zh_tw": "高地劍/絕秘劍/炎魔之刃",
+      "ko": "하이랜드/크립틱 소드/발록 블레이드"
+     }
+    },
+    {
+     "item": "Unbending Will",
+     "note": {
+      "en": "Phase Blade or Colossus Blade",
+      "zh": "相位之刃或巨神刃",
+      "zh_tw": "幻化之刃或巨神刃",
+      "ko": "페이즈 블레이드 또는 콜로서스 블레이드"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "text": {
+      "en": "Gemmed Phase Blade or eth Crystal Sword: 6x Ist",
+      "zh": "镶宝相位之刃或无形水晶剑：6个伊司特",
+      "zh_tw": "鑲嵌寶石的幻化之刃或無形水晶劍：6個伊司特",
+      "ko": "보석 박힌 페이즈 블레이드/에테리얼 크리스탈 소드: 이스트 6개"
+     }
+    },
+    {
+     "item": "Rune Master",
+     "note": {
+      "en": "5x Ist",
+      "zh": "5个伊司特",
+      "zh_tw": "5個伊司特",
+      "ko": "이스트 5개"
+     }
+    },
+    {
+     "item": "Blade of Ali Baba",
+     "note": {
+      "en": "2x Ist",
+      "zh": "2个伊司特",
+      "zh_tw": "2個伊司特",
+      "ko": "이스트 2개"
+     }
+    },
+    {
+     "item": "Gull",
+     "note": {
+      "en": "Ist",
+      "zh": "伊司特",
+      "zh_tw": "伊司特",
+      "ko": "이스트"
+     }
+    },
+    {
+     "item": "Stormshield"
+    },
+    {
+     "item": "Moser's Blessed Circle",
+     "note": {
+      "en": "2x Ist",
+      "zh": "2个伊司特",
+      "zh_tw": "2個伊司特",
+      "ko": "이스트 2개"
+     }
+    },
+    {
+     "item": "Rhyme"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Suicide Branch",
+     "note": {
+      "en": "Ist",
+      "zh": "伊司特",
+      "zh_tw": "伊司特",
+      "ko": "이스트"
+     }
+    },
+    {
+     "item": "Wizardspike",
+     "note": {
+      "en": "Ist",
+      "zh": "伊司特",
+      "zh_tw": "伊司特",
+      "ko": "이스트"
+     }
+    },
+    {
+     "item": "Heart of the Oak",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "text": {
+      "en": "Gemmed Phase Blade: 6x Ist",
+      "zh": "镶宝相位之刃：6个伊司特",
+      "zh_tw": "鑲嵌寶石的幻化之刃：6個伊司特",
+      "ko": "보석 박힌 페이즈 블레이드: 이스트 6개"
+     }
+    },
+    {
+     "item": "Blade of Ali Baba",
+     "note": {
+      "en": "2x Ist",
+      "zh": "2个伊司特",
+      "zh_tw": "2個伊司特",
+      "ko": "이스트 2개"
+     }
+    },
+    {
+     "item": "Gull",
+     "note": {
+      "en": "Ist",
+      "zh": "伊司特",
+      "zh_tw": "伊司特",
+      "ko": "이스트"
+     }
+    },
+    {
+     "item": "Harmony"
+    },
+    {
+     "item": "Naj's Puzzler",
+     "note": {
+      "en": "Teleport charges, pre-Enigma",
+      "zh": "传送术充能，Enigma前过渡",
+      "zh_tw": "傳送術充能，謎團前過渡",
+      "ko": "순간이동 충전, 수수께끼 전"
+     }
+    },
+    {
+     "text": {
+      "en": "Staff of Teleportation (pre-Enigma)",
+      "zh": "传送术之杖（Enigma前过渡）",
+      "zh_tw": "傳送之法杖（謎團前過渡）",
+      "ko": "순간이동의 스태프 (수수께끼 전)"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    }
+   ],
+   "helm": [
+    {
+     "item": "Harlequin Crest",
+     "note": {
+      "en": "Cham or Ist",
+      "zh": "查姆或伊司特",
+      "zh_tw": "查姆或伊司特",
+      "ko": "참 또는 이스트"
+     }
+    },
+    {
+     "item": "Immortal King's Will"
+    },
+    {
+     "text": {
+      "en": "Magic circlet: sockets+MF or Combat skills+FCR",
+      "zh": "魔法头环：有孔+MF或战斗技能+FCR",
+      "zh_tw": "魔法頭環：有孔+MF或戰鬥技能+FCR",
+      "ko": "마법 써클릿: 소켓+MF 또는 전투 기술+시전 속도"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare circlet: skills, FCR, life, resists, MF",
+      "zh": "稀有头环：技能、FCR、生命、抗性、MF",
+      "zh_tw": "稀有頭環：技能、FCR、生命、抗性、MF",
+      "ko": "희귀 써클릿: 기술, 시전 속도, 생명력, 저항, MF"
+     }
+    },
+    {
+     "item": "Tarnhelm"
+    },
+    {
+     "text": {
+      "en": "Gemmed Crown: 3x Perfect Topaz (MF)",
+      "zh": "镶宝王冠：3颗完美的黄宝石（MF）",
+      "zh_tw": "鑲嵌寶石的王冠：3顆完美黃寶石（MF）",
+      "ko": "보석 박힌 크라운: 최상급 토파즈 3개 (MF)"
+     }
+    },
+    {
+     "item": "Guillaume's Face",
+     "note": {
+      "en": "Cham",
+      "zh": "查姆",
+      "zh_tw": "查姆",
+      "ko": "참"
+     }
+    },
+    {
+     "item": "Arreat's Face"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Temper"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Tal Rasha's Guardianship",
+     "note": {
+      "en": "3-piece Tal Rasha's set",
+      "zh": "塔·拉夏的裹身布 3件",
+      "zh_tw": "塔拉夏的外袍 3件",
+      "ko": "탈 라샤의 수의 3부위"
+     }
+    },
+    {
+     "item": "Wealth"
+    },
+    {
+     "text": {
+      "en": "Gemmed Dusk Shroud: 4x Perfect Topaz (MF)",
+      "zh": "镶宝灰幕寿衣：4颗完美的黄宝石（MF）",
+      "zh_tw": "鑲嵌寶石的灰暮罩衣：4顆完美黃寶石（MF）",
+      "ko": "보석 박힌 더스크 슈라우드: 최상급 토파즈 4개 (MF)"
+     }
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Laying of Hands"
+    },
+    {
+     "item": "Immortal King's Forge",
+     "note": {
+      "en": "3-piece Immortal King set",
+      "zh": "不朽之王 3件",
+      "zh_tw": "不朽之王 3件",
+      "ko": "불멸왕 3부위"
+     }
+    },
+    {
+     "item": "Sigon's Gage",
+     "note": {
+      "en": "3-piece Sigon's set",
+      "zh": "西刚的全身甲胄 3件",
+      "zh_tw": "西剛的全套鋼甲 3件",
+      "ko": "시곤의 온전한 강철 3부위"
+     }
+    },
+    {
+     "item": "Death's Hand",
+     "note": {
+      "en": "2-piece Death's set",
+      "zh": "死神的伪装 2件",
+      "zh_tw": "死亡的偽裝 2件",
+      "ko": "죽음의 위장 2부위"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare gloves: IAS, attributes, life, resists, MF",
+      "zh": "稀有手套：IAS、属性、生命、抗性、MF",
+      "zh_tw": "稀有手套：IAS、屬性、生命、抗性、MF",
+      "ko": "희귀 장갑: 공격 속도, 능력치, 생명력, 저항, MF"
+     }
+    },
+    {
+     "text": {
+      "en": "Blood crafted gloves: IAS, CB, attributes",
+      "zh": "合成手套（鲜血）：IAS、压碎性打击、属性",
+      "zh_tw": "合成手套（鮮血）：IAS、壓碎性打擊、屬性",
+      "ko": "제작 장갑(피): 공격 속도, 강타, 능력치"
+     }
+    },
+    {
+     "item": "Trang-Oul's Claws"
+    }
+   ],
+   "belt": [
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Trang-Oul's Girth"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Tal Rasha's Fine-Spun Cloth",
+     "note": {
+      "en": "3-piece Tal Rasha's set",
+      "zh": "塔·拉夏的裹身布 3件",
+      "zh_tw": "塔拉夏的外袍 3件",
+      "ko": "탈 라샤의 수의 3부위"
+     }
+    },
+    {
+     "item": "Immortal King's Detail",
+     "note": {
+      "en": "3-piece Immortal King set",
+      "zh": "不朽之王 3件",
+      "zh_tw": "不朽之王 3件",
+      "ko": "불멸왕 3부위"
+     }
+    },
+    {
+     "item": "Sigon's Wrap",
+     "note": {
+      "en": "3-piece Sigon's set",
+      "zh": "西刚的全身甲胄 3件",
+      "zh_tw": "西剛的全套鋼甲 3件",
+      "ko": "시곤의 온전한 강철 3부위"
+     }
+    },
+    {
+     "item": "Death's Guard",
+     "note": {
+      "en": "Demonhide Sash; 1-2 piece Death's set",
+      "zh": "恶魔皮带；死神的伪装 1-2件",
+      "zh_tw": "魔皮束帶；死亡的偽裝 1-2件",
+      "ko": "데몬하이드 새시; 죽음의 위장 1-2부위"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Gore Rider"
+    },
+    {
+     "item": "Goblin Toe"
+    },
+    {
+     "item": "Immortal King's Pillar",
+     "note": {
+      "en": "3-piece Immortal King set",
+      "zh": "不朽之王 3件",
+      "zh_tw": "不朽之王 3件",
+      "ko": "불멸왕 3부위"
+     }
+    },
+    {
+     "item": "Sigon's Sabot",
+     "note": {
+      "en": "3-piece Sigon's set",
+      "zh": "西刚的全身甲胄 3件",
+      "zh_tw": "西剛的全套鋼甲 3件",
+      "ko": "시곤의 온전한 강철 3부위"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare boots: FRW, AR, attributes, resists, MF",
+      "zh": "稀有靴子：FRW、命中、属性、抗性、MF",
+      "zh_tw": "稀有靴子：FRW、準確率、屬性、抗性、MF",
+      "ko": "희귀 부츠: 이동 속도, 명중, 능력치, 저항, MF"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "text": {
+      "en": "Caster crafted amulet: skills, FCR, life",
+      "zh": "合成护符（施法者）：技能、FCR、生命",
+      "zh_tw": "合成護身符（施法者）：技能、FCR、生命",
+      "ko": "제작 목걸이(시전자): 기술, 시전 속도, 생명력"
+     }
+    },
+    {
+     "item": "Highlord's Wrath"
+    },
+    {
+     "item": "Metalgrid"
+    },
+    {
+     "item": "Tal Rasha's Adjudication",
+     "note": {
+      "en": "3-piece Tal Rasha's set",
+      "zh": "塔·拉夏的裹身布 3件",
+      "zh_tw": "塔拉夏的外袍 3件",
+      "ko": "탈 라샤의 수의 3부위"
+     }
+    },
+    {
+     "text": {
+      "en": "Amulet with Teleport charges (pre-Enigma)",
+      "zh": "传送术充能护符（Enigma前过渡）",
+      "zh_tw": "傳送術充能護身符（謎團前過渡）",
+      "ko": "순간이동 충전 목걸이 (수수께끼 전)"
+     }
+    },
+    {
+     "item": "Angelic Wings",
+     "note": {
+      "en": "2-piece Angelic set",
+      "zh": "天使的装束 2件",
+      "zh_tw": "天使的衣裝 2件",
+      "ko": "천사의 의복 2부위"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "Nagelring"
+    },
+    {
+     "text": {
+      "en": "Rare ring: FCR, AR, life, resists, MF",
+      "zh": "稀有戒指：FCR、命中、生命、抗性、MF",
+      "zh_tw": "稀有戒指：FCR、準確率、生命、抗性、MF",
+      "ko": "희귀 반지: 시전 속도, 명중, 생명력, 저항, MF"
+     }
+    },
+    {
+     "item": "Dwarf Star"
+    },
+    {
+     "item": "Wisp Projector"
+    },
+    {
+     "item": "Angelic Halo",
+     "note": {
+      "en": "2-piece Angelic set",
+      "zh": "天使的装束 2件",
+      "zh_tw": "天使的衣裝 2件",
+      "ko": "천사의 의복 2부위"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: max dmg / AR, life, attributes",
+      "zh": "巨型神符：最大伤害/命中、生命、属性",
+      "zh_tw": "特大咒符：最大傷害/準確率、生命、屬性",
+      "ko": "거대 부적: 최대 피해/명중, 생명력, 능력치"
+     }
+    },
+    {
+     "text": {
+      "en": "Large charms: max dmg / AR, life",
+      "zh": "大型神符：最大伤害/命中、生命",
+      "zh_tw": "大型咒符：最大傷害/準確率、生命",
+      "ko": "큰 부적: 최대 피해/명중, 생명력"
+     }
+    },
+    {
+     "text": {
+      "en": "Small charms: MF, life, resists, max dmg / AR",
+      "zh": "小型神符：MF、生命、抗性、最大伤害/命中",
+      "zh_tw": "小型咒符：MF、生命、抗性、最大傷害/準確率",
+      "ko": "작은 부적: MF, 생명력, 저항, 최대 피해/명중"
+     }
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Barbarian",
+      "zh": "野蛮人",
+      "zh_tw": "野蠻人",
+      "ko": "바바리안"
+     }
+    },
+    {
+     "item": "Annihilus"
+    }
+   ]
+  }
+ },
+ {
+  "id": "fissure-druid",
+  "cls": "Druid",
+  "name": {
+   "en": "Fissure",
+   "zh": "熔岩裂地",
+   "zh_tw": "裂地之火",
+   "ko": "균열"
+  },
+  "url": "https://maxroll.gg/d2/guides/fissure-druid",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Heart of the Oak",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "text": {
+      "en": "Gemmed Crystal Sword: 5/5 Fire Facets and/or Ist",
+      "zh": "镶宝水晶剑：5/5火焰彩虹魔石和/或伊司特",
+      "zh_tw": "鑲嵌寶石的水晶劍：5/5火焰彩虹刻面和/或伊司特",
+      "ko": "보석 박힌 크리스탈 소드: 5/5 화염 무지개 자락 및/또는 이스트"
+     }
+    },
+    {
+     "item": "Phoenix"
+    },
+    {
+     "item": "Spirit"
+    },
+    {
+     "item": "Earthshaker"
+    },
+    {
+     "item": "Leaf"
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Phoenix"
+    },
+    {
+     "text": {
+      "en": "4os Monarch: 5/5 Fire Facets or Ist",
+      "zh": "4孔统治者大盾：5/5火焰彩虹魔石或伊司特",
+      "zh_tw": "4孔君主盾：5/5火焰彩虹刻面或伊司特",
+      "ko": "4소켓 모너크: 5/5 화염 무지개 자락 또는 이스트"
+     }
+    },
+    {
+     "item": "Stormshield"
+    },
+    {
+     "item": "Spirit"
+    },
+    {
+     "item": "Moser's Blessed Circle"
+    },
+    {
+     "item": "Rhyme"
+    },
+    {
+     "item": "Ancients' Pledge"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms"
+    },
+    {
+     "text": {
+      "en": "Wand with Lower Resist charges",
+      "zh": "降低抗性充能魔杖",
+      "zh_tw": "降低抗性充能魔杖",
+      "ko": "저항 감소 충전 원드"
+     }
+    },
+    {
+     "item": "Naj's Puzzler",
+     "note": {
+      "en": "Teleport charges, pre-Enigma",
+      "zh": "传送术充能，Enigma前过渡",
+      "zh_tw": "傳送術充能，謎團前過渡",
+      "ko": "순간이동 충전, 수수께끼 전"
+     }
+    },
+    {
+     "text": {
+      "en": "Staff of Teleportation (pre-Enigma)",
+      "zh": "传送术之杖（Enigma前过渡）",
+      "zh_tw": "傳送之法杖（謎團前過渡）",
+      "ko": "순간이동의 스태프 (수수께끼 전)"
+     }
+    },
+    {
+     "item": "Harmony"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Lidless Wall"
+    }
+   ],
+   "helm": [
+    {
+     "item": "Ravenlore"
+    },
+    {
+     "item": "Flickering Flame"
+    },
+    {
+     "text": {
+      "en": "Magic pelt/Diadem: +3 Elemental, life or FCR (Gaean)",
+      "zh": "魔法毛皮/权冠：+3元素技能，生命或FCR（盖亚）",
+      "zh_tw": "魔法獸皮/權冠：+3元素法術，生命或FCR（蓋亞）",
+      "ko": "마법 털가죽/다이어뎀: 원소 +3, 생명력 또는 시전 속도 (가이아)"
+     }
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Peasant Crown"
+    },
+    {
+     "item": "Tarnhelm"
+    },
+    {
+     "item": "Lore"
+    },
+    {
+     "item": "Temper"
+    },
+    {
+     "text": {
+      "en": "Gemmed Mask: 3x Perfect Topaz (MF)",
+      "zh": "镶宝覆面甲：3颗完美的黄宝石（MF）",
+      "zh_tw": "鑲嵌寶石的面具：3顆完美黃寶石（MF）",
+      "ko": "보석 박힌 마스크: 최상급 토파즈 3개 (MF)"
+     }
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Wealth"
+    },
+    {
+     "text": {
+      "en": "Gemmed Dusk Shroud: 4x Perfect Topaz (MF)",
+      "zh": "镶宝灰幕寿衣：4颗完美的黄宝石（MF）",
+      "zh_tw": "鑲嵌寶石的灰暮罩衣：4顆完美黃寶石（MF）",
+      "ko": "보석 박힌 더스크 슈라우드: 최상급 토파즈 4개 (MF)"
+     }
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Rain"
+    },
+    {
+     "item": "Smoke"
+    },
+    {
+     "item": "Treachery"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Magefist"
+    },
+    {
+     "text": {
+      "en": "Rare gloves: attributes, life, resists, MF",
+      "zh": "稀有手套：属性、生命、抗性、MF",
+      "zh_tw": "稀有手套：屬性、生命、抗性、MF",
+      "ko": "희귀 장갑: 능력치, 생명력, 저항, MF"
+     }
+    },
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Bloodfist"
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "text": {
+      "en": "Caster crafted belt: FCR, life, mana",
+      "zh": "合成腰带（施法者）：FCR、生命、法力",
+      "zh_tw": "合成腰帶（施法者）：FCR、生命、法力",
+      "ko": "제작 벨트(시전자): 시전 속도, 생명력, 마나"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare/magic belt: FHR, life, mana, resists",
+      "zh": "稀有/魔法腰带：FHR、生命、法力、抗性",
+      "zh_tw": "稀有/魔法腰帶：FHR、生命、法力、抗性",
+      "ko": "희귀/마법 벨트: 타격 회복, 생명력, 마나, 저항"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "text": {
+      "en": "Rare/magic boots: FRW, FHR, resists, life",
+      "zh": "稀有/魔法靴子：FRW、FHR、抗性、生命",
+      "zh_tw": "稀有/魔法靴子：FRW、FHR、抗性、生命",
+      "ko": "희귀/마법 부츠: 이동 속도, 타격 회복, 저항, 생명력"
+     }
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "Natalya's Soul"
+    }
+   ],
+   "amulet": [
+    {
+     "text": {
+      "en": "Caster crafted amulet: skills, FCR, life",
+      "zh": "合成护符（施法者）：技能、FCR、生命",
+      "zh_tw": "合成護身符（施法者）：技能、FCR、生命",
+      "ko": "제작 목걸이(시전자): 기술, 시전 속도, 생명력"
+     }
+    },
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "text": {
+      "en": "Magic amulet: +3 Elemental (Gaean), MF/FCR/mana",
+      "zh": "魔法护符：+3元素技能（盖亚），MF/FCR/法力",
+      "zh_tw": "魔法護身符：+3元素法術（蓋亞），MF/FCR/法力",
+      "ko": "마법 목걸이: 원소 +3 (가이아), MF/시전 속도/마나"
+     }
+    },
+    {
+     "text": {
+      "en": "Amulet with Teleport charges (pre-Enigma)",
+      "zh": "传送术充能护符（Enigma前过渡）",
+      "zh_tw": "傳送術充能護身符（謎團前過渡）",
+      "ko": "순간이동 충전 목걸이 (수수께끼 전)"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "text": {
+      "en": "Rare ring: FCR, life, mana, resists",
+      "zh": "稀有戒指：FCR、生命、法力、抗性",
+      "zh_tw": "稀有戒指：FCR、生命、法力、抗性",
+      "ko": "희귀 반지: 시전 속도, 생명력, 마나, 저항"
+     }
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "text": {
+      "en": "Magic ring: MF (Fortuitous of Fortune)",
+      "zh": "魔法戒指：MF（巧遇+财富之）",
+      "zh_tw": "魔法戒指：MF（巧運+機運之）",
+      "ko": "마법 반지: MF (우연한 + 행운의)"
+     }
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "item": "Dwarf Star"
+    },
+    {
+     "item": "Wisp Projector"
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Elemental Skills, life / FHR / resists",
+      "zh": "巨型神符：+1元素技能，生命/FHR/抗性",
+      "zh_tw": "特大咒符：+1元素法術，生命/FHR/抗性",
+      "ko": "거대 부적: 원소 기술 +1, 생명력/타격 회복/저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Small charms: MF, life, resists, FHR",
+      "zh": "小型神符：MF、生命、抗性、FHR",
+      "zh_tw": "小型咒符：MF、生命、抗性、FHR",
+      "ko": "작은 부적: MF, 생명력, 저항, 타격 회복"
+     }
+    },
+    {
+     "item": "Flame Rift"
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Druid",
+      "zh": "德鲁伊",
+      "zh_tw": "德魯伊",
+      "ko": "드루이드"
+     }
+    },
+    {
+     "item": "Annihilus"
+    }
+   ]
+  }
+ },
+ {
+  "id": "tornado-hurricane-druid",
+  "cls": "Druid",
+  "name": {
+   "en": "Tornado / Hurricane",
+   "zh": "龙卷风/飓风",
+   "zh_tw": "龍捲風/颶風術",
+   "ko": "회오리바람/허리케인"
+  },
+  "url": "https://maxroll.gg/d2/guides/tornado-hurricane-druid",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Suicide Branch",
+     "note": {
+      "en": "Ist in socket",
+      "zh": "镶嵌伊司特",
+      "zh_tw": "鑲嵌伊司特",
+      "ko": "이스트 장착"
+     }
+    },
+    {
+     "item": "Wizardspike",
+     "note": {
+      "en": "Ist in socket",
+      "zh": "镶嵌伊司特",
+      "zh_tw": "鑲嵌伊司特",
+      "ko": "이스트 장착"
+     }
+    },
+    {
+     "item": "Heart of the Oak",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Doom",
+     "note": {
+      "en": "Berserker Axe",
+      "zh": "狂战斧",
+      "zh_tw": "狂戰斧",
+      "ko": "버서커 액스"
+     }
+    },
+    {
+     "text": {
+      "en": "Phase Blade: 6 sockets, Ist, cold Rainbow Facets",
+      "zh": "相位之刃：6 孔、伊司特、冰霜彩虹魔石",
+      "zh_tw": "幻化之刃：6 孔、伊司特、冰寒彩虹刻面",
+      "ko": "페이즈 블레이드: 소켓 6개, 이스트, 냉기 무지개 자락"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Stormshield"
+    },
+    {
+     "item": "Moser's Blessed Circle"
+    },
+    {
+     "item": "Splendor",
+     "note": {
+      "en": "Bone Shield",
+      "zh": "骨盾",
+      "zh_tw": "骨盾",
+      "ko": "본 쉴드"
+     }
+    },
+    {
+     "item": "Ancients' Pledge",
+     "note": {
+      "en": "Kite Shield",
+      "zh": "鸢盾",
+      "zh_tw": "鳶盾",
+      "ko": "카이트 쉴드"
+     }
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms"
+    },
+    {
+     "item": "Naj's Puzzler"
+    },
+    {
+     "text": {
+      "en": "Staff of Teleportation (charges)",
+      "zh": "传送之杖（充能）",
+      "zh_tw": "傳送之杖（充能）",
+      "ko": "순간이동 지팡이 (충전)"
+     }
+    },
+    {
+     "item": "Harmony",
+     "note": {
+      "en": "Hunter's Bow",
+      "zh": "猎弓",
+      "zh_tw": "獵弓",
+      "ko": "헌터보우"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch, Ethereal OK",
+      "zh": "统治者大盾，可用无形",
+      "zh_tw": "君主盾，可用無形",
+      "ko": "모너크, 무형 가능"
+     }
+    },
+    {
+     "item": "Lidless Wall"
+    },
+    {
+     "item": "Splendor",
+     "note": {
+      "en": "Bone Shield",
+      "zh": "骨盾",
+      "zh_tw": "骨盾",
+      "ko": "본 쉴드"
+     }
+    }
+   ],
+   "helm": [
+    {
+     "text": {
+      "en": "Rare pelt: +2 Druid skills, +3 Tornado/Hurricane, life, 2 sockets",
+      "zh": "稀有德鲁伊头盔：+2 德鲁伊技能、+3 龙卷风/飓风、生命、2 孔",
+      "zh_tw": "稀有德魯伊頭盔：+2 德魯伊技能、+3 龍捲風/颶風術、生命、2 孔",
+      "ko": "레어 드루이드 투구: 드루이드 기술 +2, 회오리바람/허리케인 +3, 생명력, 소켓 2개"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic pelt: +3 Elemental skills, +3 Tornado/Hurricane, life",
+      "zh": "魔法德鲁伊头盔：+3 元素技能、+3 龙卷风/飓风、生命",
+      "zh_tw": "魔法德魯伊頭盔：+3 元素技能、+3 龍捲風/颶風術、生命",
+      "ko": "마법 드루이드 투구: 원소 기술 +3, 회오리바람/허리케인 +3, 생명력"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare circlet: +2 Druid skills, FCR, FRW, resists, MF",
+      "zh": "稀有头环：+2 德鲁伊技能、施法速度、跑步速度、抗性、魔法物品几率",
+      "zh_tw": "稀有頭環：+2 德魯伊技能、施法速度、跑步速度、抗性、尋獲魔法物品",
+      "ko": "레어 써클릿: 드루이드 기술 +2, 시전 속도, 달리기 속도, 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "item": "Delirium",
+     "note": {
+      "en": "Antlers",
+      "zh": "鹿角盔",
+      "zh_tw": "巨角獸帽",
+      "ko": "앤틀러스"
+     }
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Tarnhelm"
+    },
+    {
+     "item": "Peasant Crown"
+    },
+    {
+     "item": "Nightwing's Veil"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Lore"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma",
+     "note": {
+      "en": "Mage Plate",
+      "zh": "法师铠",
+      "zh_tw": "法師鎧甲",
+      "ko": "메이지 플레이트"
+     }
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Rain"
+    },
+    {
+     "item": "Smoke"
+    },
+    {
+     "item": "Stealth"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Magefist"
+    },
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Bloodfist"
+    },
+    {
+     "text": {
+      "en": "Magic gloves: MF, resists",
+      "zh": "魔法手套：魔法物品几率、抗性",
+      "zh_tw": "魔法手套：尋獲魔法物品、抗性",
+      "ko": "마법 장갑: 마법 아이템 발견, 저항"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "text": {
+      "en": "Caster crafted belt: FCR, FHR, resists",
+      "zh": "施法者合成腰带：施法速度、打击回复、抗性",
+      "zh_tw": "施法者合成腰帶：施法速度、打擊恢復、抗性",
+      "ko": "시전자 제작 벨트: 시전 속도, 타격 회복, 저항"
+     }
+    },
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "text": {
+      "en": "Magic belt: life, resists",
+      "zh": "魔法腰带：生命、抗性",
+      "zh_tw": "魔法腰帶：生命、抗性",
+      "ko": "마법 벨트: 생명력, 저항"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "War Traveler"
+    },
+    {
+     "text": {
+      "en": "Rare boots: FRW, FHR, resists, MF",
+      "zh": "稀有靴子：跑步速度、打击回复、抗性、魔法物品几率",
+      "zh_tw": "稀有靴子：跑步速度、打擊恢復、抗性、尋獲魔法物品",
+      "ko": "레어 부츠: 달리기 속도, 타격 회복, 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "Waterwalk"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "text": {
+      "en": "Magic boots: FRW, resists",
+      "zh": "魔法靴子：跑步速度、抗性",
+      "zh_tw": "魔法靴子：跑步速度、抗性",
+      "ko": "마법 부츠: 달리기 속도, 저항"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 Druid skills, FCR, resists, MF",
+      "zh": "施法者合成护符：+2 德鲁伊技能、施法速度、抗性、魔法物品几率",
+      "zh_tw": "施法者合成護身符：+2 德魯伊技能、施法速度、抗性、尋獲魔法物品",
+      "ko": "시전자 제작 목걸이: 드루이드 기술 +2, 시전 속도, 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "text": {
+      "en": "Blood crafted amulet: +2 Druid skills, life, FCR, resists",
+      "zh": "鲜血合成护符：+2 德鲁伊技能、生命、施法速度、抗性",
+      "zh_tw": "鮮血合成護身符：+2 德魯伊技能、生命、施法速度、抗性",
+      "ko": "피 제작 목걸이: 드루이드 기술 +2, 생명력, 시전 속도, 저항"
+     }
+    },
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "text": {
+      "en": "Magic amulet: +3 Elemental skills, FCR / MF / life",
+      "zh": "魔法护符：+3 元素技能、施法速度/魔法物品几率/生命",
+      "zh_tw": "魔法護身符：+3 元素技能、施法速度/尋獲魔法物品/生命",
+      "ko": "마법 목걸이: 원소 기술 +3, 시전 속도/마법 아이템 발견/생명력"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "text": {
+      "en": "Rare rings: FCR, life, mana, resists, MF",
+      "zh": "稀有戒指：施法速度、生命、法力、抗性、魔法物品几率",
+      "zh_tw": "稀有戒指：施法速度、生命、法力、抗性、尋獲魔法物品",
+      "ko": "레어 반지: 시전 속도, 생명력, 마나, 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "text": {
+      "en": "Magic ring: 40% MF",
+      "zh": "魔法戒指：40% 魔法物品几率",
+      "zh_tw": "魔法戒指：40% 尋獲魔法物品",
+      "ko": "마법 반지: 마법 아이템 발견 40%"
+     }
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "item": "Wisp Projector"
+    },
+    {
+     "item": "Nature's Peace"
+    },
+    {
+     "item": "Dwarf Star"
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Elemental skills, life / FHR",
+      "zh": "巨型神符：+1 元素技能、生命/打击回复",
+      "zh_tw": "特大咒符：+1 元素技能、生命/打擊恢復",
+      "ko": "거대 부적: 원소 기술 +1, 생명력/타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Grand charms: all resists, FHR",
+      "zh": "巨型神符：所有抗性、打击回复",
+      "zh_tw": "特大咒符：所有抗性、打擊恢復",
+      "ko": "거대 부적: 모든 저항, 타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Large charms: life, all resists",
+      "zh": "大型神符：生命、所有抗性",
+      "zh_tw": "大型咒符：生命、所有抗性",
+      "ko": "큰 부적: 생명력, 모든 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Small charms: life, resists, MF",
+      "zh": "小型神符：生命、抗性、魔法物品几率",
+      "zh_tw": "小型咒符：生命、抗性、尋獲魔法物品",
+      "ko": "작은 부적: 생명력, 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "item": "Bone Break"
+    },
+    {
+     "item": "Cold Rupture"
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Druid",
+      "zh": "德鲁伊",
+      "zh_tw": "德魯伊",
+      "ko": "드루이드"
+     }
+    },
+    {
+     "item": "Annihilus"
+    }
+   ]
+  }
+ },
+ {
+  "id": "lightning-sentry-assassin",
+  "cls": "Assassin",
+  "name": {
+   "en": "Lightning Sentry",
+   "zh": "雷光守卫",
+   "zh_tw": "雷光衛哨",
+   "ko": "번개 파수기"
+  },
+  "url": "https://maxroll.gg/d2/guides/lightning-sentry-assassin",
+  "slots": {
+   "weapon": [
+    {
+     "text": {
+      "en": "Magic Greater Talons: +3 Traps, +3 Lightning Sentry, IAS, Rainbow Facets",
+      "zh": "魔法大型刃爪：+3 陷阱、+3 雷光守卫、攻击速度、彩虹魔石",
+      "zh_tw": "魔法巨鷹爪：+3 陷阱、+3 雷光衛哨、攻擊速度、彩虹刻面",
+      "ko": "마법 그레이터 탤런: 덫 +3, 번개 파수기 +3, 공격 속도, 무지개 자락"
+     }
+    },
+    {
+     "item": "Crescent Moon",
+     "note": {
+      "en": "Phase Blade",
+      "zh": "相位之刃",
+      "zh_tw": "幻化之刃",
+      "ko": "페이즈 블레이드"
+     },
+     "kind": "runewords"
+    },
+    {
+     "item": "Heart of the Oak",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "item": "Bartuc's Cut-Throat"
+    },
+    {
+     "item": "Suicide Branch"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Plague",
+     "note": {
+      "en": "Greater Talons",
+      "zh": "大型刃爪",
+      "zh_tw": "巨鷹爪",
+      "ko": "그레이터 탤런"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "text": {
+      "en": "Magic Greater Talons: +3 Traps, +3 Lightning Sentry, IAS, Rainbow Facets",
+      "zh": "魔法大型刃爪：+3 陷阱、+3 雷光守卫、攻击速度、彩虹魔石",
+      "zh_tw": "魔法巨鷹爪：+3 陷阱、+3 雷光衛哨、攻擊速度、彩虹刻面",
+      "ko": "마법 그레이터 탤런: 덫 +3, 번개 파수기 +3, 공격 속도, 무지개 자락"
+     }
+    },
+    {
+     "text": {
+      "en": "Monarch: 4 sockets, lightning Rainbow Facets",
+      "zh": "统治者大盾：4 孔、闪电彩虹魔石",
+      "zh_tw": "君主盾：4 孔、電擊彩虹刻面",
+      "ko": "모너크: 소켓 4개, 번개 무지개 자락"
+     }
+    },
+    {
+     "item": "Plague",
+     "note": {
+      "en": "Greater Talons",
+      "zh": "大型刃爪",
+      "zh_tw": "巨鷹爪",
+      "ko": "그레이터 탤런"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Stormshield"
+    },
+    {
+     "item": "Rhyme",
+     "note": {
+      "en": "Bone Shield",
+      "zh": "骨盾",
+      "zh_tw": "骨盾",
+      "ko": "본 쉴드"
+     }
+    },
+    {
+     "item": "Lidless Wall"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Crescent Moon",
+     "kind": "runewords"
+    },
+    {
+     "text": {
+      "en": "Wand of Lower Resistance (charges)",
+      "zh": "降低抗性之魔杖（充能）",
+      "zh_tw": "降低抗性之魔杖（充能）",
+      "ko": "저항 감소 원드 (충전)"
+     }
+    },
+    {
+     "text": {
+      "en": "Staff of Teleportation (charges)",
+      "zh": "传送之杖（充能）",
+      "zh_tw": "傳送之杖（充能）",
+      "ko": "순간이동 지팡이 (충전)"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "text": {
+      "en": "Monarch: 4 sockets, lightning Rainbow Facets",
+      "zh": "统治者大盾：4 孔、闪电彩虹魔石",
+      "zh_tw": "君主盾：4 孔、電擊彩虹刻面",
+      "ko": "모너크: 소켓 4개, 번개 무지개 자락"
+     }
+    }
+   ],
+   "helm": [
+    {
+     "item": "Griffon's Eye",
+     "note": {
+      "en": "Rainbow Facet",
+      "zh": "彩虹魔石",
+      "zh_tw": "彩虹刻面",
+      "ko": "무지개 자락"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic circlet: +3 Traps, 20% FCR",
+      "zh": "魔法头环：+3 陷阱、20% 施法速度",
+      "zh_tw": "魔法頭環：+3 陷阱、20% 施法速度",
+      "ko": "마법 써클릿: 덫 +3, 시전 속도 20%"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare circlet: +2 Assassin skills, FCR, FRW, life, resists",
+      "zh": "稀有头环：+2 猎法者技能、施法速度、跑步速度、生命、抗性",
+      "zh_tw": "稀有頭環：+2 刺客技能、施法速度、跑步速度、生命、抗性",
+      "ko": "레어 써클릿: 암살자 기술 +2, 시전 속도, 달리기 속도, 생명력, 저항"
+     }
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Lore",
+     "note": {
+      "en": "Cap",
+      "zh": "软帽",
+      "zh_tw": "便帽",
+      "ko": "캡"
+     }
+    },
+    {
+     "item": "Tarnhelm"
+    },
+    {
+     "item": "Peasant Crown"
+    },
+    {
+     "item": "Rockstopper"
+    },
+    {
+     "item": "Ground"
+    },
+    {
+     "item": "Temper"
+    },
+    {
+     "item": "Hearth"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma",
+     "note": {
+      "en": "Mage Plate",
+      "zh": "法师铠",
+      "zh_tw": "法師鎧甲",
+      "ko": "메이지 플레이트"
+     }
+    },
+    {
+     "item": "Treachery"
+    },
+    {
+     "item": "Smoke",
+     "note": {
+      "en": "Studded Leather",
+      "zh": "钉皮甲",
+      "zh_tw": "鑲釘皮甲",
+      "ko": "스터디드 레더"
+     }
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Stealth"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Magefist"
+    },
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "text": {
+      "en": "Magic gloves: IAS, resists",
+      "zh": "魔法手套：攻击速度、抗性",
+      "zh_tw": "魔法手套：攻擊速度、抗性",
+      "ko": "마법 장갑: 공격 속도, 저항"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "item": "String of Ears"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "text": {
+      "en": "Magic belt: life, resists",
+      "zh": "魔法腰带：生命、抗性",
+      "zh_tw": "魔法腰帶：生命、抗性",
+      "ko": "마법 벨트: 생명력, 저항"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Waterwalk"
+    },
+    {
+     "item": "Natalya's Soul"
+    },
+    {
+     "item": "Sandstorm Trek"
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "text": {
+      "en": "Magic amulet: +3 Traps, life / FCR",
+      "zh": "魔法护符：+3 陷阱、生命/施法速度",
+      "zh_tw": "魔法護身符：+3 陷阱、生命/施法速度",
+      "ko": "마법 목걸이: 덫 +3, 생명력/시전 속도"
+     }
+    },
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 Assassin skills, FCR, Str, resists",
+      "zh": "施法者合成护符：+2 猎法者技能、施法速度、力量、抗性",
+      "zh_tw": "施法者合成護身符：+2 刺客技能、施法速度、力量、抗性",
+      "ko": "시전자 제작 목걸이: 암살자 기술 +2, 시전 속도, 힘, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare amulet: +2 Assassin skills, FCR, Str, resists",
+      "zh": "稀有护符：+2 猎法者技能、施法速度、力量、抗性",
+      "zh_tw": "稀有護身符：+2 刺客技能、施法速度、力量、抗性",
+      "ko": "레어 목걸이: 암살자 기술 +2, 시전 속도, 힘, 저항"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "text": {
+      "en": "Magic ring: 40% MF",
+      "zh": "魔法戒指：40% 魔法物品几率",
+      "zh_tw": "魔法戒指：40% 尋獲魔法物品",
+      "ko": "마법 반지: 마법 아이템 발견 40%"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare ring: FCR, Str, resists, MF",
+      "zh": "稀有戒指：施法速度、力量、抗性、魔法物品几率",
+      "zh_tw": "稀有戒指：施法速度、力量、抗性、尋獲魔法物品",
+      "ko": "레어 반지: 시전 속도, 힘, 저항, 마법 아이템 발견"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Traps, life",
+      "zh": "巨型神符：+1 陷阱、生命",
+      "zh_tw": "特大咒符：+1 陷阱、生命",
+      "ko": "거대 부적: 덫 +1, 생명력"
+     }
+    },
+    {
+     "text": {
+      "en": "Grand charms: life, resists",
+      "zh": "巨型神符：生命、抗性",
+      "zh_tw": "特大咒符：生命、抗性",
+      "ko": "거대 부적: 생명력, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Large charms: resists",
+      "zh": "大型神符：抗性",
+      "zh_tw": "大型咒符：抗性",
+      "ko": "큰 부적: 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Small charms: life, resists, MF",
+      "zh": "小型神符：生命、抗性、魔法物品几率",
+      "zh_tw": "小型咒符：生命、抗性、尋獲魔法物品",
+      "ko": "작은 부적: 생명력, 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "item": "Crack of the Heavens"
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Hellfire Torch"
+    }
+   ]
+  }
+ },
+ {
+  "id": "phoenix-strike-assassin",
+  "cls": "Assassin",
+  "name": {
+   "en": "Phoenix Strike",
+   "zh": "凤凰攻击",
+   "zh_tw": "鳳凰擊",
+   "ko": "불사조 일격"
+  },
+  "url": "https://maxroll.gg/d2/guides/phoenix-strike-assassin",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Mosaic",
+     "note": {
+      "en": "Runic/Greater Talons",
+      "zh": "符文刃爪/大型刃爪",
+      "zh_tw": "符文爪/巨鷹爪",
+      "ko": "룬 탤런/그레이터 탤런"
+     }
+    },
+    {
+     "item": "Bartuc's Cut-Throat"
+    },
+    {
+     "item": "Plague",
+     "note": {
+      "en": "Greater Talons",
+      "zh": "大型刃爪",
+      "zh_tw": "巨鷹爪",
+      "ko": "그레이터 탤런"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic claws: +3 Martial Arts, +3 Phoenix Strike, IAS",
+      "zh": "魔法爪：+3 武学技艺、+3 凤凰攻击、攻击速度",
+      "zh_tw": "魔法爪：+3 武學技藝、+3 鳳凰擊、攻擊速度",
+      "ko": "마법 클러: 무술 +3, 불사조 일격 +3, 공격 속도"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Mosaic",
+     "note": {
+      "en": "Runic/Greater Talons",
+      "zh": "符文刃爪/大型刃爪",
+      "zh_tw": "符文爪/巨鷹爪",
+      "ko": "룬 탤런/그레이터 탤런"
+     }
+    },
+    {
+     "item": "Bartuc's Cut-Throat"
+    },
+    {
+     "item": "Plague",
+     "note": {
+      "en": "Greater Talons",
+      "zh": "大型刃爪",
+      "zh_tw": "巨鷹爪",
+      "ko": "그레이터 탤런"
+     }
+    },
+    {
+     "item": "Jade Talon"
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Stormshield"
+    },
+    {
+     "text": {
+      "en": "Magic claws: +3 Martial Arts, +3 Phoenix Strike, IAS",
+      "zh": "魔法爪：+3 武学技艺、+3 凤凰攻击、攻击速度",
+      "zh_tw": "魔法爪：+3 武學技藝、+3 鳳凰擊、攻擊速度",
+      "ko": "마법 클러: 무술 +3, 불사조 일격 +3, 공격 속도"
+     }
+    },
+    {
+     "item": "Rhyme",
+     "note": {
+      "en": "Bone Shield",
+      "zh": "骨盾",
+      "zh_tw": "骨盾",
+      "ko": "본 쉴드"
+     }
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "text": {
+      "en": "Staff of Teleportation (charges)",
+      "zh": "传送之杖（充能）",
+      "zh_tw": "傳送之杖（充能）",
+      "ko": "순간이동 지팡이 (충전)"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Monarch",
+      "zh": "统治者大盾",
+      "zh_tw": "君主盾",
+      "ko": "모너크"
+     }
+    },
+    {
+     "item": "Lidless Wall"
+    }
+   ],
+   "helm": [
+    {
+     "item": "Griffon's Eye"
+    },
+    {
+     "text": {
+      "en": "Magic diadem: +3 Martial Arts, 20% FCR",
+      "zh": "魔法权冠：+3 武学技艺、20% 施法速度",
+      "zh_tw": "魔法權冠：+3 武學技藝、20% 施法速度",
+      "ko": "마법 다이어뎀: 무술 +3, 시전 속도 20%"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare circlet: +2 Assassin skills, FRW, Str, life, resists",
+      "zh": "稀有头环：+2 猎法者技能、跑步速度、力量、生命、抗性",
+      "zh_tw": "稀有頭環：+2 刺客技能、跑步速度、力量、生命、抗性",
+      "ko": "레어 써클릿: 암살자 기술 +2, 달리기 속도, 힘, 생명력, 저항"
+     }
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Lore",
+     "note": {
+      "en": "Cap",
+      "zh": "软帽",
+      "zh_tw": "便帽",
+      "ko": "캡"
+     }
+    },
+    {
+     "item": "Guillaume's Face"
+    },
+    {
+     "item": "Wisdom"
+    },
+    {
+     "item": "Bulwark"
+    },
+    {
+     "item": "Ground"
+    },
+    {
+     "item": "Temper"
+    },
+    {
+     "item": "Hearth"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma",
+     "note": {
+      "en": "Mage Plate",
+      "zh": "法师铠",
+      "zh_tw": "法師鎧甲",
+      "ko": "메이지 플레이트"
+     }
+    },
+    {
+     "item": "Chains of Honor",
+     "note": {
+      "en": "Archon Plate",
+      "zh": "统治者板甲",
+      "zh_tw": "統御者鎧甲",
+      "ko": "아콘 플레이트"
+     }
+    },
+    {
+     "item": "Duress",
+     "note": {
+      "en": "Light Plate",
+      "zh": "轻板甲",
+      "zh_tw": "輕型鎧甲",
+      "ko": "라이트 플레이트"
+     }
+    },
+    {
+     "item": "Treachery",
+     "note": {
+      "en": "Light Plate",
+      "zh": "轻板甲",
+      "zh_tw": "輕型鎧甲",
+      "ko": "라이트 플레이트"
+     }
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Magefist"
+    },
+    {
+     "item": "Dracul's Grasp"
+    },
+    {
+     "text": {
+      "en": "Blood crafted gloves: IAS, +2 Martial Arts, resists, Crushing Blow",
+      "zh": "鲜血合成手套：攻击速度、+2 武学技艺、抗性、粉碎打击",
+      "zh_tw": "鮮血合成手套：攻擊速度、+2 武學技藝、抗性、粉碎打擊",
+      "ko": "피 제작 장갑: 공격 속도, 무술 +2, 저항, 강타"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare gloves: IAS, +2 Martial Arts, resists",
+      "zh": "稀有手套：攻击速度、+2 武学技艺、抗性",
+      "zh_tw": "稀有手套：攻擊速度、+2 武學技藝、抗性",
+      "ko": "레어 장갑: 공격 속도, 무술 +2, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic gloves: +3 Martial Arts, IAS",
+      "zh": "魔法手套：+3 武学技艺、攻击速度",
+      "zh_tw": "魔法手套：+3 武學技藝、攻擊速度",
+      "ko": "마법 장갑: 무술 +3, 공격 속도"
+     }
+    },
+    {
+     "item": "Death's Hand",
+     "note": {
+      "en": "2-piece Death's set",
+      "zh": "死神的伪装 2件",
+      "zh_tw": "死亡的偽裝 2件",
+      "ko": "죽음 세트 2부위"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "String of Ears"
+    },
+    {
+     "item": "Verdungo's Hearty Cord"
+    },
+    {
+     "item": "Thundergod's Vigor"
+    },
+    {
+     "item": "Death's Guard",
+     "note": {
+      "en": "2-piece Death's set",
+      "zh": "死神的伪装 2件",
+      "zh_tw": "死亡的偽裝 2件",
+      "ko": "죽음 세트 2부위"
+     }
+    },
+    {
+     "item": "Hsarus' Iron Stay",
+     "note": {
+      "en": "2-piece Hsarus' set, early AR",
+      "zh": "海沙尔套装 2 件，前期准确率",
+      "zh_tw": "海沙爾套裝 2 件，前期準確率",
+      "ko": "하사르 세트 2부위, 초반 명중률"
+     }
+    }
+   ],
+   "boots": [
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Waterwalk"
+    },
+    {
+     "item": "Natalya's Soul"
+    },
+    {
+     "item": "Gore Rider"
+    },
+    {
+     "item": "Hsarus' Iron Heel",
+     "note": {
+      "en": "2-piece Hsarus' set, early AR",
+      "zh": "海沙尔套装 2 件，前期准确率",
+      "zh_tw": "海沙爾套裝 2 件，前期準確率",
+      "ko": "하사르 세트 2부위, 초반 명중률"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "item": "Highlord's Wrath"
+    },
+    {
+     "text": {
+      "en": "Blood crafted amulet: +2 Assassin skills, life, resists, FRW",
+      "zh": "鲜血合成护符：+2 猎法者技能、生命、抗性、跑步速度",
+      "zh_tw": "鮮血合成護身符：+2 刺客技能、生命、抗性、跑步速度",
+      "ko": "피 제작 목걸이: 암살자 기술 +2, 생명력, 저항, 달리기 속도"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic amulet: +3 Martial Arts, life",
+      "zh": "魔法护符：+3 武学技艺、生命",
+      "zh_tw": "魔法護身符：+3 武學技藝、生命",
+      "ko": "마법 목걸이: 무술 +3, 생명력"
+     }
+    },
+    {
+     "item": "Angelic Wings",
+     "note": {
+      "en": "with Angelic set, AR",
+      "zh": "搭配天使套装，准确率",
+      "zh_tw": "搭配天使套裝，準確率",
+      "ko": "천사 세트와 함께, 명중률"
+     }
+    }
+   ],
+   "ring": [
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Raven Frost"
+    },
+    {
+     "text": {
+      "en": "Rare ring: Str, life, resists, MF",
+      "zh": "稀有戒指：力量、生命、抗性、魔法物品几率",
+      "zh_tw": "稀有戒指：力量、生命、抗性、尋獲魔法物品",
+      "ko": "레어 반지: 힘, 생명력, 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "item": "Angelic Halo",
+     "note": {
+      "en": "with Angelic set, AR",
+      "zh": "搭配天使套装，准确率",
+      "zh_tw": "搭配天使套裝，準確率",
+      "ko": "천사 세트와 함께, 명중률"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Martial Arts, life / AR / FHR",
+      "zh": "巨型神符：+1 武学技艺、生命/准确率/打击回复",
+      "zh_tw": "特大咒符：+1 武學技藝、生命/準確率/打擊恢復",
+      "ko": "거대 부적: 무술 +1, 생명력/명중률/타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Large/small charms: life, resists, AR, MF",
+      "zh": "大型/小型神符：生命、抗性、准确率、魔法物品几率",
+      "zh_tw": "大型/小型咒符：生命、抗性、準確率、尋獲魔法物品",
+      "ko": "큰/작은 부적: 생명력, 저항, 명중률, 마법 아이템 발견"
+     }
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Hellfire Torch"
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Cold Rupture"
+    },
+    {
+     "item": "Crack of the Heavens"
+    },
+    {
+     "item": "Flame Rift"
+    }
+   ]
+  }
+ },
+ {
+  "id": "abyss-warlock-build-guide",
+  "cls": "Warlock",
+  "name": {
+   "en": "Abyss",
+   "zh": "深渊",
+   "zh_tw": "深淵裂口",
+   "ko": "심연"
+  },
+  "url": "https://maxroll.gg/d2/guides/abyss-warlock-build-guide",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Void",
+     "note": {
+      "en": "Kris",
+      "zh": "波刃剑",
+      "zh_tw": "波刃匕首",
+      "ko": "크리스"
+     }
+    },
+    {
+     "item": "Heart of the Oak"
+    },
+    {
+     "item": "Spirit"
+    },
+    {
+     "item": "Plague"
+    },
+    {
+     "item": "Obsession"
+    },
+    {
+     "item": "Insight"
+    },
+    {
+     "item": "Mang Song's Lesson"
+    },
+    {
+     "item": "Ondal's Wisdom"
+    },
+    {
+     "item": "Razorswitch"
+    },
+    {
+     "item": "Suicide Branch"
+    },
+    {
+     "item": "Spectral Shard"
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "text": {
+      "en": "Rare Kris: +2 Warlock skills, +3 to skills, 2 Ist",
+      "zh": "稀有波刃剑：+2 术士技能、+3 单项技能、2 伊司特",
+      "zh_tw": "稀有波刃匕首：+2 術士技能、+3 單項技能、2 伊司特",
+      "ko": "레어 크리스: 악마술사 기술 +2, 개별 기술 +3, 이스트 2개"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic Kris: +2 Warlock skills, +3 to skills, Lower Resist charges",
+      "zh": "魔法波刃剑：+2 术士技能、+3 单项技能、降低抗性充能",
+      "zh_tw": "魔法波刃匕首：+2 術士技能、+3 單項技能、降低抗性充能",
+      "ko": "마법 크리스: 악마술사 기술 +2, 개별 기술 +3, 저항 감소 충전"
+     }
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Ars Dul'Mephistos",
+     "note": {
+      "en": "Um in socket",
+      "zh": "镶嵌乌姆",
+      "zh_tw": "鑲嵌烏姆",
+      "ko": "우움 장착"
+     }
+    },
+    {
+     "item": "Spirit"
+    },
+    {
+     "item": "Lidless Wall"
+    },
+    {
+     "item": "Splendor"
+    },
+    {
+     "item": "Ars Al'Diabolos"
+    },
+    {
+     "item": "Ancients' Pledge"
+    },
+    {
+     "item": "Rhyme"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms"
+    },
+    {
+     "item": "Blade of Ali Baba"
+    },
+    {
+     "item": "Gull"
+    },
+    {
+     "item": "Naj's Puzzler"
+    },
+    {
+     "text": {
+      "en": "Staff of Teleportation (charges)",
+      "zh": "传送之杖（充能）",
+      "zh_tw": "傳送之杖（充能）",
+      "ko": "순간이동 지팡이 (충전)"
+     }
+    },
+    {
+     "item": "Spirit"
+    },
+    {
+     "item": "Lidless Wall"
+    }
+   ],
+   "helm": [
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "text": {
+      "en": "Rare diadem: +2 Warlock skills, 20% FCR, Str, resists",
+      "zh": "稀有权冠：+2 术士技能、20% 施法速度、力量、抗性",
+      "zh_tw": "稀有權冠：+2 術士技能、20% 施法速度、力量、抗性",
+      "ko": "레어 다이어뎀: 악마술사 기술 +2, 시전 속도 20%, 힘, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic diadem: +3 Chaos skills, 20% FCR",
+      "zh": "魔法权冠：+3 混沌技能、20% 施法速度",
+      "zh_tw": "魔法權冠：+3 混沌技能、20% 施法速度",
+      "ko": "마법 다이어뎀: 혼돈 기술 +3, 시전 속도 20%"
+     }
+    },
+    {
+     "item": "Coven",
+     "note": {
+      "en": "Bone Visage",
+      "zh": "白骨面甲",
+      "zh_tw": "骸骨面罩",
+      "ko": "본 비지즈"
+     }
+    },
+    {
+     "item": "Hellwarden's Will"
+    },
+    {
+     "item": "Horazon's Countenance"
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Lore"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Authority",
+     "note": {
+      "en": "Mage Plate",
+      "zh": "法师铠",
+      "zh_tw": "法師鎧甲",
+      "ko": "메이지 플레이트"
+     }
+    },
+    {
+     "item": "Stealth"
+    },
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Que-Hegan's Wisdom"
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Horazon's Dominion"
+    },
+    {
+     "item": "Tal Rasha's Guardianship"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "item": "Magefist"
+    },
+    {
+     "item": "Horazon's Hold"
+    },
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "text": {
+      "en": "Caster crafted gloves: resists, MF, mana",
+      "zh": "施法者合成手套：抗性、魔法物品几率、法力",
+      "zh_tw": "施法者合成手套：抗性、尋獲魔法物品、法力",
+      "ko": "시전자 제작 장갑: 저항, 마법 아이템 발견, 마나"
+     }
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "text": {
+      "en": "Caster crafted belt: FCR, resists",
+      "zh": "施法者合成腰带：施法速度、抗性",
+      "zh_tw": "施法者合成腰帶：施法速度、抗性",
+      "ko": "시전자 제작 벨트: 시전 속도, 저항"
+     }
+    },
+    {
+     "item": "Gheed's Wager"
+    },
+    {
+     "item": "Bane's Authority"
+    }
+   ],
+   "boots": [
+    {
+     "item": "Wraithstep"
+    },
+    {
+     "item": "Horazon's Legacy"
+    },
+    {
+     "item": "Waterwalk"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "Silkweave"
+    },
+    {
+     "text": {
+      "en": "Caster crafted boots: FRW, FHR, resists",
+      "zh": "施法者合成靴子：跑步速度、打击回复、抗性",
+      "zh_tw": "施法者合成靴子：跑步速度、打擊恢復、抗性",
+      "ko": "시전자 제작 부츠: 달리기 속도, 타격 회복, 저항"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 Warlock skills, FCR, resists, MF",
+      "zh": "施法者合成护符：+2 术士技能、施法速度、抗性、魔法物品几率",
+      "zh_tw": "施法者合成護身符：+2 術士技能、施法速度、抗性、尋獲魔法物品",
+      "ko": "시전자 제작 목걸이: 악마술사 기술 +2, 시전 속도, 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "text": {
+      "en": "Rare amulet: +2 Warlock skills, FCR, Str, resists",
+      "zh": "稀有护符：+2 术士技能、施法速度、力量、抗性",
+      "zh_tw": "稀有護身符：+2 術士技能、施法速度、力量、抗性",
+      "ko": "레어 목걸이: 악마술사 기술 +2, 시전 속도, 힘, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic amulet: +3 Chaos skills, FCR",
+      "zh": "魔法护符：+3 混沌技能、施法速度",
+      "zh_tw": "魔法護身符：+3 混沌技能、施法速度",
+      "ko": "마법 목걸이: 혼돈 기술 +3, 시전 속도"
+     }
+    },
+    {
+     "item": "Entropy Locket"
+    },
+    {
+     "item": "Telling of Beads"
+    }
+   ],
+   "ring": [
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "item": "Opalvein"
+    },
+    {
+     "item": "Sling"
+    },
+    {
+     "text": {
+      "en": "Blood crafted ring: FCR, attributes, resists",
+      "zh": "鲜血合成戒指：施法速度、属性、抗性",
+      "zh_tw": "鮮血合成戒指：施法速度、屬性、抗性",
+      "ko": "피 제작 반지: 시전 속도, 능력치, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare ring: FCR, attributes, resists, MF",
+      "zh": "稀有戒指：施法速度、属性、抗性、魔法物品几率",
+      "zh_tw": "稀有戒指：施法速度、屬性、抗性、尋獲魔法物品",
+      "ko": "레어 반지: 시전 속도, 능력치, 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic ring: FCR, all resists",
+      "zh": "魔法戒指：施法速度、所有抗性",
+      "zh_tw": "魔法戒指：施法速度、所有抗性",
+      "ko": "마법 반지: 시전 속도, 모든 저항"
+     }
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Chaos skills, FHR",
+      "zh": "巨型神符：+1 混沌技能、打击回复",
+      "zh_tw": "特大咒符：+1 混沌技能、打擊恢復",
+      "ko": "거대 부적: 혼돈 기술 +1, 타격 회복"
+     }
+    },
+    {
+     "text": {
+      "en": "Large/small charms: all resists, MF",
+      "zh": "大型/小型神符：所有抗性、魔法物品几率",
+      "zh_tw": "大型/小型咒符：所有抗性、尋獲魔法物品",
+      "ko": "큰/작은 부적: 모든 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "item": "Renewed Black Cleft"
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Warlock",
+      "zh": "术士",
+      "zh_tw": "術士",
+      "ko": "악마술사"
+     }
+    },
+    {
+     "item": "Annihilus"
+    }
+   ]
+  }
+ },
+ {
+  "id": "echoing-strike-warlock-guide",
+  "cls": "Warlock",
+  "name": {
+   "en": "Echoing Strike",
+   "zh": "回响打击",
+   "zh_tw": "迴響打擊",
+   "ko": "메아리치는 타격"
+  },
+  "url": "https://maxroll.gg/d2/guides/echoing-strike-warlock-guide",
+  "slots": {
+   "weapon": [
+    {
+     "item": "Void",
+     "note": {
+      "en": "Ethereal Legend Spike",
+      "zh": "无形传说匕刺",
+      "zh_tw": "無形傳說尖刀",
+      "ko": "무형 레전드 스파이크"
+     }
+    },
+    {
+     "item": "Plague",
+     "note": {
+      "en": "Ethereal Legend Spike",
+      "zh": "无形传说匕刺",
+      "zh_tw": "無形傳說尖刀",
+      "ko": "무형 레전드 스파이크"
+     }
+    },
+    {
+     "item": "Heart of the Oak",
+     "note": {
+      "en": "Flail",
+      "zh": "连枷",
+      "zh_tw": "連枷",
+      "ko": "프레일"
+     }
+    },
+    {
+     "item": "Spirit",
+     "note": {
+      "en": "Crystal Sword",
+      "zh": "水晶剑",
+      "zh_tw": "水晶劍",
+      "ko": "크리스탈 소드"
+     }
+    },
+    {
+     "item": "Obsession",
+     "note": {
+      "en": "Ethereal Archon Staff",
+      "zh": "无形统治者之杖",
+      "zh_tw": "無形統御者法杖",
+      "ko": "무형 아콘 스태프"
+     }
+    },
+    {
+     "item": "Silence",
+     "note": {
+      "en": "Ethereal Thunder Maul",
+      "zh": "无形雷锤",
+      "zh_tw": "無形雷霆重鎚",
+      "ko": "무형 썬더 마울"
+     }
+    },
+    {
+     "item": "Fortitude",
+     "note": {
+      "en": "Ethereal Thunder Maul",
+      "zh": "无形雷锤",
+      "zh_tw": "無形雷霆重鎚",
+      "ko": "무형 썬더 마울"
+     }
+    },
+    {
+     "item": "Insight",
+     "note": {
+      "en": "Ethereal Great Poleaxe",
+      "zh": "无形重长柄斧",
+      "zh_tw": "無形巨型長柄斧",
+      "ko": "무형 그레이트 폴액스"
+     }
+    },
+    {
+     "item": "Doom",
+     "note": {
+      "en": "Ethereal Glorious Axe",
+      "zh": "无形荣耀之斧",
+      "zh_tw": "無形榮光斧",
+      "ko": "무형 글로리어스 액스"
+     }
+    },
+    {
+     "item": "Bloodpact Shard"
+    },
+    {
+     "item": "Spectral Shard"
+    },
+    {
+     "item": "Wizardspike"
+    },
+    {
+     "item": "Tomb Reaver"
+    },
+    {
+     "item": "Arioc's Needle"
+    },
+    {
+     "item": "Mang Song's Lesson"
+    },
+    {
+     "item": "Ondal's Wisdom"
+    },
+    {
+     "item": "Razorswitch"
+    },
+    {
+     "item": "Skull Collector"
+    },
+    {
+     "item": "Suicide Branch"
+    }
+   ],
+   "offhand": [
+    {
+     "item": "Ars Dul'Mephistos",
+     "note": {
+      "en": "Um in socket",
+      "zh": "镶嵌乌姆",
+      "zh_tw": "鑲嵌烏姆",
+      "ko": "우움 장착"
+     }
+    },
+    {
+     "item": "Spirit"
+    },
+    {
+     "item": "Lidless Wall"
+    },
+    {
+     "item": "Splendor"
+    },
+    {
+     "item": "Ancients' Pledge"
+    },
+    {
+     "item": "Rhyme"
+    }
+   ],
+   "swap": [
+    {
+     "item": "Call to Arms"
+    },
+    {
+     "item": "Blade of Ali Baba"
+    },
+    {
+     "item": "Gull"
+    },
+    {
+     "item": "Naj's Puzzler"
+    },
+    {
+     "text": {
+      "en": "Staff of Teleportation (charges)",
+      "zh": "传送之杖（充能）",
+      "zh_tw": "傳送之杖（充能）",
+      "ko": "순간이동 지팡이 (충전)"
+     }
+    },
+    {
+     "item": "Spirit"
+    },
+    {
+     "item": "Lidless Wall"
+    }
+   ],
+   "helm": [
+    {
+     "text": {
+      "en": "Rare diadem: +2 Warlock skills, FCR, FRW, Str, resists",
+      "zh": "稀有权冠：+2 术士技能、施法速度、跑步速度、力量、抗性",
+      "zh_tw": "稀有權冠：+2 術士技能、施法速度、跑步速度、力量、抗性",
+      "ko": "레어 다이어뎀: 악마술사 기술 +2, 시전 속도, 달리기 속도, 힘, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic diadem: +3 Eldritch skills, 20% FCR",
+      "zh": "魔法权冠：+3 邪术技能、20% 施法速度",
+      "zh_tw": "魔法權冠：+3 邪異技能、20% 施法速度",
+      "ko": "마법 다이어뎀: 기괴 기술 +3, 시전 속도 20%"
+     }
+    },
+    {
+     "item": "Harlequin Crest"
+    },
+    {
+     "item": "Hellwarden's Will"
+    },
+    {
+     "item": "Coven",
+     "note": {
+      "en": "Bone Visage",
+      "zh": "白骨面甲",
+      "zh_tw": "骸骨面罩",
+      "ko": "본 비지즈"
+     }
+    },
+    {
+     "item": "Crown of Ages"
+    },
+    {
+     "item": "Delirium"
+    },
+    {
+     "item": "Andariel's Visage"
+    },
+    {
+     "item": "Stealskull"
+    },
+    {
+     "item": "Vampire Gaze"
+    },
+    {
+     "item": "Horazon's Countenance"
+    },
+    {
+     "item": "Lore"
+    }
+   ],
+   "armor": [
+    {
+     "item": "Enigma"
+    },
+    {
+     "item": "Authority",
+     "note": {
+      "en": "Mage Plate",
+      "zh": "法师铠",
+      "zh_tw": "法師鎧甲",
+      "ko": "메이지 플레이트"
+     }
+    },
+    {
+     "item": "Fortitude"
+    },
+    {
+     "item": "Stealth"
+    },
+    {
+     "item": "Chains of Honor"
+    },
+    {
+     "item": "Que-Hegan's Wisdom"
+    },
+    {
+     "item": "Skin of the Vipermagi"
+    },
+    {
+     "item": "Skullder's Ire"
+    },
+    {
+     "item": "Duriel's Shell"
+    },
+    {
+     "item": "Silks of the Victor"
+    },
+    {
+     "item": "Lionheart"
+    },
+    {
+     "item": "Tal Rasha's Guardianship"
+    },
+    {
+     "item": "Smoke"
+    },
+    {
+     "item": "Horazon's Dominion"
+    },
+    {
+     "item": "Bane's Wraithskin"
+    }
+   ],
+   "gloves": [
+    {
+     "item": "Trang-Oul's Claws"
+    },
+    {
+     "item": "Magefist"
+    },
+    {
+     "text": {
+      "en": "Blood crafted gloves: leech, Str, resists, Crushing Blow",
+      "zh": "鲜血合成手套：偷取生命/法力、力量、抗性、粉碎打击",
+      "zh_tw": "鮮血合成手套：竊取生命/法力、力量、抗性、粉碎打擊",
+      "ko": "피 제작 장갑: 생명력/마나 훔침, 힘, 저항, 강타"
+     }
+    },
+    {
+     "item": "Chance Guards"
+    },
+    {
+     "item": "Bloodfist"
+    },
+    {
+     "item": "Soul Drainer"
+    },
+    {
+     "item": "The Hand of Broc"
+    }
+   ],
+   "belt": [
+    {
+     "item": "Arachnid Mesh"
+    },
+    {
+     "item": "Goldwrap"
+    },
+    {
+     "item": "Gheed's Wager"
+    },
+    {
+     "item": "Nosferatu's Coil"
+    },
+    {
+     "item": "String of Ears"
+    },
+    {
+     "text": {
+      "en": "Caster crafted belt: FCR, resists",
+      "zh": "施法者合成腰带：施法速度、抗性",
+      "zh_tw": "施法者合成腰帶：施法速度、抗性",
+      "ko": "시전자 제작 벨트: 시전 속도, 저항"
+     }
+    },
+    {
+     "item": "Bane's Authority"
+    },
+    {
+     "item": "Immortal King's Detail"
+    },
+    {
+     "item": "Wilhelm's Pride"
+    }
+   ],
+   "boots": [
+    {
+     "item": "Gore Rider"
+    },
+    {
+     "item": "Wraithstep"
+    },
+    {
+     "item": "Waterwalk"
+    },
+    {
+     "item": "Sandstorm Trek"
+    },
+    {
+     "item": "War Traveler"
+    },
+    {
+     "item": "Aldur's Advance"
+    },
+    {
+     "item": "Silkweave"
+    },
+    {
+     "text": {
+      "en": "Caster crafted boots: FRW, FHR, resists",
+      "zh": "施法者合成靴子：跑步速度、打击回复、抗性",
+      "zh_tw": "施法者合成靴子：跑步速度、打擊恢復、抗性",
+      "ko": "시전자 제작 부츠: 달리기 속도, 타격 회복, 저항"
+     }
+    }
+   ],
+   "amulet": [
+    {
+     "text": {
+      "en": "Caster crafted amulet: +2 Warlock skills, FCR, Str, resists",
+      "zh": "施法者合成护符：+2 术士技能、施法速度、力量、抗性",
+      "zh_tw": "施法者合成護身符：+2 術士技能、施法速度、力量、抗性",
+      "ko": "시전자 제작 목걸이: 악마술사 기술 +2, 시전 속도, 힘, 저항"
+     }
+    },
+    {
+     "text": {
+      "en": "Rare amulet: +2 Warlock skills, FCR, Str, resists, leech",
+      "zh": "稀有护符：+2 术士技能、施法速度、力量、抗性、偷取生命/法力",
+      "zh_tw": "稀有護身符：+2 術士技能、施法速度、力量、抗性、竊取生命/法力",
+      "ko": "레어 목걸이: 악마술사 기술 +2, 시전 속도, 힘, 저항, 생명력/마나 훔침"
+     }
+    },
+    {
+     "text": {
+      "en": "Magic amulet: +3 Eldritch skills, FCR",
+      "zh": "魔法护符：+3 邪术技能、施法速度",
+      "zh_tw": "魔法護身符：+3 邪異技能、施法速度",
+      "ko": "마법 목걸이: 기괴 기술 +3, 시전 속도"
+     }
+    },
+    {
+     "item": "Mara's Kaleidoscope"
+    },
+    {
+     "item": "Seraph's Hymn"
+    },
+    {
+     "item": "Entropy Locket"
+    },
+    {
+     "item": "Crescent Moon",
+     "kind": "Unique"
+    },
+    {
+     "item": "The Eye of Etlich"
+    },
+    {
+     "item": "Telling of Beads"
+    }
+   ],
+   "ring": [
+    {
+     "item": "The Stone of Jordan"
+    },
+    {
+     "text": {
+      "en": "Rare rings: FCR, leech, resists, MF",
+      "zh": "稀有戒指：施法速度、偷取生命/法力、抗性、魔法物品几率",
+      "zh_tw": "稀有戒指：施法速度、竊取生命/法力、抗性、尋獲魔法物品",
+      "ko": "레어 반지: 시전 속도, 생명력/마나 훔침, 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "item": "Bul-Kathos' Wedding Band"
+    },
+    {
+     "text": {
+      "en": "Blood crafted ring: life, leech, FCR, resists",
+      "zh": "鲜血合成戒指：生命、偷取生命/法力、施法速度、抗性",
+      "zh_tw": "鮮血合成戒指：生命、竊取生命/法力、施法速度、抗性",
+      "ko": "피 제작 반지: 생명력, 생명력/마나 훔침, 시전 속도, 저항"
+     }
+    },
+    {
+     "item": "Nagelring"
+    },
+    {
+     "item": "Opalvein"
+    },
+    {
+     "item": "Sling"
+    }
+   ],
+   "charm": [
+    {
+     "text": {
+      "en": "Grand charms: +1 Eldritch skills, life",
+      "zh": "巨型神符：+1 邪术技能、生命",
+      "zh_tw": "特大咒符：+1 邪異技能、生命",
+      "ko": "거대 부적: 기괴 기술 +1, 생명력"
+     }
+    },
+    {
+     "text": {
+      "en": "Large/small charms: life, all resists, MF",
+      "zh": "大型/小型神符：生命、所有抗性、魔法物品几率",
+      "zh_tw": "大型/小型咒符：生命、所有抗性、尋獲魔法物品",
+      "ko": "큰/작은 부적: 생명력, 모든 저항, 마법 아이템 발견"
+     }
+    },
+    {
+     "item": "Gheed's Fortune"
+    },
+    {
+     "item": "Hellfire Torch",
+     "note": {
+      "en": "Warlock",
+      "zh": "术士",
+      "zh_tw": "術士",
+      "ko": "악마술사"
+     }
+    },
+    {
+     "item": "Annihilus"
+    },
+    {
+     "item": "Renewed Bone Break"
+    }
+   ]
+  }
+ }
+]

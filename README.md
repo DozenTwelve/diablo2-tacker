@@ -18,6 +18,8 @@ and how to put changed saves back: [docs/saves.md](docs/saves.md).
 - `scripts/gen-data.mjs` builds `src/data/*.json` from the official game tables and string files,
   extracted from the game's CASC storage (e.g. with [casc-cli](https://github.com/ironsp4rk/casc-cli)).
   Raw game files are not committed.
+- `src/data/builds.json` is the recommended gear of popular builds, copied by hand from the "Gear Options" of
+  [Maxroll](https://maxroll.gg/d2/category/guides) guides (each links its guide). Guides age, so it's a suggestion.
 - `src/lib/` holds the logic (parsing saves, item lookups, translations), `src/components/` the UI.
 
 ## Development
@@ -36,3 +38,4 @@ npm run dev
 | `node scripts/check-props.mjs` | Check every catalog property (uniques, sets, runewords) shows as text |
 | `node scripts/organize.mjs <save dir> <out dir> [--mode SoftCore:Modern] [--mules a,b] [--inbox 4,5] [--yes]` | Rearrange mules (level 1 characters, or the named ones) of one game mode into numbered mules, with likely-junk charms and jewels in `TRASH` mules; `--inbox` empties only those shared stash pages. Lists what it would do, writes only with `--yes`, to a new folder, after checking every item is kept. Agents: see `.claude/skills/organize-stash` |
 | `node scripts/check-junk.mjs` | Check the likely-junk rules |
+| `node scripts/check-builds.mjs` | Check every item in `builds.json` is in the catalog and every text is translated |

@@ -5,6 +5,7 @@
 // gfx: which look a ring, amulet, charm or jewel has),
 // stats as [statId, layer, value] (see src/lib/stats.js).
 import { codeOfNumber, keyOf } from "./gameData";
+import { modeOfCharacter, modeOfStash } from "./organize";
 import { socketStats } from "./props";
 
 let parser;
@@ -72,7 +73,7 @@ const questsOf = (q) =>
 export async function parseSaveFiles(files) {
   const { parseD2s, parseD2i } = await loadParser();
   const items = [];
-  const owners = []; // { name, cls?, level?, quests? }; shared stashes have no class
+  const owners = []; // { name, mode, cls?, level?, quests? }; shared stashes have no class
   const errors = [];
   const saves = files.filter((f) => /\.d2[si]$/i.test(f.name));
   // A folder pick includes subfolders: same-named saves from different folders get the folder added
@@ -89,12 +90,12 @@ export async function parseSaveFiles(files) {
           const place = tab.tab_type === "AdvancedStash" ? "advanced" : `shared${i + 1}`;
           tab.items.forEach((it) => collect(it, owner, place, items));
         });
-        owners.push({ name: owner });
+        owners.push({ name: owner, mode: modeOfStash(file.name) });
       } else {
         const save = JSON.parse(parseD2s(bytes));
         save.items.forEach((it) => collect(it, owner, placeOf(it), items));
         (save.merc_items?.items ?? []).forEach((it) => collect(it, owner, "merc", items));
-        owners.push({ name: owner, cls: save.character.class, level: save.character.level, quests: questsOf(save.quests) });
+        owners.push({ name: owner, mode: modeOfCharacter(save), cls: save.character.class, level: save.character.level, quests: questsOf(save.quests) });
       }
     } catch (e) {
       errors.push(`${file.name}: ${e.message ?? e}`);
