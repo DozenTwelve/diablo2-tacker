@@ -24,7 +24,7 @@ happy. Never loosen the checks in `organizeFiles`: they are what makes writing s
 | Non-ethereal copy takes the museum slot | the `entries.sort` line in `organize()` | Reverse it to put ethereal copies in the museum. |
 | Starting kit dropped | `isStarter` | Only plain items from the game's starting kit, still in the inventory. To keep everything, return `false`. Widening it fails the check (`dropped something that is not starting kit`) on purpose. |
 | Mule grids | `GRIDS` | Stash 10×10 and inventory 10×4, the game's sizes; don't change. |
-| Mule names | `pack`, `suffix` | `PREFIX-A`, then `-B`... `-AA`. Character names can't hold digits and are at most 15 characters, so prefixes stay short and letters only. |
+| Mule names | `pack`, `suffix`, `modePrefix` | `PREFIX-A`, then `-B`... `-AA`, with `H`/`L` in front for hardcore and legacy saves (`HUW-A`). Character names can't hold digits and are at most 15 characters, so prefixes stay short and letters only. The app's character page spots museum and TRASH mules by name (`MUSEUM` in `src/components/CharacterView.jsx`); renaming those groups means changing it too. |
 
 ## Stat ids
 

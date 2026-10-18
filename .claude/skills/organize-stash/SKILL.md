@@ -39,24 +39,34 @@ Ask whether they want the default rules or their own.
 
 ## 2. Get the saves and a backup
 
-Ask where the save folder is, or point them to [docs/saves.md](../../../docs/saves.md) (Windows, Steam Deck, copying
-off a Deck). Ask them to quit D2R and copy the whole folder somewhere safe before anything else; wait until they
-say it is done. Then check the saves parse:
+[docs/saves.md](../../../docs/saves.md) has every path and command. Offer to do the copying yourself; if they
+would rather do it, walk them through it.
+
+- **Saves on this computer**: Windows `%USERPROFILE%\Saved Games\Diablo II Resurrected`; on Linux or a Deck in
+  desktop mode, find it with the `find` command in docs/saves.md.
+- **Saves on a Steam Deck, agent on another computer**: with SSH on the Deck (docs/saves.md says how), copy the
+  folder into a new local folder with the `tar` command there; `scp` breaks on the spaces in the path.
+
+D2R must be closed first: it writes the saves when it exits. Then the backup, before anything else: a copy of the
+whole folder, every file, e.g. `<save dir>-backup-<date>`. A folder pulled off a Deck is already a copy; leave it
+as it is, as the backup, and organize from it (the script only reads its input). Then read the saves:
 
 ```bash
 node scripts/check-saves.mjs <save dir>
 ```
 
-It prints how many saves and items it read; exit code 1 means a save it can't read (see "When it fails").
+It lists every character by game mode, highest level first (class, level, how many items), and how many items each
+shared stash page holds. Show the player this list in plain words: step 3 asks about it. Exit code 1 means a save
+it can't read (see "When it fails").
 
 ## 3. Decide what to organize, then dry-run
 
-- **Game mode**: one at a time, `--mode SoftCore:Modern` by default. Modern is Reign of the Warlock, Legacy older
-  saves, HardCore for hardcore characters. The shared stash files show which modes exist:
-  `ModernSharedStashSoftCoreV2.d2i` is SoftCore:Modern, `SharedStashHardCoreV2.d2i` is HardCore:Legacy.
-- **Mules**: by default every level 1 character of the mode is emptied. Ask whether that is right. If a level 1
-  character is a new main, or a higher level one is a mule, name the mules: `--mules a,b,c` (the app's character
-  page can mark them and prints the list).
+- **Game mode**: one per run, `--mode SoftCore:Modern` by default. Modern is Reign of the Warlock, Legacy older
+  saves, HardCore for hardcore characters; the list from step 2 shows which modes they have. More than one: see
+  "Several game modes" below.
+- **Mules**: by default every level 1 character of the mode is emptied. Go through the list with them: is every
+  level 1 character a mule? If one is a new main, or a higher level one is a mule, name the mules:
+  `--mules a,b,c`.
 - **Inbox pages**: which shared stash pages hold new finds, e.g. `--inbox 4,5`. Without it every shared stash page
   is emptied: right for a first run, wrong when other pages are working sets (a main's charm page, for example).
   Ask; the stackable page (gems, runes) is never touched.
@@ -86,11 +96,27 @@ Only after the player agrees, run the same command again with `--yes`. Before wr
 kept exactly once (only starting kit dropped), that nothing overlaps or sits outside a grid, and that shared stash
 pages that are not inboxes come back unchanged. The new mules are clones of one emptied character (a Barbarian if
 there is one), with its `.ctl`/`.key`/`.ma0`/`.map` files copied alongside. `plan.txt` lists every move, in
-Traditional Chinese: from where, the item, to which mule, page and cell.
+Traditional Chinese: from where, the item, to which mule, page and cell. For a player who reads another language,
+don't hand it over; answer their questions ("where did my Shako go?") from it in their language.
 
-Walk them through putting the files back ("Putting changed saves back" in docs/saves.md): game closed, backup,
-copy every file from `<out dir>` into the save folder, start the game and look at a few mules. If anything looks
-wrong, quit and copy the backup back.
+Then the files go back into the save folder ("Putting changed saves back" in docs/saves.md). Offer to copy them
+yourself, and do it only when the player says yes for this run: D2R closed, the backup from step 2 still there,
+then copy every file from `<out dir>` except `plan.txt` into the save folder, replacing what is there, and nothing
+else. To a Deck, use the `COPYFILE_DISABLE=1 tar` command from docs/saves.md (without it macOS adds `._*` files).
+Ask them to start the game and look at a few mules. If anything looks wrong: quit and put the backup back.
+
+## Several game modes
+
+One run per mode, each reading the same save folder and writing to its own output folder:
+
+```bash
+node scripts/organize.mjs <save dir> ~/D2R-organized-<date> --yes
+node scripts/organize.mjs <save dir> ~/D2R-organized-<date>-hardcore --mode HardCore:Modern --yes
+```
+
+Mule names start with `H` for hardcore and `L` for legacy (`HUW-A`, `LDUP-A`, `HLSET-A`), so the modes never share
+a file name; only `plan.txt` repeats. Each mode has its own shared stash, so ask about inbox pages per mode. Dry-run
+and explain each mode first (the same commands without `--yes`), then copy every output folder back.
 
 ## Upkeep, later runs
 

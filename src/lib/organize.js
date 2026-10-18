@@ -64,18 +64,21 @@ function pack(prefix, units) {
   return mules;
 }
 
+// Mule names start with H for hardcore and L for legacy saves ("HUW-A"), so every mode's mules fit in one folder
+export const modePrefix = (mode) => (mode.startsWith("HardCore") ? "H" : "") + (mode.endsWith("Legacy") ? "L" : "");
+
 // Fixed slots for every collectible unique and set item: key -> { mule, code, page, x, y }
-export function museumLayout() {
+export function museumLayout(namePrefix = "") {
   const groups = { UW: [], UA: [], UJ: [] };
   const prefixOf = { weapons: "UW", armor: "UA", misc: "UJ" };
   for (const u of uniques) if (!u.legacy) groups[prefixOf[items[u.code].table]].push(u);
   const bySize = (a, b) => items[b.code].h - items[a.code].h || items[b.code].w - items[a.code].w;
   const mules = [
     ...Object.entries(groups).flatMap(([prefix, list]) =>
-      pack(prefix, list.sort((a, b) => byOrder(a.code, b.code)).map((u) => [{ ref: uniqueKey(u), code: u.code }])),
+      pack(namePrefix + prefix, list.sort((a, b) => byOrder(a.code, b.code)).map((u) => [{ ref: uniqueKey(u), code: u.code }])),
     ),
     ...pack(
-      "SET",
+      `${namePrefix}SET`,
       sets.filter((s) => !s.legacy).map((s) => s.items.filter((i) => !i.legacy).sort(bySize).map((i) => ({ ref: setItemKey(i), code: i.code }))),
     ),
   ];
@@ -238,7 +241,8 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
     out.set(s.name.toLowerCase(), { ...s, json: tabs });
   }
 
-  const museum = museumLayout();
+  const namePrefix = modePrefix(mode);
+  const museum = museumLayout(namePrefix);
   const filled = new Map(); // museum key -> item
   const loose = { DUP: [], RW: [], CHARM: [], JEWEL: [], RING: [], MAG: [], BASE: [], MISC: [], TRASH: [] };
   const entries = source.map((e) => ({ ...e, code: codeOfNumber(e.item.code), key: keyOf(e.item, codeOfNumber(e.item.code)) }));
@@ -259,7 +263,7 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
   for (const [prefix, list] of Object.entries(loose)) {
     if (!list.length) continue;
     list.sort(PURPOSE[prefix] ? byPurpose(prefix) : (a, b) => byOrder(a.code, b.code) || a.key.localeCompare(b.key));
-    for (const m of pack(prefix, list.map((e, i) => [{ ref: i, code: e.code }]))) {
+    for (const m of pack(namePrefix + prefix, list.map((e, i) => [{ ref: i, code: e.code }]))) {
       placed.set(m.name, []);
       m.slots.forEach((s) => put(m.name, list[s.ref], s, prefix));
     }
@@ -282,7 +286,7 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
   }
 
   const fromStash = (group) => moves.filter((m) => m.stash && m.group === group).map((m) => m.key);
-  const owned = (prefix) => [...museum.slots.values()].filter((s) => s.mule.startsWith(`${prefix}-`));
+  const owned = (prefix) => [...museum.slots.values()].filter((s) => s.mule.startsWith(`${namePrefix}${prefix}-`));
   const report = {
     mode,
     mules: mules.map((s) => s.name),

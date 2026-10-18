@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { imageOf, labelOf } from "../lib/gameData";
 import { groupByKey, itemsByPlace, ownerLabel, ownersOf, placeLabel, roleOf, totalCount } from "../lib/inventory";
-import { museumLayout } from "../lib/organize";
+import { modePrefix, museumLayout } from "../lib/organize";
 import { nameOf, t } from "../lib/i18n";
 import { Link, navigate } from "../lib/router";
 import { useStoredState } from "../lib/useStoredState";
@@ -20,9 +20,9 @@ const gridRank = (place) => Object.keys(GRIDS).indexOf(place) + 1 || 10 + Number
 // Equipment drawn as the in-game character screen; a mercenary only has these slots
 const DOLLS = { equipped: undefined, merc: ["Head", "Torso", "RightArm", "LeftArm"] };
 
-const MUSEUM = /^(UW|UA|UJ|SET)-/;
+const MUSEUM = /^H?L?(UW|UA|UJ|SET)-/;
 const groupOf = (o, roles) =>
-  !o.cls ? "sharedStash" : roleOf(o, roles) === "main" ? "mainCharacters" : MUSEUM.test(o.name) ? "museumMules" : /^TRASH-/.test(o.name) ? "trashMules" : "otherMules";
+  !o.cls ? "sharedStash" : roleOf(o, roles) === "main" ? "mainCharacters" : MUSEUM.test(o.name) ? "museumMules" : /^H?L?TRASH-/.test(o.name) ? "trashMules" : "otherMules";
 const GROUPS = ["mainCharacters", "museumMules", "otherMules", "trashMules", "sharedStash"];
 
 // Every character and stash in list order: by group, then by name
@@ -39,15 +39,19 @@ function openRewards(quests, lang) {
   });
 }
 
-// Fixed slots of the museum layout (see src/lib/organize.js)
-let museum;
-const museumSlots = () => (museum ??= museumLayout()).slots;
+// Fixed slots of the museum layout per mule name prefix, one per game mode (see src/lib/organize.js)
+const museums = new Map();
+function museumSlots(prefix) {
+  if (!museums.has(prefix)) museums.set(prefix, museumLayout(prefix).slots);
+  return museums.get(prefix);
+}
+const PREFIXES = ["SoftCore:Modern", "HardCore:Modern", "SoftCore:Legacy", "HardCore:Legacy"].map(modePrefix);
 
 // Each museum mule's filled and total fixed slots
 function museumFill(items) {
   const owned = new Set(items.map((r) => `${r.owner}\n${r.key}`));
   const fill = new Map();
-  for (const [key, s] of museumSlots()) {
+  for (const [key, s] of PREFIXES.flatMap((p) => [...museumSlots(p)])) {
     const f = fill.get(s.mule) ?? { owned: 0, total: 0 };
     f.total++;
     if (owned.has(`${s.mule}\n${key}`)) f.owned++;
@@ -57,10 +61,10 @@ function museumFill(items) {
 }
 
 // Empty fixed slots of a museum mule, by place, with where else the item is owned
-function ghostsOf(owner, allItems) {
+function ghostsOf(owner, mode, allItems) {
   const owned = new Set(allItems.filter((r) => r.owner === owner).map((r) => r.key));
   const ghosts = { stash: [], inventory: [] };
-  for (const [key, s] of museumSlots()) {
+  for (const [key, s] of museumSlots(modePrefix(mode))) {
     if (s.mule !== owner || owned.has(key)) continue;
     ghosts[s.page.toLowerCase()].push({ key, ...s, elsewhere: allItems.filter((r) => r.key === key) });
   }
@@ -221,7 +225,7 @@ function CharacterPage({ saveData, name, lang }) {
 
   const records = saveData.items.filter((r) => r.owner === name);
   const museumMule = MUSEUM.test(name);
-  const ghosts = museumMule ? ghostsOf(name, saveData.items) : {};
+  const ghosts = museumMule ? ghostsOf(name, owner.mode, saveData.items) : {};
   const fill = museumMule ? museumFill(saveData.items).get(name) : null;
   const places = itemsByPlace(saveData.items, name, lang);
   // Museum mules show their empty stash/inventory even when nothing is in it yet
