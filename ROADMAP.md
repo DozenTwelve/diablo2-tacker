@@ -4,7 +4,7 @@ Planned work, roughly in order.
 
 ## 1. Load speed (done)
 
-- Build assets are cached for a year and item icons for 30 days (`public/_headers`, read by Netlify and Cloudflare Pages).
+- Build assets are cached for a year and item icons for 30 days (`public/_headers`, read by Cloudflare Pages).
 - Not done, measured first: every page, starting with search, needs the whole catalog (about 190 kB gzipped with React), so
   splitting the data per page saves little. Item icons already load lazily. A parsed save folder takes about 200 bytes per
   item in localStorage (1,052 items: 215 kB), far from its ~5 MB limit, and the app already keeps working when storage is
@@ -39,4 +39,7 @@ yet on real hardware.
 
 ## Deployment
 
-Move from Netlify to Cloudflare Pages: build locally (with the generated icons) and upload with `wrangler pages deploy dist`. Icons stay out of git. Cloudflare Pages serves `index.html` for unknown paths when the build has no `404.html`, which the router needs; `public/_redirects` is only for Netlify and can go.
+Moving from Netlify to Cloudflare Pages: `npm run deploy` builds locally (with the generated icons) and uploads `dist`
+with wrangler, so icons stay out of git. Cloudflare Pages serves `index.html` for unknown paths when the build has no
+`404.html`, which the router needs, so Netlify's `_redirects` is gone. Left: the first deploy, then pointing
+d2r.diamonddoge.org at the Pages project and turning Netlify off.

@@ -1,4 +1,4 @@
-# Netlify and Cloudflare Pages: build assets have hashed names, icons change only when regenerated
+# Cloudflare Pages: build assets have hashed names, icons change only when regenerated
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 /items/*

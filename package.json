@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "build:wasm": "cd wasm && wasm-pack build --target web --release && rm pkg/.gitignore",
-    "gen:data": "node scripts/gen-data.mjs"
+    "gen:data": "node scripts/gen-data.mjs",
+    "deploy": "test -d public/items/amulet || (echo 'public/items is missing: run scripts/gen-images.mjs first' && exit 1); vite build && npx --yes wrangler@4 pages deploy dist --project-name d2r-collection-tracker --branch main"
   },
   "dependencies": {
     "react": "^19.0.0",
