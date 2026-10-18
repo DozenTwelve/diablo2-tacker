@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rollup -c"
   },
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "devDependencies": {
     "@decky/rollup": "^1.0.2",
     "@decky/ui": "^4.11.0",

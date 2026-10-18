@@ -1,28 +1,55 @@
 # Diablo II: Resurrected Collection Tracker
 
-Load your D2R save folder and see everything you own: which character or stash page holds each item,
-how many copies, and which uniques, sets, runewords and runes you are still missing.
-Supports Reign of the Warlock saves. Names in Traditional and Simplified Chinese plus English.
-The Organize page sorts your mules and shared stash pages by fixed rules and hands the result back as a zip
-(the page never writes to your save folder); for your own rules, run the `organize-stash` skill with an agent.
+[繁體中文](README.zh-TW.md)
 
-Saves are parsed in the browser (WebAssembly) and never uploaded. Where to find them, on Windows and Steam Deck,
-and how to put changed saves back: [docs/saves.md](docs/saves.md).
+Load your D2R save folder and see your whole stash at once: every unique, set item, runeword and rune, which
+character or stash page holds it, how many copies you have, and what you are still missing.
 
-### Live Site
+**Live site: [d2r-collection-tracker.pages.dev](https://d2r-collection-tracker.pages.dev)**
 
-- [https://d2r.diamonddoge.org/](https://d2r.diamonddoge.org/)
+Your saves are read in your browser (WebAssembly) and never uploaded. There is no server side, no account and no
+tracking.
 
-## How it works
+## What it does
 
-- `wasm/` wraps [d2s](https://github.com/ResurrectedTrader/d2s-rs) (MIT) to parse `.d2s` character saves
-  and `.d2i` shared stashes. The built package in `wasm/pkg/` is committed so deploys need no Rust.
-- `scripts/gen-data.mjs` builds `src/data/*.json` from the official game tables and string files,
-  extracted from the game's CASC storage (e.g. with [casc-cli](https://github.com/ironsp4rk/casc-cli)).
-  Raw game files are not committed.
-- `src/data/builds.json` is the recommended gear of popular builds, copied by hand from the "Gear Options" of
-  [Maxroll](https://maxroll.gg/d2/category/guides) guides (each links its guide). Guides age, so it's a suggestion.
-- `src/lib/` holds the logic (parsing saves, item lookups, translations), `src/components/` the UI.
+- **Collection.** Uniques, sets, runewords and runes, each page with how many you own out of how many exist and a
+  list of what is missing.
+- **Search.** Find any item, owned or not, in any of the four languages, and see where every copy is.
+- **Characters.** Each character's equipment, inventory, stash, cube and belt drawn as the in-game grids, with
+  item tooltips. Collection mules show their empty slots, so a gap is an item still missing.
+- **Build gear.** Pick one of 22 popular builds for a main character, click an equipment slot, and see which of
+  the recommended items you have and where they are. The lists come from [Maxroll](https://maxroll.gg/d2/category/guides)
+  guides, link back to them, and may be out of date.
+- **Organize.** Sort your mules and chosen shared stash pages into numbered mules by fixed rules: uniques and set
+  items in fixed "museum" slots, then duplicates, runewords, charms, jewels, rings, magic items, bases, and likely
+  junk for you to look through. The page checks that every item is kept exactly once and hands the result back as
+  a zip; it never writes to your save folder.
+- **Languages.** Traditional Chinese, Simplified Chinese, English and Korean, with the game's own item names.
+
+Works with offline characters on PC and Steam Deck, including Reign of the Warlock saves. Online (Battle.net)
+characters live on Blizzard's servers and can't be read; consoles aren't supported.
+
+## Finding your saves
+
+- **Windows:** `%USERPROFILE%\Saved Games\Diablo II Resurrected`
+- **Steam Deck:** inside the game's Proton folder, a different path on every Deck.
+
+[docs/saves.md](docs/saves.md) has the steps for both, how to copy saves off a Deck, and how to put organized saves
+back (quit the game, back up the folder, copy the new files in).
+
+## Organizing with your own rules
+
+The web page uses one fixed set of rules. To change them, run the
+[organize-stash](.claude/skills/organize-stash/SKILL.md) skill with an AI coding agent such as Claude Code: it
+walks through backing up, a dry run explained in plain words, and writing only after you agree, using
+`scripts/organize.mjs`.
+
+## Steam Deck plugin (in testing)
+
+[decky/](decky/README.md) is a Decky Loader plugin that opens the tracker from the quick access menu in Game Mode
+with the Deck's own saves, and gets the item icons from your installed game. It can also organize right on the
+Deck: it refuses while the game runs, backs up the save folder first and reads every written file back. It has not
+been tested on real hardware yet.
 
 ## Development
 
@@ -31,15 +58,33 @@ npm install
 npm run dev
 ```
 
+The app is React and Vite. `src/lib/` holds the logic (reading saves, item lookups, organizing, translations),
+`src/components/` the pages.
+
+- `wasm/` wraps [d2s](https://github.com/ResurrectedTrader/d2s-rs) (MIT) to read and write `.d2s` characters and
+  `.d2i` shared stashes. The built package in `wasm/pkg/` is committed, so building the site needs no Rust.
+- `src/data/*.json` is generated from the game's own tables and string files, extracted from its CASC storage
+  (for example with [casc-cli](https://github.com/ironsp4rk/casc-cli)). Raw game files are not committed.
+- Item icons are converted from your own game files into `public/items/` and are git-ignored: no Blizzard art is
+  in this repository. Without them the site works, just without pictures.
+- `src/data/builds.json` is copied by hand from Maxroll's "Gear Options" tables.
+
 | Command | What it does |
 |---|---|
 | `npm run gen:data [dir]` | Regenerate item data from extracted game files (default `~/Projects/Diablo2/d2r-gamedata`) |
-| `node scripts/gen-images.mjs [dir]` | Convert the game's inventory icons (`data/hd/global/ui/items/<group>/<type>/*.sprite`) to `public/items/*.webp` (git-ignored: Blizzard art stays out of the repo) |
+| `node scripts/gen-images.mjs [dir]` | Convert the game's inventory icons (`data/hd/global/ui/items/<group>/<type>/*.sprite`) to `public/items/*.webp` |
 | `npm run deploy` | Build with the local icons and upload to Cloudflare Pages (`npx wrangler login` once first) |
 | `npm run build:wasm` | Rebuild the save parser (needs Rust, the `wasm32-unknown-unknown` target and `wasm-pack`) |
-| `node scripts/check-saves.mjs <save dir>` | Parse a save folder with the app's code and print a summary |
-| `node scripts/check-props.mjs` | Check every catalog property (uniques, sets, runewords) shows as text |
-| `node scripts/organize.mjs <save dir> <out dir> [--mode SoftCore:Modern] [--mules a,b] [--inbox 4,5] [--yes]` | Rearrange mules (level 1 characters, or the named ones) of one game mode into numbered mules, with likely-junk charms and jewels in `TRASH` mules; `--inbox` empties only those shared stash pages. Lists what it would do, writes only with `--yes`, to a new folder, after checking every item is kept. Agents: see `.claude/skills/organize-stash` |
+| `node scripts/check-saves.mjs <save dir>` | Read a save folder with the app's code and print a summary |
+| `node scripts/organize.mjs <save dir> <out dir> [--mode SoftCore:Modern] [--mules a,b] [--inbox 4,5] [--yes]` | Organize from the command line: prints the plan, and only with `--yes` writes to a new folder after the same checks as the web page |
+| `node scripts/check-props.mjs` | Check every catalog property shows as text |
 | `node scripts/check-junk.mjs` | Check the likely-junk rules |
 | `node scripts/check-zip.mjs` | Check the zip writer used for organized saves |
 | `node scripts/check-builds.mjs` | Check every item in `builds.json` is in the catalog and every text is translated |
+
+[ROADMAP.md](ROADMAP.md) records what was planned and why.
+
+## License
+
+[GPL-3.0](LICENSE). Diablo and Diablo II: Resurrected are trademarks of Blizzard Entertainment, which owns the game
+data, item names and art. This project is not affiliated with or endorsed by Blizzard.
