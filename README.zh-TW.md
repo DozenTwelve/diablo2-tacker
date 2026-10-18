@@ -4,7 +4,7 @@
 
 讀取你的 D2R 存檔資料夾，一次看清整個倉庫：每件暗金、套裝、符文之語和符文在哪個角色或哪一頁倉庫、有幾件，以及還缺哪些。
 
-**網站：[d2r-collection-tracker.pages.dev](https://d2r-collection-tracker.pages.dev)**
+**網站：[d2r.diamonddoge.org](https://d2r.diamonddoge.org)**
 
 存檔在你的瀏覽器裡用 WebAssembly 解析，不會上傳。網站沒有後端、沒有帳號，也不收集任何資料。
 

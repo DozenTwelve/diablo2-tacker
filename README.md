@@ -5,7 +5,7 @@
 Load your D2R save folder and see your whole stash at once: every unique, set item, runeword and rune, which
 character or stash page holds it, how many copies you have, and what you are still missing.
 
-**Live site: [d2r-collection-tracker.pages.dev](https://d2r-collection-tracker.pages.dev)**
+**Live site: [d2r.diamonddoge.org](https://d2r.diamonddoge.org)**
 
 Your saves are read in your browser (WebAssembly) and never uploaded. There is no server side, no account and no
 tracking.

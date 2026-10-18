@@ -41,6 +41,6 @@ yet on real hardware.
 
 Moving from Netlify to Cloudflare Pages: `npm run deploy` builds locally (with the generated icons) and uploads `dist`
 with wrangler, so icons stay out of git. Cloudflare Pages serves `index.html` for unknown paths when the build has no
-`404.html`, which the router needs, so Netlify's `_redirects` is gone. Deployed to
-https://d2r-collection-tracker.pages.dev (the Netlify site is deleted). Left: pointing d2r.diamonddoge.org at the
-Pages project (custom domain in the Cloudflare dashboard).
+`404.html`, which the router needs, so Netlify's `_redirects` is gone. Live at
+https://d2r.diamonddoge.org (the Pages project d2r-collection-tracker, custom domain set in the Cloudflare
+dashboard); the Netlify site is deleted. Done.
