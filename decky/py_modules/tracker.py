@@ -105,20 +105,29 @@ SAVE_NAME = re.compile(r"[^./\\\x00][^/\\\x00]*\.d2[si]")
 COMPANIONS = (".ctl", ".key", ".ma0", ".map")  # a character's other files, copied from the template for new mules
 
 
-def write_saves(folder, files, backup_root):
+def write_saves(folder, files, backup_root, delete=()):
     """Write organized saves into the save folder: files is [{name, bytes, template?}] from the web app's
-    organizeFiles. The game must not be running. The whole folder is backed up first, each file is written
-    next to its target and renamed over it, then read back. Returns the backup folder."""
+    organizeFiles; delete: names of emptied characters the player chose to delete, with their other files.
+    The game must not be running. The whole folder is backed up first, each file is written next to its target
+    and renamed over it, then read back. Returns the backup folder."""
     if game_running():
         raise PermissionError("D2R is running; quit the game first")
     for f in files:
         if not SAVE_NAME.fullmatch(f["name"]):
             raise ValueError(f"not a save file name: {f['name']}")
+    for name in delete:
+        if not SAVE_NAME.fullmatch(name + ".d2s") or any(f["name"] == name + ".d2s" for f in files):
+            raise ValueError(f"not a character to delete: {name}")
     # ponytail: backups are kept forever (a save folder is a few MB); prune if anyone collects hundreds
     backup = os.path.join(backup_root, time.strftime("%Y%m%d-%H%M%S"))
     shutil.copytree(folder, backup)
     try:
         _write(folder, files)
+        for name in delete:
+            # The save and what the game keeps beside it, as filesOfCharacter in src/lib/organize.js
+            for other in os.listdir(folder):
+                if re.fullmatch(re.escape(name) + r"\.(d2s|ctl|key|map|ma\d+)", other):
+                    os.remove(os.path.join(folder, other))
     except Exception as e:
         # Put the folder back as it was: every file now there that the backup doesn't have came from this write
         try:
@@ -155,7 +164,7 @@ def _write(folder, files):
 class Handler(SimpleHTTPRequestHandler):
     """GET /api/saves: save file names; /api/saves/<name>: one save; /items/<x>.webp: an icon (PNG);
     anything else: the web app, index.html for unknown paths (the app routes on the client).
-    POST /api/write: organized saves to write (write_saves); /api/close: the app's close button (on_close).
+    POST /api/write: organized saves to write and characters to delete (write_saves); /api/close: the app's close button (on_close).
     POSTs only from the app itself."""
 
     web_dir = save_folder = icon_dir = backup_dir = on_close = None  # set by serve()
@@ -211,7 +220,7 @@ class Handler(SimpleHTTPRequestHandler):
         try:
             body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
             files = [{**f, "bytes": base64.b64decode(f["data"])} for f in body["files"]]
-            result = {"backup": write_saves(self.save_folder(), files, self.backup_dir)}
+            result = {"backup": write_saves(self.save_folder(), files, self.backup_dir, body.get("delete", []))}
             status = 200
         except PermissionError as e:
             result, status = {"error": str(e), "running": True}, 409

@@ -169,6 +169,19 @@ const UI = {
   ],
   reportOther: [(n) => `其他 ${n} 件`, (n) => `其他 ${n} 件`, (n) => `Everything else: ${n}`, (n) => `기타 ${n}개`],
   reportDropped: [(n) => `丢弃骡子身上的初始装备 ${n} 件`, (n) => `丟棄騾子身上的初始裝備 ${n} 件`, (n) => `Starting kit dropped from mules: ${n}`, (n) => `창고캐의 시작 장비 ${n}개 버림`],
+  leftEmpty: ["删除空角色", "刪除空角色", "Delete empty characters", "빈 캐릭터 삭제"],
+  leftEmptyAsk: [
+    "这些角色清空后，没有新骡子用到它们的名字。勾选要删除的角色（连同它们的其他文件）：",
+    "這些角色清空後，沒有新騾子用到它們的名字。勾選要刪除的角色（連同它們的其他檔案）：",
+    "These characters are left empty: no new mule takes their name. Tick the ones to delete (with their other files):",
+    "이 캐릭터들은 비워진 채 남고, 새 창고캐가 이름을 쓰지 않습니다. 삭제할 캐릭터를 고르세요(다른 파일도 함께):",
+  ],
+  putBackDelete: [
+    (list) => `再从存档文件夹删除这些文件：${list}`,
+    (list) => `再從存檔資料夾刪除這些檔案：${list}`,
+    (list) => `Then delete these files from the save folder: ${list}`,
+    (list) => `그다음 저장 폴더에서 이 파일들을 삭제합니다: ${list}`,
+  ],
   writeWarning: [
     "写入前会自动备份整个存档文件夹。请先完全退出游戏。",
     "寫入前會自動備份整個存檔資料夾。請先完全退出遊戲。",

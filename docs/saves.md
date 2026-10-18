@@ -39,11 +39,13 @@ Saves written by `scripts/organize.mjs` go to a new folder; nothing is changed i
 1. Quit D2R completely. The game writes its saves on exit and would overwrite the new ones.
 2. Back up the whole save folder, e.g. copy it to `D2R-backup-<date>`.
 3. Copy every file from the output folder into the save folder, replacing what is there (`plan.txt` is only a list
-   of moves and can be left out).
-4. Start D2R and check the mules. If anything is wrong, quit and copy the backup back.
+   of moves and can be left out, and so can `delete.txt`).
+4. If there is a `delete.txt` (characters picked with `--delete`), delete the files it lists from the save folder.
+5. Start D2R and check the mules. If anything is wrong, quit and copy the backup back.
 
-From a Mac to a Deck, `COPYFILE_DISABLE=1` keeps macOS from adding `._*` files:
+From a Mac to a Deck, `COPYFILE_DISABLE=1` keeps macOS from adding `._*` files; the second line is step 4:
 
 ```bash
-cd <output folder> && COPYFILE_DISABLE=1 tar -cf - --exclude plan.txt . | ssh deck@<deck ip> "tar -xf - -C '<save folder>'"
+cd <output folder> && COPYFILE_DISABLE=1 tar -cf - --exclude plan.txt --exclude delete.txt . | ssh deck@<deck ip> "tar -xf - -C '<save folder>'"
+test -f delete.txt && ssh deck@<deck ip> "cd '<save folder>' && xargs rm -f --" < delete.txt
 ```

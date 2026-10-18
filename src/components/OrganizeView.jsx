@@ -4,7 +4,7 @@ import { deckSaveFiles, onDeck } from "../lib/deck";
 import { roleOf } from "../lib/inventory";
 import { t } from "../lib/i18n";
 import { SKILL } from "../lib/links";
-import { modeOfCharacter, modeOfStash, organizeFiles } from "../lib/organize";
+import { filesOfCharacter, modeOfCharacter, modeOfStash, organizeFiles } from "../lib/organize";
 import { loadParser, statsOf } from "../lib/parseSaves";
 import { describeStats } from "../lib/stats";
 import { Link } from "../lib/router";
@@ -36,14 +36,15 @@ function saveFolder(files) {
 // /organize: sort the mules and the chosen inbox pages of the shared stash (src/lib/organize.js), show what
 // would happen, then hand the result back. On the web: a zip download of the changed files (rawFiles: the
 // files as last picked, kept in memory only; picker asks for them again). On the Steam Deck: the plugin backs
-// up the save folder and writes.
+// up the save folder and writes. Emptied characters no new mule reuses can be ticked for deletion: the plugin
+// deletes them after the backup, the web lists their files to delete by hand.
 export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
   const [roles] = useStoredState("roles", {});
   const [inboxes, setInboxes] = useStoredState("inbox", {}); // mode -> page numbers
   const [files, setFiles] = useState(null); // [{ name, bytes }]: saves, and on the web their other files
   const [wasm, setWasm] = useState(null);
   const [mode, setMode] = useState(null);
-  const [state, setState] = useState({}); // { plan, error, busy, backup, downloaded, readError }
+  const [state, setState] = useState({}); // { plan, remove, error, busy, backup, downloaded, readError }
   const [reads, setReads] = useState(0); // bumped to read the files again
 
   useEffect(() => {
@@ -52,7 +53,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
     Promise.all([read, loadParser()]).then(async ([list, parser]) => {
       setFiles(await Promise.all(list.map(async (f) => ({ name: f.name, bytes: new Uint8Array(await f.arrayBuffer()) }))));
       setWasm(parser);
-      setState({});
+      setState((s) => ({ backup: s.backup })); // read again after writing: keep saying where the backup is
     }, (e) => setState({ readError: e.message ?? String(e) }));
   }, [reads, rawFiles]);
 
@@ -175,11 +176,15 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
         setState({ error: t("savesChanged", lang) });
         return;
       }
-      const { files: out } = organizeFiles(files, wasm, options);
+      // Characters to delete are not written first; the plugin deletes them after the backup
+      const out = organizeFiles(files, wasm, options).files.filter((f) => !remove.some((name) => f.name === `${name}.d2s`));
       const response = await fetch("/api/write", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ files: out.map((f) => ({ name: f.name, template: f.template, data: toBase64(f.bytes) })) }),
+        body: JSON.stringify({
+          files: out.map((f) => ({ name: f.name, template: f.template, data: toBase64(f.bytes) })),
+          delete: remove,
+        }),
       });
       const result = await response.json();
       if (result.running) setState({ ...state, error: t("gameRunning", lang) });
@@ -195,6 +200,10 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
   };
 
   const report = state.plan?.report;
+  const remove = state.remove ?? []; // characters ticked for deletion
+  const removeFiles = remove.flatMap((name) => filesOfCharacter(name, files.map((f) => f.name)));
+  const steps = [...t("putBackSteps", lang)];
+  if (removeFiles.length) steps.splice(3, 0, t("putBackDelete", lang, removeFiles.join(t("listSeparator", lang))));
   const names = (keys) => keys.map((k) => labelOf(k, lang)).join(t("listSeparator", lang));
   const trash = report?.moves.filter((m) => m.group === "TRASH" && m.stash) ?? [];
   return (
@@ -286,6 +295,29 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
             )}
             <p>{t("reportOther", lang, report.inbox.other)}</p>
             {report.dropped.length > 0 && <p className="gothic-text-muted">{t("reportDropped", lang, report.dropped.length)}</p>}
+            {report.leftEmpty.length > 0 && (
+              <div className="py-2 space-y-2">
+                <div className="flex items-baseline gap-4">
+                  <h3 className="gothic-text-gold">{t("leftEmpty", lang)}</h3>
+                  <button className="text-sm gothic-text-muted" onClick={() => setState({ ...state, remove: report.leftEmpty })}>
+                    {t("selectAll", lang)}
+                  </button>
+                </div>
+                <p className="text-sm">{t("leftEmptyAsk", lang)}</p>
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  {report.leftEmpty.map((name) => (
+                    <label key={name} className="gothic-checkbox">
+                      <input
+                        type="checkbox"
+                        checked={remove.includes(name)}
+                        onChange={(e) => setState({ ...state, remove: e.target.checked ? [...remove, name] : remove.filter((n) => n !== name) })}
+                      />
+                      <span>{name}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
             {onDeck ? (
               <>
                 <p className="text-sm gothic-text-muted pt-2">{t("writeWarning", lang)}</p>
@@ -302,7 +334,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
                   <div className="panel text-sm">
                     <h3 className="gothic-text-gold mb-2">{t("putBack", lang)}</h3>
                     <ol className="list-decimal pl-5 space-y-1">
-                      {t("putBackSteps", lang).map((step, i) => (
+                      {steps.map((step, i) => (
                         <li key={i}>{step}</li>
                       ))}
                     </ol>

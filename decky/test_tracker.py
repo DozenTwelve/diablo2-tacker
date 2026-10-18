@@ -26,10 +26,10 @@ with tempfile.TemporaryDirectory() as tmp:
     home = os.path.join(tmp, "home")
     saves = os.path.join(tracker.compatdata(home), "123/pfx/drive_c/users/steamuser/Saved Games/Diablo II Resurrected")
     os.makedirs(saves)
-    for name in ["Zanna.d2s", "Mule 二.d2s", "SharedStash.d2i", "Zanna.key", "OLD.D2S"]:
+    for name in ["Zanna.d2s", "Mule 二.d2s", "SharedStash.d2i", "Zanna.key", "Zanna.ma1", "Zanna-old.d2s", "OLD.D2S"]:
         open(os.path.join(saves, name), "wb").write(name.encode())
     assert tracker.save_dir(home) == saves
-    assert tracker.list_saves(saves) == ["Mule 二.d2s", "SharedStash.d2i", "Zanna.d2s"]
+    assert tracker.list_saves(saves) == ["Mule 二.d2s", "SharedStash.d2i", "Zanna-old.d2s", "Zanna.d2s"]
 
     web, icons = os.path.join(tmp, "web"), os.path.join(tmp, "icons")
     os.makedirs(web)
@@ -93,6 +93,23 @@ with tempfile.TemporaryDirectory() as tmp:
     assert post({"files": broken})[0] == 500
     assert sorted(os.listdir(saves)) == before
     os.rmdir(os.path.join(saves, "Bad.d2s"))
+
+    # Emptied characters the player chose go, with their other files; never one being written
+    assert post({"files": new, "delete": ["UW-A"]})[0] == 500
+    assert post({"files": new, "delete": ["../Zanna"]})[0] == 500
+    time.sleep(1)
+    status, result = post({"files": new, "delete": ["Zanna"]})
+    assert status == 200, result
+    assert "Zanna-old.d2s" in os.listdir(saves)  # another character whose name starts the same
+    assert not {"Zanna.d2s", "Zanna.key", "Zanna.ma1"} & set(os.listdir(saves)) and {"Zanna.d2s", "Zanna.key", "Zanna.ma1"} <= set(os.listdir(result["backup"]))
+
+    # Deleting that fails half way puts the folder back too
+    open(os.path.join(saves, "Gone.d2s"), "wb").write(b"gone")
+    os.mkdir(os.path.join(saves, "Gone.ma1"))
+    before = sorted(os.listdir(saves))
+    time.sleep(1)
+    assert post({"files": new, "delete": ["Gone"]})[0] == 500
+    assert sorted(os.listdir(saves)) == before and open(os.path.join(saves, "Gone.d2s"), "rb").read() == b"gone"
 
     # Only requests to 127.0.0.1 itself: another name pointed at it (DNS rebinding) gets nothing
     request = urllib.request.Request(base + "/api/saves", headers={"Host": "evil.example"})

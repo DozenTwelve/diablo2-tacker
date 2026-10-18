@@ -89,10 +89,13 @@ plan. Explain it before going on:
 - That starting kit on the emptied characters (starter weapons, potions, scrolls) is dropped.
 - What the inbox pages bring: new museum items, new duplicates, likely junk.
 - The museum line (`UW 50/86` ...) is how much of the collection they have.
+- `left empty`: emptied characters no new mule takes the name of. Ask which of them to delete, none by default;
+  name them with `--delete a,b` (only these names are taken). The rest stay as empty characters.
 
 ## 4. Write and hand back
 
-Only after the player agrees, run the same command again with `--yes`. Before writing it checks that every item is
+Only after the player agrees, run the same command again with `--yes` (and `--delete` for
+the characters they picked). Before writing it checks that every item is
 kept exactly once (only starting kit dropped), that nothing overlaps or sits outside a grid, and that shared stash
 pages that are not inboxes come back unchanged. The new mules are clones of one emptied character (a Barbarian if
 there is one), with its `.ctl`/`.key`/`.ma0`/`.map` files copied alongside. `plan.txt` lists every move, in
@@ -101,8 +104,9 @@ don't hand it over; answer their questions ("where did my Shako go?") from it in
 
 Then the files go back into the save folder ("Putting changed saves back" in docs/saves.md). Offer to copy them
 yourself, and do it only when the player says yes for this run: D2R closed, the backup from step 2 still there,
-then copy every file from `<out dir>` except `plan.txt` into the save folder, replacing what is there, and nothing
-else. To a Deck, use the `COPYFILE_DISABLE=1 tar` command from docs/saves.md (without it macOS adds `._*` files).
+then copy every file from `<out dir>` except `plan.txt` and `delete.txt` into the save folder, replacing what is
+there, then delete the files `delete.txt` lists from the save folder, and nothing else. To a Deck, use the two
+commands from docs/saves.md (without `COPYFILE_DISABLE=1` macOS adds `._*` files).
 Ask them to start the game and look at a few mules. If anything looks wrong: quit and put the backup back.
 
 ## Several game modes

@@ -1,12 +1,14 @@
 // Rearrange a save folder's mules (see src/lib/organize.js) and write the changed saves to a new folder.
-// Usage: node scripts/organize.mjs <save dir> <out dir> [--mode SoftCore:Modern] [--mules a,b,c] [--inbox 1,2] [--yes]
+// Usage: node scripts/organize.mjs <save dir> <out dir> [--mode SoftCore:Modern] [--mules a,b,c] [--inbox 1,2] [--delete a,b] [--yes]
 //   --mode   game mode to organize: SoftCore|HardCore : Modern (Reign of the Warlock)|Legacy
 //   --mules  characters to empty into the new mules (default: every level 1 character of the mode)
 //   --inbox  shared stash pages to empty (default: every page); the others stay as they are
+//   --delete emptied characters no new mule reuses (the dry run lists them) to delete: their files go in delete.txt
 //   --yes    write; without it, only list which characters would be emptied and what would be made
 // The save dir is only read; the out dir must not exist. The new saves are checked before writing (every item
 // is kept exactly once, only starting kit is dropped, nothing overlaps, see organizeFiles), written to
-// <out dir>.partial and only then renamed to <out dir>. plan.txt there lists every moved item (it is not a save).
+// <out dir>.partial and only then renamed to <out dir>. plan.txt there lists every moved item, delete.txt the
+// files to delete from the save folder after copying back (neither is a save).
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { createServer } from "vite";
@@ -19,6 +21,7 @@ const option = (name) => {
 const mode = option("--mode") ?? "SoftCore:Modern";
 const muleNames = option("--mules")?.split(",");
 const inbox = option("--inbox")?.split(",").map(Number);
+const remove = option("--delete")?.split(",").filter(Boolean) ?? [];
 if (inbox?.some((n) => !Number.isInteger(n) || n < 1)) throw new Error("--inbox takes page numbers, e.g. --inbox 4,5");
 const yes = args.includes("--yes");
 const [dir, outDir] = args.filter((a) => a !== "--yes");
@@ -30,7 +33,7 @@ const vite = await createServer({ server: { middlewareMode: true }, appType: "cu
 try {
   const wasm = await vite.ssrLoadModule("/wasm/pkg/d2_parser.js");
   wasm.initSync({ module: readFileSync(new URL("../wasm/pkg/d2_parser_bg.wasm", import.meta.url)) });
-  const { organizeFiles } = await vite.ssrLoadModule("/src/lib/organize.js");
+  const { filesOfCharacter, organizeFiles } = await vite.ssrLoadModule("/src/lib/organize.js");
   const { codeOfNumber, labelOf } = await vite.ssrLoadModule("/src/lib/gameData.js");
   const { ownerLabel } = await vite.ssrLoadModule("/src/lib/inventory.js");
   const { describeStats } = await vite.ssrLoadModule("/src/lib/stats.js");
@@ -52,6 +55,10 @@ try {
   console.log(`shared stash pages ${inbox?.join(",") ?? "all"} bring: ${report.inbox.museum.length} new to the museum (${names(report.inbox.museum)}),`);
   console.log(`  ${report.inbox.dup.length} duplicates (${names(report.inbox.dup)}), ${report.inbox.trash.length} likely junk, ${report.inbox.other} other`);
   const trash = report.moves.filter((m) => m.group === "TRASH");
+  const notEmptied = remove.filter((n) => !report.leftEmpty.some((e) => e.toLowerCase() === n.toLowerCase()));
+  if (notEmptied.length) throw new Error(`--delete takes only characters left empty: ${notEmptied.join(", ")}`);
+  const doomed = report.leftEmpty.filter((e) => remove.some((n) => e.toLowerCase() === n.toLowerCase()));
+  if (report.leftEmpty.length) console.log(`left empty, no new mule takes their name: ${report.leftEmpty.join(", ")}; to delete: ${doomed.join(", ") || "none (--delete a,b)"}`);
   if (trash.length) console.log(`likely junk, to TRASH mules:\n${trash.map((m) => `  ${labelOf(m.key, "en")}: ${junkText(m, "en")}`).join("\n")}`);
   if (!yes) {
     console.log("nothing written; check the characters above and run again with --yes");
@@ -77,6 +84,8 @@ try {
       })
       .sort((a, b) => a.localeCompare(b));
     writeFileSync(join(partial, "plan.txt"), plan.join("\n") + "\n");
+    const gone = doomed.flatMap((name) => filesOfCharacter(name, readdirSync(dir)));
+    if (gone.length) writeFileSync(join(partial, "delete.txt"), gone.join("\n") + "\n");
     renameSync(partial, outDir);
   } catch (e) {
     rmSync(partial, { recursive: true, force: true });

@@ -208,13 +208,19 @@ export const mulesOf = (saves, mode, names) =>
       (names ? names.some((n) => n.toLowerCase() === s.name.toLowerCase()) : s.json.character.level === 1),
   );
 
+// A character's own files among a save folder's file names: its save and what the game keeps beside it
+export const filesOfCharacter = (name, fileNames) =>
+  fileNames.filter((f) => f.startsWith(`${name}.`) && /^(d2s|ctl|key|map|ma\d+)$/.test(f.slice(name.length + 1)));
+
 // saves: [{ name, ext: "d2s" | "d2i", json }]; options: { mode, mules: names, inbox: shared stash page numbers }
 // -> { saves: [{ name, ext, json, template? }], report }. Only changed saves are returned; new mules carry
 // `template`, the save they were cloned from. Mules whose names the new layout uses are rewritten in place.
-// report: { mules: names emptied, moved, dropped: [item], moves: [{ from, key, to, page, x, y, group }],
+// report: { mules: names emptied, leftEmpty: emptied mules no new mule is named after (the player may delete them),
+//   moved, dropped: [item], moves: [{ from, key, to, page, x, y, group }],
 //   inbox: what the shared stash pages brought: { museum: keys, dup: keys, trash: keys, other }, ... }
 export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox } = {}) {
-  const mules = mulesOf(saves, mode, names);
+  // By name: the same saves give the same result whatever order the files came in (folder picker, Deck, Node)
+  const mules = mulesOf(saves, mode, names).sort((a, b) => a.name.localeCompare(b.name));
   if (!mules.length) throw new Error(`no mules in ${mode}`);
   const template = mules.find((s) => s.json.character.class === "Barbarian") ?? mules[0];
 
@@ -290,6 +296,7 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
   const report = {
     mode,
     mules: mules.map((s) => s.name),
+    leftEmpty: mules.filter((s) => ![...placed.keys()].some((n) => n.toLowerCase() === s.name.toLowerCase())).map((s) => s.name).sort((a, b) => a.localeCompare(b)),
     template: template.name,
     moved: source.length,
     dropped,
