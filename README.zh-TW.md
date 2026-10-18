@@ -8,6 +8,8 @@
 
 **網站：[d2r.diamonddoge.org](https://d2r.diamonddoge.org)**
 
+![示範：讀取存檔、搜尋物品、瀏覽暗金、查看流派裝備](docs/demo.gif)
+
 存檔在你的瀏覽器裡用 WebAssembly 解析，不會上傳。網站沒有後端、沒有帳號，也不收集任何資料。
 
 ## 能做什麼

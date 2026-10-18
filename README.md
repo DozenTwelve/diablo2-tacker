@@ -9,6 +9,8 @@ character or stash page holds it, how many copies you have, and what you are sti
 
 **Live site: [d2r.diamonddoge.org](https://d2r.diamonddoge.org)**
 
+![Demo: load saves, search an item, browse uniques, check a build's gear](docs/demo.gif)
+
 Your saves are read in your browser (WebAssembly) and never uploaded. There is no server side, no account and no
 tracking.
 
