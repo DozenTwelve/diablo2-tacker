@@ -38,6 +38,8 @@
 
 [decky/](decky/README.md) 是一個 [Decky Loader](https://decky.xyz) 外掛：在遊戲模式的快捷選單裡打開收藏，直接讀這台 Deck 的存檔，物品圖示從你安裝的遊戲裡提取。它也能直接在 Deck 上整理：遊戲執行中會拒絕寫入，寫入前先備份整個存檔資料夾，寫完再讀回來核對。
 
+![Steam Deck 上的外掛：快捷選單，再到遊戲模式裡的收藏頁](docs/deck-demo.gif)
+
 外掛還沒上架 Decky 商店。安裝方法：Decky → 設定 → 一般 → 打開開發者模式，再到「開發者」→「從 URL 安裝外掛」，輸入
 
 ```

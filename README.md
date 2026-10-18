@@ -54,6 +54,8 @@ walks through backing up, a dry run explained in plain words, and writing only a
 menu in Game Mode with the Deck's own saves, and gets the item icons from your installed game. It can also organize
 right on the Deck: it refuses while the game runs, backs up the save folder first and reads every written file back.
 
+![The plugin on a Steam Deck: the quick access panel, then the tracker in Game Mode](docs/deck-demo.gif)
+
 It isn't in the Decky store yet. To install: Decky → settings → General → turn on Developer mode, then Developer →
 Install Plugin from URL, and enter
 
