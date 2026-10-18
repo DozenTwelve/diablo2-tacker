@@ -1,3 +1,5 @@
+![暗黑破壞神 II 收藏追蹤](docs/banner.jpg)
+
 # 暗黑破壞神 II 收藏追蹤
 
 [English](README.md)

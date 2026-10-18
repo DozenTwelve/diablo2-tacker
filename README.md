@@ -1,3 +1,5 @@
+![Diablo II: Resurrected Collection Tracker](docs/banner.jpg)
+
 # Diablo II: Resurrected Collection Tracker
 
 [繁體中文](README.zh-TW.md)
