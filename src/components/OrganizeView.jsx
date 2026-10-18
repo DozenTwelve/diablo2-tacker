@@ -10,6 +10,7 @@ import { describeStats } from "../lib/stats";
 import { Link } from "../lib/router";
 import { useStoredState } from "../lib/useStoredState";
 import { zip } from "../lib/zip";
+import OrganizeDemo from "./OrganizeDemo";
 import PageTitle from "./PageTitle";
 
 const modeLabel = (mode, lang) => {
@@ -81,6 +82,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
 
   const about = (
     <div className="max-w-3xl space-y-3 text-sm mb-8">
+      <OrganizeDemo lang={lang} />
       <p>{t("organizeAbout", lang)}</p>
       <ul className="space-y-1 pl-4">
         <li>
