@@ -22,7 +22,8 @@ cd decky && npm install && ./pack.sh     # -> decky/out/d2r-collection-tracker.z
 ```
 
 Copy the zip to the Deck. In Game Mode: Decky (quick access menu) → settings → General → enable Developer mode,
-then Developer → Install Plugin from ZIP file, and pick the zip. Open the plugin and press "Get item icons" once
+then Developer → Install Plugin from ZIP file, and pick the zip (players use Install Plugin from URL with the zip
+on GitHub Releases, see the main README). Open the plugin and press "Get item icons" once
 (about a minute), then "Open collection".
 
 `python3 test_tracker.py [sprite dir]` checks the backend on any computer.

@@ -48,12 +48,21 @@ The web page uses one fixed set of rules. To change them, run the
 walks through backing up, a dry run explained in plain words, and writing only after you agree, using
 `scripts/organize.mjs`.
 
-## Steam Deck plugin (in testing)
+## Steam Deck plugin
 
-[decky/](decky/README.md) is a Decky Loader plugin that opens the tracker from the quick access menu in Game Mode
-with the Deck's own saves, and gets the item icons from your installed game. It can also organize right on the
-Deck: it refuses while the game runs, backs up the save folder first and reads every written file back. It has not
-been tested on real hardware yet.
+[decky/](decky/README.md) is a [Decky Loader](https://decky.xyz) plugin that opens the tracker from the quick access
+menu in Game Mode with the Deck's own saves, and gets the item icons from your installed game. It can also organize
+right on the Deck: it refuses while the game runs, backs up the save folder first and reads every written file back.
+
+It isn't in the Decky store yet. To install: Decky → settings → General → turn on Developer mode, then Developer →
+Install Plugin from URL, and enter
+
+```
+https://github.com/DozenTwelve/diablo2-tacker/releases/latest/download/d2r-collection-tracker.zip
+```
+
+(or download the zip from [Releases](https://github.com/DozenTwelve/diablo2-tacker/releases) and use Install Plugin
+from ZIP file). Open the plugin, press "Get item icons" once (about a minute), then "Open collection".
 
 ## Development
 

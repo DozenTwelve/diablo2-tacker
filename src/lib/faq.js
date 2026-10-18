@@ -1,6 +1,6 @@
 // The /faq page: questions and answers as [Simplified, Traditional, English, Korean] like the UI strings,
 // with an optional link after the answer. In the Steam Deck plugin, deck replaces the answer, or false hides the question.
-import { REPO, SAVES_DOC, SKILL } from "./links";
+import { PLUGIN, REPO, SAVES_DOC, SKILL } from "./links";
 
 export const FAQ = [
   {
@@ -93,12 +93,13 @@ export const FAQ = [
   {
     q: ["Steam Deck 能用吗？", "Steam Deck 能用嗎？", "Does it work on a Steam Deck?", "Steam Deck에서 되나요?"],
     a: [
-      "网页在 Deck 的桌面模式就能用。另外有一个 Decky Loader 插件，可以直接在游戏模式读这台 Deck 的存档，正在测试中。",
-      "網頁在 Deck 的桌面模式就能用。另外有一個 Decky Loader 外掛，可以直接在遊戲模式讀這台 Deck 的存檔，正在測試中。",
-      "The page works in the Deck's desktop mode. A Decky Loader plugin that reads the Deck's saves straight from game mode is being tested.",
-      "페이지는 Deck의 데스크톱 모드에서 쓸 수 있습니다. 게임 모드에서 바로 저장 파일을 읽는 Decky Loader 플러그인은 테스트 중입니다.",
+      "网页在 Deck 的桌面模式就能用。另外有一个 Decky Loader 插件，在游戏模式直接读这台 Deck 的存档、在 Deck 上整理；还没上架 Decky 商店，安装方法见 GitHub。",
+      "網頁在 Deck 的桌面模式就能用。另外有一個 Decky Loader 外掛，在遊戲模式直接讀這台 Deck 的存檔、在 Deck 上整理；還沒上架 Decky 商店，安裝方法見 GitHub。",
+      "The page works in the Deck's desktop mode. There is also a Decky Loader plugin that reads the Deck's saves and organizes them right in game mode; it isn't in the Decky store yet, so see GitHub for how to install it.",
+      "페이지는 Deck의 데스크톱 모드에서 쓸 수 있습니다. 게임 모드에서 바로 저장 파일을 읽고 정리하는 Decky Loader 플러그인도 있습니다. 아직 Decky 스토어에는 없으니 설치 방법은 GitHub를 보세요.",
     ],
     deck: false,
+    link: PLUGIN,
   },
   {
     q: ["源代码在哪？网站架在哪？", "原始碼在哪？網站架在哪？", "Where is the source code, and where is the site hosted?", "소스 코드와 호스팅은요?"],

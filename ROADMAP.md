@@ -34,13 +34,14 @@ back the new saves. Only tested on one real save folder so far; expect messier s
   `src/lib/organize.js`), for the player to look through. Nothing is deleted. The app lists them under "To clean".
 - The dry run reports what the inbox pages bring: new museum items, new duplicates, likely junk.
 
-## 5. Steam Deck plugin (built, waiting for testing on a Deck)
+## 5. Steam Deck plugin (released, not in the Decky store yet)
 
 [decky/](decky/README.md): a Decky Loader plugin. The quick access panel opens the tracker in Steam's browser with
 the Deck's own saves, and gets the item icons from the player's game files (the zip ships no game art). Its Organize
 page sorts mules and inbox pages right on the Deck: refused while the game runs, the save folder is backed up first,
-and the written files are read back. Tested on a simulated Deck folder (same bytes as `scripts/organize.mjs`), not
-yet on real hardware.
+and the written files are read back (same bytes as `scripts/organize.mjs`). The server runs from "Open collection"
+until the page's Close button, which also leaves Steam's browser. Tested on a Deck; the zip is on GitHub Releases.
+Next: submit to the Decky store.
 
 ## Deployment
 

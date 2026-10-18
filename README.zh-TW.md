@@ -34,9 +34,17 @@
 
 網頁只有一套固定的整理規則。想改規則，可以用 AI 程式助手（例如 Claude Code）執行 [organize-stash](.claude/skills/organize-stash/SKILL.md) skill。它會用 `scripts/organize.mjs` 帶你一步步來：先備份，再試跑並用白話說明結果，你同意後才寫入。
 
-## Steam Deck 外掛（測試中）
+## Steam Deck 外掛
 
-[decky/](decky/README.md) 是一個 Decky Loader 外掛：在遊戲模式的快捷選單裡打開收藏，直接讀這台 Deck 的存檔，物品圖示從你安裝的遊戲裡提取。它也能直接在 Deck 上整理：遊戲執行中會拒絕寫入，寫入前先備份整個存檔資料夾，寫完再讀回來核對。目前還沒在真機上測試過。
+[decky/](decky/README.md) 是一個 [Decky Loader](https://decky.xyz) 外掛：在遊戲模式的快捷選單裡打開收藏，直接讀這台 Deck 的存檔，物品圖示從你安裝的遊戲裡提取。它也能直接在 Deck 上整理：遊戲執行中會拒絕寫入，寫入前先備份整個存檔資料夾，寫完再讀回來核對。
+
+外掛還沒上架 Decky 商店。安裝方法：Decky → 設定 → 一般 → 打開開發者模式，再到「開發者」→「從 URL 安裝外掛」，輸入
+
+```
+https://github.com/DozenTwelve/diablo2-tacker/releases/latest/download/d2r-collection-tracker.zip
+```
+
+（或從 [Releases](https://github.com/DozenTwelve/diablo2-tacker/releases) 下載 zip，用「從 ZIP 檔案安裝外掛」。）打開外掛，先按一次「從遊戲檔案提取物品圖標」（約一分鐘），再按「打開收藏」。
 
 ## 開發
 
