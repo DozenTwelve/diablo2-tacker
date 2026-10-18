@@ -9,8 +9,8 @@ import StashGrid, { colorOf } from "./StashGrid";
 import Paperdoll from "./Paperdoll";
 import StackTab from "./StackTab";
 import PageTitle from "./PageTitle";
-import BuildGear from "./BuildGear";
-import { buildsOf } from "../lib/builds";
+import BuildGear, { BuildPicker } from "./BuildGear";
+import { buildsOf, useBuild } from "../lib/builds";
 
 // Places drawn as grids, with their size in cells; the rest (equipped, belt...) are lists
 const gridSize = (place) =>
@@ -127,6 +127,7 @@ function CharacterList({ saveData, lang }) {
 function CharacterPage({ saveData, name, lang }) {
   const [roles] = useStoredState("roles", {});
   const owner = ownersOf(saveData).find((o) => o.name === name);
+  const picker = useBuild(owner ?? {});
   if (!owner) return <p className="gothic-text-muted">{t("noCharacter", lang)}</p>;
   const records = saveData.items.filter((r) => r.owner === name);
   const ghosts = MUSEUM.test(name) ? ghostsOf(name, saveData.items) : {};
@@ -153,13 +154,18 @@ function CharacterPage({ saveData, name, lang }) {
           {t("itemCount", lang, totalCount(records))}
         </p>
         {owner.quests && <Rewards quests={owner.quests} lang={lang} />}
+        {builds && (
+          <div className="mt-3">
+            <BuildPicker {...picker} lang={lang} />
+          </div>
+        )}
       </div>
       {noPositions && <p className="text-sm text-red-400">{t("reloadForGrid", lang)}</p>}
       {dolls.length > 0 && (
         <div className="flex flex-wrap gap-x-8 gap-y-10 items-start">
           {dolls.map((place) =>
             builds && place === "equipped" ? (
-              <BuildGear key={place} owner={owner} records={records.filter((r) => r.place === place)} saveData={saveData} lang={lang} />
+              <BuildGear key={place} owner={owner} build={picker.build} records={records.filter((r) => r.place === place)} saveData={saveData} lang={lang} />
             ) : (
               <div key={place} className="w-full" style={{ maxWidth: 8 * 44 }}>
                 <div className="section-head">

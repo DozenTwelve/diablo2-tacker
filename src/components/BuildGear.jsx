@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { catalog, iconOf, labelOf } from "../lib/gameData";
-import { buildsOf, keyOfOption, SLOT_OF } from "../lib/builds";
+import { keyOfOption, SLOT_OF } from "../lib/builds";
 import { nameOf, t } from "../lib/i18n";
 import { groupByKey, ownerLabel, ownersOf, placeLabel } from "../lib/inventory";
 import { Link } from "../lib/router";
-import { useStoredState } from "../lib/useStoredState";
 import { colorOf } from "./StashGrid";
 import { Modal } from "./Copies";
 import Paperdoll from "./Paperdoll";
@@ -23,15 +22,25 @@ function placesOf(copies) {
   return [...places.values()];
 }
 
-// A main character's equipment with a build picked for it (src/lib/builds.js): clicking a slot lists the build's
-// options for it, each worn by this character, owned elsewhere (where) or missing; owned ones first, then in
-// the guide's order.
-export default function BuildGear({ owner, records, saveData, lang }) {
-  const [picked, setPicked] = useStoredState("builds", {}); // character -> build id
+// The builds of a character's class as buttons that wrap (see useBuild)
+export function BuildPicker({ list, build, pick, lang }) {
+  return (
+    <div className="flex flex-wrap items-center gap-2 text-sm" role="group" aria-label={t("build", lang)}>
+      <span className="gothic-text-muted w-28">{t("build", lang)}</span>
+      {list.map((b) => (
+        <button key={b.id} className={`chip ${b === build ? "active" : ""}`} aria-pressed={b === build} onClick={() => pick(b.id)}>
+          {nameOf(b.name, lang)}
+        </button>
+      ))}
+      {!build && <span className="text-xs gothic-text-muted">{t("pickBuild", lang)}</span>}
+    </div>
+  );
+}
+
+// A main character's equipment with its build: clicking a slot lists the build's options for it, each worn by
+// this character, owned elsewhere (where) or missing; owned ones first, then in the guide's order.
+export default function BuildGear({ owner, build, records, saveData, lang }) {
   const [opened, setOpened] = useState(null); // build slot whose options are shown
-  const list = buildsOf(owner.cls);
-  const build = list.find((b) => b.id === picked[owner.name]);
-  const pick = (id) => setPicked({ ...picked, [owner.name]: id === build?.id ? undefined : id });
 
   // Items only move between characters of one mode (hardcore, Reign of the Warlock or not); saves read
   // before modes were recorded have none and match any
@@ -55,19 +64,7 @@ export default function BuildGear({ owner, records, saveData, lang }) {
       <div className="section-head">
         <h3>{placeLabel("equipped", lang)}</h3>
       </div>
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2">
-        <span className="text-sm gothic-text-muted">{t("build", lang)}</span>
-        <div className="segmented flex-wrap" role="group" aria-label={t("build", lang)}>
-          {list.map((b) => (
-            <button key={b.id} className={b === build ? "active" : ""} aria-pressed={b === build} onClick={() => pick(b.id)}>
-              {nameOf(b.name, lang)}
-            </button>
-          ))}
-        </div>
-      </div>
-      <p className="text-xs gothic-text-muted mb-3">
-        {build ? t("clickSlot", lang) : t("pickBuild", lang)}
-      </p>
+      {build && <p className="text-xs gothic-text-muted mb-3">{t("clickSlot", lang)}</p>}
       <Paperdoll records={records} onSlot={build ? (slot) => build.slots[SLOT_OF[slot]] && setOpened(SLOT_OF[slot]) : undefined} lang={lang} />
       {build?.slots.charm && (
         <button className="gothic-btn gothic-btn-small gothic-btn-secondary mt-3" onClick={() => setOpened("charm")}>

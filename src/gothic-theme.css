@@ -468,3 +468,20 @@ button.tile:hover {
 .toc a:focus-visible {
   outline-offset: -2px;
 }
+
+/* Choices that can wrap onto several lines (build names) */
+.chip {
+  padding: 0.15rem 0.7rem;
+  border: 1px solid var(--color-border-steel);
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+}
+.chip:hover {
+  border-color: var(--color-gold-dark);
+  color: var(--color-gold);
+}
+.chip.active {
+  background: var(--color-gold-dark);
+  border-color: var(--color-gold-dark);
+  color: #000;
+}

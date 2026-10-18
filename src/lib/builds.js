@@ -3,6 +3,7 @@
 // runeword by its English name ({ item, kind?, note? }) or is free text ({ text }), each text in every language.
 import builds from "../data/builds.json";
 import { catalog } from "./gameData";
+import { useStoredState } from "./useStoredState";
 
 export { builds };
 export const SLOTS = ["weapon", "offhand", "swap", "helm", "armor", "gloves", "belt", "boots", "amulet", "ring", "charm"];
@@ -35,3 +36,12 @@ export const keyOfOption = (option) => {
   return keys.find((k) => !catalog.get(k).legacy) ?? keys[0];
 };
 export const buildsOf = (cls) => builds.filter((b) => b.cls === cls);
+
+// The build picked for a character and how to pick one; picking the picked one again unpicks it
+export function useBuild(owner) {
+  const [picked, setPicked] = useStoredState("builds", {}); // character -> build id
+  const list = buildsOf(owner.cls);
+  const build = list.find((b) => b.id === picked[owner.name]);
+  const pick = (id) => setPicked({ ...picked, [owner.name]: id === build?.id ? undefined : id });
+  return { list, build, pick };
+}
