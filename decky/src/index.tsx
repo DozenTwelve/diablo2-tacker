@@ -52,6 +52,7 @@ function Content() {
           onClick={async () => {
             Navigation.NavigateToExternalWeb(await start());
             Navigation.CloseSideMenus();
+            stopWhenLeft();
           }}
         >
           {TEXT.open}
@@ -77,8 +78,22 @@ function Content() {
   );
 }
 
-// The page's close button: leave Steam's browser (the server stops itself)
-const leave = () => Navigation.NavigateBack();
+// The page's close button: leave Steam's browser (the server stops itself). Back can be swallowed (once it only
+// closed the on-screen keyboard), so if Steam is still on the browser half a second later, go to the library.
+// Left Steam's browser some other way (B, the Steam button): stop the server too; "Open collection" starts it again
+const inBrowser = () => location.pathname.includes("externalweb");
+function stopWhenLeft() {
+  let seen = false; // the browser opens asynchronously: only a route change after it counts
+  const timer = setInterval(() => {
+    if (inBrowser()) seen = true;
+    else if (seen) (clearInterval(timer), stop());
+  }, 1000);
+}
+
+const leave = () => {
+  Navigation.NavigateBack();
+  setTimeout(() => inBrowser() && Navigation.NavigateToLibraryTab(), 500);
+};
 
 export default definePlugin(() => {
   addEventListener("closed", leave);

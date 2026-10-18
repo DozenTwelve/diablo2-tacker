@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { catalog, iconOf, labelOf, searchTextOf } from "../lib/gameData";
 import { statLines, totalCount } from "../lib/inventory";
 import { t } from "../lib/i18n";
+import { onDeck } from "../lib/deck";
 import Locations from "./Locations";
 import PageTitle from "./PageTitle";
 
@@ -46,7 +47,7 @@ export default function SearchView({ owned, lang }) {
         placeholder={t("searchPlaceholder", lang)}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        autoFocus
+        autoFocus={!onDeck} // on the Deck a focused field brings up the on-screen keyboard
       />
       <div className="mt-6 max-w-3xl">
         {q && matches.length === 0 && <p className="gothic-text-muted">{t("noResults", lang)}</p>}
