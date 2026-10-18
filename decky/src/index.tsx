@@ -1,15 +1,19 @@
-// Quick access panel: open the tracker in Steam's browser, and pull the item icons out of the game files once.
+// Quick access panel: open the tracker in Steam's browser (the server runs until the page's close button or "Stop"),
+// and pull the item icons out of the game files once.
 import { ButtonItem, Navigation, PanelSection, PanelSectionRow, staticClasses } from "@decky/ui";
-import { callable, definePlugin, toaster } from "@decky/api";
+import { addEventListener, callable, definePlugin, removeEventListener, toaster } from "@decky/api";
 import { useEffect, useState } from "react";
 
-type Status = { url: string; saves: number; game: boolean; icons: boolean };
+type Status = { saves: number; game: boolean; icons: boolean; running: boolean };
 const status = callable<[], Status>("status");
+const start = callable<[], string>("start");
+const stop = callable<[], void>("stop");
 const extractIcons = callable<[], { count?: number; error?: string }>("extract_icons");
 
 const zh = navigator.language.startsWith("zh");
 const TEXT = {
   open: zh ? "打開收藏" : "Open collection",
+  stop: zh ? "停止服務（收藏頁不再能打開）" : "Stop the server (the collection page goes away)",
   saves: (n: number) => (zh ? `找到 ${n} 個存檔` : `${n} saves found`),
   noSaves: zh ? "找不到存檔，先在這台 Deck 上玩一次 D2R 單機角色" : "No saves found; play an offline D2R character on this Deck first",
   extract: zh ? "從遊戲檔案提取物品圖標" : "Get item icons from the game files",
@@ -45,14 +49,21 @@ function Content() {
         <ButtonItem
           layout="below"
           disabled={!info.saves}
-          onClick={() => {
-            Navigation.NavigateToExternalWeb(info.url);
+          onClick={async () => {
+            Navigation.NavigateToExternalWeb(await start());
             Navigation.CloseSideMenus();
           }}
         >
           {TEXT.open}
         </ButtonItem>
       </PanelSectionRow>
+      {info.running && (
+        <PanelSectionRow>
+          <ButtonItem layout="below" onClick={async () => (await stop(), setInfo(await status()))}>
+            {TEXT.stop}
+          </ButtonItem>
+        </PanelSectionRow>
+      )}
       <PanelSectionRow>
         {info.game ? (
           <ButtonItem layout="below" disabled={busy} onClick={extract}>
@@ -66,13 +77,20 @@ function Content() {
   );
 }
 
-export default definePlugin(() => ({
-  name: "D2R Collection Tracker",
-  titleView: <div className={staticClasses.Title}>D2R Collection Tracker</div>,
-  content: <Content />,
-  icon: (
-    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-      <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm0 4 4 1.5V11c0 2.9-1.7 5.6-4 6.9-2.3-1.3-4-4-4-6.9V7.5L12 6Z" />
-    </svg>
-  ),
-}));
+// The page's close button: leave Steam's browser (the server stops itself)
+const leave = () => Navigation.NavigateBack();
+
+export default definePlugin(() => {
+  addEventListener("closed", leave);
+  return {
+    name: "D2R Collection Tracker",
+    titleView: <div className={staticClasses.Title}>D2R Collection Tracker</div>,
+    content: <Content />,
+    icon: (
+      <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+        <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm0 4 4 1.5V11c0 2.9-1.7 5.6-4 6.9-2.3-1.3-4-4-4-6.9V7.5L12 6Z" />
+      </svg>
+    ),
+    onDismount: () => removeEventListener("closed", leave),
+  };
+});

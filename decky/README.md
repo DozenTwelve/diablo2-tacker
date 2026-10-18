@@ -4,7 +4,8 @@ A [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader) plugin: open
 menu in Game Mode, with the saves read straight from the Deck.
 
 - `main.py` and `py_modules/tracker.py`: the backend. It serves the web app (built with `VITE_DECK=1`), the save files
-  and the item icons on `127.0.0.1:18565`, only while the plugin is loaded. It runs as the `deck` user, not root.
+  and the item icons on `127.0.0.1:18565`, from "Open collection" until the page's Close button (which also leaves
+  Steam's browser) or the panel's "Stop". It runs as the `deck` user, not root.
 - `src/index.tsx`: the quick access panel. "Open collection" opens the tracker in Steam's browser. "Get item icons"
   pulls the inventory icons out of the player's own game files with [casc-cli](https://github.com/ironsp4rk/casc-cli)
   (MIT) and turns them into PNGs in Decky's data folder; the plugin ships no game art.

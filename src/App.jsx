@@ -3,7 +3,7 @@ import { uniques, sets, runewords, runes, uniqueKey, setItemKey, runewordKey, ru
 import { groupByKey } from "./lib/inventory";
 import { LANGS, nameOf, t } from "./lib/i18n";
 import { useStoredState } from "./lib/useStoredState";
-import { deckSaveFiles, onDeck } from "./lib/deck";
+import { closeDeck, deckSaveFiles, onDeck } from "./lib/deck";
 import { parseSaveFiles } from "./lib/parseSaves";
 import SaveLoader from "./components/SaveLoader";
 import SearchView from "./components/SearchView";
@@ -107,6 +107,11 @@ export default function App() {
                 </button>
               ))}
             </div>
+            {onDeck && (
+              <button className="gothic-btn gothic-btn-secondary gothic-btn-small" onClick={closeDeck}>
+                {t("closeApp", lang)}
+              </button>
+            )}
           </div>
         </div>
       </header>

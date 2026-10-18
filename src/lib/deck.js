@@ -8,6 +8,9 @@ const get = async (url) => {
   return response;
 };
 
+// The close button: the plugin leaves Steam's browser and stops its server
+export const closeDeck = () => fetch("/api/close", { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" });
+
 export async function deckSaveFiles() {
   const names = await (await get("/api/saves")).json();
   return Promise.all(names.map(async (name) => new File([await (await get(`/api/saves/${encodeURIComponent(name)}`)).blob()], name)));

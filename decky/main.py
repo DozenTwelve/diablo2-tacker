@@ -1,4 +1,4 @@
-# Decky entry point: serves the tracker on 127.0.0.1 while the plugin is loaded (see py_modules/tracker.py).
+# Decky entry point: serves the tracker on 127.0.0.1 from "Open collection" until it is closed (see py_modules/tracker.py).
 import asyncio
 import os
 import shutil
@@ -21,22 +21,41 @@ def casc():
 
 
 class Plugin:
+    server = None
+
     async def _main(self):
         os.makedirs(decky.DECKY_PLUGIN_RUNTIME_DIR, exist_ok=True)
-        self.server = tracker.serve(WEB, lambda: tracker.save_dir(HOME), ICONS, BACKUPS)
-        decky.logger.info(f"serving on 127.0.0.1:{tracker.PORT}")
+        self.loop = asyncio.get_running_loop()
 
     async def _unload(self):
-        self.server.shutdown()
-        self.server.server_close()
+        await self.stop()
+
+    async def start(self):
+        if not self.server:
+            self.server = tracker.serve(WEB, lambda: tracker.save_dir(HOME), ICONS, BACKUPS, self.closed)
+            decky.logger.info(f"serving on 127.0.0.1:{tracker.PORT}")
+        return f"http://127.0.0.1:{tracker.PORT}/"
+
+    async def stop(self):
+        server, self.server = self.server, None
+        if server:
+            # shutdown() waits for serve_forever, which a request thread mustn't block on
+            await asyncio.to_thread(server.shutdown)
+            server.server_close()
+            decky.logger.info("stopped serving")
+
+    def closed(self):
+        # The app's close button, from a request thread: the panel leaves the browser, then the server stops
+        asyncio.run_coroutine_threadsafe(decky.emit("closed"), self.loop)
+        asyncio.run_coroutine_threadsafe(self.stop(), self.loop)
 
     async def status(self):
         folder = tracker.save_dir(HOME)
         return {
-            "url": f"http://127.0.0.1:{tracker.PORT}/",
             "saves": len(tracker.list_saves(folder)),
             "game": tracker.game_data_dir(HOME) is not None,
             "icons": os.path.isdir(ICONS),
+            "running": self.server is not None,
         }
 
     async def extract_icons(self):

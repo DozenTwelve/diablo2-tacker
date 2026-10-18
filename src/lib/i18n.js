@@ -193,6 +193,7 @@ const UI = {
   ],
   readFailed: [(e) => `读取存档失败：${e}`, (e) => `讀取存檔失敗：${e}`, (e) => `Reading the saves failed: ${e}`, (e) => `저장 파일 읽기 실패: ${e}`],
   writeFailed: [(e) => `写入失败：${e}`, (e) => `寫入失敗：${e}`, (e) => `Writing failed: ${e}`, (e) => `쓰기 실패: ${e}`],
+  closeApp: ["关闭", "關閉", "Close", "닫기"],
   reloadSaves: ["重新读取存档", "重新讀取存檔", "Read saves again", "저장 파일 다시 읽기"],
   savesShort: [(n) => `${n} 个存档`, (n) => `${n} 個存檔`, (n) => `${n} saves`, (n) => `저장 파일 ${n}개`],
   prevCharacter: ["上一个角色", "上一個角色", "Previous character", "이전 캐릭터"],

@@ -37,7 +37,8 @@ with tempfile.TemporaryDirectory() as tmp:
     os.makedirs(os.path.join(icons, "axe"))
     open(os.path.join(icons, "axe/hand_axe.png"), "wb").write(data)
     backups = os.path.join(tmp, "backups")
-    server = tracker.serve(web, lambda: saves, icons, backups, port=0)
+    closed = []
+    server = tracker.serve(web, lambda: saves, icons, backups, on_close=lambda: closed.append(1), port=0)
     base = f"http://127.0.0.1:{server.server_address[1]}"
     get = lambda path: urllib.request.urlopen(base + path).read()
 
@@ -60,13 +61,16 @@ with tempfile.TemporaryDirectory() as tmp:
     assert get("/characters/Zanna") == b"app" and get("/") == b"app"
     assert get("/../../../etc/passwd") == b"app"
 
-    def post(body, origin=base, kind="application/json"):
-        request = urllib.request.Request(base + "/api/write", json.dumps(body).encode(), {"Origin": origin, "Content-Type": kind})
+    def post(body, origin=base, kind="application/json", path="/api/write"):
+        request = urllib.request.Request(base + path, json.dumps(body).encode(), {"Origin": origin, "Content-Type": kind})
         try:
-            return 200, json.loads(urllib.request.urlopen(request).read())
+            response = urllib.request.urlopen(request)
+            return response.status, json.loads(response.read() or "null")
         except HTTPError as e:
             return e.code, None
 
+    assert post({}, origin="http://evil.example", path="/api/close")[0] == 403 and not closed
+    assert post({}, path="/api/close")[0] == 204 and closed
     new = [{"name": "UW-A.d2s", "data": base64.b64encode(b"mule").decode(), "template": "Zanna"}]
     assert post({"files": new}, origin="http://evil.example")[0] == 403
     assert post({"files": new}, kind="text/plain")[0] == 403

@@ -155,9 +155,10 @@ def _write(folder, files):
 class Handler(SimpleHTTPRequestHandler):
     """GET /api/saves: save file names; /api/saves/<name>: one save; /items/<x>.webp: an icon (PNG);
     anything else: the web app, index.html for unknown paths (the app routes on the client).
-    POST /api/write: organized saves to write (write_saves), only from the app itself."""
+    POST /api/write: organized saves to write (write_saves); /api/close: the app's close button (on_close).
+    POSTs only from the app itself."""
 
-    web_dir = save_folder = icon_dir = backup_dir = None  # set by serve()
+    web_dir = save_folder = icon_dir = backup_dir = on_close = None  # set by serve()
 
     def log_message(self, *args):
         pass
@@ -201,8 +202,12 @@ class Handler(SimpleHTTPRequestHandler):
         # Only the app's own page: browsers send Origin on every POST, and another site can't send JSON here
         # without a CORS preflight, which this server never answers
         origin = f"http://127.0.0.1:{self.server.server_address[1]}"
-        if not self.local() or self.path != "/api/write" or self.headers.get("Origin") != origin or self.headers.get("Content-Type") != "application/json":
+        if not self.local() or self.path not in ("/api/write", "/api/close") or self.headers.get("Origin") != origin or self.headers.get("Content-Type") != "application/json":
             return self.send_error(403)
+        if self.path == "/api/close":
+            self.send_response(204)
+            self.end_headers()
+            return self.on_close()
         try:
             body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
             files = [{**f, "bytes": base64.b64decode(f["data"])} for f in body["files"]]
@@ -230,9 +235,10 @@ class Server(ThreadingHTTPServer):
     request_queue_size = 128
 
 
-def serve(web_dir, save_folder, icon_dir, backup_dir, port=PORT):
-    """Start the server in a thread; save_folder is a function, so a new save folder is picked up."""
-    bound = {"web_dir": web_dir, "save_folder": staticmethod(save_folder), "icon_dir": icon_dir, "backup_dir": backup_dir}
+def serve(web_dir, save_folder, icon_dir, backup_dir, on_close=lambda: None, port=PORT):
+    """Start the server in a thread; save_folder is a function, so a new save folder is picked up.
+    on_close runs in a request thread when the app's close button is pressed."""
+    bound = {"web_dir": web_dir, "save_folder": staticmethod(save_folder), "icon_dir": icon_dir, "backup_dir": backup_dir, "on_close": staticmethod(on_close)}
     handler = type("BoundHandler", (Handler,), bound)
     server = Server(("127.0.0.1", port), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
