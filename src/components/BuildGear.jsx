@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { catalog, imageOf, labelOf } from "../lib/gameData";
+import { catalog, iconOf, labelOf } from "../lib/gameData";
 import { buildsOf, keyOfOption, SLOT_OF } from "../lib/builds";
 import { nameOf, t } from "../lib/i18n";
 import { groupByKey, ownerLabel, ownersOf, placeLabel } from "../lib/inventory";
@@ -85,14 +85,14 @@ export default function BuildGear({ owner, records, saveData, lang }) {
       <Modal open={Boolean(opened && build)} onClose={() => setOpened(null)} lang={lang} title={opened && `${t(`slot_${opened}`, lang)} · ${nameOf(build?.name, lang)}`}>
         <div className="grid sm:grid-cols-2 gap-3">
           {options.map(({ option, key, rank, copies }, i) => {
-            const code = copies?.[0]?.code ?? catalog.get(key)?.names.code; // a missing runeword has no base
+            const icon = key && iconOf(key, copies);
             return (
               <div key={i} className="flex gap-3 p-2" style={{ background: "rgba(0, 0, 0, 0.5)", border: rank === 2 ? "1px dashed #444" : "1px solid #333" }}>
                 {key && (
                   <div className="w-12 h-12 shrink-0 flex items-center justify-center">
-                    {code && (
+                    {icon && (
                       <img
-                        src={imageOf(copies[0] ?? { key, code })}
+                        src={icon}
                         alt=""
                         className="max-w-full max-h-full object-contain"
                         style={rank === 2 ? { opacity: 0.3, filter: "grayscale(1)" } : undefined}

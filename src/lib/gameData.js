@@ -80,3 +80,11 @@ export function imageOf({ key, code, gfx }) {
   const variant = gfx != null && base.variants ? (gfx % base.variants) + 1 : "";
   return `/items/${base.img}${variant}.webp`;
 }
+
+// Icon of a catalog entry: an owned copy's (runewords take their base's look), else the catalog one;
+// null for a missing runeword, which has no base
+export function iconOf(key, records) {
+  if (records?.length) return imageOf(records[0]);
+  const code = catalog.get(key)?.names.code;
+  return code ? imageOf({ key, code }) : null;
+}

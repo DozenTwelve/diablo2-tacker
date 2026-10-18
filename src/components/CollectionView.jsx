@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { catalog, imageOf, labelOf } from "../lib/gameData";
+import { catalog, iconOf, imageOf, labelOf } from "../lib/gameData";
 import { locationLines, ownerLabel, totalCount } from "../lib/inventory";
 import { t } from "../lib/i18n";
 import PageTitle from "./PageTitle";
@@ -18,8 +18,8 @@ function ownerSummary(records, lang) {
 function Icon({ entryKey, records, lang }) {
   const names = catalog.get(entryKey).names;
   const style = records ? undefined : { opacity: 0.3, filter: "grayscale(1)" };
-  if (records) return <img src={imageOf(records[0])} alt={labelOf(entryKey, lang)} loading="lazy" className="w-full h-full object-contain" />;
-  if (names.code) return <img src={imageOf({ key: entryKey, code: names.code })} alt="" loading="lazy" className="w-full h-full object-contain" style={style} />;
+  const icon = iconOf(entryKey, records);
+  if (icon) return <img src={icon} alt={records ? labelOf(entryKey, lang) : ""} loading="lazy" className="w-full h-full object-contain" style={style} />;
   return (
     <span className="flex flex-wrap items-center justify-center w-full h-full" style={style}>
       {names.runes.map((code, i) => (

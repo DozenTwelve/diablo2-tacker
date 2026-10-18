@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { catalog, imageOf, labelOf, searchTextOf } from "../lib/gameData";
+import { catalog, iconOf, labelOf, searchTextOf } from "../lib/gameData";
 import { statLines, totalCount } from "../lib/inventory";
 import { t } from "../lib/i18n";
 import Locations from "./Locations";
@@ -37,12 +37,6 @@ export default function SearchView({ owned, lang }) {
   matches.sort((a, b) => !a.records - !b.records || labelOf(a.key, lang).localeCompare(labelOf(b.key, lang)));
 
   // Icon of an owned copy, else the catalog's (a missing runeword has none)
-  const iconOf = (key, records) => {
-    if (records) return imageOf(records[0]);
-    const code = catalog.get(key)?.names.code ?? (key.startsWith("b:") || key.startsWith("r:") ? key.split(":")[1] : null);
-    return code && imageOf({ key, code });
-  };
-
   return (
     <>
       <PageTitle label={t("search", lang)} />

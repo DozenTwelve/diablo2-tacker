@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { parseSaveFiles } from "../lib/parseSaves";
 import { t } from "../lib/i18n";
 import { deckSaveFiles, onDeck } from "../lib/deck";
@@ -11,6 +11,20 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
   const menu = useRef(null);
+  // The top bar menu closes on Esc or a click outside it
+  useEffect(() => {
+    if (!compact) return;
+    const close = (e) => {
+      const m = menu.current;
+      if (m?.open && (e.key === "Escape" || (e.type === "pointerdown" && !m.contains(e.target)))) m.open = false;
+    };
+    addEventListener("pointerdown", close);
+    addEventListener("keydown", close);
+    return () => {
+      removeEventListener("pointerdown", close);
+      removeEventListener("keydown", close);
+    };
+  }, [compact]);
 
   // files: the picked files, or a promise of them (read from the Deck)
   const load = async (files) => {
