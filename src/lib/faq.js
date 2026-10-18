@@ -1,5 +1,5 @@
 // The /faq page: questions and answers as [Simplified, Traditional, English, Korean] like the UI strings,
-// with an optional link after the answer.
+// with an optional link after the answer. In the Steam Deck plugin, deck replaces the answer, or false hides the question.
 import { REPO, SAVES_DOC, SKILL } from "./links";
 
 export const FAQ = [
@@ -20,6 +20,12 @@ export const FAQ = [
       "No. Saves are read in your browser with WebAssembly, and what is read stays in this browser. The site has no server side, no accounts, and collects no data.",
       "아니요. 저장 파일은 브라우저 안에서 WebAssembly로 읽고, 읽은 결과도 이 브라우저에만 남습니다. 서버, 계정, 데이터 수집이 없습니다.",
     ],
+    deck: [
+      "不会。插件在这台 Deck 上读存档，只提供给本机（127.0.0.1）的这个页面，不连外网，也不收集任何数据。",
+      "不會。外掛在這台 Deck 上讀存檔，只提供給本機（127.0.0.1）的這個頁面，不連外網，也不收集任何資料。",
+      "No. The plugin reads the saves on this Deck and serves them only to this page on the Deck itself (127.0.0.1); nothing goes online and no data is collected.",
+      "아니요. 플러그인은 이 Deck의 저장 파일을 읽어 이 기기(127.0.0.1)의 이 페이지에만 보여 줍니다. 인터넷으로 보내지 않고 데이터도 수집하지 않습니다.",
+    ],
   },
   {
     q: ["能读哪些存档？", "能讀哪些存檔？", "Which saves work?", "어떤 저장 파일을 읽을 수 있나요?"],
@@ -38,6 +44,7 @@ export const FAQ = [
       "Windows: %USERPROFILE%\\Saved Games\\Diablo II Resurrected. On a Steam Deck they're in a Proton folder whose path differs per Deck; the guide has the steps.",
       "Windows: %USERPROFILE%\\Saved Games\\Diablo II Resurrected. Steam Deck에서는 Proton 폴더 안에 있고 기기마다 경로가 다릅니다. 방법은 안내 문서를 보세요.",
     ],
+    deck: false,
     link: SAVES_DOC,
   },
   {
@@ -47,6 +54,12 @@ export const FAQ = [
       "網頁只讀不寫。「整理」頁會把整理好的檔案打包成 zip 讓你下載，由你自己放回存檔資料夾；放回去之前先備份。",
       "The page only reads. The Organize page gives you the organized files as a zip download, and you copy them back into the save folder yourself; back it up first.",
       "페이지는 읽기만 합니다. 정리 페이지는 정리된 파일을 zip으로 내려받게 하고, 저장 폴더에 넣는 것은 직접 합니다. 넣기 전에 백업하세요.",
+    ],
+    deck: [
+      "只有「整理」页会写，而且要你按「确认整理」。游戏开着时不写；写之前把整个存档文件夹备份到 Decky 的数据文件夹（backups），写完再读回来核对。其他页面只读不写。",
+      "只有「整理」頁會寫，而且要你按「確認整理」。遊戲開著時不寫；寫之前把整個存檔資料夾備份到 Decky 的資料夾（backups），寫完再讀回來核對。其他頁面只讀不寫。",
+      "Only the Organize page writes, and only when you confirm. It won't while the game runs; before writing it backs up the whole save folder to Decky's data folder (backups), and it reads the files back afterwards. Every other page only reads.",
+      "정리 페이지만, 그것도 확인을 누를 때만 씁니다. 게임이 실행 중이면 쓰지 않고, 쓰기 전에 저장 폴더 전체를 Decky 데이터 폴더(backups)에 백업하며, 쓴 뒤 다시 읽어 확인합니다. 다른 페이지는 읽기만 합니다.",
     ],
   },
   {
@@ -85,6 +98,7 @@ export const FAQ = [
       "The page works in the Deck's desktop mode. A Decky Loader plugin that reads the Deck's saves straight from game mode is being tested.",
       "페이지는 Deck의 데스크톱 모드에서 쓸 수 있습니다. 게임 모드에서 바로 저장 파일을 읽는 Decky Loader 플러그인은 테스트 중입니다.",
     ],
+    deck: false,
   },
   {
     q: ["源代码在哪？网站架在哪？", "原始碼在哪？網站架在哪？", "Where is the source code, and where is the site hosted?", "소스 코드와 호스팅은요?"],

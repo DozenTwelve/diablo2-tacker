@@ -225,10 +225,15 @@ class Handler(SimpleHTTPRequestHandler):
         return os.path.join(self.web_dir, rel)
 
 
+class Server(ThreadingHTTPServer):
+    # The app asks for every save and icon at once; the default backlog of 5 resets the connections past it
+    request_queue_size = 128
+
+
 def serve(web_dir, save_folder, icon_dir, backup_dir, port=PORT):
     """Start the server in a thread; save_folder is a function, so a new save folder is picked up."""
     bound = {"web_dir": web_dir, "save_folder": staticmethod(save_folder), "icon_dir": icon_dir, "backup_dir": backup_dir}
     handler = type("BoundHandler", (Handler,), bound)
-    server = ThreadingHTTPServer(("127.0.0.1", port), handler)
+    server = Server(("127.0.0.1", port), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     return server

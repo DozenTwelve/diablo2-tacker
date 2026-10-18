@@ -49,6 +49,10 @@ with tempfile.TemporaryDirectory() as tmp:
         return False
 
     assert json.loads(get("/api/saves")) == tracker.list_saves(saves)
+    # The app asks for every save and icon at once
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(64) as pool:
+        assert all(pool.map(lambda _: get("/api/saves/Zanna.d2s") == b"Zanna.d2s", range(200)))
     assert get("/api/saves/" + quote("Mule 二.d2s")) == "Mule 二.d2s".encode()
     assert missing("/api/saves/Zanna.key") and missing("/api/saves/..%2f..%2fetc%2fpasswd")
     assert get("/items/axe/hand_axe.webp") == data

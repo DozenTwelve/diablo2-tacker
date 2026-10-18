@@ -1,6 +1,7 @@
 import { FAQ } from "../lib/faq";
 import { nameOf, t } from "../lib/i18n";
 import { REPO } from "../lib/links";
+import { onDeck } from "../lib/deck";
 import PageTitle from "./PageTitle";
 
 const COLUMNS = ["zh", "zh_tw", "en", "ko"];
@@ -21,10 +22,10 @@ export default function AboutView({ lang }) {
         <div className="section-head">
           <h2>{t("faq", lang)}</h2>
         </div>
-        {FAQ.map(({ q, a, link }, i) => (
+        {FAQ.filter((f) => !onDeck || f.deck !== false).map(({ q, a, deck, link }, i) => (
           <section key={i}>
             <h3 className="gothic-text-gold text-lg mb-2">{pick(q, lang)}</h3>
-            <p className="leading-relaxed">{pick(a, lang)}</p>
+            <p className="leading-relaxed">{pick((onDeck && deck) || a, lang)}</p>
             {link && (
               <a href={link} target="_blank" rel="noreferrer" className="text-sm gothic-text-gold break-all">
                 {link.replace(/^https:\/\//, "")}
