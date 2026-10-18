@@ -5,6 +5,11 @@ Planned work, roughly in order.
 ## 1. Load speed (done)
 
 - Build assets are cached for a year and item icons for 30 days (`public/_headers`, read by Cloudflare Pages).
+- Fonts were most of the download: Google Fonts sends Noto Serif SC in ~100 slices and the item names touch most of
+  them (2.5 MB on the welcome page, 5.4 MB on the uniques page). `scripts/gen-fonts.py` cuts it to the ~2,000
+  characters the app uses, one 805 kB file served with the build (so the Deck plugin works offline too); rerun it after
+  new Chinese text, `--check` lists what is missing. The favicon (264 kB, now 8 kB) and the background (241 kB, now
+  97 kB) were shrunk too. Cold load on a throttled phone profile: welcome page 3.2 MB to about 0.6 MB.
 - Not done, measured first: every page, starting with search, needs the whole catalog (about 190 kB gzipped with React), so
   splitting the data per page saves little. Item icons already load lazily. A parsed save folder takes about 200 bytes per
   item in localStorage (1,052 items: 215 kB), far from its ~5 MB limit, and the app already keeps working when storage is

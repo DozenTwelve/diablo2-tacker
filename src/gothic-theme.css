@@ -3,7 +3,18 @@
    Dark fantasy aesthetic with burnished gold, steel gray, and spectral accents
    ============================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+/* Cut to the characters the app uses by scripts/gen-fonts.py (SIL OFL) */
+@font-face {
+  font-family: 'Noto Serif SC';
+  src: url('./fonts/noto-serif-sc.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('./fonts/cinzel-decorative.woff2') format('woff2');
+  font-display: swap;
+}
 
 /* ============================================================================
    CSS VARIABLES - Color Palette
