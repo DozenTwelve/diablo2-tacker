@@ -6,17 +6,23 @@ import { deckSaveFiles, onDeck } from "../lib/deck";
 const DECK_FIND = `find ~/.local/share/Steam/steamapps/compatdata -type d -path "*/Saved Games/Diablo II Resurrected"`;
 
 // The file inputs stay focusable (sr-only, not display:none) so saves can be picked from the keyboard.
-// Before any saves are loaded it is a panel on the page; after, compact: a menu in the top bar.
+// A panel on the welcome page, or compact: a menu in the top bar. onLoad(saveData, files as picked).
 export default function SaveLoader({ saveData, onLoad, notStored, lang, compact }) {
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState(null);
   const menu = useRef(null);
 
+  // files: the picked files, or a promise of them (read from the Deck)
   const load = async (files) => {
-    if (!files.length) return;
     setBusy(true);
     try {
-      onLoad(await parseSaveFiles(files));
+      files = await files;
+      if (!files.length) return;
+      onLoad(await parseSaveFiles(files), files);
+      setError(null);
       if (menu.current) menu.current.open = false;
+    } catch (e) {
+      setError(t("readFailed", lang, e.message ?? e));
     } finally {
       setBusy(false);
     }
@@ -38,7 +44,7 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
       </p>
       <div className="flex flex-wrap gap-3 items-center">
         {onDeck ? (
-          <button className="gothic-btn gothic-btn-small" onClick={async () => load(await deckSaveFiles())}>
+          <button className="gothic-btn gothic-btn-small" onClick={() => load(deckSaveFiles())}>
             {t("reloadSaves", lang)}
           </button>
         ) : (
@@ -65,6 +71,7 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
           </button>
         )}
       </div>
+      {error && <p className="text-sm text-red-400">{error}</p>}
       {notStored && <p className="text-sm text-red-400">{t("notStored", lang)}</p>}
       {saveData?.errors.map((err, i) => (
         <p key={i} className="text-sm text-red-400">
@@ -92,9 +99,10 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
       <summary
         className={`text-sm cursor-pointer whitespace-nowrap ${saveData?.errors.length || notStored ? "text-red-400" : "gothic-text-muted"}`}
       >
-        {t("savesShort", lang, saveData.files)}
+        {saveData ? t("savesShort", lang, saveData.files) : t("loadSaves", lang)}
       </summary>
-      <div className="panel absolute right-0 mt-2 z-30 shadow-2xl" style={{ width: "min(26rem, calc(100vw - 2rem))" }}>
+      {/* On a phone the menu sits under the top bar across the screen; the language switch is right of it */}
+      <div className="panel fixed inset-x-4 top-24 z-30 shadow-2xl sm:absolute sm:inset-x-auto sm:top-auto sm:right-0 sm:mt-2 sm:w-[26rem]">
         {body}
       </div>
     </details>

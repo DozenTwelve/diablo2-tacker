@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useId, useRef } from "react";
 import { baseNameOf, catalog, imageOf, labelOf } from "../lib/gameData";
 import { ownerLabel, placeLabel, statLines, totalCount } from "../lib/inventory";
 import { rollScore } from "../lib/props";
@@ -6,8 +6,9 @@ import { t } from "../lib/i18n";
 import { colorOf, STAT_COLOR } from "./StashGrid";
 
 // A native <dialog> with a title and a close button: Esc and the backdrop close it
-export function Modal({ open, title, onClose, children }) {
+export function Modal({ open, title, onClose, lang, children }) {
   const ref = useRef(null);
+  const titleId = useId();
   useEffect(() => {
     if (open) ref.current?.showModal();
     else ref.current?.close();
@@ -16,6 +17,7 @@ export function Modal({ open, title, onClose, children }) {
     <dialog
       ref={ref}
       onClose={onClose}
+      aria-labelledby={titleId}
       onClick={(e) => e.target === ref.current && onClose()}
       className="p-0 w-full max-w-3xl text-sm"
       style={{ background: "rgba(12, 12, 12, 0.97)", border: "1px solid var(--color-border-metal)", color: "var(--color-text-primary)" }}
@@ -23,8 +25,10 @@ export function Modal({ open, title, onClose, children }) {
       {open && (
         <div className="p-4 space-y-3">
           <div className="flex items-center justify-between gap-4">
-            <h3 className="gothic-text-gold text-lg">{title}</h3>
-            <button className="gothic-tab-btn" style={{ padding: "0.2rem 0.8rem" }} onClick={onClose}>
+            <h3 id={titleId} className="gothic-text-gold text-lg">
+              {title}
+            </h3>
+            <button className="gothic-tab-btn" style={{ padding: "0.2rem 0.8rem" }} aria-label={t("close", lang)} onClick={onClose}>
               ✕
             </button>
           </div>
@@ -46,6 +50,7 @@ export default function Copies({ entryKey, records, onClose, lang }) {
     <Modal
       open={Boolean(records)}
       onClose={onClose}
+      lang={lang}
       title={
         records && (
           <>

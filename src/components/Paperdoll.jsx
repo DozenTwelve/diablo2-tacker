@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { labelOf } from "../lib/gameData";
+import { SLOT_OF } from "../lib/builds";
+import { t } from "../lib/i18n";
 import { colorOf, ItemImage, Tooltip, tipHandlers, useTip } from "./StashGrid";
 
 // Equipment slots laid out as the in-game character screen, on an 8 x 7 cell grid: [column, row, width, height].
@@ -56,7 +58,7 @@ export default function Paperdoll({ records, slots = Object.keys(SLOTS), onSlot,
             <button
               type="button"
               key={slot}
-              aria-label={item ? labelOf(item.key, lang) : slot}
+              aria-label={`${t(`slot_${SLOT_OF[shown]}`, lang)}${item ? `${t("colon", lang)}${labelOf(item.key, lang)}` : ""}`}
               {...tipHandlers(show, setTip)}
               onClick={onSlot ? () => (setTip(null), onSlot(shown)) : show}
               className="flex items-center justify-center"

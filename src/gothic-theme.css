@@ -145,6 +145,13 @@ h1 {
   transform: translateY(-2px);
 }
 
+.gothic-btn:disabled {
+  opacity: 0.45;
+  transform: none;
+  box-shadow: none;
+  pointer-events: none;
+}
+
 .gothic-btn:active {
   transform: translateY(0);
   box-shadow: 
@@ -265,9 +272,6 @@ h1 {
   accent-color: var(--color-gold);
 }
 
-.gothic-checkbox input[type='checkbox']:checked {
-  background-color: var(--color-gold);
-}
 
 /* ============================================================================
    RESPONSIVE ADJUSTMENTS
@@ -307,10 +311,11 @@ h1 {
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--color-border-metal);
 }
-/* On small screens the bar takes three rows; it scrolls away instead of covering the page */
+/* On small screens the bar takes three rows; it scrolls away instead of covering the page (relative, not
+   static, so its menu still stacks over the page) */
 @media (max-width: 1023px) {
   .app-bar {
-    position: static;
+    position: relative;
   }
 }
 
@@ -455,4 +460,11 @@ h1 {
 a.tile:hover,
 button.tile:hover {
   border-color: var(--color-gold-dark);
+}
+
+/* Inside overflow-clipped containers the ring would be cut off */
+.segmented button:focus-visible,
+.nav-link:focus-visible,
+.toc a:focus-visible {
+  outline-offset: -2px;
 }

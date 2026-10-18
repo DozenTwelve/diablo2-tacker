@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { uniques, sets, runewords, runes, uniqueKey, setItemKey, runewordKey, runeKey } from "./lib/gameData";
 import { groupByKey } from "./lib/inventory";
 import { LANGS, nameOf, t } from "./lib/i18n";
@@ -10,13 +10,15 @@ import SearchView from "./components/SearchView";
 import CollectionView from "./components/CollectionView";
 import CharacterView from "./components/CharacterView";
 import OrganizeView from "./components/OrganizeView";
+import Welcome from "./components/Welcome";
+import Faq from "./components/Faq";
+import { REPO } from "./lib/links";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { SET_GREEN } from "./components/StashGrid";
 import { propLines, setBonusLines } from "./lib/props";
 import { Link, usePath } from "./lib/router";
 
-// Organizing writes saves, which only the Steam Deck plugin can do
-const TABS = ["search", "characters", "uniques", "sets", "runewords", "runes", ...(onDeck ? ["organize"] : [])];
+const TABS = ["search", "characters", "uniques", "sets", "runewords", "runes", "organize"];
 
 // Collection tabs as groups of keys; uniques grouped by item category
 function collectionGroups(tab, lang) {
@@ -48,11 +50,28 @@ function collectionGroups(tab, lang) {
 export default function App() {
   const [lang, setLang] = useStoredState("lang", "zh_tw");
   const [saveData, setSaveData, notStored] = useStoredState("saveData", null);
-  const [first = "search", name] = usePath();
-  const tab = TABS.includes(first) ? first : "search";
+  const [first, name] = usePath();
+  // The front page is the welcome page until saves are loaded
+  const tab = !first ? (saveData ? "search" : "welcome") : [...TABS, "faq"].includes(first) ? first : "search";
+  const [rawFiles, setRawFiles] = useState(null); // the files as last picked, for organizing; memory only
+  const [offered, setOffered] = useStoredState("organizeOffered", false);
+  const load = (data, files) => {
+    setSaveData(data);
+    setRawFiles(data && files ? files : null);
+  };
   const owned = useMemo(() => groupByKey(saveData?.items ?? []), [saveData]);
   // On the Deck, read the saves fresh every time the page opens
-  const readDeck = useCallback(() => deckSaveFiles().then(parseSaveFiles).then(setSaveData), [setSaveData]);
+  const [deckError, setDeckError] = useState(null);
+  const readDeck = useCallback(
+    () =>
+      deckSaveFiles()
+        .then(parseSaveFiles)
+        .then(
+          (data) => (setSaveData(data), setDeckError(null)),
+          (e) => setDeckError(e.message ?? String(e)),
+        ),
+    [setSaveData],
+  );
   useEffect(() => {
     if (onDeck) readDeck();
   }, [readDeck]);
@@ -65,7 +84,7 @@ export default function App() {
     <div className="gothic-container">
       <header className="app-bar">
         <div className="flex flex-wrap items-center gap-x-8 gap-y-1">
-          <Link to="/search" className="app-title no-underline">
+          <Link to="/" className="app-title no-underline">
             {t("title", lang)}
           </Link>
           <nav className="flex gap-5 overflow-x-auto order-last w-full lg:order-none lg:w-auto">
@@ -81,8 +100,8 @@ export default function App() {
             ))}
           </nav>
           <div className="ml-auto flex items-center gap-4">
-            {saveData && <SaveLoader saveData={saveData} onLoad={setSaveData} notStored={notStored} lang={lang} compact />}
-            <div className="segmented" role="group" aria-label="Language">
+            {tab !== "welcome" && <SaveLoader saveData={saveData} onLoad={load} notStored={notStored} lang={lang} compact />}
+            <div className="segmented" role="group" aria-label={t("language", lang)}>
               {Object.entries(LANGS).map(([code, label]) => (
                 <button key={code} className={lang === code ? "active" : ""} aria-pressed={lang === code} onClick={() => setLang(code)}>
                   {label}
@@ -94,19 +113,49 @@ export default function App() {
       </header>
 
       <main>
-        {!saveData && <SaveLoader saveData={saveData} onLoad={setSaveData} notStored={notStored} lang={lang} />}
-        <ErrorBoundary key={`${tab}/${name}`} lang={lang} onReset={() => setSaveData(null)}>
-          {tab === "search" ? (
+        {deckError && <p className="text-red-400 mb-6">{t("readFailed", lang, deckError)}</p>}
+        {rawFiles && !offered && tab !== "organize" && !onDeck && (
+          <div className="panel mb-8 flex flex-wrap items-center gap-x-6 gap-y-2 max-w-3xl">
+            <span>{t("organizeOffer", lang)}</span>
+            <Link to="/organize" className="gothic-btn gothic-btn-small no-underline" onClick={() => setOffered(true)}>
+              {t("organizeOfferGo", lang)}
+            </Link>
+            <button className="text-sm gothic-text-muted" onClick={() => setOffered(true)}>
+              {t("noThanks", lang)}
+            </button>
+          </div>
+        )}
+        <ErrorBoundary key={`${tab}/${name}`} lang={lang} onReset={() => load(null)}>
+          {tab === "welcome" ? (
+            <Welcome picker={<SaveLoader saveData={saveData} onLoad={load} notStored={notStored} lang={lang} />} lang={lang} />
+          ) : tab === "faq" ? (
+            <Faq lang={lang} />
+          ) : tab === "search" ? (
             <SearchView owned={owned} lang={lang} />
-          ) : tab === "organize" && onDeck ? (
-            <OrganizeView onWritten={readDeck} lang={lang} />
+          ) : tab === "organize" ? (
+            <OrganizeView
+              rawFiles={rawFiles}
+              picker={<SaveLoader saveData={saveData} onLoad={load} notStored={notStored} lang={lang} />}
+              onWritten={readDeck}
+              lang={lang}
+            />
           ) : tab === "characters" ? (
-            saveData && <CharacterView saveData={saveData} name={name} lang={lang} />
+            saveData ? (
+              <CharacterView saveData={saveData} name={name} lang={lang} />
+            ) : (
+              <SaveLoader saveData={saveData} onLoad={load} notStored={notStored} lang={lang} />
+            )
           ) : (
             <CollectionView key={tab} label={t(tab, lang)} groups={collectionGroups(tab, lang)} owned={owned} lang={lang} />
           )}
         </ErrorBoundary>
       </main>
+      <footer className="flex gap-6 text-sm gothic-text-muted mt-20">
+        <Link to="/faq">{t("faq", lang)}</Link>
+        <a href={REPO} target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+      </footer>
     </div>
   );
 }

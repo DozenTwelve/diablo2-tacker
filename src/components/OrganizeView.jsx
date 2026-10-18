@@ -1,13 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { codeOfNumber, labelOf } from "../lib/gameData";
-import { deckSaveFiles } from "../lib/deck";
+import { deckSaveFiles, onDeck } from "../lib/deck";
 import { roleOf } from "../lib/inventory";
 import { t } from "../lib/i18n";
+import { SKILL } from "../lib/links";
 import { modeOfCharacter, modeOfStash, organizeFiles } from "../lib/organize";
 import { loadParser, statsOf } from "../lib/parseSaves";
 import { describeStats } from "../lib/stats";
 import { Link } from "../lib/router";
 import { useStoredState } from "../lib/useStoredState";
+import { zip } from "../lib/zip";
 import PageTitle from "./PageTitle";
 
 const modeLabel = (mode, lang) => {
@@ -19,44 +21,100 @@ const toBase64 = (bytes) => {
   for (let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
   return btoa(s);
 };
+const isSave = (name) => /\.d2[si]$/i.test(name);
+const COMPANIONS = ["ctl", "key", "ma0", "map"]; // a character's other files, copied from the template for new mules
 
-// /organize, on the Steam Deck only: sort the mules and the chosen inbox pages of the shared stash
-// (src/lib/organize.js), show what would happen, then have the plugin back up the save folder and write.
-export default function OrganizeView({ onWritten, lang }) {
+// A picked folder can include subfolders (backups...): organize the one folder holding the most saves
+function saveFolder(files) {
+  const dirOf = (f) => (f.webkitRelativePath || f.name).split("/").slice(0, -1).join("/");
+  const counts = new Map();
+  for (const f of files.filter((f) => isSave(f.name))) counts.set(dirOf(f), (counts.get(dirOf(f)) ?? 0) + 1);
+  const dir = [...counts].sort((a, b) => b[1] - a[1])[0]?.[0];
+  return files.filter((f) => dirOf(f) === dir);
+}
+
+// /organize: sort the mules and the chosen inbox pages of the shared stash (src/lib/organize.js), show what
+// would happen, then hand the result back. On the web: a zip download of the changed files (rawFiles: the
+// files as last picked, kept in memory only; picker asks for them again). On the Steam Deck: the plugin backs
+// up the save folder and writes.
+export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
   const [roles] = useStoredState("roles", {});
   const [inboxes, setInboxes] = useStoredState("inbox", {}); // mode -> page numbers
-  const [files, setFiles] = useState(null); // [{ name, bytes }] as read from the Deck
+  const [files, setFiles] = useState(null); // [{ name, bytes }]: saves, and on the web their other files
   const [wasm, setWasm] = useState(null);
   const [mode, setMode] = useState(null);
-  const [state, setState] = useState({}); // { plan, error, busy, backup }
+  const [state, setState] = useState({}); // { plan, error, busy, backup, downloaded, readError }
   const [reads, setReads] = useState(0); // bumped to read the files again
 
   useEffect(() => {
-    Promise.all([deckSaveFiles(), loadParser()]).then(async ([list, parser]) => {
+    if (!onDeck && !rawFiles) return;
+    const read = onDeck ? deckSaveFiles() : Promise.resolve(saveFolder(rawFiles));
+    Promise.all([read, loadParser()]).then(async ([list, parser]) => {
       setFiles(await Promise.all(list.map(async (f) => ({ name: f.name, bytes: new Uint8Array(await f.arrayBuffer()) }))));
       setWasm(parser);
+      setState({});
     }, (e) => setState({ readError: e.message ?? String(e) }));
-  }, [reads]);
+  }, [reads, rawFiles]);
 
-  // Characters (with their mode) and shared stash pages per mode, from the files as they are now
+  // Characters (with their mode) and shared stash pages per mode, from the files as they are now;
+  // a file that doesn't parse is listed with its error (organizing then refuses to run)
   const saves = useMemo(() => {
     if (!files || !wasm) return null;
-    return files.map(({ name, bytes }) => {
-      if (/\.d2s$/i.test(name)) {
-        const json = JSON.parse(wasm.parseD2s(bytes));
-        return { name: name.slice(0, -4), mode: modeOfCharacter(json), level: json.character.level };
-      }
-      const pages = JSON.parse(wasm.parseD2i(bytes)).flatMap((tab, i) =>
-        tab.tab_type === "Normal" ? [{ page: i + 1, items: tab.items.length }] : [],
-      );
-      return { name: name.slice(0, -4), mode: modeOfStash(name), pages };
-    });
+    return files
+      .filter((f) => isSave(f.name))
+      .map(({ name, bytes }) => {
+        try {
+          if (/\.d2s$/i.test(name)) {
+            const json = JSON.parse(wasm.parseD2s(bytes));
+            return { name: name.slice(0, -4), mode: modeOfCharacter(json), level: json.character.level };
+          }
+          const pages = JSON.parse(wasm.parseD2i(bytes)).flatMap((tab, i) =>
+            tab.tab_type === "Normal" ? [{ page: i + 1, items: tab.items.length }] : [],
+          );
+          return { name: name.slice(0, -4), mode: modeOfStash(name), pages };
+        } catch (e) {
+          return { name, error: e.message ?? String(e) };
+        }
+      });
   }, [files, wasm]);
+
+  const about = (
+    <div className="max-w-3xl space-y-3 text-sm mb-8">
+      <p>{t("organizeAbout", lang)}</p>
+      <ul className="space-y-1 pl-4">
+        <li>
+          <span className="gothic-text-gold">UW UA UJ SET</span> {t("muleMuseum", lang)}
+        </li>
+        <li>
+          <span className="gothic-text-gold">DUP RW CHARM JEWEL RING MAG BASE MISC</span> {t("muleOther", lang)}
+        </li>
+        <li>
+          <span className="gothic-text-gold">TRASH</span> {t("muleTrash", lang)}
+        </li>
+      </ul>
+      <p>{t("organizeKit", lang)}</p>
+      {!onDeck && <p>{t("organizeWeb", lang)}</p>}
+      <p className="gothic-text-muted">
+        {t("organizeOwn", lang)}{" "}
+        <a href={SKILL} target="_blank" rel="noreferrer" className="gothic-text-gold">
+          organize-stash
+        </a>
+      </p>
+    </div>
+  );
+
   if (!saves)
     return (
       <>
         <PageTitle label={t("organize", lang)} />
+        {about}
         {state.readError && <p className="text-red-400">{t("readFailed", lang, state.readError)}</p>}
+        {!onDeck && !rawFiles && (
+          <>
+            <p className="text-sm mb-4">{t("needFolder", lang)}</p>
+            {picker}
+          </>
+        )}
       </>
     );
 
@@ -71,6 +129,31 @@ export default function OrganizeView({ onWritten, lang }) {
   const preview = () => {
     try {
       setState({ plan: organizeFiles(files, wasm, options) });
+    } catch (e) {
+      setState({ error: t("notWritten", lang, e.message ?? e) });
+    }
+  };
+  // Organized again from the files as read, so what is handed back is exactly what was checked
+  const download = () => {
+    try {
+      const { files: out } = organizeFiles(files, wasm, options);
+      const names = new Set(files.map((f) => f.name));
+      const companions = out.flatMap((f) =>
+        f.template
+          ? COMPANIONS.flatMap((ext) => {
+              const from = files.find((o) => o.name === `${f.template}.${ext}`);
+              const name = `${f.name.slice(0, -4)}.${ext}`;
+              return from && !names.has(name) ? [{ name, bytes: from.bytes }] : [];
+            })
+          : [],
+      );
+      const url = URL.createObjectURL(new Blob([zip([...out, ...companions])], { type: "application/zip" }));
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `D2R-organized-${new Date().toISOString().slice(0, 10)}.zip`;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 60_000);
+      setState({ ...state, downloaded: true });
     } catch (e) {
       setState({ error: t("notWritten", lang, e.message ?? e) });
     }
@@ -92,7 +175,6 @@ export default function OrganizeView({ onWritten, lang }) {
         setState({ error: t("savesChanged", lang) });
         return;
       }
-      // Organized again from the files as read, so what is written is exactly what was checked
       const { files: out } = organizeFiles(files, wasm, options);
       const response = await fetch("/api/write", {
         method: "POST",
@@ -118,11 +200,20 @@ export default function OrganizeView({ onWritten, lang }) {
   return (
     <>
       <PageTitle label={t("organize", lang)} />
+      {about}
       <div className="max-w-3xl space-y-8">
+        {state.readError && <p className="text-red-400">{t("readFailed", lang, state.readError)}</p>}
+        {saves
+          .filter((s) => s.error)
+          .map((s) => (
+            <p key={s.name} className="text-sm text-red-400">
+              {s.name}: {s.error}
+            </p>
+          ))}
         {modes.length > 1 && (
-          <div className="segmented" role="group">
+          <div className="segmented" role="group" aria-label={t("gameMode", lang)}>
             {modes.map((m) => (
-              <button key={m} className={m === current ? "active" : ""} onClick={() => (setMode(m), setState({}))}>
+              <button key={m} className={m === current ? "active" : ""} aria-pressed={m === current} onClick={() => (setMode(m), setState({}))}>
                 {modeLabel(m, lang)}
               </button>
             ))}
@@ -131,6 +222,9 @@ export default function OrganizeView({ onWritten, lang }) {
         <section>
           <div className="section-head">
             <h2>{t("inboxPages", lang)}</h2>
+            <button className="text-sm gothic-text-muted" onClick={() => setInbox(pages.map((p) => p.page))}>
+              {t("selectAll", lang)}
+            </button>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {pages.map(({ page, items }) => (
@@ -192,10 +286,30 @@ export default function OrganizeView({ onWritten, lang }) {
             )}
             <p>{t("reportOther", lang, report.inbox.other)}</p>
             {report.dropped.length > 0 && <p className="gothic-text-muted">{t("reportDropped", lang, report.dropped.length)}</p>}
-            <p className="text-sm gothic-text-muted pt-2">{t("writeWarning", lang)}</p>
-            <button className="gothic-btn" disabled={state.busy} onClick={write}>
-              {t(state.busy ? "writing" : "confirmWrite", lang)}
-            </button>
+            {onDeck ? (
+              <>
+                <p className="text-sm gothic-text-muted pt-2">{t("writeWarning", lang)}</p>
+                <button className="gothic-btn" disabled={state.busy} onClick={write}>
+                  {t(state.busy ? "writing" : "confirmWrite", lang)}
+                </button>
+              </>
+            ) : (
+              <>
+                <button className="gothic-btn" onClick={download}>
+                  {t("download", lang)}
+                </button>
+                {state.downloaded && (
+                  <div className="panel text-sm">
+                    <h3 className="gothic-text-gold mb-2">{t("putBack", lang)}</h3>
+                    <ol className="list-decimal pl-5 space-y-1">
+                      {t("putBackSteps", lang).map((step, i) => (
+                        <li key={i}>{step}</li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
+              </>
+            )}
           </section>
         )}
       </div>

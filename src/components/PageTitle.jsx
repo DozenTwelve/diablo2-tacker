@@ -14,7 +14,7 @@ export default function PageTitle({ label, owned, total, children }) {
         {children && <div className="ml-auto">{children}</div>}
       </div>
       {counted && (
-        <div className="progress-rule" role="progressbar" aria-valuemin={0} aria-valuemax={total} aria-valuenow={owned}>
+        <div className="progress-rule" role="progressbar" aria-label={label} aria-valuemin={0} aria-valuemax={total} aria-valuenow={owned}>
           <div style={{ width: `${total ? (owned / total) * 100 : 0}%` }} />
         </div>
       )}

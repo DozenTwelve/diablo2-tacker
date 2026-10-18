@@ -66,14 +66,16 @@ export default function CollectionView({ label, groups, owned, lang }) {
       <div className="lg:grid lg:gap-10 items-start" style={{ gridTemplateColumns: groups.length > 1 ? "13rem minmax(0, 1fr)" : "minmax(0, 1fr)" }}>
         {groups.length > 1 && (
           <nav className="toc hidden lg:block sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto">
-            {groups.map(({ title, keys }, i) => (
-              <a key={title} href={`#group-${i}`} className={ownedIn(keys) === keys.length ? "complete" : ""}>
-                <span className="truncate">{title}</span>
-                <span className="gothic-text-muted shrink-0">
-                  {ownedIn(keys)}/{keys.length}
-                </span>
-              </a>
-            ))}
+            {groups.map(({ title, keys }, i) =>
+              missingOnly && ownedIn(keys) === keys.length ? null : (
+                <a key={title} href={`#group-${i}`} className={ownedIn(keys) === keys.length ? "complete" : ""}>
+                  <span className="truncate">{title}</span>
+                  <span className="gothic-text-muted shrink-0">
+                    {ownedIn(keys)}/{keys.length}
+                  </span>
+                </a>
+              ),
+            )}
           </nav>
         )}
         <div className="space-y-10">

@@ -26,11 +26,12 @@ function navigate(path) {
   scrollTo(0, 0);
 }
 
-// <a> that navigates in place; modified clicks (new tab...) keep the browser's behavior. onClick runs first.
+// <a> that navigates in place; modified clicks (new tab...) keep the browser's behavior.
+// onClick runs before navigating, not on modified clicks.
 export function Link({ to, onClick: before, ...props }) {
   const onClick = (e) => {
-    before?.(e);
     if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    before?.(e);
     e.preventDefault();
     navigate(to);
   };

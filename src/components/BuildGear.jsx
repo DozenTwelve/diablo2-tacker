@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { catalog, imageOf, labelOf } from "../lib/gameData";
-import { buildsOf, keyOfOption } from "../lib/builds";
+import { buildsOf, keyOfOption, SLOT_OF } from "../lib/builds";
 import { nameOf, t } from "../lib/i18n";
 import { groupByKey, ownerLabel, ownersOf, placeLabel } from "../lib/inventory";
 import { Link } from "../lib/router";
@@ -9,22 +9,9 @@ import { colorOf } from "./StashGrid";
 import { Modal } from "./Copies";
 import Paperdoll from "./Paperdoll";
 
-// Equipment slots (body_location) each kind of option is worn in; charms work from the inventory
-const WORN = {
-  weapon: ["RightArm", "LeftArm"],
-  offhand: ["RightArm", "LeftArm"],
-  swap: ["RightHand", "LeftHand"],
-  helm: ["Head"],
-  armor: ["Torso"],
-  gloves: ["Gloves"],
-  belt: ["Belt"],
-  boots: ["Feet"],
-  amulet: ["Neck"],
-  ring: ["RightRing", "LeftRing"],
-};
-const SLOT_OF = Object.fromEntries(Object.entries(WORN).flatMap(([slot, worn]) => worn.map((w) => [w, slot])));
-SLOT_OF.RightArm = "weapon";
-SLOT_OF.LeftArm = "offhand";
+// Where an option counts as worn: a weapon or shield in either hand of weapon set I
+const wornIn = (slot, location) =>
+  slot === "weapon" || slot === "offhand" ? location === "RightArm" || location === "LeftArm" : SLOT_OF[location] === slot;
 
 // Copies by where they are, in order: [{ owner, place, count }]
 function placesOf(copies) {
@@ -56,7 +43,7 @@ export default function BuildGear({ owner, records, saveData, lang }) {
     if (!key) return { rank: 3 };
     // Spare copies first: one worn by another character is not free to take
     const copies = (owned.get(key) ?? []).toSorted((a, b) => (a.place === "equipped") - (b.place === "equipped"));
-    const worn = (r) => (slot === "charm" ? r.place === "inventory" : r.place === "equipped" && (!r.slot || WORN[slot].includes(r.slot)));
+    const worn = (r) => (slot === "charm" ? r.place === "inventory" : r.place === "equipped" && (!r.slot || wornIn(slot, r.slot)));
     const inUse = copies.some((r) => r.owner === owner.name && worn(r));
     return { key, rank: inUse ? 0 : copies.length ? 1 : 2, copies };
   };
@@ -70,7 +57,7 @@ export default function BuildGear({ owner, records, saveData, lang }) {
       </div>
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2">
         <span className="text-sm gothic-text-muted">{t("build", lang)}</span>
-        <div className="segmented flex-wrap" role="group">
+        <div className="segmented flex-wrap" role="group" aria-label={t("build", lang)}>
           {list.map((b) => (
             <button key={b.id} className={b === build ? "active" : ""} aria-pressed={b === build} onClick={() => pick(b.id)}>
               {nameOf(b.name, lang)}
@@ -95,19 +82,26 @@ export default function BuildGear({ owner, records, saveData, lang }) {
           </a>
         </p>
       )}
-      <Modal open={Boolean(opened && build)} onClose={() => setOpened(null)} title={opened && `${t(`slot_${opened}`, lang)} · ${nameOf(build?.name, lang)}`}>
+      <Modal open={Boolean(opened && build)} onClose={() => setOpened(null)} lang={lang} title={opened && `${t(`slot_${opened}`, lang)} · ${nameOf(build?.name, lang)}`}>
         <div className="grid sm:grid-cols-2 gap-3">
           {options.map(({ option, key, rank, copies }, i) => {
             const code = copies?.[0]?.code ?? catalog.get(key)?.names.code; // a missing runeword has no base
             return (
-              <div key={i} className="flex gap-3 p-2" style={{ background: "rgba(0, 0, 0, 0.5)", border: "1px solid #333", opacity: rank === 2 ? 0.55 : 1 }}>
+              <div key={i} className="flex gap-3 p-2" style={{ background: "rgba(0, 0, 0, 0.5)", border: rank === 2 ? "1px dashed #444" : "1px solid #333" }}>
                 {key && (
                   <div className="w-12 h-12 shrink-0 flex items-center justify-center">
-                    {code && <img src={imageOf(copies[0] ?? { key, code })} alt="" className="max-w-full max-h-full object-contain" />}
+                    {code && (
+                      <img
+                        src={imageOf(copies[0] ?? { key, code })}
+                        alt=""
+                        className="max-w-full max-h-full object-contain"
+                        style={rank === 2 ? { opacity: 0.3, filter: "grayscale(1)" } : undefined}
+                      />
+                    )}
                   </div>
                 )}
                 <div className="min-w-0">
-                  <div style={{ color: key ? colorOf({ key, quality: catalog.get(key).kind }) : undefined }}>
+                  <div style={{ color: rank === 2 ? "var(--color-text-muted)" : key ? colorOf({ key, quality: catalog.get(key).kind }) : undefined }}>
                     {key ? labelOf(key, lang) : nameOf(option.text, lang)}
                   </div>
                   {option.note && <div className="gothic-text-muted">{nameOf(option.note, lang)}</div>}

@@ -7,6 +7,22 @@ import { catalog } from "./gameData";
 export { builds };
 export const SLOTS = ["weapon", "offhand", "swap", "helm", "armor", "gloves", "belt", "boots", "amulet", "ring", "charm"];
 
+// Build slot of each equipment slot (body_location); charms work from the inventory
+export const SLOT_OF = {
+  RightArm: "weapon",
+  LeftArm: "offhand",
+  RightHand: "swap",
+  LeftHand: "swap",
+  Head: "helm",
+  Torso: "armor",
+  Gloves: "gloves",
+  Belt: "belt",
+  Feet: "boots",
+  Neck: "amulet",
+  RightRing: "ring",
+  LeftRing: "ring",
+};
+
 // English name -> keys. Names are unique but for Crescent Moon (a unique amulet and a runeword), so an option
 // may add the catalog kind: { item: "Crescent Moon", kind: "Unique" }. A current item wins over a legacy one.
 const keysByName = new Map();
