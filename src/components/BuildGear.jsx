@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { catalog, iconOf, labelOf } from "../lib/gameData";
+import { catalog, iconOf, imageOf, labelOf } from "../lib/gameData";
 import { keyOfOption, SLOT_OF } from "../lib/builds";
 import { nameOf, t } from "../lib/i18n";
 import { groupByKey, ownerLabel, ownersOf, placeLabel } from "../lib/inventory";
@@ -22,24 +22,25 @@ function placesOf(copies) {
   return [...places.values()];
 }
 
-// The builds of a character's class as buttons that wrap (see useBuild)
-export function BuildPicker({ list, build, pick, lang }) {
+// The builds of a character's class as buttons that wrap (see useBuild in src/lib/builds.js)
+function BuildPicker({ list, build, pick, lang }) {
   return (
     <div className="flex flex-wrap items-center gap-2 text-sm" role="group" aria-label={t("build", lang)}>
-      <span className="gothic-text-muted w-28">{t("build", lang)}</span>
+      <span className="gothic-text-muted mr-1">{t("build", lang)}</span>
       {list.map((b) => (
         <button key={b.id} className={`chip ${b === build ? "active" : ""}`} aria-pressed={b === build} onClick={() => pick(b.id)}>
           {nameOf(b.name, lang)}
         </button>
       ))}
-      {!build && <span className="text-xs gothic-text-muted">{t("pickBuild", lang)}</span>}
     </div>
   );
 }
 
 // A main character's equipment with its build: clicking a slot lists the build's options for it, each worn by
 // this character, owned elsewhere (where) or missing; owned ones first, then in the guide's order.
-export default function BuildGear({ owner, build, records, saveData, lang }) {
+// picker: useBuild(owner)
+export default function BuildGear({ owner, picker, records, saveData, lang }) {
+  const { build } = picker;
   const [opened, setOpened] = useState(null); // build slot whose options are shown
 
   // Items only move between characters of one mode (hardcore, Reign of the Warlock or not); saves read
@@ -62,13 +63,20 @@ export default function BuildGear({ owner, build, records, saveData, lang }) {
   return (
     <div className="w-full" style={{ maxWidth: 8 * 44 }}>
       <div className="section-head">
-        <h3>{placeLabel("equipped", lang)}</h3>
+        <h2>{placeLabel("equipped", lang)}</h2>
       </div>
-      {build && <p className="text-xs gothic-text-muted mb-3">{t("clickSlot", lang)}</p>}
+      <BuildPicker {...picker} lang={lang} />
+      <p className="text-xs gothic-text-muted mt-2 mb-3">{t(build ? "clickSlot" : "pickBuild", lang)}</p>
       <Paperdoll records={records} onSlot={build ? (slot) => build.slots[SLOT_OF[slot]] && setOpened(SLOT_OF[slot]) : undefined} lang={lang} />
       {build?.slots.charm && (
-        <button className="gothic-btn gothic-btn-small gothic-btn-secondary mt-3" onClick={() => setOpened("charm")}>
-          {t("slot_charm", lang)}
+        // Charms aren't worn in a slot: their own tile under the equipment, drawn like one
+        <button
+          className="mt-2 flex items-center gap-3 pr-4 text-sm"
+          style={{ background: "rgba(0, 0, 0, 0.8)", border: "1px solid var(--color-border-metal)" }}
+          onClick={() => setOpened("charm")}
+        >
+          <img src={imageOf({ key: "b:cm3:Magic", code: "cm3" })} alt="" className="w-11 h-[5.5rem] object-contain" />
+          <span className="gothic-text-gold">{t("slot_charm", lang)}</span>
         </button>
       )}
       {build && (
@@ -98,7 +106,11 @@ export default function BuildGear({ owner, build, records, saveData, lang }) {
                   </div>
                 )}
                 <div className="min-w-0">
-                  <div style={{ color: rank === 2 ? "var(--color-text-muted)" : key ? colorOf({ key, quality: catalog.get(key).kind }) : undefined }}>
+                  <div
+                    style={{
+                      color: rank === 2 ? "var(--color-text-muted)" : key ? colorOf({ key, quality: catalog.get(key).kind }) : "var(--color-text-secondary)",
+                    }}
+                  >
                     {key ? labelOf(key, lang) : nameOf(option.text, lang)}
                   </div>
                   {option.note && <div className="gothic-text-muted">{nameOf(option.note, lang)}</div>}

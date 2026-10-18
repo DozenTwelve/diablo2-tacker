@@ -70,7 +70,8 @@ h1 {
   position: relative;
 }
 
-/* Subtle vignette overlay effect */
+/* Subtle vignette overlay effect; the background art's logo (bottom left) is darkened so text scrolling over it
+   stays readable */
 .gothic-container::before {
   content: '';
   position: fixed;
@@ -80,6 +81,7 @@ h1 {
   bottom: 0;
   pointer-events: none;
   box-shadow: inset 0 0 80px 20px rgba(0, 0, 0, 0.4);
+  background: radial-gradient(ellipse 24rem 15rem at 0 100%, rgba(8, 8, 8, 0.94) 35%, transparent 100%);
   z-index: -1;
 }
 
@@ -160,13 +162,14 @@ h1 {
 }
 
 /* Button variants */
+/* Dark steel: light text stays above 4.5:1 across the whole gradient */
 .gothic-btn-secondary {
   background: linear-gradient(
     135deg,
-    var(--color-steel-dark),
-    var(--color-steel)
+    #2e2e2e,
+    var(--color-steel-dark)
   );
-  border-color: var(--color-steel);
+  border-color: var(--color-steel-dark);
   color: var(--color-text-primary);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -174,9 +177,10 @@ h1 {
 .gothic-btn-secondary:hover {
   background: linear-gradient(
     135deg,
-    var(--color-steel),
-    var(--color-steel-light)
+    #3d3d3d,
+    var(--color-steel-dark)
   );
+  border-color: var(--color-steel-light);
   box-shadow: 
     0 0 15px rgba(153, 153, 153, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -237,7 +241,7 @@ h1 {
 }
 
 .gothic-input::placeholder {
-  color: var(--color-text-muted);
+  color: #919191; /* the muted grey, a step lighter: 4.5:1 on the input's dark fill */
 }
 
 .gothic-input:focus {

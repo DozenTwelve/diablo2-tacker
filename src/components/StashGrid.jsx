@@ -118,7 +118,7 @@ export default function StashGrid({ width, height, records, ghosts = [], lang })
       <button
         type="button"
         key={ghost ? `ghost:${item.key}` : `${x}:${y}`}
-        aria-label={labelOf(item.key, lang)}
+        aria-label={ghost ? `${labelOf(item.key, lang)}${t("colon", lang)}${t(item.elsewhere.length ? "elsewhere" : "missing", lang)}` : labelOf(item.key, lang)}
         {...tipHandlers(show, setTip)}
         onClick={show}
         className="relative flex items-center justify-center"
@@ -142,7 +142,7 @@ export default function StashGrid({ width, height, records, ghosts = [], lang })
           gridTemplateRows: `repeat(${height}, minmax(0, 1fr))`,
           aspectRatio: `${width} / ${height}`,
           maxWidth: width * CELL,
-          backgroundColor: "rgba(0, 0, 0, 0.45)",
+          backgroundColor: "rgba(0, 0, 0, 0.8)", // opaque enough that the page background's logo doesn't show through
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px)",
           backgroundSize: `${100 / width}% ${100 / height}%`,

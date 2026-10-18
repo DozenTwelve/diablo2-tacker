@@ -18,7 +18,7 @@ const decode = (segment) => {
 // Path segments, decoded: "/characters/UW-A" -> ["characters", "UW-A"]
 export const usePath = () => useSyncExternalStore(subscribe, () => location.pathname).split("/").filter(Boolean).map(decode);
 
-function navigate(path) {
+export function navigate(path) {
   if (path !== location.pathname) {
     history.pushState(null, "", path);
     dispatchEvent(new PopStateEvent("popstate"));

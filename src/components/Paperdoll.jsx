@@ -32,12 +32,14 @@ export default function Paperdoll({ records, slots = Object.keys(SLOTS), onSlot,
   return (
     <div className="w-full" style={{ maxWidth: 8 * CELL }}>
       {hasSwitch && (
-        <div className="flex gap-2 mb-2">
+        <div className="segmented mb-2" role="group">
           {["I", "II"].map((label, i) => (
             <button
               key={label}
-              className={`gothic-tab-btn ${second === Boolean(i) ? "active" : ""}`}
-              style={{ padding: "0.15rem 0.8rem" }}
+              className={second === Boolean(i) ? "active" : ""}
+              aria-pressed={second === Boolean(i)}
+              aria-label={t("weaponSet", lang, i + 1)}
+              style={{ padding: "0.15rem 0.9rem" }}
               onClick={() => setSecond(Boolean(i))}
             >
               {label}
@@ -65,7 +67,7 @@ export default function Paperdoll({ records, slots = Object.keys(SLOTS), onSlot,
               style={{
                 gridColumn: `${x + 1} / span ${w}`,
                 gridRow: `${y + 1} / span ${h}`,
-                background: "rgba(0, 0, 0, 0.55)",
+                background: "rgba(0, 0, 0, 0.8)",
                 border: `1px solid ${item ? `${colorOf(item)}66` : "var(--color-border-metal)"}`,
               }}
             >
