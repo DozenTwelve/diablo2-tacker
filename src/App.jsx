@@ -11,14 +11,13 @@ import CollectionView from "./components/CollectionView";
 import CharacterView from "./components/CharacterView";
 import OrganizeView from "./components/OrganizeView";
 import Welcome from "./components/Welcome";
-import Faq from "./components/Faq";
-import { REPO } from "./lib/links";
+import AboutView from "./components/AboutView";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { SET_GREEN } from "./components/StashGrid";
 import { propLines, setBonusLines } from "./lib/props";
 import { Link, usePath } from "./lib/router";
 
-const TABS = ["search", "characters", "uniques", "sets", "runewords", "runes", "organize"];
+const TABS = ["search", "characters", "uniques", "sets", "runewords", "runes", "organize", "about"];
 
 // Collection tabs as groups of keys; uniques grouped by item category
 function collectionGroups(tab, lang) {
@@ -52,7 +51,7 @@ export default function App() {
   const [saveData, setSaveData, notStored] = useStoredState("saveData", null);
   const [first, name] = usePath();
   // The front page is the welcome page until saves are loaded
-  const tab = !first ? (saveData ? "search" : "welcome") : [...TABS, "faq"].includes(first) ? first : "search";
+  const tab = !first ? (saveData ? "search" : "welcome") : TABS.includes(first) ? first : "search";
   const [rawFiles, setRawFiles] = useState(null); // the files as last picked, for organizing; memory only
   const [offered, setOffered] = useStoredState("organizeOffered", false);
   const load = (data, files) => {
@@ -87,7 +86,7 @@ export default function App() {
           <Link to="/" className="app-title no-underline">
             {t("title", lang)}
           </Link>
-          <nav className="flex gap-5 overflow-x-auto order-last w-full lg:order-none lg:w-auto">
+          <nav className="flex flex-wrap gap-x-5 gap-y-1 order-last w-full lg:order-none lg:w-auto">
             {TABS.map((tabName) => (
               <Link
                 key={tabName}
@@ -128,8 +127,8 @@ export default function App() {
         <ErrorBoundary key={`${tab}/${name}`} lang={lang} onReset={() => load(null)}>
           {tab === "welcome" ? (
             <Welcome picker={<SaveLoader saveData={saveData} onLoad={load} notStored={notStored} lang={lang} />} lang={lang} />
-          ) : tab === "faq" ? (
-            <Faq lang={lang} />
+          ) : tab === "about" ? (
+            <AboutView lang={lang} />
           ) : tab === "search" ? (
             <SearchView owned={owned} lang={lang} />
           ) : tab === "organize" ? (
@@ -150,12 +149,6 @@ export default function App() {
           )}
         </ErrorBoundary>
       </main>
-      <footer className="flex gap-6 text-sm gothic-text-muted mt-20">
-        <Link to="/faq">{t("faq", lang)}</Link>
-        <a href={REPO} target="_blank" rel="noreferrer">
-          GitHub
-        </a>
-      </footer>
     </div>
   );
 }

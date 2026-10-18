@@ -123,6 +123,8 @@ const UI = {
   ],
   organizeOfferGo: ["看看会怎么整理", "看看會怎麼整理", "See how it would sort", "어떻게 정리되는지 보기"],
   noThanks: ["不用了", "不用了", "No thanks", "괜찮습니다"],
+  about: ["关于", "關於", "About", "소개"],
+  sourceCode: ["源代码", "原始碼", "Source code", "소스 코드"],
   faq: ["常见问题", "常見問題", "FAQ", "자주 묻는 질문"],
   welcomeTitle: ["你的暗黑 II 收藏，一次看清", "你的暗黑 II 收藏，一次看清", "Your whole Diablo II stash, at a glance", "디아블로 II 수집품을 한눈에"],
   welcomeLead: [
