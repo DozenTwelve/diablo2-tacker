@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { codeOfNumber, labelOf } from "../lib/gameData";
-import { deckSaveFiles, onDeck } from "../lib/deck";
+import { deckBackups, deckSaveFiles, onDeck, restoreDeck } from "../lib/deck";
 import { roleOf } from "../lib/inventory";
 import { t } from "../lib/i18n";
 import { SKILL } from "../lib/links";
@@ -35,17 +35,18 @@ function saveFolder(files) {
 }
 
 // /organize: sort the mules and the chosen inbox pages of the shared stash (src/lib/organize.js), show what
-// would happen, then hand the result back. On the web: a zip download of the changed files (rawFiles: the
+// would happen, then hand the result back. On the web: a zip download of the whole organized folder (rawFiles: the
 // files as last picked, kept in memory only; picker asks for them again). On the Steam Deck: the plugin backs
 // up the save folder and writes. Emptied characters no new mule reuses can be ticked for deletion: the plugin
-// deletes them after the backup, the web lists their files to delete by hand.
+// deletes them after the backup, the web leaves them out of the zip.
 export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
   const [roles] = useStoredState("roles", {});
   const [inboxes, setInboxes] = useStoredState("inbox", {}); // mode -> page numbers
   const [files, setFiles] = useState(null); // [{ name, bytes }]: saves, and on the web their other files
   const [wasm, setWasm] = useState(null);
   const [mode, setMode] = useState(null);
-  const [state, setState] = useState({}); // { plan, remove, error, busy, backup, downloaded, readError }
+  const [state, setState] = useState({}); // { plan, remove, error, busy, backup, downloaded, readError, confirm, restored, restoreError }
+  const [backups, setBackups] = useState([]); // the plugin's backups, on the Deck
   const [reads, setReads] = useState(0); // bumped to read the files again
 
   useEffect(() => {
@@ -54,8 +55,9 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
     Promise.all([read, loadParser()]).then(async ([list, parser]) => {
       setFiles(await Promise.all(list.map(async (f) => ({ name: f.name, bytes: new Uint8Array(await f.arrayBuffer()) }))));
       setWasm(parser);
-      setState((s) => ({ backup: s.backup })); // read again after writing: keep saying where the backup is
+      setState((s) => ({ backup: s.backup, restored: s.restored })); // read again after writing: keep saying where the backup is
     }, (e) => setState({ readError: e.message ?? String(e) }));
+    if (onDeck) deckBackups().then(setBackups, () => setBackups([]));
   }, [reads, rawFiles]);
 
   // Characters (with their mode) and shared stash pages per mode, from the files as they are now;
@@ -141,6 +143,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
     try {
       const { files: out } = organizeFiles(files, wasm, options);
       const names = new Set(files.map((f) => f.name));
+      const changed = new Map(out.map((f) => [f.name, f]));
       const companions = out.flatMap((f) =>
         f.template
           ? COMPANIONS.flatMap((ext) => {
@@ -150,7 +153,11 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
             })
           : [],
       );
-      const url = URL.createObjectURL(new Blob([zip([...out, ...companions])], { type: "application/zip" }));
+      // The whole save folder as organized, not only what changed: a zip that looks like the organized saves
+      // must be them, or putting it in place of the folder loses every character left as it was
+      const gone = new Set(removeFiles);
+      const folder = [...files.map((f) => changed.get(f.name) ?? f), ...out.filter((f) => !names.has(f.name)), ...companions];
+      const url = URL.createObjectURL(new Blob([zip(folder.filter((f) => !gone.has(f.name)))], { type: "application/zip" }));
       const a = document.createElement("a");
       a.href = url;
       a.download = `D2R-organized-${new Date().toISOString().slice(0, 10)}.zip`;
@@ -201,11 +208,27 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
     }
   };
 
+  const restore = async (name) => {
+    setState({ ...state, busy: true });
+    try {
+      const response = await restoreDeck(name);
+      const result = await response.json();
+      if (result.running) setState({ restoreError: t("gameRunning", lang) });
+      else if (!response.ok) setState({ restoreError: t("restoreFailed", lang, result.error) });
+      else {
+        setState({ restored: { name, backup: result.backup } });
+        setReads(reads + 1);
+        onWritten();
+      }
+    } catch (e) {
+      setState({ restoreError: t("restoreFailed", lang, e.message ?? e) });
+    }
+  };
+  const when = (name) => name.replace(/(\d{4})(\d\d)(\d\d)-(\d\d)(\d\d)(\d\d)/, "$1-$2-$3 $4:$5:$6");
+
   const report = state.plan?.report;
   const remove = state.remove ?? []; // characters ticked for deletion
   const removeFiles = remove.flatMap((name) => filesOfCharacter(name, files.map((f) => f.name)));
-  const steps = [...t("putBackSteps", lang)];
-  if (removeFiles.length) steps.splice(3, 0, t("putBackDelete", lang, removeFiles.join(t("listSeparator", lang))));
   const names = (keys) => keys.map((k) => labelOf(k, lang)).join(t("listSeparator", lang));
   const trash = report?.moves.filter((m) => m.group === "TRASH" && m.stash) ?? [];
   return (
@@ -318,6 +341,11 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
                     </label>
                   ))}
                 </div>
+                {remove.length > 0 && (
+                  <p className="text-sm text-red-400">
+                    {t(onDeck ? "deleteOnWrite" : "deleteFromZip", lang, remove.length, remove.join(t("listSeparator", lang)))}
+                  </p>
+                )}
               </div>
             )}
             {onDeck ? (
@@ -336,7 +364,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
                   <div className="panel text-sm">
                     <h3 className="gothic-text-gold mb-2">{t("putBack", lang)}</h3>
                     <ol className="list-decimal pl-5 space-y-1">
-                      {steps.map((step, i) => (
+                      {t("putBackSteps", lang).map((step, i) => (
                         <li key={i}>{step}</li>
                       ))}
                     </ol>
@@ -344,6 +372,40 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
                 )}
               </>
             )}
+          </section>
+        )}
+        {onDeck && backups.length > 0 && (
+          <section className="space-y-3">
+            <div className="section-head">
+              <h2>{t("backups", lang)}</h2>
+            </div>
+            <p className="text-sm">{t("backupsAbout", lang)}</p>
+            {state.restoreError && <p className="text-red-400">{state.restoreError}</p>}
+            {state.restored && (
+              <p className="gothic-text-gold break-all">{t("restored", lang, when(state.restored.name), state.restored.backup)}</p>
+            )}
+            <ul className="space-y-2">
+              {backups.map((b) => (
+                <li key={b.name} className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                  <span>{when(b.name)}</span>
+                  <span className="text-sm gothic-text-muted">{t("backupCharacters", lang, b.characters)}</span>
+                  {state.confirm === b.name ? (
+                    <>
+                      <button className="gothic-btn gothic-btn-small" disabled={state.busy} onClick={() => restore(b.name)}>
+                        {t(state.busy ? "restoring" : "confirmRestore", lang)}
+                      </button>
+                      <button className="text-sm gothic-text-muted" disabled={state.busy} onClick={() => setState({ ...state, confirm: null })}>
+                        {t("cancel", lang)}
+                      </button>
+                    </>
+                  ) : (
+                    <button className="gothic-btn gothic-btn-secondary gothic-btn-small" onClick={() => setState({ ...state, confirm: b.name })}>
+                      {t("restore", lang)}
+                    </button>
+                  )}
+                </li>
+              ))}
+            </ul>
           </section>
         )}
       </div>

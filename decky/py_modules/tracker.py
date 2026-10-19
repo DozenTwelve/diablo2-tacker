@@ -118,9 +118,7 @@ def write_saves(folder, files, backup_root, delete=()):
     for name in delete:
         if not SAVE_NAME.fullmatch(name + ".d2s") or any(f["name"] == name + ".d2s" for f in files):
             raise ValueError(f"not a character to delete: {name}")
-    # ponytail: backups are kept forever (a save folder is a few MB); prune if anyone collects hundreds
-    backup = os.path.join(backup_root, time.strftime("%Y%m%d-%H%M%S"))
-    shutil.copytree(folder, backup)
+    backup = _backup(folder, backup_root)
     try:
         _write(folder, files)
         for name in delete:
@@ -129,16 +127,57 @@ def write_saves(folder, files, backup_root, delete=()):
                 if re.fullmatch(re.escape(name) + r"\.(d2s|ctl|key|map|ma\d+)", other):
                     os.remove(os.path.join(folder, other))
     except Exception as e:
-        # Put the folder back as it was: every file now there that the backup doesn't have came from this write
-        try:
-            for name in os.listdir(folder):
-                if not os.path.exists(os.path.join(backup, name)):
-                    os.remove(os.path.join(folder, name))
-            shutil.copytree(backup, folder, dirs_exist_ok=True)
-            restored = "the save folder is back as it was"
-        except Exception:
-            restored = "restoring failed"
-        raise IOError(f"{e}; {restored}, a backup is in {backup}") from e
+        _undo(folder, backup, e)
+    return backup
+
+
+BACKUP_NAME = re.compile(r"\d{8}-\d{6}")
+
+
+def _backup(folder, backup_root):
+    # ponytail: backups are kept forever (a save folder is a few MB); prune if anyone collects hundreds
+    backup = os.path.join(backup_root, time.strftime("%Y%m%d-%H%M%S"))
+    shutil.copytree(folder, backup)
+    return backup
+
+
+def _put_back(folder, backup):
+    """Make the save folder's files those of the backup; folders the player keeps in it are left alone."""
+    for name in os.listdir(folder):
+        if os.path.isfile(os.path.join(folder, name)) and not os.path.exists(os.path.join(backup, name)):
+            os.remove(os.path.join(folder, name))
+    shutil.copytree(backup, folder, dirs_exist_ok=True)
+
+
+def _undo(folder, backup, error):
+    try:
+        _put_back(folder, backup)
+        restored = "the save folder is back as it was"
+    except Exception:
+        restored = "restoring failed"
+    raise IOError(f"{error}; {restored}, a backup is in {backup}") from error
+
+
+def list_backups(backup_root):
+    """The plugin's backups, newest first: [{name, characters}], name being when it was made (YYYYMMDD-HHMMSS)."""
+    if not os.path.isdir(backup_root):
+        return []
+    names = sorted((n for n in os.listdir(backup_root) if BACKUP_NAME.fullmatch(n)), reverse=True)
+    return [{"name": n, "characters": sum(f.endswith(".d2s") for f in os.listdir(os.path.join(backup_root, n)))} for n in names]
+
+
+def restore_backup(folder, backup_root, name):
+    """Put one of the plugin's backups back in place of the save folder, after backing up the folder as it is
+    (so a restore can be undone the same way). Returns that new backup folder."""
+    if game_running():
+        raise PermissionError("D2R is running; quit the game first")
+    if not any(b["name"] == name for b in list_backups(backup_root)):  # only names from the listing, never a path
+        raise ValueError(f"no such backup: {name}")
+    backup = _backup(folder, backup_root)
+    try:
+        _put_back(folder, os.path.join(backup_root, name))
+    except Exception as e:
+        _undo(folder, backup, e)
     return backup
 
 
@@ -164,7 +203,9 @@ def _write(folder, files):
 class Handler(SimpleHTTPRequestHandler):
     """GET /api/saves: save file names; /api/saves/<name>: one save; /items/<x>.webp: an icon (PNG);
     anything else: the web app, index.html for unknown paths (the app routes on the client).
-    POST /api/write: organized saves to write and characters to delete (write_saves); /api/close: the app's close button (on_close).
+    /api/backups: the plugin's backups (list_backups).
+    POST /api/write: organized saves to write and characters to delete (write_saves); /api/restore: a backup to put
+    back (restore_backup); /api/close: the app's close button (on_close).
     POSTs only from the app itself."""
 
     web_dir = save_folder = icon_dir = backup_dir = on_close = None  # set by serve()
@@ -191,6 +232,8 @@ class Handler(SimpleHTTPRequestHandler):
         folder = self.save_folder()
         if path == "/api/saves":
             return self.send_bytes(json.dumps(list_saves(folder)).encode(), "application/json")
+        if path == "/api/backups":
+            return self.send_bytes(json.dumps(list_backups(self.backup_dir)).encode(), "application/json")
         if path.startswith("/api/saves/"):
             name = unquote(path[len("/api/saves/") :])
             if name not in list_saves(folder):  # only names from the listing, never a path
@@ -211,7 +254,7 @@ class Handler(SimpleHTTPRequestHandler):
         # Only the app's own page: browsers send Origin on every POST, and another site can't send JSON here
         # without a CORS preflight, which this server never answers
         origin = f"http://127.0.0.1:{self.server.server_address[1]}"
-        if not self.local() or self.path not in ("/api/write", "/api/close") or self.headers.get("Origin") != origin or self.headers.get("Content-Type") != "application/json":
+        if not self.local() or self.path not in ("/api/write", "/api/restore", "/api/close") or self.headers.get("Origin") != origin or self.headers.get("Content-Type") != "application/json":
             return self.send_error(403)
         if self.path == "/api/close":
             self.send_response(204)
@@ -219,8 +262,11 @@ class Handler(SimpleHTTPRequestHandler):
             return self.on_close()
         try:
             body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
-            files = [{**f, "bytes": base64.b64decode(f["data"])} for f in body["files"]]
-            result = {"backup": write_saves(self.save_folder(), files, self.backup_dir, body.get("delete", []))}
+            if self.path == "/api/restore":
+                result = {"backup": restore_backup(self.save_folder(), self.backup_dir, body["name"])}
+            else:
+                files = [{**f, "bytes": base64.b64decode(f["data"])} for f in body["files"]]
+                result = {"backup": write_saves(self.save_folder(), files, self.backup_dir, body.get("delete", []))}
             status = 200
         except PermissionError as e:
             result, status = {"error": str(e), "running": True}, 409

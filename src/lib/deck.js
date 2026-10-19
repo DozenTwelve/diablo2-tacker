@@ -8,8 +8,15 @@ const get = async (url) => {
   return response;
 };
 
+const post = (url, body) => fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+
 // The close button: the plugin leaves Steam's browser and stops its server
-export const closeDeck = () => fetch("/api/close", { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" });
+export const closeDeck = () => post("/api/close", {});
+
+// The plugin's backups of the save folder, newest first: [{ name: "YYYYMMDD-HHMMSS", characters }]; restoring one
+// backs up the folder as it is first
+export const deckBackups = async () => (await get("/api/backups")).json();
+export const restoreDeck = (name) => post("/api/restore", { name });
 
 export async function deckSaveFiles() {
   const names = await (await get("/api/saves")).json();

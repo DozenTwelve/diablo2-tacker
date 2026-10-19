@@ -110,6 +110,25 @@ with tempfile.TemporaryDirectory() as tmp:
     time.sleep(1)
     assert post({"files": new, "delete": ["Gone"]})[0] == 500
     assert sorted(os.listdir(saves)) == before and open(os.path.join(saves, "Gone.d2s"), "rb").read() == b"gone"
+    os.rmdir(os.path.join(saves, "Gone.ma1"))
+
+    # Backups, newest first, and putting one back: the folder becomes exactly that backup, after a backup of itself
+    listed = json.loads(get("/api/backups"))
+    assert [b["name"] for b in listed] == sorted(os.listdir(backups), reverse=True)
+    zanna = os.path.basename(result["backup"])  # made before Zanna was deleted
+    assert next(b for b in listed if b["name"] == zanna)["characters"] == 4  # Zanna, Zanna-old, Mule 二, UW-A
+    assert post({"name": "../web"}, path="/api/restore")[0] == 500 and post({"name": "20990101-000000"}, path="/api/restore")[0] == 500
+    tracker.game_running = lambda: True
+    assert post({"name": zanna}, path="/api/restore")[0] == 409
+    tracker.game_running = lambda: False
+    os.mkdir(os.path.join(saves, "my old saves"))  # a folder the player keeps there
+    now = sorted(os.listdir(saves))
+    time.sleep(1)
+    status, restored = post({"name": zanna}, path="/api/restore")
+    assert status == 200, restored
+    assert sorted(os.listdir(saves)) == sorted(os.listdir(os.path.join(backups, zanna)) + ["my old saves"]) and "Zanna.ma1" in os.listdir(saves)
+    assert sorted(os.listdir(restored["backup"])) == now  # the folder as it was before, to undo the restore
+    assert post({"name": zanna}, origin="http://evil.example", path="/api/restore")[0] == 403
 
     # Only requests to 127.0.0.1 itself: another name pointed at it (DNS rebinding) gets nothing
     request = urllib.request.Request(base + "/api/saves", headers={"Host": "evil.example"})
