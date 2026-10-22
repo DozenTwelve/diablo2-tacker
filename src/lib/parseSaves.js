@@ -1,6 +1,6 @@
 // Parse D2R save files in the browser with the d2s WASM wrapper (wasm/).
 // Output: owners (characters and shared stashes) and a flat list of owned items:
-// { key, code, quality, ethereal, sockets, stats, owner, place, x, y, slot, gfx, count }
+// { key, code, quality, ethereal, sockets, stats, rolls?, owner, place, x, y, slot, gfx, count }
 // (x/y: grid position in stash/inventory/cube; slot: body location when equipped, e.g. "Head";
 // gfx: which look a ring, amulet, charm or jewel has),
 // stats as [statId, layer, value] (see src/lib/stats.js).
@@ -24,17 +24,21 @@ function placeOf(item) {
   return store_page === "Null" ? mode.toLowerCase() : store_page.toLowerCase();
 }
 
+const summed = (list) => {
+  const sums = new Map();
+  for (const { id, layer, value } of list) {
+    const key = `${id}:${layer}`;
+    sums.set(key, (sums.get(key) ?? 0) + value);
+  }
+  return [...sums].map(([key, value]) => [...key.split(":").map(Number), value]);
+};
+
 // Item, runeword and socket stats together (runes and gems by gems.txt, jewels their own), summed as in game
 export function statsOf(item, code) {
   const sockets = item.sockets
     .filter(Boolean)
     .flatMap((s) => (socketStats(code, codeOfNumber(s.code)) ?? s.stats.map((x) => [x.id, x.layer, x.value])).map(([id, layer, value]) => ({ id, layer, value })));
-  const sums = new Map();
-  for (const { id, layer, value } of [...item.stats, ...(item.runeword_stats ?? []), ...sockets]) {
-    const key = `${id}:${layer}`;
-    sums.set(key, (sums.get(key) ?? 0) + value);
-  }
-  return [...sums].map(([key, value]) => [...key.split(":").map(Number), value]);
+  return summed([...item.stats, ...(item.runeword_stats ?? []), ...sockets]);
 }
 
 function collect(item, owner, place, out) {
@@ -49,6 +53,9 @@ function collect(item, owner, place, out) {
     ethereal: item.flags.includes("ETHEREAL"),
     sockets: item.sockets.length,
     stats: statsOf(item, code),
+    // What the item rolled itself, for the roll score: without its runes, gems or jewels, and for a runeword
+    // without its base's own (superior) bonuses. Only kept when that differs from stats.
+    rolls: item.runeword_id != null ? summed(item.runeword_stats ?? []) : item.sockets.some(Boolean) ? summed(item.stats) : undefined,
     owner,
     place,
     x: item.position.inv_x,

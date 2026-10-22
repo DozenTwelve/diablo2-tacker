@@ -12,7 +12,7 @@ const NOT_SHOWN = new Set(["dur", "state", "bloody", "fade", "pois-len", "cold-l
 const vite = await createServer({ server: { middlewareMode: true, hmr: false }, appType: "custom", logLevel: "error" });
 try {
   const { uniques, sets, runewords } = await vite.ssrLoadModule("/src/lib/gameData.js");
-  const { propLines } = await vite.ssrLoadModule("/src/lib/props.js");
+  const { propLines, rollScore } = await vite.ssrLoadModule("/src/lib/props.js");
   const { describeStats } = await vite.ssrLoadModule("/src/lib/stats.js");
 
   const all = [
@@ -37,6 +37,9 @@ try {
   }
   console.log(`${all.length} entries, ${count} properties`);
   assert.deepEqual(describeStats([[89, 0, -1], [89, 0, 1]], "en"), []); // Malice's light radius with El in it
+  // Call to Arms at its lowest +200% enhanced damage, with Ohm's +50% on top: a 0 roll, not a perfect one
+  const cta = runewords.find((w) => w.en === "Call to Arms");
+  assert.equal(rollScore({ stats: [[17, 0, 250], [18, 0, 250]], rolls: [[17, 0, 200], [18, 0, 200]] }, cta.props), 0);
   for (const [code, names] of [...silent].sort((a, b) => b[1].length - a[1].length)) {
     console.log(`${code}: ${names.length} (${names.slice(0, 4).join(", ")})`);
   }

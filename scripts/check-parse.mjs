@@ -30,6 +30,13 @@ try {
   const holder = first.owners.find((o) => o.cls && first.items.some((i) => i.owner === o.name && i.place !== "socketed"));
   const held = (data) => data.items.filter((i) => i.owner === holder.name).length;
 
+  await check("runewords keep their own rolls apart from their runes' bonuses (the roll score)", async () => {
+    const words = first.items.filter((i) => i.key.startsWith("w:"));
+    for (const r of words) assert(r.rolls, `${r.key} has no rolls`);
+    // stats add the runes' bonuses and the base's own on top
+    assert(!words.length || words.some((r) => JSON.stringify(r.rolls) !== JSON.stringify(r.stats)));
+  });
+
   await check("a shared stash cut short is reported", async () => {
     // Cut at the end of a page: the parser reads the pages before it and stops without an error
     const stash = base.find((f) => f.name === "ModernSharedStashSoftCoreV2.d2i");

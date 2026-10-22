@@ -93,9 +93,11 @@ export const setBonusLines = (tiers = [], lang) =>
   tiers.flatMap(([pieces, props]) => propLines(props, lang).map((line) => `${line} ${t("setPieces", lang, pieces)}`));
 
 // How good an owned copy's rolls are, 0-100: the mean position of each variable property within its range
-// (one stat per property, so "all resistances" counts once). null when nothing on it can roll differently.
+// (one stat per property, so "all resistances" counts once), from what the item rolled itself: not what its
+// runes, gems or jewels add (saves read before rolls were recorded have only stats). null when nothing on it
+// can roll differently.
 export function rollScore(record, props) {
-  const have = new Map(record.stats.map(([id, layer, value]) => [`${id}:${layer}`, value]));
+  const have = new Map((record.rolls ?? record.stats).map(([id, layer, value]) => [`${id}:${layer}`, value]));
   const parts = [];
   for (const prop of props) {
     const [lo] = propStats([prop], 0);
