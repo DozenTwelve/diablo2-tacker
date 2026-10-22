@@ -13,7 +13,7 @@ const vite = await createServer({ server: { middlewareMode: true, hmr: false }, 
 try {
   const wasm = await vite.ssrLoadModule("/wasm/pkg/d2_parser.js");
   wasm.initSync({ module: readFileSync(new URL("../wasm/pkg/d2_parser_bg.wasm", import.meta.url)) });
-  const { muleTimes, organizeFiles } = await vite.ssrLoadModule("/src/lib/organize.js");
+  const { copiesNeeded, muleTimes, organizeFiles } = await vite.ssrLoadModule("/src/lib/organize.js");
   const { scoreOfItem } = await vite.ssrLoadModule("/src/lib/parseSaves.js");
 
   const parse = (name, bytes) => JSON.parse(name.endsWith(".d2s") ? wasm.parseD2s(bytes) : wasm.parseD2i(bytes));
@@ -55,6 +55,29 @@ try {
       }
     }
     if (!compared) console.log("--  no duplicate to compare in these saves");
+  });
+
+  check("extra copies past what builds need go to TRASH, the lowest rolls first", () => {
+    const eth = (item) => item.flags.includes("ETHEREAL");
+    const byKey = new Map();
+    for (const m of first.report.moves.filter((m) => /^[us]:/.test(m.key) && ["MUSEUM", "DUP", "TRASH"].includes(m.group))) {
+      if (!byKey.has(m.key)) byKey.set(m.key, []);
+      byKey.get(m.key).push(m);
+    }
+    let trashed = 0;
+    for (const [key, list] of byKey) {
+      const museum = list.find((m) => m.group === "MUSEUM");
+      if (!museum) continue;
+      const plain = list.filter((m) => m.group === "DUP" && !eth(m.item));
+      assert(plain.length <= Math.max(0, copiesNeeded(key) - (eth(museum.item) ? 0 : 1)), `${key}: too many kept`);
+      for (const t of list.filter((m) => m.group === "TRASH" && !eth(m.item))) {
+        trashed++;
+        assert(plain.length === Math.max(0, copiesNeeded(key) - (eth(museum.item) ? 0 : 1)), `${key}: trashed while short`);
+        for (const k of plain) assert((scoreOfItem(k.item) ?? -1) >= (scoreOfItem(t.item) ?? -1), `${key}: a better copy trashed`);
+      }
+    }
+    if (!trashed) console.log("--  no extra copies past need in these saves");
+    assert(copiesNeeded("u:Harlequin Crest") > 1 && copiesNeeded("u:Bul-Kathos' Wedding Band") >= 2);
   });
 
   const runeword = allItems.find((i) => i.quality === "Normal" && i.runeword_id != null);

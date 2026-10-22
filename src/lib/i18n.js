@@ -83,10 +83,10 @@ const UI = {
     "중복 고유/세트, 룬어, 부적, 주얼, 반지와 목걸이, 기타 마법/희귀, 일반 베이스, 기타",
   ],
   muleTrash: [
-    "可能是垃圾的魔法神符和珠宝，不会删除，自己看过再丢",
-    "可能是垃圾的魔法咒符和珠寶，不會刪除，自己看過再丟",
-    "magic charms and jewels that are likely junk; nothing is deleted, look before you drop them",
-    "버릴 만한 마법 부적과 주얼. 삭제하지 않으니 확인 후 버리세요",
+    "可能是垃圾的魔法神符和珠宝，以及用不着的重复暗金和套装（没有流派推荐，或者份数已经够每个职业用：每个用到它的职业一件，戒指两件），不会删除，自己看过再丢",
+    "可能是垃圾的魔法咒符和珠寶，以及用不著的重複暗金和套裝（沒有流派推薦，或者份數已經夠每個職業用：每個用到它的職業一件，戒指兩件），不會刪除，自己看過再丟",
+    "magic charms and jewels that are likely junk, and extra uniques and set items nobody needs (no build uses them, or there are enough for every class that does: one each, two for a ring); nothing is deleted, look before you drop them",
+    "버릴 만한 마법 부적과 주얼, 그리고 필요 없는 중복 고유/세트(쓰는 빌드가 없거나, 쓰는 직업마다 하나씩(반지는 둘) 이미 있음). 삭제하지 않으니 확인 후 버리세요",
   ],
   organizeKit: [
     "骡子身上的初始装备（新手武器、药水、卷轴）会丢掉。其他角色和叠放页不动。",

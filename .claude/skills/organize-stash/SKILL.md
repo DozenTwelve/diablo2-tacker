@@ -84,8 +84,11 @@ plan. Explain it before going on:
     items: the "museum", one fixed slot per item in the game, so an empty slot is an item still missing;
   - `DUP-*` extra copies of uniques and set items, `RW-*` runewords, `CHARM-*`, `JEWEL-*`, `RING-*` (rings and
     amulets), `MAG-*` other magic and rare items, `BASE-*` plain weapons and armor, `MISC-*` everything else;
-  - `TRASH-*` likely junk: magic charms and jewels where every stat is a low roll. The dry run lists each one.
-    Nothing is deleted; the player looks through these in game and drops what they don't want.
+  - `TRASH-*` likely junk: magic charms and jewels where every stat is a low roll, and extra copies of uniques
+    and set items past what is worth having (`copiesNeeded`: one per class with a build recommending it, two for
+    a ring, the museum copy counting as one, plus one ethereal weapon or armor for a mercenary; the lowest rolls
+    go first). The museum always holds the best copy. The dry run lists each one. Nothing is deleted; the player
+    looks through these in game and drops what they don't want.
 - That starting kit on the emptied characters (starter weapons, potions, scrolls) is dropped.
 - What the inbox pages bring: new museum items, new duplicates, likely junk.
 - The museum line (`UW 50/86` ...) counts only what this run moves (the emptied characters and inbox pages), not

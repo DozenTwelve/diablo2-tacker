@@ -10,6 +10,7 @@
 import { uniques, sets, uniqueKey, setItemKey, keyOf, codeOfNumber } from "./gameData";
 import { modeOfCharacter, modeOfStash } from "./modes";
 import { scoreOfItem } from "./parseSaves";
+import { builds, keyOfOption } from "./builds";
 import items from "../data/items.json";
 import statData from "../data/stats.json";
 
@@ -88,6 +89,25 @@ export function museumLayout(namePrefix = "") {
   const slots = new Map(mules.flatMap((m) => m.slots.map((s) => [s.ref, { mule: m.name, ...s }])));
   return { names: mules.map((m) => m.name), slots };
 }
+
+// How many copies of a unique or set item are worth having: one for each class with a build recommending it,
+// two where it is a ring (src/data/builds.json), so every class could wear it; none for one no build uses. In
+// single player nothing can be traded: a copy no character would wear only takes room.
+const NEEDED = new Map();
+{
+  const perClass = new Map(); // key -> Map(class -> copies)
+  for (const b of builds)
+    for (const [slot, options] of Object.entries(b.slots))
+      for (const o of options.filter((o) => o.item)) {
+        const key = keyOfOption(o);
+        if (!key) continue;
+        if (!perClass.has(key)) perClass.set(key, new Map());
+        const classes = perClass.get(key);
+        classes.set(b.cls, Math.max(classes.get(b.cls) ?? 0, slot === "ring" ? 2 : 1));
+      }
+  for (const [key, classes] of perClass) NEEDED.set(key, [...classes.values()].reduce((a, b) => a + b, 0));
+}
+export const copiesNeeded = (key) => NEEDED.get(key) ?? 0;
 
 // Magic, rare and crafted items by base type
 const MAGIC_GROUPS = { scha: "CHARM", mcha: "CHARM", lcha: "CHARM", csch: "CHARM", jewl: "JEWEL", cjwl: "JEWEL", ring: "RING", amul: "RING" };
@@ -291,6 +311,31 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
     if (museum.slots.has(e.key) && !filled.has(e.key)) filled.set(e.key, e);
     else loose[groupOf(e.key, e.item, e.code)].push(e);
   }
+  // Extra copies past what is worth having (copiesNeeded, the museum copy counting as one; plus one ethereal
+  // weapon or armor for a mercenary when any build uses the item) go to TRASH, the lowest rolls first. They are
+  // in the order sorted above: non-ethereal first, best rolls first.
+  const keep = new Map(); // key -> { plain, eth } copies still to keep
+  const extra = [];
+  for (const e of loose.DUP) {
+    const museumCopy = filled.get(e.key);
+    if (!museumCopy) {
+      extra.push(e); // no fixed slot (legacy items): kept as before
+      continue;
+    }
+    const eth = (x) => x.item.flags.includes("ETHEREAL");
+    if (!keep.has(e.key)) {
+      const needed = copiesNeeded(e.key);
+      const merc = needed > 0 && ["weapons", "armor"].includes(items[e.code].table);
+      keep.set(e.key, { plain: Math.max(0, needed - (eth(museumCopy) ? 0 : 1)), eth: merc && !eth(museumCopy) ? 1 : 0 });
+    }
+    const left = keep.get(e.key);
+    const kind = eth(e) ? "eth" : "plain";
+    if (left[kind] > 0) {
+      left[kind]--;
+      extra.push(e);
+    } else loose.TRASH.push(e);
+  }
+  loose.DUP = extra;
 
   const placed = new Map(museum.names.map((name) => [name, []]));
   const moves = [];

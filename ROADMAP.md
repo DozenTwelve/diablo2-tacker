@@ -31,7 +31,9 @@ back the new saves. Only tested on one real save folder so far; expect messier s
 - `--inbox 4,5`: only those shared stash pages are emptied, with the mules; other pages are working sets and stay.
 - Uniques and set items go to their museum slots or to `DUP` mules; groups that grow get more mules (`-AA`, `-AB`...).
 - `TRASH` mules: magic charms and jewels where every stat is a low roll (thresholds in `isJunk`,
-  `src/lib/organize.js`), for the player to look through. Nothing is deleted. The app lists them under "To clean".
+  `src/lib/organize.js`), and extra copies of uniques and set items past `copiesNeeded` (one per class whose
+  builds use the item, two for a ring; in single player a copy nobody wears only takes room), for the player to
+  look through. Nothing is deleted. The app lists them under "To clean". The museum keeps the best-rolled copy.
 - The dry run reports what the inbox pages bring: new museum items, new duplicates, likely junk.
 
 ## 5. Steam Deck plugin (released, not in the Decky store yet)
