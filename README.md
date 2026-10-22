@@ -57,7 +57,8 @@ walks through backing up, a dry run explained in plain words, and writing only a
 [decky/](decky/README.md) is a [Decky Loader](https://decky.xyz) plugin that opens the tracker from the quick access
 menu in Game Mode with the Deck's own saves, and gets the item icons from your installed game. It can also organize
 right on the Deck: it refuses while the game runs, backs up the save folder first and reads every written file back.
-Emptied characters you tick are deleted, and the Organize page lists every backup with a button to restore it.
+Emptied characters you tick are deleted, and the Organize page lists the backups (the newest 10 and the oldest are
+kept) with buttons to restore or delete them.
 
 ![The plugin on a Steam Deck: the quick access panel, then the tracker in Game Mode](docs/deck-demo.gif)
 
@@ -98,7 +99,7 @@ The app is React and Vite. `src/lib/` holds the logic (reading saves, item looku
 | `node scripts/check-saves.mjs <save dir>` | Read a save folder with the app's code and print a summary |
 | `node scripts/organize.mjs <save dir> <out dir> [--mode SoftCore:Modern] [--mules a,b] [--inbox 4,5] [--delete a,b] [--yes]` | Organize from the command line: prints the plan, and only with `--yes` writes to a new folder after the same checks as the web page |
 | `node scripts/check-organize.mjs <save dir>` | Regression checks for organizing (starting kit, gold, dead heroes, stash copies, running twice...) on a copy of a real save folder in memory |
-| `node scripts/check-parse.mjs <save dir>` | Regression checks for reading saves (cut-short stash, corpses, dead heroes, `._` files) |
+| `node scripts/check-parse.mjs <save dir>` | Regression checks for reading saves (cut-short stash, corpses, golems, dead heroes, `._` files, New finds verdicts); needs a folder with a `ModernSharedStashSoftCoreV2.d2i` |
 | `node scripts/check-props.mjs` | Check every catalog property shows as text |
 | `node scripts/check-junk.mjs` | Check the likely-junk rules |
 | `node scripts/check-zip.mjs` | Check the zip writer used for organized saves |

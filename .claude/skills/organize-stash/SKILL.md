@@ -49,7 +49,12 @@ would rather do it, walk them through it.
 
 D2R must be closed first: it writes the saves when it exits. Then the backup, before anything else: a copy of the
 whole folder, every file, e.g. `<save dir>-backup-<date>`. A folder pulled off a Deck is already a copy; leave it
-as it is, as the backup, and organize from it (the script only reads its input). Then read the saves:
+as it is, as the backup, and organize from it (the script only reads its input). On this computer, organize from
+that copy too, never from the player's own folder: step 4 compares the folder with it.
+
+Copies must keep the files' times (`cp -p`, `tar`, Explorer, or `robocopy /COPY:DAT`; plain `cp` stamps them
+now). D2R lists characters by when their save last changed, and the script dates every mule just below the
+oldest other character so the characters being played stay on top. Then read the saves:
 
 ```bash
 node scripts/check-saves.mjs <save dir>
@@ -112,11 +117,13 @@ yourself, and do it only when the player says yes for this run: D2R closed, the 
 
 First make sure the saves did not change since step 2 (the player played in between): the output was made from
 the saves as they were then, and copying it back would undo that play. Compare the save folder's `.d2s` and `.d2i`
-files with the ones organized (`cmp` each, or `diff -rq`); for a Deck, pull a fresh copy into another new folder
-the same way as in step 2 and compare that. If any differ, copy nothing: start again from step 2.
+files with the copy from step 2 that was organized, not with `<out dir>` (`cmp` each, or `diff -rq`); for a Deck,
+pull a fresh copy into another new folder the same way as in step 2 and compare that with the step 2 copy. If any
+differ, copy nothing: start again from step 2.
 
-Then copy every file from `<out dir>` except `plan.txt` and `delete.txt` into the save folder, replacing what is
-there, then delete the files `delete.txt` lists from the save folder, and nothing else. To a Deck, use the two
+`<out dir>` holds the saves that changed and every mule, changed or not, dated below the other characters. Copy
+every file from it except `plan.txt` and `delete.txt` into the save folder, keeping their times (see step 2),
+replacing what is there, then delete the files `delete.txt` lists from the save folder, and nothing else. To a Deck, use the two
 commands from docs/saves.md (without `COPYFILE_DISABLE=1` macOS adds `._*` files).
 Ask them to start the game and look at a few mules. If anything looks wrong: quit and put the backup back.
 
@@ -143,8 +150,8 @@ last time are level 1 characters, so they are emptied and rebuilt with everythin
 reuse their names. Characters with clashing names that are not being emptied stop the run.
 
 If the first run named mules with `--mules` (a level 1 character is a main, say), keep naming them: the mules the
-last run made (every name in its plan's last line, `UW-A:16 ...`) plus any new mules, never the main. Without
-`--mules` the default would empty that level 1 main.
+last run made (every character `check-saves` lists with a layout name: `UW-A`, `DUP-B`, `TRASH-A`...) plus any new
+mules, never the main. Without `--mules` the default would empty that level 1 main.
 
 ## When it fails
 
@@ -153,6 +160,11 @@ last run made (every name in its plan's last line, `UW-A:16 ...`) plus any new m
 | `no mules in <mode>` | No level 1 character in that mode: wrong `--mode`, or name the mules with `--mules`. |
 | `<file> does not round-trip, not touching it` | The parser can't write that save back exactly; nothing is written. Stop here: don't leave the file out and run again (a new mule could take its name, and copying back would replace it). Tell the player this folder can't be organized for now and report it as a GitHub issue. |
 | `--inbox takes page numbers` | Pass page numbers with a space: `--inbox 4,5`. |
+| `unknown option ...` / `... needs a value` | A mistyped option (`--inbox=4,5`): nothing ran; fix the command. |
+| `not characters of <mode>: ...` | A name in `--mules` is not a character of that mode (typo, or another mode). |
+| `... has no page N to empty` | `--inbox` names a page the shared stash doesn't have; check-saves lists the pages. |
+| `... has items on its corpse or in its Iron Golem` | Those items aren't the mule's to move: the player picks up the corpse (or dismisses the golem) in the game first. |
+| `two saves named ... apart from upper and lower case` | Two files for one name (`RW-A.d2s` and `rw-a.d2s`): the player keeps one. |
 | `--delete takes only characters left empty: ...` | Only names from the dry run's `left empty` line can be deleted. |
 | `mule names already used by other characters: ...` | A character that is not being emptied has a mule's name (`UW-A`...). Add it to `--mules` if it is an old mule, or have the player rename it. |
 | `<out dir> or <out dir>.partial already exists` | Pick a new output folder, or delete the old one after checking it is not needed. |

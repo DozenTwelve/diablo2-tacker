@@ -40,7 +40,9 @@ them back differently:
 
 - **The web page's zip** is the whole save folder as organized, characters you ticked for deletion already left
   out: delete every file in the save folder and put the zip's files in their place.
-- **`scripts/organize.mjs`** writes only the saves that changed: copy them in, as below.
+- **`scripts/organize.mjs`** writes the saves that changed and every mule (dated below the other characters, so
+  D2R lists the characters being played first): copy them in, as below, keeping the files' times (`cp -p`, `tar`,
+  Explorer or `robocopy /COPY:DAT`).
 
 1. Quit D2R completely. The game writes its saves on exit and would overwrite the new ones.
 2. Back up the whole save folder, e.g. copy it to `D2R-backup-<date>`.
