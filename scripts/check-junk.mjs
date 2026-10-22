@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import { createServer } from "vite";
 
-const vite = await createServer({ server: { middlewareMode: true }, appType: "custom", logLevel: "error" });
+const vite = await createServer({ server: { middlewareMode: true, hmr: false }, appType: "custom", logLevel: "error" });
 try {
   const { isJunk } = await vite.ssrLoadModule("/src/lib/organize.js");
   // stats as in the save JSON; life (7) is stored shifted by 8

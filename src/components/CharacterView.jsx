@@ -45,7 +45,7 @@ function museumSlots(prefix) {
   if (!museums.has(prefix)) museums.set(prefix, museumLayout(prefix).slots);
   return museums.get(prefix);
 }
-const PREFIXES = ["SoftCore:Modern", "HardCore:Modern", "SoftCore:Legacy", "HardCore:Legacy"].map(modePrefix);
+const PREFIXES = ["SoftCore", "HardCore"].flatMap((core) => ["Modern", "Legacy", "Classic"].map((v) => modePrefix(`${core}:${v}`)));
 
 // Each museum mule's filled and total fixed slots
 function museumFill(items) {

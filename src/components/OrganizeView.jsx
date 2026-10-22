@@ -15,7 +15,7 @@ import PageTitle from "./PageTitle";
 
 const modeLabel = (mode, lang) => {
   const [core, version] = mode.split(":");
-  return t(core === "HardCore" ? "hardcore" : "softcore", lang) + (version === "Legacy" ? t("legacyMode", lang) : "");
+  return t(core === "HardCore" ? "hardcore" : "softcore", lang) + ({ Legacy: t("legacyMode", lang), Classic: t("classicMode", lang) }[version] ?? "");
 };
 const toBase64 = (bytes) => {
   let s = "";

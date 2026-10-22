@@ -8,7 +8,7 @@ import { createServer } from "vite";
 const dir = process.argv[2];
 if (!dir) throw new Error("usage: node scripts/check-saves.mjs <save dir>");
 
-const vite = await createServer({ server: { middlewareMode: true }, appType: "custom", logLevel: "error" });
+const vite = await createServer({ server: { middlewareMode: true, hmr: false }, appType: "custom", logLevel: "error" });
 try {
   // Node can't fetch the .wasm by URL, so init the shared module instance with the bytes first
   const wasm = await vite.ssrLoadModule("/wasm/pkg/d2_parser.js");
@@ -18,7 +18,8 @@ try {
   const { groupByKey, totalCount, locationLines } = await vite.ssrLoadModule("/src/lib/inventory.js");
   const { default: statData } = await vite.ssrLoadModule("/src/data/stats.json");
 
-  const files = readdirSync(dir).map((name) => new File([readFileSync(join(dir, name))], name));
+  const names = readdirSync(dir, { withFileTypes: true }).filter((d) => d.isFile()).map((d) => d.name); // not subfolders (backups)
+  const files = names.map((name) => new File([readFileSync(join(dir, name))], name));
   const { items, owners, errors, files: n } = await parseSaveFiles(files);
   const owned = groupByKey(items);
 

@@ -64,8 +64,9 @@ function pack(prefix, units) {
   return mules;
 }
 
-// Mule names start with H for hardcore and L for legacy saves ("HUW-A"), so every mode's mules fit in one folder
-export const modePrefix = (mode) => (mode.startsWith("HardCore") ? "H" : "") + (mode.endsWith("Legacy") ? "L" : "");
+// Mule names start with H for hardcore, L for legacy and C for classic saves ("HUW-A"), so every mode's mules fit in one folder
+export const modePrefix = (mode) =>
+  (mode.startsWith("HardCore") ? "H" : "") + (mode.endsWith("Legacy") ? "L" : mode.endsWith("Classic") ? "C" : "");
 
 // Fixed slots for every collectible unique and set item: key -> { mule, code, page, x, y }
 export function museumLayout(namePrefix = "") {
@@ -182,9 +183,12 @@ function groupOf(key, item, code) {
   return ["weapons", "armor"].includes(items[code].table) ? "BASE" : "MISC";
 }
 
-// Starting kit: a plain weapon, buckler, potion or scroll that new characters get, still where it started
+// Starting kit: a plain weapon, buckler, potion or scroll the game gave a new character (its own flag says so),
+// never socketed, still where it started. A white hand axe found later, or one made into a runeword, is kept.
 const isStarter = (item) =>
   items[codeOfNumber(item.code)]?.starter &&
+  item.flags.includes("STARTER_ITEM") &&
+  !item.flags.includes("SOCKETED") &&
   item.quality === "Normal" &&
   (item.position.mode !== "Stored" || item.position.store_page === "Inventory");
 const moveTo = (item, { page, x, y }) => ({
@@ -192,12 +196,19 @@ const moveTo = (item, { page, x, y }) => ({
   position: { ...item.position, mode: "Stored", body_location: "None", inv_x: x, inv_y: y, store_page: page },
 });
 
-// Game mode of a character or shared stash file: "SoftCore:Modern" (Reign of the Warlock), "HardCore:Legacy"...
+// Game mode of a character or shared stash file: "SoftCore:Modern" (Reign of the Warlock), "HardCore:Legacy"
+// (Lord of Destruction), "SoftCore:Classic" (no expansion: no shared stash, can't hold expansion items)...
 export const modeOfCharacter = (json) =>
   `${json.character.flags.includes("HARDCORE") ? "HardCore" : "SoftCore"}:${
-    json.character.preview.game_version === "ReignOfTheWarlock" ? "Modern" : "Legacy"
+    { ReignOfTheWarlock: "Modern", Classic: "Classic" }[json.character.preview.game_version] ?? "Legacy"
   }`;
-export const modeOfStash = (name) => `${/hardcore/i.test(name) ? "HardCore" : "SoftCore"}:${/^modern/i.test(name) ? "Modern" : "Legacy"}`;
+// Only the file names the game reads; a copy beside them ("... - Copy.d2i") has no mode and is never emptied
+export const modeOfStash = (name) => {
+  const m = /^(modern)?sharedstash(softcore|hardcore)(v2)?(\.d2i)?$/i.exec(name);
+  return m && `${/^hard/i.test(m[2]) ? "HardCore" : "SoftCore"}:${m[1] ? "Modern" : "Legacy"}`;
+};
+const goldOf = (json) => json.stats.filter((s) => GOLD_STATS.has(s.id)).reduce((n, s) => n + s.value, 0);
+const deadHardcore = (json) => json.character.flags.includes("HARDCORE") && json.character.flags.includes("DEAD");
 
 // Mules of a mode: the named characters, or else every level 1 character
 export const mulesOf = (saves, mode, names) =>
@@ -215,14 +226,25 @@ export const filesOfCharacter = (name, fileNames) =>
 // saves: [{ name, ext: "d2s" | "d2i", json }]; options: { mode, mules: names, inbox: shared stash page numbers }
 // -> { saves: [{ name, ext, json, template? }], report }. Only changed saves are returned; new mules carry
 // `template`, the save they were cloned from. Mules whose names the new layout uses are rewritten in place.
-// report: { mules: names emptied, leftEmpty: emptied mules no new mule is named after (the player may delete them),
+// report: { mules: names emptied, leftEmpty: emptied level 1 mules without gold no new mule is named after (the
+//   player may delete them),
 //   moved, dropped: [item], moves: [{ from, key, to, page, x, y, group }],
 //   inbox: what the shared stash pages brought: { museum: keys, dup: keys, trash: keys, other }, ... }
 export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox } = {}) {
   // By name: the same saves give the same result whatever order the files came in (folder picker, Deck, Node)
   const mules = mulesOf(saves, mode, names).sort((a, b) => a.name.localeCompare(b.name));
+  const unknown = names?.filter((n) => !mules.some((s) => s.name.toLowerCase() === n.toLowerCase())) ?? [];
+  if (unknown.length) throw new Error(`not characters of ${mode}: ${unknown.join(", ")}`);
   if (!mules.length) throw new Error(`no mules in ${mode}`);
-  const template = mules.find((s) => s.json.character.class === "Barbarian") ?? mules[0];
+  // Items on a corpse or in an Iron Golem are not the mule's to move: the player picks them up first
+  for (const s of mules) {
+    if (s.json.corpses?.some((c) => c.items.length) || s.json.iron_golem?.golem_item)
+      throw new Error(`${s.name} has items on its corpse or in its Iron Golem: pick them up in the game first`);
+  }
+  // New mules copy a living level 1 character, a Barbarian if any: never a main's level or a dead hardcore hero
+  const blank = mules.filter((s) => s.json.character.level === 1 && !deadHardcore(s.json));
+  const template = blank.find((s) => s.json.character.class === "Barbarian") ?? blank[0];
+  if (!template) throw new Error(`no living level 1 character among the mules of ${mode} to make new mules from`);
 
   const source = []; // { item, from }
   const dropped = [];
@@ -239,6 +261,8 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
     out.set(s.name.toLowerCase(), { ...s, json });
   }
   for (const s of saves.filter((s) => s.ext === "d2i" && modeOfStash(s.name) === mode)) {
+    const missing = inbox?.filter((n) => s.json[n - 1]?.tab_type !== "Normal") ?? [];
+    if (missing.length) throw new Error(`${s.name} has no page ${missing.join(", ")} to empty`);
     const tabs = s.json.map((tab, i) => {
       if (tab.tab_type !== "Normal" || (inbox && !inbox.includes(i + 1))) return tab;
       source.push(...tab.items.map((item) => ({ item, from: `${s.name} ${i + 1}`, stash: true })));
@@ -252,8 +276,9 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
   const filled = new Map(); // museum key -> item
   const loose = { DUP: [], RW: [], CHARM: [], JEWEL: [], RING: [], MAG: [], BASE: [], MISC: [], TRASH: [] };
   const entries = source.map((e) => ({ ...e, code: codeOfNumber(e.item.code), key: keyOf(e.item, codeOfNumber(e.item.code)) }));
-  // Non-ethereal copies take the museum slot first
-  entries.sort((a, b) => a.item.flags.includes("ETHEREAL") - b.item.flags.includes("ETHEREAL"));
+  // Non-ethereal copies take the museum slot first, then the copy already there, so organizing again moves nothing
+  const home = (e) => e.from.split(" ")[0].toLowerCase() === museum.slots.get(e.key)?.mule.toLowerCase();
+  entries.sort((a, b) => a.item.flags.includes("ETHEREAL") - b.item.flags.includes("ETHEREAL") || home(b) - home(a));
   for (const e of entries) {
     if (museum.slots.has(e.key) && !filled.has(e.key)) filled.set(e.key, e);
     else loose[groupOf(e.key, e.item, e.code)].push(e);
@@ -280,14 +305,20 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
   const clash = [...placed.keys()].filter((name) => others.has(name.toLowerCase()));
   if (clash.length) throw new Error(`mule names already used by other characters: ${clash.join(", ")}`);
   for (const [name, list] of placed) {
+    // A mule being emptied keeps its own save (its gold, its name as written: "rw-a" stays one file); a new
+    // one copies the template without its gold
+    const own = mules.find((s) => s.name.toLowerCase() === name.toLowerCase());
+    if (own) {
+      const save = out.get(name.toLowerCase());
+      save.json = { ...save.json, items: list };
+      continue;
+    }
     const json = structuredClone(template.json);
     json.character.preview.name = name;
     if (json.character.name) json.character.name = name; // saves before v98 keep the name here
     json.items = list;
     json.stats = json.stats.filter((s) => !GOLD_STATS.has(s.id));
-    json.corpses = [];
     if (json.merc_items) json.merc_items = { ...json.merc_items, items: [] };
-    if (json.iron_golem) json.iron_golem = { ...json.iron_golem, golem_item: null };
     out.set(name.toLowerCase(), { name, ext: "d2s", json, template: template.name });
   }
 
@@ -296,7 +327,10 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
   const report = {
     mode,
     mules: mules.map((s) => s.name),
-    leftEmpty: mules.filter((s) => ![...placed.keys()].some((n) => n.toLowerCase() === s.name.toLowerCase())).map((s) => s.name).sort((a, b) => a.localeCompare(b)),
+    leftEmpty: mules
+      .filter((s) => s.json.character.level === 1 && !goldOf(s.json) && ![...placed.keys()].some((n) => n.toLowerCase() === s.name.toLowerCase()))
+      .map((s) => s.name)
+      .sort((a, b) => a.localeCompare(b)),
     template: template.name,
     moved: source.length,
     dropped,
@@ -316,7 +350,7 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
 }
 
 // Organize save files and write the result, checked before anything is returned: every item is kept exactly
-// once (only starting kit is dropped), and every written character holds only stored items, inside its stash
+// once (only starting kit is dropped), gold stays, and every written character holds only stored items, inside its stash
 // (10x10) or inventory (10x4), not overlapping. Throws when a check fails or a save would not round-trip.
 // files: [{ name: "Zanna.d2s", bytes }]; wasm: the parser (parseD2s, parseD2i, writeD2s, writeD2i); options as organize()
 // -> { files: [{ name, bytes, template? }] (only changed saves), saves (as read), report }
@@ -351,8 +385,14 @@ export function organizeFiles(files, wasm, options) {
   );
   const after = changed.flatMap((s) => held(written.get(`${s.name}.${s.ext}`), s.ext, options?.inbox));
   for (const item of report.dropped) {
-    if (!items[codeOfNumber(item.code)]?.starter || item.quality !== "Normal") throw new Error("dropped something that is not starting kit");
+    if (!item.flags.includes("STARTER_ITEM") || item.flags.includes("SOCKETED") || item.quality !== "Normal")
+      throw new Error("dropped something that is not starting kit");
   }
+  // Gold stays where it was: the emptied characters hold as much before as the written characters after
+  const gold = (list) => list.reduce((n, json) => n + goldOf(json), 0);
+  const writtenD2s = changed.filter((s) => s.ext === "d2s").map((s) => written.get(`${s.name}.d2s`));
+  if (gold(saves.filter((s) => s.ext === "d2s" && emptied.has(s.name)).map((s) => s.json)) !== gold(writtenD2s))
+    throw new Error("gold check failed: gold was lost or added");
   const remaining = new Map();
   for (const f of before.map(fingerprint)) remaining.set(f, (remaining.get(f) ?? 0) + 1);
   for (const f of [...report.dropped, ...after].map(fingerprint)) {

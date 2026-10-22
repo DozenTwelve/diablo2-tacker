@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import { createServer } from "vite";
 
-const vite = await createServer({ server: { middlewareMode: true }, appType: "custom", logLevel: "error" });
+const vite = await createServer({ server: { middlewareMode: true, hmr: false }, appType: "custom", logLevel: "error" });
 try {
   const { builds, keysOfOption, SLOTS } = await vite.ssrLoadModule("/src/lib/builds.js");
   const CLASSES = ["Amazon", "Sorceress", "Necromancer", "Paladin", "Barbarian", "Druid", "Assassin", "Warlock"];
