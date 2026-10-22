@@ -354,6 +354,8 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
       ["UW", "UA", "UJ", "SET"].map((p) => [p, { owned: owned(p).filter((s) => filled.has(s.ref)).length, total: owned(p).length }]),
     ),
     newMules: [...placed].map(([name, list]) => ({ name, items: list.length })),
+    // Every mule character after this run: the emptied ones (as written) and the new ones
+    muleNames: [...mules.map((s) => s.name), ...[...placed.keys()].filter((n) => !mules.some((s) => s.name.toLowerCase() === n.toLowerCase()))],
     moves,
     inbox: {
       museum: fromStash("MUSEUM"),
@@ -363,6 +365,17 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
     },
   };
   return { saves: [...out.values()], report };
+}
+
+// D2R lists characters by when their save last changed, newest first. After organizing every mule gets a time just
+// before the oldest other character's, in name order, so the characters being played stay on top.
+// times: { "Name.d2s": ms } of the folder's characters; mules: mule names -> { "Mule.d2s": ms } (none without others)
+export function muleTimes(times, mules) {
+  const isMule = new Set(mules.map((n) => `${n}.d2s`.toLowerCase()));
+  const others = Object.entries(times).filter(([f]) => /\.d2s$/i.test(f) && !isMule.has(f.toLowerCase()));
+  if (!others.length) return {};
+  const start = Math.min(...others.map(([, ms]) => ms)) - 60_000;
+  return Object.fromEntries([...mules].sort((a, b) => a.localeCompare(b)).map((n, i) => [`${n}.d2s`, start - i * 1000]));
 }
 
 // Organize save files and write the result, checked before anything is returned: every item is kept exactly

@@ -4,7 +4,7 @@ import { deckBackups, deckSaveFiles, deleteDeckBackup, onDeck, restoreDeck } fro
 import { roleOf } from "../lib/inventory";
 import { LOCALES, t } from "../lib/i18n";
 import { SKILL } from "../lib/links";
-import { filesOfCharacter, modeOfCharacter, modeOfStash, organizeFiles } from "../lib/organize";
+import { filesOfCharacter, modeOfCharacter, modeOfStash, muleTimes, organizeFiles } from "../lib/organize";
 import { loadParser, saveFolder, statsOf } from "../lib/parseSaves";
 import { describeStats } from "../lib/stats";
 import { Link } from "../lib/router";
@@ -154,7 +154,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
   const download = async () => {
     try {
       if (!(await unchanged(saveFolder(rawFiles).files))) return setState({ error: t("savesChangedPick", lang) });
-      const { files: out } = organizeFiles(files, wasm, options);
+      const { files: out, report: done } = organizeFiles(files, wasm, options);
       const names = new Set(files.map((f) => f.name));
       const changed = new Map(out.map((f) => [f.name, f]));
       const companions = out.flatMap((f) =>
@@ -168,14 +168,19 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       );
       // The whole save folder as organized, not only what changed: a zip that looks like the organized saves
       // must be them, or putting it in place of the folder loses every character left as it was
-      // Every file keeps its time (D2R lists characters by it): a rewritten save its own, a new mule its template's
+      // Every file keeps its time but the mules, which go just before the oldest other character (D2R lists
+      // characters by it, newest first): a rewritten save its own, a new mule its template's, then muleTimes
       const gone = new Set(removeFiles);
       const timeOf = (name) => files.find((o) => o.name === name)?.time;
+      const order = muleTimes(
+        Object.fromEntries(files.filter((f) => /\.d2s$/i.test(f.name) && !gone.has(f.name)).map((f) => [f.name, f.time])),
+        done.muleNames.filter((n) => !remove.includes(n)),
+      );
       const folder = [
         ...files.map((f) => (changed.has(f.name) ? { ...changed.get(f.name), time: f.time } : f)),
         ...out.filter((f) => !names.has(f.name)).map((f) => ({ ...f, time: timeOf(`${f.template}.d2s`) })),
         ...companions,
-      ];
+      ].map((f) => (order[f.name] ? { ...f, time: order[f.name] } : f));
       const url = URL.createObjectURL(new Blob([zip(folder.filter((f) => !gone.has(f.name)))], { type: "application/zip" }));
       const a = document.createElement("a");
       a.href = url;
@@ -197,13 +202,15 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
         return;
       }
       // Characters to delete are not written first; the plugin deletes them after the backup
-      const out = organizeFiles(files, wasm, options).files.filter((f) => !remove.some((name) => f.name === `${name}.d2s`));
+      const done = organizeFiles(files, wasm, options);
+      const out = done.files.filter((f) => !remove.some((name) => f.name === `${name}.d2s`));
       const response = await fetch("/api/write", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           files: out.map((f) => ({ name: f.name, template: f.template, data: toBase64(f.bytes) })),
           delete: remove,
+          mules: done.report.muleNames.filter((n) => !remove.includes(n)), // put below the others in D2R's list
         }),
       });
       const result = await response.json();

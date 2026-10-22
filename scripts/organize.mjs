@@ -41,7 +41,7 @@ const vite = await createServer({ server: { middlewareMode: true, hmr: false }, 
 try {
   const wasm = await vite.ssrLoadModule("/wasm/pkg/d2_parser.js");
   wasm.initSync({ module: readFileSync(new URL("../wasm/pkg/d2_parser_bg.wasm", import.meta.url)) });
-  const { filesOfCharacter, organizeFiles } = await vite.ssrLoadModule("/src/lib/organize.js");
+  const { filesOfCharacter, muleTimes, organizeFiles } = await vite.ssrLoadModule("/src/lib/organize.js");
   const { codeOfNumber, labelOf } = await vite.ssrLoadModule("/src/lib/gameData.js");
   const { ownerLabel } = await vite.ssrLoadModule("/src/lib/inventory.js");
   const { describeStats } = await vite.ssrLoadModule("/src/lib/stats.js");
@@ -89,6 +89,17 @@ try {
         }
       }
     }
+    // Then every mule, changed or not, goes just before the oldest other character in D2R's list (muleTimes):
+    // an unchanged one is copied out too, so copying the folder back puts it there
+    const characters = readdirSync(dir).filter((f) => f.endsWith(".d2s") && !doomed.some((n) => `${n}.d2s` === f));
+    const order = muleTimes(
+      Object.fromEntries(characters.map((f) => [f, statSync(join(dir, f)).mtimeMs])),
+      report.muleNames.filter((n) => !doomed.includes(n)),
+    );
+    for (const [file, ms] of Object.entries(order)) {
+      if (!existsSync(join(partial, file))) copyFileSync(join(dir, file), join(partial, file));
+      utimesSync(join(partial, file), ms / 1000, ms / 1000);
+    }
     const plan = report.moves
       .map((m) => {
         const [owner, place] = m.from.split(" ");
@@ -105,7 +116,7 @@ try {
     rmSync(partial, { recursive: true, force: true });
     throw e;
   }
-  console.log(`check passed, ${changed.length} saves written to ${outDir}`);
+  console.log(`check passed, ${changed.length} saves changed; written with every mule (dated below the other characters) to ${outDir}`);
 } finally {
   await vite.close();
 }

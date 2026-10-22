@@ -143,9 +143,10 @@ SAVE_NAME = re.compile(r"[^./\\\x00][^/\\\x00]*\.d2[si]")
 COMPANIONS = (".ctl", ".key", ".ma0", ".map")  # a character's other files, copied from the template for new mules
 
 
-def write_saves(folder, files, backup_root, delete=()):
+def write_saves(folder, files, backup_root, delete=(), mules=()):
     """Write organized saves into the save folder: files is [{name, bytes, template?}] from the web app's
-    organizeFiles; delete: names of emptied characters the player chose to delete, with their other files.
+    organizeFiles; delete: names of emptied characters the player chose to delete, with their other files;
+    mules: every mule after organizing, put below the other characters in D2R's list (_order).
     The game must not be running. The folder's files are backed up first, each file is written next to its
     target and renamed over it, then read back. Returns the backup folder."""
     with _lock:
@@ -157,6 +158,9 @@ def write_saves(folder, files, backup_root, delete=()):
         for name in delete:
             if not SAVE_NAME.fullmatch(name + ".d2s") or any(f["name"] == name + ".d2s" for f in files):
                 raise ValueError(f"not a character to delete: {name}")
+        for name in mules:
+            if not SAVE_NAME.fullmatch(name + ".d2s"):
+                raise ValueError(f"not a mule name: {name}")
         backup = _backup(folder, backup_root, {"reason": "organize"})
         if game_running():  # started while the backup was copied
             raise GameRunning("D2R is running; quit the game first")
@@ -168,12 +172,28 @@ def write_saves(folder, files, backup_root, delete=()):
                 for other in os.listdir(folder):
                     if re.fullmatch(re.escape(name) + r"\.(d2s|ctl|key|map|ma\d+)", other):
                         os.remove(os.path.join(folder, other))
+            _order(folder, mules)
             os.sync()
         except Exception as e:
             _undo(folder, backup_root, backup, e)
         _unmark(backup_root)
         _prune(backup_root, folder, keep={os.path.basename(backup)})
         return backup
+
+
+def _order(folder, mules):
+    """D2R lists characters by when their save last changed, newest first: every mule (even one unchanged) gets a
+    time just before the oldest other character's, in name order, so the characters played stay on top. As
+    muleTimes in src/lib/organize.js."""
+    is_mule = {m.lower() + ".d2s" for m in mules}
+    others = [os.path.getmtime(os.path.join(folder, f)) for f in os.listdir(folder) if f.lower().endswith(".d2s") and f.lower() not in is_mule]
+    if not others:
+        return
+    start = min(others) - 60
+    for i, name in enumerate(sorted(mules, key=str.lower)):
+        path = os.path.join(folder, name + ".d2s")
+        if os.path.isfile(path):
+            os.utime(path, (start - i, start - i))
 
 
 # A backup's name is when it was made, in UTC (Z; older plugin versions used local time without it), -2... for a
@@ -510,7 +530,7 @@ class Handler(SimpleHTTPRequestHandler):
                 result = {}
             else:
                 files = [{**f, "bytes": base64.b64decode(f["data"])} for f in body["files"]]
-                result = {"backup": write_saves(self.save_folder(), files, self.backup_dir, body.get("delete", []))}
+                result = {"backup": write_saves(self.save_folder(), files, self.backup_dir, body.get("delete", []), body.get("mules", []))}
             status = 200
         except GameRunning as e:
             result, status = {"error": str(e), "running": True}, 409

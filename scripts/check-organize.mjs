@@ -13,7 +13,7 @@ const vite = await createServer({ server: { middlewareMode: true, hmr: false }, 
 try {
   const wasm = await vite.ssrLoadModule("/wasm/pkg/d2_parser.js");
   wasm.initSync({ module: readFileSync(new URL("../wasm/pkg/d2_parser_bg.wasm", import.meta.url)) });
-  const { organizeFiles } = await vite.ssrLoadModule("/src/lib/organize.js");
+  const { muleTimes, organizeFiles } = await vite.ssrLoadModule("/src/lib/organize.js");
 
   const parse = (name, bytes) => JSON.parse(name.endsWith(".d2s") ? wasm.parseD2s(bytes) : wasm.parseD2i(bytes));
   const write = (name, json) => (name.endsWith(".d2s") ? wasm.writeD2s : wasm.writeD2i)(JSON.stringify(json));
@@ -110,6 +110,16 @@ try {
     const files = [...organized, { ...spare, name: "CHARM-ZZ.d2s" }];
     const r = run(files);
     assert(r.report.mules.includes("CHARM-ZZ") && !r.report.leftEmpty.includes("CHARM-ZZ"));
+  });
+
+  check("every mule after the run is listed, and dated below the other characters in D2R's list", () => {
+    const names = first.report.muleNames;
+    assert(first.report.newMules.every((m) => names.some((n) => n.toLowerCase() === m.name.toLowerCase())));
+    assert(first.report.mules.every((n) => names.includes(n)));
+    const times = { "Main.d2s": 2_000_000, "Old.d2s": 1_000_000, ...Object.fromEntries(names.map((n) => [`${n}.d2s`, 9_000_000])) };
+    const order = muleTimes(times, names);
+    assert(Object.values(order).every((ms) => ms < 1_000_000) && Object.keys(order).length === names.length);
+    assert.deepEqual(muleTimes({ "A.d2s": 5 }, ["A"]), {}); // only mules: nothing to go below
   });
 
   check("a mistyped mule name or a missing inbox page stops the run", () => {
