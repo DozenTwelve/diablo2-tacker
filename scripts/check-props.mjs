@@ -12,7 +12,7 @@ const NOT_SHOWN = new Set(["dur", "state", "bloody", "fade", "pois-len", "cold-l
 const vite = await createServer({ server: { middlewareMode: true, hmr: false }, appType: "custom", logLevel: "error" });
 try {
   const { uniques, sets, runewords } = await vite.ssrLoadModule("/src/lib/gameData.js");
-  const { propLines, rollScore } = await vite.ssrLoadModule("/src/lib/props.js");
+  const { propLines, propStats, rollScore } = await vite.ssrLoadModule("/src/lib/props.js");
   const { describeStats } = await vite.ssrLoadModule("/src/lib/stats.js");
 
   const all = [
@@ -40,6 +40,11 @@ try {
   // Call to Arms at its lowest +200% enhanced damage, with Ohm's +50% on top: a 0 roll, not a perfect one
   const cta = runewords.find((w) => w.en === "Call to Arms");
   assert.equal(rollScore({ stats: [[17, 0, 250], [18, 0, 250]], rolls: [[17, 0, 200], [18, 0, 200]] }, cta.props), 0);
+  // Two-handed max damage (stat 24, not 22) and sockets count: Cliffkiller at its best, a Crown of Ages at 2 sockets
+  const unique = (name) => uniques.find((u) => u.en === name);
+  const best = (u) => rollScore({ stats: propStats(u.props, 1, u.lvl).map(([id, layer, value]) => [{ 21: 23, 22: 24 }[id] ?? id, layer, value]), sockets: 2 }, u.props);
+  assert.equal(best(unique("Cliffkiller")), 100);
+  assert(rollScore({ stats: [], sockets: 2 }, unique("Crown of Ages").props) > rollScore({ stats: [], sockets: 1 }, unique("Crown of Ages").props));
   for (const [code, names] of [...silent].sort((a, b) => b[1].length - a[1].length)) {
     console.log(`${code}: ${names.length} (${names.slice(0, 4).join(", ")})`);
   }

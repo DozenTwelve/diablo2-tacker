@@ -95,7 +95,7 @@ try {
     while (cut > 0 && !fewer(pages(stash.bytes.slice(0, cut)))) cut--;
     assert(cut > 0, "no page boundary to cut at");
     const data = await read(replace(stash.name, stash.bytes.slice(0, cut)));
-    assert(data.errors.some((e) => e.includes("cut short")), data.errors.join("\n"));
+    assert(data.damaged.includes(stash.name), JSON.stringify(data.damaged));
   });
 
   await check("macOS ._ files are not saves", async () => {
@@ -107,6 +107,11 @@ try {
   await check("items on a corpse count", async () => {
     const data = await read(change(`${holder.name}.d2s`, (j) => (j.corpses = [{ unused: 0, x: 0, y: 0, items: [structuredClone(j.items[0])] }])));
     assert(data.items.some((i) => i.owner === holder.name && i.place === "corpse"));
+  });
+
+  await check("an Iron Golem's item counts", async () => {
+    const data = await read(change(`${holder.name}.d2s`, (j) => (j.iron_golem = { golem_item: structuredClone(j.items[0]) })));
+    assert(data.items.some((i) => i.owner === holder.name && i.place === "golem"));
   });
 
   await check("a dead hardcore hero's items don't count", async () => {

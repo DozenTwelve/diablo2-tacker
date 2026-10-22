@@ -90,7 +90,9 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
       </div>
       {error && <p className="text-sm text-red-400">{error}</p>}
       {notStored && <p className="text-sm text-red-400">{t("notStored", lang)}</p>}
+      {saveData?.subfolder && <p className="text-sm gothic-text-muted">{t("readSubfolder", lang, saveData.subfolder)}</p>}
       {saveData?.skipped > 0 && <p className="text-sm gothic-text-muted">{t("skippedSubfolders", lang, saveData.skipped)}</p>}
+      {saveData?.damaged?.length > 0 && <p className="text-sm text-red-400">{t("damagedSaves", lang, saveData.damaged.join(t("listSeparator", lang)))}</p>}
       {saveData?.errors.map((err, i) => (
         <p key={i} className="text-sm text-red-400">
           {err}
@@ -115,7 +117,7 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
   return (
     <details ref={menu} className="relative">
       <summary
-        className={`text-sm cursor-pointer whitespace-nowrap ${saveData?.errors.length || notStored ? "text-red-400" : "gothic-text-muted"}`}
+        className={`text-sm cursor-pointer whitespace-nowrap ${saveData?.errors.length || saveData?.damaged?.length || notStored ? "text-red-400" : "gothic-text-muted"}`}
       >
         {saveData ? t("savesShort", lang, saveData.files) : t("loadSaves", lang)}
       </summary>

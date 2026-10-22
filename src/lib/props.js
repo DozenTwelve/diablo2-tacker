@@ -19,7 +19,7 @@ const INDESTRUCTIBLE = 152;
 // A skill on event with level 0 takes it from the item level: (item level - skill's required level) / 3.9,
 // lowest from lvl (the item's lowest level), highest from 99.
 // ponytail: formula from the Phrozen Keep notes, checked on one save (Snowclash, item level 87 -> 16)
-function propStats(props, pick, lvl = 1) {
+export function propStats(props, pick, lvl = 1) {
   const out = [];
   for (const [code, par, min, max] of props) {
     if (typeof par === "string") continue; // a param naming no skill (e.g. a visual state)
@@ -97,13 +97,18 @@ export const setBonusLines = (tiers = [], lang) =>
 // (one stat per property, so "all resistances" counts once), from what the item rolled itself: not what its
 // runes, gems or jewels add (saves read before rolls were recorded have only stats). null when nothing on it
 // can roll differently.
+// Min/max damage is stored per hand: one-handed (21/22), two-handed and bows (23/24), thrown (159/160)
+const DAMAGE_STATS = { 21: [21, 23, 159], 22: [22, 24, 160] };
+const SOCKETS = 194;
 export function rollScore(record, props) {
   const have = new Map((record.rolls ?? record.stats).map(([id, layer, value]) => [`${id}:${layer}`, value]));
+  const valueOf = ([id, layer]) =>
+    id === SOCKETS ? record.sockets : (DAMAGE_STATS[id] ?? [id]).map((s) => have.get(`${s}:${layer}`)).find((v) => v != null);
   const parts = [];
   for (const prop of props) {
     const [lo] = propStats([prop], 0);
     const [hi] = propStats([prop], 1);
-    const value = lo && have.get(`${lo[0]}:${lo[1]}`);
+    const value = lo && valueOf(lo);
     if (value == null || !hi || lo[2] === hi[2]) continue;
     parts.push(Math.min(1, Math.max(0, (value - lo[2]) / (hi[2] - lo[2]))));
   }

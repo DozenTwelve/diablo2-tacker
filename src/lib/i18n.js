@@ -356,6 +356,18 @@ const UI = {
     (n) => `${count(n, "save")} in subfolders (backups...) ${n === 1 ? "was" : "were"} left out; only the picked folder's own saves are read.`,
     (n) => `하위 폴더(백업 등)의 저장 파일 ${n}개는 읽지 않고, 선택한 폴더의 저장 파일만 읽었습니다.`,
   ],
+  readSubfolder: [
+    (d) => `读取的是子文件夹 ${d}（选中的文件夹里存档最浅、最多的那个）。`,
+    (d) => `讀取的是子資料夾 ${d}（選中的資料夾裡存檔最淺、最多的那個）。`,
+    (d) => `Read the subfolder ${d} (the shallowest one in the picked folder holding the most saves).`,
+    (d) => `하위 폴더 ${d}를 읽었습니다(선택한 폴더에서 가장 얕고 저장 파일이 가장 많은 곳).`,
+  ],
+  damagedSaves: [
+    (names) => `这些存档损坏或不完整（读回来和原文件不一样），物品可能缺失：${names}`,
+    (names) => `這些存檔損壞或不完整（讀回來和原檔案不一樣），物品可能缺失：${names}`,
+    (names) => `These saves are damaged or cut short (they don't read back the same); items may be missing: ${names}`,
+    (names) => `손상되었거나 잘린 저장 파일(다시 읽으면 원본과 다름), 아이템이 빠졌을 수 있음: ${names}`,
+  ],
   noSaveFiles: [
     "这里没有存档文件（.d2s、.d2i），已读取的存档保持不变。",
     "這裡沒有存檔檔案（.d2s、.d2i），已讀取的存檔保持不變。",
@@ -516,6 +528,7 @@ const UI = {
   belt: ["腰带", "腰帶", "Belt", "허리띠"],
   merc: ["雇佣兵", "傭兵", "Mercenary", "용병"],
   corpse: ["尸体", "屍體", "Corpse", "시체"],
+  golem: ["铁魔像", "鐵魔像", "Iron Golem", "아이언 골렘"],
   socketed: ["镶嵌中", "鑲嵌中", "Socketed", "홈에 장착됨"],
   advanced: ["叠放页", "疊放頁", "Stack tab", "보관함 탭"],
   Inferior: ["劣质", "劣質", "Low Quality", "질 낮은"],

@@ -20,7 +20,7 @@ try {
 
   const names = readdirSync(dir, { withFileTypes: true }).filter((d) => d.isFile()).map((d) => d.name); // not subfolders (backups)
   const files = names.map((name) => new File([readFileSync(join(dir, name))], name));
-  const { items, owners, errors, files: n } = await parseSaveFiles(files);
+  const { items, owners, errors, damaged, files: n } = await parseSaveFiles(files);
   const owned = groupByKey(items);
 
   // Characters and shared stash pages per game mode, highest level first, to pick mules and inbox pages from
@@ -53,8 +53,9 @@ try {
   const undescribed = new Set(items.flatMap((i) => i.stats.map(([id]) => id)).filter((id) => !statData.stats[id]?.pos));
   console.log("stat ids without a description:", [...undescribed].sort((a, b) => a - b).join(" "));
   errors.forEach((e) => console.log("ERROR", e));
+  damaged.forEach((f) => console.log("ERROR", `${f}: damaged or cut short (does not read back the same); items may be missing`));
   unmatched.forEach((i) => console.log("UNMATCHED", i.key, i.owner));
-  process.exitCode = errors.length || unmatched.length ? 1 : 0;
+  process.exitCode = errors.length || damaged.length || unmatched.length ? 1 : 0;
 } finally {
   await vite.close();
 }
