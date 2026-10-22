@@ -32,7 +32,10 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
     try {
       files = await files;
       if (!files.length) return;
-      onLoad(await parseSaveFiles(files), files);
+      const data = await parseSaveFiles(files);
+      // A folder without saves would replace the loaded ones with nothing
+      if (!data.files) return setError(t("noSaveFiles", lang));
+      onLoad(data, files);
       setError(null);
       if (menu.current) menu.current.open = false;
     } catch (e) {

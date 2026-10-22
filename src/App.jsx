@@ -52,15 +52,16 @@ export default function App() {
   const [first, name] = usePath();
   // The front page is the welcome page until saves are loaded
   const tab = !first ? (saveData ? "search" : "welcome") : TABS.includes(first) ? first : "search";
+  const [deckError, setDeckError] = useState(null); // the Deck's own read of the saves failed
   const [rawFiles, setRawFiles] = useState(null); // the files as last picked, for organizing; memory only
   const [offered, setOffered] = useStoredState("organizeOffered", false);
   const load = (data, files) => {
     setSaveData(data);
+    setDeckError(null);
     setRawFiles(data && files ? files : null);
   };
   const owned = useMemo(() => groupByKey(saveData?.items ?? []), [saveData]);
   // On the Deck, read the saves fresh every time the page opens
-  const [deckError, setDeckError] = useState(null);
   const readDeck = useCallback(
     () =>
       deckSaveFiles()
@@ -118,7 +119,7 @@ export default function App() {
 
       <main>
         {deckError && <p className="text-red-400 mb-6">{t("readFailed", lang, deckError)}</p>}
-        {rawFiles && !offered && tab !== "organize" && !onDeck && (
+        {rawFiles?.some((f) => f.webkitRelativePath) && !offered && tab !== "organize" && !onDeck && (
           <div className="panel mb-8 flex flex-wrap items-center gap-x-6 gap-y-2 max-w-3xl">
             <span>{t("organizeOffer", lang)}</span>
             <Link to="/organize" className="gothic-btn gothic-btn-small no-underline" onClick={() => setOffered(true)}>

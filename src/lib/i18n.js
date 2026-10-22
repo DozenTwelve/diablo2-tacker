@@ -107,6 +107,19 @@ const UI = {
     "정리하려면 원본 저장 파일이 필요한데, 페이지는 이를 보관하지 않습니다. 저장 폴더를 다시 선택하세요.",
   ],
   selectAll: ["全选", "全選", "All", "모두"],
+  needWholeFolder: [
+    "整理要选整个存档文件夹（「选择存档文件夹」），不能只选文件：下载的 zip 会替换整个文件夹。",
+    "整理要選整個存檔資料夾（「選擇存檔資料夾」），不能只選檔案：下載的 zip 會取代整個資料夾。",
+    "Organizing needs the whole save folder (Pick save folder), not single files: the zip replaces the whole folder.",
+    "정리하려면 파일이 아니라 저장 폴더 전체를 선택해야 합니다(저장 폴더 선택). zip이 폴더 전체를 대신합니다.",
+  ],
+  organizingFolder: [(d) => `整理的文件夹：${d}`, (d) => `整理的資料夾：${d}`, (d) => `Organizing the folder: ${d}`, (d) => `정리할 폴더: ${d}`],
+  savesChangedPick: [
+    "存档在选择之后变了（刚玩过游戏？），没有下载。请重新选择存档文件夹。",
+    "存檔在選擇之後變了（剛玩過遊戲？），沒有下載。請重新選擇存檔資料夾。",
+    "The saves changed since they were picked (played since?), so nothing was downloaded. Pick the save folder again.",
+    "선택한 뒤 저장 파일이 바뀌어(게임을 했나요?) 내려받지 않았습니다. 저장 폴더를 다시 선택하세요.",
+  ],
   download: ["下载整理好的存档", "下載整理好的存檔", "Download the organized saves", "정리된 저장 파일 내려받기"],
   putBack: ["放回去的步骤", "放回去的步驟", "Putting them back", "다시 넣는 방법"],
   putBackSteps: [
@@ -263,6 +276,12 @@ const UI = {
     "存檔在頁面打開後變了（剛玩過遊戲？），沒有寫入。已重新讀取，請再預覽一次。",
     "The saves changed since this page read them (played since?), so nothing was written. They are read again; preview once more.",
     "이 페이지가 읽은 뒤 저장 파일이 바뀌어(게임을 했나요?) 아무것도 쓰지 않았습니다. 다시 읽었으니 다시 미리 보기 하세요.",
+  ],
+  noSaveFiles: [
+    "这里没有存档文件（.d2s、.d2i），已读取的存档保持不变。",
+    "這裡沒有存檔檔案（.d2s、.d2i），已讀取的存檔保持不變。",
+    "No save files (.d2s, .d2i) there; the loaded saves are kept.",
+    "저장 파일(.d2s, .d2i)이 없습니다. 불러온 저장 파일은 그대로입니다.",
   ],
   readFailed: [(e) => `读取存档失败：${e}`, (e) => `讀取存檔失敗：${e}`, (e) => `Reading the saves failed: ${e}`, (e) => `저장 파일 읽기 실패: ${e}`],
   writeFailed: [(e) => `写入失败：${e}`, (e) => `寫入失敗：${e}`, (e) => `Writing failed: ${e}`, (e) => `쓰기 실패: ${e}`],

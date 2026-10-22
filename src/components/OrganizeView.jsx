@@ -25,14 +25,18 @@ const toBase64 = (bytes) => {
 const isSave = (name) => /\.d2[si]$/i.test(name);
 const COMPANIONS = ["ctl", "key", "ma0", "map"]; // a character's other files, copied from the template for new mules
 
-// A picked folder can include subfolders (backups...): organize the one folder holding the most saves
+// The picked folder's own saves, not a backup kept in a subfolder of it: the shallowest folder holding saves
+// (the one with the most on a tie). Null when files were picked one by one: the zip replaces the whole save
+// folder, so it must be made from the whole folder.
 function saveFolder(files) {
-  const dirOf = (f) => (f.webkitRelativePath || f.name).split("/").slice(0, -1).join("/");
+  const dirOf = (f) => f.webkitRelativePath.split("/").slice(0, -1).join("/");
   const counts = new Map();
-  for (const f of files.filter((f) => isSave(f.name))) counts.set(dirOf(f), (counts.get(dirOf(f)) ?? 0) + 1);
-  const dir = [...counts].sort((a, b) => b[1] - a[1])[0]?.[0];
-  return files.filter((f) => dirOf(f) === dir);
+  for (const f of files.filter((f) => isSave(f.name) && f.webkitRelativePath)) counts.set(dirOf(f), (counts.get(dirOf(f)) ?? 0) + 1);
+  const depth = (dir) => dir.split("/").length;
+  const dir = [...counts].sort((a, b) => depth(a[0]) - depth(b[0]) || b[1] - a[1])[0]?.[0];
+  return dir == null ? null : { dir, files: files.filter((f) => dirOf(f) === dir) };
 }
+const sameBytes = (a, b) => a?.length === b.length && a.every((x, i) => x === b[i]);
 
 // /organize: sort the mules and the chosen inbox pages of the shared stash (src/lib/organize.js), show what
 // would happen, then hand the result back. On the web: a zip download of the whole organized folder (rawFiles: the
@@ -43,6 +47,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
   const [roles] = useStoredState("roles", {});
   const [inboxes, setInboxes] = useStoredState("inbox", {}); // mode -> page numbers
   const [files, setFiles] = useState(null); // [{ name, bytes }]: saves, and on the web their other files
+  const [folder, setFolder] = useState(null); // on the web: the folder organized, as picked
   const [wasm, setWasm] = useState(null);
   const [mode, setMode] = useState(null);
   const [state, setState] = useState({}); // { plan, remove, error, busy, backup, downloaded, readError, confirm, restored, restoreError }
@@ -50,15 +55,32 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
   const [reads, setReads] = useState(0); // bumped to read the files again
 
   useEffect(() => {
-    if (!onDeck && !rawFiles) return;
-    const read = onDeck ? deckSaveFiles() : Promise.resolve(saveFolder(rawFiles));
+    // Cleared, or files picked one by one: nothing to organize (the page says to pick the folder)
+    const picked = !onDeck && rawFiles && saveFolder(rawFiles);
+    setFolder(picked ? picked.dir : null);
+    if (!onDeck && !picked) return setFiles(null);
+    let current = true; // a quicker second pick must not be overwritten by this read
+    const read = onDeck ? deckSaveFiles() : Promise.resolve(picked.files);
     Promise.all([read, loadParser()]).then(async ([list, parser]) => {
-      setFiles(await Promise.all(list.map(async (f) => ({ name: f.name, bytes: new Uint8Array(await f.arrayBuffer()) }))));
+      const loaded = await Promise.all(list.map(async (f) => ({ name: f.name, bytes: new Uint8Array(await f.arrayBuffer()) })));
+      if (!current) return;
+      setFiles(loaded);
       setWasm(parser);
       setState((s) => ({ backup: s.backup, restored: s.restored })); // read again after writing: keep saying where the backup is
-    }, (e) => setState({ readError: e.message ?? String(e) }));
+    }, (e) => current && setState({ readError: e.message ?? String(e) }));
     if (onDeck) deckBackups().then(setBackups, () => setBackups([]));
+    return () => (current = false);
   }, [reads, rawFiles]);
+  // The files on disk are still the ones organized: the game may have saved since (played in between), and
+  // handing back the organized ones would undo that. A picked file changed on disk can't be read at all.
+  const unchanged = async (now) => {
+    try {
+      const bytes = await Promise.all(now.map(async (f) => new Uint8Array(await f.arrayBuffer())));
+      return now.length === files.length && now.every((f, i) => sameBytes(files.find((o) => o.name === f.name)?.bytes, bytes[i]));
+    } catch {
+      return false;
+    }
+  };
 
   // Characters (with their mode) and shared stash pages per mode, from the files as they are now;
   // a file that doesn't parse is listed with its error (organizing then refuses to run)
@@ -114,9 +136,9 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
         <PageTitle label={t("organize", lang)} />
         {about}
         {state.readError && <p className="text-red-400">{t("readFailed", lang, state.readError)}</p>}
-        {!onDeck && !rawFiles && (
+        {!onDeck && !folder && (
           <>
-            <p className="text-sm mb-4">{t("needFolder", lang)}</p>
+            <p className="text-sm mb-4">{t(rawFiles ? "needWholeFolder" : "needFolder", lang)}</p>
             {picker}
           </>
         )}
@@ -124,7 +146,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
     );
 
   const modes = [...new Set(saves.filter((s) => s.level != null).map((s) => s.mode))].sort();
-  const current = mode ?? (modes.includes("SoftCore:Modern") ? "SoftCore:Modern" : modes[0]);
+  const current = modes.includes(mode) ? mode : modes.includes("SoftCore:Modern") ? "SoftCore:Modern" : modes[0];
   const pages = saves.find((s) => s.pages && s.mode === current)?.pages ?? [];
   const inbox = (inboxes[current] ?? []).filter((n) => pages.some((p) => p.page === n));
   const mules = saves.filter((s) => s.level != null && s.mode === current && roleOf(s, roles) === "mule").map((s) => s.name);
@@ -139,8 +161,9 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
     }
   };
   // Organized again from the files as read, so what is handed back is exactly what was checked
-  const download = () => {
+  const download = async () => {
     try {
+      if (!(await unchanged(saveFolder(rawFiles).files))) return setState({ error: t("savesChangedPick", lang) });
       const { files: out } = organizeFiles(files, wasm, options);
       const names = new Set(files.map((f) => f.name));
       const changed = new Map(out.map((f) => [f.name, f]));
@@ -172,15 +195,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
     setState({ ...state, busy: true });
     try {
       // The game may have saved since the page read the files (played in between): writing would undo that
-      const now = await deckSaveFiles();
-      const same = await Promise.all(
-        now.map(async (f) => {
-          const old = files.find((o) => o.name === f.name)?.bytes;
-          const bytes = new Uint8Array(await f.arrayBuffer());
-          return old?.length === bytes.length && old.every((x, i) => x === bytes[i]);
-        }),
-      );
-      if (now.length !== files.length || same.includes(false)) {
+      if (!(await unchanged(await deckSaveFiles()))) {
         setReads(reads + 1);
         setState({ error: t("savesChanged", lang) });
         return;
@@ -237,6 +252,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       {about}
       <div className="max-w-3xl space-y-8">
         {state.readError && <p className="text-red-400">{t("readFailed", lang, state.readError)}</p>}
+        {folder && <p className="text-sm gothic-text-muted">{t("organizingFolder", lang, folder)}</p>}
         {saves
           .filter((s) => s.error)
           .map((s) => (
