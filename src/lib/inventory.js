@@ -51,7 +51,7 @@ export const ownersOf = (saveData) =>
   saveData.owners ?? [...new Set(saveData.items.map((i) => i.owner))].map((name) => ({ name }));
 
 // One owner's items as place groups in a fixed order, identical items collapsed with a count.
-const PLACE_ORDER = ["equipped", "merc", "inventory", "belt", "cube", "stash", "advanced"];
+const PLACE_ORDER = ["equipped", "merc", "corpse", "inventory", "belt", "cube", "stash", "advanced"];
 const placeRank = (place) => {
   const i = PLACE_ORDER.indexOf(place);
   if (i >= 0) return i;

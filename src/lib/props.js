@@ -41,7 +41,7 @@ function propStats(props, pick, lvl = 1) {
         }
         case 15: entry = [stat, 0, shift(min)]; break;
         case 16: entry = [stat, 0, shift(max)]; break;
-        case 17: entry = [stat, 0, shift(par)]; break;
+        case 17: entry = [stat, 0, shift(par || roll)]; break; // per level: par in uniques, min/max in runes and sets
         case 19: entry = [stat, (par << 6) | max, min | (min << 8)]; break;
         case 20: entry = [INDESTRUCTIBLE, 0, 1]; break;
         case 21: entry = [stat, val, roll]; break;

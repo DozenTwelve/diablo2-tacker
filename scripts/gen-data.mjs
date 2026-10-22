@@ -98,6 +98,14 @@ const imgOf = (table, index, code) => (table[snake(index)]?.normal ?? baseImg[co
 // Collections count what the in-game Chronicle tracks; other uniques (old Sunder charms, unused items)
 // are kept as legacy so saves holding them still get names. One entry per name; variants (Rainbow Facet) keep all ids
 const uniques = new Map();
+const uniqueOf = (r, legacy) => {
+  const [, zh, zh_tw, en, ko] = category(r.code);
+  return {
+    code: r.code, img: imgOf(uniqueImg, r.index, r.code), ...names(r.index), category: { en, zh, zh_tw, ko }, legacy,
+    lvl: Number(r.lvl) || 1, // lowest item level, for skills whose level comes from it (see src/lib/props.js)
+    props: propsOf(r, ITEM_PROPS),
+  };
+};
 for (const r of table("uniqueitems")) {
   if (!r["*ID"] || !r.code) continue;
   const id = Number(r["*ID"]);
@@ -105,19 +113,14 @@ for (const r of table("uniqueitems")) {
   const prev = uniques.get(r.index);
   if (prev) {
     prev.ids.push(id);
-    prev.legacy &&= legacy;
-  } else {
-    const [, zh, zh_tw, en, ko] = category(r.code);
-    uniques.set(r.index, {
-      ids: [id], code: r.code, img: imgOf(uniqueImg, r.index, r.code), ...names(r.index), category: { en, zh, zh_tw, ko }, legacy,
-      lvl: Number(r.lvl) || 1, // lowest item level, for skills whose level comes from it (see src/lib/props.js)
-      props: propsOf(r, ITEM_PROPS),
-    });
-  }
+    // The Chronicle's row describes the item: Azurewrath is a Phase Blade, not the old Crystal Sword row
+    if (prev.legacy && !legacy) Object.assign(prev, uniqueOf(r, legacy));
+  } else uniques.set(r.index, { ids: [id], ...uniqueOf(r, legacy) });
 }
 
 // Set bonuses as [[pieces worn, props]]: an item's own (setitems aprop1-5, from 2 pieces; "add func" 1 means
-// with specific other pieces instead, shown the same way) and the set's (sets.txt PCode2-5), plus the full set's
+// with specific other pieces instead, shown the same way; no "add func": always on, as the item's own props)
+// and the set's (sets.txt PCode2-5), plus the full set's
 const tiers = (r, from, columns) =>
   numbered(5, (i) => [i + from - 1, propsOf(r, columns(i))]).filter(([, props]) => props.length);
 const setBonus = new Map(
@@ -137,10 +140,12 @@ for (const r of table("setitems")) {
   const set = sets.get(r.set);
   const legacy = r.disableChronicle === "1";
   set.legacy &&= legacy;
+  const bonus = tiers(r, 2, (i) => ["a", "b"].map((x) => [`aprop${i}${x}`, `apar${i}${x}`, `amin${i}${x}`, `amax${i}${x}`]));
+  const always = !r["add func"]; // Civerb's Cudgel, Trang-Oul's Claws
   set.items.push({
     id: Number(r["*ID"]), code: r.item, img: imgOf(setImg, r.index, r.item), ...names(r.index), legacy, lvl: Number(r.lvl) || 1,
-    props: propsOf(r, ITEM_PROPS),
-    bonus: tiers(r, 2, (i) => ["a", "b"].map((x) => [`aprop${i}${x}`, `apar${i}${x}`, `amin${i}${x}`, `amax${i}${x}`])),
+    props: [...propsOf(r, ITEM_PROPS), ...(always ? bonus.flatMap(([, props]) => props) : [])],
+    bonus: always ? [] : bonus,
   });
 }
 
