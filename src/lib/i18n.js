@@ -369,6 +369,12 @@ const UI = {
   slot_ring: ["戒指", "戒指", "Rings", "반지"],
   slot_charm: ["神符", "咒符", "Charms", "부적"],
   missing: ["缺失", "缺失", "Missing", "없음"],
+  variants: [
+    (n) => `共有 ${n} 种版本，元素和触发方式各不相同；上面是其中一种`,
+    (n) => `共有 ${n} 種版本，元素和觸發方式各不相同；上面是其中一種`,
+    (n) => `Comes in ${n} versions with different elements and triggers; this is one of them`,
+    (n) => `원소와 발동 조건이 다른 ${n}가지 버전이 있으며, 위는 그중 하나입니다`,
+  ],
   clickForCopies: [(n) => `点击查看全部 ${n} 件`, (n) => `點擊查看全部 ${n} 件`, (n) => `Click to see all ${n}`, (n) => `클릭하여 ${n}개 모두 보기`],
   setPieces: [(n) => `（${n} 件套装）`, (n) => `（${n} 件套裝）`, (n) => `(${n} Items)`, (n) => `(${n}개 착용 시)`],
   weaponSlot: ["武器", "武器", "Weapon", "무기"],

@@ -14,6 +14,8 @@ try {
   const wasm = await vite.ssrLoadModule("/wasm/pkg/d2_parser.js");
   wasm.initSync({ module: readFileSync(new URL("../wasm/pkg/d2_parser_bg.wasm", import.meta.url)) });
   const { parseSaveFiles } = await vite.ssrLoadModule("/src/lib/parseSaves.js");
+  const { catalog } = await vite.ssrLoadModule("/src/lib/gameData.js");
+  const { rollScore } = await vite.ssrLoadModule("/src/lib/props.js");
 
   const base = readdirSync(dir).filter((f) => /\.d2[si]$/.test(f)).map((name) => ({ name, bytes: new Uint8Array(readFileSync(join(dir, name))) }));
   const read = (files) => parseSaveFiles(files.map((f) => new File([f.bytes], f.name)));
@@ -36,6 +38,14 @@ try {
     // stats add the runes' bonuses and the base's own on top
     assert(!words.length || words.some((r) => JSON.stringify(r.rolls) !== JSON.stringify(r.stats)));
   });
+
+  const facets = first.items.filter((i) => i.key === "u:Rainbow Facet");
+  if (facets.length) {
+    await check("a Rainbow Facet is scored against its own version", async () => {
+      const { variants } = catalog.get("u:Rainbow Facet").names;
+      for (const r of facets) assert(variants[r.variant] && rollScore(r, variants[r.variant]) != null, `version ${r.variant}`);
+    });
+  } else console.log("--  no Rainbow Facet in these saves: version check skipped");
 
   await check("a shared stash cut short is reported", async () => {
     // Cut at the end of a page: the parser reads the pages before it and stops without an error

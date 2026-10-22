@@ -53,6 +53,12 @@ export function keyOf(item, code) {
   return `b:${code}:${item.quality}`;
 }
 
+// Which version of a unique with several (Rainbow Facet: element and trigger) an item is: its uniqueitems id
+export function variantOf(item) {
+  const id = item.quality_data?.SetUnique?.file_index;
+  return item.quality === "Unique" && uniqueById.get(id)?.variants ? id : undefined;
+}
+
 // Display name for any key, catalog or base item.
 export function labelOf(key, lang) {
   const entry = catalog.get(key);

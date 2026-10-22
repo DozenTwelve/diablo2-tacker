@@ -96,7 +96,8 @@ const variantsOf = (asset) => {
 const imgOf = (table, index, code) => (table[snake(index)]?.normal ?? baseImg[code]).split("/").slice(-2).join("/");
 
 // Collections count what the in-game Chronicle tracks; other uniques (old Sunder charms, unused items)
-// are kept as legacy so saves holding them still get names. One entry per name; variants (Rainbow Facet) keep all ids
+// are kept as legacy so saves holding them still get names. One entry per name; variants (Rainbow Facet) keep all ids,
+// and their own props by id when they differ: { variants: { id: props } }
 const uniques = new Map();
 const uniqueOf = (r, legacy) => {
   const [, zh, zh_tw, en, ko] = category(r.code);
@@ -115,6 +116,8 @@ for (const r of table("uniqueitems")) {
     prev.ids.push(id);
     // The Chronicle's row describes the item: Azurewrath is a Phase Blade, not the old Crystal Sword row
     if (prev.legacy && !legacy) Object.assign(prev, uniqueOf(r, legacy));
+    else if (!legacy && JSON.stringify(propsOf(r, ITEM_PROPS)) !== JSON.stringify(prev.props))
+      (prev.variants ??= { [prev.ids[0]]: prev.props })[id] = propsOf(r, ITEM_PROPS);
   } else uniques.set(r.index, { ids: [id], ...uniqueOf(r, legacy) });
 }
 

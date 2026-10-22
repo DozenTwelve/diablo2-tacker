@@ -41,9 +41,11 @@ export function Modal({ open, title, onClose, lang, children }) {
 
 // Every copy of one catalog entry, best rolls first: where it is, its base, and its stats. records: null when closed.
 export default function Copies({ entryKey, records, onClose, lang }) {
-  const props = catalog.get(entryKey)?.names.props ?? [];
+  const entry = catalog.get(entryKey)?.names;
+  // A unique with several versions (Rainbow Facet) is scored against its own version's ranges
+  const propsOf = (r) => entry?.variants?.[r.variant] ?? entry?.props ?? [];
   const copies = (records ?? [])
-    .map((r) => ({ r, score: rollScore(r, props) }))
+    .map((r) => ({ r, score: rollScore(r, propsOf(r)) }))
     .sort((a, b) => (b.score ?? 101) - (a.score ?? 101));
 
   return (

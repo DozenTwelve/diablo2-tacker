@@ -76,7 +76,10 @@ export function Tooltip({ tip, lang }) {
       <div style={{ color: nameColor }}>{labelOf(item.key, lang)}</div>
       {named && <div style={{ color: nameColor }}>{baseNameOf(item.code, lang)}</div>}
       {ghost || summary ? (
-        <Lines lines={entry?.runes ? runewordLines(entry, lang) : propLines(entry?.props ?? [], lang, entry?.lvl)} color={STAT_COLOR} />
+        <>
+          <Lines lines={entry?.runes ? runewordLines(entry, lang) : propLines(entry?.props ?? [], lang, entry?.lvl)} color={STAT_COLOR} />
+          {entry?.variants && <div style={{ color: GREY }}>{t("variants", lang, Object.keys(entry.variants).length)}</div>}
+        </>
       ) : (
         <>
           {item.ethereal && <div style={{ color: GREY }}>{t("ethereal", lang)}</div>}
