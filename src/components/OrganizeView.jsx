@@ -26,6 +26,13 @@ const isSave = (name) => /\.d2[si]$/i.test(name);
 const COMPANIONS = ["ctl", "key", "ma0", "map"]; // a character's other files, copied from the template for new mules
 
 const sameBytes = (a, b) => a?.length === b.length && a.every((x, i) => x === b[i]);
+// { name: sha256 hex } of the saves read: the plugin writes only if the folder still holds exactly these
+const hashes = async (files) =>
+  Object.fromEntries(
+    await Promise.all(
+      files.map(async (f) => [f.name, [...new Uint8Array(await crypto.subtle.digest("SHA-256", f.bytes))].map((b) => b.toString(16).padStart(2, "0")).join("")]),
+    ),
+  );
 
 // /organize: sort the mules and the chosen inbox pages of the shared stash (src/lib/organize.js), show what
 // would happen, then hand the result back. On the web: a zip download of the whole organized folder (rawFiles: the
@@ -42,6 +49,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
   // confirm: { name, action: "restore" | "delete" }, a backup button pressed once
   const [state, setState] = useState({}); // { plan, remove, error, busy, backup, downloaded, readError, confirm, restored, restoreError }
   const [backups, setBackups] = useState([]); // the plugin's backups, on the Deck
+  const [backupsOpen, setBackupsOpen] = useState(false); // the player opened the backup list
   const [reads, setReads] = useState(0); // bumped to read the files again
   // "How organizing works" is open on the first visit only
   const [introSeen, setIntroSeen] = useStoredState("organizeIntroSeen", false);
@@ -218,10 +226,15 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
           files: out.map((f) => ({ name: f.name, template: f.template, data: toBase64(f.bytes) })),
           delete: remove,
           mules: done.report.muleNames.filter((n) => !remove.includes(n)).sort(byMuleName), // put below the others in D2R's list
+          expect: await hashes(files),
         }),
       });
       const result = await response.json();
       if (result.running) setState({ ...state, error: t("gameRunning", lang) });
+      else if (result.changed) {
+        setReads(reads + 1);
+        setState({ error: t("savesChanged", lang) });
+      }
       else if (!response.ok) setState({ error: t("writeFailed", lang, result.error) });
       else {
         setState({ backup: result.backup });
@@ -243,7 +256,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       if (result.running) setState({ restoreError: t("gameRunning", lang) });
       else if (!response.ok) setState({ restoreError: t("restoreFailed", lang, result.error) });
       else {
-        setState({ restored: { name, backup: result.backup } });
+        setState({ restored: { name, backup: result.backup } }); // backup null: the saves were that backup already
         setReads(reads + 1);
         onWritten();
       }
@@ -425,7 +438,8 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
           // Folded unless something about a backup needs attention
           <details
             className="space-y-3"
-            open={Boolean(state.restoreError || state.restored || state.confirm || backups.some((b) => b.interrupted))}
+            open={backupsOpen || Boolean(state.restoreError || state.restored || state.confirm || backups.some((b) => b.interrupted))}
+            onToggle={(e) => setBackupsOpen(e.currentTarget.open)}
           >
             <summary className="section-head cursor-pointer">
               <h2>{t("backups", lang)}</h2>
@@ -434,7 +448,9 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
             <p className="text-sm">{t("backupsAbout", lang)}</p>
             {state.restoreError && <p className="text-red-400">{state.restoreError}</p>}
             {state.restored && (
-              <p className="gothic-text-gold break-all">{t("restored", lang, when(state.restored.name), state.restored.backup)}</p>
+              <p className="gothic-text-gold break-all">
+                {state.restored.backup ? t("restored", lang, when(state.restored.name), state.restored.backup) : t("restoredSame", lang, when(state.restored.name))}
+              </p>
             )}
             <ul className="space-y-2">
               {backups.map((b) => (
@@ -449,7 +465,8 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
                       <button
                         className="gothic-btn gothic-btn-small"
                         disabled={state.busy}
-                        onClick={() => (state.confirm.action === "delete" ? deleteBackup(b.name) : restore(b.name))}
+                        // Not the second click of a double click on the button that was in this place
+                        onClick={() => Date.now() - state.confirm.at > 500 && (state.confirm.action === "delete" ? deleteBackup(b.name) : restore(b.name))}
                       >
                         {state.confirm.action === "delete"
                           ? t(state.busy ? "deletingBackup" : "confirmDeleteBackup", lang)
@@ -463,11 +480,11 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
                     <>
                       <button
                         className="gothic-btn gothic-btn-secondary gothic-btn-small"
-                        onClick={() => setState({ ...state, confirm: { name: b.name, action: "restore" } })}
+                        onClick={() => setState({ ...state, confirm: { name: b.name, action: "restore", at: Date.now() } })}
                       >
                         {t("restore", lang)}
                       </button>
-                      <button className="text-sm gothic-text-muted" onClick={() => setState({ ...state, confirm: { name: b.name, action: "delete" } })}>
+                      <button className="text-sm gothic-text-muted" onClick={() => setState({ ...state, confirm: { name: b.name, action: "delete", at: Date.now() } })}>
                         {t("deleteBackup", lang)}
                       </button>
                     </>

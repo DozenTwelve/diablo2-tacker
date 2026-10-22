@@ -250,6 +250,31 @@ with tempfile.TemporaryDirectory() as tmp:
     when = lambda n: os.path.getmtime(os.path.join(folder, n))
     assert when("A.d2s") < 5000 and when("B-A.d2s") < when("A.d2s") and when("Main.d2s") == 5000
 
+    # The page's plan must be for the saves there now: a game save or another write in between refuses it
+    expect = tracker._hashes(folder)
+    open(os.path.join(folder, "A.d2s"), "ab").write(b"played")
+    try:
+        tracker.write_saves(folder, [{"name": "A.d2s", "bytes": b"plan"}], root, expect=expect)
+        raise AssertionError("wrote over saves the page didn't read")
+    except tracker.SavesChanged:
+        pass
+    tracker.write_saves(folder, [{"name": "A.d2s", "bytes": b"plan"}], root, expect=tracker._hashes(folder))
+    assert read(os.path.join(folder, "A.d2s")) == b"plan"
+    # Restoring the saves that are there already does nothing
+    same = tracker._backup(folder, root, {"reason": "organize"})
+    assert tracker.restore_backup(folder, root, os.path.basename(same)) is None
+
+    # A backup from an older plugin version (no folder recorded) is never reused nor taken for this folder's oldest
+    legacy = os.path.join(root, "20000101-000000")
+    os.makedirs(legacy)
+    open(os.path.join(legacy, "A.d2s"), "wb").write(b"legacy")
+    oldest = tracker._ours(root, folder)[-1]["name"]  # the empty folder, before the first write
+    kept = read(os.path.join(folder, "A.d2s"))
+    os.remove(os.path.join(folder, "A.d2s"))  # the saves now equal the oldest backup: it is not the one reused
+    made = os.path.basename(tracker._backup(folder, root, {"reason": "organize"}))
+    open(os.path.join(folder, "A.d2s"), "wb").write(kept)
+    assert made != oldest and tracker._ours(root, folder)[-1]["name"] == oldest and "20000101-000000" in names()
+
     # Another save folder (another prefix) has its own backups: never listed nor restored here
     other = os.path.join(tmp, "other")
     os.makedirs(other)

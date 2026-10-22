@@ -3,6 +3,7 @@
 # and serves the web app (web/), the saves and the icons on 127.0.0.1.
 import base64
 import glob
+import hashlib
 import json
 import os
 import re
@@ -44,10 +45,17 @@ def _mtime(path):
         return 0
 
 
-def save_dir(home):
-    """The save folder; if several prefixes have D2R, the one with the most recently written save."""
+def save_dir(home, backup_root=None):
+    """The save folder; if several prefixes have D2R, the one with the most recently written save or backup (a
+    restore gives saves their old times: the folder just restored must stay the one shown, with its backups)."""
     found = _in_libraries(home, "compatdata/*/pfx/drive_c/users/steamuser/Saved Games/Diablo II Resurrected")
-    newest = lambda d: max((_mtime(os.path.join(d, f)) for f in list_saves(d)), default=0)
+    backups = {}  # folder -> newest backup time
+    if backup_root and len(found) > 1 and os.path.isdir(backup_root):
+        for n in os.listdir(backup_root):
+            where = _info(backup_root, n).get("folder") if BACKUP_NAME.fullmatch(n) else None
+            if where:
+                backups[where] = max(backups.get(where, 0), _mtime(os.path.join(backup_root, n, ABOUT)))
+    newest = lambda d: max([_mtime(os.path.join(d, f)) for f in list_saves(d)] + [backups.get(os.path.realpath(d), 0)])
     return max(found, key=newest) if found else None
 
 
@@ -143,10 +151,25 @@ SAVE_NAME = re.compile(r"[^./\\\x00][^/\\\x00]*\.d2[si]")
 COMPANIONS = (".ctl", ".key", ".ma0", ".map")  # a character's other files, copied from the template for new mules
 
 
-def write_saves(folder, files, backup_root, delete=(), mules=()):
+class SavesChanged(Exception):
+    """Not written: the saves are not the ones the page organized (the game saved since, or another write ran)."""
+
+
+def _hashes(folder):
+    """{name: sha256 hex} of the folder's .d2s and .d2i files, as the page hashes the saves it read."""
+    out = {}
+    for name in list_saves(folder):
+        with open(os.path.join(folder, name), "rb") as f:
+            out[name] = hashlib.sha256(f.read()).hexdigest()
+    return out
+
+
+def write_saves(folder, files, backup_root, delete=(), mules=(), expect=None):
     """Write organized saves into the save folder: files is [{name, bytes, template?}] from the web app's
     organizeFiles; delete: names of emptied characters the player chose to delete, with their other files;
-    mules: every mule after organizing, put below the other characters in D2R's list (_order).
+    mules: every mule after organizing, put below the other characters in D2R's list (_order); expect: the saves
+    the page organized ({name: sha256}), checked under the lock so a second write or a game save in between
+    can't be overwritten by a plan made from older saves.
     The game must not be running. The folder's files are backed up first, each file is written next to its
     target and renamed over it, then read back. Returns the backup folder."""
     with _lock:
@@ -161,6 +184,8 @@ def write_saves(folder, files, backup_root, delete=(), mules=()):
         for name in mules:
             if not SAVE_NAME.fullmatch(name + ".d2s"):
                 raise ValueError(f"not a mule name: {name}")
+        if expect is not None and _hashes(folder) != expect:
+            raise SavesChanged("the saves changed since the page read them; nothing was written")
         backup = _backup(folder, backup_root, {"reason": "organize"})
         if game_running():  # started while the backup was copied
             raise GameRunning("D2R is running; quit the game first")
@@ -272,8 +297,9 @@ def _backup(folder, backup_root, about):
         if n.endswith(".partial"):
             shutil.rmtree(os.path.join(backup_root, n), ignore_errors=True)
     about = {**about, "folder": os.path.realpath(folder), "seq": _next_seq(backup_root)}
-    # Never onto the oldest: renamed newest, it would lose its place as the saves before the plugin first wrote
-    for b in list_backups(backup_root, folder)[:-1]:
+    # Only this plugin's backups of this folder (older versions' don't say whose they are), never its oldest:
+    # renamed newest, it would lose its place as the saves before the plugin first wrote
+    for b in _ours(backup_root, folder)[:-1]:
         if _same_saves(folder, os.path.join(backup_root, b["name"])):
             backup = os.path.join(backup_root, _new_name(backup_root))
             os.rename(os.path.join(backup_root, b["name"]), backup)
@@ -380,12 +406,16 @@ def list_backups(backup_root, folder=None):
     return [entry for _, entry in sorted(found, key=lambda x: x[0], reverse=True)]
 
 
+def _ours(backup_root, folder):
+    """This folder's backups made by this plugin version or later (they record their folder), newest first."""
+    return [b for b in list_backups(backup_root, folder) if _info(backup_root, b["name"]).get("folder")]
+
+
 def _prune(backup_root, folder, keep):
     """Delete this folder's backups past the newest KEEP; never the oldest (the saves before the plugin first
     wrote), one in keep (made, used or restored just now) or an interrupted one. Backups from older plugin
     versions don't say which folder they are of: they are left for the player to delete."""
-    ours = [b for b in list_backups(backup_root, folder) if _info(backup_root, b["name"]).get("folder")]
-    for b in ours[KEEP:-1]:
+    for b in _ours(backup_root, folder)[KEEP:-1]:
         if b["name"] not in keep and not b.get("interrupted"):
             try:
                 _rmtree(os.path.join(backup_root, b["name"]))
@@ -395,7 +425,7 @@ def _prune(backup_root, folder, keep):
 
 def restore_backup(folder, backup_root, name):
     """Put one of the folder's backups back in place of its saves, after backing them up as they are (so a
-    restore can be undone the same way). Returns that backup."""
+    restore can be undone the same way). Returns that backup, None when the saves are that backup already."""
     with _lock:
         if game_running():
             raise GameRunning("D2R is running; quit the game first")
@@ -407,7 +437,7 @@ def restore_backup(folder, backup_root, name):
         if _same_saves(folder, source):
             if _pending(backup_root) == name:
                 _unmark(backup_root)  # cut off before anything was written: nothing to go back to
-            return source  # the saves are that backup already
+            return None  # the saves are that backup already: nothing to do
         backup = _backup(folder, backup_root, {"reason": "restore", "from": name})
         if game_running():
             raise GameRunning("D2R is running; quit the game first")
@@ -538,10 +568,13 @@ class Handler(SimpleHTTPRequestHandler):
                 result = {}
             else:
                 files = [{**f, "bytes": base64.b64decode(f["data"])} for f in body["files"]]
-                result = {"backup": write_saves(self.save_folder(), files, self.backup_dir, body.get("delete", []), body.get("mules", []))}
+                folder = self.save_folder()
+                result = {"backup": write_saves(folder, files, self.backup_dir, body.get("delete", []), body.get("mules", []), body.get("expect"))}
             status = 200
         except GameRunning as e:
             result, status = {"error": str(e), "running": True}, 409
+        except SavesChanged as e:
+            result, status = {"error": str(e), "changed": True}, 409
         except Exception as e:
             result, status = {"error": str(e)}, 500
         data = json.dumps(result).encode()

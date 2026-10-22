@@ -22,6 +22,7 @@ def casc():
 
 class Plugin:
     server = None
+    stopping = None  # the server being shut down: opening again waits for it to let go of the port
     extracting = False  # here, not in the panel: closing and reopening the menu must not start a second one
 
     async def _main(self):
@@ -32,10 +33,12 @@ class Plugin:
         await self.stop()
 
     async def start(self):
+        if self.stopping:
+            await self.stopping
         if not self.server:
             # Picked once per opening: with D2R in two prefixes, a restore gives saves their old times and the
             # newest-save rule would move the page to the other prefix, away from the restore's own backup
-            folder = tracker.save_dir(HOME)
+            folder = tracker.save_dir(HOME, BACKUPS)
             try:
                 self.server = tracker.serve(WEB, lambda: folder, ICONS, BACKUPS, self.closed)
             except OSError as e:
@@ -46,10 +49,14 @@ class Plugin:
     async def stop(self):
         server, self.server = self.server, None
         if server:
-            # shutdown() waits for serve_forever, which a request thread mustn't block on
-            await asyncio.to_thread(server.shutdown)
-            server.server_close()
-            decky.logger.info("stopped serving")
+            self.stopping = asyncio.ensure_future(self._close(server))
+            await self.stopping
+
+    async def _close(self, server):
+        # shutdown() waits for serve_forever, which a request thread mustn't block on
+        await asyncio.to_thread(server.shutdown)
+        server.server_close()
+        decky.logger.info("stopped serving")
 
     def closed(self):
         # The app's close button, from a request thread: the panel leaves the browser, then the server stops

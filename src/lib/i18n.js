@@ -407,6 +407,12 @@ const UI = {
     (when, dir) => `The saves are back as they were at ${when}. The saves from before restoring are backed up in ${dir}`,
     (when, dir) => `${when}의 저장 파일로 복원했습니다. 복원 전 저장 파일은 ${dir}에 백업되어 있습니다`,
   ],
+  restoredSame: [
+    (when) => `存档已经是 ${when} 那份备份的样子，没有改动。`,
+    (when) => `存檔已經是 ${when} 那份備份的樣子，沒有改動。`,
+    (when) => `The saves already are the backup of ${when}; nothing changed.`,
+    (when) => `저장 파일이 이미 ${when} 백업과 같아 바뀐 것이 없습니다.`,
+  ],
   restoreFailed: [(e) => `还原失败：${e}`, (e) => `還原失敗：${e}`, (e) => `Restoring failed: ${e}`, (e) => `복원 실패: ${e}`],
   closeApp: ["关闭", "關閉", "Close", "닫기"],
   reloadSaves: ["重新读取存档", "重新讀取存檔", "Read saves again", "저장 파일 다시 읽기"],

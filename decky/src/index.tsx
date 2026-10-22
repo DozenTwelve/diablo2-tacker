@@ -35,11 +35,22 @@ function Content() {
 
   const extract = async () => {
     setBusy(true);
-    const result = await extractIcons();
-    setBusy(false);
-    toast(result.error ? `${TEXT.failed}: ${result.error}` : TEXT.done(result.count ?? 0));
-    setInfo(await status());
+    try {
+      const result = await extractIcons();
+      toast(result.error ? `${TEXT.failed}: ${result.error}` : TEXT.done(result.count ?? 0));
+    } catch (e) {
+      toast(`${TEXT.failed}: ${e}`);
+    } finally {
+      setBusy(false);
+      setInfo(await status());
+    }
   };
+  // Reopened while icons are being extracted (by an earlier panel): look again until it is done
+  useEffect(() => {
+    if (!info?.extracting || busy) return;
+    const timer = setInterval(() => status().then(setInfo), 3000);
+    return () => clearInterval(timer);
+  }, [info?.extracting, busy]);
   const extracting = busy || info?.extracting;
 
   if (!info) return null;
