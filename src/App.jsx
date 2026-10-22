@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { uniques, sets, runewords, runes, uniqueKey, setItemKey, runewordKey, runeKey } from "./lib/gameData";
 import { groupByKey } from "./lib/inventory";
-import { LANGS, nameOf, t } from "./lib/i18n";
+import { LANGS, LOCALES, nameOf, t } from "./lib/i18n";
 import { useStoredState } from "./lib/useStoredState";
 import { closeDeck, deckSaveFiles, onDeck } from "./lib/deck";
 import { parseSaveFiles } from "./lib/parseSaves";
@@ -75,10 +75,11 @@ export default function App() {
   useEffect(() => {
     if (onDeck) readDeck();
   }, [readDeck]);
-  // For screen readers and the right Chinese glyphs
+  // For screen readers and the right Chinese glyphs; the tab's title names the page, in the page's language
   useEffect(() => {
-    document.documentElement.lang = { zh: "zh-Hans", zh_tw: "zh-Hant", en: "en", ko: "ko" }[lang] ?? "en";
-  }, [lang]);
+    document.documentElement.lang = LOCALES[lang] ?? "en";
+    document.title = [name, tab !== "welcome" && t(tab, lang), t("title", lang)].filter(Boolean).join(" · ");
+  }, [lang, tab, name]);
 
   return (
     <div className="gothic-container">

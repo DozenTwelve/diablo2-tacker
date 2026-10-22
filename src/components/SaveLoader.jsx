@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { parseSaveFiles } from "../lib/parseSaves";
-import { t } from "../lib/i18n";
+import { LOCALES, t } from "../lib/i18n";
 import { deckSaveFiles, onDeck } from "../lib/deck";
 
 const DECK_FIND = `find ~/.local/share/Steam/steamapps/compatdata -type d -path "*/Saved Games/Diablo II Resurrected"`;
@@ -56,7 +56,7 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
         {busy
           ? t("parsing", lang)
           : saveData
-            ? t("loaded", lang, saveData.files, saveData.items.length, new Date(saveData.loadedAt).toLocaleString())
+            ? t("loaded", lang, saveData.files, saveData.items.length, new Date(saveData.loadedAt).toLocaleString(LOCALES[lang]))
             : t("noSaves", lang)}
       </p>
       <div className="flex flex-wrap gap-3 items-center">

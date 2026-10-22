@@ -1,7 +1,12 @@
 // Every entry in src/data has en, zh (Simplified), zh_tw (Traditional) and ko (Korean) names.
 export const LANGS = { zh_tw: "繁", zh: "简", en: "EN", ko: "한" };
+// Language tags: the page's lang (screen readers, the right Chinese glyphs) and dates
+export const LOCALES = { zh: "zh-Hans", zh_tw: "zh-Hant", en: "en", ko: "ko" };
 
 export const nameOf = (entry, lang) => entry?.[lang] ?? entry?.en ?? "?";
+
+// "1 save", "2 saves", for the English strings
+const count = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
 
 // UI strings as [Simplified, Traditional, English, Korean] (COLUMNS); functions take extra arguments.
 // Korean uses the game's own terms where it has them (고유, 무형, 홈 있음, 보관함...).
@@ -45,7 +50,7 @@ const UI = {
   trashMules: ["待清理（可能是垃圾，自己确认后再丢）", "待清理（可能是垃圾，自己確認後再丟）", "To clean (likely junk, check before dropping)", "정리 대기 (버릴 만한 것, 확인 후 버리세요)"],
   noCharacter: ["找不到这个角色", "找不到這個角色", "No such character", "해당 캐릭터가 없습니다"],
   reloadForGrid: ["这批存档是旧版本读取的，没有格子位置，请重新选择存档。", "這批存檔是舊版本讀取的，沒有格子位置，請重新選擇存檔。", "These saves were read by an older version and have no positions; please pick the saves again.", "이전 버전에서 읽은 저장 파일이라 위치 정보가 없습니다. 저장 파일을 다시 선택하세요."],
-  itemCount: [(n) => `${n} 件`, (n) => `${n} 件`, (n) => `${n} item${n === 1 ? "" : "s"}`, (n) => `${n}개`],
+  itemCount: [(n) => `${n} 件`, (n) => `${n} 件`, (n) => count(n, "item"), (n) => `${n}개`],
   // Class names as the game's own strings (ui.json partychar*)
   Amazon: ["亚马逊", "亞馬遜", "Amazon", "아마존"],
   Sorceress: ["巫师", "魔法使", "Sorceress", "원소술사"],
@@ -168,12 +173,12 @@ const UI = {
   mulesToSort: [
     (n, list) => `会清空并重新排列这 ${n} 个骡子：${list}`,
     (n, list) => `會清空並重新排列這 ${n} 個騾子：${list}`,
-    (n, list) => `These ${n} mules are emptied and laid out again: ${list}`,
+    (n, list) => `${n === 1 ? "This mule is" : `These ${n} mules are`} emptied and laid out again: ${list}`,
     (n, list) => `이 창고캐 ${n}개를 비우고 다시 배치합니다: ${list}`,
   ],
   changeMules: ["在角色页调整骡子", "在角色頁調整騾子", "Change mules on the characters page", "캐릭터 페이지에서 창고캐 변경"],
   preview: ["预览", "預覽", "Preview", "미리 보기"],
-  reportMules: [(n) => `整理后共 ${n} 个骡子`, (n) => `整理後共 ${n} 個騾子`, (n) => `${n} mules after sorting`, (n) => `정리 후 창고캐 ${n}개`],
+  reportMules: [(n) => `整理后共 ${n} 个骡子`, (n) => `整理後共 ${n} 個騾子`, (n) => `${count(n, "mule")} after sorting`, (n) => `정리 후 창고캐 ${n}개`],
   reportMuseum: [(n) => `新进图鉴 ${n} 件`, (n) => `新進圖鑑 ${n} 件`, (n) => `New to the collection: ${n}`, (n) => `도감 신규 ${n}개`],
   reportDup: [(n) => `重复 ${n} 件`, (n) => `重複 ${n} 件`, (n) => `Duplicates: ${n}`, (n) => `중복 ${n}개`],
   reportTrash: [
@@ -242,13 +247,16 @@ const UI = {
   deleteFromZip: [
     (n, list) => `这 ${n} 个角色不会放进下载的 zip：${list}。用 zip 换掉存档文件夹后，它们就从游戏里消失了，只有你的备份里还有。`,
     (n, list) => `這 ${n} 個角色不會放進下載的 zip：${list}。用 zip 換掉存檔資料夾後，它們就從遊戲裡消失了，只有你的備份裡還有。`,
-    (n, list) => `These ${n} characters are left out of the zip: ${list}. Once the zip replaces your save folder they are gone from the game; only your backup still has them.`,
+    (n, list) =>
+      n === 1
+        ? `This character is left out of the zip: ${list}. Once the zip replaces your save folder it is gone from the game; only your backup still has it.`
+        : `These ${n} characters are left out of the zip: ${list}. Once the zip replaces your save folder they are gone from the game; only your backup still has them.`,
     (n, list) => `이 ${n}개 캐릭터는 zip에 넣지 않습니다: ${list}. zip으로 저장 폴더를 바꾸면 게임에서 사라지고, 백업에만 남습니다.`,
   ],
   deleteOnWrite: [
     (n, list) => `写入时会删除这 ${n} 个角色：${list}。写入前会先备份整个存档文件夹。`,
     (n, list) => `寫入時會刪除這 ${n} 個角色：${list}。寫入前會先備份整個存檔資料夾。`,
-    (n, list) => `Writing deletes these ${n} characters: ${list}. The whole save folder is backed up first.`,
+    (n, list) => `Writing deletes ${n === 1 ? "this character" : `these ${n} characters`}: ${list}. The whole save folder is backed up first.`,
     (n, list) => `쓰기할 때 이 ${n}개 캐릭터를 삭제합니다: ${list}. 쓰기 전에 저장 폴더 전체를 백업합니다.`,
   ],
   leftEmptyAsk: [
@@ -282,7 +290,7 @@ const UI = {
   skippedSubfolders: [
     (n) => `子文件夹里的 ${n} 个存档（备份等）没有读取，只读了所选文件夹本身的存档。`,
     (n) => `子資料夾裡的 ${n} 個存檔（備份等）沒有讀取，只讀了所選資料夾本身的存檔。`,
-    (n) => `${n} saves in subfolders (backups...) were left out; only the picked folder's own saves are read.`,
+    (n) => `${count(n, "save")} in subfolders (backups...) ${n === 1 ? "was" : "were"} left out; only the picked folder's own saves are read.`,
     (n) => `하위 폴더(백업 등)의 저장 파일 ${n}개는 읽지 않고, 선택한 폴더의 저장 파일만 읽었습니다.`,
   ],
   noSaveFiles: [
@@ -300,7 +308,7 @@ const UI = {
     "The plugin backs up the whole save folder before every organize. Restoring puts the saves back as they were then; the saves as they are now are backed up first, so a restore can be undone too.",
     "플러그인은 정리할 때마다 먼저 저장 폴더 전체를 백업합니다. 복원하면 그때의 저장 파일로 돌아가며, 복원 전에 지금의 저장 파일을 백업하므로 복원도 되돌릴 수 있습니다.",
   ],
-  backupCharacters: [(n) => `${n} 个角色`, (n) => `${n} 個角色`, (n) => `${n} characters`, (n) => `캐릭터 ${n}개`],
+  backupCharacters: [(n) => `${n} 个角色`, (n) => `${n} 個角色`, (n) => count(n, "character"), (n) => `캐릭터 ${n}개`],
   restore: ["还原", "還原", "Restore", "복원"],
   confirmRestore: ["确认还原", "確認還原", "Restore now", "지금 복원"],
   restoring: ["还原中…", "還原中…", "Restoring…", "복원 중…"],
@@ -314,11 +322,11 @@ const UI = {
   restoreFailed: [(e) => `还原失败：${e}`, (e) => `還原失敗：${e}`, (e) => `Restoring failed: ${e}`, (e) => `복원 실패: ${e}`],
   closeApp: ["关闭", "關閉", "Close", "닫기"],
   reloadSaves: ["重新读取存档", "重新讀取存檔", "Read saves again", "저장 파일 다시 읽기"],
-  savesShort: [(n) => `${n} 个存档`, (n) => `${n} 個存檔`, (n) => `${n} saves`, (n) => `저장 파일 ${n}개`],
+  savesShort: [(n) => `${n} 个存档`, (n) => `${n} 個存檔`, (n) => count(n, "save"), (n) => `저장 파일 ${n}개`],
   prevCharacter: ["上一个角色", "上一個角色", "Previous character", "이전 캐릭터"],
   nextCharacter: ["下一个角色", "下一個角色", "Next character", "다음 캐릭터"],
   filterCharacters: ["筛选角色", "篩選角色", "Filter characters", "캐릭터 찾기"],
-  emptyMules: [(n) => `${n} 个空骡子`, (n) => `${n} 個空騾子`, (n) => `${n} empty mules`, (n) => `빈 창고캐 ${n}개`],
+  emptyMules: [(n) => `${n} 个空骡子`, (n) => `${n} 個空騾子`, (n) => `${n} empty mule${n === 1 ? "" : "s"}`, (n) => `빈 창고캐 ${n}개`],
   emptyCharacter: [
     "这个角色身上、背包和储物箱都是空的，可以拿来当骡子。",
     "這個角色身上、背包和儲物箱都是空的，可以拿來當騾子。",
@@ -351,7 +359,7 @@ const UI = {
   loaded: [
     (files, items, at) => `已读取 ${files} 个存档，共 ${items} 件物品（${at}）`,
     (files, items, at) => `已讀取 ${files} 個存檔，共 ${items} 件物品（${at}）`,
-    (files, items, at) => `Read ${files} saves, ${items} items (${at})`,
+    (files, items, at) => `Read ${count(files, "save")}, ${count(items, "item")} (${at})`,
     (files, items, at) => `저장 파일 ${files}개, 아이템 ${items}개를 읽었습니다 (${at})`,
   ],
   searchPlaceholder: ["搜索物品，中文或英文", "搜尋物品，中文或英文", "Search items, in English or Chinese", "아이템 검색 (한국어, 영어, 중국어)"],
