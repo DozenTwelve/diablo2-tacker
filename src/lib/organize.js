@@ -8,6 +8,8 @@
 // owned yet. Extra copies, runewords, charms, jewels, rings and amulets, other magic/rare items, bases
 // and the rest are packed into their own mules.
 import { uniques, sets, uniqueKey, setItemKey, keyOf, codeOfNumber } from "./gameData";
+import { modeOfCharacter, modeOfStash } from "./modes";
+import { scoreOfItem } from "./parseSaves";
 import items from "../data/items.json";
 import statData from "../data/stats.json";
 
@@ -196,21 +198,10 @@ const moveTo = (item, { page, x, y }) => ({
   position: { ...item.position, mode: "Stored", body_location: "None", inv_x: x, inv_y: y, store_page: page },
 });
 
-// Game mode of a character or shared stash file: "SoftCore:Modern" (Reign of the Warlock), "HardCore:Legacy"
-// (Lord of Destruction), "SoftCore:Classic" (no expansion: no shared stash, can't hold expansion items)...
-// Saves before v104 say expansion or not in a flag only
-export const modeOfCharacter = (json) => {
-  const { flags, preview } = json.character;
-  const version = json.version >= 104 ? preview.game_version : flags.includes("EXPANSION") ? "Expansion" : "Classic";
-  return `${flags.includes("HARDCORE") ? "HardCore" : "SoftCore"}:${{ ReignOfTheWarlock: "Modern", Classic: "Classic" }[version] ?? "Legacy"}`;
-};
-// Only the file names the game reads; a copy beside them ("... - Copy.d2i") has no mode and is never emptied
-export const modeOfStash = (name) => {
-  const m = /^(modern)?sharedstash(softcore|hardcore)(v2)?(\.d2i)?$/i.exec(name);
-  return m && `${/^hard/i.test(m[2]) ? "HardCore" : "SoftCore"}:${m[1] ? "Modern" : "Legacy"}`;
-};
 const goldOf = (json) => json.stats.filter((s) => GOLD_STATS.has(s.id)).reduce((n, s) => n + s.value, 0);
 const deadHardcore = (json) => json.character.flags.includes("HARDCORE") && json.character.flags.includes("DEAD");
+
+export { modeOfCharacter, modeOfStash };
 
 // Mules of a mode: the named characters, or else every level 1 character; never a dead hardcore hero (it
 // can't be played, its items stay with it)
@@ -288,9 +279,14 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
   const filled = new Map(); // museum key -> item
   const loose = { DUP: [], RW: [], CHARM: [], JEWEL: [], RING: [], MAG: [], BASE: [], MISC: [], TRASH: [] };
   const entries = source.map((e) => ({ ...e, code: codeOfNumber(e.item.code), key: keyOf(e.item, codeOfNumber(e.item.code)) }));
-  // Non-ethereal copies take the museum slot first, then the copy already there, so organizing again moves nothing
+  // The museum slot takes the best copy: non-ethereal first, then the best rolls (scoreOfItem), then on a tie the
+  // copy already there, so organizing again moves nothing
   const home = (e) => e.from.split(" ")[0].toLowerCase() === museum.slots.get(e.key)?.mule.toLowerCase();
-  entries.sort((a, b) => a.item.flags.includes("ETHEREAL") - b.item.flags.includes("ETHEREAL") || home(b) - home(a));
+  const score = new Map(entries.filter((e) => museum.slots.has(e.key)).map((e) => [e, scoreOfItem(e.item) ?? -1]));
+  entries.sort(
+    (a, b) =>
+      a.item.flags.includes("ETHEREAL") - b.item.flags.includes("ETHEREAL") || (score.get(b) ?? 0) - (score.get(a) ?? 0) || home(b) - home(a),
+  );
   for (const e of entries) {
     if (museum.slots.has(e.key) && !filled.has(e.key)) filled.set(e.key, e);
     else loose[groupOf(e.key, e.item, e.code)].push(e);

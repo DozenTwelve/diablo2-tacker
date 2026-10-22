@@ -14,6 +14,7 @@ try {
   const wasm = await vite.ssrLoadModule("/wasm/pkg/d2_parser.js");
   wasm.initSync({ module: readFileSync(new URL("../wasm/pkg/d2_parser_bg.wasm", import.meta.url)) });
   const { muleTimes, organizeFiles } = await vite.ssrLoadModule("/src/lib/organize.js");
+  const { scoreOfItem } = await vite.ssrLoadModule("/src/lib/parseSaves.js");
 
   const parse = (name, bytes) => JSON.parse(name.endsWith(".d2s") ? wasm.parseD2s(bytes) : wasm.parseD2i(bytes));
   const write = (name, json) => (name.endsWith(".d2s") ? wasm.writeD2s : wasm.writeD2i)(JSON.stringify(json));
@@ -39,6 +40,21 @@ try {
   check("organizing again changes nothing, and hands back nothing", () => {
     const again = run(organized).files;
     assert.deepEqual(again.map((f) => f.name), []);
+  });
+
+  check("the museum holds the best copy; the others go to DUP", () => {
+    const museum = new Map(first.report.moves.filter((m) => m.group === "MUSEUM").map((m) => [m.key, m.item]));
+    const eth = (item) => item.flags.includes("ETHEREAL");
+    let compared = 0;
+    for (const m of first.report.moves.filter((m) => m.group === "DUP" && museum.has(m.key))) {
+      const kept = museum.get(m.key);
+      if (eth(kept) && !eth(m.item)) throw new Error(`${m.key}: an ethereal copy in the museum, a plain one in DUP`);
+      if (eth(kept) === eth(m.item)) {
+        assert((scoreOfItem(kept) ?? -1) >= (scoreOfItem(m.item) ?? -1), `${m.key}: a better copy is in DUP`);
+        compared++;
+      }
+    }
+    if (!compared) console.log("--  no duplicate to compare in these saves");
   });
 
   const runeword = allItems.find((i) => i.quality === "Normal" && i.runeword_id != null);

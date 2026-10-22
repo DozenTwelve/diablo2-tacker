@@ -5,8 +5,8 @@
 // gfx: which look a ring, amulet, charm or jewel has),
 // stats as [statId, layer, value] (see src/lib/stats.js).
 import { codeOfNumber, keyOf, variantOf } from "./gameData";
-import { modeOfCharacter, modeOfStash } from "./organize";
-import { socketStats } from "./props";
+import { modeOfCharacter, modeOfStash } from "./modes";
+import { copyScore, socketStats } from "./props";
 
 let parser;
 export async function loadParser() {
@@ -41,6 +41,17 @@ export function statsOf(item, code) {
   return summed([...item.stats, ...(item.runeword_stats ?? []), ...sockets]);
 }
 
+// What the item rolled itself, for the roll score: without its runes, gems or jewels, and for a runeword without
+// its base's own (superior) bonuses. Only when that differs from statsOf.
+export const rollsOf = (item) =>
+  item.runeword_id != null ? summed(item.runeword_stats ?? []) : item.sockets.some(Boolean) ? summed(item.stats) : undefined;
+
+// A save item's roll score against its catalog entry (copyScore), for organizing: the best copy takes the museum slot
+export function scoreOfItem(item) {
+  const code = codeOfNumber(item.code);
+  return copyScore({ key: keyOf(item, code), stats: statsOf(item, code), rolls: rollsOf(item), variant: variantOf(item) });
+}
+
 function collect(item, owner, place, out) {
   // Stackable stash tabs keep a slot for every gem/rune type, even when the count is 0
   const count = place === "advanced" ? item.advanced_stash_stack_size : 1;
@@ -53,9 +64,7 @@ function collect(item, owner, place, out) {
     ethereal: item.flags.includes("ETHEREAL"),
     sockets: item.sockets.length,
     stats: statsOf(item, code),
-    // What the item rolled itself, for the roll score: without its runes, gems or jewels, and for a runeword
-    // without its base's own (superior) bonuses. Only kept when that differs from stats.
-    rolls: item.runeword_id != null ? summed(item.runeword_stats ?? []) : item.sockets.some(Boolean) ? summed(item.stats) : undefined,
+    rolls: rollsOf(item),
     variant: variantOf(item),
     owner,
     place,
