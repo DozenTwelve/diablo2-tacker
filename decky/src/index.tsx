@@ -1,10 +1,10 @@
-// Quick access panel: open the tracker in Steam's browser (the server runs until the page's close button or "Stop"),
-// and pull the item icons out of the game files once.
+// Quick access panel: open the tracker in Steam's browser (the server runs until the page is left, by its close
+// button, B or the Steam button, or "Stop"), and pull the item icons out of the game files once.
 import { ButtonItem, Navigation, PanelSection, PanelSectionRow, staticClasses } from "@decky/ui";
 import { addEventListener, callable, definePlugin, removeEventListener, toaster } from "@decky/api";
 import { useEffect, useState } from "react";
 
-type Status = { saves: number; game: boolean; icons: boolean; running: boolean };
+type Status = { saves: number; game: boolean; icons: boolean; running: boolean; extracting: boolean };
 const status = callable<[], Status>("status");
 const start = callable<[], string>("start");
 const stop = callable<[], void>("stop");
@@ -22,22 +22,25 @@ const TEXT = {
   noGame: zh ? "找不到 D2R 遊戲檔案，無法提取圖標" : "D2R game files not found, can't get icons",
   done: (n: number) => (zh ? `已提取 ${n} 個圖標` : `${n} icons ready`),
   failed: zh ? "提取圖標失敗" : "Getting icons failed",
+  openFailed: zh ? "打不開收藏" : "Can't open the collection",
 };
+const toast = (body: string) => toaster.toast({ title: "D2R", body });
 
 function Content() {
   const [info, setInfo] = useState<Status | null>(null);
   const [busy, setBusy] = useState(false);
   useEffect(() => {
-    status().then(setInfo);
+    status().then(setInfo, (e) => toast(String(e)));
   }, []);
 
   const extract = async () => {
     setBusy(true);
     const result = await extractIcons();
     setBusy(false);
-    toaster.toast({ title: "D2R", body: result.error ? `${TEXT.failed}: ${result.error}` : TEXT.done(result.count ?? 0) });
+    toast(result.error ? `${TEXT.failed}: ${result.error}` : TEXT.done(result.count ?? 0));
     setInfo(await status());
   };
+  const extracting = busy || info?.extracting;
 
   if (!info) return null;
   return (
@@ -50,7 +53,12 @@ function Content() {
           layout="below"
           disabled={!info.saves}
           onClick={async () => {
-            Navigation.NavigateToExternalWeb(await start());
+            try {
+              Navigation.NavigateToExternalWeb(await start());
+            } catch (e) {
+              toast(`${TEXT.openFailed}: ${e}`);
+              return;
+            }
             Navigation.CloseSideMenus();
             stopWhenLeft();
           }}
@@ -67,8 +75,8 @@ function Content() {
       )}
       <PanelSectionRow>
         {info.game ? (
-          <ButtonItem layout="below" disabled={busy} onClick={extract}>
-            {busy ? TEXT.extracting : info.icons ? TEXT.again : TEXT.extract}
+          <ButtonItem layout="below" disabled={extracting} onClick={extract}>
+            {extracting ? TEXT.extracting : info.icons ? TEXT.again : TEXT.extract}
           </ButtonItem>
         ) : (
           <div>{TEXT.noGame}</div>
@@ -84,9 +92,11 @@ function Content() {
 const inBrowser = () => location.pathname.includes("externalweb");
 function stopWhenLeft() {
   let seen = false; // the browser opens asynchronously: only a route change after it counts
+  let waited = 0;
   const timer = setInterval(() => {
     if (inBrowser()) seen = true;
     else if (seen) (clearInterval(timer), stop());
+    else if (++waited > 30) clearInterval(timer); // the browser never showed up: nothing to watch
   }, 1000);
 }
 

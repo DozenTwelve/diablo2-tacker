@@ -20,28 +20,55 @@ PORT = 18565  # ponytail: fixed port, pick a free one if something else ever tak
 SAVE_EXTENSIONS = (".d2s", ".d2i")
 
 
-def compatdata(home):
-    return os.path.join(home, ".local/share/Steam/steamapps/compatdata")
+def libraries(home):
+    """Steam's steamapps folders: the main one and every library in libraryfolders.vdf (the SD card...).
+    A game's Proton prefix is in the library the game is installed in."""
+    main = os.path.join(home, ".local/share/Steam/steamapps")
+    try:
+        with open(os.path.join(main, "libraryfolders.vdf"), encoding="utf-8", errors="replace") as f:
+            paths = re.findall(r'"path"\s+"([^"]+)"', f.read())
+    except OSError:
+        paths = []
+    found = [main] + [os.path.join(p, "steamapps") for p in paths]
+    return [d for i, d in enumerate(found) if os.path.realpath(d) not in map(os.path.realpath, found[:i])]
+
+
+def _in_libraries(home, pattern):
+    return [d for lib in libraries(home) for d in glob.glob(os.path.join(glob.escape(lib), pattern))]
+
+
+def _mtime(path):
+    try:
+        return os.path.getmtime(path)
+    except OSError:  # deleted since it was listed
+        return 0
 
 
 def save_dir(home):
     """The save folder; if several prefixes have D2R, the one with the most recently written save."""
-    found = glob.glob(os.path.join(compatdata(home), "*/pfx/drive_c/users/steamuser/Saved Games/Diablo II Resurrected"))
-    newest = lambda d: max((os.path.getmtime(os.path.join(d, f)) for f in list_saves(d)), default=0)
+    found = _in_libraries(home, "compatdata/*/pfx/drive_c/users/steamuser/Saved Games/Diablo II Resurrected")
+    newest = lambda d: max((_mtime(os.path.join(d, f)) for f in list_saves(d)), default=0)
     return max(found, key=newest) if found else None
 
 
 def game_data_dir(home):
     """The game's CASC storage: Battle.net install in a Proton prefix, or the Steam one."""
-    found = glob.glob(os.path.join(compatdata(home), "*/pfx/drive_c/Program Files (x86)/Diablo II Resurrected/Data"))
-    found += glob.glob(os.path.join(home, ".local/share/Steam/steamapps/common/Diablo II Resurrected/Data"))
+    found = _in_libraries(home, "compatdata/*/pfx/drive_c/Program Files (x86)/Diablo II Resurrected/Data")
+    found += _in_libraries(home, "common/Diablo II Resurrected/Data")
     return found[0] if found else None
 
 
 def list_saves(folder):
-    if not folder or not os.path.isdir(folder):
+    try:
+        return sorted(f for f in os.listdir(folder) if f.endswith(SAVE_EXTENSIONS) and os.path.isfile(os.path.join(folder, f)))
+    except (OSError, TypeError):  # no folder (None), or gone
         return []
-    return sorted(f for f in os.listdir(folder) if f.endswith(SAVE_EXTENSIONS) and os.path.isfile(os.path.join(folder, f)))
+
+
+def _run(command, **kwargs):
+    # Decky points LD_LIBRARY_PATH at its own bundled libraries, which the system's programs must not load
+    env = {k: v for k, v in os.environ.items() if k != "LD_LIBRARY_PATH"}
+    return subprocess.run(command, env=env, capture_output=True, **kwargs)
 
 
 def png(width, height, rgba):
@@ -85,7 +112,9 @@ def convert_sprites(sprite_root, out_dir):
 def extract_icons(casc, data_dir, out_dir):
     """Pull the inventory icons out of the game files with casc-cli and convert them; returns how many."""
     with tempfile.TemporaryDirectory() as tmp:
-        subprocess.run([casc, "extract", "-o", tmp, data_dir, "data/hd/global/ui/items/**/*.sprite"], check=True, capture_output=True, timeout=600)
+        done = _run([casc, "extract", "-o", tmp, data_dir, "data/hd/global/ui/items/**/*.sprite"], timeout=600)
+        if done.returncode:
+            raise RuntimeError(f"casc failed: {(done.stderr or done.stdout).decode(errors='replace').strip()[-300:]}")
         new_dir = out_dir + ".new"
         shutil.rmtree(new_dir, ignore_errors=True)
         count = convert_sprites(os.path.join(tmp, "data/hd/global/ui/items"), new_dir)
@@ -97,8 +126,12 @@ def extract_icons(casc, data_dir, out_dir):
 
 
 def game_running():
-    """D2R under Proton shows up as a D2R.exe process."""
-    return subprocess.run(["pgrep", "-f", "D2R.exe"], capture_output=True).returncode == 0
+    """D2R under Proton shows up as a D2R.exe process. pgrep failing is not "not running": writing then
+    would race the game, so it raises."""
+    code = _run(["pgrep", "-f", "D2R.exe"]).returncode
+    if code > 1:
+        raise RuntimeError(f"can't tell whether D2R is running (pgrep exited {code}); nothing was written")
+    return code == 0
 
 
 SAVE_NAME = re.compile(r"[^./\\\x00][^/\\\x00]*\.d2[si]")
@@ -131,22 +164,39 @@ def write_saves(folder, files, backup_root, delete=()):
     return backup
 
 
-BACKUP_NAME = re.compile(r"\d{8}-\d{6}")
+BACKUP_NAME = re.compile(r"\d{8}-\d{6}(-\d+)?")  # when it was made, -2... for a second one in the same second
+# What organizing writes (.tmp: one cut short); not settings or loot filters
+SAVE_FILE = re.compile(r".+\.(d2s|d2i|ctl|key|map|ma\d+)(\.tmp)?")
 
 
 def _backup(folder, backup_root):
+    """Copy the save folder to a new backup. It is copied under a .partial name and renamed once complete
+    and on disk, so a copy cut short (disk full) is never listed, nor restored over the saves."""
     # ponytail: backups are kept forever (a save folder is a few MB); prune if anyone collects hundreds
-    backup = os.path.join(backup_root, time.strftime("%Y%m%d-%H%M%S"))
-    shutil.copytree(folder, backup)
+    stamp = time.strftime("%Y%m%d-%H%M%S")
+    backup, n = os.path.join(backup_root, stamp), 1
+    while os.path.exists(backup) or os.path.exists(backup + ".partial"):
+        n += 1
+        backup = os.path.join(backup_root, f"{stamp}-{n}")
+    try:
+        shutil.copytree(folder, backup + ".partial")
+        os.sync()
+    except Exception:
+        shutil.rmtree(backup + ".partial", ignore_errors=True)
+        raise
+    os.rename(backup + ".partial", backup)
     return backup
 
 
 def _put_back(folder, backup):
-    """Make the save folder's files those of the backup; folders the player keeps in it are left alone."""
+    """Make the save folder's saves (and the files beside them) those of the backup; settings, loot filters and
+    folders the player keeps in it are left alone."""
     for name in os.listdir(folder):
-        if os.path.isfile(os.path.join(folder, name)) and not os.path.exists(os.path.join(backup, name)):
+        if SAVE_FILE.fullmatch(name) and os.path.isfile(os.path.join(folder, name)) and not os.path.exists(os.path.join(backup, name)):
             os.remove(os.path.join(folder, name))
-    shutil.copytree(backup, folder, dirs_exist_ok=True)
+    for name in os.listdir(backup):
+        if SAVE_FILE.fullmatch(name) and os.path.isfile(os.path.join(backup, name)):
+            shutil.copy2(os.path.join(backup, name), os.path.join(folder, name))
 
 
 def _undo(folder, backup, error):
@@ -162,7 +212,7 @@ def list_backups(backup_root):
     """The plugin's backups, newest first: [{name, characters}], name being when it was made (YYYYMMDD-HHMMSS)."""
     if not os.path.isdir(backup_root):
         return []
-    names = sorted((n for n in os.listdir(backup_root) if BACKUP_NAME.fullmatch(n)), reverse=True)
+    names = sorted((n for n in os.listdir(backup_root) if BACKUP_NAME.fullmatch(n) and os.path.isdir(os.path.join(backup_root, n))), reverse=True)
     return [{"name": n, "characters": sum(f.endswith(".d2s") for f in os.listdir(os.path.join(backup_root, n)))} for n in names]
 
 
@@ -225,16 +275,27 @@ class Handler(SimpleHTTPRequestHandler):
         # A page elsewhere can point its own name at 127.0.0.1 (DNS rebinding); its requests carry that name
         return self.headers.get("Host") == f"127.0.0.1:{self.server.server_address[1]}"
 
+    def end_headers(self):
+        # After a plugin update index.html names new assets: never reuse an old copy of it
+        if self.path == "/index.html":
+            self.send_header("Cache-Control", "no-cache")
+        super().end_headers()
+
+    def do_HEAD(self):
+        if not self.local():
+            return self.send_error(403)
+        return super().do_HEAD()
+
     def do_GET(self):
         if not self.local():
             return self.send_error(403)
         path = self.path.split("?")[0]
-        folder = self.save_folder()
         if path == "/api/saves":
-            return self.send_bytes(json.dumps(list_saves(folder)).encode(), "application/json")
+            return self.send_bytes(json.dumps(list_saves(self.save_folder())).encode(), "application/json")
         if path == "/api/backups":
             return self.send_bytes(json.dumps(list_backups(self.backup_dir)).encode(), "application/json")
         if path.startswith("/api/saves/"):
+            folder = self.save_folder()
             name = unquote(path[len("/api/saves/") :])
             if name not in list_saves(folder):  # only names from the listing, never a path
                 return self.send_error(404)
@@ -247,6 +308,8 @@ class Handler(SimpleHTTPRequestHandler):
             with open(icon, "rb") as f:
                 return self.send_bytes(f.read(), "image/png")
         if not os.path.isfile(os.path.join(self.web_dir, path.lstrip("/"))):
+            if path.startswith("/assets/"):  # an old page's script: index.html in its place would load as nothing
+                return self.send_error(404)
             self.path = "/index.html"
         return super().do_GET()
 
