@@ -53,3 +53,13 @@ with wrangler, so icons stay out of git. Cloudflare Pages serves `index.html` fo
 `404.html`, which the router needs, so Netlify's `_redirects` is gone. Live at
 https://d2r.diamonddoge.org (the Pages project d2r-collection-tracker, custom domain set in the Cloudflare
 dashboard); the Netlify site is deleted. Done.
+
+## 6. New finds and a leaner layout (2026-10-22)
+
+- New finds page (`/new`, `src/lib/newItems.js`): the inbox pages' items with the organizing rules' verdict, read
+  only so it works with the game running. Next, once tested on the Deck when D2R writes the shared stash: the same
+  list in the Decky quick access panel, maybe a notification when the stash changes.
+- Six tabs: New finds, Search, Collection (uniques, sets, runewords, runes as its pages), Characters, Organize,
+  About. The Organize page folds its explanation after the first visit and the Deck's backup list.
+- The museum keeps the best-rolled copy; duplicates past `copiesNeeded` go to TRASH; DUP mules mark each copy
+  better or worse than the museum's; mules are dated below the other characters so D2R lists the mains first.

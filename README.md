@@ -16,6 +16,9 @@ tracking.
 
 ## What it does
 
+- **New finds.** Drop what you find on the inbox pages of the shared stash and see at once whether each item is
+  worth keeping: new to the collection, better than the copy you have, a duplicate some build could still use, or
+  extra. It only reads, so it works with the game running.
 - **Collection.** Uniques, sets, runewords and runes, each page with how many you own out of how many exist and a
   list of what is missing.
 - **Search.** Find any item, owned or not, in any of the four languages, and see where every copy is.
@@ -25,8 +28,9 @@ tracking.
   the recommended items you have and where they are. The lists come from [Maxroll](https://maxroll.gg/d2/category/guides)
   guides, link back to them, and may be out of date.
 - **Organize.** Sort your mules and chosen shared stash pages into numbered mules by fixed rules: uniques and set
-  items in fixed "museum" slots, then duplicates, runewords, charms, jewels, rings, magic items, bases, and likely
-  junk for you to look through. The page checks that every item is kept exactly once and hands the result back as
+  items in fixed "museum" slots (always the best-rolled copy), then duplicates, runewords, charms, jewels, rings,
+  magic items, bases, and likely junk for you to look through, including duplicates past what the builds of every
+  class could use. Duplicates show whether they rolled better or worse than the museum copy. The page checks that every item is kept exactly once and hands the result back as
   a zip of the whole organized save folder; it never writes to your save folder.
 - **Languages.** Traditional Chinese, Simplified Chinese, English and Korean, with the game's own item names.
 
