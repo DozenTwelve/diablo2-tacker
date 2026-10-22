@@ -24,11 +24,36 @@ assert zlib.decompress(idat) == b"\x00" + bytes([255, 0, 0, 255, 0, 0, 0, 0])
 
 with tempfile.TemporaryDirectory() as tmp:
     home = os.path.join(tmp, "home")
-    saves = os.path.join(tracker.compatdata(home), "123/pfx/drive_c/users/steamuser/Saved Games/Diablo II Resurrected")
+    prefix = "compatdata/123/pfx/drive_c/users/steamuser/Saved Games/Diablo II Resurrected"
+    steamapps = os.path.join(home, ".local/share/Steam/steamapps")
+    old = os.path.join(steamapps, prefix)
+    os.makedirs(old)
+    open(os.path.join(old, "Old.d2s"), "wb").write(b"old")
+    os.utime(os.path.join(old, "Old.d2s"), (0, 0))
+    # The game on the SD card: its prefix is in that library, listed in libraryfolders.vdf
+    sd = os.path.join(tmp, "sd card")
+    saves = os.path.join(sd, "steamapps", prefix)
     os.makedirs(saves)
+    open(os.path.join(steamapps, "libraryfolders.vdf"), "w").write(f'"libraryfolders"\n{{\n "0"\n {{\n  "path"\t\t"{home}/.local/share/Steam"\n }}\n "1"\n {{\n  "path"\t\t"{sd}"\n }}\n}}\n')
     for name in ["Zanna.d2s", "Mule 二.d2s", "SharedStash.d2i", "Zanna.key", "Zanna.ma1", "Zanna-old.d2s", "OLD.D2S"]:
         open(os.path.join(saves, name), "wb").write(name.encode())
-    assert tracker.save_dir(home) == saves
+    assert tracker.save_dir(home) == saves  # the newest saves, on the SD card
+    os.makedirs(os.path.join(sd, "steamapps/common/Diablo II Resurrected/Data"))
+    assert tracker.game_data_dir(home) == os.path.join(sd, "steamapps/common/Diablo II Resurrected/Data")
+
+    # pgrep failing is not "the game is not running"
+    fake = os.path.join(tmp, "bin")
+    os.makedirs(fake)
+    path = os.environ["PATH"]
+    for code, running in ((0, True), (1, False), (2, None)):
+        open(os.path.join(fake, "pgrep"), "w").write(f"#!/bin/sh\nexit {code}\n")
+        os.chmod(os.path.join(fake, "pgrep"), 0o755)
+        os.environ["PATH"] = fake + os.pathsep + path
+        try:
+            assert tracker.game_running() == running
+        except RuntimeError:
+            assert running is None
+    os.environ["PATH"] = path
     assert tracker.list_saves(saves) == ["Mule 二.d2s", "SharedStash.d2i", "Zanna-old.d2s", "Zanna.d2s"]
 
     web, icons = os.path.join(tmp, "web"), os.path.join(tmp, "icons")
@@ -60,6 +85,13 @@ with tempfile.TemporaryDirectory() as tmp:
     assert missing("/items/../web/index.webp") and missing("/items/axe/none.webp")
     assert get("/characters/Zanna") == b"app" and get("/") == b"app"
     assert get("/../../../etc/passwd") == b"app"
+    assert missing("/assets/index-old.js")  # an old page's script, after an update: not index.html in its place
+    assert urllib.request.urlopen(base + "/").headers["Cache-Control"] == "no-cache"
+    try:
+        urllib.request.urlopen(urllib.request.Request(base + "/index.html", method="HEAD", headers={"Host": "evil.example"}))
+        raise AssertionError("HEAD served another host")
+    except HTTPError as e:
+        assert e.code == 403
 
     def post(body, origin=base, kind="application/json", path="/api/write"):
         request = urllib.request.Request(base + path, json.dumps(body).encode(), {"Origin": origin, "Content-Type": kind})
@@ -91,7 +123,7 @@ with tempfile.TemporaryDirectory() as tmp:
     broken = [{"name": "UW-B.d2s", "data": base64.b64encode(b"x").decode(), "template": "Zanna"}, {"name": "Bad.d2s", "data": ""}]
     import time; time.sleep(1)  # backups are named by the second
     assert post({"files": broken})[0] == 500
-    assert sorted(os.listdir(saves)) == before
+    assert sorted(os.listdir(saves)) == before, (sorted(os.listdir(saves)), before)
     os.rmdir(os.path.join(saves, "Bad.d2s"))
 
     # Emptied characters the player chose go, with their other files; never one being written
@@ -112,9 +144,26 @@ with tempfile.TemporaryDirectory() as tmp:
     assert sorted(os.listdir(saves)) == before and open(os.path.join(saves, "Gone.d2s"), "rb").read() == b"gone"
     os.rmdir(os.path.join(saves, "Gone.ma1"))
 
-    # Backups, newest first, and putting one back: the folder becomes exactly that backup, after a backup of itself
+    # A backup cut short (an unreadable file here; a full disk on the Deck) is neither kept nor listed
     listed = json.loads(get("/api/backups"))
-    assert [b["name"] for b in listed] == sorted(os.listdir(backups), reverse=True)
+    locked = os.path.join(saves, "Locked.d2s")
+    open(locked, "wb").write(b"x")
+    os.chmod(locked, 0)
+    assert post({"files": new})[0] == 500
+    os.chmod(locked, 0o644)
+    os.remove(locked)
+    assert json.loads(get("/api/backups")) == listed and not [n for n in os.listdir(backups) if n.endswith(".partial")]
+    # Two in one second get two names; a stray file named like one is no backup
+    two = [tracker._backup(saves, backups) for _ in range(2)]
+    assert two[0] != two[1]
+    for b in two:
+        tracker.shutil.rmtree(b)
+    open(os.path.join(backups, "20000101-000000"), "w").write("not a backup")
+
+    # Backups, newest first, and putting one back: the folder's saves become exactly those of that backup, after a
+    # backup of itself; settings and loot filters stay as they are
+    listed = json.loads(get("/api/backups"))
+    assert [b["name"] for b in listed] == sorted((n for n in os.listdir(backups) if n != "20000101-000000"), reverse=True)
     zanna = os.path.basename(result["backup"])  # made before Zanna was deleted
     assert next(b for b in listed if b["name"] == zanna)["characters"] == 4  # Zanna, Zanna-old, Mule 二, UW-A
     assert post({"name": "../web"}, path="/api/restore")[0] == 500 and post({"name": "20990101-000000"}, path="/api/restore")[0] == 500
@@ -122,11 +171,13 @@ with tempfile.TemporaryDirectory() as tmp:
     assert post({"name": zanna}, path="/api/restore")[0] == 409
     tracker.game_running = lambda: False
     os.mkdir(os.path.join(saves, "my old saves"))  # a folder the player keeps there
+    open(os.path.join(saves, "Settings.json"), "w").write("changed since")
     now = sorted(os.listdir(saves))
     time.sleep(1)
     status, restored = post({"name": zanna}, path="/api/restore")
     assert status == 200, restored
-    assert sorted(os.listdir(saves)) == sorted(os.listdir(os.path.join(backups, zanna)) + ["my old saves"]) and "Zanna.ma1" in os.listdir(saves)
+    assert sorted(os.listdir(saves)) == sorted(os.listdir(os.path.join(backups, zanna)) + ["my old saves", "Settings.json"]) and "Zanna.ma1" in os.listdir(saves)
+    assert open(os.path.join(saves, "Settings.json")).read() == "changed since"
     assert sorted(os.listdir(restored["backup"])) == now  # the folder as it was before, to undo the restore
     assert post({"name": zanna}, origin="http://evil.example", path="/api/restore")[0] == 403
 

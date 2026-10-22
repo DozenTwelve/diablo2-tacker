@@ -22,6 +22,7 @@ def casc():
 
 class Plugin:
     server = None
+    extracting = False  # here, not in the panel: closing and reopening the menu must not start a second one
 
     async def _main(self):
         os.makedirs(decky.DECKY_PLUGIN_RUNTIME_DIR, exist_ok=True)
@@ -32,7 +33,10 @@ class Plugin:
 
     async def start(self):
         if not self.server:
-            self.server = tracker.serve(WEB, lambda: tracker.save_dir(HOME), ICONS, BACKUPS, self.closed)
+            try:
+                self.server = tracker.serve(WEB, lambda: tracker.save_dir(HOME), ICONS, BACKUPS, self.closed)
+            except OSError as e:
+                raise RuntimeError(f"port {tracker.PORT} is taken by another program ({e.strerror})") from e
             decky.logger.info(f"serving on 127.0.0.1:{tracker.PORT}")
         return f"http://127.0.0.1:{tracker.PORT}/"
 
@@ -56,14 +60,20 @@ class Plugin:
             "game": tracker.game_data_dir(HOME) is not None,
             "icons": os.path.isdir(ICONS),
             "running": self.server is not None,
+            "extracting": self.extracting,
         }
 
     async def extract_icons(self):
         data = tracker.game_data_dir(HOME)
         if not data:
             return {"error": "game files not found"}
+        if self.extracting:
+            return {"error": "already getting the icons"}
+        self.extracting = True
         try:
             return {"count": await asyncio.to_thread(tracker.extract_icons, casc(), data, ICONS)}
         except Exception as e:
             decky.logger.exception("icon extraction failed")
             return {"error": str(e)}
+        finally:
+            self.extracting = False
