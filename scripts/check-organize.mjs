@@ -101,6 +101,14 @@ try {
     assert(names.includes(`${name.toLowerCase()}.d2s`) && !names.includes(`${name}.d2s`));
   });
 
+  check("an emptied mule with one of our own names (CHARM-B) is not offered for deletion", () => {
+    // The organized folder plus a spare mule named like the layout's, which nothing goes into
+    const spare = organized.find((f) => f.name === a) ?? organized.find((f) => f.name.endsWith(".d2s"));
+    const files = [...organized, { ...spare, name: "CHARM-ZZ.d2s" }];
+    const r = run(files);
+    assert(r.report.mules.includes("CHARM-ZZ") && !r.report.leftEmpty.includes("CHARM-ZZ"));
+  });
+
   check("a mistyped mule name or a missing inbox page stops the run", () => {
     assert.throws(() => run(base, { mules: [first.report.mules[0], "NoSuchMule"] }), /NoSuchMule/);
     assert.throws(() => run(base, { inbox: [99] }), /no page 99/);

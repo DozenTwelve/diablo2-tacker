@@ -230,8 +230,8 @@ export const filesOfCharacter = (name, fileNames) =>
 // saves: [{ name, ext: "d2s" | "d2i", json }]; options: { mode, mules: names, inbox: shared stash page numbers }
 // -> { saves: [{ name, ext, json, template? }], report }. Only changed saves are returned; new mules carry
 // `template`, the save they were cloned from. Mules whose names the new layout uses are rewritten in place.
-// report: { mules: names emptied, leftEmpty: emptied level 1 mules without gold no new mule is named after (the
-//   player may delete them),
+// report: { mules: names emptied, leftEmpty: emptied level 1 mules without gold no new mule is named after, other
+//   than this mode's own mule names (an empty CHARM-B is kept for when charms grow again): the player may delete them,
 //   moved, dropped: [item], moves: [{ from, key, to, page, x, y, group }],
 //   inbox: what the shared stash pages brought: { museum: keys, dup: keys, trash: keys, other }, ... }
 export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox } = {}) {
@@ -338,11 +338,13 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
 
   const fromStash = (group) => moves.filter((m) => m.stash && m.group === group).map((m) => m.key);
   const owned = (prefix) => [...museum.slots.values()].filter((s) => s.mule.startsWith(`${namePrefix}${prefix}-`));
+  const groups = ["UW", "UA", "UJ", "SET", ...Object.keys(loose)].join("|");
+  const ownName = new RegExp(`^${namePrefix}(${groups})-[A-Z]+$`, "i");
   const report = {
     mode,
     mules: mules.map((s) => s.name),
     leftEmpty: mules
-      .filter((s) => s.json.character.level === 1 && !goldOf(s.json) && ![...placed.keys()].some((n) => n.toLowerCase() === s.name.toLowerCase()))
+      .filter((s) => s.json.character.level === 1 && !goldOf(s.json) && !ownName.test(s.name) && ![...placed.keys()].some((n) => n.toLowerCase() === s.name.toLowerCase()))
       .map((s) => s.name)
       .sort((a, b) => a.localeCompare(b)),
     template: template.name,
