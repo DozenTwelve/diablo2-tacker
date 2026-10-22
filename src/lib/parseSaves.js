@@ -57,7 +57,7 @@ export const versionOf = (item) => variantOf(item) ?? item.stats.find((s) => s.i
 // A save item's roll score against its catalog entry (copyScore), for organizing: the best copy takes the museum slot
 export function scoreOfItem(item) {
   const code = codeOfNumber(item.code);
-  return copyScore({ key: keyOf(item, code), stats: statsOf(item, code), rolls: rollsOf(item), variant: variantOf(item) });
+  return copyScore({ key: keyOf(item, code), stats: statsOf(item, code), rolls: rollsOf(item), variant: variantOf(item), sockets: item.sockets.length });
 }
 
 function collect(item, owner, place, out) {
@@ -74,6 +74,7 @@ function collect(item, owner, place, out) {
     stats: statsOf(item, code),
     rolls: rollsOf(item),
     variant: variantOf(item),
+    personalized: Boolean(item.personalized_name) || undefined,
     owner,
     place,
     x: item.position.inv_x,

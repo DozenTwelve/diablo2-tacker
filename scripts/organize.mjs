@@ -92,7 +92,7 @@ try {
     }
     // Then every mule, changed or not, goes just before the oldest other character in D2R's list (muleTimes):
     // an unchanged one is copied out too, so copying the folder back puts it there
-    const characters = readdirSync(dir).filter((f) => f.endsWith(".d2s") && !doomed.some((n) => `${n}.d2s` === f));
+    const characters = readdirSync(dir).filter((f) => f.endsWith(".d2s") && !f.startsWith("._") && !doomed.some((n) => `${n}.d2s` === f));
     const order = muleTimes(
       Object.fromEntries(characters.map((f) => [f, statSync(join(dir, f)).mtimeMs])),
       report.muleNames.filter((n) => !doomed.includes(n)),

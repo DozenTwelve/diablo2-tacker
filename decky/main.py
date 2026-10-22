@@ -33,8 +33,7 @@ class Plugin:
         await self.stop()
 
     async def start(self):
-        if self.stopping:
-            await self.stopping
+        await self._stopped()
         if not self.server:
             # Picked once per opening: with D2R in two prefixes, a restore gives saves their old times and the
             # newest-save rule would move the page to the other prefix, away from the restore's own backup
@@ -46,11 +45,21 @@ class Plugin:
             decky.logger.info(f"serving on 127.0.0.1:{tracker.PORT}")
         return f"http://127.0.0.1:{tracker.PORT}/"
 
+    async def _stopped(self):
+        # A shutdown under way (or one cancelled or failed half way: the port is let go of either way)
+        if self.stopping:
+            try:
+                await asyncio.shield(self.stopping)
+            except BaseException:
+                pass
+            self.stopping = None
+
     async def stop(self):
+        await self._stopped()  # _unload waits for a stop already started
         server, self.server = self.server, None
         if server:
             self.stopping = asyncio.ensure_future(self._close(server))
-            await self.stopping
+            await asyncio.shield(self.stopping)  # cancelling stop() must not cancel letting go of the port
 
     async def _close(self, server):
         # shutdown() waits for serve_forever, which a request thread mustn't block on
@@ -64,7 +73,7 @@ class Plugin:
         asyncio.run_coroutine_threadsafe(self.stop(), self.loop)
 
     async def status(self):
-        folder = tracker.save_dir(HOME)
+        folder = tracker.save_dir(HOME, BACKUPS)  # the folder "Open collection" shows
         return {
             "saves": len(tracker.list_saves(folder)),
             "game": tracker.game_data_dir(HOME) is not None,

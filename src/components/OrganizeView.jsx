@@ -68,7 +68,8 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       if (!current) return;
       setFiles(loaded);
       setWasm(parser);
-      setState((s) => ({ backup: s.backup, restored: s.restored })); // read again after writing: keep saying where the backup is
+      // Read again after writing or because the saves changed: keep saying where the backup is, and why
+      setState((s) => ({ backup: s.backup, restored: s.restored, error: s.changed ? s.error : undefined }));
     }, (e) => current && setState({ readError: e.message ?? String(e) }));
     if (onDeck) deckBackups().then(setBackups, () => setBackups([]));
     return () => (current = false);
@@ -188,7 +189,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       const gone = new Set(removeFiles);
       const timeOf = (name) => files.find((o) => o.name === name)?.time;
       const order = muleTimes(
-        Object.fromEntries(files.filter((f) => /\.d2s$/i.test(f.name) && !gone.has(f.name)).map((f) => [f.name, f.time])),
+        Object.fromEntries(files.filter((f) => /\.d2s$/i.test(f.name) && !f.name.startsWith("._") && !gone.has(f.name)).map((f) => [f.name, f.time])),
         done.muleNames.filter((n) => !remove.includes(n)),
       );
       const folder = [
@@ -213,7 +214,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       // The game may have saved since the page read the files (played in between): writing would undo that
       if (!(await unchanged(await deckSaveFiles()))) {
         setReads(reads + 1);
-        setState({ error: t("savesChanged", lang) });
+        setState((s) => ({ backup: s.backup, error: t("savesChanged", lang), changed: true }));
         return;
       }
       // Characters to delete are not written first; the plugin deletes them after the backup
@@ -233,7 +234,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       if (result.running) setState({ ...state, error: t("gameRunning", lang) });
       else if (result.changed) {
         setReads(reads + 1);
-        setState({ error: t("savesChanged", lang) });
+        setState((s) => ({ backup: s.backup, error: t("savesChanged", lang), changed: true }));
       }
       else if (!response.ok) setState({ error: t("writeFailed", lang, result.error) });
       else {
@@ -465,6 +466,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
                       <button
                         className="gothic-btn gothic-btn-small"
                         disabled={state.busy}
+                        onKeyDown={(e) => e.repeat && e.preventDefault()} // nor a held key repeating
                         // Not the second click of a double click on the button that was in this place
                         onClick={() => Date.now() - state.confirm.at > 500 && (state.confirm.action === "delete" ? deleteBackup(b.name) : restore(b.name))}
                       >

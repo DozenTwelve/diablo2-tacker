@@ -267,9 +267,13 @@ def _json_to(path, data):
 def _info(backup_root, name):
     try:
         with open(os.path.join(backup_root, name, ABOUT)) as f:
-            return json.load(f)
+            about = json.load(f)
     except (OSError, ValueError):
         return {}  # made by an older plugin version
+    # Edited by hand into something else: as if there were none
+    if not isinstance(about, dict) or not isinstance(about.get("folder", ""), str) or not isinstance(about.get("seq", 0), int):
+        return {}
+    return about
 
 
 def _new_name(backup_root):

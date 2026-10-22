@@ -51,7 +51,7 @@ export function findsOf(saveData, inboxes, roles = {}) {
         eth: r.ethereal,
         score: copyScore(r) ?? -1,
         home: r.owner === slots.get(r.key)?.mule,
-        fixed: r.rolls != null, // holds runes, gems or jewels (rollsOf)
+        fixed: r.rolls != null || Boolean(r.personalized), // holds runes, gems or jewels (rollsOf), or personalized
         version: r.variant ?? r.stats.find(([id]) => id === 83)?.[1],
       }));
     const where = placeCopies(copies, slots);

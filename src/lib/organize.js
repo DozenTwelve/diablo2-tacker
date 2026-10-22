@@ -70,10 +70,10 @@ function pack(prefix, units) {
 // Mule names in order: by name, but a layout suffix by length first (JEWEL-Z before JEWEL-AA), so a group of more
 // than 26 mules keeps its order and organizing again moves nothing
 export function byMuleName(a, b) {
-  const [pa, sa] = [a.slice(0, a.lastIndexOf("-") + 1 || a.length), a.slice(a.lastIndexOf("-") + 1)];
-  const [pb, sb] = [b.slice(0, b.lastIndexOf("-") + 1 || b.length), b.slice(b.lastIndexOf("-") + 1)];
-  const layout = a.includes("-") && b.includes("-") && /^[A-Z]+$/.test(sa) && /^[A-Z]+$/.test(sb);
-  return layout ? pa.localeCompare(pb) || sa.length - sb.length || sa.localeCompare(sb) : a.localeCompare(b);
+  const [pa, pb] = [a.slice(0, a.lastIndexOf("-") + 1), b.slice(0, b.lastIndexOf("-") + 1)];
+  // Same "PREFIX-": the rest by length, then by name; else by name (one order for any set of names)
+  if (pa && pa === pb) return a.length - b.length || a.localeCompare(b);
+  return a.localeCompare(b);
 }
 
 // Mule names start with H for hardcore, L for legacy and C for classic saves ("HUW-A"), so every mode's mules fit in one folder
