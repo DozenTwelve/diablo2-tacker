@@ -40,8 +40,9 @@ back the new saves. Only tested on one real save folder so far; expect messier s
 the Deck's own saves, and gets the item icons from the player's game files (the zip ships no game art). Its Organize
 page sorts mules and inbox pages right on the Deck: refused while the game runs, the save folder is backed up first,
 and the written files are read back (same bytes as `scripts/organize.mjs`). The server runs from "Open collection"
-until the page's Close button, which also leaves Steam's browser. Tested on a Deck; the zip is on GitHub Releases.
-Next: submit to the Decky store.
+until the page is left (its Close button, B or the Steam button). Tested on a Deck; the zip is on GitHub Releases.
+0.1.2 added deleting emptied characters, the backup list with restore, and the organize animation. The Decky store
+is out: its rules turn away LLM-written plugins, so it stays on GitHub Releases ("Install Plugin from URL").
 
 ## Deployment
 

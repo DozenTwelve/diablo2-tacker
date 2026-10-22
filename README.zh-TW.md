@@ -18,7 +18,7 @@
 - **搜尋。** 用四種語言的任何一種搜尋物品，不管有沒有，都能看到每一件在哪裡。
 - **角色。** 每個角色的身上、背包、儲物箱、方塊和腰帶，照遊戲裡的格子畫出來，滑過去有物品說明。圖鑑騾子會畫出空位，空格就是還缺的。
 - **流派配裝。** 為主力號選一個流派（共 22 個熱門流派），點裝備欄就能看到推薦裝備你有哪些、放在哪。清單整理自 [Maxroll](https://maxroll.gg/d2/category/guides) 的攻略，附原文連結，可能過時，僅供參考。
-- **整理。** 按固定規則把騾子和勾選的共享倉庫頁整理進編號騾子：暗金和套裝放進固定的「圖鑑」位置，其餘依序是重複品、符文之語、咒符、珠寶、戒指和護身符、魔法物品、底材，以及可能是垃圾、留給你自己檢查的東西。網頁會核對每件物品都剛好保留一份，再把結果打包成 zip 給你下載，絕不會寫入你的存檔資料夾。
+- **整理。** 按固定規則把騾子和勾選的共享倉庫頁整理進編號騾子：暗金和套裝放進固定的「圖鑑」位置，其餘依序是重複品、符文之語、咒符、珠寶、戒指和護身符、魔法物品、底材，以及可能是垃圾、留給你自己檢查的東西。網頁會核對每件物品都剛好保留一份，再把整理後完整的存檔資料夾打包成 zip 給你下載，絕不會寫入你的存檔資料夾。
 - **語言。** 繁體中文、簡體中文、英文、韓文，物品名稱用遊戲裡的官方譯名。
 
 支援 PC 和 Steam Deck 上的單機（離線）角色，包括 Reign of the Warlock 資料片的存檔。戰網線上角色存在暴雪的伺服器上，讀不到；主機版不支援。
@@ -28,7 +28,7 @@
 - **Windows：** `%USERPROFILE%\Saved Games\Diablo II Resurrected`
 - **Steam Deck：** 在遊戲的 Proton 資料夾裡，每台 Deck 的路徑都不一樣。
 
-[docs/saves.md](docs/saves.md)（英文）寫了兩邊的詳細步驟、怎麼把存檔從 Deck 拷出來，以及整理好的存檔怎麼放回去：先退出遊戲、備份整個資料夾，再把新檔案複製進去。
+[docs/saves.md](docs/saves.md)（英文）寫了兩邊的詳細步驟、怎麼把存檔從 Deck 拷出來，以及整理好的存檔怎麼放回去：先退出遊戲、備份整個資料夾，再用 zip 裡的檔案取代資料夾裡的檔案。
 
 ## 用自己的規則整理
 
@@ -36,17 +36,17 @@
 
 ## Steam Deck 外掛
 
-[decky/](decky/README.md) 是一個 [Decky Loader](https://decky.xyz) 外掛：在遊戲模式的快捷選單裡打開收藏，直接讀這台 Deck 的存檔，物品圖示從你安裝的遊戲裡提取。它也能直接在 Deck 上整理：遊戲執行中會拒絕寫入，寫入前先備份整個存檔資料夾，寫完再讀回來核對。
+[decky/](decky/README.md) 是一個 [Decky Loader](https://decky.xyz) 外掛：在遊戲模式的快捷選單裡打開收藏，直接讀這台 Deck 的存檔，物品圖示從你安裝的遊戲裡提取。它也能直接在 Deck 上整理：遊戲執行中會拒絕寫入，寫入前先備份整個存檔資料夾，寫完再讀回來核對。清空後沒用到的角色可以勾選刪除；整理頁也列出每一份備份，可以直接還原。
 
 ![Steam Deck 上的外掛：快捷選單，再到遊戲模式裡的收藏頁](docs/deck-demo.gif)
 
 外掛還沒上架 Decky 商店。安裝方法：Decky → 設定 → 一般 → 打開開發者模式，再到「開發者」→「從 URL 安裝外掛」，輸入
 
 ```
-https://github.com/DozenTwelve/diablo2-tacker/releases/latest/download/d2r-collection-tracker.zip
+https://github.com/DozenTwelve/diablo2-tracker/releases/latest/download/d2r-collection-tracker.zip
 ```
 
-（或從 [Releases](https://github.com/DozenTwelve/diablo2-tacker/releases) 下載 zip，用「從 ZIP 檔案安裝外掛」。）打開外掛，先按一次「從遊戲檔案提取物品圖標」（約一分鐘），再按「打開收藏」。
+（或從 [Releases](https://github.com/DozenTwelve/diablo2-tracker/releases) 下載 zip，用「從 ZIP 檔案安裝外掛」。）打開外掛，先按一次「從遊戲檔案提取物品圖標」（約一分鐘），再按「打開收藏」。
 
 ## 開發
 

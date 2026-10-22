@@ -27,6 +27,7 @@ Copy the folder to a USB stick, or over the network. From a Mac or Linux compute
 (`passwd`, then `sudo systemctl enable --now sshd`):
 
 ```bash
+mkdir ~/D2R-saves
 ssh deck@<deck ip> "cd '<save folder>' && tar -cf - ." < /dev/null | tar -xf - -C ~/D2R-saves
 ```
 
@@ -34,7 +35,12 @@ ssh deck@<deck ip> "cd '<save folder>' && tar -cf - ." < /dev/null | tar -xf - -
 
 ## Putting changed saves back
 
-Saves written by `scripts/organize.mjs` go to a new folder; nothing is changed in place.
+Organized saves go to a new place; nothing is changed in place. The web page's zip and `scripts/organize.mjs` hand
+them back differently:
+
+- **The web page's zip** is the whole save folder as organized, characters you ticked for deletion already left
+  out: delete every file in the save folder and put the zip's files in their place.
+- **`scripts/organize.mjs`** writes only the saves that changed: copy them in, as below.
 
 1. Quit D2R completely. The game writes its saves on exit and would overwrite the new ones.
 2. Back up the whole save folder, e.g. copy it to `D2R-backup-<date>`.
@@ -42,6 +48,10 @@ Saves written by `scripts/organize.mjs` go to a new folder; nothing is changed i
    of moves and can be left out, and so can `delete.txt`).
 4. If there is a `delete.txt` (characters picked with `--delete`), delete the files it lists from the save folder.
 5. Start D2R and check the mules. If anything is wrong, quit and copy the backup back.
+
+Don't play between picking or copying the saves and putting the organized ones back: they were made from the saves
+as they were, and putting them back would undo that play. The web page and the Deck plugin check this; by hand,
+start over.
 
 From a Mac to a Deck, `COPYFILE_DISABLE=1` keeps macOS from adding `._*` files; the second line is step 4:
 
