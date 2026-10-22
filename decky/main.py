@@ -33,8 +33,11 @@ class Plugin:
 
     async def start(self):
         if not self.server:
+            # Picked once per opening: with D2R in two prefixes, a restore gives saves their old times and the
+            # newest-save rule would move the page to the other prefix, away from the restore's own backup
+            folder = tracker.save_dir(HOME)
             try:
-                self.server = tracker.serve(WEB, lambda: tracker.save_dir(HOME), ICONS, BACKUPS, self.closed)
+                self.server = tracker.serve(WEB, lambda: folder, ICONS, BACKUPS, self.closed)
             except OSError as e:
                 raise RuntimeError(f"port {tracker.PORT} is taken by another program ({e.strerror})") from e
             decky.logger.info(f"serving on 127.0.0.1:{tracker.PORT}")

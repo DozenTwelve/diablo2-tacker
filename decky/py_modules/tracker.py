@@ -240,8 +240,12 @@ def _backup(folder, backup_root, about):
     always the newest. A new one is copied under a .partial name and renamed once complete and on disk, so a copy
     cut short (disk full) is never listed, nor restored over the saves."""
     os.makedirs(backup_root, exist_ok=True)
+    for n in os.listdir(backup_root):  # copies cut short by a power cut; under the lock, so none is in progress
+        if n.endswith(".partial"):
+            shutil.rmtree(os.path.join(backup_root, n), ignore_errors=True)
     about = {**about, "folder": os.path.realpath(folder), "seq": _next_seq(backup_root)}
-    for b in list_backups(backup_root, folder):
+    # Never onto the oldest: renamed newest, it would lose its place as the saves before the plugin first wrote
+    for b in list_backups(backup_root, folder)[:-1]:
         if _same_saves(folder, os.path.join(backup_root, b["name"])):
             backup = os.path.join(backup_root, _new_name(backup_root))
             os.rename(os.path.join(backup_root, b["name"]), backup)
@@ -350,8 +354,10 @@ def list_backups(backup_root, folder=None):
 
 def _prune(backup_root, folder, keep):
     """Delete this folder's backups past the newest KEEP; never the oldest (the saves before the plugin first
-    wrote), one in keep (made, used or restored just now) or an interrupted one."""
-    for b in list_backups(backup_root, folder)[KEEP:-1]:
+    wrote), one in keep (made, used or restored just now) or an interrupted one. Backups from older plugin
+    versions don't say which folder they are of: they are left for the player to delete."""
+    ours = [b for b in list_backups(backup_root, folder) if _info(backup_root, b["name"]).get("folder")]
+    for b in ours[KEEP:-1]:
         if b["name"] not in keep and not b.get("interrupted"):
             try:
                 _rmtree(os.path.join(backup_root, b["name"]))
@@ -371,6 +377,8 @@ def restore_backup(folder, backup_root, name):
         if not any(n.endswith(".d2s") for n in _saves_in(source)):
             raise ValueError(f"backup {name} holds no characters; not restoring it")
         if _same_saves(folder, source):
+            if _pending(backup_root) == name:
+                _unmark(backup_root)  # cut off before anything was written: nothing to go back to
             return source  # the saves are that backup already
         backup = _backup(folder, backup_root, {"reason": "restore", "from": name})
         if game_running():
