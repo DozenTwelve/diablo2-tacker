@@ -71,11 +71,12 @@ const questsOf = (q) =>
   };
 
 export async function parseSaveFiles(files) {
-  const { parseD2s, parseD2i } = await loadParser();
+  const { parseD2s, parseD2i, writeD2s, writeD2i } = await loadParser();
   const items = [];
-  const owners = []; // { name, mode, cls?, level?, quests? }; shared stashes have no class
+  const owners = []; // { name, mode, cls?, level?, quests?, dead? }; shared stashes have no class
   const errors = [];
-  const saves = files.filter((f) => /\.d2[si]$/i.test(f.name));
+  // Not macOS's "._" metadata files that copying to other disks leaves beside every file
+  const saves = files.filter((f) => /\.d2[si]$/i.test(f.name) && !f.name.startsWith("._"));
   // A folder pick includes subfolders: same-named saves from different folders get the folder added
   const baseName = (f) => f.name.replace(/\.d2[si]$/i, "");
   const counts = new Map();
@@ -85,17 +86,34 @@ export async function parseSaveFiles(files) {
     const owner = counts.get(baseName(file)) > 1 && folder ? `${baseName(file)} (${folder})` : baseName(file);
     try {
       const bytes = new Uint8Array(await file.arrayBuffer());
-      if (/\.d2i$/i.test(file.name)) {
-        JSON.parse(parseD2i(bytes)).forEach((tab, i) => {
+      const stash = /\.d2i$/i.test(file.name);
+      const json = (stash ? parseD2i : parseD2s)(bytes);
+      // A file cut short (copied halfway) or damaged can still parse, missing whole stash pages: a good save
+      // writes back to the same bytes. Shown with what could be read, and said.
+      const same = (written) => written.length === bytes.length && written.every((x, i) => x === bytes[i]);
+      try {
+        if (!same((stash ? writeD2i : writeD2s)(json))) throw new Error();
+      } catch {
+        errors.push(`${file.name}: damaged or cut short (does not read back the same); items may be missing`);
+      }
+      if (stash) {
+        JSON.parse(json).forEach((tab, i) => {
           const place = tab.tab_type === "AdvancedStash" ? "advanced" : `shared${i + 1}`;
           tab.items.forEach((it) => collect(it, owner, place, items));
         });
         owners.push({ name: owner, mode: modeOfStash(file.name) });
       } else {
-        const save = JSON.parse(parseD2s(bytes));
-        save.items.forEach((it) => collect(it, owner, placeOf(it), items));
-        (save.merc_items?.items ?? []).forEach((it) => collect(it, owner, "merc", items));
-        owners.push({ name: owner, mode: modeOfCharacter(save), cls: save.character.class, level: save.character.level, quests: questsOf(save.quests) });
+        const save = JSON.parse(json);
+        const { flags } = save.character;
+        // A dead hardcore hero can't be played again: what it holds is not the player's any more
+        const dead = flags.includes("HARDCORE") && flags.includes("DEAD");
+        if (!dead) {
+          save.items.forEach((it) => collect(it, owner, placeOf(it), items));
+          (save.merc_items?.items ?? []).forEach((it) => collect(it, owner, "merc", items));
+          // Left on the corpse after dying: picked up again at the next game
+          (save.corpses ?? []).forEach((c) => c.items.forEach((it) => collect(it, owner, "corpse", items)));
+        }
+        owners.push({ name: owner, mode: modeOfCharacter(save), cls: save.character.class, level: save.character.level, quests: questsOf(save.quests), dead });
       }
     } catch (e) {
       errors.push(`${file.name}: ${e.message ?? e}`);
