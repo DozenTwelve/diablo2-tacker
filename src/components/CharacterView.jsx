@@ -20,9 +20,9 @@ const gridRank = (place) => Object.keys(GRIDS).indexOf(place) + 1 || 10 + Number
 // Equipment drawn as the in-game character screen; a mercenary only has these slots
 const DOLLS = { equipped: undefined, merc: ["Head", "Torso", "RightArm", "LeftArm"] };
 
-const MUSEUM = /^H?L?(UW|UA|UJ|SET)-/;
+const MUSEUM = /^H?[LC]?(UW|UA|UJ|SET)-/; // mule names of every mode (modePrefix)
 const groupOf = (o, roles) =>
-  !o.cls ? "sharedStash" : roleOf(o, roles) === "main" ? "mainCharacters" : MUSEUM.test(o.name) ? "museumMules" : /^H?L?TRASH-/.test(o.name) ? "trashMules" : "otherMules";
+  !o.cls ? "sharedStash" : roleOf(o, roles) === "main" ? "mainCharacters" : MUSEUM.test(o.name) ? "museumMules" : /^H?[LC]?TRASH-/.test(o.name) ? "trashMules" : "otherMules";
 const GROUPS = ["mainCharacters", "museumMules", "otherMules", "trashMules", "sharedStash"];
 
 // Every character and stash in list order: by group, then by name

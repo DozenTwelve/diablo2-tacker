@@ -63,11 +63,15 @@ try {
     assert.throws(() => run(files), /corpse/);
   });
 
-  check("a dead hardcore character is never the template", () => {
-    let files = base;
-    for (const name of first.report.mules.map((n) => `${n}.d2s`))
-      files = edit(files, name, (j) => (j.character.flags = name === b ? "HARDCORE" : "HARDCORE | DEAD"));
-    assert.equal(run(files, { mode: "HardCore:Modern" }).report.template, b.slice(0, -4));
+  check("dead hardcore characters are never mules, named or not", () => {
+    // In the organized folder, so new mule names (as hardcore: HUW-A...) match the dead mules' own
+    let files = organized.map((f) => (/^[A-Z]+-[A-Z]+\.d2s$/.test(f.name) ? { ...f, name: `H${f.name}` } : f));
+    const names = files.filter((f) => /^H[A-Z]+-[A-Z]+\.d2s$/.test(f.name)).map((f) => f.name);
+    const alive = names.find((n) => n.startsWith("HTRASH")) ?? names.at(-1);
+    for (const name of names) files = edit(files, name, (j) => (j.character.flags = name === alive ? "HARDCORE" : "HARDCORE | DEAD"));
+    // Left alone by default: their names are taken by other characters, which stops the run
+    assert.throws(() => run(files, { mode: "HardCore:Modern" }), /already used by other characters/);
+    assert.throws(() => run(files, { mode: "HardCore:Modern", mules: names.map((n) => n.slice(0, -4)) }), /already used by other characters/);
   });
 
   check("a classic character is not a legacy mule", () => {
@@ -85,6 +89,10 @@ try {
       assert.equal(r.report.moved, first.report.moved);
     });
   }
+
+  check("two saves named apart from case stop the run", () => {
+    assert.throws(() => run([...base, { ...base.find((f) => f.name === a), name: a.toLowerCase() }]), /upper and lower case/);
+  });
 
   check("a mule named in other case is rewritten under its own name", () => {
     const name = first.report.newMules[0].name;

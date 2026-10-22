@@ -198,10 +198,12 @@ const moveTo = (item, { page, x, y }) => ({
 
 // Game mode of a character or shared stash file: "SoftCore:Modern" (Reign of the Warlock), "HardCore:Legacy"
 // (Lord of Destruction), "SoftCore:Classic" (no expansion: no shared stash, can't hold expansion items)...
-export const modeOfCharacter = (json) =>
-  `${json.character.flags.includes("HARDCORE") ? "HardCore" : "SoftCore"}:${
-    { ReignOfTheWarlock: "Modern", Classic: "Classic" }[json.character.preview.game_version] ?? "Legacy"
-  }`;
+// Saves before v104 say expansion or not in a flag only
+export const modeOfCharacter = (json) => {
+  const { flags, preview } = json.character;
+  const version = json.version >= 104 ? preview.game_version : flags.includes("EXPANSION") ? "Expansion" : "Classic";
+  return `${flags.includes("HARDCORE") ? "HardCore" : "SoftCore"}:${{ ReignOfTheWarlock: "Modern", Classic: "Classic" }[version] ?? "Legacy"}`;
+};
 // Only the file names the game reads; a copy beside them ("... - Copy.d2i") has no mode and is never emptied
 export const modeOfStash = (name) => {
   const m = /^(modern)?sharedstash(softcore|hardcore)(v2)?(\.d2i)?$/i.exec(name);
@@ -210,12 +212,14 @@ export const modeOfStash = (name) => {
 const goldOf = (json) => json.stats.filter((s) => GOLD_STATS.has(s.id)).reduce((n, s) => n + s.value, 0);
 const deadHardcore = (json) => json.character.flags.includes("HARDCORE") && json.character.flags.includes("DEAD");
 
-// Mules of a mode: the named characters, or else every level 1 character
+// Mules of a mode: the named characters, or else every level 1 character; never a dead hardcore hero (it
+// can't be played, its items stay with it)
 export const mulesOf = (saves, mode, names) =>
   saves.filter(
     (s) =>
       s.ext === "d2s" &&
       modeOfCharacter(s.json) === mode &&
+      !deadHardcore(s.json) &&
       (names ? names.some((n) => n.toLowerCase() === s.name.toLowerCase()) : s.json.character.level === 1),
   );
 
@@ -232,8 +236,16 @@ export const filesOfCharacter = (name, fileNames) =>
 //   inbox: what the shared stash pages brought: { museum: keys, dup: keys, trash: keys, other }, ... }
 export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox } = {}) {
   // By name: the same saves give the same result whatever order the files came in (folder picker, Deck, Node)
+  // "RW-A.d2s" and "rw-a.d2s" side by side (a case-sensitive file system): one would shadow the other
+  const seen = new Set();
+  for (const s of saves) {
+    const key = `${s.name}.${s.ext}`.toLowerCase();
+    if (seen.has(key)) throw new Error(`two saves named ${s.name}.${s.ext} apart from upper and lower case: keep one`);
+    seen.add(key);
+  }
   const mules = mulesOf(saves, mode, names).sort((a, b) => a.name.localeCompare(b.name));
-  const unknown = names?.filter((n) => !mules.some((s) => s.name.toLowerCase() === n.toLowerCase())) ?? [];
+  const named = (n) => saves.some((s) => s.ext === "d2s" && modeOfCharacter(s.json) === mode && s.name.toLowerCase() === n.toLowerCase());
+  const unknown = names?.filter((n) => !named(n)) ?? [];
   if (unknown.length) throw new Error(`not characters of ${mode}: ${unknown.join(", ")}`);
   if (!mules.length) throw new Error(`no mules in ${mode}`);
   // Items on a corpse or in an Iron Golem are not the mule's to move: the player picks them up first
@@ -241,10 +253,10 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
     if (s.json.corpses?.some((c) => c.items.length) || s.json.iron_golem?.golem_item)
       throw new Error(`${s.name} has items on its corpse or in its Iron Golem: pick them up in the game first`);
   }
-  // New mules copy a living level 1 character, a Barbarian if any: never a main's level or a dead hardcore hero
-  const blank = mules.filter((s) => s.json.character.level === 1 && !deadHardcore(s.json));
+  // New mules copy a level 1 mule, a Barbarian if any: never a main's level
+  const blank = mules.filter((s) => s.json.character.level === 1);
   const template = blank.find((s) => s.json.character.class === "Barbarian") ?? blank[0];
-  if (!template) throw new Error(`no living level 1 character among the mules of ${mode} to make new mules from`);
+  if (!template) throw new Error(`no level 1 character among the mules of ${mode} to make new mules from`);
 
   const source = []; // { item, from }
   const dropped = [];
@@ -318,7 +330,9 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
     if (json.character.name) json.character.name = name; // saves before v98 keep the name here
     json.items = list;
     json.stats = json.stats.filter((s) => !GOLD_STATS.has(s.id));
+    json.corpses = [];
     if (json.merc_items) json.merc_items = { ...json.merc_items, items: [] };
+    if (json.iron_golem) json.iron_golem = { ...json.iron_golem, golem_item: null };
     out.set(name.toLowerCase(), { name, ext: "d2s", json, template: template.name });
   }
 
