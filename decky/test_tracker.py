@@ -243,10 +243,10 @@ with tempfile.TemporaryDirectory() as tmp:
     tracker.restore_backup(folder, root, target)  # a backup restored stays, though past KEEP now
     assert target in names() and names()[-1] == empty
 
-    # Mules go below the other characters in D2R's list (by save time), in name order
+    # Mules go below the other characters in D2R's list (by save time), in the order given
     open(os.path.join(folder, "Main.d2s"), "wb").write(b"main")
     os.utime(os.path.join(folder, "Main.d2s"), (5000, 5000))
-    tracker.write_saves(folder, [{"name": "B-A.d2s", "bytes": b"mule"}], root, mules=["B-A", "A"])
+    tracker.write_saves(folder, [{"name": "B-A.d2s", "bytes": b"mule"}], root, mules=["A", "B-A"])  # in the page's order
     when = lambda n: os.path.getmtime(os.path.join(folder, n))
     assert when("A.d2s") < 5000 and when("B-A.d2s") < when("A.d2s") and when("Main.d2s") == 5000
 

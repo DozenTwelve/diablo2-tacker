@@ -181,19 +181,27 @@ def write_saves(folder, files, backup_root, delete=(), mules=()):
         return backup
 
 
+LAYOUT_NAME = re.compile(r"H?[LC]?(UW|UA|UJ|SET|DUP|RW|CHARM|JEWEL|RING|MAG|BASE|MISC|TRASH)-[A-Z]+", re.I)
+
+
 def _order(folder, mules):
     """D2R lists characters by when their save last changed, newest first: every mule (even one unchanged) gets a
     time just before the oldest other character's, in name order, so the characters played stay on top. As
     muleTimes in src/lib/organize.js."""
     is_mule = {m.lower() + ".d2s" for m in mules}
-    others = [os.path.getmtime(os.path.join(folder, f)) for f in os.listdir(folder) if f.lower().endswith(".d2s") and f.lower() not in is_mule]
+    # Not another mode's mules either (isLayoutName), or each mode's run would date its mules below the other's
+    others = [
+        os.path.getmtime(os.path.join(folder, f))
+        for f in os.listdir(folder)
+        if f.lower().endswith(".d2s") and f.lower() not in is_mule and not LAYOUT_NAME.fullmatch(f[:-4])
+    ]
     if not others:
         return
     start = min(others) - 60
-    for i, name in enumerate(sorted(mules, key=str.lower)):
+    for i, name in enumerate(mules):  # in the page's order (byMuleName), 2 s apart as in the web zip
         path = os.path.join(folder, name + ".d2s")
         if os.path.isfile(path):
-            os.utime(path, (start - i, start - i))
+            os.utime(path, (start - 2 * i, start - 2 * i))
 
 
 # A backup's name is when it was made, in UTC (Z; older plugin versions used local time without it), -2... for a

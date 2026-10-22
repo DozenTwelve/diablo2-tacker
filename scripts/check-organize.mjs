@@ -13,7 +13,7 @@ const vite = await createServer({ server: { middlewareMode: true, hmr: false }, 
 try {
   const wasm = await vite.ssrLoadModule("/wasm/pkg/d2_parser.js");
   wasm.initSync({ module: readFileSync(new URL("../wasm/pkg/d2_parser_bg.wasm", import.meta.url)) });
-  const { copiesNeeded, muleTimes, organizeFiles } = await vite.ssrLoadModule("/src/lib/organize.js");
+  const { byMuleName, copiesNeeded, museumLayout, muleTimes, organizeFiles, placeCopies } = await vite.ssrLoadModule("/src/lib/organize.js");
   const { scoreOfItem } = await vite.ssrLoadModule("/src/lib/parseSaves.js");
 
   const parse = (name, bytes) => JSON.parse(name.endsWith(".d2s") ? wasm.parseD2s(bytes) : wasm.parseD2i(bytes));
@@ -159,6 +159,35 @@ try {
     const order = muleTimes(times, names);
     assert(Object.values(order).every((ms) => ms < 1_000_000) && Object.keys(order).length === names.length);
     assert.deepEqual(muleTimes({ "A.d2s": 5 }, ["A"]), {}); // only mules: nothing to go below
+  });
+
+  check("placing copies: never trash a socketed copy or a new version; ethereal copies may take plain places", () => {
+    const slots = museumLayout().slots;
+    const copy = (key, code, extra) => ({ key, code, eth: false, score: 50, home: false, fixed: false, version: undefined, ...extra });
+    const place = (copies) => copies.map((c) => placeCopies(copies, slots).get(c));
+    const unwanted = [...slots.keys()].find((k) => k.startsWith("u:") && !copiesNeeded(k));
+    const code = slots.get(unwanted).code;
+    assert.deepEqual(place([copy(unwanted, code, { score: 90 }), copy(unwanted, code, { fixed: true }), copy(unwanted, code)]), ["MUSEUM", "DUP", "TRASH"]);
+    const facet = (v) => copy("u:Rainbow Facet", "jew", { version: v });
+    assert.deepEqual(place([facet(392), facet(393), facet(393), facet(394)]), ["MUSEUM", "DUP", "TRASH", "DUP"]);
+    const gloves = (score) => copy("u:Magefist", "lgl", { eth: true, score });
+    assert(copiesNeeded("u:Magefist") > 2);
+    assert.deepEqual(place([gloves(80), gloves(70), gloves(60)]), ["MUSEUM", "DUP", "DUP"]);
+    assert.equal(copiesNeeded("u:Bartuc's Cut-Throat"), 2); // a phoenix strike Assassin holds one in each hand
+  });
+
+  check("mules keep their order past 26 in a group, and another mode's mules aren't main characters", () => {
+    assert.deepEqual(["JEWEL-AA", "JEWEL-B", "JEWEL-Z", "CHARM-A"].sort(byMuleName), ["CHARM-A", "JEWEL-B", "JEWEL-Z", "JEWEL-AA"]);
+    const order = muleTimes({ "Main.d2s": 10_000_000, "HUW-A.d2s": 5_000_000, "UW-A.d2s": 9_000_000 }, ["UW-A"]);
+    assert.equal(order["UW-A.d2s"], 10_000_000 - 60_000);
+  });
+
+  check("starting kit an earlier run kept stays in a layout mule's inventory", () => {
+    const starter = allItems.find((i) => i.flags.includes("STARTER_ITEM"));
+    if (!starter) return console.log("--  no starting kit in these saves");
+    const mule = first.report.newMules.find((m) => m.name.endsWith("-A")).name;
+    const files = edit(organized, `${mule}.d2s`, (j) => j.items.push({ ...structuredClone(starter), position: { ...starter.position, mode: "Stored", body_location: "None", store_page: "Inventory", inv_x: 9, inv_y: 3 } }));
+    assert.equal(run(files).report.dropped.length, 0);
   });
 
   check("a mistyped mule name or a missing inbox page stops the run", () => {

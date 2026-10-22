@@ -4,7 +4,7 @@ import { deckBackups, deckSaveFiles, deleteDeckBackup, onDeck, restoreDeck } fro
 import { roleOf } from "../lib/inventory";
 import { LOCALES, t } from "../lib/i18n";
 import { SKILL } from "../lib/links";
-import { filesOfCharacter, modeOfCharacter, modeOfStash, muleTimes, organizeFiles } from "../lib/organize";
+import { byMuleName, filesOfCharacter, modeOfCharacter, modeOfStash, muleTimes, organizeFiles } from "../lib/organize";
 import { loadParser, saveFolder, statsOf } from "../lib/parseSaves";
 import { describeStats } from "../lib/stats";
 import { Link } from "../lib/router";
@@ -217,7 +217,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
         body: JSON.stringify({
           files: out.map((f) => ({ name: f.name, template: f.template, data: toBase64(f.bytes) })),
           delete: remove,
-          mules: done.report.muleNames.filter((n) => !remove.includes(n)), // put below the others in D2R's list
+          mules: done.report.muleNames.filter((n) => !remove.includes(n)).sort(byMuleName), // put below the others in D2R's list
         }),
       });
       const result = await response.json();

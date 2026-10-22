@@ -48,7 +48,7 @@ try {
   const { statsOf } = await vite.ssrLoadModule("/src/lib/parseSaves.js");
 
   const junkText = (m, lang) => describeStats(statsOf(m.item, codeOfNumber(m.item.code)), lang).join("; ");
-  const files = readdirSync(dir).filter((f) => /\.d2[si]$/.test(f)).map((name) => ({ name, bytes: new Uint8Array(readFileSync(join(dir, name))) }));
+  const files = readdirSync(dir).filter((f) => /\.d2[si]$/.test(f) && !f.startsWith("._")).map((name) => ({ name, bytes: new Uint8Array(readFileSync(join(dir, name))) }));
   const { files: changed, saves, report } = organizeFiles(files, wasm, { mode, mules: muleNames, inbox });
 
   console.log(`mode ${mode}: emptying ${report.mules.length} characters into ${report.newMules.length} mules cloned from ${report.template}`);
@@ -77,7 +77,8 @@ try {
   try {
     // Every file keeps the time of the one it replaces, a new mule its template's: D2R lists characters by it
     const keepTime = (to, from) => existsSync(from) && utimesSync(to, statSync(from).atime, statSync(from).mtime);
-    for (const f of changed) {
+    // Characters to delete are not written: delete.txt lists them
+    for (const f of changed.filter((f) => !doomed.some((n) => `${n}.d2s` === f.name))) {
       writeFileSync(join(partial, f.name), f.bytes);
       keepTime(join(partial, f.name), join(dir, existsSync(join(dir, f.name)) ? f.name : `${f.template}.d2s`));
       for (const ext of ["ctl", "key", "ma0", "map"]) {

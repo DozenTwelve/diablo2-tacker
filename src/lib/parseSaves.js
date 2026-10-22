@@ -46,6 +46,10 @@ export function statsOf(item, code) {
 export const rollsOf = (item) =>
   item.runeword_id != null ? summed(item.runeword_stats ?? []) : item.sockets.some(Boolean) ? summed(item.stats) : undefined;
 
+// Which version of an item a copy is, where one item comes in several: Rainbow Facet's (its uniqueitems id), a
+// class skills item's (Hellfire Torch: the class). undefined for the rest.
+export const versionOf = (item) => variantOf(item) ?? item.stats.find((s) => s.id === 83)?.layer;
+
 // A save item's roll score against its catalog entry (copyScore), for organizing: the best copy takes the museum slot
 export function scoreOfItem(item) {
   const code = codeOfNumber(item.code);

@@ -9,7 +9,7 @@
 // and the rest are packed into their own mules.
 import { uniques, sets, uniqueKey, setItemKey, keyOf, codeOfNumber } from "./gameData";
 import { modeOfCharacter, modeOfStash } from "./modes";
-import { scoreOfItem } from "./parseSaves";
+import { scoreOfItem, versionOf } from "./parseSaves";
 import { builds, keyOfOption } from "./builds";
 import items from "../data/items.json";
 import statData from "../data/stats.json";
@@ -67,7 +67,19 @@ function pack(prefix, units) {
   return mules;
 }
 
+// Mule names in order: by name, but a layout suffix by length first (JEWEL-Z before JEWEL-AA), so a group of more
+// than 26 mules keeps its order and organizing again moves nothing
+export function byMuleName(a, b) {
+  const [pa, sa] = [a.slice(0, a.lastIndexOf("-") + 1 || a.length), a.slice(a.lastIndexOf("-") + 1)];
+  const [pb, sb] = [b.slice(0, b.lastIndexOf("-") + 1 || b.length), b.slice(b.lastIndexOf("-") + 1)];
+  const layout = a.includes("-") && b.includes("-") && /^[A-Z]+$/.test(sa) && /^[A-Z]+$/.test(sb);
+  return layout ? pa.localeCompare(pb) || sa.length - sb.length || sa.localeCompare(sb) : a.localeCompare(b);
+}
+
 // Mule names start with H for hardcore, L for legacy and C for classic saves ("HUW-A"), so every mode's mules fit in one folder
+const GROUP_NAMES = ["UW", "UA", "UJ", "SET", "DUP", "RW", "CHARM", "JEWEL", "RING", "MAG", "BASE", "MISC", "TRASH"];
+// A mule named by the layout, in any mode (HUW-A, LCHARM-B...)
+export const isLayoutName = (name) => new RegExp(`^H?[LC]?(${GROUP_NAMES.join("|")})-[A-Z]+$`, "i").test(name);
 export const modePrefix = (mode) =>
   (mode.startsWith("HardCore") ? "H" : "") + (mode.endsWith("Legacy") ? "L" : mode.endsWith("Classic") ? "C" : "");
 
@@ -92,19 +104,25 @@ export function museumLayout(namePrefix = "") {
 
 // How many copies of a unique or set item are worth having: one for each class with a build recommending it,
 // two where it is a ring (src/data/builds.json), so every class could wear it; none for one no build uses. In
-// single player nothing can be traded: a copy no character would wear only takes room.
+// single player nothing can be traded: a copy no character would wear only takes room. A weapon a build holds in
+// both hands counts twice too.
 const NEEDED = new Map();
 {
   const perClass = new Map(); // key -> Map(class -> copies)
-  for (const b of builds)
+  for (const b of builds) {
+    const slotsOf = new Map(); // key -> slots this build lists it in
     for (const [slot, options] of Object.entries(b.slots))
       for (const o of options.filter((o) => o.item)) {
         const key = keyOfOption(o);
-        if (!key) continue;
-        if (!perClass.has(key)) perClass.set(key, new Map());
-        const classes = perClass.get(key);
-        classes.set(b.cls, Math.max(classes.get(b.cls) ?? 0, slot === "ring" ? 2 : 1));
+        if (key) slotsOf.set(key, new Set([...(slotsOf.get(key) ?? []), slot]));
       }
+    for (const [key, slots] of slotsOf) {
+      // Two rings, or a weapon in each hand (Bartuc's claws for a phoenix strike Assassin)
+      const copies = slots.has("ring") || (slots.has("weapon") && slots.has("offhand")) ? 2 : 1;
+      if (!perClass.has(key)) perClass.set(key, new Map());
+      perClass.get(key).set(b.cls, Math.max(perClass.get(key).get(b.cls) ?? 0, copies));
+    }
+  }
   for (const [key, classes] of perClass) NEEDED.set(key, [...classes.values()].reduce((a, b) => a + b, 0));
 }
 export const copiesNeeded = (key) => NEEDED.get(key) ?? 0;
@@ -114,8 +132,10 @@ export const copiesNeeded = (key) => NEEDED.get(key) ?? 0;
 // already there, so organizing again moves nothing. Copies past what is worth having (copiesNeeded, the museum
 // copy counting as one, plus one ethereal weapon or armor for a mercenary when any build uses the item) go to
 // TRASH, the lowest rolls first. Items without a museum slot (legacy) stay in DUP.
-// copies: [{ key, code, eth, score (-1: none), home (in its museum slot now) }], slots: museumLayout().slots
-// -> Map copy -> "MUSEUM" | "DUP" | "TRASH", in the order they were decided
+// Never to TRASH: a copy holding runes, gems or jewels or personalized (fixed), nor the first copy of a version
+// (Rainbow Facet's element and trigger, Hellfire Torch's class) no copy kept so far has.
+// copies: [{ key, code, eth, score (-1: none), home (in its museum slot now), fixed, version }],
+// slots: museumLayout().slots -> Map copy -> "MUSEUM" | "DUP" | "TRASH", in the order they were decided
 export function placeCopies(copies, slots) {
   const order = [...copies].sort((a, b) => a.eth - b.eth || b.score - a.score || b.home - a.home);
   const where = new Map();
@@ -140,11 +160,13 @@ export function placeCopies(copies, slots) {
       keep.set(c.key, { plain: Math.max(0, needed - (kept.eth ? 0 : 1)), eth: merc && !kept.eth ? 1 : 0 });
     }
     const left = keep.get(c.key);
-    const kind = c.eth ? "eth" : "plain";
+    // An ethereal copy may take a plain place left over (only ethereal ones found); plain copies come first
+    const kind = c.eth && !left.eth && left.plain > 0 ? "plain" : c.eth ? "eth" : "plain";
+    const newVersion = c.version != null && ![...where].some(([o, g]) => g !== "TRASH" && o.key === c.key && o.version === c.version);
     if (left[kind] > 0) {
       left[kind]--;
       where.set(c, "DUP");
-    } else where.set(c, "TRASH");
+    } else where.set(c, c.fixed || newVersion ? "DUP" : "TRASH");
   }
   return where;
 }
@@ -294,7 +316,7 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
     if (seen.has(key)) throw new Error(`two saves named ${s.name}.${s.ext} apart from upper and lower case: keep one`);
     seen.add(key);
   }
-  const mules = mulesOf(saves, mode, names).sort((a, b) => a.name.localeCompare(b.name));
+  const mules = mulesOf(saves, mode, names).sort((a, b) => byMuleName(a.name, b.name));
   const named = (n) => saves.some((s) => s.ext === "d2s" && modeOfCharacter(s.json) === mode && s.name.toLowerCase() === n.toLowerCase());
   const unknown = names?.filter((n) => !named(n)) ?? [];
   if (unknown.length) throw new Error(`not characters of ${mode}: ${unknown.join(", ")}`);
@@ -314,7 +336,8 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
   const out = new Map(); // name (lower case) -> changed save
   for (const s of mules) {
     for (const item of s.json.items) {
-      if (isStarter(item)) dropped.push(item);
+      // Never from a mule of the layout: starting kit an earlier run kept (from a stash) may sit in its inventory
+      if (isStarter(item) && !isLayoutName(s.name)) dropped.push(item);
       else source.push({ item, from: `${s.name} ${item.position.store_page === "Null" ? "equipped" : item.position.store_page}` });
     }
     const merc = s.json.merc_items?.items ?? [];
@@ -344,7 +367,16 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
   const isCopy = (e) => /^[us]:/.test(e.key);
   const copies = entries
     .filter(isCopy)
-    .map((e) => ({ e, key: e.key, code: e.code, eth: e.item.flags.includes("ETHEREAL"), score: scoreOfItem(e.item) ?? -1, home: home(e) }));
+    .map((e) => ({
+      e,
+      key: e.key,
+      code: e.code,
+      eth: e.item.flags.includes("ETHEREAL"),
+      score: scoreOfItem(e.item) ?? -1,
+      home: home(e),
+      fixed: e.item.sockets.some(Boolean) || Boolean(e.item.personalized_name),
+      version: versionOf(e.item),
+    }));
   for (const [c, group] of placeCopies(copies, museum.slots)) {
     if (group === "MUSEUM") filled.set(c.key, c.e);
     else loose[group].push(c.e);
@@ -428,10 +460,12 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
 // times: { "Name.d2s": ms } of the folder's characters; mules: mule names -> { "Mule.d2s": ms } (none without others)
 export function muleTimes(times, mules) {
   const isMule = new Set(mules.map((n) => `${n}.d2s`.toLowerCase()));
-  const others = Object.entries(times).filter(([f]) => /\.d2s$/i.test(f) && !isMule.has(f.toLowerCase()));
+  // Other characters: not another mode's mules either, or each mode's run would date its mules below the other's
+  const others = Object.entries(times).filter(([f]) => /\.d2s$/i.test(f) && !isMule.has(f.toLowerCase()) && !isLayoutName(f.slice(0, -4)));
   if (!others.length) return {};
   const start = Math.min(...others.map(([, ms]) => ms)) - 60_000;
-  return Object.fromEntries([...mules].sort((a, b) => a.localeCompare(b)).map((n, i) => [`${n}.d2s`, start - i * 1000]));
+  // 2 s apart: zip files keep times in 2 second steps
+  return Object.fromEntries([...mules].sort(byMuleName).map((n, i) => [`${n}.d2s`, start - i * 2000]));
 }
 
 // Organize save files and write the result, checked before anything is returned: every item is kept exactly
@@ -446,7 +480,7 @@ export function organizeFiles(files, wasm, options) {
   // A save must come back byte for byte from its JSON: JavaScript numbers can't hold every 64-bit value
   const saves = files
     // Lower case only, as written back: "X.D2S" would come back as a second file "X.d2s" next to it
-    .filter((f) => /\.d2[si]$/.test(f.name))
+    .filter((f) => /\.d2[si]$/.test(f.name) && !f.name.startsWith("._")) // not macOS's "._" metadata files
     .map((f) => {
       const save = { name: f.name.slice(0, -4), ext: f.name.slice(-3) };
       save.json = parse(save.ext, f.bytes);

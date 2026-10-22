@@ -1,7 +1,7 @@
 // What each new find on the inbox pages of the shared stash is worth, before organizing. Unique and set items are
 // placed by organizing's own placeCopies over what organizing would take (the mode's mules and inbox pages), so the
 // verdict is what organizing will do; charms and jewels by isJunk.
-import { copiesNeeded, isJunk, modePrefix, museumLayout, placeCopies } from "./organize";
+import { byMuleName, copiesNeeded, isJunk, modePrefix, museumLayout, placeCopies } from "./organize";
 import { copyScore } from "./props";
 import { ownersOf, roleOf } from "./inventory";
 import items from "../data/items.json";
@@ -43,8 +43,17 @@ export function findsOf(saveData, inboxes, roles = {}) {
     const index = new Map(saveData.items.map((r, i) => [r, i]));
     const copies = saveData.items
       .filter((r) => /^[us]:/.test(r.key) && r.place !== "socketed" && (mules.has(r.owner) || inbox.has(r)))
-      .sort((a, b) => inbox.has(a) - inbox.has(b) || a.owner.localeCompare(b.owner) || index.get(a) - index.get(b))
-      .map((r) => ({ r, key: r.key, code: r.code, eth: r.ethereal, score: copyScore(r) ?? -1, home: r.owner === slots.get(r.key)?.mule }));
+      .sort((a, b) => inbox.has(a) - inbox.has(b) || byMuleName(a.owner, b.owner) || index.get(a) - index.get(b))
+      .map((r) => ({
+        r,
+        key: r.key,
+        code: r.code,
+        eth: r.ethereal,
+        score: copyScore(r) ?? -1,
+        home: r.owner === slots.get(r.key)?.mule,
+        fixed: r.rolls != null, // holds runes, gems or jewels (rollsOf)
+        version: r.variant ?? r.stats.find(([id]) => id === 83)?.[1],
+      }));
     const where = placeCopies(copies, slots);
     const kept = (key, but) => copies.filter((c) => c.key === key && c.r !== but && where.get(c) !== "TRASH").length;
     for (const c of copies.filter((c) => inbox.has(c.r))) {
