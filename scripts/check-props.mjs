@@ -7,7 +7,7 @@ import { createServer } from "vite";
 // Not shown in game, commented out in the tables (*), or one item's special random/affix property
 const NOT_SHOWN = new Set(["dur", "state", "bloody", "fade", "pois-len", "cold-len", "*hp", "*enr", "*charged", "roguesbow-affix1", "magdam-rand", "skilltab-war"]);
 
-const vite = await createServer({ server: { middlewareMode: true }, appType: "custom", logLevel: "error" });
+const vite = await createServer({ server: { middlewareMode: true, hmr: false }, appType: "custom", logLevel: "error" });
 try {
   const { uniques, sets, runewords } = await vite.ssrLoadModule("/src/lib/gameData.js");
   const { propLines } = await vite.ssrLoadModule("/src/lib/props.js");

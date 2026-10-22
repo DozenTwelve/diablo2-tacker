@@ -1,6 +1,6 @@
 // Rearrange a save folder's mules (see src/lib/organize.js) and write the changed saves to a new folder.
 // Usage: node scripts/organize.mjs <save dir> <out dir> [--mode SoftCore:Modern] [--mules a,b,c] [--inbox 1,2] [--delete a,b] [--yes]
-//   --mode   game mode to organize: SoftCore|HardCore : Modern (Reign of the Warlock)|Legacy
+//   --mode   game mode to organize: SoftCore|HardCore : Modern (Reign of the Warlock)|Legacy|Classic
 //   --mules  characters to empty into the new mules (default: every level 1 character of the mode)
 //   --inbox  shared stash pages to empty (default: every page); the others stay as they are
 //   --delete emptied characters no new mule reuses (the dry run lists them) to delete: their files go in delete.txt
@@ -13,23 +13,31 @@ import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameS
 import { join } from "node:path";
 import { createServer } from "vite";
 
+const USAGE = "usage: node scripts/organize.mjs <save dir> <out dir> [--mode SoftCore:Modern] [--mules a,b] [--inbox 1,2] [--delete a,b] [--yes]";
 const args = process.argv.slice(2);
+// A mistyped option must stop the run, not be dropped: "--inbox=4,5" ignored would empty every page
 const option = (name) => {
   const i = args.indexOf(name);
-  return i < 0 ? undefined : args.splice(i, 2)[1];
+  if (i < 0) return undefined;
+  if (!args[i + 1] || args[i + 1].startsWith("--")) throw new Error(`${name} needs a value. ${USAGE}`);
+  return args.splice(i, 2)[1];
 };
 const mode = option("--mode") ?? "SoftCore:Modern";
+if (!/^(SoftCore|HardCore):(Modern|Legacy|Classic)$/.test(mode)) throw new Error(`--mode is SoftCore or HardCore, then :Modern, :Legacy or :Classic, not ${mode}`);
 const muleNames = option("--mules")?.split(",");
 const inbox = option("--inbox")?.split(",").map(Number);
 const remove = option("--delete")?.split(",").filter(Boolean) ?? [];
 if (inbox?.some((n) => !Number.isInteger(n) || n < 1)) throw new Error("--inbox takes page numbers, e.g. --inbox 4,5");
 const yes = args.includes("--yes");
-const [dir, outDir] = args.filter((a) => a !== "--yes");
-if (!dir || !outDir) throw new Error("usage: node scripts/organize.mjs <save dir> <out dir> [--mode ...] [--mules a,b] [--yes]");
+const rest = args.filter((a) => a !== "--yes");
+const unknown = rest.filter((a) => a.startsWith("-"));
+if (unknown.length) throw new Error(`unknown option ${unknown.join(" ")}. ${USAGE}`);
+if (rest.length !== 2) throw new Error(USAGE);
+const [dir, outDir] = rest;
 const partial = `${outDir}.partial`;
 if (existsSync(outDir) || existsSync(partial)) throw new Error(`${outDir} or ${partial} already exists`);
 
-const vite = await createServer({ server: { middlewareMode: true }, appType: "custom", logLevel: "error" });
+const vite = await createServer({ server: { middlewareMode: true, hmr: false }, appType: "custom", logLevel: "error" });
 try {
   const wasm = await vite.ssrLoadModule("/wasm/pkg/d2_parser.js");
   wasm.initSync({ module: readFileSync(new URL("../wasm/pkg/d2_parser_bg.wasm", import.meta.url)) });
