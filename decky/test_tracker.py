@@ -160,11 +160,17 @@ with tempfile.TemporaryDirectory() as tmp:
     os.chmod(locked, 0o644)
     os.remove(locked)
     assert json.loads(get("/api/backups")) == listed and not [n for n in os.listdir(backups) if n.endswith(".partial")]
-    # Two in one second get two names; a stray file named like one is no backup
-    two = [tracker._backup(saves, backups) for _ in range(2)]
-    assert two[0] != two[1]
-    for b in two:
-        tracker.shutil.rmtree(b)
+    # Two in one second get two names; the same saves again make no new one; a stray file named like one is no backup
+    had = set(os.listdir(backups))
+    first = tracker._backup(saves, backups, {"reason": "organize"})
+    assert tracker._backup(saves, backups, {"reason": "organize"}) == first
+    open(os.path.join(saves, "Spare.d2s"), "wb").write(b"spare")
+    second = tracker._backup(saves, backups, {"reason": "organize"})
+    assert second != first and os.path.dirname(second) == os.path.dirname(first)
+    os.remove(os.path.join(saves, "Spare.d2s"))
+    for b in (first, second):
+        if os.path.basename(b) not in had:
+            tracker.shutil.rmtree(b)
     open(os.path.join(backups, "20000101-000000"), "w").write("not a backup")
 
     # Backups, newest first, and putting one back: the folder's saves become exactly those of that backup, after a
@@ -179,13 +185,15 @@ with tempfile.TemporaryDirectory() as tmp:
     tracker.game_running = lambda: False
     os.mkdir(os.path.join(saves, "my old saves"))  # a folder the player keeps there
     open(os.path.join(saves, "Settings.json"), "w").write("changed since")
-    now = sorted(os.listdir(saves))
+    now = os.path.join(tmp, "saves before restoring")
+    tracker.shutil.copytree(saves, now)
     time.sleep(1)
     status, restored = post({"name": zanna}, path="/api/restore")
     assert status == 200, restored
-    assert sorted(os.listdir(saves)) == sorted(os.listdir(os.path.join(backups, zanna)) + ["my old saves", "Settings.json"]) and "Zanna.ma1" in os.listdir(saves)
+    assert tracker._same_saves(saves, os.path.join(backups, zanna)) and "Zanna.ma1" in os.listdir(saves)
+    assert os.path.isdir(os.path.join(saves, "my old saves")) and ".d2r-backup.json" not in os.listdir(saves)
     assert open(os.path.join(saves, "Settings.json")).read() == "changed since"
-    assert sorted(os.listdir(restored["backup"])) == now  # the folder as it was before, to undo the restore
+    assert tracker._same_saves(now, restored["backup"])  # the saves as they were before, to undo the restore
     assert post({"name": zanna}, origin="http://evil.example", path="/api/restore")[0] == 403
 
     # Deleting a backup: only a name from the listing, only from the app itself
@@ -203,6 +211,33 @@ with tempfile.TemporaryDirectory() as tmp:
     except HTTPError as e:
         assert e.code == 403
     server.shutdown()
+
+    # Backups say why they were made, going back and forth doesn't pile them up, and only the newest KEEP stay
+    folder, root = os.path.join(tmp, "f"), os.path.join(tmp, "b")
+    os.makedirs(folder)
+    put = lambda data: tracker.write_saves(folder, [{"name": "A.d2s", "bytes": data}], root)
+    names = lambda: [b["name"] for b in tracker.list_backups(root)]
+    put(b"1")  # backs up the empty folder
+    put(b"2")  # backs up "1"
+    one = tracker.list_backups(root)[0]
+    assert one["reason"] == "organize" and open(os.path.join(root, one["name"], "A.d2s"), "rb").read() == b"1"
+    time.sleep(1)
+    undo = os.path.basename(tracker.restore_backup(folder, root, one["name"]))  # backs up "2", puts "1" back
+    assert open(os.path.join(folder, "A.d2s"), "rb").read() == b"1"
+    assert tracker.list_backups(root)[0] == {"reason": "restore", "from": one["name"], "name": undo, "characters": 1}
+    count = len(names())
+    for _ in range(3):  # back and forth: "2", "1", "2"... every state already has a backup
+        tracker.restore_backup(folder, root, undo)
+        tracker.restore_backup(folder, root, one["name"])
+    assert len(names()) == count
+    for i in range(12):
+        time.sleep(1)
+        put(f"new {i}".encode())
+    assert len(names()) == tracker.KEEP
+    oldest = names()[-1]
+    time.sleep(1)
+    tracker.restore_backup(folder, root, oldest)  # the one restored stays, though past KEEP now
+    assert oldest in names() and len(names()) == tracker.KEEP + 1
 
 if len(sys.argv) > 1:
     with tempfile.TemporaryDirectory() as out:

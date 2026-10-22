@@ -411,6 +411,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
               {backups.map((b) => (
                 <li key={b.name} className="flex flex-wrap items-center gap-x-4 gap-y-2">
                   <span>{when(b.name)}</span>
+                  {b.reason && <span className="text-sm">{t(b.reason === "restore" ? "backupBeforeRestore" : "backupBeforeOrganize", lang)}</span>}
                   <span className="text-sm gothic-text-muted">{t("backupCharacters", lang, b.characters)}</span>
                   {state.confirm?.name === b.name ? (
                     <>
