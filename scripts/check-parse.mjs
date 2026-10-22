@@ -15,7 +15,7 @@ try {
   wasm.initSync({ module: readFileSync(new URL("../wasm/pkg/d2_parser_bg.wasm", import.meta.url)) });
   const { parseSaveFiles } = await vite.ssrLoadModule("/src/lib/parseSaves.js");
   const { catalog } = await vite.ssrLoadModule("/src/lib/gameData.js");
-  const { inboxItems, verdictOf } = await vite.ssrLoadModule("/src/lib/newItems.js");
+  const { findsOf, inboxItems } = await vite.ssrLoadModule("/src/lib/newItems.js");
   const { rollScore } = await vite.ssrLoadModule("/src/lib/props.js");
 
   const base = readdirSync(dir).filter((f) => /\.d2[si]$/.test(f)).map((name) => ({ name, bytes: new Uint8Array(readFileSync(join(dir, name))) }));
@@ -59,17 +59,25 @@ try {
   const stash = first.owners.find((o) => !o.cls && o.mode === "SoftCore:Modern");
   const inMuseum = first.items.find((r) => /^(UW|UA|UJ|SET)-/.test(r.owner) && /^[us]:/.test(r.key));
   if (!stash || !inMuseum) console.log("--  no museum mules in these saves: new finds check skipped");
-  else await check("new finds on the inbox pages get the organizing rules' verdict", async () => {
-    const find = (r) => ({ ...r, owner: stash.name, place: "shared9" });
-    const copy = find(inMuseum);
-    const all = [...first.items, copy];
-    assert.deepEqual(inboxItems({ ...first, items: all }, { [stash.mode]: [9] }), [copy]);
-    assert.deepEqual(inboxItems({ ...first, items: all }, {}), []);
-    assert(["upgrade", "needed", "extra"].includes(verdictOf(copy, all, stash.mode).kind));
-    const missing = [...catalog].find(([key, e]) => key.startsWith("u:") && !e.legacy && !first.items.some((r) => r.key === key));
-    const fresh = find({ key: missing[0], code: missing[1].names.code, quality: "Unique", stats: [], ethereal: false });
-    assert.equal(verdictOf(fresh, [...first.items, fresh], stash.mode).kind, "new");
-  });
+  else
+    await check("a find's verdict is where organizing puts it", async () => {
+      const find = (r, page = 9) => ({ ...r, owner: stash.name, place: `shared${page}` });
+      const verdictOf = (data, r) => findsOf(data, { [stash.mode]: [9] }).find((f) => f.r === r).verdict;
+      // A copy of what the museum holds: better rolls swap in, else a duplicate kept or extra
+      const copy = find(inMuseum);
+      const data = { ...first, items: [...first.items, copy] };
+      assert.deepEqual(inboxItems(data, { [stash.mode]: [9] }), [copy]);
+      assert.deepEqual(inboxItems(data, { [stash.mode]: 9 }), []); // a stored value that isn't a list
+      assert(["upgrade", "needed", "extra"].includes(verdictOf(data, copy).kind));
+      // Nothing like it anywhere: new
+      const missing = [...catalog].find(([key, e]) => key.startsWith("u:") && !e.legacy && !first.items.some((r) => r.key === key));
+      const fresh = find({ key: missing[0], code: missing[1].names.code, quality: "Unique", stats: [], ethereal: false, owner: "", place: "" });
+      assert.equal(verdictOf({ ...first, items: [...first.items, fresh] }, fresh).kind, "new");
+      // A copy on a main doesn't count: what organizing doesn't take can't change the verdict
+      const main = first.owners.find((o) => o.cls && o.level > 1);
+      const onMain = { ...inMuseum, owner: main.name, place: "stash" };
+      assert.deepEqual(verdictOf({ ...first, items: [...first.items, copy, onMain] }, copy), verdictOf(data, copy));
+    });
 
   await check("a shared stash cut short is reported", async () => {
     // Cut at the end of a page: the parser reads the pages before it and stops without an error

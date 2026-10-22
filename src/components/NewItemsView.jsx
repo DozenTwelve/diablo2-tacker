@@ -1,7 +1,7 @@
 import { imageOf, labelOf } from "../lib/gameData";
 import { ownerLabel, ownersOf, placeLabel } from "../lib/inventory";
 import { t } from "../lib/i18n";
-import { inboxItems, KINDS, verdictOf } from "../lib/newItems";
+import { findsOf, KINDS } from "../lib/newItems";
 import { Link } from "../lib/router";
 import { useStoredState } from "../lib/useStoredState";
 import PageTitle from "./PageTitle";
@@ -12,27 +12,29 @@ import { colorOf, Tooltip, tipHandlers, useTip } from "./StashGrid";
 // Organize page uses the same choice.
 export default function NewItemsView({ saveData, lang }) {
   const [inboxes, setInboxes] = useStoredState("inbox", {}); // mode -> page numbers
+  const [roles] = useStoredState("roles", {});
+  const picked = (mode) => (Array.isArray(inboxes[mode]) ? inboxes[mode] : []);
   const [tip, setTip] = useTip();
   const pagesOf = (stash) => {
     const used = saveData.items.filter((r) => r.owner === stash.name && /^shared\d+$/.test(r.place)).map((r) => Number(r.place.slice(6)));
-    const last = Math.max(0, ...used, ...(inboxes[stash.mode] ?? []));
+    const last = Math.max(0, ...used, ...picked(stash.mode));
     return Array.from({ length: last }, (_, i) => ({ page: i + 1, count: used.filter((p) => p === i + 1).length }));
   };
   // Shared stashes the game reads, with any page in use or picked
   const stashes = ownersOf(saveData).filter((o) => !o.cls && o.mode && pagesOf(o).length);
   const toggle = (mode, page) => {
-    const now = inboxes[mode] ?? [];
+    const now = picked(mode);
     setInboxes({ ...inboxes, [mode]: now.includes(page) ? now.filter((p) => p !== page) : [...now, page].sort((a, b) => a - b) });
   };
 
-  const modeOf = new Map(saveData.owners?.map((o) => [o.name, o.mode]));
-  const finds = inboxItems(saveData, inboxes).map((r) => ({ r, verdict: verdictOf(r, saveData.items, modeOf.get(r.owner)) }));
-  const chosen = Object.values(inboxes).some((pages) => pages.length);
+  const finds = findsOf(saveData, inboxes, roles);
+  const chosen = Object.keys(inboxes).some((mode) => picked(mode).length);
 
   return (
     <>
       <PageTitle label={t("newItems", lang)} sub={<p className="text-sm gothic-text-muted">{t("newItemsAbout", lang)}</p>} />
       <div className="max-w-3xl space-y-8">
+        {saveData.skipped > 0 && <p className="text-sm gothic-text-muted">{t("skippedSubfolders", lang, saveData.skipped)}</p>}
         <section className="space-y-3">
           <div className="section-head">
             <h2>{t("inboxPagesShort", lang)}</h2>
@@ -42,7 +44,7 @@ export default function NewItemsView({ saveData, lang }) {
             <div key={stash.name} className="flex flex-wrap items-center gap-2">
               <span className="text-sm mr-2">{ownerLabel(stash.name, lang)}</span>
               {pagesOf(stash).map(({ page, count }) => {
-                const on = (inboxes[stash.mode] ?? []).includes(page);
+                const on = picked(stash.mode).includes(page);
                 return (
                   <button
                     key={page}

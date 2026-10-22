@@ -109,6 +109,46 @@ const NEEDED = new Map();
 }
 export const copiesNeeded = (key) => NEEDED.get(key) ?? 0;
 
+// Copies of unique and set items, decided together so organizing and the New finds page (src/lib/newItems.js)
+// agree. The museum slot takes the best copy: non-ethereal first, then the best rolls, then on a tie the copy
+// already there, so organizing again moves nothing. Copies past what is worth having (copiesNeeded, the museum
+// copy counting as one, plus one ethereal weapon or armor for a mercenary when any build uses the item) go to
+// TRASH, the lowest rolls first. Items without a museum slot (legacy) stay in DUP.
+// copies: [{ key, code, eth, score (-1: none), home (in its museum slot now) }], slots: museumLayout().slots
+// -> Map copy -> "MUSEUM" | "DUP" | "TRASH", in the order they were decided
+export function placeCopies(copies, slots) {
+  const order = [...copies].sort((a, b) => a.eth - b.eth || b.score - a.score || b.home - a.home);
+  const where = new Map();
+  const museum = new Map(); // key -> the copy in its slot
+  for (const c of order) {
+    if (slots.has(c.key) && !museum.has(c.key)) {
+      museum.set(c.key, c);
+      where.set(c, "MUSEUM");
+    }
+  }
+  const keep = new Map(); // key -> { plain, eth } copies still to keep
+  for (const c of order) {
+    if (where.has(c)) continue;
+    const kept = museum.get(c.key);
+    if (!kept) {
+      where.set(c, "DUP");
+      continue;
+    }
+    if (!keep.has(c.key)) {
+      const needed = copiesNeeded(c.key);
+      const merc = needed > 0 && ["weapons", "armor"].includes(items[c.code]?.table);
+      keep.set(c.key, { plain: Math.max(0, needed - (kept.eth ? 0 : 1)), eth: merc && !kept.eth ? 1 : 0 });
+    }
+    const left = keep.get(c.key);
+    const kind = c.eth ? "eth" : "plain";
+    if (left[kind] > 0) {
+      left[kind]--;
+      where.set(c, "DUP");
+    } else where.set(c, "TRASH");
+  }
+  return where;
+}
+
 // Magic, rare and crafted items by base type
 const MAGIC_GROUPS = { scha: "CHARM", mcha: "CHARM", lcha: "CHARM", csch: "CHARM", jewl: "JEWEL", cjwl: "JEWEL", ring: "RING", amul: "RING" };
 
@@ -299,43 +339,18 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
   const filled = new Map(); // museum key -> item
   const loose = { DUP: [], RW: [], CHARM: [], JEWEL: [], RING: [], MAG: [], BASE: [], MISC: [], TRASH: [] };
   const entries = source.map((e) => ({ ...e, code: codeOfNumber(e.item.code), key: keyOf(e.item, codeOfNumber(e.item.code)) }));
-  // The museum slot takes the best copy: non-ethereal first, then the best rolls (scoreOfItem), then on a tie the
-  // copy already there, so organizing again moves nothing
+  // Unique and set item copies are placed together (placeCopies); everything else by groupOf, non-ethereal first
   const home = (e) => e.from.split(" ")[0].toLowerCase() === museum.slots.get(e.key)?.mule.toLowerCase();
-  const score = new Map(entries.filter((e) => museum.slots.has(e.key)).map((e) => [e, scoreOfItem(e.item) ?? -1]));
-  entries.sort(
-    (a, b) =>
-      a.item.flags.includes("ETHEREAL") - b.item.flags.includes("ETHEREAL") || (score.get(b) ?? 0) - (score.get(a) ?? 0) || home(b) - home(a),
-  );
-  for (const e of entries) {
-    if (museum.slots.has(e.key) && !filled.has(e.key)) filled.set(e.key, e);
-    else loose[groupOf(e.key, e.item, e.code)].push(e);
+  const isCopy = (e) => /^[us]:/.test(e.key);
+  const copies = entries
+    .filter(isCopy)
+    .map((e) => ({ e, key: e.key, code: e.code, eth: e.item.flags.includes("ETHEREAL"), score: scoreOfItem(e.item) ?? -1, home: home(e) }));
+  for (const [c, group] of placeCopies(copies, museum.slots)) {
+    if (group === "MUSEUM") filled.set(c.key, c.e);
+    else loose[group].push(c.e);
   }
-  // Extra copies past what is worth having (copiesNeeded, the museum copy counting as one; plus one ethereal
-  // weapon or armor for a mercenary when any build uses the item) go to TRASH, the lowest rolls first. They are
-  // in the order sorted above: non-ethereal first, best rolls first.
-  const keep = new Map(); // key -> { plain, eth } copies still to keep
-  const extra = [];
-  for (const e of loose.DUP) {
-    const museumCopy = filled.get(e.key);
-    if (!museumCopy) {
-      extra.push(e); // no fixed slot (legacy items): kept as before
-      continue;
-    }
-    const eth = (x) => x.item.flags.includes("ETHEREAL");
-    if (!keep.has(e.key)) {
-      const needed = copiesNeeded(e.key);
-      const merc = needed > 0 && ["weapons", "armor"].includes(items[e.code].table);
-      keep.set(e.key, { plain: Math.max(0, needed - (eth(museumCopy) ? 0 : 1)), eth: merc && !eth(museumCopy) ? 1 : 0 });
-    }
-    const left = keep.get(e.key);
-    const kind = eth(e) ? "eth" : "plain";
-    if (left[kind] > 0) {
-      left[kind]--;
-      extra.push(e);
-    } else loose.TRASH.push(e);
-  }
-  loose.DUP = extra;
+  entries.sort((a, b) => a.item.flags.includes("ETHEREAL") - b.item.flags.includes("ETHEREAL"));
+  for (const e of entries.filter((e) => !isCopy(e))) loose[groupOf(e.key, e.item, e.code)].push(e);
 
   const placed = new Map(museum.names.map((name) => [name, []]));
   const moves = [];
