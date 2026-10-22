@@ -23,6 +23,7 @@ const UI = {
     "Drop new finds on the inbox pages of the shared stash and see here whether they're worth keeping. It only reads, so it works with the game running; it shows the saves as the game last wrote them.",
     "새로 주운 아이템을 공유 보관함의 받은 페이지에 넣으면 남길 가치가 있는지 바로 보여 줍니다. 읽기만 하므로 게임 중에도 볼 수 있으며, 게임이 마지막으로 저장한 내용이 보입니다.",
   ],
+  howOrganize: ["怎么整理", "怎麼整理", "How organizing works", "정리 방식"],
   inboxPagesShort: ["收件页", "收件頁", "Inbox pages", "받은 페이지"],
   noStash: ["没有读到共享仓库。", "沒有讀到共享倉庫。", "No shared stash was read.", "공유 보관함을 읽지 못했습니다."],
   pickInboxPages: [

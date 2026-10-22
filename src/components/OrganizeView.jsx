@@ -43,6 +43,10 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
   const [state, setState] = useState({}); // { plan, remove, error, busy, backup, downloaded, readError, confirm, restored, restoreError }
   const [backups, setBackups] = useState([]); // the plugin's backups, on the Deck
   const [reads, setReads] = useState(0); // bumped to read the files again
+  // "How organizing works" is open on the first visit only
+  const [introSeen, setIntroSeen] = useStoredState("organizeIntroSeen", false);
+  const [introOpen] = useState(!introSeen);
+  useEffect(() => setIntroSeen(true), [setIntroSeen]);
 
   useEffect(() => {
     // Cleared, or files picked one by one: nothing to organize (the page says to pick the folder)
@@ -95,29 +99,32 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
   }, [files, wasm]);
 
   const about = (
-    <div className="max-w-3xl space-y-3 text-sm mb-8">
-      <OrganizeDemo lang={lang} />
-      <p>{t("organizeAbout", lang)}</p>
-      <ul className="space-y-1 pl-4">
-        <li>
-          <span className="gothic-text-gold">UW UA UJ SET</span> {t("muleMuseum", lang)}
-        </li>
-        <li>
-          <span className="gothic-text-gold">DUP RW CHARM JEWEL RING MAG BASE MISC</span> {t("muleOther", lang)}
-        </li>
-        <li>
-          <span className="gothic-text-gold">TRASH</span> {t("muleTrash", lang)}
-        </li>
-      </ul>
-      <p>{t("organizeKit", lang)}</p>
-      {!onDeck && <p>{t("organizeWeb", lang)}</p>}
-      <p className="gothic-text-muted">
-        {t("organizeOwn", lang)}{" "}
-        <a href={SKILL} target="_blank" rel="noreferrer" className="gothic-text-gold">
-          organize-stash
-        </a>
-      </p>
-    </div>
+    <details className="max-w-3xl mb-8" open={introOpen}>
+      <summary className="cursor-pointer gothic-text-gold">{t("howOrganize", lang)}</summary>
+      <div className="space-y-3 text-sm mt-3">
+        <OrganizeDemo lang={lang} />
+        <p>{t("organizeAbout", lang)}</p>
+        <ul className="space-y-1 pl-4">
+          <li>
+            <span className="gothic-text-gold">UW UA UJ SET</span> {t("muleMuseum", lang)}
+          </li>
+          <li>
+            <span className="gothic-text-gold">DUP RW CHARM JEWEL RING MAG BASE MISC</span> {t("muleOther", lang)}
+          </li>
+          <li>
+            <span className="gothic-text-gold">TRASH</span> {t("muleTrash", lang)}
+          </li>
+        </ul>
+        <p>{t("organizeKit", lang)}</p>
+        {!onDeck && <p>{t("organizeWeb", lang)}</p>}
+        <p className="gothic-text-muted">
+          {t("organizeOwn", lang)}{" "}
+          <a href={SKILL} target="_blank" rel="noreferrer" className="gothic-text-gold">
+            organize-stash
+          </a>
+        </p>
+      </div>
+    </details>
   );
 
   if (!saves)
@@ -322,7 +329,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
               {t("changeMules", lang)}
             </Link>
           </div>
-          <p className="text-sm break-words">{t("mulesToSort", lang, mules.length, mules.join(t("listSeparator", lang)))}</p>
+          <p className="text-sm break-words">{t("mulesToSort", lang, mules.length, mules.toSorted((a, b) => a.localeCompare(b)).join(t("listSeparator", lang)))}</p>
         </section>
         <button className="gothic-btn" disabled={!inbox.length || !mules.length} onClick={preview}>
           {t("preview", lang)}
@@ -415,10 +422,15 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
           </section>
         )}
         {onDeck && backups.length > 0 && (
-          <section className="space-y-3">
-            <div className="section-head">
+          // Folded unless something about a backup needs attention
+          <details
+            className="space-y-3"
+            open={Boolean(state.restoreError || state.restored || state.confirm || backups.some((b) => b.interrupted))}
+          >
+            <summary className="section-head cursor-pointer">
               <h2>{t("backups", lang)}</h2>
-            </div>
+              <span className="gothic-text-muted">{backups.length}</span>
+            </summary>
             <p className="text-sm">{t("backupsAbout", lang)}</p>
             {state.restoreError && <p className="text-red-400">{state.restoreError}</p>}
             {state.restored && (
@@ -463,7 +475,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
                 </li>
               ))}
             </ul>
-          </section>
+          </details>
         )}
       </div>
     </>
