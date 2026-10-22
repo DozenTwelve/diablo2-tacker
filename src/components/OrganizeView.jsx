@@ -52,7 +52,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
     let current = true; // a quicker second pick must not be overwritten by this read
     const read = onDeck ? deckSaveFiles() : Promise.resolve(picked.files);
     Promise.all([read, loadParser()]).then(async ([list, parser]) => {
-      const loaded = await Promise.all(list.map(async (f) => ({ name: f.name, bytes: new Uint8Array(await f.arrayBuffer()) })));
+      const loaded = await Promise.all(list.map(async (f) => ({ name: f.name, bytes: new Uint8Array(await f.arrayBuffer()), time: f.lastModified })));
       if (!current) return;
       setFiles(loaded);
       setWasm(parser);
@@ -162,14 +162,20 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
           ? COMPANIONS.flatMap((ext) => {
               const from = files.find((o) => o.name === `${f.template}.${ext}`);
               const name = `${f.name.slice(0, -4)}.${ext}`;
-              return from && !names.has(name) ? [{ name, bytes: from.bytes }] : [];
+              return from && !names.has(name) ? [{ name, bytes: from.bytes, time: from.time }] : [];
             })
           : [],
       );
       // The whole save folder as organized, not only what changed: a zip that looks like the organized saves
       // must be them, or putting it in place of the folder loses every character left as it was
+      // Every file keeps its time (D2R lists characters by it): a rewritten save its own, a new mule its template's
       const gone = new Set(removeFiles);
-      const folder = [...files.map((f) => changed.get(f.name) ?? f), ...out.filter((f) => !names.has(f.name)), ...companions];
+      const timeOf = (name) => files.find((o) => o.name === name)?.time;
+      const folder = [
+        ...files.map((f) => (changed.has(f.name) ? { ...changed.get(f.name), time: f.time } : f)),
+        ...out.filter((f) => !names.has(f.name)).map((f) => ({ ...f, time: timeOf(`${f.template}.d2s`) })),
+        ...companions,
+      ];
       const url = URL.createObjectURL(new Blob([zip(folder.filter((f) => !gone.has(f.name)))], { type: "application/zip" }));
       const a = document.createElement("a");
       a.href = url;

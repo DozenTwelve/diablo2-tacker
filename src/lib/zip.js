@@ -10,17 +10,26 @@ const crc32 = (bytes) => {
   return ~c >>> 0;
 };
 
-// files: [{ name, bytes: Uint8Array }] -> Uint8Array. Names are UTF-8 (flag bit 11), dated 1980-01-01.
+// A date as DOS time and date fields (local time, 2 second steps); 1980-01-01 without one
+const dosTime = (ms) => {
+  if (ms == null) return [0, 0x21];
+  const d = new Date(ms);
+  return [(d.getHours() << 11) | (d.getMinutes() << 5) | (d.getSeconds() >> 1), ((d.getFullYear() - 1980) << 9) | ((d.getMonth() + 1) << 5) | d.getDate()];
+};
+
+// files: [{ name, bytes: Uint8Array, time? (ms) }] -> Uint8Array. Names are UTF-8 (flag bit 11). Each file keeps its
+// time: D2R lists characters by when their save was last changed, so organized mules mustn't all look new.
 export function zip(files) {
   const parts = [];
   const central = [];
   let offset = 0;
-  for (const { name, bytes } of files) {
+  for (const { name, bytes, time } of files) {
     const path = new TextEncoder().encode(name);
     const crc = crc32(bytes);
+    const [dosT, dosD] = dosTime(time);
     // Fields shared by the local header (from offset 4) and the central directory entry (from offset 6)
     const fields = (view, at) => {
-      [20, 0x0800, 0, 0, 0x21].forEach((v, i) => view.setUint16(at + 2 * i, v, true)); // version, flags, stored, time, date
+      [20, 0x0800, 0, dosT, dosD].forEach((v, i) => view.setUint16(at + 2 * i, v, true)); // version, flags, stored, time, date
       view.setUint32(at + 10, crc, true);
       view.setUint32(at + 14, bytes.length, true);
       view.setUint32(at + 18, bytes.length, true);

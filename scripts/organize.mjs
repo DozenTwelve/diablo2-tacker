@@ -9,7 +9,7 @@
 // is kept exactly once, only starting kit is dropped, nothing overlaps, see organizeFiles), written to
 // <out dir>.partial and only then renamed to <out dir>. plan.txt there lists every moved item, delete.txt the
 // files to delete from the save folder after copying back (neither is a save).
-import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, utimesSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { createServer } from "vite";
 
@@ -75,12 +75,18 @@ try {
 
   mkdirSync(partial);
   try {
+    // Every file keeps the time of the one it replaces, a new mule its template's: D2R lists characters by it
+    const keepTime = (to, from) => existsSync(from) && utimesSync(to, statSync(from).atime, statSync(from).mtime);
     for (const f of changed) {
       writeFileSync(join(partial, f.name), f.bytes);
+      keepTime(join(partial, f.name), join(dir, existsSync(join(dir, f.name)) ? f.name : `${f.template}.d2s`));
       for (const ext of ["ctl", "key", "ma0", "map"]) {
         const from = join(dir, `${f.template}.${ext}`);
         const to = `${f.name.slice(0, -4)}.${ext}`;
-        if (f.template && existsSync(from) && !existsSync(join(dir, to))) copyFileSync(from, join(partial, to));
+        if (f.template && existsSync(from) && !existsSync(join(dir, to))) {
+          copyFileSync(from, join(partial, to));
+          keepTime(join(partial, to), from);
+        }
       }
     }
     const plan = report.moves

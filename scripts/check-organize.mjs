@@ -17,7 +17,6 @@ try {
 
   const parse = (name, bytes) => JSON.parse(name.endsWith(".d2s") ? wasm.parseD2s(bytes) : wasm.parseD2i(bytes));
   const write = (name, json) => (name.endsWith(".d2s") ? wasm.writeD2s : wasm.writeD2i)(JSON.stringify(json));
-  const equal = (a, b) => a.length === b.length && a.every((x, i) => x === b[i]);
   const base = readdirSync(dir).filter((f) => /\.d2[si]$/.test(f)).map((name) => ({ name, bytes: new Uint8Array(readFileSync(join(dir, name))) }));
   const run = (files, options) => organizeFiles(files, wasm, options);
   const json = (files, name) => parse(name, files.find((f) => f.name === name).bytes);
@@ -37,8 +36,9 @@ try {
   const gold = (out) => out.filter((f) => f.name.endsWith(".d2s")).reduce((n, f) => n + parse(f.name, f.bytes).stats.filter((s) => s.id === 14 || s.id === 15).reduce((m, s) => m + s.value, 0), 0);
 
   const organized = after(base, first.files);
-  check("organizing again changes nothing", () => {
-    for (const f of run(organized).files) assert(equal(f.bytes, organized.find((o) => o.name === f.name).bytes), `${f.name} changed`);
+  check("organizing again changes nothing, and hands back nothing", () => {
+    const again = run(organized).files;
+    assert.deepEqual(again.map((f) => f.name), []);
   });
 
   const runeword = allItems.find((i) => i.quality === "Normal" && i.runeword_id != null);
@@ -54,7 +54,9 @@ try {
   check("gold on a mule stays, and the mule is not offered for deletion", () => {
     const files = edit(base, a, (j) => j.stats.push({ id: 14, layer: 0, value: 12345 }));
     const r = run(files);
-    assert.equal(gold(r.files), gold(base.filter((f) => first.report.mules.includes(f.name.slice(0, -4)))) + 12345);
+    // Over the whole folder as organized: saves that come out unchanged are not handed back
+    const mulesGold = (folder) => gold(folder.filter((f) => r.report.mules.includes(f.name.slice(0, -4)) || r.report.newMules.some((m) => `${m.name}.d2s` === f.name)));
+    assert.equal(mulesGold(after(files, r.files)), mulesGold(base) + 12345);
     assert(!r.report.leftEmpty.includes(a.slice(0, -4)));
   });
 
@@ -94,11 +96,12 @@ try {
     assert.throws(() => run([...base, { ...base.find((f) => f.name === a), name: a.toLowerCase() }]), /upper and lower case/);
   });
 
-  check("a mule named in other case is rewritten under its own name", () => {
+  check("a mule named in other case never gets a second file", () => {
     const name = first.report.newMules[0].name;
     const lower = organized.map((f) => (f.name === `${name}.d2s` ? { ...f, name: `${name.toLowerCase()}.d2s` } : f));
     const names = run(lower).files.map((f) => f.name);
-    assert(names.includes(`${name.toLowerCase()}.d2s`) && !names.includes(`${name}.d2s`));
+    // Unchanged, it isn't handed back at all; above all never as a second file under the layout's spelling
+    assert(!names.includes(`${name}.d2s`));
   });
 
   check("an emptied mule with one of our own names (CHARM-B) is not offered for deletion", () => {

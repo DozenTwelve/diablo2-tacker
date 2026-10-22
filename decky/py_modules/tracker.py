@@ -241,16 +241,23 @@ def delete_backup(backup_root, name):
 def _write(folder, files):
     for f in files:
         target = os.path.join(folder, f["name"])
-        for ext in COMPANIONS if f.get("template") else ():
-            source = os.path.join(folder, f["template"] + ext)
+        template = f.get("template") if SAVE_NAME.fullmatch(f.get("template", "") + ".d2s") else None
+        for ext in COMPANIONS if template else ():
+            source = os.path.join(folder, template + ext)
             other = target[:-4] + ext
-            if SAVE_NAME.fullmatch(f["template"] + ".d2s") and os.path.isfile(source) and not os.path.exists(other):
-                shutil.copyfile(source, other)
+            if os.path.isfile(source) and not os.path.exists(other):
+                shutil.copy2(source, other)
+        # D2R lists characters by when their save last changed: a rewritten save keeps its time, a new mule takes
+        # its template's, so organizing doesn't put every mule above the characters played last
+        keep = target if os.path.exists(target) else template and os.path.join(folder, template + ".d2s")
+        when = os.stat(keep).st_mtime if keep and os.path.exists(keep) else None
         with open(target + ".tmp", "wb") as out:
             out.write(f["bytes"])
             out.flush()
             os.fsync(out.fileno())
         os.replace(target + ".tmp", target)
+        if when is not None:
+            os.utime(target, (when, when))
     for f in files:
         with open(os.path.join(folder, f["name"]), "rb") as written:
             if written.read() != f["bytes"]:

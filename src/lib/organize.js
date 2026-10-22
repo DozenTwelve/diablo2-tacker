@@ -369,7 +369,7 @@ export function organize(saves, { mode = "SoftCore:Modern", mules: names, inbox 
 // once (only starting kit is dropped), gold stays, and every written character holds only stored items, inside its stash
 // (10x10) or inventory (10x4), not overlapping. Throws when a check fails or a save would not round-trip.
 // files: [{ name: "Zanna.d2s", bytes }]; wasm: the parser (parseD2s, parseD2i, writeD2s, writeD2i); options as organize()
-// -> { files: [{ name, bytes, template? }] (only changed saves), saves (as read), report }
+// -> { files: [{ name, bytes, template? }] (only saves whose bytes change), saves (as read), report }
 export function organizeFiles(files, wasm, options) {
   const parse = (ext, bytes) => JSON.parse(ext === "d2s" ? wasm.parseD2s(bytes) : wasm.parseD2i(bytes));
   const write = (ext, json) => (ext === "d2s" ? wasm.writeD2s : wasm.writeD2i)(JSON.stringify(json));
@@ -386,6 +386,7 @@ export function organizeFiles(files, wasm, options) {
     });
   const { saves: changed, report } = organize(saves, options);
   const out = changed.map((s) => ({ name: `${s.name}.${s.ext}`, bytes: write(s.ext, s.json), template: s.template }));
+  const input = new Map(files.map((f) => [f.name, f.bytes]));
   const written = new Map(out.map((f, i) => [f.name, parse(changed[i].ext, f.bytes)]));
 
   // Items without their position: before (the emptied characters and the emptied shared pages, as read) minus
@@ -440,5 +441,6 @@ export function organizeFiles(files, wasm, options) {
         }
     }
   }
-  return { files: out, saves, report };
+  // A save that comes out as it went in is not handed back: rewriting it would only make it look newly played
+  return { files: out.filter((f) => !(input.has(f.name) && equal(input.get(f.name), f.bytes))), saves, report };
 }

@@ -5,6 +5,7 @@ import os
 import struct
 import sys
 import tempfile
+import time
 import urllib.request
 import zlib
 from urllib.error import HTTPError
@@ -114,6 +115,12 @@ with tempfile.TemporaryDirectory() as tmp:
     assert status == 200, result
     assert open(os.path.join(saves, "UW-A.d2s"), "rb").read() == b"mule"
     assert open(os.path.join(saves, "UW-A.key"), "rb").read() == b"Zanna.key"  # copied from the template
+    # D2R lists characters by when their save changed: a new mule takes its template's time, a rewritten save keeps its own
+    assert os.path.getmtime(os.path.join(saves, "UW-A.d2s")) == os.path.getmtime(os.path.join(saves, "Zanna.d2s"))
+    os.utime(os.path.join(saves, "UW-A.d2s"), (1000000000, 1000000000))
+    time.sleep(1)
+    assert post({"files": [{**new[0], "data": base64.b64encode(b"mule 2").decode()}]})[0] == 200
+    assert os.path.getmtime(os.path.join(saves, "UW-A.d2s")) == 1000000000
     assert os.listdir(result["backup"]) and "UW-A.d2s" not in os.listdir(result["backup"])
     assert not [f for f in os.listdir(saves) if f.endswith(".tmp")]
 
@@ -121,7 +128,7 @@ with tempfile.TemporaryDirectory() as tmp:
     os.mkdir(os.path.join(saves, "Bad.d2s"))
     before = sorted(os.listdir(saves))
     broken = [{"name": "UW-B.d2s", "data": base64.b64encode(b"x").decode(), "template": "Zanna"}, {"name": "Bad.d2s", "data": ""}]
-    import time; time.sleep(1)  # backups are named by the second
+    time.sleep(1)  # backups are named by the second
     assert post({"files": broken})[0] == 500
     assert sorted(os.listdir(saves)) == before, (sorted(os.listdir(saves)), before)
     os.rmdir(os.path.join(saves, "Bad.d2s"))
