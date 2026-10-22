@@ -125,6 +125,11 @@ def extract_icons(casc, data_dir, out_dir):
         return count
 
 
+class GameRunning(Exception):
+    """Not written: D2R is running (it saves on exit and would undo the write). Its own type: a PermissionError
+    from a file the plugin can't read is a different failure."""
+
+
 def game_running():
     """D2R under Proton shows up as a D2R.exe process. pgrep failing is not "not running": writing then
     would race the game, so it raises."""
@@ -141,40 +146,44 @@ COMPANIONS = (".ctl", ".key", ".ma0", ".map")  # a character's other files, copi
 def write_saves(folder, files, backup_root, delete=()):
     """Write organized saves into the save folder: files is [{name, bytes, template?}] from the web app's
     organizeFiles; delete: names of emptied characters the player chose to delete, with their other files.
-    The game must not be running. The whole folder is backed up first, each file is written next to its target
-    and renamed over it, then read back. Returns the backup folder."""
+    The game must not be running. The folder's files are backed up first, each file is written next to its
+    target and renamed over it, then read back. Returns the backup folder."""
     with _lock:
-        return _write_saves(folder, files, backup_root, delete)
-
-
-def _write_saves(folder, files, backup_root, delete):
-    if game_running():
-        raise PermissionError("D2R is running; quit the game first")
-    for f in files:
-        if not SAVE_NAME.fullmatch(f["name"]):
-            raise ValueError(f"not a save file name: {f['name']}")
-    for name in delete:
-        if not SAVE_NAME.fullmatch(name + ".d2s") or any(f["name"] == name + ".d2s" for f in files):
-            raise ValueError(f"not a character to delete: {name}")
-    backup = _backup(folder, backup_root, {"reason": "organize"})
-    try:
-        _write(folder, files)
+        if game_running():
+            raise GameRunning("D2R is running; quit the game first")
+        for f in files:
+            if not SAVE_NAME.fullmatch(f["name"]):
+                raise ValueError(f"not a save file name: {f['name']}")
         for name in delete:
-            # The save and what the game keeps beside it, as filesOfCharacter in src/lib/organize.js
-            for other in os.listdir(folder):
-                if re.fullmatch(re.escape(name) + r"\.(d2s|ctl|key|map|ma\d+)", other):
-                    os.remove(os.path.join(folder, other))
-    except Exception as e:
-        _undo(folder, backup, e)
-    _prune(backup_root, keep={os.path.basename(backup)})
-    return backup
+            if not SAVE_NAME.fullmatch(name + ".d2s") or any(f["name"] == name + ".d2s" for f in files):
+                raise ValueError(f"not a character to delete: {name}")
+        backup = _backup(folder, backup_root, {"reason": "organize"})
+        if game_running():  # started while the backup was copied
+            raise GameRunning("D2R is running; quit the game first")
+        _mark(backup_root, backup)
+        try:
+            _write(folder, files)
+            for name in delete:
+                # The save and what the game keeps beside it, as filesOfCharacter in src/lib/organize.js
+                for other in os.listdir(folder):
+                    if re.fullmatch(re.escape(name) + r"\.(d2s|ctl|key|map|ma\d+)", other):
+                        os.remove(os.path.join(folder, other))
+            os.sync()
+        except Exception as e:
+            _undo(folder, backup_root, backup, e)
+        _unmark(backup_root)
+        _prune(backup_root, folder, keep={os.path.basename(backup)})
+        return backup
 
 
-BACKUP_NAME = re.compile(r"\d{8}-\d{6}(-\d+)?")  # when it was made, -2... for a second one in the same second
+# A backup's name is when it was made, in UTC (Z; older plugin versions used local time without it), -2... for a
+# second one in the same second. Its order is the "seq" it records, which only goes up: clock changes don't reorder.
+BACKUP_NAME = re.compile(r"\d{8}-\d{6}Z?(-\d+)?")
 # What organizing writes (.tmp: one cut short); not settings or loot filters
 SAVE_FILE = re.compile(r".+\.(d2s|d2i|ctl|key|map|ma\d+)(\.tmp)?")
-ABOUT = ".d2r-backup.json"  # in each backup: why it was made, {"reason": "organize" | "restore", "from"?: name}
-KEEP = 10  # backups kept; the oldest past that go when a new one is made
+ABOUT = ".d2r-backup.json"  # in each backup: {"reason": "organize" | "restore", "from"?: name, "folder", "seq"}
+PENDING = ".in-progress"  # in the backups folder while a write or restore runs: {"backup": name}
+KEEP = 10  # backups kept per save folder, besides the oldest (the saves before the plugin first wrote)
 _lock = threading.Lock()  # one write, restore or delete at a time
 
 
@@ -194,23 +203,57 @@ def _same_saves(a, b):
     return names == _saves_in(b) and all(read(os.path.join(a, n)) == read(os.path.join(b, n)) for n in names)
 
 
-def _backup(folder, backup_root, about):
-    """Copy the save folder to a new backup, unless a backup already holds these same saves: then that one is
-    returned, so going back and forth between two states doesn't pile up copies. A new one is copied under a
-    .partial name and renamed once complete and on disk, so a copy cut short (disk full) is never listed, nor
-    restored over the saves."""
-    for b in list_backups(backup_root):
-        if _same_saves(folder, os.path.join(backup_root, b["name"])):
-            return os.path.join(backup_root, b["name"])
-    stamp = time.strftime("%Y%m%d-%H%M%S")
-    backup, n = os.path.join(backup_root, stamp), 1
-    while os.path.exists(backup) or os.path.exists(backup + ".partial"):
-        n += 1
-        backup = os.path.join(backup_root, f"{stamp}-{n}")
+def _json_to(path, data):
+    with open(path + ".tmp", "w") as f:
+        json.dump(data, f)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(path + ".tmp", path)
+
+
+def _info(backup_root, name):
     try:
-        shutil.copytree(folder, backup + ".partial")
-        with open(os.path.join(backup + ".partial", ABOUT), "w") as f:
-            json.dump(about, f)
+        with open(os.path.join(backup_root, name, ABOUT)) as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}  # made by an older plugin version
+
+
+def _new_name(backup_root):
+    stamp = time.strftime("%Y%m%d-%H%M%SZ", time.gmtime())
+    name, n = stamp, 1
+    while any(os.path.exists(os.path.join(backup_root, name + end)) for end in ("", ".partial", ".deleting")):
+        n += 1
+        name = f"{stamp}-{n}"
+    return name
+
+
+def _next_seq(backup_root):
+    names = [n for n in os.listdir(backup_root) if BACKUP_NAME.fullmatch(n)] if os.path.isdir(backup_root) else []
+    return max((_info(backup_root, n).get("seq", 0) for n in names), default=0) + 1
+
+
+def _backup(folder, backup_root, about):
+    """Back up the save folder's files (not its subfolders: a restore never touches them) and return the backup.
+    If one of this folder's backups already holds these same saves, that one becomes the newest, renamed and
+    relabelled, instead of a second copy: going back and forth doesn't pile up backups, and the undo point is
+    always the newest. A new one is copied under a .partial name and renamed once complete and on disk, so a copy
+    cut short (disk full) is never listed, nor restored over the saves."""
+    os.makedirs(backup_root, exist_ok=True)
+    about = {**about, "folder": os.path.realpath(folder), "seq": _next_seq(backup_root)}
+    for b in list_backups(backup_root, folder):
+        if _same_saves(folder, os.path.join(backup_root, b["name"])):
+            backup = os.path.join(backup_root, _new_name(backup_root))
+            os.rename(os.path.join(backup_root, b["name"]), backup)
+            _json_to(os.path.join(backup, ABOUT), about)
+            return backup
+    backup = os.path.join(backup_root, _new_name(backup_root))
+    try:
+        os.mkdir(backup + ".partial")
+        for name in os.listdir(folder):
+            if os.path.isfile(os.path.join(folder, name)):
+                shutil.copy2(os.path.join(folder, name), os.path.join(backup + ".partial", name))
+        _json_to(os.path.join(backup + ".partial", ABOUT), about)
         os.sync()
     except Exception:
         shutil.rmtree(backup + ".partial", ignore_errors=True)
@@ -221,71 +264,133 @@ def _backup(folder, backup_root, about):
 
 def _put_back(folder, backup):
     """Make the save folder's saves (and the files beside them) those of the backup; settings, loot filters and
-    folders the player keeps in it are left alone."""
+    folders the player keeps in it are left alone. Each file goes next to its target and is renamed over it, so a
+    full disk can't leave a save half written."""
     for name in os.listdir(folder):
         if SAVE_FILE.fullmatch(name) and os.path.isfile(os.path.join(folder, name)) and not os.path.exists(os.path.join(backup, name)):
             os.remove(os.path.join(folder, name))
     for name in os.listdir(backup):
-        if SAVE_FILE.fullmatch(name) and os.path.isfile(os.path.join(backup, name)):
-            shutil.copy2(os.path.join(backup, name), os.path.join(folder, name))
+        if SAVE_FILE.fullmatch(name) and not name.endswith(".tmp") and os.path.isfile(os.path.join(backup, name)):
+            target = os.path.join(folder, name)
+            try:
+                shutil.copy2(os.path.join(backup, name), target + ".tmp")
+                with open(target + ".tmp", "rb") as f:
+                    os.fsync(f.fileno())
+                os.replace(target + ".tmp", target)
+            except OSError:
+                if os.path.exists(target + ".tmp"):
+                    os.remove(target + ".tmp")
+                raise
+    os.sync()
 
 
-def _undo(folder, backup, error):
+# An operation cut off (power, a killed process) leaves PENDING behind: the backup it names is the way back,
+# listed as interrupted and never pruned until another write or restore succeeds.
+def _mark(backup_root, backup):
+    _json_to(os.path.join(backup_root, PENDING), {"backup": os.path.basename(backup)})
+
+
+def _unmark(backup_root):
+    try:
+        os.remove(os.path.join(backup_root, PENDING))
+    except FileNotFoundError:
+        pass
+
+
+def _pending(backup_root):
+    try:
+        with open(os.path.join(backup_root, PENDING)) as f:
+            return json.load(f).get("backup")
+    except (OSError, ValueError, AttributeError):
+        return None
+
+
+def _undo(folder, backup_root, backup, error):
     try:
         _put_back(folder, backup)
+        _unmark(backup_root)
         restored = "the save folder is back as it was"
     except Exception:
         restored = "restoring failed"
     raise IOError(f"{error}; {restored}, a backup is in {backup}") from error
 
 
-def list_backups(backup_root):
-    """The plugin's backups, newest first: [{name, characters, reason?, from?}], name being when it was made
-    (YYYYMMDD-HHMMSS), reason why ("organize", "restore"; none for backups made before it was recorded)."""
+def _rmtree(path):
+    """Delete a backup: renamed out of the listing first, so one deleted halfway is never listed nor restored."""
+    gone = path + ".deleting"
+    os.rename(path, gone)
+    shutil.rmtree(gone, ignore_errors=True)  # what is left (unreadable files...) is retried by list_backups
+
+
+def list_backups(backup_root, folder=None):
+    """The plugin's backups of a save folder, newest first: [{name, characters, reason?, from?, interrupted?}].
+    reason: why it was made ("organize", "restore"); backups from older plugin versions have none, and are listed
+    for any folder. interrupted: the backup of an operation that was cut off."""
     if not os.path.isdir(backup_root):
         return []
-    names = sorted((n for n in os.listdir(backup_root) if BACKUP_NAME.fullmatch(n) and os.path.isdir(os.path.join(backup_root, n))), reverse=True)
-    listed = []
-    for n in names:
-        try:
-            with open(os.path.join(backup_root, n, ABOUT)) as f:
-                about = json.load(f)
-        except (OSError, ValueError):
-            about = {}
-        listed.append({**about, "name": n, "characters": sum(f.endswith(".d2s") for f in _saves_in(os.path.join(backup_root, n)))})
-    return listed
+    for n in os.listdir(backup_root):
+        if n.endswith(".deleting"):
+            shutil.rmtree(os.path.join(backup_root, n), ignore_errors=True)
+    where = folder and os.path.realpath(folder)
+    pending = _pending(backup_root)
+    found = []
+    for n in os.listdir(backup_root):
+        if not (BACKUP_NAME.fullmatch(n) and os.path.isdir(os.path.join(backup_root, n))):
+            continue
+        about = _info(backup_root, n)
+        if where and about.get("folder", where) != where:
+            continue
+        entry = {k: about[k] for k in ("reason", "from") if k in about}
+        entry.update(name=n, characters=sum(f.endswith(".d2s") for f in _saves_in(os.path.join(backup_root, n))))
+        if n == pending:
+            entry["interrupted"] = True
+        found.append(((about.get("seq", 0), n), entry))
+    return [entry for _, entry in sorted(found, key=lambda x: x[0], reverse=True)]
 
 
-def _prune(backup_root, keep):
-    """Delete the oldest backups past KEEP, never those in keep (the one this run made or used, the one restored)."""
-    for b in list_backups(backup_root)[KEEP:]:
-        if b["name"] not in keep:
-            shutil.rmtree(os.path.join(backup_root, b["name"]), ignore_errors=True)
+def _prune(backup_root, folder, keep):
+    """Delete this folder's backups past the newest KEEP; never the oldest (the saves before the plugin first
+    wrote), one in keep (made, used or restored just now) or an interrupted one."""
+    for b in list_backups(backup_root, folder)[KEEP:-1]:
+        if b["name"] not in keep and not b.get("interrupted"):
+            try:
+                _rmtree(os.path.join(backup_root, b["name"]))
+            except OSError:
+                pass
 
 
 def restore_backup(folder, backup_root, name):
-    """Put one of the plugin's backups back in place of the save folder, after backing up the folder as it is
-    (so a restore can be undone the same way). Returns that new backup folder."""
+    """Put one of the folder's backups back in place of its saves, after backing them up as they are (so a
+    restore can be undone the same way). Returns that backup."""
     with _lock:
         if game_running():
-            raise PermissionError("D2R is running; quit the game first")
-        if not any(b["name"] == name for b in list_backups(backup_root)):  # only names from the listing, never a path
+            raise GameRunning("D2R is running; quit the game first")
+        if not any(b["name"] == name for b in list_backups(backup_root, folder)):  # only names from the listing, never a path
             raise ValueError(f"no such backup: {name}")
+        source = os.path.join(backup_root, name)
+        if not any(n.endswith(".d2s") for n in _saves_in(source)):
+            raise ValueError(f"backup {name} holds no characters; not restoring it")
+        if _same_saves(folder, source):
+            return source  # the saves are that backup already
         backup = _backup(folder, backup_root, {"reason": "restore", "from": name})
+        if game_running():
+            raise GameRunning("D2R is running; quit the game first")
+        _mark(backup_root, backup)
         try:
-            _put_back(folder, os.path.join(backup_root, name))
+            _put_back(folder, source)
         except Exception as e:
-            _undo(folder, backup, e)
-        _prune(backup_root, keep={os.path.basename(backup), name})
+            _undo(folder, backup_root, backup, e)
+        _unmark(backup_root)
+        _prune(backup_root, folder, keep={os.path.basename(backup), name})
         return backup
 
 
-def delete_backup(backup_root, name):
-    """Delete one of the plugin's backups. Only names from the listing, never a path."""
+def delete_backup(backup_root, name, folder=None):
+    """Delete one of the folder's backups. Only names from the listing, never a path."""
     with _lock:
-        if not any(b["name"] == name for b in list_backups(backup_root)):
+        if not any(b["name"] == name for b in list_backups(backup_root, folder)):
             raise ValueError(f"no such backup: {name}")
-        shutil.rmtree(os.path.join(backup_root, name))
+        _rmtree(os.path.join(backup_root, name))
 
 
 def _write(folder, files):
@@ -358,7 +463,7 @@ class Handler(SimpleHTTPRequestHandler):
         if path == "/api/saves":
             return self.send_bytes(json.dumps(list_saves(self.save_folder())).encode(), "application/json")
         if path == "/api/backups":
-            return self.send_bytes(json.dumps(list_backups(self.backup_dir)).encode(), "application/json")
+            return self.send_bytes(json.dumps(list_backups(self.backup_dir, self.save_folder())).encode(), "application/json")
         if path.startswith("/api/saves/"):
             folder = self.save_folder()
             name = unquote(path[len("/api/saves/") :])
@@ -393,13 +498,13 @@ class Handler(SimpleHTTPRequestHandler):
             if self.path == "/api/restore":
                 result = {"backup": restore_backup(self.save_folder(), self.backup_dir, body["name"])}
             elif self.path == "/api/delete-backup":
-                delete_backup(self.backup_dir, body["name"])
+                delete_backup(self.backup_dir, body["name"], self.save_folder())
                 result = {}
             else:
                 files = [{**f, "bytes": base64.b64decode(f["data"])} for f in body["files"]]
                 result = {"backup": write_saves(self.save_folder(), files, self.backup_dir, body.get("delete", []))}
             status = 200
-        except PermissionError as e:
+        except GameRunning as e:
             result, status = {"error": str(e), "running": True}, 409
         except Exception as e:
             result, status = {"error": str(e)}, 500

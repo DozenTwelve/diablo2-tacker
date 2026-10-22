@@ -316,6 +316,12 @@ const UI = {
   deleteBackup: ["删除", "刪除", "Delete", "삭제"],
   backupBeforeOrganize: ["整理前", "整理前", "Before organizing", "정리 전"],
   backupBeforeRestore: ["还原前", "還原前", "Before a restore", "복원 전"],
+  backupInterrupted: [
+    "上次整理或还原中途被打断，存档可能不完整：还原这份就能回到那之前",
+    "上次整理或還原中途被打斷，存檔可能不完整：還原這份就能回到那之前",
+    "The last organize or restore was cut off and the saves may be incomplete: restore this one to go back to before it",
+    "지난 정리나 복원이 중간에 끊겨 저장 파일이 불완전할 수 있습니다. 이 백업을 복원하면 그 전으로 돌아갑니다",
+  ],
   deleteBackupWarn: ["删除后这份备份就找不回来了。", "刪除後這份備份就找不回來了。", "Once deleted, this backup can't be brought back.", "삭제하면 이 백업은 되돌릴 수 없습니다."],
   confirmDeleteBackup: ["确认删除", "確認刪除", "Delete now", "지금 삭제"],
   deletingBackup: ["删除中…", "刪除中…", "Deleting…", "삭제 중…"],

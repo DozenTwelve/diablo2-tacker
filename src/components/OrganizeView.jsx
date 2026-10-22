@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { codeOfNumber, labelOf } from "../lib/gameData";
 import { deckBackups, deckSaveFiles, deleteDeckBackup, onDeck, restoreDeck } from "../lib/deck";
 import { roleOf } from "../lib/inventory";
-import { t } from "../lib/i18n";
+import { LOCALES, t } from "../lib/i18n";
 import { SKILL } from "../lib/links";
 import { filesOfCharacter, modeOfCharacter, modeOfStash, organizeFiles } from "../lib/organize";
 import { loadParser, saveFolder, statsOf } from "../lib/parseSaves";
@@ -216,6 +216,8 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       }
     } catch (e) {
       setState({ error: t("writeFailed", lang, e.message ?? e) });
+    } finally {
+      deckBackups().then(setBackups, () => {}); // a failed write can still have made the backup that leads back
     }
   };
 
@@ -233,6 +235,8 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       }
     } catch (e) {
       setState({ restoreError: t("restoreFailed", lang, e.message ?? e) });
+    } finally {
+      deckBackups().then(setBackups, () => {});
     }
   };
   const deleteBackup = async (name) => {
@@ -246,7 +250,13 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       setState({ restoreError: t("deleteBackupFailed", lang, e.message ?? e) });
     }
   };
-  const when = (name) => name.replace(/(\d{4})(\d\d)(\d\d)-(\d\d)(\d\d)(\d\d)/, "$1-$2-$3 $4:$5:$6");
+  // A backup's name is when it was made: in UTC with a Z (shown in local time), or local time (older plugins)
+  const when = (name) => {
+    const [, y, mo, d, h, mi, s, utc] = name.match(/(\d{4})(\d\d)(\d\d)-(\d\d)(\d\d)(\d\d)(Z?)/) ?? [];
+    if (!y) return name;
+    const date = utc ? new Date(Date.UTC(y, mo - 1, d, h, mi, s)) : new Date(y, mo - 1, d, h, mi, s);
+    return date.toLocaleString(LOCALES[lang]);
+  };
 
   const report = state.plan?.report;
   const remove = state.remove ?? []; // characters ticked for deletion
@@ -412,6 +422,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
                 <li key={b.name} className="flex flex-wrap items-center gap-x-4 gap-y-2">
                   <span>{when(b.name)}</span>
                   {b.reason && <span className="text-sm">{t(b.reason === "restore" ? "backupBeforeRestore" : "backupBeforeOrganize", lang)}</span>}
+                  {b.interrupted && <span className="text-sm text-red-400">{t("backupInterrupted", lang)}</span>}
                   <span className="text-sm gothic-text-muted">{t("backupCharacters", lang, b.characters)}</span>
                   {state.confirm?.name === b.name ? (
                     <>

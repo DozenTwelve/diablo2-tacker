@@ -161,16 +161,16 @@ with tempfile.TemporaryDirectory() as tmp:
     os.remove(locked)
     assert json.loads(get("/api/backups")) == listed and not [n for n in os.listdir(backups) if n.endswith(".partial")]
     # Two in one second get two names; the same saves again make no new one; a stray file named like one is no backup
-    had = set(os.listdir(backups))
-    first = tracker._backup(saves, backups, {"reason": "organize"})
-    assert tracker._backup(saves, backups, {"reason": "organize"}) == first
+    tracker._backup(saves, backups, {"reason": "organize"})
+    count = len(tracker.list_backups(backups))
+    again = tracker._backup(saves, backups, {"reason": "restore", "from": "x"})  # same saves: that backup, now the newest
+    assert len(tracker.list_backups(backups)) == count
+    assert tracker.list_backups(backups)[0] == {"reason": "restore", "from": "x", "name": os.path.basename(again), "characters": 4}
     open(os.path.join(saves, "Spare.d2s"), "wb").write(b"spare")
     second = tracker._backup(saves, backups, {"reason": "organize"})
-    assert second != first and os.path.dirname(second) == os.path.dirname(first)
+    assert len(tracker.list_backups(backups)) == count + 1 and os.path.basename(second) != os.path.basename(again)
     os.remove(os.path.join(saves, "Spare.d2s"))
-    for b in (first, second):
-        if os.path.basename(b) not in had:
-            tracker.shutil.rmtree(b)
+    tracker.shutil.rmtree(second)
     open(os.path.join(backups, "20000101-000000"), "w").write("not a backup")
 
     # Backups, newest first, and putting one back: the folder's saves become exactly those of that backup, after a
@@ -212,32 +212,62 @@ with tempfile.TemporaryDirectory() as tmp:
         assert e.code == 403
     server.shutdown()
 
-    # Backups say why they were made, going back and forth doesn't pile them up, and only the newest KEEP stay
+    # Backups say why they were made, going back and forth doesn't pile them up, the newest KEEP stay besides the oldest
     folder, root = os.path.join(tmp, "f"), os.path.join(tmp, "b")
     os.makedirs(folder)
     put = lambda data: tracker.write_saves(folder, [{"name": "A.d2s", "bytes": data}], root)
-    names = lambda: [b["name"] for b in tracker.list_backups(root)]
-    put(b"1")  # backs up the empty folder
+    names = lambda: [b["name"] for b in tracker.list_backups(root, folder)]
+    read = lambda path: open(path, "rb").read()
+    put(b"1")  # backs up the empty folder: the oldest, kept for good
+    empty = names()[0]
     put(b"2")  # backs up "1"
-    one = tracker.list_backups(root)[0]
-    assert one["reason"] == "organize" and open(os.path.join(root, one["name"], "A.d2s"), "rb").read() == b"1"
-    time.sleep(1)
+    one = tracker.list_backups(root, folder)[0]
+    assert one["reason"] == "organize" and read(os.path.join(root, one["name"], "A.d2s")) == b"1"
     undo = os.path.basename(tracker.restore_backup(folder, root, one["name"]))  # backs up "2", puts "1" back
-    assert open(os.path.join(folder, "A.d2s"), "rb").read() == b"1"
-    assert tracker.list_backups(root)[0] == {"reason": "restore", "from": one["name"], "name": undo, "characters": 1}
+    assert read(os.path.join(folder, "A.d2s")) == b"1"
+    assert tracker.list_backups(root, folder)[0] == {"reason": "restore", "from": one["name"], "name": undo, "characters": 1}
     count = len(names())
-    for _ in range(3):  # back and forth: "2", "1", "2"... every state already has a backup
-        tracker.restore_backup(folder, root, undo)
-        tracker.restore_backup(folder, root, one["name"])
-    assert len(names()) == count
+    for _ in range(6):  # back and forth: the state not current is always second, and has a backup already
+        tracker.restore_backup(folder, root, names()[1])
+    assert len(names()) == count and read(os.path.join(root, names()[0], "A.d2s")) != read(os.path.join(folder, "A.d2s"))
+    assert tracker.restore_backup(folder, root, names()[0])  # the newest is always the undo point
     for i in range(12):
-        time.sleep(1)
         put(f"new {i}".encode())
-    assert len(names()) == tracker.KEEP
-    oldest = names()[-1]
-    time.sleep(1)
-    tracker.restore_backup(folder, root, oldest)  # the one restored stays, though past KEEP now
-    assert oldest in names() and len(names()) == tracker.KEEP + 1
+    assert len(names()) == tracker.KEEP + 1 and names()[-1] == empty
+    try:
+        tracker.restore_backup(folder, root, empty)
+        raise AssertionError("restored a backup without characters")
+    except ValueError:
+        pass
+    target = names()[tracker.KEEP - 1]  # the oldest of the newest KEEP
+    tracker.restore_backup(folder, root, target)  # a backup restored stays, though past KEEP now
+    assert target in names() and names()[-1] == empty
+
+    # Another save folder (another prefix) has its own backups: never listed nor restored here
+    other = os.path.join(tmp, "other")
+    os.makedirs(other)
+    open(os.path.join(other, "B.d2s"), "wb").write(b"b")
+    tracker.write_saves(other, [{"name": "B.d2s", "bytes": b"b2"}], root)
+    theirs = tracker.list_backups(root, other)[0]["name"]
+    assert theirs not in names()
+    try:
+        tracker.restore_backup(folder, root, theirs)
+        raise AssertionError("restored another folder's backup")
+    except ValueError:
+        pass
+
+    # Cut off with the rollback failing too: the backup that leads back is flagged until something succeeds
+    write, put_back = tracker._write, tracker._put_back
+    tracker._write = tracker._put_back = lambda *args: (_ for _ in ()).throw(OSError("power cut"))
+    try:
+        put(b"half")
+    except IOError as e:
+        assert "restoring failed" in str(e)
+    tracker._write, tracker._put_back = write, put_back
+    flagged = [b for b in tracker.list_backups(root, folder) if b.get("interrupted")]
+    assert len(flagged) == 1
+    put(b"whole")
+    assert not [b for b in tracker.list_backups(root, folder) if b.get("interrupted")]
 
 if len(sys.argv) > 1:
     with tempfile.TemporaryDirectory() as out:
