@@ -12,12 +12,15 @@ import CharacterView from "./components/CharacterView";
 import OrganizeView from "./components/OrganizeView";
 import Welcome from "./components/Welcome";
 import AboutView from "./components/AboutView";
+import NewItemsView from "./components/NewItemsView";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { SET_GREEN } from "./components/StashGrid";
 import { propLines, setBonusLines } from "./lib/props";
 import { Link, usePath } from "./lib/router";
 
-const TABS = ["search", "characters", "uniques", "sets", "runewords", "runes", "organize", "about"];
+const TABS = ["new", "search", "collection", "characters", "organize", "about"];
+// The collection's own pages, /collection/<page>; the old /uniques... paths still lead there
+const COLLECTION = ["uniques", "sets", "runewords", "runes"];
 
 // Collection tabs as groups of keys; uniques grouped by item category
 function collectionGroups(tab, lang) {
@@ -49,9 +52,11 @@ function collectionGroups(tab, lang) {
 export default function App() {
   const [lang, setLang] = useStoredState("lang", "zh_tw");
   const [saveData, setSaveData, notStored] = useStoredState("saveData", null);
-  const [first, name] = usePath();
-  // The front page is the welcome page until saves are loaded
-  const tab = !first ? (saveData ? "search" : "welcome") : TABS.includes(first) ? first : "search";
+  const [first, second] = usePath();
+  // The front page is the welcome page until saves are loaded, then the new finds
+  const tab = !first ? (saveData ? "new" : "welcome") : COLLECTION.includes(first) ? "collection" : TABS.includes(first) ? first : "search";
+  const page = COLLECTION.includes(first) ? first : COLLECTION.includes(second) ? second : "uniques"; // of the collection
+  const name = tab === "collection" ? page : second; // the character or collection page named in the path
   const [deckError, setDeckError] = useState(null); // the Deck's own read of the saves failed
   const [rawFiles, setRawFiles] = useState(null); // the files as last picked, for organizing; memory only
   const [offered, setOffered] = useStoredState("organizeOffered", false);
@@ -78,7 +83,7 @@ export default function App() {
   // For screen readers and the right Chinese glyphs; the tab's title names the page, in the page's language
   useEffect(() => {
     document.documentElement.lang = LOCALES[lang] ?? "en";
-    document.title = [name, tab !== "welcome" && t(tab, lang), t("title", lang)].filter(Boolean).join(" · ");
+    document.title = [tab === "collection" ? t(name, lang) : name, tab !== "welcome" && t(tab, lang), t("title", lang)].filter(Boolean).join(" · ");
   }, [lang, tab, name]);
 
   return (
@@ -136,6 +141,12 @@ export default function App() {
             <Welcome picker={<SaveLoader saveData={saveData} onLoad={load} notStored={notStored} lang={lang} />} lang={lang} />
           ) : tab === "about" ? (
             <AboutView lang={lang} />
+          ) : tab === "new" ? (
+            saveData ? (
+              <NewItemsView saveData={saveData} lang={lang} />
+            ) : (
+              <SaveLoader saveData={saveData} onLoad={load} notStored={notStored} lang={lang} />
+            )
           ) : tab === "search" ? (
             <SearchView owned={owned} lang={lang} />
           ) : tab === "organize" ? (
@@ -152,7 +163,24 @@ export default function App() {
               <SaveLoader saveData={saveData} onLoad={load} notStored={notStored} lang={lang} />
             )
           ) : (
-            <CollectionView key={tab} label={t(tab, lang)} groups={collectionGroups(tab, lang)} owned={owned} lang={lang} />
+            <>
+              <nav className="flex flex-wrap gap-2 mb-6" aria-label={t("collection", lang)}>
+                {COLLECTION.map((p) => {
+                  const keys = collectionGroups(p, lang).flatMap((g) => g.keys);
+                  return (
+                    <Link
+                      key={p}
+                      to={`/collection/${p}`}
+                      className={`gothic-btn gothic-btn-small no-underline ${p === page ? "" : "gothic-btn-secondary"}`}
+                      aria-current={p === page ? "page" : undefined}
+                    >
+                      {t(p, lang)} {keys.filter((k) => owned.has(k)).length}/{keys.length}
+                    </Link>
+                  );
+                })}
+              </nav>
+              <CollectionView key={page} label={t(page, lang)} groups={collectionGroups(page, lang)} owned={owned} lang={lang} />
+            </>
           )}
         </ErrorBoundary>
       </main>
