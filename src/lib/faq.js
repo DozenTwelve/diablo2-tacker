@@ -50,16 +50,16 @@ export const FAQ = [
   {
     q: ["会改我的存档吗？", "會改我的存檔嗎？", "Does it change my saves?", "저장 파일을 바꾸나요?"],
     a: [
-      "网页只读不写。「整理」页会把整理好的文件打包成 zip 让你下载，由你自己放回存档文件夹；放回去之前先备份。",
-      "網頁只讀不寫。「整理」頁會把整理好的檔案打包成 zip 讓你下載，由你自己放回存檔資料夾；放回去之前先備份。",
-      "The page only reads. The Organize page gives you the organized files as a zip download, and you copy them back into the save folder yourself; back it up first.",
-      "페이지는 읽기만 합니다. 정리 페이지는 정리된 파일을 zip으로 내려받게 하고, 저장 폴더에 넣는 것은 직접 합니다. 넣기 전에 백업하세요.",
+      "网页只读不写。「整理」页会把整理后完整的存档文件夹打包成 zip 让你下载，由你自己用它替换存档文件夹里的文件；替换之前先备份。",
+      "網頁只讀不寫。「整理」頁會把整理後完整的存檔資料夾打包成 zip 讓你下載，由你自己用它取代存檔資料夾裡的檔案；取代之前先備份。",
+      "The page only reads. The Organize page gives you the whole organized save folder as a zip download, and you replace the save folder's files with it yourself; back it up first.",
+      "페이지는 읽기만 합니다. 정리 페이지는 정리된 저장 폴더 전체를 zip으로 내려받게 하고, 저장 폴더의 파일을 그것으로 바꾸는 것은 직접 합니다. 바꾸기 전에 백업하세요.",
     ],
     deck: [
-      "只有「整理」页会写，而且要你按「确认整理」。游戏开着时不写；写之前把整个存档文件夹备份到 Decky 的数据文件夹（backups），写完再读回来核对。其他页面只读不写。",
-      "只有「整理」頁會寫，而且要你按「確認整理」。遊戲開著時不寫；寫之前把整個存檔資料夾備份到 Decky 的資料夾（backups），寫完再讀回來核對。其他頁面只讀不寫。",
-      "Only the Organize page writes, and only when you confirm. It won't while the game runs; before writing it backs up the whole save folder to Decky's data folder (backups), and it reads the files back afterwards. Every other page only reads.",
-      "정리 페이지만, 그것도 확인을 누를 때만 씁니다. 게임이 실행 중이면 쓰지 않고, 쓰기 전에 저장 폴더 전체를 Decky 데이터 폴더(backups)에 백업하며, 쓴 뒤 다시 읽어 확인합니다. 다른 페이지는 읽기만 합니다.",
+      "只有「整理」页会写，而且要你按「确认整理」。游戏开着时不写；写之前把整个存档文件夹备份到 Decky 的数据文件夹（backups），写完再读回来核对。备份都列在「整理」页，可以直接还原。其他页面只读不写。",
+      "只有「整理」頁會寫，而且要你按「確認整理」。遊戲開著時不寫；寫之前把整個存檔資料夾備份到 Decky 的資料夾（backups），寫完再讀回來核對。備份都列在「整理」頁，可以直接還原。其他頁面只讀不寫。",
+      "Only the Organize page writes, and only when you confirm. It won't while the game runs; before writing it backs up the whole save folder to Decky's data folder (backups), and it reads the files back afterwards. The Organize page lists the backups and can restore any of them. Every other page only reads.",
+      "정리 페이지만, 그것도 확인을 누를 때만 씁니다. 게임이 실행 중이면 쓰지 않고, 쓰기 전에 저장 폴더 전체를 Decky 데이터 폴더(backups)에 백업하며, 쓴 뒤 다시 읽어 확인합니다. 백업은 정리 페이지에 나열되고 바로 되돌릴 수 있습니다. 다른 페이지는 읽기만 합니다.",
     ],
   },
   {

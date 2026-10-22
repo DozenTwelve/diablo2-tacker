@@ -4,8 +4,8 @@ A [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader) plugin: open
 menu in Game Mode, with the saves read straight from the Deck.
 
 - `main.py` and `py_modules/tracker.py`: the backend. It serves the web app (built with `VITE_DECK=1`), the save files
-  and the item icons on `127.0.0.1:18565`, from "Open collection" until the page's Close button (which also leaves
-  Steam's browser) or the panel's "Stop". It runs as the `deck` user, not root.
+  and the item icons on `127.0.0.1:18565`, from "Open collection" until the page is left (its Close button, B or the
+  Steam button) or the panel's "Stop". It runs as the `deck` user, not root.
 - `src/index.tsx`: the quick access panel. "Open collection" opens the tracker in Steam's browser. "Get item icons"
   pulls the inventory icons out of the player's own game files with [casc-cli](https://github.com/ironsp4rk/casc-cli)
   (MIT) and turns them into PNGs in Decky's data folder; the plugin ships no game art.
@@ -13,11 +13,14 @@ menu in Game Mode, with the saves read straight from the Deck.
   happen, like on the web; in the plugin, "Organize now" posts the checked saves to the backend instead of
   offering a zip. The backend refuses while
   D2R is running, copies the whole save folder to Decky's data folder (`backups/<time>`), writes each file next to
-  its target and renames it over, then reads everything back.
+  its target and renames it over, then reads everything back. Emptied characters the player ticks are deleted
+  after the backup. The page lists the backups; restoring one backs up the folder as it is first, so a restore
+  can be undone the same way.
 
 ## Build and install
 
 ```bash
+npm install                               # the web app, built into the plugin
 cd decky && npm install && ./pack.sh     # -> decky/out/d2r-collection-tracker.zip
 ```
 

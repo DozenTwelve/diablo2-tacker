@@ -1,6 +1,6 @@
 ---
 name: organize-stash
-description: Organize a Diablo II Resurrected player's mules and shared stash with scripts/organize.mjs from the diablo2-tacker repository, first time or as upkeep (inbox pages, likely-junk TRASH mules), with the default rules or the player's own. Use when someone wants their D2R saves sorted into mules, new finds put away, or the sorting rules changed (整理骡子, 整理仓库, 整理騾子, 整理倉庫).
+description: Organize a Diablo II Resurrected player's mules and shared stash with scripts/organize.mjs from the diablo2-tracker repository, first time or as upkeep (inbox pages, likely-junk TRASH mules), with the default rules or the player's own. Use when someone wants their D2R saves sorted into mules, new finds put away, or the sorting rules changed (整理骡子, 整理仓库, 整理騾子, 整理倉庫).
 ---
 
 # Organize a D2R stash
@@ -21,11 +21,11 @@ If not (the skill was installed on its own, with `npx` or by copying this file),
 it first, then open the agent again inside the folder:
 
 ```bash
-git clone https://github.com/DozenTwelve/diablo2-tacker
-cd diablo2-tacker
+git clone https://github.com/DozenTwelve/diablo2-tracker
+cd diablo2-tracker
 ```
 
-Then check Node.js 20 or newer (`node -v`; if missing, point them to https://nodejs.org) and run `npm install` once.
+Then check Node.js 20.9 or newer (`node -v`; if missing, point them to https://nodejs.org) and run `npm install` once.
 Rust is not needed: the save parser in `wasm/pkg/` is committed.
 
 ## 1. Is this skill needed?
@@ -45,7 +45,7 @@ would rather do it, walk them through it.
 - **Saves on this computer**: Windows `%USERPROFILE%\Saved Games\Diablo II Resurrected`; on Linux or a Deck in
   desktop mode, find it with the `find` command in docs/saves.md.
 - **Saves on a Steam Deck, agent on another computer**: with SSH on the Deck (docs/saves.md says how), copy the
-  folder into a new local folder with the `tar` command there; `scp` breaks on the spaces in the path.
+  folder into a new local folder with the `mkdir` and `tar` commands there; `scp` breaks on the spaces in the path.
 
 D2R must be closed first: it writes the saves when it exits. Then the backup, before anything else: a copy of the
 whole folder, every file, e.g. `<save dir>-backup-<date>`. A folder pulled off a Deck is already a copy; leave it
@@ -88,7 +88,9 @@ plan. Explain it before going on:
     Nothing is deleted; the player looks through these in game and drops what they don't want.
 - That starting kit on the emptied characters (starter weapons, potions, scrolls) is dropped.
 - What the inbox pages bring: new museum items, new duplicates, likely junk.
-- The museum line (`UW 50/86` ...) is how much of the collection they have.
+- The museum line (`UW 50/86` ...) counts only what this run moves (the emptied characters and inbox pages), not
+  what mains carry, so it is less than the collection. Numbers from `check-saves` differ too: it also counts every
+  rune, gem and jewel inside a socketed item as an item. Neither difference means something went missing.
 - `left empty`: emptied characters no new mule takes the name of. Ask which of them to delete, none by default;
   name them with `--delete a,b` (only these names are taken). The rest stay as empty characters.
 
@@ -103,37 +105,52 @@ Traditional Chinese: from where, the item, to which mule, page and cell. For a p
 don't hand it over; answer their questions ("where did my Shako go?") from it in their language.
 
 Then the files go back into the save folder ("Putting changed saves back" in docs/saves.md). Offer to copy them
-yourself, and do it only when the player says yes for this run: D2R closed, the backup from step 2 still there,
-then copy every file from `<out dir>` except `plan.txt` and `delete.txt` into the save folder, replacing what is
+yourself, and do it only when the player says yes for this run: D2R closed, the backup from step 2 still there.
+
+First make sure the saves did not change since step 2 (the player played in between): the output was made from
+the saves as they were then, and copying it back would undo that play. Compare the save folder's `.d2s` and `.d2i`
+files with the ones organized (`cmp` each, or `diff -rq`); for a Deck, pull a fresh copy into another new folder
+the same way as in step 2 and compare that. If any differ, copy nothing: start again from step 2.
+
+Then copy every file from `<out dir>` except `plan.txt` and `delete.txt` into the save folder, replacing what is
 there, then delete the files `delete.txt` lists from the save folder, and nothing else. To a Deck, use the two
 commands from docs/saves.md (without `COPYFILE_DISABLE=1` macOS adds `._*` files).
 Ask them to start the game and look at a few mules. If anything looks wrong: quit and put the backup back.
 
 ## Several game modes
 
-One run per mode, each reading the same save folder and writing to its own output folder:
+One run per mode, each reading the same save folder and writing to its own output folder. Dry-run and explain
+each mode first, exactly as in step 3:
 
 ```bash
-node scripts/organize.mjs <save dir> ~/D2R-organized-<date> --yes
-node scripts/organize.mjs <save dir> ~/D2R-organized-<date>-hardcore --mode HardCore:Modern --yes
+node scripts/organize.mjs <save dir> ~/D2R-organized-<date>
+node scripts/organize.mjs <save dir> ~/D2R-organized-<date>-hardcore --mode HardCore:Modern
 ```
 
-Mule names start with `H` for hardcore and `L` for legacy (`HUW-A`, `LDUP-A`, `HLSET-A`), so the modes never share
-a file name; only `plan.txt` repeats. Each mode has its own shared stash, so ask about inbox pages per mode. Dry-run
-and explain each mode first (the same commands without `--yes`), then copy every output folder back.
+Then, only after the player agrees, the same commands with `--yes`. Mule names start with `H` for hardcore and `L`
+for legacy (`HUW-A`, `LDUP-A`, `HLSET-A`), so the modes never share a save's file name; `plan.txt` and `delete.txt`
+repeat, so each output folder's `delete.txt` is handled on its own. Each mode has its own shared stash, so ask
+about inbox pages per mode. Copying back is step 4 for each output folder, with the same check and the player's
+yes.
 
 ## Upkeep, later runs
 
 The player keeps dropping finds on their inbox pages and runs this again with the same `--inbox`. The mules made
-last time are level 1 characters, so they are emptied and rebuilt with everything else; nothing needs listing,
-and the new layout may reuse their names. Characters with clashing names that are not being emptied stop the run.
+last time are level 1 characters, so they are emptied and rebuilt with everything else, and the new layout may
+reuse their names. Characters with clashing names that are not being emptied stop the run.
+
+If the first run named mules with `--mules` (a level 1 character is a main, say), keep naming them: the mules the
+last run made (every name in its plan's last line, `UW-A:16 ...`) plus any new mules, never the main. Without
+`--mules` the default would empty that level 1 main.
 
 ## When it fails
 
 | Message | What it means, what to do |
 |---|---|
 | `no mules in <mode>` | No level 1 character in that mode: wrong `--mode`, or name the mules with `--mules`. |
-| `<file> does not round-trip, not touching it` | The parser can't write that save back exactly; nothing is written. Leave that file out of a copy of the folder and run again; report it as a GitHub issue. |
+| `<file> does not round-trip, not touching it` | The parser can't write that save back exactly; nothing is written. Stop here: don't leave the file out and run again (a new mule could take its name, and copying back would replace it). Tell the player this folder can't be organized for now and report it as a GitHub issue. |
+| `--inbox takes page numbers` | Pass page numbers with a space: `--inbox 4,5`. |
+| `--delete takes only characters left empty: ...` | Only names from the dry run's `left empty` line can be deleted. |
 | `mule names already used by other characters: ...` | A character that is not being emptied has a mule's name (`UW-A`...). Add it to `--mules` if it is an old mule, or have the player rename it. |
 | `<out dir> or <out dir>.partial already exists` | Pick a new output folder, or delete the old one after checking it is not needed. |
 | `... does not fit in an empty mule` / `item check failed` | A bug, or a rule change that broke something. Nothing was written. With the default rules, report it as a GitHub issue. |

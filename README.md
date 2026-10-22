@@ -27,7 +27,7 @@ tracking.
 - **Organize.** Sort your mules and chosen shared stash pages into numbered mules by fixed rules: uniques and set
   items in fixed "museum" slots, then duplicates, runewords, charms, jewels, rings, magic items, bases, and likely
   junk for you to look through. The page checks that every item is kept exactly once and hands the result back as
-  a zip; it never writes to your save folder.
+  a zip of the whole organized save folder; it never writes to your save folder.
 - **Languages.** Traditional Chinese, Simplified Chinese, English and Korean, with the game's own item names.
 
 Works with offline characters on PC and Steam Deck, including Reign of the Warlock saves. Online (Battle.net)
@@ -39,7 +39,7 @@ characters live on Blizzard's servers and can't be read; consoles aren't support
 - **Steam Deck:** inside the game's Proton folder, a different path on every Deck.
 
 [docs/saves.md](docs/saves.md) has the steps for both, how to copy saves off a Deck, and how to put organized saves
-back (quit the game, back up the folder, copy the new files in).
+back (quit the game, back up the folder, then replace its files with the zip's).
 
 ## Organizing with your own rules
 
@@ -53,6 +53,7 @@ walks through backing up, a dry run explained in plain words, and writing only a
 [decky/](decky/README.md) is a [Decky Loader](https://decky.xyz) plugin that opens the tracker from the quick access
 menu in Game Mode with the Deck's own saves, and gets the item icons from your installed game. It can also organize
 right on the Deck: it refuses while the game runs, backs up the save folder first and reads every written file back.
+Emptied characters you tick are deleted, and the Organize page lists every backup with a button to restore it.
 
 ![The plugin on a Steam Deck: the quick access panel, then the tracker in Game Mode](docs/deck-demo.gif)
 
@@ -60,10 +61,10 @@ It isn't in the Decky store yet. To install: Decky → settings → General → 
 Install Plugin from URL, and enter
 
 ```
-https://github.com/DozenTwelve/diablo2-tacker/releases/latest/download/d2r-collection-tracker.zip
+https://github.com/DozenTwelve/diablo2-tracker/releases/latest/download/d2r-collection-tracker.zip
 ```
 
-(or download the zip from [Releases](https://github.com/DozenTwelve/diablo2-tacker/releases) and use Install Plugin
+(or download the zip from [Releases](https://github.com/DozenTwelve/diablo2-tracker/releases) and use Install Plugin
 from ZIP file). Open the plugin, press "Get item icons" once (about a minute), then "Open collection".
 
 ## Development
@@ -91,7 +92,7 @@ The app is React and Vite. `src/lib/` holds the logic (reading saves, item looku
 | `npm run deploy` | Build with the local icons and upload to Cloudflare Pages (`npx wrangler login` once first) |
 | `npm run build:wasm` | Rebuild the save parser (needs Rust, the `wasm32-unknown-unknown` target and `wasm-pack`) |
 | `node scripts/check-saves.mjs <save dir>` | Read a save folder with the app's code and print a summary |
-| `node scripts/organize.mjs <save dir> <out dir> [--mode SoftCore:Modern] [--mules a,b] [--inbox 4,5] [--yes]` | Organize from the command line: prints the plan, and only with `--yes` writes to a new folder after the same checks as the web page |
+| `node scripts/organize.mjs <save dir> <out dir> [--mode SoftCore:Modern] [--mules a,b] [--inbox 4,5] [--delete a,b] [--yes]` | Organize from the command line: prints the plan, and only with `--yes` writes to a new folder after the same checks as the web page |
 | `node scripts/check-props.mjs` | Check every catalog property shows as text |
 | `node scripts/check-junk.mjs` | Check the likely-junk rules |
 | `node scripts/check-zip.mjs` | Check the zip writer used for organized saves |
