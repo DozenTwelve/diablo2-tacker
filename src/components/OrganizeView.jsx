@@ -5,7 +5,7 @@ import { roleOf } from "../lib/inventory";
 import { t } from "../lib/i18n";
 import { SKILL } from "../lib/links";
 import { filesOfCharacter, modeOfCharacter, modeOfStash, organizeFiles } from "../lib/organize";
-import { loadParser, statsOf } from "../lib/parseSaves";
+import { loadParser, saveFolder, statsOf } from "../lib/parseSaves";
 import { describeStats } from "../lib/stats";
 import { Link } from "../lib/router";
 import { useStoredState } from "../lib/useStoredState";
@@ -25,17 +25,6 @@ const toBase64 = (bytes) => {
 const isSave = (name) => /\.d2[si]$/i.test(name);
 const COMPANIONS = ["ctl", "key", "ma0", "map"]; // a character's other files, copied from the template for new mules
 
-// The picked folder's own saves, not a backup kept in a subfolder of it: the shallowest folder holding saves
-// (the one with the most on a tie). Null when files were picked one by one: the zip replaces the whole save
-// folder, so it must be made from the whole folder.
-function saveFolder(files) {
-  const dirOf = (f) => f.webkitRelativePath.split("/").slice(0, -1).join("/");
-  const counts = new Map();
-  for (const f of files.filter((f) => isSave(f.name) && f.webkitRelativePath)) counts.set(dirOf(f), (counts.get(dirOf(f)) ?? 0) + 1);
-  const depth = (dir) => dir.split("/").length;
-  const dir = [...counts].sort((a, b) => depth(a[0]) - depth(b[0]) || b[1] - a[1])[0]?.[0];
-  return dir == null ? null : { dir, files: files.filter((f) => dirOf(f) === dir) };
-}
 const sameBytes = (a, b) => a?.length === b.length && a.every((x, i) => x === b[i]);
 
 // /organize: sort the mules and the chosen inbox pages of the shared stash (src/lib/organize.js), show what

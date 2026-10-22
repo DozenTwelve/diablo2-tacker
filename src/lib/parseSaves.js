@@ -78,20 +78,31 @@ const questsOf = (q) =>
     socket: ["normal", "nightmare", "hell"].map((d) => rewardOf(q[d]?.act5?.siege_on_harrogath)),
   };
 
+// The picked folder's own saves, not a backup kept in a subfolder of it: the shallowest folder holding saves
+// (the one with the most on a tie), with every file in it. Null when files were picked one by one (or come
+// from the Deck): no folders to choose from.
+export function saveFolder(files) {
+  const dirOf = (f) => f.webkitRelativePath.split("/").slice(0, -1).join("/");
+  const counts = new Map();
+  for (const f of files.filter((f) => /\.d2[si]$/i.test(f.name) && f.webkitRelativePath)) counts.set(dirOf(f), (counts.get(dirOf(f)) ?? 0) + 1);
+  const depth = (dir) => dir.split("/").length;
+  const dir = [...counts].sort((a, b) => depth(a[0]) - depth(b[0]) || b[1] - a[1])[0]?.[0];
+  return dir == null ? null : { dir, files: files.filter((f) => f.webkitRelativePath && dirOf(f) === dir) };
+}
+
 export async function parseSaveFiles(files) {
   const { parseD2s, parseD2i, writeD2s, writeD2i } = await loadParser();
   const items = [];
   const owners = []; // { name, mode, cls?, level?, quests?, dead? }; shared stashes have no class
   const errors = [];
-  // Not macOS's "._" metadata files that copying to other disks leaves beside every file
-  const saves = files.filter((f) => /\.d2[si]$/i.test(f.name) && !f.name.startsWith("._"));
-  // A folder pick includes subfolders: same-named saves from different folders get the folder added
-  const baseName = (f) => f.name.replace(/\.d2[si]$/i, "");
-  const counts = new Map();
-  for (const f of saves) counts.set(baseName(f), (counts.get(baseName(f)) ?? 0) + 1);
+  // A folder pick includes its subfolders: only the picked folder's own saves, or every backup kept in it
+  // would count its items again. Not macOS's "._" metadata files that copying leaves beside every file.
+  const isSave = (f) => /\.d2[si]$/i.test(f.name) && !f.name.startsWith("._");
+  const picked = saveFolder(files)?.files ?? files;
+  const saves = picked.filter(isSave);
+  const skipped = files.filter(isSave).length - saves.length; // in other folders
   for (const file of saves) {
-    const folder = file.webkitRelativePath?.split("/").slice(-2, -1)[0];
-    const owner = counts.get(baseName(file)) > 1 && folder ? `${baseName(file)} (${folder})` : baseName(file);
+    const owner = file.name.replace(/\.d2[si]$/i, "");
     try {
       const bytes = new Uint8Array(await file.arrayBuffer());
       const stash = /\.d2i$/i.test(file.name);
@@ -127,5 +138,5 @@ export async function parseSaveFiles(files) {
       errors.push(`${file.name}: ${e.message ?? e}`);
     }
   }
-  return { items, owners, errors, files: saves.length, loadedAt: new Date().toISOString() };
+  return { items, owners, errors, files: saves.length, skipped, loadedAt: new Date().toISOString() };
 }

@@ -47,6 +47,14 @@ try {
     });
   } else console.log("--  no Rainbow Facet in these saves: version check skipped");
 
+  await check("a backup kept in a subfolder of the picked folder is not counted again", async () => {
+    // As a folder pick gives them: every file with its path from the picked folder
+    const at = (path, f) => Object.defineProperty(new File([f.bytes], f.name), "webkitRelativePath", { value: `${path}/${f.name}` });
+    const data = await parseSaveFiles([...base.map((f) => at("saves", f)), ...base.map((f) => at("saves/backup", f))]);
+    assert.equal(data.items.length, first.items.length);
+    assert.equal(data.skipped, base.length);
+  });
+
   await check("a shared stash cut short is reported", async () => {
     // Cut at the end of a page: the parser reads the pages before it and stops without an error
     const stash = base.find((f) => f.name === "ModernSharedStashSoftCoreV2.d2i");

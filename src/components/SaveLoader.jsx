@@ -90,6 +90,7 @@ export default function SaveLoader({ saveData, onLoad, notStored, lang, compact 
       </div>
       {error && <p className="text-sm text-red-400">{error}</p>}
       {notStored && <p className="text-sm text-red-400">{t("notStored", lang)}</p>}
+      {saveData?.skipped > 0 && <p className="text-sm gothic-text-muted">{t("skippedSubfolders", lang, saveData.skipped)}</p>}
       {saveData?.errors.map((err, i) => (
         <p key={i} className="text-sm text-red-400">
           {err}

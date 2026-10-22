@@ -279,6 +279,12 @@ const UI = {
     "The saves changed since this page read them (played since?), so nothing was written. They are read again; preview once more.",
     "이 페이지가 읽은 뒤 저장 파일이 바뀌어(게임을 했나요?) 아무것도 쓰지 않았습니다. 다시 읽었으니 다시 미리 보기 하세요.",
   ],
+  skippedSubfolders: [
+    (n) => `子文件夹里的 ${n} 个存档（备份等）没有读取，只读了所选文件夹本身的存档。`,
+    (n) => `子資料夾裡的 ${n} 個存檔（備份等）沒有讀取，只讀了所選資料夾本身的存檔。`,
+    (n) => `${n} saves in subfolders (backups...) were left out; only the picked folder's own saves are read.`,
+    (n) => `하위 폴더(백업 등)의 저장 파일 ${n}개는 읽지 않고, 선택한 폴더의 저장 파일만 읽었습니다.`,
+  ],
   noSaveFiles: [
     "这里没有存档文件（.d2s、.d2i），已读取的存档保持不变。",
     "這裡沒有存檔檔案（.d2s、.d2i），已讀取的存檔保持不變。",
