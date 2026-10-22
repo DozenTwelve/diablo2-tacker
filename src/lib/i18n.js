@@ -245,10 +245,10 @@ const UI = {
   reportMuseum: [(n) => `新进图鉴 ${n} 件`, (n) => `新進圖鑑 ${n} 件`, (n) => `New to the collection: ${n}`, (n) => `도감 신규 ${n}개`],
   reportDup: [(n) => `重复 ${n} 件`, (n) => `重複 ${n} 件`, (n) => `Duplicates: ${n}`, (n) => `중복 ${n}개`],
   reportTrash: [
-    (n) => `可能是垃圾 ${n} 件，放进 TRASH 骡子，不会删除`,
-    (n) => `可能是垃圾 ${n} 件，放進 TRASH 騾子，不會刪除`,
-    (n) => `Likely junk: ${n}, put in TRASH mules, nothing is deleted`,
-    (n) => `버릴 만한 것 ${n}개, TRASH 창고캐로 옮기며 삭제하지 않습니다`,
+    (n) => `进 TRASH ${n} 件（可能是垃圾，或多余的重复品），不会删除`,
+    (n) => `進 TRASH ${n} 件（可能是垃圾，或多餘的重複品），不會刪除`,
+    (n) => `To TRASH: ${n} (likely junk or extra copies), nothing is deleted`,
+    (n) => `TRASH로 ${n}개(버릴 만한 것이나 남는 중복품), 삭제하지 않습니다`,
   ],
   reportOther: [(n) => `其他 ${n} 件`, (n) => `其他 ${n} 件`, (n) => `Everything else: ${n}`, (n) => `기타 ${n}개`],
   reportDropped: [(n) => `丢弃骡子身上的初始装备 ${n} 件`, (n) => `丟棄騾子身上的初始裝備 ${n} 件`, (n) => `Starting kit dropped from mules: ${n}`, (n) => `창고캐의 시작 장비 ${n}개 버림`],
@@ -394,6 +394,12 @@ const UI = {
     (s, m) => `品質評分 ${s}%，圖鑑裡那件 ${m}%`,
     (s, m) => `Roll score ${s}%; the museum copy's ${m}%`,
     (s, m) => `옵션 점수 ${s}%, 도감에 있는 것은 ${m}%`,
+  ],
+  dupOtherKind: [
+    (s) => `品质评分 ${s}%；图鉴里那件一个无形一个不是，不比较`,
+    (s) => `品質評分 ${s}%；圖鑑裡那件一個無形一個不是，不比較`,
+    (s) => `Roll score ${s}%; the museum copy is the other kind (ethereal or not), not compared`,
+    (s) => `옵션 점수 ${s}%, 도감의 것과 무형 여부가 달라 비교하지 않음`,
   ],
   dupNoMuseum: [
     (s) => `品质评分 ${s}%，图鉴里没有这件`,

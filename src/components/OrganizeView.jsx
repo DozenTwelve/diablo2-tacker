@@ -199,7 +199,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       const url = URL.createObjectURL(new Blob([zip(folder.filter((f) => !gone.has(f.name)))], { type: "application/zip" }));
       const a = document.createElement("a");
       a.href = url;
-      a.download = `D2R-organized-${new Date().toISOString().slice(0, 10)}.zip`;
+      a.download = `D2R-organized-${new Date().toLocaleDateString("sv")}.zip`; // the local date, YYYY-MM-DD
       a.click();
       setTimeout(() => URL.revokeObjectURL(url), 60_000);
       setState({ ...state, downloaded: true });

@@ -58,7 +58,9 @@ function dupNotes(records, mode, allItems) {
     if (score == null) continue;
     const slot = slots.get(r.key);
     const there = slot && allItems.find((i) => i.key === r.key && i.owner === slot.mule);
-    notes.set(r, { score, museum: there ? copyScore(there) : null });
+    // An ethereal copy never takes a plain one's place (nor the reverse): no ▲/▼ across the two
+    const same = there && there.ethereal === r.ethereal;
+    notes.set(r, { score, museum: same ? copyScore(there) : null, otherKind: Boolean(there) && !same });
   }
   return notes;
 }

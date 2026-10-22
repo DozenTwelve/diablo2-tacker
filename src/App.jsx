@@ -56,7 +56,7 @@ export default function App() {
   // The front page is the welcome page until saves are loaded, then the new finds
   const tab = !first ? (saveData ? "new" : "welcome") : COLLECTION.includes(first) ? "collection" : TABS.includes(first) ? first : "search";
   const page = COLLECTION.includes(first) ? first : COLLECTION.includes(second) ? second : "uniques"; // of the collection
-  const name = tab === "collection" ? page : second; // the character or collection page named in the path
+  const name = tab === "collection" ? page : tab === "characters" ? second : undefined; // the character or collection page in the path
   const [deckError, setDeckError] = useState(null); // the Deck's own read of the saves failed
   const [rawFiles, setRawFiles] = useState(null); // the files as last picked, for organizing; memory only
   const [offered, setOffered] = useStoredState("organizeOffered", false);

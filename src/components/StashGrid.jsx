@@ -112,19 +112,26 @@ export function ItemImage({ item, ghost, lang }) {
 }
 
 // A W x H storage grid as in game. records: items in it, with x/y; ghosts: [{ key, code, x, y }] empty fixed slots;
-// notes: Map record -> { score, museum } for duplicates: a copy's roll score against the museum copy's (CharacterView)
+// notes: Map record -> { score, museum, otherKind } for duplicates: a copy's roll score against the museum copy's
+// (CharacterView); otherKind: the museum copy is ethereal and this one not, or the reverse
 export default function StashGrid({ width, height, records, ghosts = [], notes, lang }) {
   const [tip, setTip] = useTip();
   const cell = (item, x, y, ghost) => {
     const { w, h } = items[item.code];
     const note = !ghost && notes?.get(item);
-    const extra = note ? [note.museum == null ? t("dupNoMuseum", lang, note.score) : t("dupVsMuseum", lang, note.score, note.museum)] : [];
+    const extra = note
+      ? [note.otherKind ? t("dupOtherKind", lang, note.score) : note.museum == null ? t("dupNoMuseum", lang, note.score) : t("dupVsMuseum", lang, note.score, note.museum)]
+      : [];
     const show = (e) => setTip({ item, ghost, extra, rect: e.currentTarget.getBoundingClientRect() });
     return (
       <button
         type="button"
         key={ghost ? `ghost:${item.key}` : `${x}:${y}`}
-        aria-label={ghost ? `${labelOf(item.key, lang)}${t("colon", lang)}${t(item.elsewhere.length ? "elsewhere" : "missing", lang)}` : labelOf(item.key, lang)}
+        aria-label={
+          ghost
+            ? `${labelOf(item.key, lang)}${t("colon", lang)}${t(item.elsewhere.length ? "elsewhere" : "missing", lang)}`
+            : [labelOf(item.key, lang), ...extra].join(t("colon", lang))
+        }
         {...tipHandlers(show, setTip)}
         onClick={show}
         className="relative flex items-center justify-center"
