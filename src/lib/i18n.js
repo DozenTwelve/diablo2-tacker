@@ -314,6 +314,18 @@ const UI = {
   restoring: ["还原中…", "還原中…", "Restoring…", "복원 중…"],
   cancel: ["取消", "取消", "Cancel", "취소"],
   deleteBackup: ["删除", "刪除", "Delete", "삭제"],
+  dupVsMuseum: [
+    (s, m) => `品质评分 ${s}%，图鉴里那件 ${m}%`,
+    (s, m) => `品質評分 ${s}%，圖鑑裡那件 ${m}%`,
+    (s, m) => `Roll score ${s}%; the museum copy's ${m}%`,
+    (s, m) => `옵션 점수 ${s}%, 도감에 있는 것은 ${m}%`,
+  ],
+  dupNoMuseum: [
+    (s) => `品质评分 ${s}%，图鉴里没有这件`,
+    (s) => `品質評分 ${s}%，圖鑑裡沒有這件`,
+    (s) => `Roll score ${s}%; none in the museum`,
+    (s) => `옵션 점수 ${s}%, 도감에는 없음`,
+  ],
   backupBeforeOrganize: ["整理前", "整理前", "Before organizing", "정리 전"],
   backupBeforeRestore: ["还原前", "還原前", "Before a restore", "복원 전"],
   backupInterrupted: [

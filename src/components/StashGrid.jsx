@@ -111,12 +111,15 @@ export function ItemImage({ item, ghost, lang }) {
   return <img src={imageOf(item)} alt={labelOf(item.key, lang)} loading="lazy" className="w-full h-full object-contain" style={style} />;
 }
 
-// A W x H storage grid as in game. records: items in it, with x/y; ghosts: [{ key, code, x, y }] empty fixed slots.
-export default function StashGrid({ width, height, records, ghosts = [], lang }) {
+// A W x H storage grid as in game. records: items in it, with x/y; ghosts: [{ key, code, x, y }] empty fixed slots;
+// notes: Map record -> { score, museum } for duplicates: a copy's roll score against the museum copy's (CharacterView)
+export default function StashGrid({ width, height, records, ghosts = [], notes, lang }) {
   const [tip, setTip] = useTip();
   const cell = (item, x, y, ghost) => {
     const { w, h } = items[item.code];
-    const show = (e) => setTip({ item, ghost, rect: e.currentTarget.getBoundingClientRect() });
+    const note = !ghost && notes?.get(item);
+    const extra = note ? [note.museum == null ? t("dupNoMuseum", lang, note.score) : t("dupVsMuseum", lang, note.score, note.museum)] : [];
+    const show = (e) => setTip({ item, ghost, extra, rect: e.currentTarget.getBoundingClientRect() });
     return (
       <button
         type="button"
@@ -133,6 +136,15 @@ export default function StashGrid({ width, height, records, ghosts = [], lang })
         }}
       >
         <ItemImage item={item} ghost={ghost} lang={lang} />
+        {note && note.score != null && (
+          <span
+            className="absolute bottom-0 right-0 px-0.5 text-[10px] leading-none pointer-events-none"
+            style={{ background: "rgba(0, 0, 0, 0.75)", color: note.museum == null ? "#bbb" : note.score > note.museum ? "#5fd35f" : note.score < note.museum ? "#e06060" : "#bbb" }}
+          >
+            {note.museum != null && note.score !== note.museum ? (note.score > note.museum ? "▲" : "▼") : ""}
+            {note.score}
+          </span>
+        )}
       </button>
     );
   };

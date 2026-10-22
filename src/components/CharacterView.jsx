@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { imageOf, labelOf } from "../lib/gameData";
 import { groupByKey, itemsByPlace, ownerLabel, ownersOf, placeLabel, roleOf, totalCount } from "../lib/inventory";
 import { modePrefix, museumLayout } from "../lib/organize";
+import { copyScore } from "../lib/props";
 import { nameOf, t } from "../lib/i18n";
 import { Link, navigate } from "../lib/router";
 import { useStoredState } from "../lib/useStoredState";
@@ -46,6 +47,21 @@ function museumSlots(prefix) {
   return museums.get(prefix);
 }
 const PREFIXES = ["SoftCore", "HardCore"].flatMap((core) => ["Modern", "Legacy", "Classic"].map((v) => modePrefix(`${core}:${v}`)));
+
+// Map record -> { score, museum }: a copy's roll score and the score of the copy in its museum slot (none: the
+// slot is empty, or the item has no fixed slot)
+function dupNotes(records, mode, allItems) {
+  const slots = museumSlots(modePrefix(mode ?? ""));
+  const notes = new Map();
+  for (const r of records) {
+    const score = copyScore(r);
+    if (score == null) continue;
+    const slot = slots.get(r.key);
+    const there = slot && allItems.find((i) => i.key === r.key && i.owner === slot.mule);
+    notes.set(r, { score, museum: there ? copyScore(there) : null });
+  }
+  return notes;
+}
 
 // Each museum mule's filled and total fixed slots
 function museumFill(items) {
@@ -227,6 +243,8 @@ function CharacterPage({ saveData, name, lang }) {
   const museumMule = MUSEUM.test(name);
   const ghosts = museumMule ? ghostsOf(name, owner.mode, saveData.items) : {};
   const fill = museumMule ? museumFill(saveData.items).get(name) : null;
+  // In a DUP mule each extra copy is scored against the copy in its museum slot: better ▲ or worse ▼
+  const notes = /^H?[LC]?DUP-/.test(name) ? dupNotes(records, owner.mode, saveData.items) : undefined;
   const places = itemsByPlace(saveData.items, name, lang);
   // Museum mules show their empty stash/inventory even when nothing is in it yet
   for (const place of Object.keys(ghosts)) if (!places.some((p) => p.place === place)) places.push({ place, lines: [] });
@@ -300,7 +318,7 @@ function CharacterPage({ saveData, name, lang }) {
           const inPlace = records.filter((r) => r.place === place && r.x != null);
           return (
             <Block key={place} title={placeLabel(place, lang)} count={totalCount(inPlace)} width={w * 44}>
-              <StashGrid width={w} height={h} records={inPlace} ghosts={ghosts[place]} lang={lang} />
+              <StashGrid width={w} height={h} records={inPlace} ghosts={ghosts[place]} notes={notes} lang={lang} />
             </Block>
           );
         })}

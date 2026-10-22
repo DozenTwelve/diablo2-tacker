@@ -5,6 +5,7 @@ import data from "../data/stats.json";
 import items from "../data/items.json";
 import { describeStats, format, str } from "./stats";
 import { t } from "./i18n";
+import { catalog } from "./gameData";
 
 const { stats, properties, skills, gems } = data;
 const CLASSES = ["Amazon", "Sorceress", "Necromancer", "Paladin", "Barbarian", "Druid", "Assassin", "Warlock"];
@@ -107,6 +108,13 @@ export function rollScore(record, props) {
     parts.push(Math.min(1, Math.max(0, (value - lo[2]) / (hi[2] - lo[2]))));
   }
   return parts.length ? Math.round((parts.reduce((a, b) => a + b, 0) / parts.length) * 100) : null;
+}
+
+// rollScore of an owned copy against its catalog entry; a unique with several versions (Rainbow Facet) against
+// its own version's ranges
+export function copyScore(record) {
+  const entry = catalog.get(record.key)?.names;
+  return rollScore(record, entry?.variants?.[record.variant] ?? entry?.props ?? []);
 }
 
 // What a socketed rune or gem adds to the item it is in (gems.txt, by the item's slot), as stats;

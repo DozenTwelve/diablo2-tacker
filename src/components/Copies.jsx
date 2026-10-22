@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef } from "react";
-import { baseNameOf, catalog, imageOf, labelOf } from "../lib/gameData";
+import { baseNameOf, imageOf, labelOf } from "../lib/gameData";
 import { ownerLabel, placeLabel, statLines, totalCount } from "../lib/inventory";
-import { rollScore } from "../lib/props";
+import { copyScore } from "../lib/props";
 import { t } from "../lib/i18n";
 import { colorOf, STAT_COLOR } from "./StashGrid";
 
@@ -41,11 +41,8 @@ export function Modal({ open, title, onClose, lang, children }) {
 
 // Every copy of one catalog entry, best rolls first: where it is, its base, and its stats. records: null when closed.
 export default function Copies({ entryKey, records, onClose, lang }) {
-  const entry = catalog.get(entryKey)?.names;
-  // A unique with several versions (Rainbow Facet) is scored against its own version's ranges
-  const propsOf = (r) => entry?.variants?.[r.variant] ?? entry?.props ?? [];
   const copies = (records ?? [])
-    .map((r) => ({ r, score: rollScore(r, propsOf(r)) }))
+    .map((r) => ({ r, score: copyScore(r) }))
     .sort((a, b) => (b.score ?? 101) - (a.score ?? 101));
 
   return (
