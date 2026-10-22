@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { codeOfNumber, labelOf } from "../lib/gameData";
-import { deckBackups, deckSaveFiles, onDeck, restoreDeck } from "../lib/deck";
+import { deckBackups, deckSaveFiles, deleteDeckBackup, onDeck, restoreDeck } from "../lib/deck";
 import { roleOf } from "../lib/inventory";
 import { t } from "../lib/i18n";
 import { SKILL } from "../lib/links";
@@ -39,6 +39,7 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
   const [folder, setFolder] = useState(null); // on the web: the folder organized, as picked
   const [wasm, setWasm] = useState(null);
   const [mode, setMode] = useState(null);
+  // confirm: { name, action: "restore" | "delete" }, a backup button pressed once
   const [state, setState] = useState({}); // { plan, remove, error, busy, backup, downloaded, readError, confirm, restored, restoreError }
   const [backups, setBackups] = useState([]); // the plugin's backups, on the Deck
   const [reads, setReads] = useState(0); // bumped to read the files again
@@ -228,6 +229,17 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
       setState({ restoreError: t("restoreFailed", lang, e.message ?? e) });
     }
   };
+  const deleteBackup = async (name) => {
+    setState({ ...state, busy: true });
+    try {
+      const response = await deleteDeckBackup(name);
+      if (!response.ok) setState({ restoreError: t("deleteBackupFailed", lang, (await response.json()).error) });
+      else setState({});
+      setBackups(await deckBackups());
+    } catch (e) {
+      setState({ restoreError: t("deleteBackupFailed", lang, e.message ?? e) });
+    }
+  };
   const when = (name) => name.replace(/(\d{4})(\d\d)(\d\d)-(\d\d)(\d\d)(\d\d)/, "$1-$2-$3 $4:$5:$6");
 
   const report = state.plan?.report;
@@ -394,19 +406,34 @@ export default function OrganizeView({ rawFiles, picker, onWritten, lang }) {
                 <li key={b.name} className="flex flex-wrap items-center gap-x-4 gap-y-2">
                   <span>{when(b.name)}</span>
                   <span className="text-sm gothic-text-muted">{t("backupCharacters", lang, b.characters)}</span>
-                  {state.confirm === b.name ? (
+                  {state.confirm?.name === b.name ? (
                     <>
-                      <button className="gothic-btn gothic-btn-small" disabled={state.busy} onClick={() => restore(b.name)}>
-                        {t(state.busy ? "restoring" : "confirmRestore", lang)}
+                      {state.confirm.action === "delete" && <span className="text-sm text-red-400">{t("deleteBackupWarn", lang)}</span>}
+                      <button
+                        className="gothic-btn gothic-btn-small"
+                        disabled={state.busy}
+                        onClick={() => (state.confirm.action === "delete" ? deleteBackup(b.name) : restore(b.name))}
+                      >
+                        {state.confirm.action === "delete"
+                          ? t(state.busy ? "deletingBackup" : "confirmDeleteBackup", lang)
+                          : t(state.busy ? "restoring" : "confirmRestore", lang)}
                       </button>
                       <button className="text-sm gothic-text-muted" disabled={state.busy} onClick={() => setState({ ...state, confirm: null })}>
                         {t("cancel", lang)}
                       </button>
                     </>
                   ) : (
-                    <button className="gothic-btn gothic-btn-secondary gothic-btn-small" onClick={() => setState({ ...state, confirm: b.name })}>
-                      {t("restore", lang)}
-                    </button>
+                    <>
+                      <button
+                        className="gothic-btn gothic-btn-secondary gothic-btn-small"
+                        onClick={() => setState({ ...state, confirm: { name: b.name, action: "restore" } })}
+                      >
+                        {t("restore", lang)}
+                      </button>
+                      <button className="text-sm gothic-text-muted" onClick={() => setState({ ...state, confirm: { name: b.name, action: "delete" } })}>
+                        {t("deleteBackup", lang)}
+                      </button>
+                    </>
                   )}
                 </li>
               ))}

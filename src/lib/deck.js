@@ -17,6 +17,7 @@ export const closeDeck = () => post("/api/close", {});
 // backs up the folder as it is first
 export const deckBackups = async () => (await get("/api/backups")).json();
 export const restoreDeck = (name) => post("/api/restore", { name });
+export const deleteDeckBackup = (name) => post("/api/delete-backup", { name });
 
 export async function deckSaveFiles() {
   const names = await (await get("/api/saves")).json();

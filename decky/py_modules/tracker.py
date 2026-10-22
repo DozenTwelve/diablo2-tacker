@@ -231,6 +231,13 @@ def restore_backup(folder, backup_root, name):
     return backup
 
 
+def delete_backup(backup_root, name):
+    """Delete one of the plugin's backups, so they don't pile up. Only names from the listing, never a path."""
+    if not any(b["name"] == name for b in list_backups(backup_root)):
+        raise ValueError(f"no such backup: {name}")
+    shutil.rmtree(os.path.join(backup_root, name))
+
+
 def _write(folder, files):
     for f in files:
         target = os.path.join(folder, f["name"])
@@ -255,7 +262,8 @@ class Handler(SimpleHTTPRequestHandler):
     anything else: the web app, index.html for unknown paths (the app routes on the client).
     /api/backups: the plugin's backups (list_backups).
     POST /api/write: organized saves to write and characters to delete (write_saves); /api/restore: a backup to put
-    back (restore_backup); /api/close: the app's close button (on_close).
+    back (restore_backup); /api/delete-backup: a backup to delete (delete_backup); /api/close: the app's close
+    button (on_close).
     POSTs only from the app itself."""
 
     web_dir = save_folder = icon_dir = backup_dir = on_close = None  # set by serve()
@@ -317,7 +325,7 @@ class Handler(SimpleHTTPRequestHandler):
         # Only the app's own page: browsers send Origin on every POST, and another site can't send JSON here
         # without a CORS preflight, which this server never answers
         origin = f"http://127.0.0.1:{self.server.server_address[1]}"
-        if not self.local() or self.path not in ("/api/write", "/api/restore", "/api/close") or self.headers.get("Origin") != origin or self.headers.get("Content-Type") != "application/json":
+        if not self.local() or self.path not in ("/api/write", "/api/restore", "/api/delete-backup", "/api/close") or self.headers.get("Origin") != origin or self.headers.get("Content-Type") != "application/json":
             return self.send_error(403)
         if self.path == "/api/close":
             self.send_response(204)
@@ -327,6 +335,9 @@ class Handler(SimpleHTTPRequestHandler):
             body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
             if self.path == "/api/restore":
                 result = {"backup": restore_backup(self.save_folder(), self.backup_dir, body["name"])}
+            elif self.path == "/api/delete-backup":
+                delete_backup(self.backup_dir, body["name"])
+                result = {}
             else:
                 files = [{**f, "bytes": base64.b64decode(f["data"])} for f in body["files"]]
                 result = {"backup": write_saves(self.save_folder(), files, self.backup_dir, body.get("delete", []))}

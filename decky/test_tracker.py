@@ -181,6 +181,13 @@ with tempfile.TemporaryDirectory() as tmp:
     assert sorted(os.listdir(restored["backup"])) == now  # the folder as it was before, to undo the restore
     assert post({"name": zanna}, origin="http://evil.example", path="/api/restore")[0] == 403
 
+    # Deleting a backup: only a name from the listing, only from the app itself
+    assert post({"name": zanna}, origin="http://evil.example", path="/api/delete-backup")[0] == 403
+    assert post({"name": "../web"}, path="/api/delete-backup")[0] == 500 and os.path.isdir(web)
+    assert post({"name": "20000101-000000"}, path="/api/delete-backup")[0] == 500  # the stray file, no backup
+    assert post({"name": zanna}, path="/api/delete-backup")[0] == 200
+    assert zanna not in [b["name"] for b in json.loads(get("/api/backups"))] and not os.path.exists(os.path.join(backups, zanna))
+
     # Only requests to 127.0.0.1 itself: another name pointed at it (DNS rebinding) gets nothing
     request = urllib.request.Request(base + "/api/saves", headers={"Host": "evil.example"})
     try:
