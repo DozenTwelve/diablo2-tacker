@@ -57,8 +57,9 @@ dashboard); the Netlify site is deleted. Done.
 ## 6. New finds and a leaner layout (2026-10-22)
 
 - New finds page (`/new`, `src/lib/newItems.js`): the inbox pages' items with the organizing rules' verdict, read
-  only so it works with the game running. Next, once tested on the Deck when D2R writes the shared stash: the same
-  list in the Decky quick access panel, maybe a notification when the stash changes.
+  only so it works with the game running. D2R writes the shared stash only on save and exit (tested on the Deck: not
+  on stash, waypoint, portal or act change), so finds show after each run's exit. No list in the Decky quick access
+  panel: it would show the same thing one click sooner.
 - Six tabs: New finds, Search, Collection (uniques, sets, runewords, runes as its pages), Characters, Organize,
   About. The Organize page folds its explanation after the first visit and the Deck's backup list.
 - The museum keeps the best-rolled copy; duplicates past `copiesNeeded` go to TRASH; DUP mules mark each copy
