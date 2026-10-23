@@ -60,7 +60,7 @@ right on the Deck: it refuses while the game runs, backs up the save folder firs
 Emptied characters you tick are deleted, and the Organize page lists the backups (the newest 10 and the oldest are
 kept) with buttons to restore or delete them.
 
-![The plugin on a Steam Deck: the quick access panel, then the tracker in Game Mode](docs/deck-demo.gif)
+![The plugin on a Steam Deck in Game Mode: new finds, organizing with a backup, search, the set collection](docs/deck-demo.gif)
 
 It isn't in the Decky store yet. To install: Decky → settings → General → turn on Developer mode, then Developer →
 Install Plugin from URL, and enter
