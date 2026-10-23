@@ -99,14 +99,16 @@ function Content() {
 
 // The page's close button: leave Steam's browser (the server stops itself). Back can be swallowed (once it only
 // closed the on-screen keyboard), so if Steam is still on the browser half a second later, go to the library.
-// Left Steam's browser some other way (B, the Steam button): stop the server too; "Open collection" starts it again
+// Left Steam's browser some other way (B, the Steam button) for a minute: stop the server too; "Open collection"
+// starts it again. Not at once: a look at the Steam menu or a profile and B back must find the page still working
 const inBrowser = () => location.pathname.includes("externalweb");
 function stopWhenLeft() {
   let seen = false; // the browser opens asynchronously: only a route change after it counts
   let waited = 0;
+  let away = 0;
   const timer = setInterval(() => {
-    if (inBrowser()) seen = true;
-    else if (seen) (clearInterval(timer), stop());
+    if (inBrowser()) (seen = true), (away = 0);
+    else if (seen) ++away >= 60 && (clearInterval(timer), stop());
     else if (++waited > 30) clearInterval(timer); // the browser never showed up: nothing to watch
   }, 1000);
 }
