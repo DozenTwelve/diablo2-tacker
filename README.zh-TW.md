@@ -8,7 +8,7 @@
 
 **網站：[d2r.diamonddoge.org](https://d2r.diamonddoge.org)**
 
-![示範：讀取存檔、搜尋物品、瀏覽暗金、查看流派裝備](docs/demo.gif)
+![示範：新物品、搜尋、收藏、流派裝備、整理；再到 Steam Deck 上整理並備份、看套裝](docs/demo.gif)
 
 存檔在你的瀏覽器裡用 WebAssembly 解析，不會上傳。網站沒有後端、沒有帳號，也不收集任何資料。
 
@@ -38,8 +38,6 @@
 ## Steam Deck 外掛
 
 [decky/](decky/README.md) 是一個 [Decky Loader](https://decky.xyz) 外掛：在遊戲模式的快捷選單裡打開收藏，直接讀這台 Deck 的存檔，物品圖示從你安裝的遊戲裡提取。它也能直接在 Deck 上整理：遊戲執行中會拒絕寫入，寫入前先備份整個存檔資料夾，寫完再讀回來核對。清空後沒用到的角色可以勾選刪除；整理頁也列出備份（保留最近 10 份和最早那份），可以直接還原或刪除。
-
-![Steam Deck 遊戲模式裡的外掛：新物品、整理並備份、搜尋、套裝收藏](docs/deck-demo.gif)
 
 外掛還沒上架 Decky 商店。安裝方法：Decky → 設定 → 一般 → 打開開發者模式，再到「開發者」→「從 URL 安裝外掛」，輸入
 

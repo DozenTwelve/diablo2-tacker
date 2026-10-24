@@ -9,7 +9,7 @@ character or stash page holds it, how many copies you have, and what you are sti
 
 **Live site: [d2r.diamonddoge.org](https://d2r.diamonddoge.org)**
 
-![Demo: load saves, search an item, browse uniques, check a build's gear](docs/demo.gif)
+![Demo: new finds, search, the collection, a build's gear, organizing; then on a Steam Deck, organizing with a backup and a set](docs/demo.gif)
 
 Your saves are read in your browser (WebAssembly) and never uploaded. There is no server side, no account and no
 tracking.
@@ -59,8 +59,6 @@ menu in Game Mode with the Deck's own saves, and gets the item icons from your i
 right on the Deck: it refuses while the game runs, backs up the save folder first and reads every written file back.
 Emptied characters you tick are deleted, and the Organize page lists the backups (the newest 10 and the oldest are
 kept) with buttons to restore or delete them.
-
-![The plugin on a Steam Deck in Game Mode: new finds, organizing with a backup, search, the set collection](docs/deck-demo.gif)
 
 It isn't in the Decky store yet. To install: Decky → settings → General → turn on Developer mode, then Developer →
 Install Plugin from URL, and enter
